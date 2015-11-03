@@ -14,28 +14,28 @@ Here are the different widgets attributes:
 - Refresh delay
 
 ### Small graph: ###
-![small_graph]
+[:image:dashboard/dashboard_small_graph.png]
 
 ### Big graph: ###
-![big_graph]
+[:image:dashboard/dashboard_big_graph.png]
 
 ###  Most active: ###
-![most_active]
+[:image:dashboard/dashboard_most_active.png]
 
 ### Recents events ###
-![recent_events]
+[:image:dashboard/dashboard_recent_events.png]
 
 ### Server status ###
-![server_status]
+[:image:dashboard/dashboard_server_status.png]
 
 ### Quick access ###
-![quick_access]
+[:image:dashboard/dashboard_quick_access.png]
 
 
-[server_status]:    /images/dashboard/dashboard_server_status.png
+<!-- [server_status]:    /images/dashboard/dashboard_server_status.png
 [recent_events]:    /images/dashboard/dashboard_recent_events.png
 [most_active]:      /images/dashboard/dashboard_most_active.png
 [big_graph]:        /images/dashboard/dashboard_big_graph.png
 [small_graph]:      /images/dashboard/dashboard_small_graph.png
 [getting_started]:  /images/dashboard/dashboard_get_started.png
-[quick_access]:     /images/dashboard/dashboard_quick_access.png
+[quick_access]:     /images/dashboard/dashboard_quick_access.png -->
