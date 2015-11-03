@@ -13,19 +13,10 @@ After saving the modification, click on upgrade button on top right bar, you can
 
 Click on Start Upgrade on dialog
 
-If there is no error repported, You can logout, refresh the page login again and experience new version
-
- 
-
- 
+If there is no error reported, You can logout, refresh the page login again and experience new version
 
 ### v4.0 and higher : automatic upgrades
 [:image-popup:upgrading_from_previous_version/screenshot-2013-05-08-at-13-02-05.png] Upgrade ButtonAs for v4.0 and next, simply select the automatic upgrade button in the toolbar and follow the procedure. Basically, you just have to make sure that your installation is writeable by the server at the time of the upgrade.
-
-
- 
-
- 
 
 ### Upgrade from 3.2.4 to 4.0
 There is a specific « Import Tool » developed in v4.X to import v3.2.X data. It is not activated by default to avoid polluting the GUI. It’s not an « upgrade » but an « import » tool : **you must install the v4 in a different folder, and import the old data from the 3.2.4 to the new 4.X version.**
@@ -44,7 +35,7 @@ In standard installation (no specific customization except configuration), your 
 + Copy the whole content of the old server/users/ folder inside the new server/users/
 + Do the same with the old server/logs/ folder content
 + If you had not made any changes to server/conf/conf.php, this step is not necessary. Otherwise, open the old and new server/conf/conf.php and compare them. Copy your changes to the new file.
-+C opy the file server/conf/repo.ser inside the new server/conf/ folder.
-+ If the files accessed by your repositories where inside the ajaxplorer installation (which is not recommended), you have to copy them to the new location, and you’ll have to re-check the PATH parameter of your repositories. [A tip : working on a remote server, if you don’t have an ssh access, use AjaXplorer to make this move, as it can be quite long if you have to use ftp…]
++ Copy the file server/conf/repo.ser inside the new server/conf/ folder.
++ If the files accessed by your repositories where inside the ajaxplorer installation (which is not recommended), you have to copy them to the new location, and you’ll have to re-check the PATH parameter of your repositories. [A tip: working on a remote server, if you don’t have an ssh access, use AjaXplorer to make this move, as it can be quite long if you have to use ftp…]
 + Access your new install. You may see the diagnostic page, as the the diagnostic results are generated at install. Go forward and you should be able to login with the previous users rights and repositories.
 + If you had specific plugins that need external downloads, do not forget to update them (CKEditor distribution, OpenLayer distribution)

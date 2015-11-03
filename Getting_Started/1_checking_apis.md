@@ -89,7 +89,7 @@ Shared links are also making use of the Rewrite mechanism + Base tag, to load th
 
 ### REST API
 
-The REST API relies as well on the Rewrite rules, and in some case (fcgi setup) on a specific set of htaccess instructions for authorization. You can test this only once you have created a Pydio user and tested you could normally access pydio with these credentials. Then open a new tab and use the following url, using the same credentials when the browser asks you for user/password: https://domain.tld/pydio/api/my-files/ls/
+The REST API relies as well on the Rewrite rules, and in some case (fcgi setup) on a specific set of htaccess instructions for authorization. You can test this only once you have created a Pydio user and tested you could normally access Pydio with these credentials. Then open a new tab and use the following url, using the same credentials when the browser asks you for user/password: https://domain.tld/pydio/api/my-files/ls/
 
 You should receive an XML result listing the content of the “My Files” default workspace.
 

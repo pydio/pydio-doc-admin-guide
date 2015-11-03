@@ -6,7 +6,7 @@ The new python-based PydioSync client is leveraging a Pydio6 unique feature to p
 
 Server-side, these “changes” are computed and stored on the fly, on each file/folder modification. Thus, when the client ask for changes, if nothing happened, no compute is performed and the query will just return an empty result, loaded directly from the database.
 
-[:image-popup:checking_sync/PydioSync-Protocol.png]
+![protocol]
 
 Last but not least, it’s important to understand that the PydioSync client is using our new REST-based protocol. The first checks will be to make sure that the REST API is correctly working.
 
@@ -44,12 +44,12 @@ You can configure a Core Connexion in the Configurations Management panel of Pyd
 
 In some cases, you can be disallowed to install triggers in your DB, or some specific DB config can break the mechanism. To verify it’s working, you can simply try to manually add a row with fake data inside the ajxp_index table (using your prefered sql client). Once done, you should verify that a new row was created inside ajxp_changes. If you delete the index row, again, you see another new row inside ajxp_changes: on each modification of ajxp_index, a new row is added inside ajxp_changes.
 
-[:image-popup:checking_sync/screenshot-2015-03-13-at-17-44-47.png]
+![mysql]
 
 ### Workspace configuration
 Now that the DB is correctly setup, make sure to enable the “Syncable Workspace (meta.syncable)” plugin in your workspace. This is done via the “Workspace Features” tab of the workspace creation window. For the default workspaces (Default Files and My Files), this should be the case by default, and you can verify this inside the file conf/bootstrap_repositories.php. Finally, make sure that the according parameter “Workspace is Syncable” is set to Yes.
 
-[:image-popup:checking_sync/MetaSyncable-WS.png]
+![WS_syncable]
 
 This parameter can be refined by a group/user/role edition, so if you are testing with a given user, make sure she does not have the parameter set to No because of inheritance.
 
@@ -64,7 +64,7 @@ Where
 + **workspace-slug** is the “pretty name” of the workspace. You can see it by logging to this workspace and seeing in the URL of your browser the /ws-workspace-slug/ part (remove ws- to get the slug).
 You should receive a json listing all changes since creation of workspace.
 
-    REQUEST: https://yourserver.tld/pydio/api/workspace-slug/changes/0
+    #### REQUEST: https://yourserver.tld/pydio/api/workspace-slug/changes/0
     --
     ANSWER:{"changes":[{"seq":3504,"node_id":2364,"type":"create","source":"NULL","target":"\/logo.png","node":{"bytesize":null,"md5":null,"mtime":null,"node_path":null,"repository_identifier":"1-administrator"}},{"seq":98570,"node_id":2364,"type":"delete","source":"\/logo.png","target":"NULL","node":{"bytesize":null,"md5":null,"mtime":null,"node_path":null,"repository_identifier":"1-administrator"}},{"seq":5362,"node_id":3328,"type":"create","source":"NULL","target":"\/Public Minisite\/Test Folder\/6Capt @ ure.png","node":{"bytesize":null,"md5":null,"mtime":null,"node_path":null,"repository_identifier":"1-administrator"}},{"seq":110546,"node_id":3328,"type":"delete","source":"\/Public Minisite\/Test Folder\/6Capt @ ure.png","target":"NULL","node":{"bytesize":null,"md5":null,"mtime":null,"node_path":null,"repository_identifier":"1-administrator"}},{"seq":5363,"node_id":3329,"type":"create","source":"NULL","target":"\/Public Minisite\/Test Folder\/Again.png","node":{"bytesize":null,"md5":null,"mtime":null,"node_path":null,"repository_identifier":"1-administrator"}},{"seq":110547,"node_id":3329,"type":"delete","source":"\/Public Minisite\/Test Folder\/Again.png","target":"NULL","node":{"bytesize":null,"md5":null,"mtime":null,"node_path":null,"repository_identifier":"1-administrator"}},{"seq":5364,"node_id":3330,"type":"create","source":"NULL","target":"\/Public Minisite\/Test Folder\/CamReview.png","node":{"bytesize":null,"md5":null,"mtime":null,"node_path":null,"repository_identifier":"1-administrator"}},{"seq":110548,"node_id":3330,"type":"delete","source":"\/Public Minisite\/Test Folder\/CamReview.png"," ..............
 
@@ -73,4 +73,9 @@ To help you in that task, we’ve setup a script that will try to use the API to
 
 **Please note**: If your server is not located at the document root (e.g. https://yourserver.tld/pydio/), there is a small issue in the current version of this script. Please grab the latest version from github and replace the script before testing (https://raw.githubusercontent.com/pydio/pydio-core/develop/core/src/runTests.php).
 
- [:image-popup:checking_sync/screenshot-2015-03-13-at-14-29-28.png]
+![rest]
+
+[protocol]: ../images/getting_started/getting_started_protocol.png
+[WS_syncable]: ../images/getting_started/getting_started_ws_syncable.png
+[rest]: ../images/getting_started/getting_started_rest.png
+[mysql]: ../images/getting_started/getting_started_mysql.png
