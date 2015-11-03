@@ -1,0 +1,7 @@
+As explained in the Introduction to Workspaces, workspace is defined by two things : the “driver” used to access the data (local filesystem, remote ftp server, database, etc…), and the configuration of this driver (the local path to the files, the database credentials, etc). You can even develop your own access driver by following the plugin api. The full list of available drivers for accessing the data is in the “Plugins” part of this documentation, above the “access” category : https://pyd.io/plugins/access/
+
+To create a workspace, click on “New Repo” in the toolbar and fill the dialog window : use a short, unique and understandable label, and choose the driver that will be used for this workspace. If you don’t have an idea of what a driver is, simply choose the “File System (Standard)” driver. Then, depending on the chosen driver, some parameters will appear. By putting your mouse over the “?” buttons, you can have more info about each parameter. All parameters followed by a star “*” are mandatory. Consult also the “access” plugin documentation on the website. Once your configuration is ok, save the workspace. The repositories list (top left of your screen) should be automatically updated, and you can switch to the new workspace to see if everything is alright (by default, admin user has read/write to all repositories, even newly created).
+
+The following chapter will go through the main drivers available.
+
+[:summary]
