@@ -19,7 +19,7 @@ Make sure the *data* path is writeable by the web server. For example :
 
 At very first run, a diagnostic tool will check a couple of features and configurations of your server, and will report errors or warning as it find them, along with suggestions for fixing the issues.
 
-![diagnostic]
+[:image-popup:1_getting_started/getting_started_diagnostic.png]
 
 While **“Warnings”** can be generally ignored without preventing the application from running, you should still try to fix them if you can, as you will surely encounter problems at one point or another.
 
@@ -35,12 +35,12 @@ See the How-To’s for an exhaustive list of tests and solutions.
 
 - **Admin access:** Define the master user name and password that you will use to connect as an administrator user.
 
-![global_configuration]
+[:image-popup:1_getting_started/getting_started_global_configuration.png]
 
 - **Configuration Storage:** defines a basic storage type for all Pydio configuration data. These are the internal application data (users definitions, workspaces parameters, etc), not the actual business data (your files).
 Use a DB-based storage, the no-db is still active for backward compatibiliy but should be considered as deprecated.  You can use a MySQL, PostgreSQL or Sqlite server. The latter is a good option for a quick start, as it will create a simple in-file DB in your Pydio data folder. You should use MySQLi with php7.
 
-![storage_configuration]
+[:image-popup:1_getting_started/getting_started_storage_configuration.png]
 
 - **Advanced Options: Two major parameters here:**
     + **Encoding:** the “Encoding” parameter must be correctly set otherwise you will very probably bump into problems if you upload files with names containing non-ascii characters (like french èé, german ü, etc;…).
@@ -48,17 +48,11 @@ Use a DB-based storage, the no-db is still active for backward compatibiliy but 
     Windows should be left empty.
     + **Server Path:** the server path should be automatically detected by the installer, but make sure that it’s correct. It is the path of Pydio install from the webroot. E.g if Pydio is installed on https://yourdomain.com/path/to/pydio , must be /path/to/pydio. This is important as it is used for the rewrite rules.
 
-![advanced_configuration]
+[:image-popup:1_getting_started/getting_started_advanced_configuration.png]
 
 - **License Options:**
 There you can input your license name and license signature. If you don't have any of these, you still can start 30 days trial, and enter your license later.
 
-![license_configuration]
+[:image-popup:1_getting_started/getting_started_license_configuration.png]
 
 Once you are ready to go, click on “Install Pydio” and the page should refresh and provide you a login dialog. Use the admin login you just defined to enter. You’re in!
-
-[diagnostic]: ../images/getting_started/getting_started_diagnostic.png
-[global_configuration]: ../images/getting_started/getting_started_global_configuration.png
-[storage_configuration]: ../images/getting_started/getting_started_storage_configuration.png
-[advanced_configuration]: ../images/getting_started/getting_started_advanced_configuration.png
-[license_configuration]: ../images/getting_started/getting_started_license_configuration.png
