@@ -13,20 +13,20 @@ Here are the different widgets attributes:
 - Filename filter [optional]
 - Refresh delay
 
-### Small graph: ###
+### Small graph:
 [:image-popup:2_dashboard/dashboard_small_graph.png]
 
-### Big graph: ###
+### Big graph:
 [:image-popup:2_dashboard/dashboard_big_graph.png]
 
-###  Most active: ###
+###  Most active:
 [:image-popup:2_dashboard/dashboard_most_active.png]
 
-### Recents events ###
+### Recents events:
 [:image-popup:2_dashboard/dashboard_recent_events.png]
 
-### Server status ###
+### Server status:
 [:image-popup:2_dashboard/dashboard_server_status.png]
 
-### Quick access ###
+### Quick access:
 [:image-popup:2_dashboard/dashboard_quick_access.png]
