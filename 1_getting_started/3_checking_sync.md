@@ -6,7 +6,7 @@ The new python-based PydioSync client is leveraging a Pydio6 unique feature to p
 
 Server-side, these “changes” are computed and stored on the fly, on each file/folder modification. Thus, when the client ask for changes, if nothing happened, no compute is performed and the query will just return an empty result, loaded directly from the database.
 
-![protocol]
+[:image-popup:1_getting_started/getting_started_protocol.png]
 
 Last but not least, it’s important to understand that the PydioSync client is using our new REST-based protocol. The first checks will be to make sure that the REST API is correctly working.
 
@@ -44,12 +44,12 @@ You can configure a Core Connexion in the Configurations Management panel of Pyd
 
 In some cases, you can be disallowed to install triggers in your DB, or some specific DB config can break the mechanism. To verify it’s working, you can simply try to manually add a row with fake data inside the ajxp_index table (using your prefered sql client). Once done, you should verify that a new row was created inside ajxp_changes. If you delete the index row, again, you see another new row inside ajxp_changes: on each modification of ajxp_index, a new row is added inside ajxp_changes.
 
-![mysql]
+[:image-popup:1_getting_started/getting_started_mysql.png]
 
 ### Workspace configuration
 Now that the DB is correctly setup, make sure to enable the “Syncable Workspace (meta.syncable)” plugin in your workspace. This is done via the “Workspace Features” tab of the workspace creation window. For the default workspaces (Default Files and My Files), this should be the case by default, and you can verify this inside the file conf/bootstrap_repositories.php. Finally, make sure that the according parameter “Workspace is Syncable” is set to Yes.
 
-![WS_syncable]
+[:image-popup:1_getting_started/getting_started_ws_syncable.png]
 
 This parameter can be refined by a group/user/role edition, so if you are testing with a given user, make sure she does not have the parameter set to No because of inheritance.
 
@@ -72,10 +72,3 @@ You should receive a json listing all changes since creation of workspace.
 To help you in that task, we’ve setup a script that will try to use the API to create a file inside a workspace, and check if it can find back the “change” afterward. For that, uncomment the die() line of the /runTests.php file and call the following url in your browser : https://yourserver.tld/runTests.php?api=true.
 
 **Please note**: If your server is not located at the document root (e.g. https://yourserver.tld/pydio/), there is a small issue in the current version of this script. Please grab the latest version from github and replace the script before testing (https://raw.githubusercontent.com/pydio/pydio-core/develop/core/src/runTests.php).
-
-![rest]
-
-[protocol]: ../images/getting_started/getting_started_protocol.png
-[WS_syncable]: ../images/getting_started/getting_started_ws_syncable.png
-[rest]: ../images/getting_started/getting_started_rest.png
-[mysql]: ../images/getting_started/getting_started_mysql.png

@@ -1,22 +1,22 @@
 ###Upgrading from v5.2.5
 Upgrade is automatic from within the app for archive-based installs (zip / tar.gz). Make sure to backup the database and the files.
 
-[:image-popup:upgrading_from_previous_version/update_plugin_parameters.png]
+[:image-popup:1_getting_started/getting_started_update_plugin_parameters.png]
 
 For update to v6 from stable version 5.2.5, please be sure that you have configured action.updater as following capture:
 
-[:image-popup:upgrading_from_previous_version/update_Dialog.png]
+[:image-popup:1_getting_started/getting_started_update_dialog.png]
 
 After saving the modification, click on upgrade button on top right bar, you can see this dialog.
 
-[:image-popup:upgrading_from_previous_version/after_upgrade.png]
+[:image-popup:1_getting_started/getting_started_after_upgrade.png]
 
 Click on Start Upgrade on dialog
 
 If there is no error reported, You can logout, refresh the page login again and experience new version
 
 ### v4.0 and higher : automatic upgrades
-[:image-popup:upgrading_from_previous_version/screenshot-2013-05-08-at-13-02-05.png] Upgrade ButtonAs for v4.0 and next, simply select the automatic upgrade button in the toolbar and follow the procedure. Basically, you just have to make sure that your installation is writeable by the server at the time of the upgrade.
+[:image-popup:1_getting_started/getting_started_automatic_upgrade.png] Upgrade ButtonAs for v4.0 and next, simply select the automatic upgrade button in the toolbar and follow the procedure. Basically, you just have to make sure that your installation is writeable by the server at the time of the upgrade.
 
 ### Upgrade from 3.2.4 to 4.0
 There is a specific « Import Tool » developed in v4.X to import v3.2.X data. It is not activated by default to avoid polluting the GUI. It’s not an « upgrade » but an « import » tool : **you must install the v4 in a different folder, and import the old data from the 3.2.4 to the new 4.X version.**
