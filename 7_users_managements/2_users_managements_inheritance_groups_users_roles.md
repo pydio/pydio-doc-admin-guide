@@ -7,10 +7,10 @@ A role contains the following informations:
 
 You can see the various categories to the corresponding tabs of the edition interface in the Settings workspace (see screenshot below).
 
-[:image-popup:7_users_managements/users_managements_group_user_roles.png]
+[:image-popup:7_users_managements/users_managements_group_user_role.png]
 Figure 1 Role Edition Interface (Whole workspace)
 
-[:image-popup:7_users_managements/users_managements_group_user_roles_folder.png]
+[:image-popup:7_users_managements/users_managements_group_user_role_folder.png]
 Figure 2 Role Edition Interface (Sub folders)
 
 The power of the « Role » object is that it is a shared concept that is « additive »: a sequence of n roles can be « added » to create a new role, each role n in turn overriding the various parameters of the role n-1.  That way, one can define for example a given plugin parameter value for in role1, then refine this value in Role2, and if a user has these two roles in this order, the latest value will be taken into account.
