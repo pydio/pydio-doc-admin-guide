@@ -6,6 +6,4 @@ The access.swift should be generalized to an open-stack Swift driver, as they ar
 
 The S3 driver uses the "Better AS3 Stream Wrapper" class to access the amazon Simple Storage System. You must configure the  API & SECRET KEYS, the REGION to query, and finally the CONTAINER you want to browse. Using this kind of storage driver is handy for cloud architectures, and more features should be developed around it. Worth noting, the "Metastore.S3" is a specific metadata storage implementation that goes along with this driver, using directly the S3 metadata system.
 
-![object_storage_drivers]
-
-[object_storage_drivers]: ../images/workspaces/workspaces_object_storages.png
+[:image-popup:6_workspaces/workspaces_object_storages.png]
