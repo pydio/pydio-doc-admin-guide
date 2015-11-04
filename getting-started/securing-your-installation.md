@@ -9,7 +9,7 @@ Under the main Pydio installation folder, the following folders contents must be
 
 **Note:**  concerning the .htaccess files under Apache, be sure to AllowOverride of the Limit directives on your web server (contact your Webmaster).
 
-If you can, do not use the default “files” folder placed inside the distribution, but create a repository pointing to a folder outside your web “document root”.
+If you can, do not use the default “files” folder placed inside the distribution, but create a workspace pointing to a folder outside your web “document root”.
 
 Read more: https://pyd.io/permission-for-pydios-filesfolders/
 

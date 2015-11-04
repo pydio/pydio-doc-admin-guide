@@ -31,21 +31,33 @@ Once you think you have correctly fixed the issue, simply reload the page to see
 
 See the How-To’s for an exhaustive list of tests and solutions.
 
-### Pydio provides you a GUI-based installer that will guide you through the basic configurations.
+### Pydio provides you a GUI-based installer that will guide you through the basic configurations which is cut in three part.
 
-- **Admin access:** Define the master user name and password that you will use to connect as an administrator user.
-- **Global Options: Two major parameters here:**
+- **Main Options: Five parameters here:**
+    + **Application Title: The title to display in the tab.**
+    + **Welcome Message: An additional message displayed at startup, on the splash screen and the login screen.**
+    + **Administrator Login: The administrator login to connect to Pydio.**
+    + **Administrator Full Name: Full name of the administrator.**
+    + **Administrator Password: We recommend you have capital letters and special characters in your password.**
+
+[:image-popup:quick_start/01-MAIN-OPTIONS.png]
+
+    **Configuration Storage**: defines a basic storage type for all Pydio configuration data. These are the internal application data (users definitions, workspaces parameters, etc), not the actual business data (your files).
+    Use a DB-based storage, the no-db is still active for backward compatibiliy but should be considered as deprecated.  You can use a MySQL, PostgreSQL or Sqlite server. The latter is a good option for a quick start, as it will create a simple in-file DB in your Pydio data folder.
+
+[:image-popup:quick_start/02-DATABASE-CONNECTON.png]
+
+- **Advanced Options: Two major parameters here:**
     + **Encoding**: the “Encoding” parameter must be correctly set otherwise you will very probably bump into problems if you upload files with names containing non-ascii characters (like french èé, german ü, etc;…).
     On a Linux install, the detected value will generally display an ENCODING (like UTF-8), but make sure to set it with a LOCALE.ENCODING value, like en_US.UTF-8, or fr_FR.UTF-8, etc… Login to your server and type ‘echo $LANG’ in a console and copy the result.
     Windows should be left empty.
     + **Server Path**: the server path should be automatically detected by the installer, but make sure that it’s correct. It is the path of Pydio install from the webroot. E.g if Pydio is installed on https://yourdomain.com/path/to/pydio , must be /path/to/pydio. This is important as it is used for the rewrite rules.
 
-[:image-popup:quick_start/01-INSTALL-GLOBAL.png]
+[:image-popup:quick_start/03-ADVANCED-OPTIONS.png]
 
-    + **Configuration Storage**: defines a basic storage type for all Pydio configuration data. These are the internal application data (users definitions, workspaces parameters, etc), not the actual business data (your files).
-    Use a DB-based storage, the no-db is still active for backward compatibiliy but should be considered as deprecated.  You can use a MySQL, PostgreSQL or Sqlite server. The latter is a good option for a quick start, as it will create a simple in-file DB in your Pydio data folder.
+Once you are ready to go, click on “Install Pydio Now” and the page should refresh and provide you a login dialog.
+After the installation is complete, you should have a page like this :
 
-[:image-popup:quick_start/02-INSTALL-STORAGE.png]
+[:image-popup:quick_start/04-FINISH.png]
 
-Once you are ready to go, click on “Install Pydio Now” and the page should refresh and provide you a login dialog. Use the admin login you just defined to enter. You’re in!
-
+Use the admin login you just defined to enter. You’re in!

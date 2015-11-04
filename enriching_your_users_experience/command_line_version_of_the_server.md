@@ -8,11 +8,11 @@ It’s possible to launch the whole framework and execute the actions via the co
 This is already implemented in two new features, (see further), and should be generalized wherever possible!
 
 + Http Downloader : ability to trigger a remote file download asynchronously, without to have to keep a browser window open.
-+ Zend Indexation : index the whole content of a repository asynchronously.
++ Zend Indexation : index the whole content of a workspace asynchronously.
 
 If you want to play with the command line, placed at the root of the installation, you can simply call something like :
 
-    php cmd.php -u=user -p=password -a=action -r=repository_id --param1=value1 --param2=value2
+    php cmd.php -u=user -p=password -a=action -r=workspace_id --param1=value1 --param2=value2
 
 Note the difference between **simple-dash** parameters and **double-dash** parameters : the latter ones are the parameters passed to the required “action”.
 

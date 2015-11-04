@@ -6,7 +6,7 @@ Metadata is attached to a file, which means it is moved/copied/deleted between f
 
 To add some metadata fields, simply follow the steps :
 
-+ In the “Repository Features” of a workspace configuration panel, make sure a MetaStore is defined, and add a “Text Metadata” plugin to the stack.
++ In the “Workspace Features” of a workspace configuration panel, make sure a MetaStore is defined, and add a “Text Metadata” plugin to the stack.
 + You can see a replicable set of three fiels :
     - Meta Field: a technical name for the field. Please use only alphanumerical characters. See below for specific keywords.
     - Meta Label: will be displayed to the user

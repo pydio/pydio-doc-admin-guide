@@ -32,7 +32,7 @@ This RewriteBase part must also be reflected in the filtering expressions /pydio
     # to enable webDAV sharing. The values assume that your
     # Pydio installation is at http://yourdomain/
     # and that you want the webDAV shares to be accessible via
-    # http://yourdomain/shares/repository_id/
+    # http://yourdomain/shares/workspace_id/
     RewriteEngine on
     RewriteBase ${APPLICATION_ROOT}
     RewriteCond %{REQUEST_FILENAME} !-f

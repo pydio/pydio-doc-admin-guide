@@ -24,7 +24,7 @@ Simply add the meta.quota feature to both workspaces.
 + Using the selectors, add a parameter for
     - Plugin Identifier : meta.quota
     - Parameter Name : DEFAULT_QUOTA
-    - Repository Scope : My Files (the personal workspace name)
+    - Workspace Scope : My Files (the personal workspace name)
 + Set the parameter value to 500M and Save the group.
 
 [:image-popup:enabling_quotas/10-ENABLING-QUOTA.png]

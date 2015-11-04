@@ -17,7 +17,7 @@ Also we assume that we will create Pydio users with the same credentials as the 
 + **Setup the Path** to point to a folder containing the AJXP_USER keyword : e.g; **_/mnt/ajxp/AJXP_USER_**
 + **Set the “Create” option to True**. The various /mnt/ajxp/user1, /mnt/ajxp/user2 will be created automatically.
 + Set up other options of the driver as you like. Save.
-+ Add a “Repository Feature” by choosing “FS Mount” in the Meta plugin list.
++ Add a “Workspace Feature” by choosing “FS Mount” in the Meta plugin list.
 + Configure the FS Mount plugin as follow :
     - **FS Type** : cifs
     This is the value that will appear after the “-t” of the mount command

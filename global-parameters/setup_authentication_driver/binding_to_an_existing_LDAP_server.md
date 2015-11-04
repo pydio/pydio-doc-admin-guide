@@ -71,7 +71,7 @@ So, you can map the LDAP “email” attribute or AD “Mail” attribute to the
 
 When you’re using an LDAP directory that supports the « memberOf » attribute (i.e. you have Microsoft Active Directory, or an LDAP server with the « memberOf » overlay set up), you can use the attribute mapping mechanism to integrate your Active Directory groups in Pydio. This is explained in more detail in the How-To section : [Groups and Roles with LDAP/AD integration](https://pyd.io/groups-and-roles-with-ldapad-integration-draft/)
 
-You will also need a good understanding of Ajaxporer’s Groups and Roles to make good use of this featurel.
+You will also need a good understanding of Pydio’s Groups and Roles to make good use of this featurel.
 
  
 

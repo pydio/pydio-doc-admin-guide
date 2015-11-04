@@ -1,11 +1,11 @@
 ### Using Roles in Pydio
 A role contains the following informations :
 
-+ **Access Control List** (ACL) : a list of rights giving or denying an access to each repositories defined in the application. Internally, the right string can be « r » (read), « w » (write ), a combination of these two, or « AJXP_VALUE_CLEAR » as deny (to force clearing a previously set value in another role).
-+ **Parameters Refinement** (Parameters) : a tree of plugins parameters values that can be applied to all repositories or only to a given set of repositories.
-+ **Actions Disabled** (Actions) : a tree of  disabled plugins actions, that can be as well disabled for all repositories or only a precise list.  Parameters and Actions can in some case be applicable only for a given list of repositories.
++ **Access Control List** (ACL) : a list of rights giving or denying an access to each workspace defined in the application. Internally, the right string can be « r » (read), « w » (write ), a combination of these two, or « AJXP_VALUE_CLEAR » as deny (to force clearing a previously set value in another role).
++ **Parameters Refinement** (Parameters) : a tree of plugins parameters values that can be applied to all workspace or only to a given set of workspace.
++ **Actions Disabled** (Actions) : a tree of  disabled plugins actions, that can be as well disabled for all workspace or only a precise list.  Parameters and Actions can in some case be applicable only for a given list of workspace.
 
-You can see the various categories to the corresponding tabs of the edition interface in the Settings Repository (see screenshot below).
+You can see the various categories to the corresponding tabs of the edition interface in the Settings workspace (see screenshot below).
 
 [:image-popup:inheritance_groups_and_users_roles/14-GROUPS-USERS-ROLES.png]
 Figure 1 Role Edition Interface
@@ -29,7 +29,7 @@ For example, a user U1 from group G1, to whom one have applied a specific role R
 
 #### _Use Cases_
 
-This « refinement » processus is very flexible, and allows you to configure the accesses, parameters and actions of each plugin, for each repository, at a very fine level. Generally, the « Groups » is a right place to preconfigure a couple of parameters, but sometime you’ll want to disable some specific action for a given user, in which case you’ll edit directly the user role.
+This « refinement » processus is very flexible, and allows you to configure the accesses, parameters and actions of each plugin, for each workspace, at a very fine level. Generally, the « Groups » is a right place to preconfigure a couple of parameters, but sometime you’ll want to disable some specific action for a given user, in which case you’ll edit directly the user role.
 
 ### Specific profiles
 Another interesting feature of the roles one creates manually in the application is that they can automatically be applied to a given profile of users. There are currently four profiles of users : Standard, Administrator, Shared and Guest.

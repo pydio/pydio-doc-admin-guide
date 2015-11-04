@@ -8,7 +8,7 @@ The Actions tab provides you a simple GUI to disable any action provided by any 
 
 [:image-popup:action_and_parameters_tabs/screenshot-2013-05-08-at-15-41-03.png]
 
-+ In the third selector (Repository Scope), you will select to which repository (a.k.a Workspace) this specific setting will apply : either to all of them, or only one of them that you can choose, or specific subset that are “Shared Workspaces” : these are workspaces created by the users when they share a folder.
++ In the third selector (Workspace Scope), you will select to which Workspace this specific setting will apply : either to all of them, or only one of them that you can choose, or specific subset that are “Shared Workspaces” : these are workspaces created by the users when they share a folder.
 + Finally, and don’t forget this step, **click on the “add action” button**. A new line should appear in the list below, describing the choice you just done.
 + Save the role.
 Now if you log in as user to whom you have applied this role, you should see that the “Download” button has disappeared.

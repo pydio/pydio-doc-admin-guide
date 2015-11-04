@@ -40,11 +40,11 @@ There is a specific « Import Tool » developed in v4.X to import v3.2.X data. I
 ### Upgrade to 3.2.4 from below
 In standard installation (no specific customization except configuration), your specific configuration data can be found in server/conf/ and server/users. On this base, the upgrade should be quite straightforward :
 
-+ Download and install AjaXplorer inside a new folder
++ Download and install Pydio inside a new folder
 + Copy the whole content of the old server/users/ folder inside the new server/users/
 + Do the same with the old server/logs/ folder content
 + If you had not made any changes to server/conf/conf.php, this step is not necessary. Otherwise, open the old and new server/conf/conf.php and compare them. Copy your changes to the new file.
 +C opy the file server/conf/repo.ser inside the new server/conf/ folder.
-+ If the files accessed by your repositories where inside the ajaxplorer installation (which is not recommended), you have to copy them to the new location, and you’ll have to re-check the PATH parameter of your repositories. [A tip : working on a remote server, if you don’t have an ssh access, use AjaXplorer to make this move, as it can be quite long if you have to use ftp…]
++ If the files accessed by your repositories where inside the Pydio installation (which is not recommended), you have to copy them to the new location, and you’ll have to re-check the PATH parameter of your repositories. [A tip : working on a remote server, if you don’t have an ssh access, use Pydio to make this move, as it can be quite long if you have to use ftp…]
 + Access your new install. You may see the diagnostic page, as the the diagnostic results are generated at install. Go forward and you should be able to login with the previous users rights and repositories.
 + If you had specific plugins that need external downloads, do not forget to update them (CKEditor distribution, OpenLayer distribution)

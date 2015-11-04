@@ -5,7 +5,7 @@ The current implementation is based on Git for the sake of simplicity, and it ha
 
 + Only works for FS-based workspaces
 + Git is known for not very well scaling for huge files. Thus if you are planning to use only media files for example (videos), you should probably avoid this.
-Appart of that, it’s working neatly, and implementing versionning through a git repository also allows you to interact with the versionning system through external application.
+Appart of that, it’s working neatly, and implementing versionning through a git workspace also allows you to interact with the versionning system through external application.
 
 [:image-popup:files_versionning/11-VERSIONING.png]
 

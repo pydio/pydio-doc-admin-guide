@@ -12,7 +12,7 @@ When you create a template, the standard parameters forms have a “checkbox” 
 
 #### _Template specific variable : AJXP_ALLOW_SUB_PATH_
 
-You can use in the various fields (like the Path field) the standard keywords (AJXP_INSTALL_PATH, AJXP_DATA_PATH, AJXP_USER, AJXP_GROUP_PATH), but also a specific template keyword : AJXP_ALLOW_SUB_PATH. This keyword is often the key to your sandboxing nightmares : by defining a path with like the following /path/to/folder/AJXP_ALLOW_SUB_PATH, the parameter can be later on set with a path that will always be prepended (and not resolved of course) by /path/to/folder/. That way a user may enter “myown_folder”, the final repository path will point to /path/to/folder/myown_folder.
+You can use in the various fields (like the Path field) the standard keywords (AJXP_INSTALL_PATH, AJXP_DATA_PATH, AJXP_USER, AJXP_GROUP_PATH), but also a specific template keyword : AJXP_ALLOW_SUB_PATH. This keyword is often the key to your sandboxing nightmares : by defining a path with like the following /path/to/folder/AJXP_ALLOW_SUB_PATH, the parameter can be later on set with a path that will always be prepended (and not resolved of course) by /path/to/folder/. That way a user may enter “myown_folder”, the final workspace path will point to /path/to/folder/myown_folder.
 
 If the user enters something like “../../myown_folder”, the path will always be cleaned up and the result will be the same /path/to/folder/myown_folder.
 
