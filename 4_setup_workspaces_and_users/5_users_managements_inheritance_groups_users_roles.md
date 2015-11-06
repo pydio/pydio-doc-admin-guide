@@ -7,10 +7,10 @@ A role contains the following informations:
 
 You can see the various categories to the corresponding tabs of the edition interface in the Settings workspace (see screenshot below).
 
-[:image-popup:7_users_managements/users_managements_group_user_role.png]
+[:image-popup:4_setup_workspaces_and_users/users_managements_group_user_role.png]
 Figure 1 Role Edition Interface (Whole workspace)
 
-[:image-popup:7_users_managements/users_managements_group_user_role_folder.png]
+[:image-popup:4_setup_workspaces_and_users/users_managements_group_user_role_folder.png]
 Figure 2 Role Edition Interface (Sub folders)
 
 The power of the « Role » object is that it is a shared concept that is « additive »: a sequence of n roles can be « added » to create a new role, each role n in turn overriding the various parameters of the role n-1.  That way, one can define for example a given plugin parameter value for in role1, then refine this value in Role2, and if a user has these two roles in this order, the latest value will be taken into account.
@@ -20,11 +20,11 @@ Practically, one will probably not want to define X roles and apply them one by 
 
 You can see that editing a user or a group, you’ll find the same tabs ACL, Actions and Parameters that you would find in the role edition. They correspond to the specific roles created for each object ( a group or a user).
 
-[:image-popup:7_users_managements/users_managements_user_edit_roles.png]
+[:image-popup:4_setup_workspaces_and_users/users_managements_user_edit_roles.png]
 
 Once configured, the various roles that are applicable to a user will be « added » in the following order: first the groups roles (if a user belongs to a subgroup, then the parent group role is applied, then the subgroup role), then the administrator-defined roles, then the proper user role. This is summarized in the figure below:
 
-[:image-popup:7_users_managements/users_managements_roles_additivity.png]
+[:image-popup:4_setup_workspaces_and_users/users_managements_roles_additivity.png]
 
 For example, a user U1 from group G1, to whom one have applied a specific role R, will then have a « merged » role that result in the addition of the following:
 

@@ -27,7 +27,7 @@ Simply add the meta.quota feature to both workspaces.
     - Repository Scope : My Files (the personal workspace name)
 + Set the parameter value to 500M and Save the group.
 
-[:image-popup:6_workspaces/workspaces_enabling_quotas.png]
+[:image-popup:4_setup_workspaces_and_users/workspaces_enabling_quotas.png]
 
 That's it! Now if you log like a user of this group, you should see that your quota value is extended to 500M. This could have been done at the user level (Parameters tab of the user editor), the group level (like here), or the Role level (all users with this role would have this new value applied).
 

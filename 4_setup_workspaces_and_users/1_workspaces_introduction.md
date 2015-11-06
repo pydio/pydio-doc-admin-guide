@@ -4,7 +4,7 @@ At this step, you will probably have deeply configured your Pydio installation f
 
 One of the core concept of Pydio is the **"Workspace"**. Basically, a workspace can be seen as a virtual drive mounted to access a set of data. In most case, a workspace will access a set of folders and files, locally or remotely via various types of protocol, but it can also be an access to other type of data, like a database content (MySQL repositories), or even the Pydio configurations themselves (Settings workspace). The way the files are accessed is defined when creating the workspace, by choosing a **"Driver"** to map the data.
 
-[:image-popup:6_workspaces/workspaces_introduction.png]
+[:image-popup:4_setup_workspaces_and_users/workspaces_introduction.png]
 
 The rights to access a given set of data for one or more users is handled at a workspace level. Thus, once you have created a workspace, you will be able to grant read and/or write access to this workspace to your users. You can assign these access individually, but you can also create â€œRolesâ€, a set of right access, and then assign one or more roles to your users.
 

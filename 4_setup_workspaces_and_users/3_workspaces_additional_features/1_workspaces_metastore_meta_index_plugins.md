@@ -18,6 +18,6 @@ So to take them in the order :
     - Indexation plugins, only Lucene is currently bundled by default, should be sufficient.
     - Always appears at the end of the stack, as other plugins can register metadata to be indexed by the search engine.
 
-[:image-popup:6_workspaces/workspaces_metastore_meta_index_plugins.png]
+[:image-popup:4_setup_workspaces_and_users/workspaces_metastore_meta_index_plugins.png]
 
   In the next sections, we will go through the common features one wants to implement on the workspaces. Please check the plugins documentations for detailed instruction and additional available features.

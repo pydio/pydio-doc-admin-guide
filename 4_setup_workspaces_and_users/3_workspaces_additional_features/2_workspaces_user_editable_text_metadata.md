@@ -20,9 +20,9 @@ Some special keywords can be used to name metadata fields, that will behave spec
 
 For example, here is below a correspondence between a set of configuration and the result for the end user:
 
-[:image-popup:6_workspaces/workspaces_user_editable_text_metadata.png]
-[:image-popup:6_workspaces/workspaces_user_editable_text_metadata2.png
+[:image-popup:4_setup_workspaces_and_users/workspaces_user_editable_text_metadata.png]
+[:image-popup:4_setup_workspaces_and_users/workspaces_user_editable_text_metadata2.png
 
 Will give:
 
-[:image-popup:6_workspaces/workspaces_user_editable_text_metadata_result.png]
+[:image-popup:4_setup_workspaces_and_users/workspaces_user_editable_text_metadata_result.png]
