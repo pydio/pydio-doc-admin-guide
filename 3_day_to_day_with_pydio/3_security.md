@@ -1,5 +1,3 @@
-# Security Dashboard #
-
 [:image-popup:3_day_to_day_with_pydio/security.png]
 
 The security Dashboard allows you to monitor who is currently connected to your Pydio server.

@@ -7,7 +7,7 @@ With Pydio, in order to manage your data, you can create workspaces.
 A workspace is like a directory within it's storage area.
 You can manage who can access a workspace, define specific rules, and define the folder access inside.
 
-Let's create a workspace!
+### Create a workspace
 
 To create a workspace, go to "Workspaces & Users" > "Workspaces" then click on the "+WORKSPACE" button:
 
@@ -28,7 +28,7 @@ To create a workspace, go to "Workspaces & Users" > "Workspaces" then click on t
 
 Congratulations, you have now created your first workspace with Pydio Enterprise dashboard.
 
-Now, let's create a new user!
+### Create a user and assign rights
 
 To create a user, go to "Workspaces & Users" > "Users" then click on the "+USER" button:
 

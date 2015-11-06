@@ -1,5 +1,3 @@
-# Activity #
-
 [:image-popup:3_day_to_day_with_pydio/activity.png]
 
 The activity page allows you to monitor what is inside the ajxp_log table.
