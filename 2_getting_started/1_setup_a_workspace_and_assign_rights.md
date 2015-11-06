@@ -16,12 +16,12 @@ To create a workspace, go to "Workspaces & Users" > "Workspaces" then click on t
 2 - Workspace options:
 - Input the workspace name inside "Label" field
 - Input the workspace description inside "Description" field
-[:image-popup:2_getting_started/workspace_conigure_global.png]
+[:image-popup:2_getting_started/workspace_configure_global.png]
 
 3 - Choose Storage
 - Pick "File System (Standard)"
 - Input inside the "Path" field "AJXP_DATA_PATH" (it will automatically go to your Pydio data folder)
-[:image-popup:2_getting_started/workspace_conigure_driver.png]
+[:image-popup:2_getting_started/workspace_configure_driver.png]
 
 4 - Save to add features
 - Click on the save button
