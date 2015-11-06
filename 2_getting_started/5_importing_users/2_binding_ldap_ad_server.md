@@ -22,15 +22,15 @@ This first set of the parameters define how the connexion is done, which usernam
 
 ##### Description of the parameters :
 
-+ **URL** : Server hosting the LDAP directoryn, or a MS AD Domain Controller, … : IP address or FQDN  e.g  192.168.0.14,  dc1.mydomain.tld, localhost, …
++ **URL** : Server hosting the LDAP directory, or a MS AD Domain Controller, … : IP address or FQDN  e.g  192.168.0.14,  dc1.mydomain.tld, localhost, …
 + **Port** :  the port your LDAP/AD listens on, usually  389
-+ **LDAP bind username and password**. This is optionnal, and depends on your server configuration. Either you let it empty, and the connexion for searching will be anonymous, or if you set username and password, search will be done via binding.
++ **LDAP bind username and password**. This is optional, and depends on your server configuration. Either you let it empty, and the connexion for searching will be anonymous, or if you set username and password, search will be done via binding.
 The user name must be a complete DN, like `cn=admin,dc=domain,dc=ext`.
-For authentication agains AD, you usually must provide the username and password of an account in the Domain Admins group. (Best practise is to create a dedicated account, and not use the default Administrator account)
+For authentication agains AD, you usually must provide the username and password of an account in the Domain Admins group. (Best practice is to create a dedicated account, and not use the default Administrator account)
 + **People DN**  :  The part of your LDAP/AD where Pydio should look for the user accounts. Usually this will be a specific Organizational Unit (OU); typical values  will be for example `ou=People,dc=pydio,dc=org` or `ou=Users,dc=mydomain,dc=tld`.
 this is a repeatable field, i.e you can define it multiple times to allow you to perform the search on multiple branches.
 + **LDAP Filter** : a default filter applied to all search queries, to restrict the search to e.g a certain objectClass, or for example a certain group of users, if your schema is using the membersOf overlay. For AD, try `objectClass=user` or `objectClass=person`
-+ **LDAP Attribute** : the LDAP/AD attribute that holds the username with which users will log on.  It will be used in an ldap query together with the LDAP FIlter Attribute. E.g. if it is set to “uid”, the final query will search something like `(&(objectClass=person)(uid=userlogin))`.
++ **LDAP Attribute** : the LDAP/AD attribute that holds the username with which users will log on.  It will be used in an ldap query together with the LDAP Filter Attribute. E.g. if it is set to “uid”, the final query will search something like `(&(objectClass=person)(uid=userlogin))`.
 For AD, `sAMAccountname` is a good value.
 
 These are all you need for LDAP/AD user authentication. At the bottom of the form, you can see a “Test User” and “Test connexion” button : once you have filled the fields mentioned above, you can check if your search is working by entering an existing user login here, and testing the search with the button. You should definitely have it working before saving your configuration definitely and before you continue with additional LDAP/AD configuration.
@@ -39,7 +39,7 @@ These are all you need for LDAP/AD user authentication. At the bottom of the for
 
 ### Mapping LDAP attributes
 
-[:image-popup:binding_to_an_LDAPAD_server/screenshot-2013-05-08-at-21-30-26.png] Once you’ve setup a basic LDAP/AD connection, your LDAP/AD users can log on to Pydio, and an Pydio user object will be created for them when they log on. Essentially, you’ve mapped Pydio logins to LDAP/AD accounts. Next, you wil probably want to retrieve additional information out of the LDAP/AD, such as the user’s email address, user’s display name or full name, etc. This is done by mapping additional LDAP/AD attributes to local parameters of Pydio.
+[:image-popup:binding_to_an_LDAPAD_server/screenshot-2013-05-08-at-21-30-26.png] Once you’ve setup a basic LDAP/AD connection, your LDAP/AD users can log on to Pydio, and an Pydio user object will be created for them when they log on. Essentially, you’ve mapped Pydio logins to LDAP/AD accounts. Next, you will probably want to retrieve additional information out of the LDAP/AD, such as the user’s email address, user’s display name or full name, etc. This is done by mapping additional LDAP/AD attributes to local parameters of Pydio.
 
 These mappings are done login time, and the user data is updated only if a change is detected, to impact low in term of performances.
 
@@ -55,13 +55,13 @@ Mapping of attributes works with a set of parameters  that work in triplet : {ld
     - either a simple text value (like MY_PARAMETER), in which case it will add a parameter with this name linked to the “auth.ldap” plugin (see the Roles filtering section),
     - in the form of PLUGIN_ID/MY_PARAMETER, in which case it will link this parameter to the given plugin id.
 
-Een example wil probably make this more clear.
+Een example will probably make this more clear.
 
 ##### example
 
 An example of straightforward attribute mapping :
 
-In the core.conf/manifest.xml you can find the various parameters provided by the core.conf plugin, that actually define the user account data. For instance, you’ll find that Pydio has a “core.conf/email” parameter and a “core.conf/USER_DISPLAY_NAME”, respectively refering to the user “Mail” field and Display name in the GUI.
+In the core.conf/manifest.xml you can find the various parameters provided by the core.conf plugin, that actually define the user account data. For instance, you’ll find that Pydio has a “core.conf/email” parameter and a “core.conf/USER_DISPLAY_NAME”, respectively referring to the user “Mail” field and Display name in the GUI.
 
 So, you can map the LDAP “email” attribute or AD “Mail” attribute to the Pydio “core.conf/email” attribute of the authenticated User. Likewise, you can map any suitable LDAP or AD attribute to the Pydio “core.conf/USER_DISPLAY_NAME” parameter to get human-friendly names in the GUI.
 
@@ -71,7 +71,7 @@ So, you can map the LDAP “email” attribute or AD “Mail” attribute to the
 
 When you’re using an LDAP directory that supports the « memberOf » attribute (i.e. you have Microsoft Active Directory, or an LDAP server with the « memberOf » overlay set up), you can use the attribute mapping mechanism to integrate your Active Directory groups in Pydio. This is explained in more detail in the How-To section : [Groups and Roles with LDAP/AD integration](https://pyd.io/groups-and-roles-with-ldapad-integration-draft/)
 
-You will also need a good understanding of Pydio’s Groups and Roles to make good use of this featurel.
+You will also need a good understanding of Pydio’s Groups and Roles to make good use of this feature.
 
 
 

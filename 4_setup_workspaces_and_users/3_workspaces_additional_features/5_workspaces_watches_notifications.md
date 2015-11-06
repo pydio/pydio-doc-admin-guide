@@ -7,7 +7,7 @@ Notification is a powerful feature of Pydio, once activated through a specific p
 Those two could be compared respectively to Facebook "Notifications" and "Feed".
 
 ### Basic installation
-Activating notifications used to be quite cumbersome, but the procedure was greatly simplified with the introduction of the application installer. Basically, this feature requires an SQL database (for the moment, no-sql implementation are in the way). Still, this can be as simple as specifing an Sqlite file, so you don't really need a MySql running somewhere.
+Activating notifications used to be quite cumbersome, but the procedure was greatly simplified with the introduction of the application installer. Basically, this feature requires an SQL database (for the moment, no-sql implementation are in the way). Still, this can be as simple as specifying an Sqlite file, so you don't really need a MySql running somewhere.
 
 + Configure an SQL Connexion: if not already done, in the Global Configurations > Core Configs > Configurations Management panel.
 + Activate the "User events and alerts" in the Notification Center. There is only one plugin available, so it's selected by default (Events SQL). Click on the Install SQL Tables button to make sure ajxp_feed table is created.

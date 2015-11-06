@@ -38,7 +38,7 @@ See the How-To’s for an exhaustive list of tests and solutions.
 [:image-popup:1_installation_guide/getting_started_global_configuration.png]
 
 - **Configuration Storage:** defines a basic storage type for all Pydio configuration data. These are the internal application data (users definitions, workspaces parameters, etc), not the actual business data (your files).
-Use a DB-based storage, the no-db is still active for backward compatibiliy but should be considered as deprecated.  You can use a MySQL, PostgreSQL or Sqlite server. The latter is a good option for a quick start, as it will create a simple in-file DB in your Pydio data folder. You should use MySQLi with php7.
+Use a DB-based storage, the no-db is still active for backward compatibility but should be considered as deprecated.  You can use a MySQL, PostgreSQL or Sqlite server. The latter is a good option for a quick start, as it will create a simple in-file DB in your Pydio data folder. You should use MySQLi with php7.
 
 [:image-popup:1_installation_guide/getting_started_storage_configuration.png]
 

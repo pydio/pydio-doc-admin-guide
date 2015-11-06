@@ -31,7 +31,7 @@ As you already have understood, the two bolded words are the ones that you have 
 
 #### _Pydio configuration_
 
-The WebDAV configurations are configurable directly via the gui (for v4 and later). You’ll find them in the Settings section, under Global Configurations > Core Configs > Pydio Core, there is a “WebDAV Server” header.
+The WebDAV configurations are configurable directly via the GUI (for v4 and later). You’ll find them in the Settings section, under Global Configurations > Core Configs > Pydio Core, there is a “WebDAV Server” header.
 
 [:image-popup:setup_webdav_server_access/15-WEBDAV-CONFIG.png]
 
@@ -41,9 +41,9 @@ Options are described below:
 
 + **Enable WebDAV** : totally enable or disable the webdav feature. false by default.
 + **Shares URI** : the exact mirror of the previous .htaccess configs : path to the virtual directory, thus something like “/files/shares”. Make sure to start with a slash, and end without slash.
-+ **Digest Realm** : used for the digest authentification, and to store the webdav password encoded. Thus, if you want to change this, change it the very first time you install the feature, otherwise you’ll have to ask the users to re-enter their password.
++ **Digest Realm** : used for the digest authentication, and to store the webdav password encoded. Thus, if you want to change this, change it the very first time you install the feature, otherwise you’ll have to ask the users to re-enter their password.
 + **Force Basic Auth** : in some case, you know that the clients you will be using can only use Basic Authentication, and you want to force this authentication method. It is best secured to leave it to No.
-+ **Browser Access** : wether the shares URL are directly browsable in WebDAV throught the browser. This generally creates a kind of duplicate of the standard web-based interface, but it is generally VERY usefull to enable that one to test if the configuration is correct.
++ **Browser Access** : wether the shares URL are directly browsable in WebDAV through the browser. This generally creates a kind of duplicate of the standard web-based interface, but it is generally VERY useful to enable that one to test if the configuration is correct.
 
 ### Per-user activation and authentication
 Once the webDAV is globally activated, each user will still have to manually activate it for his/her account.

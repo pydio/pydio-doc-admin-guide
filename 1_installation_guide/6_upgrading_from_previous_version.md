@@ -31,7 +31,7 @@ There is a specific « Import Tool » developed in v4.X to import v3.2.X data. I
 ### Upgrade to 3.2.4 from below
 In standard installation (no specific customization except configuration), your specific configuration data can be found in server/conf/ and server/users. On this base, the upgrade should be quite straightforward :
 
-+ Download and install AjaXplorer inside a new folder
++ Download and install Pydio inside a new folder
 + Copy the whole content of the old server/users/ folder inside the new server/users/
 + Do the same with the old server/logs/ folder content
 + If you had not made any changes to server/conf/conf.php, this step is not necessary. Otherwise, open the old and new server/conf/conf.php and compare them. Copy your changes to the new file.

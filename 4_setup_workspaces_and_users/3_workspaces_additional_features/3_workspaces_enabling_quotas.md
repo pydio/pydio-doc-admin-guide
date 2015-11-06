@@ -1,7 +1,7 @@
 ### The meta.quota plugin
 If you need to enable some storage limitations for your users, the **meta.quota** plugin can be added as a workspace feature.
 
-This will allow the following behaviours:
+This will allow the following behaviors:
 
 + Limit storage usage on a per-workspace basis or on a global basis (this is configured via the plugin global options), e.g. "50M for a given workspace", or "50M for all cumulated workspaces a user can access".
 + Define a maximum quota value as well as a soft limit triggering an alert (will send an email to the user).

@@ -5,7 +5,7 @@ Supported CMS are currently PHP-based : WordPress, Joomla! and Drupal. There is 
 ### Install the dedicated plugin in the CMS
 Download the Pydio-CMS-Bridges package from the dedicated page, and unzip it on your local computer. Locate the correct plugin from the content of the folder
 
-+ **WordPress**: all wp version
++ **WordPress**: all WordPress version
 + **Joomla!**
     - **1.5**: Joomla! 1.5 only
     - **1.6**: Joomla! 1.6 to 2.5 included
@@ -22,14 +22,14 @@ Deploy the plugin to your CMS, using their specific procedure. Activate and conf
 See also the Readmes & How-Tos contained in the Bridges package to get more specific instruction for your CMS of choice.
 
 ### Switch Authentication to Remote
-In the Settings panel, under Global Configurations > Core Configs > Authentication, switch the Main Instance to the “auth.remote” driver. Here you will have to define a couple of URLs and paramaters to make the plugin function properly.
+In the Settings panel, under Global Configurations > Core Configs > Authentication, switch the Main Instance to the “auth.remote” driver. Here you will have to define a couple of URLs and parameters to make the plugin function properly.
 
 The Authentication must work in two ways : when successfully logging in from the CMS, we will hook into Pydio and force the user to be logged in as well. But when using other clients like the mobile devices clients, we will need to perform the authentication directly in Pydio, and interrogate the remote CMS directory by some kind of API.
 
 + **Main URL**:  must be either an complete URL (like http://localhost/drupal/, or http://192.168.0.23/, etc), or a URI starting from the root of the webserver (like “/drupal/” or “/”, in that case the host will be automatically detected). It is pointing to the root of the CMS installation.
 + **Login URL**: a page of the CMS in which a user login form is displayed. It will be used for both redirecting a non-logged user trying to access Pydio, and for programmatically interrogating the CMS for authentication. Thus it MUST contain a login form. Generally, the home page would be ok, thus the value “/”
 + **Auth Form ID**: this is linked to the previous field : the HTML ID of the login form displayed inside the login page. When logging programmatically, we fake the CMS by automatically posting this form with the user’s credential. Default values are provided by default, but you must make sure this is correct. Not necessary for WordPress.
-+ **Exit Action**: whether to directly logout or simply go back to main page with the “Back” pydio action. Not available in Joomla!, the logout is not a simple operation (two-steps post).
++ **Exit Action**: whether to directly logout or simply go back to main page with the “Back” Pydio action. Not available in Joomla!, the logout is not a simple operation (two-steps post).
 + **Secret Key**: the same key as defined in the the corresponding module.
 Remote Authentication Parameters
 

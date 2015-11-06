@@ -1,4 +1,4 @@
-Pydio code is continuously audited by security experts, and should be resistant to the most common web attacks. But at some point, Pydio cannot fix holes created by a wrong server configuration. Here are some basic recommandations for securing your Pydio installation.
+Pydio code is continuously audited by security experts, and should be resistant to the most common web attacks. But at some point, Pydio cannot fix holes created by a wrong server configuration. Here are some basic recommendations for securing your Pydio installation.
 
 ### Protect your folders from direct web access
 
