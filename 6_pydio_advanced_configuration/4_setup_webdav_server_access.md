@@ -33,7 +33,7 @@ As you already have understood, the two bolded words are the ones that you have 
 
 The WebDAV configurations are configurable directly via the GUI (for v4 and later). You’ll find them in the Settings section, under Global Configurations > Core Configs > Pydio Core, there is a “WebDAV Server” header.
 
-[:image-popup:setup_webdav_server_access/15-WEBDAV-CONFIG.png]
+[:image-popup:6_advanced_configuration/webdav_configuration.png]
 
 
 
@@ -52,9 +52,7 @@ In some cases, the user will have to create a dedicated password for webdav auth
 
 In both case, the WebDAV activation (and password configuration) is under the user menu, in WebDAV preferences.
 
-[:image-popup:setup_webdav_server_access/15-WEBDAV-USER-PREF.png]
-
-
+[:image-popup:6_advanced_configuration/webdav_preferences.png]
 
 ### Known issues, limitations, workarounds
 

@@ -13,8 +13,8 @@ Before saving, click the button “Switch the WS Server ON”, and wait until th
 
 BEFORE :
 
-[:image-popup:websocket_server_activation/screenshot-2013-05-13-at-12-51-37.png]
+[:image-popup:6_pydio_advanced_configuration/websocket_before.png]
 
 AFTER :
 
-[:image-popup:websocket_server_activation/screenshot-2013-05-13-at-12-59-07.png]
+[:image-popup:6_pydio_advanced_configuration/websocket_after.png]

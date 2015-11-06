@@ -13,7 +13,7 @@ The following articles will go through the most used implementations. Use the Gl
 ### One ore two instances? Master or Slave?
 If you open the Authentication panel, below the first set of generic parameters, you will see two sections: Main Instance & Secondary Instance (optional).
 
-[:image-popup:setup_authentification_driver/04-MASTER-SLAVE-AUTH.png]
+[:image-popup:2_getting_started/setup_authentication_driver.png]
 
 By default, depending on the value you chose at install, you will see the “Main Instance” set with a value (either Serialized or DB) and the associated options, and the secondary instance is not used.
 
