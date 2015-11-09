@@ -13,6 +13,7 @@ To create a workspace, go to "Workspaces & Users" > "Workspaces" then click on t
 
 1 - Select a template or driver:
 - Pick Driver
+
 2 - Workspace options:
 - Input the workspace name inside "Label" field
 - Input the workspace description inside "Description" field
