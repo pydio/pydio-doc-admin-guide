@@ -3,7 +3,7 @@ You can easily change the way you want this page by adding, deleting and reorder
 
 1. Dashboard Builder
 ---
-You can access `Dashboard Builder` by clicking on the bottom-right orange button.
+You can access Dashboard Builder by clicking on the bottom-right orange button.
 This panel allows you to create/remove plugins.
 I you want to get back the default settings, you can reset the dashboard layout.
 
