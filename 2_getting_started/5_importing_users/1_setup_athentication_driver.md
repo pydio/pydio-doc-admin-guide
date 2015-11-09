@@ -8,7 +8,7 @@ Although configuration backends are few (basically serialized files or DB), auth
 + auth.ftp, auth.smb: specific implementations that are linked to a workspace for performing authentication “dynamically”.
 + auth.remote, auth.cmsms, auth.phpbb: bridges allowing to use an external PHP CMS as a user directory. Currently there are WordPress, Joomla and Drupal counterparts, as well as detailed how-to to log to any existing system.
 
-The following articles will go through the most used implementations. Use the Global Configurations > Core Configs > Authentication panel to switch the backend.
+The following articles will go through the most used implementations. Use the Application Parameters > Authentication to switch the backend.
 
 ### One ore two instances? Master or Slave?
 If you open the Authentication panel, below the first set of generic parameters, you will see two sections: Main Instance & Secondary Instance (optional).

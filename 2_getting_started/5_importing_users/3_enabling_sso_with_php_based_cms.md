@@ -22,7 +22,7 @@ Deploy the plugin to your CMS, using their specific procedure. Activate and conf
 See also the Readmes & How-Tos contained in the Bridges package to get more specific instruction for your CMS of choice.
 
 ### Switch Authentication to Remote
-In the Settings panel, under Global Configurations > Core Configs > Authentication, switch the Main Instance to the “auth.remote” driver. Here you will have to define a couple of URLs and parameters to make the plugin function properly.
+In the Settings panel, under Application Parameters > Authentication, switch the Master Driver to the “auth.remote” driver. Here you will have to define a couple of URLs and parameters to make the plugin function properly.
 
 The Authentication must work in two ways : when successfully logging in from the CMS, we will hook into Pydio and force the user to be logged in as well. But when using other clients like the mobile devices clients, we will need to perform the authentication directly in Pydio, and interrogate the remote CMS directory by some kind of API.
 

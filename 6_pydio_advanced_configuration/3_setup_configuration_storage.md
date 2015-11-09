@@ -14,7 +14,7 @@ If you have already configured a database storage when installing the applicatio
 
 Currently, MySQL and Sqlite are supported. For both, you will need to make sure that the corresponding php extension is installed. Configuring the conf.sql plugin will be a multiple step action:
 
-+ Inside the Global Configurations > Core Configs > Configurations Management, first define an SQL Connexion: choose the correct driver (MySQL or Sqlite) and fill the options values accordingly.
++ Inside the Application Parameters > Configs Backends, first define an SQL Connexion: choose the correct driver (MySQL or Sqlite) and fill the options values accordingly.
     - For MySQL
         * Host: generally localhost, or a server name provided by your hosting
         * Database: an existing database name

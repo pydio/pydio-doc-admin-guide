@@ -64,9 +64,42 @@ Where
 + **workspace-slug** is the “pretty name” of the workspace. You can see it by logging to this workspace and seeing in the URL of your browser the /ws-workspace-slug/ part (remove ws- to get the slug).
 You should receive a json listing all changes since creation of workspace.
 
+
+
     REQUEST: https://yourserver.tld/pydio/api/workspace-slug/changes/0
     ---
-    ANSWER:{"changes":[{"seq":3504,"node_id":2364,"type":"create","source":"NULL","target":"\/logo.png","node":{"bytesize":null,"md5":null,"mtime":null,"node_path":null,"repository_identifier":"1-administrator"}},{"seq":98570,"node_id":2364,"type":"delete","source":"\/logo.png","target":"NULL","node":{"bytesize":null,"md5":null,"mtime":null,"node_path":null,"repository_identifier":"1-administrator"}},{"seq":5362,"node_id":3328,"type":"create","source":"NULL","target":"\/Public Minisite\/Test Folder\/6Capt @ ure.png","node":{"bytesize":null,"md5":null,"mtime":null,"node_path":null,"repository_identifier":"1-administrator"}},{"seq":110546,"node_id":3328,"type":"delete","source":"\/Public Minisite\/Test Folder\/6Capt @ ure.png","target":"NULL","node":{"bytesize":null,"md5":null,"mtime":null,"node_path":null,"repository_identifier":"1-administrator"}},{"seq":5363,"node_id":3329,"type":"create","source":"NULL","target":"\/Public Minisite\/Test Folder\/Again.png","node":{"bytesize":null,"md5":null,"mtime":null,"node_path":null,"repository_identifier":"1-administrator"}},{"seq":110547,"node_id":3329,"type":"delete","source":"\/Public Minisite\/Test Folder\/Again.png","target":"NULL","node":{"bytesize":null,"md5":null,"mtime":null,"node_path":null,"repository_identifier":"1-administrator"}},{"seq":5364,"node_id":3330,"type":"create","source":"NULL","target":"\/Public Minisite\/Test Folder\/CamReview.png","node":{"bytesize":null,"md5":null,"mtime":null,"node_path":null,"repository_identifier":"1-administrator"}},{"seq":110548,"node_id":3330,"type":"delete","source":"\/Public Minisite\/Test Folder\/CamReview.png"," ..............
+    ANSWER:{"changes":[
+      {
+      "seq":3504,"node_id":2364,"type":"create","source":"NULL","target":"\/logo.png",
+        "node":
+          {"bytesize":null,"md5":null,"mtime":null,"node_path":null,"repository_identifier":"1-administrator"}},
+      {
+      "seq":98570,"node_id":2364,"type":"delete","source":"\/logo.png","target":"NULL",
+          "node":
+            {"bytesize":null,"md5":null,"mtime":null,"node_path":null,"repository_identifier":"1-administrator"}},
+      {
+      "seq":5362,"node_id":3328,"type":"create","source":"NULL","target":"\/Public Minisite\/Test Folder\/6Capt @ ure.png",
+          "node":
+            {"bytesize":null,"md5":null,"mtime":null,"node_path":null,"repository_identifier":"1-administrator"}},
+      {
+      "seq":110546,"node_id":3328,"type":"delete","source":"\/Public Minisite\/Test Folder\/6Capt @ ure.png","target":"NULL",
+          "node":
+            {"bytesize":null,"md5":null,"mtime":null,"node_path":null,"repository_identifier":"1-administrator"}},
+      {
+      "seq":5363,"node_id":3329,"type":"create","source":"NULL","target":"\/Public Minisite\/Test Folder\/Again.png",
+          "node":
+            {"bytesize":null,"md5":null,"mtime":null,"node_path":null,"repository_identifier":"1-administrator"}},
+      {
+      "seq":110547,"node_id":3329,"type":"delete","source":"\/Public Minisite\/Test Folder\/Again.png","target":"NULL",
+          "node":
+            {"bytesize":null,"md5":null,"mtime":null,"node_path":null,"repository_identifier":"1-administrator"}},
+      {
+      "seq":5364,"node_id":3330,"type":"create","source":"NULL","target":"\/Public Minisite\/Test Folder\/CamReview.png",
+          "node":
+            {"bytesize":null,"md5":null,"mtime":null,"node_path":null,"repository_identifier":"1-administrator"}},
+      {
+      "seq":110548,"node_id":3330,"type":"delete","source":"\/Public Minisite\/Test Folder\/CamReview.png","
+      ..............
 
 ### Putting things together: testing script
 To help you in that task, we’ve setup a script that will try to use the API to create a file inside a workspace, and check if it can find back the “change” afterward. For that, uncomment the die() line of the /runTests.php file and call the following url in your browser : https://yourserver.tld/runTests.php?api=true.

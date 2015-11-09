@@ -14,7 +14,7 @@ Also note that this is not a Single Sign-on  configuration : your users will sti
 
 
 ### LDAP connexion information
-Open the Global Configurations > Core Configs > Authentication panel, and scroll to the “Main Instance” section. Here you will have to switch to the LDAP driver, and set up the correct values to connect to the server.
+Open the Application Parameters > Authentication, and go to the “Master Driver” section. Here you will have to switch to the LDAP driver, and set up the correct values to connect to the server.
 
 This first set of the parameters define how the connexion is done, which username to use as directory administrator to bind, and filters to perform the search query that searches and authenticates  your users.
 

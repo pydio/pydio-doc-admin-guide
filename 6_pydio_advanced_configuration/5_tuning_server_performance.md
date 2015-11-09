@@ -8,7 +8,7 @@ PHP APC is a recommended choice, but other accelerators may do the job as well.
 ### Execute actions asynchronously
 Although not as good as NodeJS to provide such behavior, PHP offers a way to send display results to the users before actually performing some actions. The Event system of Pydio takes party of this to improve the user experience and perceived performance. To make sure this is working, please check that php **output_buffering is DISABLED** for your virtual host.
 
-To go further, many events like sending notifications on files operation can be performed really asynchronously, by storing them inside a queue and triggering the queue processing via a CRON job. To do that, you must enable the feature in Global Configurations > Core Configs > Message Queuing, making sure to have defined an mq instance (SQL is recommended here).
+To go further, many events like sending notifications on files operation can be performed really asynchronously, by storing them inside a queue and triggering the queue processing via a CRON job. To do that, you must enable the feature in Application Parameters > Message Queues, making sure to have defined an mq instance (SQL is recommended here).
 
 Then you will have to set up a CRON job using the CLi version of the framework, that will trigger the queue processing. Add the following line to your crontab, for example on a 5minutes cycle :
 

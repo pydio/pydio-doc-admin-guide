@@ -31,7 +31,7 @@ As you already have understood, the two bolded words are the ones that you have 
 
 #### _Pydio configuration_
 
-The WebDAV configurations are configurable directly via the GUI (for v4 and later). You’ll find them in the Settings section, under Global Configurations > Core Configs > Pydio Core, there is a “WebDAV Server” header.
+The WebDAV configurations are configurable directly via the GUI (for v4 and later). You’ll find them in the Settings section, under Application Parameters > Application Core, there is a “WebDAV Server” header.
 
 [:image-popup:6_advanced_configuration/webdav_configuration.png]
 

@@ -16,7 +16,9 @@ Click on Start Upgrade on dialog
 If there is no error reported, You can logout, refresh the page login again and experience new version
 
 ### v4.0 and higher : automatic upgrades
-[:image-popup:1_installation_guide/getting_started_automatic_upgrade.png] Upgrade ButtonAs for v4.0 and next, simply select the automatic upgrade button in the toolbar and follow the procedure. Basically, you just have to make sure that your installation is writeable by the server at the time of the upgrade.
+[:image-popup:1_installation_guide/getting_started_automatic_upgrade.png]
+
+Upgrade ButtonAs for v4.0 and next, simply select the automatic upgrade button in the toolbar and follow the procedure. Basically, you just have to make sure that your installation is writeable by the server at the time of the upgrade.
 
 ### Upgrade from 3.2.4 to 4.0
 There is a specific « Import Tool » developed in v4.X to import v3.2.X data. It is not activated by default to avoid polluting the GUI. It’s not an « upgrade » but an « import » tool : **you must install the v4 in a different folder, and import the old data from the 3.2.4 to the new 4.X version.**
