@@ -21,7 +21,7 @@ Here is a short guide for the parts of the interface:
 [:image-popup:2_getting_started/gui_colors.png]
 
 3. Change interface's images:
-
+---
 You can change the Pydio images by yours:
 [:image-popup:2_getting_started/gui_images.png]
 
