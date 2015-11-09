@@ -1,5 +1,3 @@
-# GUI Options
-
 In this section, we will explain you how to very simply change the GUI of Pydio with the Orbit theme.
 
 Go to Users Features > GUI Options.
