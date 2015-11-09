@@ -55,6 +55,7 @@ Here are the different widgets attributes:
 ---
 Let's say we want to create a small graph to monitor the ".docx" downloads daily on a selected workspace:
 [:image-popup:3_day_to_day_with_pydio/dashboard_example.png]
+
 - Click on the button to add a widget
 - Choose Small Graph Widget
 - Fill the legend with the name you want
