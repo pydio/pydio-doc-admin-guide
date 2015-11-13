@@ -7,7 +7,7 @@ Deploy Pydio in a couple of steps :
 
 ### Deploy archive on your server
 
-Download the latest stable version from [https://pyd.io/download Download Page], either as ZIP or TAR.GZ format. Alternatively, you can use our Linux repositories to install Pydio using a package manager on Debian or CentOS Linux flavors.
+Download the latest stable version from [https://pydio.com/en/get-pydio Download Page], either as ZIP or TAR.GZ format. Alternatively, you can use our Linux repositories to install Pydio using a package manager on Debian or CentOS Linux flavors.
 
 Using your favorite FTP client or SCP command, upload this package to your webserver, and extract its content to a web-accessible folder (e.g. */var/www/pydio*).
 
