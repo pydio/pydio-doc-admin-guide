@@ -12,14 +12,7 @@ Make sure the *data* path is writeable by the web server. For example :
 
 ### 2/ Install from RPM / DEB
 
-#### 2.1/ Create an account to grab your API keys
-
-Our Enterprise Repositories are password-protected by an API Key / API Secret credentials. These are provided automatically when you have a valid Pydio Enterprise License. For this reason, you first need to register and at least claim your free 10 users license in your Pydio.com Customer Dashboard. Your license will be instantly provisioned, so it's just a matter of minutes. Once you have it, find the "Api Key / Secret" at the bottom of the license page in your Dashboard:
-[:image-popup:1_installation_guide/install_pydio_api_keys.png]
-
-
-
-#### 2.2/ Install Repositories
+#### 2.1/ Install Repositories
 
 ##### Debian 8: install public key and repositories
 
@@ -54,7 +47,7 @@ Install repositories by installing the release RPMs:
 
 Update repositories cache `yum update`
 
-#### 2.3/ Install Pydio Enterprise Distribution
+#### 2.2/ Install Pydio Community Distribution
 
 Now that the repositories are properly configured, you simply have to install pydio using either:
 > `apt-get install pydio`
