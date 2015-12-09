@@ -10,7 +10,7 @@ Make sure the *data* path is writeable by the web server. For example :
 
 > `chown -R www-data:www-data /var/www/pydio/data`
 
-### 2/ Install from RPM
+### 2/ Install from RPM / DEB
 
 #### 2.1/ Create an account to grab your API keys
 
