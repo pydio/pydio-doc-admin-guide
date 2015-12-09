@@ -1,19 +1,8 @@
 Deploy Pydio in a couple of steps :
 
-1. Download and deploy archive on your server
-2. Run through the diagnostic and fix your server configurations
-3. Run through the installer to be up and running quickly
-4. Use Pydio.
-
-### Deploy archive on your server
-
-Download the latest stable version from [https://pydio.com/en/products/downloads/ Download Page], either as ZIP or TAR.GZ format. Alternatively, you can use our Linux repositories to install Pydio using a package manager on Debian or CentOS Linux flavors.
-
-Using your favorite FTP client or SCP command, upload this package to your webserver, and extract its content to a web-accessible folder (e.g. */var/www/pydio*).
-
-Make sure the *data* path is writeable by the webserver. For example :
-
-> `chown -R www-data:www-data /var/www/pydio/data`
+1. Run through the diagnostic and fix your server configurations
+2. Run through the installer to be up and running quickly
+3. Use Pydio.
 
 ### Run through the diagnostic and fix the necessary errors
 
