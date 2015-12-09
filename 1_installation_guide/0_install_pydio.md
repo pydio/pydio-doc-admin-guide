@@ -25,7 +25,7 @@ Our Enterprise Repositories are password-protected by an API Key / API Secret cr
 
 Install our public key (used to sign the packages) using the following command:
 
- `wget -qO - https://download.pydio.com/pub/linux/debian/key/pubkey | sudo apt-key add -`
+> `wget -qO - https://download.pydio.com/pub/linux/debian/key/pubkey | sudo apt-key add -`
 
 Then edit /etc/apt/sources.list and add the following lines
 
