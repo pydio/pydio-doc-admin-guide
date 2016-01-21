@@ -39,11 +39,11 @@ Install EPEL repositories:
 > `yum -y install epel-release`
 
 Grab the Release RPM's using the following commands:
-> `wget https://download.pydio.com/pub/linux/centos/7/pydio-release-1-1.noarch.rpm`
+> `wget https://download.pydio.com/pub/linux/centos/7/pydio-release-1-1.el7.centos.noarch.rpm`
 
 Install repositories by installing the release RPMs:
 
-> `rpm -i pydio-release-1-1.noarch.rpm`
+> `rpm -i pydio-release-1-1.el7.centos.noarch.rpm`
 
 Update repositories cache `yum update`
 
