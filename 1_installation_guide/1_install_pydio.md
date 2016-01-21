@@ -50,16 +50,16 @@ Install EPEL repositories:
 > `yum -y install epel-release`
 
 Grab the Release RPM's using the following commands:
-> `wget https://download.pydio.com/pub/linux/centos/7/pydio-release-1-1.noarch.rpm`
+> `wget https://download.pydio.com/pub/linux/centos/7/pydio-release-1-1.el7.centos.noarch.rpm`
 
-> `wget https://API_KEY:API_SECRET@download.pydio.com/auth/linux/centos/7/x86_64/pydio-enterprise-release-1-1.noarch.rpm`
+> `wget https://API_KEY:API_SECRET@download.pydio.com/auth/linux/centos/7/x86_64/pydio-enterprise-release-1-1.el7.centos.noarch.rpm`
 where you would replace API_KEY / API_SECRET by the values retrieved in the previous step from your pydio.com account.
 
 Install repositories by installing the release RPMs:
 
-> `rpm -i pydio-release-1-1.noarch.rpm`
+> `rpm -i pydio-release-1-1.el7.centos.noarch.rpm`
 
-> `rpm -i pydio-enterprise-release-1-1.noarch.rpm` The latest will install a new repo /etc/yum.repos.d/pydio-enterprise: **edit this file** and replace API_KEY/API_SECRET with your values.
+> `rpm -i pydio-enterprise-release-1-1.el7.centos.noarch.rpm` The latest will install a new repo /etc/yum.repos.d/pydio-enterprise: **edit this file** and replace API_KEY/API_SECRET with your values.
 
 Update repositories cache `yum update`
 
