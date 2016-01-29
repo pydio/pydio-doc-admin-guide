@@ -29,9 +29,9 @@ Install our public key (used to sign the packages) using the following command:
 
 Then edit /etc/apt/sources.list and add the following lines
 
-> `deb https://download.pydio.com/pub/linux/debian/ jessie main`
+> `deb https://download.pydio.com/pub/linux/debian/ jessie-backports main`
 
-> `deb https://API_KEY:API_SECRET@download.pydio.com/auth/linux/debian/ jessie main non-free`
+> `deb https://API_KEY:API_SECRET@download.pydio.com/auth/linux/debian/ jessie-backports main non-free`
 
 where you would replace API_KEY / API_SECRET by the values retrieved in the previous step from your pydio.com account.
 
