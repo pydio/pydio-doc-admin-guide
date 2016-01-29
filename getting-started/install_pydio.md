@@ -22,7 +22,7 @@ Install our public key (used to sign the packages) using the following command:
 
 Then edit /etc/apt/sources.list and add the following lines
 
-> `deb https://download.pydio.com/pub/linux/debian/ jessie main`
+> `deb https://download.pydio.com/pub/linux/debian/ jessie-backports main`
 
 Install apt-transport-https package:
 
