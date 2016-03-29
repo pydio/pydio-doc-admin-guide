@@ -30,6 +30,6 @@ Caching helps in consistently reducing hefty/slow operations and minimizing syst
 
 Though caching service was introduced in pydio v6.2.X, the ease of configuring it has been greatly enhanced in the later versions. Now one can directly configure the caching options from pydio admin panel.
 
-Along with the PHP Accelerator (PHP APC) pydio provides memcache, memcached, redis, xcache options by default to configure cache server.. The NOSQL keyvalue stores like memcache, memcached and Redis runs a server on a local port to provide the caching service.
-
+Along with the PHP Accelerator (**PHP APC**) pydio provides **memcache**, **memcached**, **redis**, **xcache** options by default to configure cache server.. The **NOSQL keyvalue** stores like memcache, memcached and Redis runs a server on a local port to provide the caching service.
+ 
 [:image-popup:tuning_server_performances/cache_service_configuration_community.png]
