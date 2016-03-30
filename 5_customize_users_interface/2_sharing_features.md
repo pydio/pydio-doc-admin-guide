@@ -22,8 +22,8 @@ Administration
 		Hash user-editable** - Allows end users to choose their own hash for the link
 	* **Maximum file expiration limit** _0 = unlimited_
 	* **Maximum file download limit** _0 = unlimited_
-	* **Set password mandatory** - Requires users to set a password for their public link _(broken)_
-	* **Force External Mailer** _(deprecated)_
+	* **Set password mandatory** - Requires users to set a password for their public link
+	* **Force External Mailer** 
 	* **Create QRCode** _(deprecated)_
 
 ### Private sharing
