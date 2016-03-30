@@ -1,6 +1,3 @@
-Sharing features
-================
-
 With Pydio, it is possible to share your folders and files publicly, privately and from version _6.4_, also remotely.
 
 Administration
@@ -10,37 +7,37 @@ Administration
 
 ### Public sharing
 
-1. Installation
+#####  Installation
 
-	* To enable the ability for users to generate Public Links for their files, simply go to the ‘Sharing features’ screen in the Administration screens, and click on ‘Enable public links for files.
+* To enable the ability for users to generate Public Links for their files, simply go to the ‘Sharing features’ screen in the Administration screens, and click on ‘Enable public links for files.
 
-	* If you want it to work for folders as well - make sure that one of ‘Minisites and Workspaces’ or ‘Minisites’ is chosen.
+* If you want it to work for folders as well - make sure that one of ‘Minisites and Workspaces’ or ‘Minisites’ is chosen.
 
-2. Advanced configuration
+#####  Advanced configuration
 
-	* Link Generation
+* Link Generation
 
-		* **Use Rewrite Rule** - Setting this, the default url will contain no php extension and no query string query arguments.
-		* **Hash Minimum Length** - The minimum length for a file
+	* **Use Rewrite Rule** - Setting this, the default url will contain no php extension and no query string query arguments.
+	* **Hash Minimum Length** - The minimum length for a file
 		Hash user-editable** - Allows end users to choose their own hash for the link
-		* **Maximum file expiration limit** _0 = unlimited_
-		* **Maximum file download limit** _0 = unlimited_
-		* **Set password mandatory** - Requires users to set a password for their public link _(broken)_
-		* **Force External Mailer** _(deprecated)_
-		* **Create QRCode** _(deprecated)_
+	* **Maximum file expiration limit** _0 = unlimited_
+	* **Maximum file download limit** _0 = unlimited_
+	* **Set password mandatory** - Requires users to set a password for their public link _(broken)_
+	* **Force External Mailer** _(deprecated)_
+	* **Create QRCode** _(deprecated)_
 
 ### Private sharing
 	
-1. Installation
-	* This functionality is **enabled** by default.
-	* If you want to enable / disable the functionality for folders - make sure that one of ‘Minisites and Workspaces’ or ‘Workspaces’ is / is not chosen.
+##### Installation
+* This functionality is **enabled** by default.
+* If you want to enable / disable the functionality for folders - make sure that one of ‘Minisites and Workspaces’ or ‘Workspaces’ is / is not chosen.
 
 ### Remote sharing (Pydio Cloud)
 
 [:image-popup:5_customize_users_interface/pydio_cloud_admin_screens.png]
 
-1. Installation
-	* To enable the ability for users to share their files privately with one or more users on a separate system, simply go to the ‘Pydio cloud’ screen in the Administration screens, and click on ‘Enable Federated Sharing’.
+##### Installation
+* To enable the ability for users to share their files privately with one or more users on a separate system, simply go to the ‘Pydio cloud’ screen in the Administration screens, and click on ‘Enable Federated Sharing’.
 
 End-User
 --------
@@ -90,8 +87,7 @@ For people who know their way round the sharing world, a few advanced perks have
 
 ### Items shared with me
 
-[:image-popup:5_customize_users_interface/shared_with_me_home.png]
-[:image-popup:5_customize_users_interface/shared_with_me_left.png]
+[:image-popup:5_customize_users_interface/shared_with_me.png]
 
 If you can share files and folders with others, people can also share files or folders with you (tadaaam !) If you’re wondering where to find those items, just look at the left bar (directly visible on  the home page, or by hovering over the button on the left hand side) under the section _Shared with me_.
 
