@@ -23,6 +23,10 @@ Our Enterprise Repositories are password-protected by an API Key / API Secret cr
 
 ##### Debian 8: install public key and repositories
 
+Install apt-transport-https package:
+
+> `sudo apt-get install apt-transport-https`
+
 Install our public key (used to sign the packages) using the following command:
 
 > `wget -qO - https://download.pydio.com/pub/linux/debian/key/pubkey | sudo apt-key add -`
@@ -34,10 +38,6 @@ Then edit /etc/apt/sources.list and add the following lines
 > `deb https://API_KEY:API_SECRET@download.pydio.com/auth/linux/debian/ jessie-backports main non-free`
 
 where you would replace API_KEY / API_SECRET by the values retrieved in the previous step from your pydio.com account.
-
-Install apt-transport-https package:
-
-> `sudo apt-get install apt-transport-https`
 
 Now update your repositories list by running:
 
