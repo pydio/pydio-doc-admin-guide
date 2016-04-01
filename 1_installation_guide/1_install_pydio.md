@@ -115,12 +115,18 @@ baseurl=https://API_KEY:API_SECRET@download.pydio.com/auth/linux/centos/6/x86_64
 #### 2.3) Install Pydio Enterprise Distribution
 
 Now that the repositories are properly configured, you simply have to install pydio using either:
+> `sudo apt-get update`
+
 > `sudo apt-get install pydio-core` or `apt-get install pydio-all`
+
 > `sudo apt-get install pydio-enterprise`
 
 or
 
+> `yum update`
+
 > `yum install pydio-core` or `yum install pydio-all` 
+
 > `yum install pydio-enterprise`
 
 After that step, you should be able to access pydio through your browser: http://YOUR_IP_ADDRESS/pydio/
