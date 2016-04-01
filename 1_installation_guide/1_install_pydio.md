@@ -74,7 +74,9 @@ Install repositories by installing the release RPMs:
 
 > `rpm -i pydio-release-1-1.el7.centos.noarch.rpm`
 
-> `rpm -i pydio-enterprise-release-1-1.el7.centos.noarch.rpm` The latest will install a new repo /etc/yum.repos.d/pydio-enterprise: **edit this file** and replace API_KEY and API_SECRET with corresponding values from your pydio dashboard.
+> `rpm -i pydio-enterprise-release-1-1.el7.centos.noarch.rpm` 
+
+The latest will install a new repo /etc/yum.repos.d/pydio-enterprise: **edit this file** and replace API_KEY and API_SECRET with corresponding values from your pydio dashboard.
 
 Verify /etc/yum.repo.d/pydio-enterprise.repo file to make sure that you have correct baseurl in this format.
 baseurl=https://API_KEY:API_SECRET@download.pydio.com/auth/linux/centos/7/x86_64
