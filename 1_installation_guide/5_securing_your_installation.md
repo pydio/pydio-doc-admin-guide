@@ -11,7 +11,7 @@ Under the main Pydio installation folder, the following folders contents must be
 
 If you can, do not use the default “files” folder placed inside the distribution, but create a repository pointing to a folder outside your web “document root”.
 
-Read more: https://pyd.io/permission-for-pydios-filesfolders/
+Read more: https://pydio.com/en/docs/kb/security/permission-pydios-filesfolders
 
 ### Basic security rules
 
