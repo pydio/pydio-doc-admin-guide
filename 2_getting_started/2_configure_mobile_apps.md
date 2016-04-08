@@ -1,7 +1,7 @@
 Pydio is available for iOS and android.
 Here are the links to download each application:
 
-[Android application](https://play.google.com/store/apps/details?id=com.pydio.android.Client)
+[Android application](https://play.google.com/store/apps/details?id=com.pydio.android.pydioPro)
 
 [iOS application](https://itunes.apple.com/fr/app/pydio/id709275884?mt=8)
 
