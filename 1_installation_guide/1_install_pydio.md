@@ -2,7 +2,7 @@ There are 2 ways to install Pydio on your server:
 
 ### 1) Install from archive
 
-Download the latest stable version from [Download Page](https://pyd.io/download) either as ZIP or TAR.GZ format. Alternatively, you can use our Linux repositories to install Pydio using a package manager on Debian or CentOS Linux flavors.
+Download the latest stable version from [Download Page](https://pydio.com/en/get-pydio) either as ZIP or TAR.GZ format. Alternatively, you can use our Linux repositories to install Pydio using a package manager on Debian or CentOS Linux flavors.
 
 Using your favorite FTP client or SCP command, upload this package to your webserver, and extract its content to a web-accessible folder (e.g. */var/www/pydio*).
 
@@ -22,6 +22,8 @@ Our Enterprise Repositories are password-protected via API Key and API Secret. T
 #### 2.2) Install Repositories
 
 ##### Debian 7,8 and Ubuntu 14.0.4: install additional packages, public key and repositories
+
+Don't forget to update and upgrade your packages before !!
 
 Install apt-transport-https package:
 
