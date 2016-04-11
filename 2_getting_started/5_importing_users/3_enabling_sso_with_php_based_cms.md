@@ -3,7 +3,7 @@ Pydio provides a set of “CMS Bridges” to allow you to use your existing CMS 
 Supported CMS are currently PHP-based : WordPress, Joomla! and Drupal. There is also a “blank” implementation that should allow you to plug to your own CMS. For the first three, you will have to install a dedicated “plugin” or “module” (depending on the CMS) to make the connexion effective. See the dedicated page Extensions > Bridges for more info about versions supported and download links.
 
 ### Install the dedicated plugin in the CMS
-Download the Pydio-CMS-Bridges package from the dedicated page, and unzip it on your local computer. Locate the correct plugin from the content of the folder
+Download the Pydio-CMS-Bridges package from the [dedicated page](https://pydio.com/en/products/downloads/cms-bridges), and unzip it on your local computer. Locate the correct plugin from the content of the folder
 
 + **WordPress**: all WordPress version
 + **Joomla!**
