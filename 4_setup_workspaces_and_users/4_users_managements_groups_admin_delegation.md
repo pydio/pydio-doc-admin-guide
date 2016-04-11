@@ -1,6 +1,6 @@
 Introduced in V5 groups were a longly awaited feature. The main benefit can been seen at two levels
 
-+ Using the mechanism explained in the previous section, it is now possible (if not “easy”) to totally customize a set of plugins parameters values as well as disable a specific set of actions for a given group of users. For this, you use the “group role” accessible by clicking on the small pencil.
++ Using the mechanism explained in the previous section, it is now possible (if not “easy”) to totally customize a set of plugins parameters values as well as disable a specific set of actions for a given group of users. For this, you use the “group role” accessible by clicking on the small pencil in "Workspaces & Users" > People.
 
 [:image-popup:4_setup_workspaces_and_users/users_managements_delegation_group.png]
 
