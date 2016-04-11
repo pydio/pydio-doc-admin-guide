@@ -39,7 +39,9 @@ These are all you need for LDAP/AD user authentication. At the bottom of the for
 
 ### Mapping LDAP attributes
 
-[:image-popup:2_getting_started/ldap_attributes_mapping.png] Once you’ve setup a basic LDAP/AD connection, your LDAP/AD users can log on to Pydio, and an Pydio user object will be created for them when they log on. Essentially, you’ve mapped Pydio logins to LDAP/AD accounts. Next, you will probably want to retrieve additional information out of the LDAP/AD, such as the user’s email address, user’s display name or full name, etc. This is done by mapping additional LDAP/AD attributes to local parameters of Pydio.
+[:image-popup:2_getting_started/ldap_attributes_mapping.png]
+
+Once you’ve setup a basic LDAP/AD connection, your LDAP/AD users can log on to Pydio, and an Pydio user object will be created for them when they log on. Essentially, you’ve mapped Pydio logins to LDAP/AD accounts. Next, you will probably want to retrieve additional information out of the LDAP/AD, such as the user’s email address, user’s display name or full name, etc. This is done by mapping additional LDAP/AD attributes to local parameters of Pydio.
 
 These mappings are done login time, and the user data is updated only if a change is detected, to impact low in term of performances.
 
@@ -55,7 +57,7 @@ Mapping of attributes works with a set of parameters  that work in triplet : {ld
     - either a simple text value (like MY_PARAMETER), in which case it will add a parameter with this name linked to the “auth.ldap” plugin (see the Roles filtering section),
     - in the form of PLUGIN_ID/MY_PARAMETER, in which case it will link this parameter to the given plugin id.
 
-Een example will probably make this more clear.
+An example will probably make this more clear.
 
 ##### example
 
