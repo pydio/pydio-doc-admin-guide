@@ -6,7 +6,7 @@ One of the core concept of Pydio is the **"Workspace"**. Basically, a workspac
 
 [:image-popup:4_setup_workspaces_and_users/workspaces_introduction.png]
 
-The rights to access a given set of data for one or more users is handled at a workspace level. Thus, once you have created a workspace, you will be able to grant read and/or write access to this workspace to your users. You can assign these access individually, but you can also create â€œRolesâ€, a set of right access, and then assign one or more roles to your users.
+The rights to access a given set of data for one or more users is handled at a workspace level. Thus, once you have created a workspace, you will be able to grant read and/or write access to this workspace to your users. You can assign these access individually, but you can also create Roles, a set of right access, and then assign one or more roles to your users.
 
 In the following chapters, we will go through the major drivers used to define a workspace. But first, let's go through some common parameters you will have to set up, whatever the driver you select.
 
