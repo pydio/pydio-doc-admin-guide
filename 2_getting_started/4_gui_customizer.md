@@ -4,7 +4,7 @@ In this section, we will explain you how to very simply change the GUI of Pydio 
 ---
 First of all, you need to enable the branding tool.
 To do so, please go to the administration dashboard,
-then to Users Features > GUI Options.
+then to Users Features > Appearance.
 
 In the Main Options tab, make sure it's set like that:
 [:image-popup:2_getting_started/gui_configure.png]
@@ -25,7 +25,7 @@ Here is a short guide for the parts of the interface:
 You can change the Pydio images by yours:
 [:image-popup:2_getting_started/gui_images.png]
 
-Note that you also can modify theses images inside the enterprise Dashboard (Users Features > GUI Options).
+Note that you also can modify theses images inside the enterprise Dashboard (Users Features > Appearance).
 
 4. Add buttons to interface:
 ---
@@ -51,7 +51,7 @@ Here are the settings for a button:
 When you have set everything, don't forget to save:
 [:image-popup:2_getting_started/gui_save.png]
 
-Then go to Users Features > GUI Options. Disable the branding tool and load the saved config:
+Then go to Users Features > Appearance. Disable the branding tool and load the saved config:
 [:image-popup:2_getting_started/gui_configure2.png]
 
 When you have done all these steps, you can go back to your workspace and see your changes.
