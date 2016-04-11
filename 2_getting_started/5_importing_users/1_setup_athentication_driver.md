@@ -32,5 +32,3 @@ As you can see when you select the various possible AUTH plugins, some options a
 **Store Password in Session**: this option can be necessary in the case of a “dynamic” authentication to a remote system, for example for mounting a folder using the current user credentials.
 
 **Auto Create User**: Generally, this should be set to true if you are binding Pydio to an external users directory. This is highlighting the separation between the proper authentication data and the configurations data: when a user will log in for the very first time, if he is correctly authenticated by the “Auth” plugin, the whole Pydio counterpart storing his/her preferences, rights, etc, does not exists by default. If this option is set to Yes, and Pydio user object will be created, with the various defaults values applied (default profile and role, default rights from the workspaces, etc…).
-
-[:summary]
