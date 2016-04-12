@@ -1,5 +1,3 @@
-# Most standard case : FS driver #
-
 The most standard driver you can use is actually the File System driver : it has the huge advantage of storing the files directly on the local file system, thus on the other way round, to read any existing data stored in a file system and empower it with Pydio capabilities.
 
 ### Defining the path

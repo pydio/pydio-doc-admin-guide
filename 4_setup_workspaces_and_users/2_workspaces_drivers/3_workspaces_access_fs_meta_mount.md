@@ -1,5 +1,3 @@
-# Access.fs + Meta.mount #
-
 ### The mount command line
 
 > Warning, this is only implemented for \*nix servers!

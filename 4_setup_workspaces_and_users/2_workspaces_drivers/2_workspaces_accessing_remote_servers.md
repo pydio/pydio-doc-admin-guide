@@ -1,5 +1,3 @@
-# Accessing remote servers: ftp, sftp, smb, webdav, dropbox #
-
 Pydio comes bundled with plugins to accessing remote file-system based servers via various protocols:
 
 + **FTP:** use the FTP protocol to access the remote server. You can setup the standard FTP parameters (Port, Active / Passive, etc). Authentication credentials to be identified on the remote server can be passed in various manners (see below).
