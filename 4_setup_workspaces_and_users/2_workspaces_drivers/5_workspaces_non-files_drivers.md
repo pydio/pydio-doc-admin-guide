@@ -34,6 +34,9 @@ First activate the plugin in "All Plugins" > "Available Plugins" > "Workspaces D
 These are internal drivers that you should normally not use, but they also demonstrate Pydio flexibility. Ajxp_conf is the driver used for the "Settings" panel.
 
 ### Access.jsapi
+
+Disclaimer : If you installed Pydio by the linux repository ( apt / yum ), you must install the "pydio-plugin-access.jsapi" package.
+
 Finally, the "Javascript API" driver is an interesting implementation of a client-side only data provider for Pydio. When switching to a workspace based on this driver, the interface will list all defined Classes and Interfaces defined in the Javascript framework: this is done by introspecting the classes, without speaking to the server, except for displaying the source code.
 
 This could be a good inspiration for creating a serverless (or unhosted) version of Pydio that could grab its data from other data source than from the server itself.

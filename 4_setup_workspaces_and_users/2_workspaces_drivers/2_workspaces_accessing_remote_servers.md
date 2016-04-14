@@ -1,5 +1,7 @@
 Pydio comes bundled with plugins to accessing remote file-system based servers via various protocols:
 
+Disclaimer : If you installed Pydio by the linux repository ( apt / yum ), you must install the "pydio-plugin-access.ftp", "pydio-plugin-access.sftp", "pydio-plugin-auth.ftp" packages.
+
 + **FTP:** use the FTP protocol to access the remote server. You can setup the standard FTP parameters (Port, Active / Passive, etc). Authentication credentials to be identified on the remote server can be passed in various manners (see below).
 + **Sftp:** implement FTP over SSH. This is more stable and more performant than FTP, thus recommended if your server can handle it. However, this requires **libssl2** to be installed (**php_ssh2** extension on Windows).
 + **Samba:** Browse files on a server available via the Samba protocol. This requires smbclient to be installed on the server (tested on \*nix & windows). For linux based servers, access.fs + meta.mount solution should be preferred (using CIFS protocol instead of SMB).
