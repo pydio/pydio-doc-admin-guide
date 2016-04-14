@@ -1,16 +1,21 @@
 ### Using Roles in Pydio
+
+Role can be found in "Workspaces & Users" > "People"; you can see in the left of the panel 2 tabs ( Groups and Roles ). When you click on "Roles" 2 new buttons can be found at the bottom of the panel ( + Role and Edit ).
+
+[:image-popup:4_setup_workspaces_and_users/users_managements_group_user_create_role.png]
+
 A role contains the following informations:
 
-+ **Access Control List** (ACL): a list of rights giving or denying an access to each workspace defined in the application. Internally, the right string can be « r » (read), « w » (write ), a combination of these two, or « AJXP_VALUE_CLEAR » as deny (to force clearing a previously set value in another role).
-+ **Parameters Refinement** (Parameters): a tree of plugins parameters values that can be applied to all workspace or only to a given set of workspace.
-+ **Actions Disabled** (Actions): a tree of  disabled plugins actions, that can be as well disabled for all workspace or only a precise list.  Parameters and Actions can in some case be applicable only for a given list of workspace.
++ **Workspaces Accesses** (Access Controls): a list of rights giving or denying an access to each workspace defined in the application. Internally, the right string can be « read », « write », a combination of these two, or « deny » (to force clearing a previously set value in another role).
++ **Per-workspaces parameters** (Customize Parameters): a tree of plugins parameters values that can be applied to a given set of workspace. If you want to edit them for all workspace you must go to **All workspaces parameters**.
++ **Application Parameters** (Customize Parameters): a tree of  disabled plugins actions, that can be as well disabled for all workspace or only a precise list. Parameters and Actions can in some case be applicable only for a given list of workspace.
 
 You can see the various categories to the corresponding tabs of the edition interface in the Settings workspace (see screenshot below).
 
-[:image-popup:4_setup_workspaces_and_users/users_managements_group_user_role.png]
+[:image-popup:4_setup_workspaces_and_users/users_managements_group_user_role_ws.png]
 Figure 1 Role Edition Interface (Whole workspace)
 
-[:image-popup:4_setup_workspaces_and_users/users_managements_group_user_role_folder.png]
+[:image-popup:4_setup_workspaces_and_users/users_managements_group_user_role_sub_ws.png]
 Figure 2 Role Edition Interface (Sub folders)
 
 The power of the « Role » object is that it is a shared concept that is « additive »: a sequence of n roles can be « added » to create a new role, each role n in turn overriding the various parameters of the role n-1.  That way, one can define for example a given plugin parameter value for in role1, then refine this value in Role2, and if a user has these two roles in this order, the latest value will be taken into account.
@@ -18,7 +23,9 @@ The power of the « Role » object is that it is a shared concept that is « add
 ### Groups and users « runtime » role
 Practically, one will probably not want to define X roles and apply them one by one to the users.  But the other power of this object is that **it is shared by Groups and Users** as well. Which means a user automatically will provide its own role (internally name AJXP_USER_/userlogin), and if he belongs to a group, this group will also provide a specific group (named AJXP_GRP_/groupPath/groupName).
 
-You can see that editing a user or a group, you’ll find the same tabs ACL, Actions and Parameters that you would find in the role edition. They correspond to the specific roles created for each object ( a group or a user).
+You can see that editing a user or a group, you’ll find the same tabs "Workspaces Accesses", Actions and Parameters that you would find in the role edition. They correspond to the specific roles created for each object ( a group or a user).
+
+You can add a role in the section of the user editing : "Profile & Roles" > "Manage roles" > "+ ADD ROLE"
 
 [:image-popup:4_setup_workspaces_and_users/users_managements_user_edit_roles.png]
 
