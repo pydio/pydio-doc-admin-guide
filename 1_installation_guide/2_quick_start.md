@@ -42,6 +42,6 @@ Use a DB-based storage, the no-db is still active for backward compatibility but
 - **License Options:**
 There you can input your license name and license signature. If you don't have any of these, you still can start 30 days trial, and enter your license later.
 
-[:image-popup:1_installation_guide/getting_started_license_configuration.png]
+[:image-popup:1_installation_guide/getting_started_license_configuration_enterprise.png]
 
 Once you are ready to go, click on “Install Pydio” and the page should refresh and provide you a login dialog. Use the admin login you just defined to enter. You’re in!
