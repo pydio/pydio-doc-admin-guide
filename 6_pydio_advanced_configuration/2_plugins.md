@@ -1,4 +1,4 @@
-If you are looking for a particular plugin, go directly [to the dedicated section](https://pyd.io/plugins/).
+If you are looking for a particular plugin, go directly [to the dedicated section](https://pydio.com/docs/references/plugins/).
 
 ### Introduction
 Pydio comes fully loaded with various plugins to ease the integration with other systems, help you develop your own specific installation, or even use Pydio as a very generic explorer-like GUI, for browsing any type of data (see access.ajxp_conf and access.mysql for example).
