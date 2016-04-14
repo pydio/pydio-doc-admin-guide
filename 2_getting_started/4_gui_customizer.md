@@ -12,13 +12,13 @@ In the Main Options tab, make sure it's set like that:
 Make sure to save changes, go to any workspace on your Pydio server, then refresh the page.
 
 You should see the branding tool showing up:
-[:image-popup:2_getting_started/gui_start.png]
+[:image-popup:2_getting_started/gui_start_enterprise.png]
 
 2. Change interface's colors:
 ---
 This tool allows you to change every colors on the interface.
 Here is a short guide for the parts of the interface:
-[:image-popup:2_getting_started/gui_colors.png]
+[:image-popup:2_getting_started/gui_colors_enterprise.png]
 
 3. Change interface's images:
 ---
@@ -57,4 +57,4 @@ Then go to Users Features > Appearance. Disable the branding tool and load the s
 When you have done all these steps, you can go back to your workspace and see your changes.
 
 Here is for example a completely custom interface:
-[:image-popup:2_getting_started/gui_result.png]
+[:image-popup:2_getting_started/gui_result_enterprise.png]
