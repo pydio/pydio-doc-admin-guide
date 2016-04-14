@@ -1,15 +1,43 @@
 ### Messages Queues
-Since Pydio 5, an “instant messaging” system was introduced, to avoid permanent reloading of the files list, and a to send SERVER => CLIENTS events triggering various refreshes.
+The latest versions of Pydio come with an "instant messaging" service using WebSockets.
 
-By default, the backend implements this feature by storing events inside “queues” on the server (either in serialized files or in DB, depending on the Message Queuing configuration), and the clients are polling on a regular basis to check if some messages are intended to them. To avoid this permanent polling, and when the client browser supports this, a WebSocket server was introduced to create a permanent, full-duplex connexion, between the browser and the server. This is based on the phpws project, a simple PHP implementation of a websocket server. We may provide more classical implementation in the future, based on Nodejs.
+WebSockets enable the communication between a client and a server in real time, meaning that the client doesn't have to use heavy pull request to reload information it needs. In that context, it is the server that decides when and to which client it needs to send information.
+
+By default, the Pydio backend implements "messaging" by storing events inside “queues” on the server (either in serialized files or in DB, depending on the Message Queuing configuration), and the clients are polling on a regular basis to check if some messages are intended to them. To avoid this permanent polling, we introduced a permanent full-duplex connexion between the browser and the server.
+
+With the "instant messaging", Pydio is rid of the need to reload huge files list repeatedly, along with the authentication process required for each request, making it better, faster, stronger, without losing any bit of data safety.
+
+### How it works
+After logging in, each user seamlessly create a WebSocket that connects to the WebSocket Server through a specific port and a **public** channel. Each time the user enters a Workspace, a message is sent to the WebSocket public server to register and listen to the workspace channel he's browsing  __(through SocketIO for npm WebSocket servers, or the standard WebSocket JS API for php WebSocket servers)__. The user is identified upon connection and the WebSocket server checks the user's rights access to the workspace.
+
+When a specific action occurs on the server (eg: a file is renamed by a user), Pydio triggers an action that sends a message to the WebSocket server through a **private** channel. The server sends along an admin secret key to identify, and only registered hosts can connect.
+
+The WebSocket server then dispatch those messages to the different Workspaces channels that may be concerned.
+
+The user will receive those messages and the browser will adapt the UI in near real time!
 
 ### Running the WebSocket server
-In order to run the server, you will just have to make sure that the PHP CLI is available, and choose an open port on which the server can listen, and that the clients can access. Then, go to the Settings, under Application Parameters > Message Queues, and enter the necessary parameters :
+In the latest version of Pydio (v6.4.2), you have the choice between using the PHP WebSocket Server, or use the NPM Socket.IO server. The use of NPM Socket.IO is recommended on production system with multiple users. 
 
-+ WS Host/WS Port : IP & Port of the server, to which both the websocket server will try to bind its socket, and that Pydio clients will try to connect to. Current implementation may prevent proxying.
-+ WS Path : the Pydio URI
-+ WS Key : a secret key that will be passed to the websocket server at startup, and that will make sure that only this Pydio installation sends messages to this server.
-Before saving, click the button “Switch the WS Server ON”, and wait until the “WS Status” label refreshes. Until it’s not turning to “ON”, your configuration is not correct. Once it’s ok, save this, and hard refresh the client (Ctrl+R or F5). By using Developer Tools network monitoring, you should now detect that there are no more many **_get_action=client_consume_channel_** requests polling, but a connexion opened with the Web Socket server.
+Go to Settings, and under Application Parameters > Message Queues, setup the following information :
+
++ __WebSocket Server Type__ : choose between npm and phpws.
++ __WebSocket public connection host__ : the host where the WebSocket server can be reached from a public (eg Web) client context _(default: localhost)_
++ __WebSocket public connection port__ : the port used on the WebSocket server for a public (eg Web) client context _(default: 8090)_
++ __WebSocket public connection through SSL__ : secure the messages through SSL _(default: No)_
++ __WebSocket public handler path__ : the path used on the WebSocket server for a public (eg Web) client context _(default /public)_
++ __WebSocket private connection host__ : the host where the WebSocket server can be reached from a private (eg Pydio server) context (default: localhost)
++ __WebSocket private connection port__ : the port used on the WebSocket server for a private (eg Pydio server) context _(default: 8090)_
++ __WebSocket private handler path__ : the path used on the WebSocket server for a private (eg Pydio server) context _(default /private)_
++ __WebSocket private key__ : the key used to authentify messages from a Pydio server to a WebSocket server
++ __WebSocket private authorized host__ : the list of authorized servers that can send messages to the private channel _(default: localhost, 127.0.0.1)_
+
+After changing the parameters, press Save (to right) for the changes to apply.
+
+For the PHP WebSocket Server, you can start/stop the WebSocket server in the Administration Screens by pressing the buttons "Switch the WS Server ON"/"Switch the WS Server OFF". The current status of the server is displayed underneath the buttons.
+
+For the NPM WebSocket Server, you need to manually start the server by entering the command displayed at the top of the section underneath the WebSocket Server Type.
+
 
 BEFORE :
 
