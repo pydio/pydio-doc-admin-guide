@@ -1,6 +1,8 @@
 ### Introduction
 Files versioning allows you to keep track of file changes.
 
+Disclaimer : If you installed Pydio by the linux repository ( apt / yum ), you must install the "pydio-plugin-meta.git" package.
+
 The current implementation is based on Git for the sake of simplicity, and it has some drawbacks :
 
 + Only works for FS-based workspaces
