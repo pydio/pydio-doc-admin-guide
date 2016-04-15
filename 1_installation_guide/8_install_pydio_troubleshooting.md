@@ -1,35 +1,39 @@
-Here are some common mistake when you try to install Pydio.
+Here are some common mistakes you might encounter when you try to install Pydio and a way to fix them.
 
-All exemples are with the latest [Pydio-enterprise 6.4.1](https://pydio.com/en/community/releases/enterprise-distribution/pydio-enterprise-641-bugfix-release) with the recommend stack ( Linux - Apache2 - MySQL ).
+All examples are with the latest [Pydio-enterprise 6.4.1](https://pydio.com/en/community/releases/enterprise-distribution/pydio-enterprise-641-bugfix-release) with the recommend stack ( Debian - Apache2 - MySQL ).
 
 ##Permission issue:
 
-After you put your pydio in your /var/www folder you go to your web browser and you see this:
+After you put your pydio in your /var/www folder you go to your web browser and you will probably see this:
 
 [:image-popup:1_installation_guide/troubleshooting_forgotten.png]
 
-Well, maybe you forgot to grant access to your Pydio for your webserver. Go to your pydio path folder ( /var/www/ ) and type:
+Pydio need to have some access right or/and read and write files. Go to your pydio path folder ( /var/www/ ) and run:
 `sudo chown -r www-data:www-data /var/www/pydio/data`
 
-##Diagnotic tool issue:
+##Diagnostic tool issue:
 
-After refreshing, you should see the Pydio Diagnostic Tool:
+After refreshing your web browser, you should can see this Pydio Diagnostic Tool:
 
 [:image-popup:1_installation_guide/troubleshooting_diagnostic_tool.png]
+
+Instead of:
+
+[:image-popup:1_installation_guide/troubleshooting_diagnostic_tool_good.png]
 
 ###Security breach issue:
 
 So, we have several problems here; first, the "Security Breach" problem is when your data folder is not correctly protected by your apache server. Go to your apache2 folder and edit the "apache2.conf" ( /etc/apache2/apache2.conf ).
 
-Your conf should be edited from that:
+You need to edit your conf because from now, your apache2 server ignore all .htaccess files which are in /var/www :
 
 [:image-popup:1_installation_guide/troubleshooting_apache_conf_before.png]
 
-To that conf:
+So you need to accept all .htaccess files which are in this directory :
 
 [:image-popup:1_installation_guide/troubleshooting_apache_conf_after.png]
 
-After that you can restart your apache:
+After that you can restart your apache2:
 `sudo service apache2 restart`
 
 And the "Security Breach" error is gone!
