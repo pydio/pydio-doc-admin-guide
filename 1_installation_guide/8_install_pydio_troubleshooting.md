@@ -2,6 +2,8 @@ Here are some common mistake when you try to install Pydio.
 
 All Exemple are with the latest [Pydio-enterprise 6.4.1](https://pydio.com/en/community/releases/enterprise-distribution/pydio-enterprise-641-bugfix-release) with the recommend OS-server-sql ( Linux-Apache2 - MySQL ).
 
+##Permission issue:
+
 After you put your pydio in your /var/www folder you go to your web browser and you see this:
 
 [:image-popup:1_installation_guide/troubleshooting_forgotten.png]
@@ -9,9 +11,13 @@ After you put your pydio in your /var/www folder you go to your web browser and 
 Well, maybe you forgot to grant access to your Pydio for your webserver. Go to your pydio path folder ( /var/www/ ) and type:
 `sudo chown -r www-data:www-data /var/www/pydio/data`
 
+##Diagnotic tool issue:
+
 After refreshing, you should see the Pydio Diagnostic Tool:
 
 [:image-popup:1_installation_guide/troubleshooting_diagnostic_tool.png]
+
+###Security breach issue:
 
 So, we have several problems here; first, the "Security Breach" problem is when your data folder is not correctly protected by your apache server. Go to your apache2 folder and edit the "apache2.conf" ( /etc/apache2/apache2.conf ).
 
@@ -27,6 +33,8 @@ After that you can restart your apache:
 `sudo service apache2 restart`
 
 And the "Security Breach" error is gone !!
+
+##IoncubeLoader issue:
 
 The second and one the most important extension for Pydio-enterprise is "IonCube Extension"; First you need to know if your system it's a 32Bits or 64Bits :
 `uname -a`
@@ -62,10 +70,14 @@ Now you need to configure your PHP for Ioncube, you just add this part at first 
  
 [:image-popup:1_installation_guide/troubleshooting_php_ioncube.png]
 
+###Output buffering issue:
+
 After that you can resolve the last warning, the output buffering, all you need to do it's to edit all of your php.ini:
 `output_buffering = Off`
 
 After that you just need to restart apache and the "Pydio Diagnostic Tool".
+
+##MySQL extension issue:
 
 If you see this error when you test your SQL connexion:
 
@@ -76,6 +88,8 @@ You must install some packages:
 `sudo service apache2 restart`
 
 Restart and your gone !!
+
+##Rewrite ( refresh ) issue:
 
 Another problem is when you refresh your browser you have an issue like this:
 
