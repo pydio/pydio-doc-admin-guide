@@ -1,6 +1,6 @@
 Here are some common mistake when you try to install Pydio.
 
-All Exemple are with the latest [Pydio-enterprise 6.4.1](https://pydio.com/en/community/releases/enterprise-distribution/pydio-enterprise-641-bugfix-release) with the recommend OS-server-sql ( Linux-Apache2 - MySQL ).
+All exemples are with the latest [Pydio-enterprise 6.4.1](https://pydio.com/en/community/releases/enterprise-distribution/pydio-enterprise-641-bugfix-release) with the recommend stack ( Linux - Apache2 - MySQL ).
 
 ##Permission issue:
 
@@ -32,7 +32,7 @@ To that conf:
 After that you can restart your apache:
 `sudo service apache2 restart`
 
-And the "Security Breach" error is gone !!
+And the "Security Breach" error is gone!
 
 ##IoncubeLoader issue:
 
@@ -87,7 +87,7 @@ You must install some packages:
 `sudo apt-get install php5-mysql`
 `sudo service apache2 restart`
 
-Restart and your gone !!
+Restart apache2 and your gone !!
 
 ##Rewrite ( refresh ) issue:
 
@@ -95,6 +95,7 @@ Another problem is when you refresh your browser you have an issue like this:
 
 [:image-popup:1_installation_guide/troubleshooting_not_found.png]
 
+If you want to use Pydio features such as Public shares, APIs (sync), WebDav... You must enable rewrite rules.
 Maybe you forgot to enable the rewrite mod in apache2:
 `sudo a2enmod rewrite`
 `sudo service apache2 restart`
