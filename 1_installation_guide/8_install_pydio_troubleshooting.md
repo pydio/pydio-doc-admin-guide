@@ -8,7 +8,7 @@ After you put your pydio in your /var/www folder you go to your web browser and 
 
 [:image-popup:1_installation_guide/troubleshooting_forgotten.png]
 
-Pydio need to have some access right or/and read and write files. Go to your pydio path folder ( /var/www/ ) and run:
+Pydio need to have some access right to read and/or write files. Just run:
 `sudo chown -r www-data:www-data /var/www/pydio/data`
 
 ##Diagnostic tool issue:
@@ -91,7 +91,7 @@ You must install some packages:
 `sudo apt-get install php5-mysql`
 `sudo service apache2 restart`
 
-Restart apache2 and your gone !!
+You can now test if your database connexion is good.
 
 ##Rewrite ( refresh ) issue:
 
