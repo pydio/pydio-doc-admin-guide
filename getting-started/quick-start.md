@@ -8,7 +8,7 @@ Deploy Pydio in a couple of steps :
 
 At very first run, a diagnostic tool will check a couple of features and configurations of your server, and will report errors or warning as it find them, along with suggestions for fixing the issues.
 
-[:image-popup:quick_start/00-DIAGNOSTIC.png]
+[:image-popup:quick_start/00-diagnostic.png]
 
 While **“Warnings”** can be generally ignored without preventing the application from running, you should still try to fix them if you can, as you will surely encounter problems at one point or another.
 
@@ -47,6 +47,6 @@ See the How-To’s for an exhaustive list of tests and solutions.
 Once you are ready to go, click on “Install Pydio Now” and the page should refresh and provide you a login dialog.
 After the installation is complete, you should have a page like this :
 
-[:image-popup:quick_start/04-FINISH.png]
+[:image-popup:quick_start/04-finish.png]
 
 Use the admin login you just defined to enter. You’re in!
