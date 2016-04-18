@@ -39,4 +39,4 @@ Sometimes if your users always upload huge files, or you just can’t raise at a
 
 To install Jumploader, please follow the plugin instruction : you will first have to actually DOWNLOAD jumploader from the developers website. Same for PLUpload plugin : first download the sources from the developers website.
 
-[:image-popup:activate_editors_and_alternative_uploaders/16-UPLOADERS.png]
+[:image-popup:activate_editors_and_alternative_uploaders/16-uploaders.png]
