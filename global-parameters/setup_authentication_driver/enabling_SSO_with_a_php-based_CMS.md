@@ -33,4 +33,4 @@ The Authentication must work in two ways : when successfully logging in from the
 + **Secret Key**: the same key as defined in the the corresponding module.
 Remote Authentication Parameters
 
-[:image-popup:enabling_SSO_with_a_php-based_CMS/screenshot-2013-05-13-at-11-45-57.png]
+[:image-popup:enabling_SSO_with_a_php-based_CMS/drupal.png]
