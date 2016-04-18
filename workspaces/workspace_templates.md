@@ -29,4 +29,4 @@ Under the “Template Options” section, you will find some template specific p
 ### Letting users create their own workspaces
 If you check the “Let users create workspaces” value in the Configurations Management panel, and if you define some templates with the parameter “Allow users” set to true, the users will have an additionnal action at the bottom of their Workspaces list, telling “Create workspace…”. In there , they will be able to select a predefined template, enter the last parameters still not set, and create the workspace. It will be “personal”, only them will be able to access this workspace.
 
-[:image-popup:workspace_templates/12-B-CREATE-WORKSPACE.png]
+[:image-popup:workspace_templates/12-template-workspace.png]
