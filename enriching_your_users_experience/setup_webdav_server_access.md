@@ -52,7 +52,7 @@ In some cases, the user will have to create a dedicated password for webdav auth
 
 In both case, the WebDAV activation (and password configuration) is under the user menu, in WebDAV preferences.
 
-[:image-popup:setup_webdav_server_access/15-WEBDAV-USER-PREF.png]
+[:image-popup:setup_webdav_server_access/15-webdav-user-pref.png]
 
  
 
