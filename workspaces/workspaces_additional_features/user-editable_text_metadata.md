@@ -18,6 +18,12 @@ Some special keywords can be used to name metadata fields, that will behave spec
 + **css_label** : the field turns into a labeling system that will apply a given css class to either the table row when in list mode, or the thumbnail cell when in thumb mode. The css classes are defined in plugins/meta.serial/css and by default they define 5 levels of priority with associated background colors. Use png transparent images as background colors, that way the user can still notice when a row is selected or not.
 + **area_XXX** : Prepending “area_” to a field name will create a textarea field.
 
+[:image-popup:user-editable_text_metadata/meta_data_1.png]
+
+[:image-popup:user-editable_text_metadata/meta_data_2.png]
+
+[:image-popup:user-editable_text_metadata/meta_data_3.png]
+
 For example, here is below a correspondance between a set of configuration and the result for the end user :
 
-[:image-popup:user-editable_text_metadata/09-POSSIBLE-METADATA-FIELDS.png]
+[:image-popup:user-editable_text_metadata/meta_data_final.png]
