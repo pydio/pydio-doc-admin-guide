@@ -1,4 +1,4 @@
-There is 2 ways to install Pydio on your server:
+There are 2 ways to install Pydio on your server:
 
 ### 1/ Install from archive
 
@@ -10,7 +10,7 @@ Make sure the *data* path is writeable by the web server. For example :
 
 > `chown -R www-data:www-data /var/www/pydio/data`
 
-### 2/ Install from RPM / DEB
+### 2/ Install from RPM / DEB Package Manager
 
 #### 2.1/ Install Repositories
 
