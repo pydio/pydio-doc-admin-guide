@@ -14,7 +14,7 @@ Then depending on their type, plugins configurations will be found either under 
 ###Core configs
 Go to Global Configurations > Core Configs. Here you will find the most important categories of options of Pydio, you can double-click on each category to see the available options.
 
-[:image-popup:pydio_main_options/03-SETTINGS-CORE-CONFIG.png]
+[:image-popup:pydio_main_options/03-setting-core-config.png]
 
  
 
