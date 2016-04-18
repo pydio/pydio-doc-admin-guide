@@ -18,7 +18,9 @@ Open the Global Configurations > Core Configs > Authentication panel, and scroll
 
 This first set of the parameters define how the connexion is done, which username to use as directory administrator to bind, and filters to perform the search query that searches and authenticates  your users.
 
-[:image-popup:binding_to_an_LDAPAD_server/screenshot-2013-05-08-at-21-20-54.png]
+[:image-popup:binding_to_an_LDAPAD_server/ldap_ad_1.png]
+
+[:image-popup:binding_to_an_LDAPAD_server/ldap_ad_2.png]
 
 ##### Description of the parameters :
 
@@ -39,7 +41,9 @@ These are all you need for LDAP/AD user authentication. At the bottom of the for
 
 ### Mapping LDAP attributes
 
-[:image-popup:binding_to_an_LDAPAD_server/screenshot-2013-05-08-at-21-30-26.png] Once you’ve setup a basic LDAP/AD connection, your LDAP/AD users can log on to Pydio, and an Pydio user object will be created for them when they log on. Essentially, you’ve mapped Pydio logins to LDAP/AD accounts. Next, you wil probably want to retrieve additional information out of the LDAP/AD, such as the user’s email address, user’s display name or full name, etc. This is done by mapping additional LDAP/AD attributes to local parameters of Pydio.
+[:image-popup:binding_to_an_LDAPAD_server/ldap_ad_3.png]
+
+Once you’ve setup a basic LDAP/AD connection, your LDAP/AD users can log on to Pydio, and an Pydio user object will be created for them when they log on. Essentially, you’ve mapped Pydio logins to LDAP/AD accounts. Next, you wil probably want to retrieve additional information out of the LDAP/AD, such as the user’s email address, user’s display name or full name, etc. This is done by mapping additional LDAP/AD attributes to local parameters of Pydio.
 
 These mappings are done login time, and the user data is updated only if a change is detected, to impact low in term of performances.
 
@@ -69,9 +73,9 @@ So, you can map the LDAP “email” attribute or AD “Mail” attribute to the
 
 ##### Using LDAP/AD Groups
 
-When you’re using an LDAP directory that supports the « memberOf » attribute (i.e. you have Microsoft Active Directory, or an LDAP server with the « memberOf » overlay set up), you can use the attribute mapping mechanism to integrate your Active Directory groups in Pydio. This is explained in more detail in the How-To section : [Groups and Roles with LDAP/AD integration](https://pyd.io/groups-and-roles-with-ldapad-integration-draft/)
+When you’re using an LDAP directory that supports the « memberOf » attribute (i.e. you have Microsoft Active Directory, or an LDAP server with the « memberOf » overlay set up), you can use the attribute mapping mechanism to integrate your Active Directory groups in Pydio. This is explained in more detail in the How-To section : [Groups and Roles with LDAP/AD integration](https://pydio.com/en/docs/kb/authentication/groups-and-roles-ldapad-integration-v600)
 
-You will also need a good understanding of Pydio’s Groups and Roles to make good use of this featurel.
+You will also need a good understanding of Pydio’s Groups and Roles to make good use of this feature.
 
  
 
