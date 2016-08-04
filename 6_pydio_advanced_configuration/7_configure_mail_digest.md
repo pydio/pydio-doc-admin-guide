@@ -15,57 +15,43 @@ I take the easiest exemple by using the smtp of Gmail with PHPMailer
 
 [:image-popup:6_pydio_advanced_configuration/config_mail_digest_1.png]
 
-Mailer Plugin :
-  + I choose "PHPMailer" because I use the smtp ( who's disabled in "PHPMailer-lite")   
++ Mailer Plugin : I choose "PHPMailer" because I use the smtp ( who's disabled in "PHPMailer-lite")   
 
-Mailer :
-  + The mail software, "smtp" is selected in this exemple   
++ Mailer : The mail software, "smtp" is selected in this exemple   
 
 When you choose "smtp" as mail software, several fields are added :   
 
-Host :
-  + The host of the smtp, for gmail it's "smtp.gmail.com"   
++ Host : The host of the smtp, for gmail it's "smtp.gmail.com"   
 
-Port :
-  + The port number of the Host, gmail use the port 587   
++ Port : The port number of the Host, gmail use the port 587   
 
-SMTP Authentification :
-  + If you need to add your login / password to use the smtp, select "YES"   
++ SMTP Authentification : If you need to add your login / password to use the smtp, select "YES"   
 
-Username :
-  + In many case, it's your email   
++ Username : In many case, it's your email   
 
-Password :
-  + The password of your email   
++ Password : The password of your email   
 
 You also need to configure the sender when Pydio send a mail.
 
 [:image-popup:6_pydio_advanced_configuration/config_mail_digest_2.png]
 
-Sender Mail :
-  + The mail of the sender ( generaly the same as your email )   
++ Sender Mail : The mail of the sender ( generaly the same as your email )   
 
-Sender Name :
-  + The name of the sender ( can be your real name or a bot name such as "Pydio-bot" )   
++ Sender Name : The name of the sender ( can be your real name or a bot name such as "Pydio-bot" )   
 
-Unique Sender :
-  + You can force Pydio to use only the "Sender Mail" to avoid any problem   
++ Unique Sender : You can force Pydio to use only the "Sender Mail" to avoid any problem   
 
 It's optionnal but you can also configure the content of the mail
 
 [:image-popup:6_pydio_advanced_configuration/config_mail_digest_3.png]
 
-Subject Prepend :
-  + Before the subject of Pydio, you can add a prefix so the mail can be more visible   
+Subject Prepend : Before the subject of Pydio, you can add a prefix so the mail can be more visible   
 
-Subject Append :
-  + After the subject of Pydio, you can add a sufix   
++ Subject Append : After the subject of Pydio, you can add a sufix   
 
-Body Layout :
-  + The body of the mail send by Pydio, you can add HTML to chenge the template ( DO NOT DELETE AJXP_MAIL_BODY )   
++ Body Layout : The body of the mail send by Pydio, you can add HTML to chenge the template ( DO NOT DELETE AJXP_MAIL_BODY )   
 
-Layout Folder :
-  + The folder where are the layout   
++ Layout Folder : The folder where are the layout   
 
 ##Configure the diget in My Profile
 
@@ -91,22 +77,17 @@ Now we can create a CRON when you click to the "Scheduler" icon and to "NEW TASK
 
 [:image-popup:6_pydio_advanced_configuration/config_mail_digest_7.png]
 
-Label :
-  + The name of the task ( usefull when you have many CRON to find the good one easily)   
++ Label : The name of the task ( usefull when you have many CRON to find the good one easily)   
 
-Schedule :
-  + The CRONTAB expression, maybe the hardest part to fill. The format is Minutes Hours Day Week Month. If you don't know how to do it, you can go at the end of the doc to see some exmples   
++ Schedule : The CRONTAB expression, maybe the hardest part to fill. The format is Minutes Hours Day Week Month. If you don't know how to do it, you can go at the end of the doc to see some exmples   
 
-User(s):
-  + The user who gonna do the action, can be a list of users ( separated with comma or with wildcards + )   
++ User(s): The user who gonna do the action, can be a list of users ( separated with comma or with )   
 
-Repository ID:
-  + The id of the workspaces, in our case we can choose "All Repositories"   
++ Repository ID: The id of the workspaces, in our case we can choose "All Repositories"   
 
 Now we need to choose the action and his parameters by clicking to "Parameters" tab
 
-Action :
-  + Obviously, it's the action who the CRON gonna do, they are sorted by the plugin so you need to go to "core.mailr" and to "consume_mail_queue"   
++ Action : Obviously, it's the action who the CRON gonna do, they are sorted by the plugin so you need to go to "core.mailr" and to "consume_mail_queue"   
 
 Param Name and Param Value can be empty for this action.   
 Click to "OK" to validate the CRON.
