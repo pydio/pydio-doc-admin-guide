@@ -63,7 +63,7 @@ Don't forget to save before leaving the page
 
 ##Enable and configure the CRON
 
-We configure the digest mail but the action who send the grouped email, `consume_mail_queue`, need to be called to work. That's why we gonna create a scheduler or CRONTAB in our Pydio. The scheduler gonna call the action with some frequency we get chosen. But first, we need to enable the scheduler. 
+We configure the digest mail but the action who send the grouped email, **consume_mail_queue**, need to be called to work. That's why we gonna create a scheduler or CRONTAB in our Pydio. The scheduler gonna call the action with some frequency we get chosen. But first, we need to enable the scheduler. 
 
 We need to go to "Setting" page and at the bottom left "Available Plugins" > "Action Plugins" > "Tasks Scheduler"
 
