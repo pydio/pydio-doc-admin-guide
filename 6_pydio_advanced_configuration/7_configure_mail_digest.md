@@ -49,7 +49,7 @@ Subject Prepend : Before the subject of Pydio, you can add a prefix so the mail 
 
 + Subject Append : After the subject of Pydio, you can add a sufix   
 
-+ Body Layout : The body of the mail send by Pydio, you can add HTML to chenge the template ( DO NOT DELETE AJXP_MAIL_BODY )   
++ Body Layout : The body of the mail send by Pydio, you can add HTML to change the template ( DO NOT DELETE AJXP_MAIL_BODY )   
 
 + Layout Folder : The folder where are the layout   
 
@@ -63,7 +63,7 @@ Don't forget to save before leaving the page
 
 ##Enable and configure the CRON
 
-We need to go to "Setting" page and at the bottom left "Available Plugins" -> "Action Plugins" -> "Tasks Scheduler"
+We need to go to "Setting" page and at the bottom left "Available Plugins" > "Action Plugins" > "Tasks Scheduler"
 
 [:image-popup:6_pydio_advanced_configuration/config_mail_digest_5.png]
 
@@ -81,7 +81,7 @@ Now we can create a CRON when you click to the "Scheduler" icon and to "NEW TASK
 
 + Schedule : The CRONTAB expression, maybe the hardest part to fill. The format is Minutes Hours Day Week Month. If you don't know how to do it, you can go at the end of the doc to see some exmples   
 
-+ User(s): The user who gonna do the action, can be a list of users ( separated with comma or with )   
++ User(s): The user who gonna do the action, can be a list of users ( separated with comma or with * )   
 
 + Repository ID: The id of the workspaces, in our case we can choose "All Repositories"   
 
@@ -98,20 +98,22 @@ You can click to the play button on the right of every CRON to start them.
 
 You CRON for the mail digest is now complete.
 
+If you get some notification, you gonna get an email like this :
+
+[:image-popup:6_pydio_advanced_configuration/config_mail_digest_9.png]
+
+We can see here that the layout was successfully edited.
+
 ##CRON expression
 
 Here are some exemple of CRON expression :
 
-` */5 * * * *` :
-  * Every 5 minutes   
++ ` */5 * * * *` : Every 5 minutes   
 
-`30 14 * *` :
-  * At 14:30 every day   
++ `30 14 * *` : At 14:30 every day   
 
-`00 12 * 3` :
-  * At 12:00 every Wednesday   
++ `00 12 * 3` : At 12:00 every Wednesday   
 
-`25 12 12 4 *` :
-  * At 12:25 on the 12th in April   
++ `25 12 12 4 *` : At 12:25 on the 12th in April   
 
 Or you can use [this tool](http://crontab.guru/)
