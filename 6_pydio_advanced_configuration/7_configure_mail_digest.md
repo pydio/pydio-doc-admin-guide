@@ -1,6 +1,6 @@
-Since [Pydio 6.4.0](https://pydio.com/fr/node/1279), we add the "Mail digest" feature to avoid receiving tons of emails when watching for a file or folder modification.
+Since [Pydio 6.4.0](https://pydio.com/fr/node/1279), we added the "Mail digest" feature to avoid receiving tons of emails when watching for a file or folder modification.
 
-This page is here to help you to configure the sending mail group.
+This page is here to help you configure the mail digest and the mail sender. The mail sender is required to send digest emails.
 
 ##Enable the feature
 
@@ -63,7 +63,7 @@ Don't forget to save before leaving the page
 
 ##Enable and configure the CRON
 
-We configure the digest mail but the action who send the grouped email, **consume_mail_queue**, need to be called to work. That's why we gonna create a scheduler or CRONTAB in our Pydio. The scheduler gonna call the action with some frequency we get chosen. But first, we need to enable the scheduler. 
+We configured the digest mail, but we need to activate an action to send the mail. The action who send the grouped email, **consume_mail_queue**, need to be called to work. That's why we gonna create a scheduler or CRONTAB in our Pydio. The scheduler gonna call the action with some frequency we get chosen. But first, we need to enable the scheduler. 
 
 We need to go to "Setting" page and at the bottom left "Available Plugins" > "Action Plugins" > "Tasks Scheduler"
 
@@ -116,6 +116,6 @@ Here are some exemple of CRON expression :
 
 + `00 12 * 3` : At 12:00 every Wednesday   
 
-+ `25 12 12 4 *` : At 12:25 on the 12th in April   
++ `25 12 12 4 *` : At 12:25 on the 12th in April every year   
 
 Or you can use [this tool](http://crontab.guru/)
