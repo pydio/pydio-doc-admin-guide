@@ -1,7 +1,7 @@
 In this section, we will explain you how to very simply change the GUI of Pydio with the Orbit theme.
 
-1. Run the branding tool:
----
+## Run the branding tool:
+
 First of all, you need to enable the branding tool.
 To do so, please go to the administration dashboard,
 then to Users Features > Appearance.
@@ -14,21 +14,21 @@ Make sure to save changes, go to any workspace on your Pydio server, then refres
 You should see the branding tool showing up:
 [:image-popup:2_getting_started/gui_start_enterprise.png]
 
-2. Change interface's colors:
----
+## Change interface's colors:
+
 This tool allows you to change every colors on the interface.
 Here is a short guide for the parts of the interface:
 [:image-popup:2_getting_started/gui_colors_enterprise.png]
 
-3. Change interface's images:
----
+## Change interface's images:
+
 You can change the Pydio images by yours:
 [:image-popup:2_getting_started/gui_images.png]
 
 Note that you also can modify theses images inside the enterprise Dashboard (Users Features > Appearance).
 
-4. Add buttons to interface:
----
+## Add buttons to interface:
+
 You can add buttons in a selected menu in your interface:
 [:image-popup:2_getting_started/gui_buttons.png]
 
@@ -46,8 +46,8 @@ Here are the settings for a button:
   - Write your own javascript code been called by clicking on the button
 
 
-5. Save settings:
----
+## Save settings:
+
 When you have set everything, don't forget to save:
 [:image-popup:2_getting_started/gui_save.png]
 
