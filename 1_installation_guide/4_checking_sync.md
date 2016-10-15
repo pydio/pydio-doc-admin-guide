@@ -65,9 +65,8 @@ Where
 You should receive a json listing all changes since creation of workspace.
 
 
-
+```
     REQUEST: https://yourserver.tld/pydio/api/workspace-slug/changes/0
-    ---
     ANSWER:{"changes":[
       {
       "seq":3504,"node_id":2364,"type":"create","source":"NULL","target":"\/logo.png",
@@ -99,7 +98,7 @@ You should receive a json listing all changes since creation of workspace.
             {"bytesize":null,"md5":null,"mtime":null,"node_path":null,"repository_identifier":"1-administrator"}},
       {
       "seq":110548,"node_id":3330,"type":"delete","source":"\/Public Minisite\/Test Folder\/CamReview.png","
-      ..............
+```
 
 ### Putting things together: testing script
 To help you in that task, we’ve setup a script that will try to use the API to create a file inside a workspace, and check if it can find back the “change” afterward. For that, uncomment the die() line of the /runTests.php file and call the following url in your browser : https://yourserver.tld/runTests.php?api=true.
