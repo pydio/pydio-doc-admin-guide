@@ -1,0 +1,1 @@
+Pydio Booster is a unique tool developed to easily boost your installation performance. 
