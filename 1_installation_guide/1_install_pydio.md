@@ -2,3 +2,5 @@ You can easily install Pydio on your server either by downloading and extracting
 
 [:summary]
 
+If you are upgrading an already deployed Pydio installation, see Upgrading From Previous Version chapter.
+
