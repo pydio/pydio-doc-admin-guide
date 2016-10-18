@@ -1,45 +1,26 @@
-Since version 3.2.3, Pydio now comes bundled with a fully function webDAV server, thus allowing to access to the workspace via this http-based method, through a very wide variety of clients : windows “web folders”, linux or mac network drives, etc. You can setup a webDAV server directly using Apache, but the great advantage of using Pydio embedded server is that Pydio rights will be applied via webdav : a user will have access only to the workspace he is allowed to read or write.
+Pydio comes with a bundled webDAV **server** which allows you to expose your files to a variety of clients applications for easy access. All you need to do is to "Allow webDAV Access" through Pydio's web interface.
 
 **_Note : Please beware that this document intends to setup Pydio as a webdav SERVER, not a client. If what you are looking for is accessing a set of documents stored on a remote webDAV server with Pydio, see the [access.webdav](https://pydio.com/en/docs/references/plugins/access/webdav) plugin._**
 
 ### WebDAV feature requirements & activation
-This feature is based on a PHP implementation of the webDAV protocol (using ezComponent library in versions lower than 5, and SabreDAV in version 5 and greater), thus there is no need to activate webDAV in the server itself (apache, iis, etc). The first requirement is the PHP library **mcrypt** (to store the passwords in a secure way), but it’s a more generic requirement of Pydio already. Second requirement is that your server must support some kind of **Rewriting rules**, namely the RewriteEngine for Apache (any input of implementing the same on IIS are welcome!). Finally, the introduction of SabreDAV also added a requirement to **PHP5.3** and greater versions.
+If you managed to properly configure the Pydio rewrite rule everything should work smoothly.
 
 #### _WebDAV URLs in Pydio_
 
-A manual configuration is very probably necessary for activating the webDAV access point : edition of the root .htaccess of Pydio. This one is described for Apache, equivalent values will have to be set for other servers (any contributions welcome on this!!).
-
-To understand the configurations, lets explain how this will work : your Pydio is installed on a server **_http[s]://yourdomain.com_**, inside the folder **_files_** for example. Normal web access is then http://yourdomain/files/. What we’ll do is create a “virtual” folder that will be the root of all DAV urls. By default, this is called “shares”, but you can change it. On this basis, any workspace will be accessible (by an accredited user of course) at the following url : **http://yourdomain.com/files/shares/workspace_id or
-http://yourdomain.com/files/shares/workspace_alias**. (“Alias” is a workspace property also introduced in version 3.2.3, to avoid handling the 32 characters workspace ids).
+To understand the configurations, lets explain how this will work : your Pydio is installed on a server **_http[s]://yourdomain.com_**, inside the folder **_files_** for example. Normal web access is then http://yourdomain/files/. What we’ll do is create a “virtual” folder that will be the root of all DAV urls. By default, this is called “shares”, but you can change it. On this basis, any workspace will be accessible (by an accredited user of course) at the following url : **http://yourdomain.com/files/shares/workspace_id or http://yourdomain.com/files/shares/workspace_alias**.
 
 Since version 5, the base url **http://yourdomain.com/files/shares/** will also be accessible, displaying all the logged user workspaces like folders. Thus it is generally the unique URL you have to provide to your users.
 
-#### _The .htaccess file (or equivalent)_
-
-The virtual folder will in fact be handled by the .htaccess file. Its role is to redirect all queries to this folder to the root script dav.php. Thus the .htaccess file contains the following directives :
-
-    <IfModule mod_rewrite.c>
-    RewriteEngine on
-    RewriteBase /files
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^shares ./dav.php [L]
-    </IfModule>
-
-
-As you already have understood, the two bolded words are the ones that you have to customize for your distribution : **/files** = the root of your installation, **shares** = the virtual folder name you want to use.
-
 #### _Pydio configuration_
 
-The WebDAV configurations are configurable directly via the GUI (for v4 and later). You’ll find them in the Settings section, under Application Parameters > Application Core, there is a “WebDAV Server” header.
+The WebDAV configurations can be changed through the web user interface. You’ll find them in the Settings section, under Application Parameters > Application Core, there is a “WebDAV Server” header.
 
 [:image-popup:6_advanced_configuration/webdav_configuration.png]
-
-
 
 Options are described below:
 
 + **Enable WebDAV** : totally enable or disable the webdav feature. false by default.
++ **Enable for all users** : you can now enable webDAV for all users, they no longer need to take action.
 + **Shares URI** : the exact mirror of the previous .htaccess configs : path to the virtual directory, thus something like “/files/shares”. Make sure to start with a slash, and end without slash.
 + **Digest Realm** : used for the digest authentication, and to store the webdav password encoded. Thus, if you want to change this, change it the very first time you install the feature, otherwise you’ll have to ask the users to re-enter their password.
 + **Force Basic Auth** : in some case, you know that the clients you will be using can only use Basic Authentication, and you want to force this authentication method. It is best secured to leave it to No.

@@ -23,7 +23,7 @@ Install repositories by installing the release RPMs:
 
 > `rpm -i pydio-release-1-1.el7.centos.noarch.rpm`
 
-> `rpm -i pydio-enterprise-release-1-1.el7.centos.noarch.rpm` 
+> `rpm -i pydio-enterprise-release-1-1.el7.centos.noarch.rpm`
 
 The release package will install a new repo /etc/yum.repos.d/pydio-enterprise: **edit this file** and replace API_KEY and API_SECRET with corresponding values from your pydio dashboard.
 
@@ -34,15 +34,11 @@ Update repositories cache `yum update`
 
 ### CentOS6 / RHEL6
 
-Pydio 6 requires php version >= 5.4 due to security reason and improvement of performance. However, CentOS6/RHEL6 system originally does not support php > 5.4. We should use software collections to be able to keep multiple version of PHP on the same machine.
+Pydio 7 requires php version >= 5.5.9 due to security reason and improvement of performance. However, CentOS6/RHEL6 system originally does not support php > 5.4. We should use software collections to be able to keep multiple version of PHP on the same machine.
 
 Install additional repositories for software collections.
 
 > `yum update`
-
-> `rpm -ivh https://www.softwarecollections.org/repos/rhscl/php54/epel-6-x86_64/noarch/rhscl-php54-epel-6-x86_64-1-2.noarch.rpm`
-
-> `rpm -ivh https://www.softwarecollections.org/en/scls/remi/php54more/epel-6-x86_64/download/remi-php54more-epel-6-x86_64.noarch.rpm`
 
 > `yum install epel-release`
 
@@ -67,7 +63,7 @@ Now that the repositories are properly configured, you simply have to install py
 
 > `yum update`
 
-> `yum install pydio-core` or `yum install pydio-all` 
+> `yum install pydio-core` or `yum install pydio-all` # TODO: only one command should be mentionned
 
 > `yum install pydio-enterprise`
 
@@ -83,3 +79,6 @@ After that step, you should be able to access pydio through your browser: http:/
 > Restart apache: `service httpd restart`
 
 > The php.ini file is located in: ``/opt/rh/php54/root/etc/php.ini`
+
+[Quick Start](http://pydio.com/en/docs/v6-enterprise/quick-start)
+

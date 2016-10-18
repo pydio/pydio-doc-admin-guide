@@ -14,13 +14,13 @@ You must also make sure that .htaccess instructions are really taken into accoun
 
     AllowOverride All
 
-For **IIS**, you can there is an equivalent web.config file, or there are some extensions that allow the automatic translation of Apache .htaccess files.
+For **IIS**, you can adapt this sample configuration [IIS SAMPLE](https://github.com/pydio/pydio-core/blob/develop/core/src/web.config.sample).
 
-For **Nginx**, the location{} tag also contains the according instructions.
+For **Nginx**, the location{} tag also contains the according instructions, see [NGINX SAMPLE](https://github.com/pydio/pydio-core/blob/develop/core/src/nginx.conf.sample).
 
 #### _Apache: pydio install path .htaccess rules_
 
-If it was webserver-writeable during install, the .htaccess should have been automatically updated.
+If the installation path of Pydio was webserver-writeable during install, the .htaccess should have been automatically updated.
 
 The variable part of this file is concerning the “RewriteBase”, which reflects **the path of Pydio relative to the DocumentRoot** : if Pydio is installed on http://domain.tld/pydio/, the RewriteBase shall be “/pydio”. If it’s installed on http://domain.tld, should be “/”.
 
@@ -87,3 +87,4 @@ When testing the API, if you have an authorization loop (browser is asking for l
 
 - **Php-FPM or FastCGI:** see above in this article, make sure to uncomment the according lines in the main .htaccess of the application.
 - **Using “Session Credentials”** feature to connect to a remote storage: if you are authenticating against an alternative backend like ftp or smb using “Session Credentials”, this may prevent an additional performance layer added for the sync client that use a unique key pair to authenticate devices. Try disabling the authfront.keystore plugin.
+

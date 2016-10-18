@@ -1,5 +1,5 @@
 ### Data concerned & available plugins
-As explained in the previous chapter, there are various types of data managed in Pydio: configurations vs. “business” data ( = your files ). All the configurations data are managed by the configuration backend (humm, you would have guessed), but the users directory is handled by another type of plugins, Authentication ones. Basically, these plugins are just able to tell whether a user exists or not, if he can be logged in with a given password, and if he is part of group.
+As explained in the previous chapter, there are various types of data managed in Pydio: configurations vs. “business” data ( = your files ). All the configurations data are managed by the configuration backend, but the users directory is handled by another type of plugins, Authentication ones. Basically, these plugins are just able to tell whether a user exists or not, if he can be logged in with a given password, and if he is part of group.
 
 Although configuration backends are few (basically serialized files or DB), authentication backend have more implementations:
 

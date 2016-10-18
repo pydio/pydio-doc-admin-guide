@@ -6,3 +6,7 @@ Make sure the *data* path is writeable by the web server. For example :
 
 > `chown -R www-data:www-data /var/www/pydio/data`
 
+Assuming your webserver is configured to serve */var/www/pydio/data*. You can now connect to your server and set up Pydio to suit your needs. 
+
+[Quick Start](http://pydio.com/en/docs/v6-enterprise/quick-start)
+
