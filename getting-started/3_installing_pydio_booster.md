@@ -13,10 +13,16 @@ Main benefits are :
 
 You can download our booster from [DOWNLOAD PYDIO BOOSTER](https://download.pydio.com/pub/booster/release/0.8.6/) choosing the correct version for your architecture.
 
-## Configure and start
-In the Pydio Enterprise Edition there is a nice GUI to manage this component. This component was built on top of Caddy, leveraging NSQ, it implements websockets and an upload server.
+## Network Configuration
 
-Here is a sample configuration files to make it work without it, it's also useful for advanced configurations:
+The diagram below shows how Pydio Booster will communicate with your server.
+
+[:image-popup:pydio_booster/booster_network_configuration.png]
+
+## Configure and start
+
+This component was built on top of Caddy, leveraging NSQ, it implements websockets and an upload server.
+Here is a sample configuration files to make it work, it's also useful for advanced configurations:
 
 pydioconf.sample:
 ```
@@ -112,7 +118,9 @@ To run Pydio Booster you simply need to run:
     /path/to/pydio -c /path/to/pydioconf
 ```
 
-However especially if you want to use the upload feature I recommend you to run it changing the process' owner:
+Make sure to pass an absolute path to the conf.
+
+However especially if you want to use the upload feature we recommend you to run it changing the process' owner:
 ```
     su www-data -c "/path/to/pydio -c /path/to/pydioconf"
     # OR
