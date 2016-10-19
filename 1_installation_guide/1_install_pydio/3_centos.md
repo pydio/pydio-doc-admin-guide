@@ -11,53 +11,52 @@ Our Enterprise Repositories are password-protected via API Key and API Secret. Y
 
 Pydio 7 and its dependencies require PHP version >= 5.5.9. However, centos 7/rhel 7 are still support PHP 5.4 as official version. That's why we have to use extra repos to pack with Pydio 7. For more information about software collection, please visit: [rh-php56](https://www.softwarecollections.org/en/scls/rhscl/rh-php56/)
 
-## Install Software Collection & EPEL repo
+## Install Software Collection, EPEL and Pydio repositories
 
 **EPEL**
 
-`yum install epel-release scl-utils`
+    yum install epel-release scl-utils
 
 **CentOS 7** 
 
-`yum install centos-release-scl`
+    yum install centos-release-scl
 
-**RHEL 7**
+**or RHEL 7**
 
-`yum-config-manager --enable rhel-server-rhscl-7-rpms`
+    yum-config-manager --enable rhel-server-rhscl-7-rpms
 
 **Remi's RPM**
 
-`rpm -Uvh https://www.softwarecollections.org/en/scls/remi/php56more/epel-7-x86_64/download/remi-php56more-epel-7-x86_64.noarch.rpm `
+    rpm -Uvh https://www.softwarecollections.org/en/scls/remi/php56more/epel-7-x86_64/download/remi-php56more-epel-7-x86_64.noarch.rpm 
 
-## Repo of Pydio
+**Pydio**
 
-`rpm -Uvh https://download.pydio.com/pub/linux/centos/7/pydio-release-1-1.el7.centos.noarch.rpm`
+    rpm -Uvh https://download.pydio.com/pub/linux/centos/7/pydio-release-1-1.el7.centos.noarch.rpm
 
 ## Installation
 
-At this point, your box contents repos of all dependencies of Pydio. Hit following commands to update.
+At this point, your box contains all dependencies necessary to install Pydio. Hit the following commands to update.
 
-`yum clean all`
+    yum clean all
+    yum update
 
-`yum update`
-
-### Install pydio for the first time
+### Installing Pydio Core (first time)
 
 Pydio can be installed by: `yum install pydio-core`
 
-*pydio-core*: contents essential packages with basic functionalities.
+*pydio-core*: contains essential packages with basic functionalities.
 
 you can additionally install some plugins by using command: `yum install pydio-plugin-pluginName`
 
 Or `yum install pydio-all ` to install all community packages of Pydio.
 
-### Install pydio enterprise version.
+### Installing Pydio Enterprise
 
 Enterprise version requires extra repo which is reserved only for subscribed clients.
 
 Add enterprise repo:
 
-`rpm -Uvh https://download.pydio.com/auth/linux/centos/7/x86_64/pydio-enterprise-release-1-1.el7.centos.noarch.rpm`
+    rpm -Uvh https://download.pydio.com/auth/linux/centos/7/x86_64/pydio-enterprise-release-1-1.el7.centos.noarch.rpm
 
 > Note: If your system runs on SSL port, *httpd24-mod_ssl* module is required.
 
@@ -74,15 +73,17 @@ You can get API_KEY, API_SECRET in https://pydio.com > login with your account >
 
 Your box is ready for this command: `yum install pydio-enterprise` to install all enterprise packages
 
-### Upgrade from pydio 6.4.2
+### Upgrading from Pydio 6.4.2
 
 > Warning: If you've installed Pydio before, please backup your sytem or take a snapshoot before upgrade.
 
-Update whole system
-`yum update -y`
+Update the whole system
+
+    yum update -y
 
 Upgrade pydio only
-`yum update pydio-core pydio-enterprise`
+
+    yum update pydio-core pydio-enterprise
 
 ## Post install/upgrade.
 
@@ -95,23 +96,23 @@ do:
 
 Disable default apache:
 
-- `systemctl disable httpd`
-- `systemctl stop httpd`
+    systemctl disable httpd
+    systemctl stop httpd
 
 Enable new apache:
 
-- `systemctl enable httpd24-httpd`
-- `systemctl start httpd24-httpd`
+    systemctl enable httpd24-httpd
+    systemctl start httpd24-httpd
 
 Enable php56
 
-- `source /opt/rh/rh-php56/enable`
+    source /opt/rh/rh-php56/enable
 
 Enable httpd24-http
 
-- `source /opt/rh/httpd24/enable`
+    source /opt/rh/httpd24/enable
 
-Now you can verify php version by typing the command in terminal windows:
+Now you can verify the PHP version by typing the command in terminal windows:
 
     [root@localhost ~]# php -v
     PHP 5.6.5 (cli) (built: Aug 30 2016 13:52:26)
@@ -142,7 +143,7 @@ If you upgrade from Pydio 6.4.2, and php.ini was changed, you should change such
 
 All sql script is store in /usr/share/doc/pydio/sql, you can execute following command to **upgrade** your exited DB
 
-`mysql -u username -p databasename < /usr/share/doc/pydio/sql/pydio.mysql`
+    mysql -u username -p databasename < /usr/share/doc/pydio/sql/pydio.mysql
 
 > Note: you can also get sql script in this [link](https://github.com/pydio/pydio-core/blob/develop/dist/php/7.0.0.mysql)
 
