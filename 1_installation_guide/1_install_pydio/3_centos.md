@@ -1,6 +1,6 @@
 ## 2.1) Create an account to grab your API Credentials
 
-Our Enterprise Repositories are password-protected via API Key and API Secret. These are provided by default when you have a valid Pydio Enterprise License. By simply registering at pydio.com you can claim your free 10 users Licence! You can find them in your dashboard and will be instantly provisioned, so it's just a matter of minutes. Once you have it, you can find the Api Key and Api Secret at the bottom of your license page in your Dashboard:
+Our Enterprise Repositories are password-protected via API Key and API Secret. You can find them in your Pydio.com Account, under the "My API Keys" menu:
 
 [:image-popup:1_installation_guide/install_pydio_api_keys.png]
 
