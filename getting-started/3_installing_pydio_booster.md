@@ -25,7 +25,7 @@ This component was built on top of Caddy, leveraging NSQ, it implements websocke
 Here is a sample configuration files to make it work, it's also useful for advanced configurations:
 
 pydioconf.sample:
-```
+
     {
         "scheduler": {
             "host": "http:\/\/YOUR_HOSTNAME",
@@ -39,10 +39,10 @@ pydioconf.sample:
         },
         "caddyFilePath": ".\/pydiocaddy"
     }
-```
+
 
 pydiocaddy.sample:
-```
+
     http://127.0.0.1:8090 {
         pydiows /ws     {
             pre {
@@ -111,21 +111,20 @@ pydiocaddy.sample:
         pydioadmin /admin
         basicauth /admin TOKENP TOKENS
     }
-```
+
 
 To run Pydio Booster you simply need to run:
-```
+
     /path/to/pydio -c /path/to/pydioconf
-```
+
 
 Make sure to pass an absolute path to the conf.
 
 However especially if you want to use the upload feature we recommend you to run it changing the process' owner:
-```
+
     su www-data -c "/path/to/pydio -c /path/to/pydioconf"
     # OR
     sudo -u www-data /path/to/pydio -c /path/to/pydioconf
-```
 
 ## Troubleshooting
 
