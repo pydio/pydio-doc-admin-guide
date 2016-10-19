@@ -64,7 +64,6 @@ Where
 + **workspace-slug** is the “pretty name” of the workspace. You can see it by logging to this workspace and seeing in the URL of your browser the /ws-workspace-slug/ part (remove ws- to get the slug).
 You should receive a json listing all changes since creation of workspace.
 
-
     REQUEST: https://yourserver.tld/pydio/api/workspace-slug/changes/0
     ---
     ANSWER:{"changes":[
