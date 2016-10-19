@@ -66,6 +66,7 @@ You should receive a json listing all changes since creation of workspace.
 
 
     REQUEST: https://yourserver.tld/pydio/api/workspace-slug/changes/0
+    ---
     ANSWER:{"changes":[
       {
       "seq":3504,"node_id":2364,"type":"create","source":"NULL","target":"\/logo.png",
