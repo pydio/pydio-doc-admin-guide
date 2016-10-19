@@ -13,13 +13,21 @@ Pydio 7 and its dependencies require PHP version >= 5.5.9. However, centos 7/rhe
 
 ## Install Software Collection & EPEL repo
 
-**EPEL**: `yum install epel-release scl-utils`
+**EPEL**
 
-**CentOS 7** : `yum install centos-release-scl`
+`yum install epel-release scl-utils`
 
-**RHEL 7** : `yum-config-manager --enable rhel-server-rhscl-7-rpms`
+**CentOS 7** 
 
-**Remi's RPM**: `rpm -Uvh https://www.softwarecollections.org/en/scls/remi/php56more/epel-7-x86_64/download/remi-php56more-epel-7-x86_64.noarch.rpm `
+`yum install centos-release-scl`
+
+**RHEL 7**
+
+`yum-config-manager --enable rhel-server-rhscl-7-rpms`
+
+**Remi's RPM**
+
+`rpm -Uvh https://www.softwarecollections.org/en/scls/remi/php56more/epel-7-x86_64/download/remi-php56more-epel-7-x86_64.noarch.rpm `
 
 ## Repo of Pydio
 
@@ -33,7 +41,7 @@ At this point, your box contents repos of all dependencies of Pydio. Hit followi
 
 `yum update`
 
-### Install pydio for the first times
+### Install pydio for the first time
 
 Pydio can be installed by: `yum install pydio-core`
 
@@ -56,15 +64,13 @@ Add enterprise repo:
 Then edit /etc/yum.repos.d/pydio-enterprise.repo and replace API_KEY, API_SECRET by your credential.
 You can get API_KEY, API_SECRET in https://pydio.com > login with your account > User account >> MY LICENSES
 
-```
-[pydio-enterprise]
-name=Pydio official packages for enterprise version
-baseurl=https://API_KEY:API_SECRET@download.pydio.com/auth/linux/centos/7/x86_64
-enabled=1
-gpgcheck=1
-protect=1
-gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-PYDIO
-```
+    [pydio-enterprise]
+    name=Pydio official packages for enterprise version
+    baseurl=https://API_KEY:API_SECRET@download.pydio.com/auth/linux/centos/7/x86_64
+    enabled=1
+    gpgcheck=1
+    protect=1
+    gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-PYDIO
 
 Your box is ready for this command: `yum install pydio-enterprise` to install all enterprise packages
 
@@ -107,14 +113,12 @@ Enable httpd24-http
 
 Now you can verify php version by typing the command in terminal windows:
 
-```
-[root@localhost ~]# php -v
-PHP 5.6.5 (cli) (built: Aug 30 2016 13:52:26)
-Copyright (c) 1997-2014 The PHP Group
-Zend Engine v2.6.0, Copyright (c) 1998-2014 Zend Technologies
-    with the ionCube PHP Loader (enabled) + Intrusion Protection from ioncube24.com (unconfigured) v6.0.5, Copyright (c) 2002-2016, by ionCube Ltd.
-    with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
-```
+    [root@localhost ~]# php -v
+    PHP 5.6.5 (cli) (built: Aug 30 2016 13:52:26)
+    Copyright (c) 1997-2014 The PHP Group
+    Zend Engine v2.6.0, Copyright (c) 1998-2014 Zend Technologies
+        with the ionCube PHP Loader (enabled) + Intrusion Protection from ioncube24.com (unconfigured) v6.0.5, Copyright (c) 2002-2016, by ionCube Ltd.
+        with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
 
 Software Collection use different location than default to deploy software base on its version. And new location for PHP56 is:
 
