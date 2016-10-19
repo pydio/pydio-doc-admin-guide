@@ -8,6 +8,8 @@ To avoid disclosing this base URL (https://yourdomain.tld/pydio/), File Gateway 
 
 As a hosted service, File Gateway is a paying feature. If you are interested, please contact our Sales service and once you have a valid subscription for this, you will need your API Key as featured in your Pydio.com account.
 
+[:image-popup:1_installation_guide/install_pydio_api_keys.png]
+
 Open the Settings panel of your pydio and under the "All Plugins" list, look for the "File Gateway" link shortener plugin. Enable the plugin and put your API Key / API Secret in the configuration. Pick the domain and region on which you want your link to be hosted. We currently propose 2 different domains (filesend.cc, yoursha.re), and each of them can be hosted in either United States or Europe. Choose the region closest to your installation and your most common users. 
 
 [:image-popup:2_getting_started/filegateway_enterprise.png]
