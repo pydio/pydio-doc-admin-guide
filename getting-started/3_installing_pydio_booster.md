@@ -20,8 +20,17 @@ The diagram below shows how Pydio Booster will communicate with your server.
 [:image-popup:pydio_booster/booster_network_configuration.png]
 
 ## Configure and start
+Before being able to configure Pydio Booster you will need to generate a **TOKENP** and **TOKENS** pair.
 
-This component was built on top of Caddy, leveraging NSQ, it implements websockets and an upload server.
+### Initial Pydio setup
+
+Go to Message Queuing plugin configuration:
+[:image-popup:pydio_booster/booster_plugin.jpg]
+[:image-popup:pydio_booster/booster_gen_key.jpg]
+
+And scroll down to Generate keys. The resulting file should be available in **data/plugins/core.mq/apikey**. You will need the information from this file replace the **TOKENP** and **TOKENS** in the following sample configuration files.
+
+Pydio Booster component was built on top of Caddy, leveraging NSQ, it implements websockets and an upload server.
 Here is a sample configuration files to make it work, it's also useful for advanced configurations:
 
 pydioconf.sample:
