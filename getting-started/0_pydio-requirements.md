@@ -1,7 +1,9 @@
 ## Core Installation
 
 ### Basic requirements
-For the most common case, Pydio only requires a web-server equipped with **PHP 5.4 or later**. Basic PHP extensions required are mcrypt, mbstring, gd and dom-xml.
+For the most common case, Pydio only requires a web-server equipped with **PHP 5.5.9 or later**. 
+
+Basic PHP extensions required are intl, mbstring, gd and dom-xml. For cryptography, we require either open-ssl (recommended) or mcrypt (will be removed from PHP soon).
 
 Some plugins may require additional extensions / libraries to be available on the server.
 
