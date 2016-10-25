@@ -9,7 +9,7 @@ Our Enterprise Repositories are password-protected via API Key and API Secret. Y
 > - This how-to is applied for Centos 7 and RHEL 7 x86_64 only.
 > - This repo uses software collection, please make sure that your box is running to provide only Pydio service. It may break other services due to php version.
 
-Pydio 7 and its dependencies require PHP version >= 5.5.9. However, centos 7/rhel 7 are still support PHP 5.4 as official version. That's why we have to use extra repos to pack with Pydio 7. For more information about software collection, please visit: [rh-php56](https://www.softwarecollections.org/en/scls/rhscl/rh-php56/)
+Pydio 7 and its dependencies require PHP version >= 5.6. However, centos 7/rhel 7 are still support PHP 5.4 as official version. That's why we have to use extra repos to pack with Pydio 7. For more information about software collection, please visit: [rh-php56](https://www.softwarecollections.org/en/scls/rhscl/rh-php56/)
 
 ## Install Software Collection, EPEL and Pydio repositories
 

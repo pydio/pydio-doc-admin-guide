@@ -11,14 +11,14 @@ Pydio can run on three types of databases : MySQL/MariaDB, PostgreSQL or Sqlite.
 
 #### PHP
 
-Pydio requires **PHP 5.5.9 or later**. Recommended version is **PHP 7.0**, particularly on Windows as there is now an official 64bit build. 
+Pydio Enterprise Distribution requires **PHP 5.6 or later**. Recommended version is **PHP 7.0**, particularly on Windows as there is now an official 64bit build. 
 
 The following PHP extensions are required as well for the core pydio installation: 
 
 - Mbstring, gd, dom-xml, intl
 - Mysql, PostgreSQL or Sqlite php extension for connecting to the database
 - OpenSSL or Mcrypt. The latter will be deprecated in next versions of PHP so you should prefer using Open SSL. 
-- For Enterprise Distribution, IonCube Loaders must be configured as a zend_extension in your php.ini. Please see https://ioncube.com/loaders.php to pick the right version for your OS / PHP Version.
+- **IonCube Loaders** must be installed configured as a zend_extension in your php.ini. Please see https://ioncube.com/loaders.php to pick the right version for your OS / PHP Version.
 - Opcache or equivalent Opcode Caching extension
 
 #### Additional Recommended setup:
