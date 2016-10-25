@@ -1,7 +1,8 @@
 ## Core Installation
 
 ### Basic requirements
-For the most common case, Pydio only requires a web-server equipped with **PHP 5.5.9 or later**. 
+
+Pydio Community Distribution requires a web-server equipped with **PHP 5.5.9 or later**. We currently recommend using PHP 7 as performances were greatly improved.
 
 Basic PHP extensions required are intl, mbstring, gd and dom-xml. For cryptography, we require either open-ssl (recommended) or mcrypt (will be removed from PHP soon).
 
