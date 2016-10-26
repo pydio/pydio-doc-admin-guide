@@ -201,6 +201,9 @@ Execute following commands to create database for pydio
     grant all privileges on pydio.* to 'pydio'@'localhost';
     flush privileges;
 
+#### Configure SELinux for Pydio Booster
+
+Please visit [SELinux](https://pydio.com/en/docs/kb/security/pydio-security-enhanced-linux-selinux)
 
 [Quick Start](http://pydio.com/en/docs/v7-enterprise/quick-start)
 
