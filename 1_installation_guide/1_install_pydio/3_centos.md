@@ -56,7 +56,7 @@ Enterprise version requires extra repo which is reserved only for subscribed cli
 
 Add enterprise repo:
 
-    rpm -Uvh https://download.pydio.com/auth/linux/centos/7/x86_64/pydio-enterprise-release-1-1.el7.centos.noarch.rpm
+    rpm -Uvh https://API_KEY:API_SECRET@download.pydio.com/auth/linux/centos/7/x86_64/pydio-enterprise-release-1-1.el7.centos.noarch.rpm
 
 > Note: If your system runs on SSL port, *httpd24-mod_ssl* module is required.
 
@@ -132,7 +132,7 @@ Equivalent paths between default and software collection version
 |php cli| /usr/bin/php |    /opt/rh/rh-php56/root/usr/bin/php   |
 |php module configs| /usr/lib64/php/modules | /opt/rh/rh-php56/root/usr/lib64/php/modules |
 |apache module configs| /etc/httpd/conf.modules.d/ | /opt/rh/httpd24/root/etc/httpd/conf.modules.d/ |
-|pydio.conf| /etc/httpd/conf.d/pydio.conf/pydio.conf | /opt/rh/httpd24/root/etc/httpd/conf.d/pydio.conf/pydio.conf |
+|pydio.conf| /etc/httpd/conf.d/pydio.conf | /opt/rh/httpd24/root/etc/httpd/conf.d/pydio.conf |
 
 
 If you upgrade from Pydio 6.4.2, and php.ini was changed, you should change such parameters in new php.ini as well: /etc/opt/rh/rh-php56/php.ini
@@ -141,11 +141,65 @@ If you upgrade from Pydio 6.4.2, and php.ini was changed, you should change such
 
 ### Update database
 
-All sql script is store in /usr/share/doc/pydio/sql, you can execute following command to **upgrade** your exited DB
+All sql script is store in /usr/share/doc/pydio/sql, you can execute following commands to **upgrade** your exited DB. The script for updating DB can be downloaded:
+ 
+- [MySQL](https://raw.githubusercontent.com/pydio/pydio-core/develop/dist/php/7.0.0.mysql) 
+- [Postgre](https://raw.githubusercontent.com/pydio/pydio-core/develop/dist/php/7.0.0.pgsql) 
+- [SQLite](https://raw.githubusercontent.com/pydio/pydio-core/develop/dist/php/7.0.0.sqlite)
 
-    mysql -u username -p databasename < /usr/share/doc/pydio/sql/pydio.mysql
+For example:
 
-> Note: you can also get sql script in this [link](https://github.com/pydio/pydio-core/blob/develop/dist/php/7.0.0.mysql)
+    mysql -u username -p databasename < path/7.0.0.mysql
+   
+   Change the version number:
+   
+    mysql> UPDATE ajxp_version SET `db_build`="66";
+
+
+### Others configurations
+
+#### PHP.ini parameters
+
+Following parameters should be reconfigured in /etc/opt/rh/rh-php56/php.ini (not /etc/php.ini)
+
+Example:
+
+    max_execution_time = 300
+    post_max_size = 200M
+    upload_max_filesize = 200M
+    output_buffering = Off
+
+Then restart apache
+
+    systemctl restart httpd24-httpd
+
+#### MariaDB
+
+In this how-to, we take an example of using MySQL to store all configuration of Pydio.
+
+Install mariadb:
+
+    yum install mariadb mariadb-server
+    
+Start mariadb service at boot time
+ 
+    systemctl enable mariadb
+    systemctl start mariadb
+    
+Run secure installation
+
+    mysql_secure_installation
+
+Enter mysql command line
+
+    mysql -u root -p
+    
+Execute following commands to create database for pydio
+    
+    create database pydio;
+    create user 'pydio'@'localhost' identified by 'password';
+    grant all privileges on pydio.* to 'pydio'@'localhost';
+    flush privileges;
 
 
 [Quick Start](http://pydio.com/en/docs/v7-enterprise/quick-start)
