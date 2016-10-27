@@ -13,23 +13,24 @@ Pydio 7 and its dependencies require PHP version >= 5.6. However, centos 7/rhel 
 
 ## Install Software Collection, EPEL and Pydio repositories
 
-**EPEL**
+### EPEL Repository
 
     yum install epel-release scl-utils
+    rpm -Uvh https://www.softwarecollections.org/en/scls/remi/php56more/epel-7-x86_64/download/remi-php56more-epel-7-x86_64.noarch.rpm 
+
+### Software Collection
+
+Instruction vary depending on your system:
 
 **CentOS 7** 
 
     yum install centos-release-scl
 
-**or RHEL 7**
+**RHEL 7**
 
     yum-config-manager --enable rhel-server-rhscl-7-rpms
 
-**Remi's RPM**
-
-    rpm -Uvh https://www.softwarecollections.org/en/scls/remi/php56more/epel-7-x86_64/download/remi-php56more-epel-7-x86_64.noarch.rpm 
-
-**Pydio**
+### Pydio
 
     rpm -Uvh https://download.pydio.com/pub/linux/centos/7/pydio-release-1-1.el7.centos.noarch.rpm
 

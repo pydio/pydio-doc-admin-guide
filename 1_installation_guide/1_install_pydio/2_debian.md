@@ -1,65 +1,70 @@
-## 2.1) Create an account to grab your API Credentials
+## Get your API Credentials
 
 Our Enterprise Repositories are password-protected via API Key and API Secret. You can find them in your Pydio.com Account, under the "My API Keys" menu:
 
 [:image-popup:1_installation_guide/install_pydio_api_keys.png]
 
 
-## 2.2) Install Repositories
+## Debian 7 (Wheezy)
 
-### Debian 7,8 and Ubuntu 14.0.4: install additional packages, public key and repositories
+Ensure that wheezy-backports repositories are enabled in `/etc/apt/sources.list` :
 
-Don't forget to update and upgrade your packages before !!
+    deb http://httpredir.debian.org/debian wheezy-backports main
+    deb-src http://httpredir.debian.org/debian wheezy-backports main
 
-Install apt-transport-https package:
+Configure the pydio repository as well as its dependencies
 
-> `sudo apt-get install apt-transport-https`
+    # DotDeb
+    echo "deb http://packages.dotdeb.org wheezy-php56 all" > /etc/apt/sources.list.d/dotdeb.list
+    echo "deb-src http://packages.dotdeb.org wheezy-php56 all" >> /etc/apt/sources.list.d/dotdeb.list
+    wget -qO - http://www.dotdeb.org/dotdeb.gpg | sudo apt-key add -
 
-Install our public key (used to sign the packages) using the following command:
+    # Pydio Community & Enterprise repositories
+    echo "deb https://download.pydio.com/pub/linux/debian/ wheezy-backports main" > /etc/apt/sources.list.d/pydio.list
+    echo "deb https://API_KEY:API_SECRET@download.pydio.com/auth/linux/debian/ wheezy-backports main non-free" > /etc/apt/sources.list.d/pydio.list    
+    wget -qO - https://download.pydio.com/pub/linux/debian/key/pubkey | sudo apt-key add -
 
-> `wget -qO - https://download.pydio.com/pub/linux/debian/key/pubkey | sudo apt-key add -`
+Now update all repositories, with https support if not already installed
 
-Then edit **/etc/apt/sources.list** and add the following lines by replacing **API_KEY** and **API_SECRET** by corresponding values retrieved from your pydio.com dashboard as seen in previous step.
+    sudo apt-get install apt-transport-https debian-keyring debian-archive-keyring
+    sudo apt-get update
 
-#### Debian 8
-> `deb https://download.pydio.com/pub/linux/debian/ jessie-backports main`
+And finally install pydio
 
-> `deb https://API_KEY:API_SECRET@download.pydio.com/auth/linux/debian/ jessie-backports main non-free`
+    sudo apt-get install pydio
+    sudo apt-get install pydio-all
+    sudo apt-get install pydio-enterprise
 
-#### Debian 7
 
-Debian 7 system requires keyring package:
+## Debian 8 (Jessie)
 
-> `sudo apt-get install debian-keyring debian-archive-keyring`
+Configure the pydio repository
 
-Then add the following lines to **/etc/apt/sources.list**:
+    # Pydio Community & Enterprise repositories
+    echo "deb https://download.pydio.com/pub/linux/debian/ jessie-backports main non-free" > /etc/apt/sources.list.d/pydio.list
+    echo "deb https://API_KEY:API_SECRET@download.pydio.com/auth/linux/debian/ jessie-backports main non-free" > /etc/apt/sources.list.d/pydio.list    
+    wget -qO - https://download.pydio.com/pub/linux/debian/key/pubkey | sudo apt-key add -
 
-> `deb https://download.pydio.com/pub/linux/debian/ wheezy-backports main`
+Now update all repositories, with https support if not already installed
 
-> `deb https://API_KEY:API_SECRET@download.pydio.com/auth/linux/debian/ wheezy-backports main non-free`
+    sudo apt-get install apt-transport-https
+    sudo apt-get update
 
-#### Ubuntu 14.0.4
-Add the following lines to **/etc/apt/sources.list**:
+And finally install pydio
 
-> `deb https://download.pydio.com/pub/linux/debian/ trusty main`
+    sudo apt-get install pydio
+    sudo apt-get install pydio-all
+    sudo apt-get install pydio-enterprise
 
-> `deb https://API_KEY:API_SECRET@download.pydio.com/auth/linux/debian/ trusty non-free`
 
-### Make sure your changes were taken into account
-Now update your repositories list by running:
+## Ubuntu 14.04 - Ubuntu 16.04
 
-> `sudo apt-get update`
+Still a work-in-progress for Pydio 7, will be released very shortly.
 
-## 2.3) Install Pydio Enterprise Distribution
 
-Now that the repositories are properly configured, you simply have to install pydio using either:
-> `sudo apt-get update`
-
-> `sudo apt-get install pydio-core` or `apt-get install pydio-all`
-
-> `sudo apt-get install pydio-enterprise`
+-----
 
 After that step, you should be able to access pydio through your browser: http://YOUR_IP_ADDRESS/pydio/
 
-[Quick Start](http://pydio.com/en/docs/v6-enterprise/quick-start)
+[Quick Start](http://pydio.com/en/docs/v7-enterprise/quick-start)
 
