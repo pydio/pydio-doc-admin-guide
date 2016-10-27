@@ -4,6 +4,25 @@ Our Enterprise Repositories are password-protected via API Key and API Secret. Y
 
 [:image-popup:1_installation_guide/install_pydio_api_keys.png]
 
+## Debian 8 (Jessie)
+
+Configure the pydio repository
+
+    # Pydio Community & Enterprise repositories
+    echo "deb https://download.pydio.com/pub/linux/debian/ jessie-backports main" > /etc/apt/sources.list.d/pydio.list
+    echo "deb https://API_KEY:API_SECRET@download.pydio.com/auth/linux/debian/ jessie-backports main non-free" > /etc/apt/sources.list.d/pydio.list    
+    wget -qO - https://download.pydio.com/pub/linux/debian/key/pubkey | sudo apt-key add -
+
+Now update all repositories, with https support if not already installed
+
+    sudo apt-get install apt-transport-https
+    sudo apt-get update
+
+And finally install pydio
+
+    sudo apt-get install pydio
+    sudo apt-get install pydio-all
+    sudo apt-get install pydio-enterprise
 
 ## Debian 7 (Wheezy)
 
@@ -27,27 +46,6 @@ Configure the pydio repository as well as its dependencies
 Now update all repositories, with https support if not already installed
 
     sudo apt-get install apt-transport-https debian-keyring debian-archive-keyring
-    sudo apt-get update
-
-And finally install pydio
-
-    sudo apt-get install pydio
-    sudo apt-get install pydio-all
-    sudo apt-get install pydio-enterprise
-
-
-## Debian 8 (Jessie)
-
-Configure the pydio repository
-
-    # Pydio Community & Enterprise repositories
-    echo "deb https://download.pydio.com/pub/linux/debian/ jessie-backports main non-free" > /etc/apt/sources.list.d/pydio.list
-    echo "deb https://API_KEY:API_SECRET@download.pydio.com/auth/linux/debian/ jessie-backports main non-free" > /etc/apt/sources.list.d/pydio.list    
-    wget -qO - https://download.pydio.com/pub/linux/debian/key/pubkey | sudo apt-key add -
-
-Now update all repositories, with https support if not already installed
-
-    sudo apt-get install apt-transport-https
     sudo apt-get update
 
 And finally install pydio
