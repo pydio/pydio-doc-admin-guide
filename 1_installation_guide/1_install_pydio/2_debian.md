@@ -59,6 +59,24 @@ And finally install pydio
 
 Still a work-in-progress for Pydio 7, will be released very shortly.
 
+## UPGRADING FROM PREVIOUS VERSION
+
+### Update Database
+
+If you are updating from version 6, you will have to manually update the database. Get the upgrade script and apply it to your DB as follow: 
+
+    wget https://raw.githubusercontent.com/pydio/pydio-core/develop/dist/php/7.0.1.mysql
+    mysql -u DB_USER -p DB_NAME < 7.0.1.mysql 
+
+Select the correct db type if it's not mysql (`7.0.1.pgsql`, `7.0.1.sqlite`)
+
+### [Debian 7] Manually update Apache configuration
+
+During upgrade, package manager may not have updated the apache configuration. Look inside /etc/apache2/conf.d/, you must see a symbolic link
+from pydio.conf to /etc/pydio/apache2.2.conf. Unlink and replace the symlink with /etc/pydio/apache2.conf. 
+
+You can test that a shared link (https://yourserver/pydio/public/linkHash) is working.
+
 
 -----
 
