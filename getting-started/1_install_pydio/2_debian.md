@@ -45,7 +45,21 @@ And finally install pydio
     sudo apt-get install pydio-all
 
 
-## Ubuntu 14.04 - Ubuntu 16.04
+## Ubuntu 16.04
+
+First, configure the pydio repository as well as its dependencies
+
+    echo "deb https://download.pydio.com/pub/linux/debian/ xenial main universe" > /etc/apt/sources.list.d/pydio.list
+    wget -qO - https://download.pydio.com/pub/linux/debian/key/pubkey | sudo apt-key add -
+    sudo apt-get update
+
+Now, install pydio
+
+    sudo apt-get install pydio
+    sudo apt-get install pydio-all
+
+
+## Ubuntu 14.04
 
 Still a work-in-progress for Pydio 7, will be released very shortly.
 
