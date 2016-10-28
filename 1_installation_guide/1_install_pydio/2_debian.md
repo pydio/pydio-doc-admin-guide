@@ -62,7 +62,6 @@ First, configure the pydio repositories
     echo "deb https://download.pydio.com/pub/linux/debian/ xenial main universe" > /etc/apt/sources.list.d/pydio.list
     echo "deb https://API_KEY:API_SECRET@download.pydio.com/auth/linux/debian/ xenial main universe" >> /etc/apt/sources.list.d/pydio.list
     wget -qO - https://download.pydio.com/pub/linux/debian/key/pubkey | sudo apt-key add -    
-    sudo apt-get install apt-transport-https
     sudo apt-get update
 
 Now install pydio
