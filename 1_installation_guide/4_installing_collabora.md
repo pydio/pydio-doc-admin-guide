@@ -77,7 +77,7 @@ Afterwards, configure one VirtualHost properly to proxy the traffic. For enhance
         https://127.0.0.1:9980/hosting/discovery
         
         # Main websocket
-        ProxyPass   /lool/ws      wss://127.0.0.1:9980/lool/ws
+        ProxyPassMatch “/lool/(.*)/ws$” wss://127.0.0.1:9980/lool/$1/ws
         
         # Admin Console websocket
         ProxyPass   /lool/adminws wss://127.0.0.1:9980/lool/adminws
