@@ -6,29 +6,27 @@ Our Enterprise Repositories are password-protected via API Key and API Secret. Y
 
 
 > Warning:
-> - This how-to is applied for Centos 7 and RHEL 7 x86_64 only.
 > - This repo uses software collection, please make sure that your box is running to provide only Pydio service. It may break other services due to php version.
 
 Pydio 7 and its dependencies require PHP version >= 5.6. However, centos 7/rhel 7 are still support PHP 5.4 as official version. That's why we have to use extra repos to pack with Pydio 7. For more information about software collection, please visit: [rh-php56](https://www.softwarecollections.org/en/scls/rhscl/rh-php56/)
 
 ## Install Software Collection, EPEL and Pydio repositories
 
-### EPEL Repository
+### EPEL Repository & Software Collection
 
-    yum install epel-release scl-utils
+    # CentOS6
+    yum install epel-release scl-utils centos-release-scl-rh
+    rpm -Uvh https://www.softwarecollections.org/en/scls/remi/php56more/epel-6-x86_64/download/remi-php56more-epel-6-x86_64.noarch.rpm
+    # RHEL6
+    yum-config-manager --enable rhel-server-rhscl-6-rpms
+    rpm -Uvh https://www.softwarecollections.org/en/scls/remi/php56more/epel-6-x86_64/download/remi-php56more-epel-6-x86_64.noarch.rpm
+    # CentOS7
+    yum install epel-release scl-utils centos-release-scl-rh
     rpm -Uvh https://www.softwarecollections.org/en/scls/remi/php56more/epel-7-x86_64/download/remi-php56more-epel-7-x86_64.noarch.rpm 
-
-### Software Collection
-
-Instruction vary depending on your system:
-
-**CentOS 7** 
-
-    yum install centos-release-scl
-
-**RHEL 7**
-
+    # RHEL7
     yum-config-manager --enable rhel-server-rhscl-7-rpms
+    rpm -Uvh https://www.softwarecollections.org/en/scls/remi/php56more/epel-7-x86_64/download/remi-php56more-epel-7-x86_64.noarch.rpm
+
 
 ### Pydio
 
@@ -99,11 +97,19 @@ Disable default apache:
 
     systemctl disable httpd
     systemctl stop httpd
+    
+    # CentOS6/RHEL6
+    service httpd stop
+    chkconfig httpd off
 
 Enable new apache:
 
     systemctl enable httpd24-httpd
     systemctl start httpd24-httpd
+    
+    # CentOS6/RHEL6
+    service httpd24-httpd start
+    chkconfig httpd24-http on
 
 Enable php56
 
@@ -173,6 +179,9 @@ Example:
 Then restart apache
 
     systemctl restart httpd24-httpd
+    
+    # CentOS6/RHEL6
+    service httpd24-httpd restart
 
 #### MariaDB
 
