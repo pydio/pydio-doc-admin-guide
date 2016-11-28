@@ -72,23 +72,46 @@ Now install pydio
 
 ## Ubuntu 14.04
 
-TODO
+Stop apache if it is running
+
+    sudo service apache2 stop
+
+Install the main PPA for PHP
+
+    sudo apt-get install -yq software-properties-common
+    sudo add-apt-repository ppa:ondrej/php
+    sudo apt-get update
+
+Now, install pydio
+
+    sudo apt-get install pydio
+    sudo apt-get install pydio-all
+    sudo apt-get install pydio-enterprise
+
+Enable the correct apache php module - Note that by default, php5 is installed on Ubuntu 14.04, so these instructions are enabling the php5 module version that Pydio is compatible with. If you have already installed php7 or are in the process of setting up php7, then you can invert the parameters :
+
+    a2enmod php5
+    a2dismod php7.0
+
+Restart apache
+
+    sudo service apache2 restart
 
 ## UPGRADING FROM PREVIOUS VERSION
 
 ### Update Database
 
-If you are updating from version 6, you will have to manually update the database. Get the upgrade script and apply it to your DB as follow: 
+If you are updating from version 6, you will have to manually update the database. Get the upgrade script and apply it to your DB as follow:
 
     wget https://raw.githubusercontent.com/pydio/pydio-core/develop/dist/php/7.0.1.mysql
-    mysql -u DB_USER -p DB_NAME < 7.0.1.mysql 
+    mysql -u DB_USER -p DB_NAME < 7.0.1.mysql
 
 Select the correct db type if it's not mysql (`7.0.1.pgsql`, `7.0.1.sqlite`)
 
 ### [Debian 7] Manually update Apache configuration
 
 During upgrade, package manager may not have updated the apache configuration. Look inside /etc/apache2/conf.d/, you must see a symbolic link
-from pydio.conf to /etc/pydio/apache2.2.conf. Unlink and replace the symlink with /etc/pydio/apache2.conf. 
+from pydio.conf to /etc/pydio/apache2.2.conf. Unlink and replace the symlink with /etc/pydio/apache2.conf.
 
 You can test that a shared link (https://yourserver/pydio/public/linkHash) is working.
 
@@ -98,4 +121,3 @@ You can test that a shared link (https://yourserver/pydio/public/linkHash) is wo
 After that step, you should be able to access pydio through your browser: http://YOUR_IP_ADDRESS/pydio/
 
 [Quick Start](http://pydio.com/en/docs/v7-enterprise/quick-start)
-
