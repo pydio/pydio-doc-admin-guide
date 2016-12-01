@@ -1,3 +1,8 @@
+<div style="background-color: #fbe9b7;font-size: 16px;">
+<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 6. Looking for <a href="https://pydio.com/en/docs/v7-enterprise/">Pydio 7 Enterprise</a> or <a href="https://pydio.com/en/docs/v7/">Pydio 7 Community</a> docs?</span>
+</div>
+
 ### Editors
 One of Pydio nice feature is the ability to **preview online** and even **edit** many file extensions, without having to download them to the user desktop. Many editors comes bundled and activated by default, but some more advances features must be activated after installation, as they require some dependencies that generally are not present by default on all servers.
 
