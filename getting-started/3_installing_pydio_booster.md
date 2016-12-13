@@ -63,9 +63,9 @@ pydiocaddy.sample:
             }
             pre {
                 type request
-                url http://YOUR_HOSTNAME:YOUR_OPTIONAL_PORT?key=TOKENP:TOKENS
-            query auth_hash
-            query auth_token
+                url http://YOUR_HOSTNAME:YOUR_OPTIONAL_PORT/api/pydio/ws_authenticate?key=TOKENP:TOKENS
+                query auth_hash
+                query auth_token
                 out user
             }
         }
@@ -99,7 +99,7 @@ pydiocaddy.sample:
             }
             pre {
                 type request
-                url http://YOUR_HOSTNAME:YOUR_OPTIONAL_PORT?xhr_uploader=true
+                url http://YOUR_HOSTNAME:YOUR_OPTIONAL_PORT/api/{repo}/upload/put/{nodedir}?xhr_uploader=true
                 header X-File-Direct-Upload request-options
                 header X-Pydio-Admin-Auth TOKENP:TOKENS
                 header X-File-Name {nodename}
@@ -108,12 +108,12 @@ pydiocaddy.sample:
             }
             post {
                 type request
-                url http://YOUR_HOSTNAME:YOUR_OPTIONAL_PORT?xhr_uploader=true
+                url http://YOUR_HOSTNAME:YOUR_OPTIONAL_PORT/api/{repo}/upload/put/{nodedir}?xhr_uploader=true
                 header X-File-Direct-Upload upload-finished
                 header X-Pydio-Admin-Auth TOKENP:TOKENS
                 header X-File-Name {nodename}
-            query auth_hash
-            query auth_token
+                query auth_hash
+                query auth_token
                 out body
             }
         }
