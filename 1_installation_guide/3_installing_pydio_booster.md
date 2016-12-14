@@ -25,7 +25,7 @@ After install, you should already see some changes in the "monitoring" panel. By
 [:image-popup:1_installation_guide/booster_configuration_panel.png]
 
  - The most important field here is the "Host": it should be the same as your Pydio server domain. If pydio is available at https://yourdomain.tld/pydio , the Booster Host should be yourdomain.tld as well.
- - If you are serving Pydio through https (which is recommended), you can check the "SSL" box and in that case you will have to point to the domain SSL key/certificates as configured in your virtual host.
+ - If you are serving Pydio through https (which is recommended), you can check the "SSL" box and in that case you will have to point to the domain SSL key/certificates as configured in your virtual host. *Note* : some certificates on different OS are restricted in read mode, and therefore you either need to copy them in a location where the user you used to start your webserver has access to, or add that user to the ssl-cert group (eg: sudo usermod -a -G ssl-cert www-data)
  - Check the "WebSocket Server" and "Upload Server" to enable the features.
  - The default port for Pydio Booster is 8090. Make sure that it is open for TCP connection in your firewall (or select your own port value).
 
