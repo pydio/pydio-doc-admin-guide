@@ -49,7 +49,7 @@ And finally install pydio
 
 First, configure the pydio repository as well as its dependencies
 
-    echo "deb https://download.pydio.com/pub/linux/debian/ xenial main universe" > /etc/apt/sources.list.d/pydio.list
+    echo "deb https://download.pydio.com/pub/linux/debian/ xenial main" > /etc/apt/sources.list.d/pydio.list
     wget -qO - https://download.pydio.com/pub/linux/debian/key/pubkey | sudo apt-key add -
     sudo apt-get update
 
@@ -69,6 +69,12 @@ Install the main PPA for PHP
 
     sudo apt-get install -yq software-properties-common
     sudo add-apt-repository ppa:ondrej/php
+    sudo apt-get update
+
+Configure the pydio repository as well as its dependencies
+
+    echo "deb https://download.pydio.com/pub/linux/debian/ trusty main" > /etc/apt/sources.list.d/pydio.list
+    wget -qO - https://download.pydio.com/pub/linux/debian/key/pubkey | sudo apt-key add -
     sudo apt-get update
 
 Now, install pydio
