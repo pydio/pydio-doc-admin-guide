@@ -1,12 +1,3 @@
-Pydio Booster is a unique tool developed to easily boost your installation performance, by overriding inherent limitation of the PHP language:  it is written in Go and runs as a standalone server application that will communicate with the core pydio layer.
-
-Main benefits are :
-
- - WebSocket out of the box: constant polling of the servers by the various Pydio "clients" (web browsers, PydioSync applications) putting a load on the system just to get the "last news" (any new file added? any new action by current user?). To avoid that, Pydio Booster provides a rock-solid, cross-platform, easy-to-deploy websocket server: clients can keep an open connection to this service and get events in real-time, with zero-impact on the main server CPU.
- - Overcome PHP upload limitations: when it comes to uploads, PHP is often a bottleneck in term of maximum file size or simply when it comes to writing files to underlying storage. Pydio Booster can take care of that, and just inform the php server when a new file has been added to storage! This is currently only working with a local (or mounted) file system, or with S3 object storages. More to come.
- - No more need for this complex CRONtab entry (or windows scheduling task) to fully use Pydio Scheduler. Booster will handle the "master" trigger for you.
- - _Coming Soon_ : as for upload, Booster will soon be able to take care of the download of the files, removing the burden on the php server.
-
 ## Installing Binary
 
 The Enterprise Distribution provides a dedicated in-app mechanism to download the last version of Pydio Booster for your OS, run it and monitor if it is working properly. Along with the default configuration, this tool should generally be sufficient to have Pydio Booster up and running easily. However, if your networking setup is involving proxies, internal / external URL's or multiple-nodes, you may need to customize the configuration. You can even fully customize the generated configuration file and start Pydio Booster manually.
