@@ -6,8 +6,6 @@ Metadata is attached to a file, which means it is moved/copied/deleted between f
 
 ## Add Metadata to a workspace
 
-### Additional Feature
-
 To add some metadata fields, simply follow the steps:
 
 + In the "Additional Features" of a workspace configuration panel, make sure a MetaStore is defined, and add a "Text Metadata" plugin to the stack.
