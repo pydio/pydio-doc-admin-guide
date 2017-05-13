@@ -1,10 +1,8 @@
 Here are some common mistakes you might encounter when you try to install Pydio and a way to fix them.
 
-All examples are with the latest [Pydio-enterprise 6.4.1](https://pydio.com/en/community/releases/enterprise-distribution/pydio-enterprise-641-bugfix-release) with the recommend stack ( Debian - Apache2 - MySQL ).
-
 ##Permission issue:
 
-After you put your pydio in your /var/www folder you go to your web browser and you will probably see this:
+After you put your pydio in your /var/www folder you go to your web browser and you may see this:
 
 [:image-popup:1_installation_guide/troubleshooting_forgotten.png]
 
@@ -16,10 +14,6 @@ Pydio need to have some access right to read and/or write files. Just run:
 After refreshing your web browser, you should can see this Pydio Diagnostic Tool:
 
 [:image-popup:1_installation_guide/troubleshooting_diagnostic_tool.png]
-
-Instead of:
-
-[:image-popup:1_installation_guide/troubleshooting_diagnostic_tool_good.png]
 
 ###Security breach issue:
 
