@@ -16,6 +16,13 @@ The Actions tab provides you a simple GUI to disable any action provided by any 
 + Save the role.
 Now if you log in as user to whom you have applied this role, you should see that the “Download” button has disappeared.
 
+### Enabling Plugins 
+Starting with Pydio 8, you can now fully enable/disable plugins for a specific role. This may be typically useful if you want to enable specific editors only for a subset of users, if these editors require third-party licensing.
+
+In the parameters browser, look for "Enable " or for the name of the plugin to find the corresponding "Enable Plugin Name (pluginType.pluginId)" value.
+
+[:image-popup:4_setup_workspaces_and_users/enable_editor_parameter.png]
+
 ### Overriding default parameters values
 In the last tab of the role editor, “Parameters”, you will be able to set up a predefined value for any parameter of any plugin, using a multiple-step selector as for the actions disabler.
 
