@@ -21,4 +21,4 @@ Before dropping a file
 
 After dropping a file 
 
-[:image-popup:4_setup_workspaces_and_users/easy_transfer_after.gif]
+[:image-popup:4_setup_workspaces_and_users/easy_transfer_after.png]
