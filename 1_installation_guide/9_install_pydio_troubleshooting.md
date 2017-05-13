@@ -13,7 +13,7 @@ Pydio need to have some access right to read and/or write files. Just run:
 
 After refreshing your web browser, you should can see this Pydio Diagnostic Tool:
 
-[:image-popup:1_installation_guide/troubleshooting_diagnostic_tool.png]
+[:image-popup:1_installation_guide/troubleshooting_diagnostic.png]
 
 ###Security breach issue:
 
