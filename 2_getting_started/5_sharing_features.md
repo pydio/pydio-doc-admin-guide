@@ -34,7 +34,11 @@ Administration
 
 ### Remote sharing (Pydio Cloud)
 
-[:image-popup:5_customize_users_interface/pydio_cloud_admin_screens.png]
+Pydio Cloud is a feature allowing your users to share files or folder directly with other instances of Pydio, and actually other instances of file sharing platforms supporting the Open Cloud API. Major open source EFSS providers are compatible with this API. Use the Pydio Cloud panel to enable this feature. 
+
+[:image-popup:5_customize_users_interface/pydio_cloud_setup_trusted.png]
+
+Pydio provides an advanced feature allowing you to preset a list of "Trusted Servers" that will expose their users directories to your Pydio instance. Currently this is only working between Pydio instances (not part of the OCS Api). To add a trusted server, ask the server admin to create a technical account for you, and use the credentials provided in the configuration.
 
 ##### Installation
 * To enable the ability for users to share their files privately with one or more users on a separate system, simply go to the ‘Pydio cloud’ screen in the Administration screens, and click on ‘Enable Federated Sharing’.
