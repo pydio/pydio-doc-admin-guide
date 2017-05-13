@@ -37,4 +37,4 @@ If you are at loss with this mechanism, you should probably read the "Users Mana
 
 Once enable, the quota will appear in the right-hand info panel of the users, when they first enter a workspace, as shown on the screenshot below.
 
-[:image-popup:4_setup_workspaces_and_users/workspaces_quotas_panel.png]
+[:image-popup:4_setup_workspaces_and_users/workspaces_quotas_info_panel.png]
