@@ -15,6 +15,8 @@ in return. In that case, follow the steps below:
  - Apply the role to the desired users.
  - If you want to raise the level of security, you can use the parameters list in the role configuration to set "Password Mandatory" on shared links. This will requires the users to enter a password as soon as they upload a file, before creating the actual link.
 
+## Layout
+
 Before dropping a file 
 
 [:image-popup:4_setup_workspaces_and_users/easy_transfer_before.png]
