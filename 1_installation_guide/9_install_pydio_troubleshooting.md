@@ -30,9 +30,9 @@ So you need to accept all .htaccess files which are in this directory :
 After that you can restart your apache2:
 `sudo service apache2 restart`
 
-And the "Security Breach" error is gone!
+The "Security Breach" error should now be fixed.
 
-##IoncubeLoader issue:
+## IoncubeLoader issue:
 
 The second and one the most important extension for Pydio-enterprise is "IonCube Extension"; First you need to know if your system it's a 32Bits or 64Bits :
 `uname -a`
@@ -68,26 +68,24 @@ Now you need to configure your PHP for Ioncube, you just add this part at first 
  
 [:image-popup:1_installation_guide/troubleshooting_php_ioncube.png]
 
-###Output buffering issue:
+## #Output buffering issue:
 
 After that you can resolve the last warning, the output buffering, all you need to do it's to edit all of your php.ini:
 `output_buffering = Off`
 
 After that you just need to restart apache and the "Pydio Diagnostic Tool".
 
-##MySQL extension issue:
+## MySQL extension issue:
 
-If you see this error when you test your SQL connexion:
+When you test your SQL connection during the installation wizard, if you have an error "mysql extension missing", make sure to install 
+the php-mysql additional packages on your server. For example on a debian: 
 
-[:image-popup:1_installation_guide/troubleshooting_mysql_missing.png]
-
-You must install some packages:
-`sudo apt-get install php5-mysql`
+`sudo apt-get install php-mysql`  
 `sudo service apache2 restart`
 
-You can now test if your database connexion is good.
+You can now test if your database connection is good.
 
-##Rewrite ( refresh ) issue:
+## Rewrite ( refresh ) issue:
 
 Another problem is when you refresh your browser you have an issue like this:
 
