@@ -68,7 +68,7 @@ Now you need to configure your PHP for Ioncube, you just add this part at first 
  
 [:image-popup:1_installation_guide/troubleshooting_php_ioncube.png]
 
-## #Output buffering issue:
+## Output buffering issue:
 
 After that you can resolve the last warning, the output buffering, all you need to do it's to edit all of your php.ini:
 `output_buffering = Off`
