@@ -2,11 +2,13 @@ This is a specific Enterprise Distribution feature: starting with Pydio 8, you c
 
 ## Prepare the CSV  
 
-Using a text editor or a spreadsheet editor, prepare the data that you will import with at least the following columns:   
+Using a text editor or a spreadsheet editor, prepare the data that you will import with at least the following columns: 
+
  - **login** user identifier used to login
  - **password** user password
 
-You can also add other columns containing the following data :   
+You can also add other columns containing the following data : 
+
  - **name** The display name showed to other users
  - **email** an email address
  - **role** a pydio role to be applied at import when creating the user. If it does not already exists in Pydio, it will be created.
