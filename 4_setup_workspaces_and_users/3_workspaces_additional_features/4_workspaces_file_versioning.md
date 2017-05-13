@@ -9,7 +9,7 @@ The current implementation is based on Git for the sake of simplicity, and it ha
 + Git is known for not very well scaling for huge files. Thus if you are planning to use only media files for example (videos), you should probably avoid this.
 A part of that, it's working neatly, and implementing versioning through a git repository also allows you to interact with the versioning system through external application.
 
-[:image-popup:4_setup_workspaces_and_users/workspaces_git_versioning.png]
+[:image-popup:4_setup_workspaces_and_users/workspaces_versioning.png]
 
 ### Installing
 Once installed, you will be able to see a list of actions of what happened on a given file, eventually download a given previous revision, or directly reverse the current revision to a previous one (thus creating a new revision). To install, simply make sure that the **_GIT_** command is accessible through the command-line on your server, and that the **_PEAR/VersionControl_Git_** client is installed as well.
