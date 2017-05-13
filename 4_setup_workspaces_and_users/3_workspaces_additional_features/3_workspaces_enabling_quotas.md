@@ -32,3 +32,9 @@ Simply add the meta.quota feature to both workspaces.
 That's it! Now if you log like a user of this group, you should see that your quota value is extended to 500M. This could have been done at the user level (Parameters tab of the user editor), the group level (like here), or the Role level (all users with this role would have this new value applied).
 
 If you are at loss with this mechanism, you should probably read the "Users Management" section, where you will learn about parameters refinement based on Roles.
+
+### User interface
+
+Once enable, the quota will appear in the right-hand info panel of the users, when they first enter a workspace, as shown on the screenshot below.
+
+[:image-popup:4_setup_workspaces_and_users/workspaces_quotas_panel.png]
