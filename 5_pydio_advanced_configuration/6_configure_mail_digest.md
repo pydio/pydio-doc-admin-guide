@@ -57,7 +57,7 @@ Subject Prepend : Before the subject of Pydio, you can add a prefix so the mail 
 
 Go to "My Account" in the top right of your Pydio and configure your own digest frequency
 
-[:image-popup:6_pydio_advanced_configuration/config_mail_digest_4.png]
+[:image-popup:6_pydio_advanced_configuration/config_mail_digest_account.png]
 
 Don't forget to save before leaving the page
 
