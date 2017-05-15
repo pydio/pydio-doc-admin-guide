@@ -1,3 +1,8 @@
+<div style="background-color: #fbe9b7;font-size: 16px;">
+<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 7. Looking for <a href="https://pydio.com/en/docs/v8/watches-and-notifications">Pydio 8 docs?</a></span>
+</div>
+
 ### Introduction
 Notification is a powerful feature of Pydio, once activated through a specific plugin, and as of v5, part of the core. It will allow the publication of two kind of objects :
 

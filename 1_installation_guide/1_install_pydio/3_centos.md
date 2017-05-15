@@ -1,3 +1,8 @@
+<div style="background-color: #fbe9b7;font-size: 16px;">
+<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 7. Looking for <a href="https://pydio.com/en/docs/v8/centosrhel-7-systems">Pydio 8 docs?</a></span>
+</div>
+
 ## Create an account to grab your API Credentials
 
 Our Enterprise Repositories are password-protected via API Key and API Secret. You can find them in your Pydio.com Account, under the "My API Keys" menu:
@@ -17,7 +22,7 @@ Pydio 7 and its dependencies require PHP version >= 5.6. However, centos 7/rhel 
 
     yum install epel-release scl-utils
 
-**CentOS 7** 
+**CentOS 7**
 
     yum install centos-release-scl
 
@@ -27,7 +32,7 @@ Pydio 7 and its dependencies require PHP version >= 5.6. However, centos 7/rhel 
 
 **Remi's RPM**
 
-    rpm -Uvh https://www.softwarecollections.org/en/scls/remi/php56more/epel-7-x86_64/download/remi-php56more-epel-7-x86_64.noarch.rpm 
+    rpm -Uvh https://www.softwarecollections.org/en/scls/remi/php56more/epel-7-x86_64/download/remi-php56more-epel-7-x86_64.noarch.rpm
 
 **Pydio**
 
@@ -142,17 +147,17 @@ If you upgrade from Pydio 6.4.2, and php.ini was changed, you should change such
 ### Update database
 
 All sql script is store in /usr/share/doc/pydio/sql, you can execute following commands to **upgrade** your exited DB. The script for updating DB can be downloaded:
- 
-- [MySQL](https://raw.githubusercontent.com/pydio/pydio-core/develop/dist/php/7.0.0.mysql) 
-- [Postgre](https://raw.githubusercontent.com/pydio/pydio-core/develop/dist/php/7.0.0.pgsql) 
+
+- [MySQL](https://raw.githubusercontent.com/pydio/pydio-core/develop/dist/php/7.0.0.mysql)
+- [Postgre](https://raw.githubusercontent.com/pydio/pydio-core/develop/dist/php/7.0.0.pgsql)
 - [SQLite](https://raw.githubusercontent.com/pydio/pydio-core/develop/dist/php/7.0.0.sqlite)
 
 For example:
 
     mysql -u username -p databasename < path/7.0.0.mysql
-   
+
    Change the version number:
-   
+
     mysql> UPDATE ajxp_version SET `db_build`="66";
 
 
@@ -180,12 +185,12 @@ In this how-to, we take an example of using MySQL to store all configuration of 
 Install mariadb:
 
     yum install mariadb mariadb-server
-    
+
 Start mariadb service at boot time
- 
+
     systemctl enable mariadb
     systemctl start mariadb
-    
+
 Run secure installation
 
     mysql_secure_installation
@@ -193,9 +198,9 @@ Run secure installation
 Enter mysql command line
 
     mysql -u root -p
-    
+
 Execute following commands to create database for pydio
-    
+
     create database pydio;
     create user 'pydio'@'localhost' identified by 'password';
     grant all privileges on pydio.* to 'pydio'@'localhost';
@@ -206,4 +211,3 @@ Execute following commands to create database for pydio
 Please visit [SELinux](https://pydio.com/en/docs/kb/security/pydio-security-enhanced-linux-selinux)
 
 [Quick Start](http://pydio.com/en/docs/v7-enterprise/quick-start)
-

@@ -1,3 +1,8 @@
+<div style="background-color: #fbe9b7;font-size: 16px;">
+<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 7. Looking for <a href="https://pydio.com/en/docs/v8/sharing-features">Pydio 8 docs?</a></span>
+</div>
+
 With Pydio, it is possible to share your folders and files publicly, privately and from version _6.4_, also remotely.
 
 Administration
@@ -23,11 +28,11 @@ Administration
 	* **Maximum file expiration limit** _0 = unlimited_
 	* **Maximum file download limit** _0 = unlimited_
 	* **Set password mandatory** - Requires users to set a password for their public link
-	* **Force External Mailer** 
+	* **Force External Mailer**
 	* **Create QRCode** _(deprecated)_
 
 ### Private sharing
-	
+
 ##### Installation
 * This functionality is **enabled** by default.
 * If you want to enable / disable the functionality for folders - make sure that one of ‘Minisites and Workspaces’ or ‘Workspaces’ is / is not chosen.
@@ -101,7 +106,7 @@ The number of files that have not been seen yet will be shown as a tag.
 
 Approval is required for and only for files that have shared with you remotely. You will see a list of _pending invitations_ at the top and you can either _Approve_ or _Reject_ each from the top bar or the information bar on the right hand side.
 
-If you start having a lot of content shared with you, you can filter it using the search box or the different filter tags on the left hand side. 
+If you start having a lot of content shared with you, you can filter it using the search box or the different filter tags on the left hand side.
 
 ### Shared Folders
 
@@ -110,4 +115,3 @@ If you have folders shared with you, you will see multiple Workspaces listed und
 _Only ‘remotely shared items’ are concerned by the following functionality :_
 
 You need to approve folders that have been shared with you by a remote user. Upon access, a warning will be issued asking you to decide whether you want to continue accessing it, or never hear from it again.
-

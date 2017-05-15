@@ -1,3 +1,8 @@
+<div style="background-color: #fbe9b7;font-size: 16px;">
+<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 7. Looking for <a href="https://pydio.com/en/docs/v8/enabling-sso-php-based-cms-dupral-joomla-wordpress-your-own">Pydio 8 docs?</a></span>
+</div>
+
 Pydio provides a set of “CMS Bridges” to allow you to use your existing CMS as a users directory. The principle of the bridge is that Pydio becomes a “Slave” of the CMS, in that when a user logs in the CMS, she is automatically logged in Pydio also. If not logged and accessing to Pydio, she is automatically redirected to the CMS login page.
 
 Disclaimer : If you installed Pydio-Enterprise with the linux repository (apt, yum etc...), you must install the "pydio-plugin-auth.remote" package and don't forget to refresh your pydio after that.

@@ -1,3 +1,8 @@
+<div style="background-color: #fbe9b7;font-size: 16px;">
+<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 7. Looking for <a href="https://pydio.com/en/docs/v8/pydio-booster">Pydio 8 docs?</a></span>
+</div>
+
 Pydio Booster is a unique tool developed to easily boost your installation performance, by overriding inherent limitation of the PHP language:  it is written in Go and runs as a standalone server application that will communicate with the core pydio layer.
 
 Main benefits are :
@@ -51,4 +56,3 @@ If you enabled file upload, you should see in the Network > XHR panel some POST 
 ## Troubleshooting
 
 For more advanced configurations and troubleshooting, make sure to read the dedicated articles in the Knowledge Base.
-

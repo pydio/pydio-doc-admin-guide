@@ -1,3 +1,8 @@
+<div style="background-color: #fbe9b7;font-size: 16px;">
+<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 7. Looking for <a href="https://pydio.com/en/docs/v8/troubleshooting">Pydio 8 docs?</a></span>
+</div>
+
 Here are some common mistakes you might encounter when you try to install Pydio and a way to fix them.
 
 All examples are with the latest [Pydio-enterprise 6.4.1](https://pydio.com/en/community/releases/enterprise-distribution/pydio-enterprise-641-bugfix-release) with the recommend stack ( Debian - Apache2 - MySQL ).
@@ -71,7 +76,7 @@ Now you need to configure your PHP for Ioncube, you just add this part at first 
 `sudo service apache2 restart`
  To know you can tap:
  `php -v`
- 
+
 [:image-popup:1_installation_guide/troubleshooting_php_ioncube.png]
 
 ###Output buffering issue:

@@ -1,3 +1,8 @@
+<div style="background-color: #fbe9b7;font-size: 16px;">
+<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 7. Looking for <a href="https://pydio.com/en/docs/v8/checking-sync">Pydio 8 docs?</a></span>
+</div>
+
 Since Pydio 6, the new PydioSync client is now based on a number of server features to make the desktop client lighter and more efficient. Please read go through the basic checks described here to make sure it will work ok.
 
 ### How the sync client works
@@ -102,4 +107,3 @@ You should receive a json listing all changes since creation of workspace.
 To help you in that task, we’ve setup a script that will try to use the API to create a file inside a workspace, and check if it can find back the “change” afterward. For that, uncomment the die() line of the /runTests.php file and call the following url in your browser : https://yourserver.tld/runTests.php?api=true.
 
 **Please note**: If your server is not located at the document root (e.g. https://yourserver.tld/pydio/), there is a small issue in the current version of this script. Please grab the latest version from github and replace the script before testing (https://raw.githubusercontent.com/pydio/pydio-core/develop/core/src/runTests.php).
-

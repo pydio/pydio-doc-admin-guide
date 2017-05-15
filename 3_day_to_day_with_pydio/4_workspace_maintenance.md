@@ -1,3 +1,8 @@
+<div style="background-color: #fbe9b7;font-size: 16px;">
+<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 7. Looking for <a href="https://pydio.com/en/docs/v8/workspaces-maintenance">Pydio 8 docs?</a></span>
+</div>
+
 Along with the global administration dashboard, you can use the workspaces editor to monitor information specific to a given workspace, as well as perform some maintenance tasks.
 
 ## Workspace Activity
@@ -24,4 +29,4 @@ The panel will show every currently running tasks.
 
 [:image-popup:3_day_to_day_with_pydio/workspaces-maintenance.png]
 
-You also have the ability to clear all activity (displayed to the user in the right-hand panel of a workspace), which can be useful if you tested Pydio on a staging environment that you now want to put live in production and reset any activity. 
+You also have the ability to clear all activity (displayed to the user in the right-hand panel of a workspace), which can be useful if you tested Pydio on a staging environment that you now want to put live in production and reset any activity.

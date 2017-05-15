@@ -1,3 +1,8 @@
+<div style="background-color: #fbe9b7;font-size: 16px;">
+<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 7. Looking for <a href="https://pydio.com/en/docs/v8/object-storage-drivers-s3-swift">Pydio 8 docs?</a></span>
+</div>
+
 # Cloud drivers : s3, hpcloud #
 
 Naturally, with the high rise of the Object-Storage systems, particularly in the cloud, a couple of drivers may help you in getting access to this kind of storage. Currently access.s3 and access.hpcloud are the only ones available.

@@ -1,4 +1,7 @@
-# Introduction #
+<div style="background-color: #fbe9b7;font-size: 16px;">
+<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 7. Looking for <a href="https://pydio.com/en/docs/v8/introduction">Pydio 8 docs?</a></span>
+</div>
 
 At this step, you will probably have deeply configured your Pydio installation for all the internal data stores (users, rights, preferences, etc). Now it's time fine-tune Pydio for your actual business data : your files!
 

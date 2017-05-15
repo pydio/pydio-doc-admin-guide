@@ -1,3 +1,8 @@
+<div style="background-color: #fbe9b7;font-size: 16px;">
+<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 7. Looking for <a href="https://pydio.com/en/docs/v8/pydio-requirements">Pydio 8 docs?</a></span>
+</div>
+
 ## Core Installation
 
 ### LAMP stack or equivalent
@@ -11,19 +16,19 @@ Pydio can run on three types of databases : MySQL/MariaDB, PostgreSQL or Sqlite.
 
 #### PHP
 
-Pydio Enterprise Distribution requires **PHP 5.6 or later**. Recommended version is **PHP 7.0**, particularly on Windows as there is now an official 64bit build. 
+Pydio Enterprise Distribution requires **PHP 5.6 or later**. Recommended version is **PHP 7.0**, particularly on Windows as there is now an official 64bit build.
 
-The following PHP extensions are required as well for the core pydio installation: 
+The following PHP extensions are required as well for the core pydio installation:
 
 - Mbstring, gd, dom-xml, intl
 - Mysql, PostgreSQL or Sqlite php extension for connecting to the database
-- OpenSSL or Mcrypt. The latter will be deprecated in next versions of PHP so you should prefer using Open SSL. 
+- OpenSSL or Mcrypt. The latter will be deprecated in next versions of PHP so you should prefer using Open SSL.
 - **IonCube Loaders** must be installed configured as a zend_extension in your php.ini. Please see https://ioncube.com/loaders.php to pick the right version for your OS / PHP Version.
 - Opcache or equivalent Opcode Caching extension
 
 #### Additional Recommended setup:
 
-- A working Command Line PHP (CLI) runnable by webserver will allow Pydio to launch commands in background and make the 
+- A working Command Line PHP (CLI) runnable by webserver will allow Pydio to launch commands in background and make the
 user experience more fluid.
 - PHP APC/APCu extension or an additional Redis Server will allow Pydio to cache many data in-memory and greatly boost the performances as well.
 

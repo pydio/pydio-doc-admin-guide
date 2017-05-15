@@ -1,3 +1,8 @@
+<div style="background-color: #fbe9b7;font-size: 16px;">
+<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 7. Looking for <a href="https://pydio.com/en/docs/v8/accessing-remote-servers-ftp-sftp-smb-webdav-dropbox">Pydio 8 docs?</a></span>
+</div>
+
 Pydio comes bundled with plugins to accessing remote file-system based servers via various protocols:
 
 Disclaimer : If you installed Pydio by the linux repository ( apt / yum ), you must install the "pydio-plugin-access.ftp", "pydio-plugin-access.sftp", "pydio-plugin-auth.ftp" packages.

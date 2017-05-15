@@ -1,3 +1,8 @@
+<div style="background-color: #fbe9b7;font-size: 16px;">
+<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 7. Looking for <a href="https://pydio.com/en/docs/v8/configure-mail-digest">Pydio 8 docs?</a></span>
+</div>
+
 Since [Pydio 6.4.0](https://pydio.com/fr/node/1279), we added the "Mail digest" feature to avoid receiving tons of emails when watching for a file or folder modification.
 
 This page is here to help you configure the mail digest and the mail sender. The mail sender is required to send digest emails.
@@ -63,7 +68,7 @@ Don't forget to save before leaving the page
 
 ##Enable and configure the CRON
 
-We configured the digest mail, but we need to activate an action to send the mail. The action who send the grouped email, **consume_mail_queue**, need to be called to work. That's why we gonna create a scheduler or CRONTAB in our Pydio. The scheduler gonna call the action with some frequency we get chosen. But first, we need to enable the scheduler. 
+We configured the digest mail, but we need to activate an action to send the mail. The action who send the grouped email, **consume_mail_queue**, need to be called to work. That's why we gonna create a scheduler or CRONTAB in our Pydio. The scheduler gonna call the action with some frequency we get chosen. But first, we need to enable the scheduler.
 
 We need to go to "Setting" page and at the bottom left "Available Plugins" > "Action Plugins" > "Tasks Scheduler"
 

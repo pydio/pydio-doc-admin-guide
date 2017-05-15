@@ -1,3 +1,8 @@
+<div style="background-color: #fbe9b7;font-size: 16px;">
+<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 7. Looking for <a href="https://pydio.com/en/docs/v8/action-parameters">Pydio 8 docs?</a></span>
+</div>
+
 When you edit a group or a user, you are actually editing its underlaying role. Thus for the three of them (roles, groups, users), you will see the same tabs accessible : Common Info, ACLs, Actions and Parameters.
 
 ### Disabling actions

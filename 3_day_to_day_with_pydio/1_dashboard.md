@@ -1,3 +1,8 @@
+<div style="background-color: #fbe9b7;font-size: 16px;">
+<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 7. Looking for <a href="https://pydio.com/en/docs/v8/administrator-dashboard">Pydio 8 docs?</a></span>
+</div>
+
 The dashboard is the main page of Pydio Enterprise. This page allows you to quickly know what is going on your server.
 You can easily change the way you want this page by adding, deleting and reordering widgets.
 

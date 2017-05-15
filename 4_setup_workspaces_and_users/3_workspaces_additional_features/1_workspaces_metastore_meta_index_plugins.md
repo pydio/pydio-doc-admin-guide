@@ -1,3 +1,8 @@
+<div style="background-color: #fbe9b7;font-size: 16px;">
+<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 7. Looking for <a href="https://pydio.com/en/docs/v8/metastore-meta-index-plugins">Pydio 8 docs?</a></span>
+</div>
+
 As explained in the previous chapter, a workspace is mainly configured by
 + 1/ Its access driver (how do I access the actual data?)
 + 2/ Additional plugins (enriching the data & features)

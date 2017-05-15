@@ -1,3 +1,8 @@
+<div style="background-color: #fbe9b7;font-size: 16px;">
+<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 7. Looking for <a href="https://pydio.com/en/docs/v8/securing-your-installation">Pydio 8 docs?</a></span>
+</div>
+
 Pydio code is continuously audited by security experts, and should be resistant to the most common web attacks. But at some point, Pydio cannot fix holes created by a wrong server configuration. Here are some basic recommendations for securing your Pydio installation.
 
 ### Protect your folders from direct web access

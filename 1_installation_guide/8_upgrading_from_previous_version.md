@@ -1,3 +1,8 @@
+<div style="background-color: #fbe9b7;font-size: 16px;">
+<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 7. Looking for <a href="https://pydio.com/en/docs/v8/upgrading-previous-version">Pydio 8 docs?</a></span>
+</div>
+
 ## In-App upgrade from Pydio 6
 
 Upgrade is automatic from within the app for archive-based installs (zip / tar.gz). Make sure to backup the database and the files.
@@ -19,7 +24,7 @@ If there is no error reported, You can logout, refresh the page login again and 
 ## Upgrading from Pydio 6 when installed via apt/yum
 
 If Pydio is installed via a package manager, you can use the in-app upgrade processus. You first have to update the packages, using yum / apt-get commands, then manually apply the followings steps:
- 
+
  - Update database
  - Check /etc/bootstrap_*.php are up-to-date
  - Update share.php

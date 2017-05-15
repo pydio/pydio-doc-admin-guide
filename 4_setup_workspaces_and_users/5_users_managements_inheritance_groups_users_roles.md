@@ -1,3 +1,8 @@
+<div style="background-color: #fbe9b7;font-size: 16px;">
+<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 7. Looking for <a href="https://pydio.com/en/docs/v8/inheritance-groups-and-users-roles">Pydio 8 docs?</a></span>
+</div>
+
 ### Using Roles in Pydio
 
 Role can be found in "Workspaces & Users" > "People"; you can see in the left of the panel 2 tabs ( Groups and Roles ). When you click on "Roles" 2 new buttons can be found at the bottom of the panel ( + Role and Edit ).
