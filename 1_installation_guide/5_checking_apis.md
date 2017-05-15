@@ -1,4 +1,4 @@
-Pydio 7 requires a RewriteRule to redirect all request to */index.php*.  
+Pydio requires a RewriteRule to redirect all request to */index.php*.  
 
 ### Enabling Rewrite Rules
 
@@ -26,10 +26,10 @@ The variable part of this file is concerning the “RewriteBase”, which reflec
 
     <IfModule mod_rewrite.c>
 
-    # Make sure to enable RewriteRule on your server, and the the RewriteBase is correctly set. 
+    # Make sure to enable RewriteRule on your server, and the the RewriteBase is correctly set.
     # If your install is accessible on https://yourdomain.tld/pydio, RewriteBase should be /pydio.
     # If your install is accessible on https://yourdomain.tld/, RewriteBase should be /.
-    
+
     RewriteEngine on
     RewriteBase ${APPLICATION_ROOT}         # << THIS LINE SHOULD REFLECT YOUR INSTALLATION PATH
     RewriteCond %{REQUEST_FILENAME} !-f
@@ -70,9 +70,9 @@ If you encounter a white screen from startup, you may have a wrong BASE value in
 
 ### Shared links
 
-In Pydio 7, links are served by default on https://domain.tld/pydio/public/. Unlike previous versions, this is handled directly by the main routing, so it should work out of the box. If you are upgrading from a previous version, the legacy data/public/share.php file should have been modified during upgrade 
+In Pydio, links are served by default on https://domain.tld/pydio/public/. Unlike previous versions, this is handled directly by the main routing, so it should work out of the box. If you are upgrading from a previous version, the legacy data/public/share.php file should have been modified during upgrade
  process and links will be both accessible on /pydio/data/public/linkhash and /pydio/public/linkhash.
- 
+
 You can change this virtual url part in the Pydio configurations, to serve links e.g. on https://domain.tld/pydio/pub/.
 
 ### REST API
@@ -87,4 +87,3 @@ When testing the API, if you have an authorization loop (browser is asking for l
 
 - **Php-FPM or FastCGI:** see above in this article, make sure to uncomment the according lines in the main .htaccess of the application.
 - **Using “Session Credentials”** feature to connect to a remote storage: if you are authenticating against an alternative backend like ftp or smb using “Session Credentials”, this may prevent an additional performance layer added for the sync client that use a unique key pair to authenticate devices. Try disabling the authfront.keystore plugin.
-
