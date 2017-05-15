@@ -1,3 +1,8 @@
+<div style="background-color: #fbe9b7;font-size: 16px;">
+<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 7. Looking for <a href="https://pydio.com/en/docs/v8/">Pydio 8 docs?</a></span>
+</div>
+
 As many PHP frameworks, Pydio ends up loading quite a lot of PHP files at runtime, which can result in poor performances if the server is not correctly configured. Furthermore, managing files, and particularly big files, can also lead PHP to high CPU load for some operations. We present here the basic strategies that can be implemented to enhance performance, from easy (and really recommanded) to more complex setups.
 
 ### Install a PHP Accelerator
@@ -31,5 +36,5 @@ Caching helps in consistently reducing hefty/slow operations and minimizing syst
 Though caching service was introduced in pydio v6.2.X, the ease of configuring it has been greatly enhanced in the later versions. Now one can directly configure the caching options from pydio admin panel.
 
 Along with the PHP Accelerator (**PHP APC**) pydio provides **memcache**, **memcached**, **redis**, **xcache** options by default to configure cache server.. The **NOSQL keyvalue** stores like memcache, memcached and Redis runs a server on a local port to provide the caching service.
- 
+
 [:image-popup:tuning_server_performances/cache_service_configuration_community.png]

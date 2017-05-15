@@ -1,3 +1,8 @@
+<div style="background-color: #fbe9b7;font-size: 16px;">
+<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 7. Looking for <a href="https://pydio.com/en/docs/v8/">Pydio 8 docs?</a></span>
+</div>
+
 ### Settings panel overview
 Logged in as admin, you can switch to the “Settings” panel (see the top right user menu) and get access to full control dashboard for the application. Left-hand, you can see the main categories available :
 
@@ -16,7 +21,7 @@ Go to Global Configurations > Core Configs. Here you will find the most importan
 
 [:image-popup:pydio_main_options/03-setting-core-config.png]
 
- 
+
 
 + **Pydio Main Options:** these are at the very core of the application server.  They content basic settings like the application title, its URL (if not automatically detected), etc., and also the activation of the main server components : WebDAV, CLI, compression features activation, etc.
 + **Authentication:** define here the “driver(s)“ that Pydio will use as a directory for authenticating users. From serialize files (default) to SQL database, to LDAP binding or basic_http authentification. See the dedicated chapter of this manual.

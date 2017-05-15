@@ -1,3 +1,8 @@
+<div style="background-color: #fbe9b7;font-size: 16px;">
+<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 7. Looking for <a href="https://pydio.com/en/docs/v8/">Pydio 8 docs?</a></span>
+</div>
+
 ### The case
 Creating workspaces ones by ones as admin is OK in most cases, but sometimes you will want to delegate this to other users : either end-users themselves, because creating a “dropbox” workspace requires them to configure their own credentials or API key, or potentially “sub-admins” : groups administrators.
 

@@ -1,3 +1,8 @@
+<div style="background-color: #fbe9b7;font-size: 16px;">
+<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 7. Looking for <a href="https://pydio.com/en/docs/v8/">Pydio 8 docs?</a></span>
+</div>
+
 ### Configurations backends
 There are two major data types handle by Pydio : your actual “business” data, ie. your files and their metadata, and “configurations” data, i.e. plugins options and other internal parameters. Configurations are themselves divided in two parts : users credentials, managed by AUTH plugins, and all the rest, managed by CONF plugins. We are only speaking here of the latter sort.
 

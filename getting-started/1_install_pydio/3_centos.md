@@ -1,10 +1,15 @@
+<div style="background-color: #fbe9b7;font-size: 16px;">
+<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 7. Looking for <a href="https://pydio.com/en/docs/v8/">Pydio 8 docs?</a></span>
+</div>
+
 ## Install Software Collection, EPEL and Pydio repositories
 
 **EPEL**
 
     yum install epel-release scl-utils
 
-**CentOS 7** 
+**CentOS 7**
 
     yum install centos-release-scl
 
@@ -14,7 +19,7 @@
 
 **Remi's RPM**
 
-    rpm -Uvh https://www.softwarecollections.org/en/scls/remi/php56more/epel-7-x86_64/download/remi-php56more-epel-7-x86_64.noarch.rpm 
+    rpm -Uvh https://www.softwarecollections.org/en/scls/remi/php56more/epel-7-x86_64/download/remi-php56more-epel-7-x86_64.noarch.rpm
 
 **Pydio**
 
@@ -113,4 +118,3 @@ All sql script is store in /usr/share/doc/pydio/sql, you can execute following c
 
 
 [Quick Start](http://pydio.com/en/docs/v7-enterprise/quick-start)
-

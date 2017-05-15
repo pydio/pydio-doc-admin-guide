@@ -1,3 +1,8 @@
+<div style="background-color: #fbe9b7;font-size: 16px;">
+<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 7. Looking for <a href="https://pydio.com/en/docs/v8/">Pydio 8 docs?</a></span>
+</div>
+
 ### The mount command line
 
 > Warning, this is only implemented for *nix servers!
@@ -31,7 +36,7 @@ Also we assume that we will create Pydio users with the same credentials as the 
     - **User / Password** : leave empty
     - **Session Credentials** : Yes.
     We want to use the Pydio credentials for logging to the SMB share. Don’t forget to also check the “Set Credentials in Session” flag in the main Authentication configuration panel.
-    
+
 Waou, that’s it! Save these option, cross your fingers, and try accessing to this new workspace.
 
 Common problems will generally come from the SUDO configuration, or if you are using Session Credentials, don’t forget you must use a user that is bother authenticated on Pydio and on the remote SMB server.

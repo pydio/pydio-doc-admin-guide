@@ -1,3 +1,8 @@
+<div style="background-color: #fbe9b7;font-size: 16px;">
+<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 7. Looking for <a href="https://pydio.com/en/docs/v8/">Pydio 8 docs?</a></span>
+</div>
+
 Pydio comes with a bundled webDAV **server** which allows you to expose your files to a variety of clients applications for easy access. All you need to do is to "Allow webDAV Access" through Pydio's web interface.
 
 **_Note : Please beware that this document intends to setup Pydio as a webdav SERVER, not a client. If what you are looking for is accessing a set of documents stored on a remote webDAV server with Pydio, see the [access.webdav](https://pydio.com/en/docs/references/plugins/access/webdav) plugin._**

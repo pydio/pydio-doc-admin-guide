@@ -1,17 +1,22 @@
+<div style="background-color: #fbe9b7;font-size: 16px;">
+<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 7. Looking for <a href="https://pydio.com/en/docs/v8/">Pydio 8 docs?</a></span>
+</div>
+
 Binding to an existing LDAP  directory or Microsoft Active Directory (AD)  allows you to reuse the user accounts that you already have in the directory, without having to create new accounts in Pydio. It is therefore  one of the most frequently wanted features  when deploying Pydio on top of an existing infrastructure., even more so if you have e.g. a Windows environment where access to files is managed with AD accounts, and you want to use those file servers as backend storage.
 
 However, correctly setting up the correct parameters can be tricky, as every LDAP deployment is different.
 
 Also note that this is not a Single Sign-on  configuration : your users will still be required  to log in to Pydio, using their LDAP/AD username and password. The Pydio “Admin” account will also still work.
 
- 
+
 
 ### Requirements
 + you need to have the PHP LDAP module installed, eg  on Ubuntu/Debian : `apt-get install php5-ldap`
 + in Pydio you need to  set up a multiple authentication configuration, using the “Secondary Instance” parameter, to allow your existing users to create new ones outside of the directory (e.g. to share files with 3rd parties)
 + in the Authentication Parameters (see previous chapter), you probably want “Auto Create User” set to **_YES_**. Pydio will then create an Pydio user object for each user that logs in with LDAP/AD username and password. You can further use those user object for user rights management in Pydio.
 + in the Authentication Parameters, set  “Transmit Clear Pass” to **_YES_**, at least until your LDAP/AD authentication is set up and working.
- 
+
 
 ### LDAP connexion information
 Open the Global Configurations > Core Configs > Authentication panel, and scroll to the “Main Instance” section. Here you will have to switch to the LDAP driver, and set up the correct values to connect to the server.
@@ -37,7 +42,7 @@ For AD, `sAMAccountname` is a good value.
 
 These are all you need for LDAP/AD user authentication. At the bottom of the form, you can see a “Test User” and “Test connexion” button : once you have filled the fields mentioned above, you can check if your search is working by entering an existing user login here, and testing the search with the button. You should definitely have it working before saving your configuration definitely and before you continue with additional LDAP/AD configuration.
 
- 
+
 
 ### Mapping LDAP attributes
 
@@ -49,7 +54,7 @@ These mappings are done login time, and the user data is updated only if a chang
 
 Mapping of attributes works with a set of parameters  that work in triplet : {ldap attribute, mapping type, plugin parameter}. This set is repeatable, so that you can retrieve and map several distinct LDAP/AD attributes.
 
-+ LDAP attribute : the attribute to retrieve when searching for user, and to get the value from. 
++ LDAP attribute : the attribute to retrieve when searching for user, and to get the value from.
 + Mapping type can take 4 values :
     - Plugin parameter : will use the value provided in the following “plugin parameter” field to map the retrieve value to any arbitrary plugin parameter of the current user (see further).
     - Role id : will apply to the current user a role with the value id. Create the role if it does not exists.
@@ -69,7 +74,7 @@ In the core.conf/manifest.xml you can find the various parameters provided by th
 
 So, you can map the LDAP “email” attribute or AD “Mail” attribute to the Pydio “core.conf/email” attribute of the authenticated User. Likewise, you can map any suitable LDAP or AD attribute to the Pydio “core.conf/USER_DISPLAY_NAME” parameter to get human-friendly names in the GUI.
 
- 
+
 
 ##### Using LDAP/AD Groups
 
@@ -77,7 +82,7 @@ When you’re using an LDAP directory that supports the « memberOf » attribute
 
 You will also need a good understanding of Pydio’s Groups and Roles to make good use of this feature.
 
- 
+
 
 ### Setting up a secondary auth driver
 Most generally, LDAP accesses are readonly, thus preventing Pydio users to create new users for sharing. For this reason, you have to configure a secondary instance to keep a parallel user base that is fully manageable by Pydio. Choose either SQL or Serial files, depending on the Configuration storage you already use (SQL or Serial), and depending on the user load you expect. Set the “Mode” in “Master / Slave”, as LDAP will be the master reference. See previous page (Authentication) for more details.

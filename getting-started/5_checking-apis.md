@@ -1,3 +1,8 @@
+<div style="background-color: #fbe9b7;font-size: 16px;">
+<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 7. Looking for <a href="https://pydio.com/en/docs/v8/">Pydio 8 docs?</a></span>
+</div>
+
 Pydio 7 requires a RewriteRule to redirect all request to */index.php*.
 
 ### Enabling Rewrite Rules
@@ -87,4 +92,3 @@ When testing the API, if you have an authorization loop (browser is asking for l
 
 - **Php-FPM or FastCGI:** see above in this article, make sure to uncomment the according lines in the main .htaccess of the application.
 - **Using “Session Credentials”** feature to connect to a remote storage: if you are authenticating against an alternative backend like ftp or smb using “Session Credentials”, this may prevent an additional performance layer added for the sync client that use a unique key pair to authenticate devices. Try disabling the authfront.keystore plugin.
-

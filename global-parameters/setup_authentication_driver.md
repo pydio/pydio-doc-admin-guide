@@ -1,3 +1,8 @@
+<div style="background-color: #fbe9b7;font-size: 16px;">
+<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 7. Looking for <a href="https://pydio.com/en/docs/v8/">Pydio 8 docs?</a></span>
+</div>
+
 ### Data concerned & available plugins
 As explained in the previous chapter, there are various types of data managed in Pydio : configurations vs. “business” data ( = your files ). All the configurations data are managed by the configuration backend (humm, you would have guessed), but the users directory is handled by another type of plugins, Authentication ones. Basically, these plugins are just able to tell whether a user exists or not, if he can be logged in with a given password, and if he is part of group.
 

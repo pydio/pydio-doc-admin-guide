@@ -1,3 +1,8 @@
+<div style="background-color: #fbe9b7;font-size: 16px;">
+<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 7. Looking for <a href="https://pydio.com/en/docs/v8/">Pydio 8 docs?</a></span>
+</div>
+
 ### The meta.quota plugin
 If you need to enable some storage limitations for your users, the **meta.quota** plugin can be added as a workspace feature.
 
@@ -16,7 +21,7 @@ Simply add the meta.quota feature to both workspaces.
 
 + In the Personal workspace, set the Default Quota to 200M (the value accept php.ini-like format, with K, M, G, etc).
 + In the Common workspace, set the Default Quota to 1G
- 
+
 
 > 2. A small subset of users, gathered in a group “SuperPowers” can have their personal space extended to 500M.
 

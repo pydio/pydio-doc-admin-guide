@@ -1,3 +1,8 @@
+<div style="background-color: #fbe9b7;font-size: 16px;">
+<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 7. Looking for <a href="https://pydio.com/en/docs/v8/">Pydio 8 docs?</a></span>
+</div>
+
 Introduced in V5 groups were a longly awaited feature. The main benefit can been seen at two levels
 
 + Using the mechanism explained in the previous section, it is now possible (if not “easy”) to totally customize a set of plugins parameters values as well as disable a specific set of actions for a given group of users. For this, you use the “group role” accessible by right-click on a group.
@@ -11,5 +16,3 @@ Introduced in V5 groups were a longly awaited feature. The main benefit can been
 [:image-popup:groups_and_admin_delegation/13-DELEGATION-groupadmin.png]
 
 The image above shows the “Settings” view a group administrator has : only a subset of the features are available to him.
-
- 

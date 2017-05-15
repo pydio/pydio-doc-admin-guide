@@ -1,3 +1,8 @@
+<div style="background-color: #fbe9b7;font-size: 16px;">
+<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 7. Looking for <a href="https://pydio.com/en/docs/v8/">Pydio 8 docs?</a></span>
+</div>
+
 ### Messages Queues
 Since Pydio 5, an “instant messaging” system was introduced, to avoid permanent reloading of the files list, and a to send SERVER => CLIENTS events triggering various refreshes.
 
@@ -15,7 +20,7 @@ BEFORE :
 
 [:image-popup:websocket_server_activation/screenshot-2013-05-13-at-12-51-37.png]
 
- 
+
 
 AFTER :
 

@@ -1,3 +1,8 @@
+<div style="background-color: #fbe9b7;font-size: 16px;">
+<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 7. Looking for <a href="https://pydio.com/en/docs/v8/">Pydio 8 docs?</a></span>
+</div>
+
 A common need for a system like Pydio is to let the users enter their own comments or remarks about the files they use. Pydio lets you simply define as much metadata fields as you want, with various field types available, through this plugin **meta.user**.
 
 **This plugin requires a “metastore”** plugin to be active to do the actual storing implementation. If you are not sure of what this mean, just read the previous section. Metastore will handle the actual storing of the metadata, where as the plugin will handle how it is displayed and other users interface.

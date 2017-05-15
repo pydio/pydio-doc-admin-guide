@@ -1,7 +1,12 @@
+<div style="background-color: #fbe9b7;font-size: 16px;">
+<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 7. Looking for <a href="https://pydio.com/en/docs/v8/">Pydio 8 docs?</a></span>
+</div>
+
 ### Introduction
 Notification is a powerful feature of Pydio, once activated through a specific plugin, and as of v5, part of the core. It will allow the publication of two kind of objects :
 
-+ **Alerts**: based on a user **_voluntary opt-in_**, alerts can send email when the content of a file or folder is either modified or consulted. 
++ **Alerts**: based on a user **_voluntary opt-in_**, alerts can send email when the content of a file or folder is either modified or consulted.
 + **Event feeds**: to reflect the “life” of the data, the event feed lists all actions triggered in all workspaces that the user can access.
 
 Those two could be compared respectively to Facebook “Notifications” and “Feed”.
@@ -9,9 +14,9 @@ Those two could be compared respectively to Facebook “Notifications” and “
 ### Basic installation
 Activating notifications used to be quite cumbersome, but the procedure was greatly simplified with the introduction of the application installer. Basically, this feature requires an SQL database (for the moment, no-sql implementation are in the way). Still, this can be as simple as specifing an Sqlite file, so you don’t really need a MySql running somewhere.
 
-+ Configure an SQL Connexion: if not already done, in the Global Configurations > Core Configs > Configurations Management panel. 
++ Configure an SQL Connexion: if not already done, in the Global Configurations > Core Configs > Configurations Management panel.
 + Activate the “User events and alerts” in the Notification Center. There is only one plugin available, so it’s selected by default (Events SQL). Click on the Install SQL Tables button to make sure ajxp_feed table is created.
-+ **_This will already be enough to enable the Events Feeds.  But you will also want to let the user watch for a given folder to receive alerts :_** 
++ **_This will already be enough to enable the Events Feeds.  But you will also want to let the user watch for a given folder to receive alerts :_**
 + Add a “Meta.watch” feature to each workspace
 + Make sure the emailer is correctly setup by checking the various parameters of the Global Configurations > Core Configs > Mailers panel. Warning, either through the administrator Email, or via the “Sender Email” field of this panel, you must make sure that an email is configured to fill the “From” value of the emails, otherwise they won’t be sent correctly. Also, this is your mission to correctly configure your PHP to send emails.
 

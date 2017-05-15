@@ -1,3 +1,8 @@
+<div style="background-color: #fbe9b7;font-size: 16px;">
+<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 7. Looking for <a href="https://pydio.com/en/docs/v8/">Pydio 8 docs?</a></span>
+</div>
+
 At this step, you will probably have deeply configured your Pydio installation for all the internal data stores (users, rights, preferences, etc). Now it’s time fine-tune Pydio for your actual business data : your files!
 
 One of the core concept of Pydio is the “**Workspace**” (= previously known as “**Repository**“).  Basically, a workspace can be seen as a virtual drive mounted to access a set of data. In most case, a workspace will access a set of folders and files, locally or remotely via various types of protocol, but it can also be an access to other type of data, like a database content (MySQL repositories), or even the Pydio configurations themselves (Settings workspace). The way the files are accessed is defined when creating the workspace, by choosing a “**Driver**” to map the data.

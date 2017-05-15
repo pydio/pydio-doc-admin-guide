@@ -1,3 +1,8 @@
+<div style="background-color: #fbe9b7;font-size: 16px;">
+<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 7. Looking for <a href="https://pydio.com/en/docs/v8/">Pydio 8 docs?</a></span>
+</div>
+
 If you are looking for a particular plugin, go directly [to the dedicated section](https://pyd.io/plugins/).
 
 ### Introduction
@@ -41,5 +46,5 @@ Plugins can define dependencies to other plugins, making them inactive if the gi
            <!-- Stream Wrapper Access -->
           <activePlugin pluginName="access.fs|access.ftp|access.demo|access.remote_fs"/>
     </dependencies>
-    
+
 This shows that the plugin needs the editor.text resources to be loaded (so the editor.text must be indeed available), and also that this plugin will be active only if one of the defined access plugin is also active. Concretely, this means that editor.codepress is active when the current workspace is an access.fs workspace, but not when the current workspace is based on access.mysql for example. Which is logical, as editor.codepress can only handle a given type of data, a file.

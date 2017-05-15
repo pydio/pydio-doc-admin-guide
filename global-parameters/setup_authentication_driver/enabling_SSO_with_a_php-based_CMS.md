@@ -1,3 +1,8 @@
+<div style="background-color: #fbe9b7;font-size: 16px;">
+<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 7. Looking for <a href="https://pydio.com/en/docs/v8/">Pydio 8 docs?</a></span>
+</div>
+
 Pydio provides a set of “CMS Bridges” to allow you to use your existing CMS as a users directory. The principle of the bridge is that Pydio becomes a “Slave” of the CMS, in that when a user logs in the CMS, she is automatically logged in Pydio also. If not logged and accessing to Pydio, she is automatically redirected to the CMS login page.
 
 Supported CMS are currently PHP-based : WordPress, Joomla! and Drupal. There is also a “blank” implementation that should allow you to plug to your own CMS. For the first three, you will have to install a dedicated “plugin” or “module” (depending on the CMS) to make the connexion effective. See the dedicated page Extensions > Bridges for more info about versions supported and download links.
