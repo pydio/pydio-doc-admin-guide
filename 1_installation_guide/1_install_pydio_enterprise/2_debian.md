@@ -10,7 +10,7 @@ Configure the pydio repository
 
     # Pydio Community & Enterprise repositories
     echo "deb https://download.pydio.com/pub/linux/debian/ jessie-backports main" > /etc/apt/sources.list.d/pydio.list
-    echo "deb https://API_KEY:API_SECRET@download.pydio.com/auth/linux/debian/ jessie-backports main" > /etc/apt/sources.list.d/pydio.list
+    echo "deb https://API_KEY:API_SECRET@download.pydio.com/auth/linux/debian/ jessie-backports main" >> /etc/apt/sources.list.d/pydio.list
     wget -qO - https://download.pydio.com/pub/linux/debian/key/pubkey | sudo apt-key add -
 
 Now update all repositories, with https support if not already installed
@@ -40,7 +40,7 @@ Configure the pydio repository as well as its dependencies
 
     # Pydio Community & Enterprise repositories
     echo "deb https://download.pydio.com/pub/linux/debian/ wheezy-backports main" > /etc/apt/sources.list.d/pydio.list
-    echo "deb https://API_KEY:API_SECRET@download.pydio.com/auth/linux/debian/ wheezy-backports main" > /etc/apt/sources.list.d/pydio.list
+    echo "deb https://API_KEY:API_SECRET@download.pydio.com/auth/linux/debian/ wheezy-backports main" >> /etc/apt/sources.list.d/pydio.list
     wget -qO - https://download.pydio.com/pub/linux/debian/key/pubkey | sudo apt-key add -
 
 Now update all repositories, with https support if not already installed
@@ -82,6 +82,13 @@ Install the main PPA for PHP
     sudo add-apt-repository ppa:ondrej/php
     sudo apt-get update
 
+Configure the pydio repositories
+
+    echo "deb https://download.pydio.com/pub/linux/debian/ trusty main" > /etc/apt/sources.list.d/pydio.list
+    echo "deb https://API_KEY:API_SECRET@download.pydio.com/auth/linux/debian/ trusty main" >> /etc/apt/sources.list.d/pydio.list
+    wget -qO - https://download.pydio.com/pub/linux/debian/key/pubkey | sudo apt-key add -
+    sudo apt-get update
+
 Now, install pydio
 
     sudo apt-get install pydio
@@ -101,12 +108,20 @@ Restart apache
 
 ### Update Database
 
-If you are updating from version 6, you will have to manually update the database. Get the upgrade script and apply it to your DB as follow:
+In version 8, the migration to the latest version of the database is done automatically when first opening Pydio.
 
-    wget https://raw.githubusercontent.com/pydio/pydio-core/develop/dist/php/7.0.1.mysql
-    mysql -u DB_USER -p DB_NAME < 7.0.1.mysql
+In case of a problem during the migration, you still have the possibility to run the database upgrade scripts yourself :
 
-Select the correct db type if it's not mysql (`7.0.1.pgsql`, `7.0.1.sqlite`)
+Get the scripts and apply it to your DB as follow:
+
+    wget https://raw.githubusercontent.com/pydio/pydio-core/develop/dist/php/8.0.0.mysql
+    mysql -u DB_USER -p DB_NAME < 8.0.0.mysql
+
+Select the correct db type if it's not mysql (`8.0.0.pgsql`, `8.0.0.sqlite`)
+
+Run each upgrade script, starting from your current version to the last. The list of files can be found here:
+
+    https://github.com/pydio/pydio-core/tree/develop/dist/php
 
 ### [Debian 7] Manually update Apache configuration
 
