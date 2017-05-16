@@ -10,7 +10,7 @@ Configure the pydio repository
 
     # Pydio Community & Enterprise repositories
     echo "deb https://download.pydio.com/pub/linux/debian/ jessie-backports main" > /etc/apt/sources.list.d/pydio.list
-    echo "deb https://API_KEY:API_SECRET@download.pydio.com/auth/linux/debian/ jessie-backports main non-free" > /etc/apt/sources.list.d/pydio.list    
+    echo "deb https://API_KEY:API_SECRET@download.pydio.com/auth/linux/debian/ jessie-backports main" > /etc/apt/sources.list.d/pydio.list
     wget -qO - https://download.pydio.com/pub/linux/debian/key/pubkey | sudo apt-key add -
 
 Now update all repositories, with https support if not already installed
@@ -40,7 +40,7 @@ Configure the pydio repository as well as its dependencies
 
     # Pydio Community & Enterprise repositories
     echo "deb https://download.pydio.com/pub/linux/debian/ wheezy-backports main" > /etc/apt/sources.list.d/pydio.list
-    echo "deb https://API_KEY:API_SECRET@download.pydio.com/auth/linux/debian/ wheezy-backports main non-free" > /etc/apt/sources.list.d/pydio.list    
+    echo "deb https://API_KEY:API_SECRET@download.pydio.com/auth/linux/debian/ wheezy-backports main" > /etc/apt/sources.list.d/pydio.list
     wget -qO - https://download.pydio.com/pub/linux/debian/key/pubkey | sudo apt-key add -
 
 Now update all repositories, with https support if not already installed
@@ -59,9 +59,9 @@ And finally install pydio
 
 First, configure the pydio repositories
 
-    echo "deb https://download.pydio.com/pub/linux/debian/ xenial main universe" > /etc/apt/sources.list.d/pydio.list
-    echo "deb https://API_KEY:API_SECRET@download.pydio.com/auth/linux/debian/ xenial main universe" >> /etc/apt/sources.list.d/pydio.list
-    wget -qO - https://download.pydio.com/pub/linux/debian/key/pubkey | sudo apt-key add -    
+    echo "deb https://download.pydio.com/pub/linux/debian/ xenial main" > /etc/apt/sources.list.d/pydio.list
+    echo "deb https://API_KEY:API_SECRET@download.pydio.com/auth/linux/debian/ xenial main" >> /etc/apt/sources.list.d/pydio.list
+    wget -qO - https://download.pydio.com/pub/linux/debian/key/pubkey | sudo apt-key add -
     sudo apt-get update
 
 Now install pydio
