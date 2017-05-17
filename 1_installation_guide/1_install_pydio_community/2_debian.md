@@ -93,6 +93,12 @@ Restart apache
 
 ## UPGRADING FROM PREVIOUS VERSION
 
+### Pydio Updater Plugin
+
+In pydio 8, the brand new updater plugin eases the transition to the latest version. You just have to install this package, and the functionality will check and perform the database upgrade for you when first connecting to the Pydio application
+
+    sudo apt-get install pydio-plugin-action.updater
+
 ### Update Database
 
 If you are updating from version 6, you will have to manually update the database. Get the upgrade script and apply it to your DB as follow:
