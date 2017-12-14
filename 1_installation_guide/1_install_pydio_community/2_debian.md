@@ -1,3 +1,22 @@
+## Debian 9 (Stretch)
+
+Configure the pydio repository
+
+    # Pydio Community repositories
+    echo "deb https://download.pydio.com/pub/linux/debian/ stretch main" > /etc/apt/sources.list.d/pydio.list
+    wget -qO - https://download.pydio.com/pub/linux/debian/key/pubkey | sudo apt-key add -
+
+Now update all repositories, with https support if not already installed
+
+    sudo apt-get install apt-transport-https
+    sudo apt-get update
+
+And finally install pydio
+
+    sudo apt-get install pydio
+    sudo apt-get install pydio-all
+    sudo apt-get install php-xml
+
 ## Debian 8 (Jessie)
 
 Configure the pydio repository
@@ -120,4 +139,4 @@ You can test that a shared link (https://yourserver/pydio/public/linkHash) is wo
 
 After that step, you should be able to access pydio through your browser: http://YOUR_IP_ADDRESS/pydio/
 
-[Quick Start](http://pydio.com/en/docs/v7/quick-start)
+[Quick Start](http://pydio.com/en/docs/v8/quick-start)
