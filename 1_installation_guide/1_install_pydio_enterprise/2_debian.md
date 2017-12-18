@@ -4,7 +4,7 @@ Our Enterprise Repositories are password-protected via API Key and API Secret. Y
 
 [:image-popup:1_installation_guide/install_pydio_api_keys.png]
 
-## Debian 9 (Stretch)
+## Debian 9 (stretch)
 
 Configure the pydio repository
 
@@ -25,7 +25,7 @@ And finally install pydio
     sudo apt-get install pydio-enterprise
     sudo apt-get install php-xml
 
-## Debian 8 (Jessie)
+## Debian 8 (jessie)
 
 Configure the pydio repository
 
@@ -44,8 +44,9 @@ And finally install pydio
     sudo apt-get install pydio
     sudo apt-get install pydio-all
     sudo apt-get install pydio-enterprise
+    sudo apt-get install php-xml
 
-## Debian 7 (Wheezy)
+## Debian 7 (wheezy)
 
 Ensure that wheezy-backports repositories are enabled in `/etc/apt/sources.list` :
 
@@ -75,8 +76,39 @@ And finally install pydio
     sudo apt-get install pydio-all
     sudo apt-get install pydio-enterprise
 
+## Ubuntu 17.10 (artful)
 
-## Ubuntu 16.04
+First, configure the pydio repositories
+
+    echo "deb https://download.pydio.com/pub/linux/debian/ artful main" > /etc/apt/sources.list.d/pydio.list
+    echo "deb https://API_KEY:API_SECRET@download.pydio.com/auth/linux/debian/ artful main" >> /etc/apt/sources.list.d/pydio.list
+    wget -qO - https://download.pydio.com/pub/linux/debian/key/pubkey | sudo apt-key add -
+    sudo apt-get update
+
+Now install pydio
+
+    sudo apt-get install pydio
+    sudo apt-get install pydio-all
+    sudo apt-get install pydio-enterprise
+    sudo apt-get install php-xml
+    
+## Ubuntu 17.04 (zesty)
+
+First, configure the pydio repositories
+
+    echo "deb https://download.pydio.com/pub/linux/debian/ zesty main" > /etc/apt/sources.list.d/pydio.list
+    echo "deb https://API_KEY:API_SECRET@download.pydio.com/auth/linux/debian/ zesty main" >> /etc/apt/sources.list.d/pydio.list
+    wget -qO - https://download.pydio.com/pub/linux/debian/key/pubkey | sudo apt-key add -
+    sudo apt-get update
+
+Now install pydio
+
+    sudo apt-get install pydio
+    sudo apt-get install pydio-all
+    sudo apt-get install pydio-enterprise
+    sudo apt-get install php-xml
+
+## Ubuntu 16.04 (xenial)
 
 First, configure the pydio repositories
 
@@ -90,8 +122,9 @@ Now install pydio
     sudo apt-get install pydio
     sudo apt-get install pydio-all
     sudo apt-get install pydio-enterprise
+    sudo apt-get install php-xml
 
-## Ubuntu 14.04
+## Ubuntu 14.04 (trusty)
 
 Stop apache if it is running
 
