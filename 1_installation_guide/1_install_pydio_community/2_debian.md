@@ -34,6 +34,7 @@ And finally install pydio
 
     sudo apt-get install pydio
     sudo apt-get install pydio-all
+    sudo apt-get install php-xml
 
 ## Debian 7 (Wheezy)
 
@@ -62,9 +63,36 @@ And finally install pydio
 
     sudo apt-get install pydio
     sudo apt-get install pydio-all
+   
+## Ubuntu 17.10 (artful) 
 
+First, configure the pydio repository as well as its dependencies
 
-## Ubuntu 16.04
+    echo "deb https://download.pydio.com/pub/linux/debian/ artful main" > /etc/apt/sources.list.d/pydio.list
+    wget -qO - https://download.pydio.com/pub/linux/debian/key/pubkey | sudo apt-key add -
+    sudo apt-get update
+
+Now, install pydio
+
+    sudo apt-get install pydio
+    sudo apt-get install pydio-all
+    sudo apt-get install php-xml
+    
+## Ubuntu 17.04 (zesty) 
+
+First, configure the pydio repository as well as its dependencies
+
+    echo "deb https://download.pydio.com/pub/linux/debian/ zesty main" > /etc/apt/sources.list.d/pydio.list
+    wget -qO - https://download.pydio.com/pub/linux/debian/key/pubkey | sudo apt-key add -
+    sudo apt-get update
+
+Now, install pydio
+
+    sudo apt-get install pydio
+    sudo apt-get install pydio-all
+    sudo apt-get install php-xml
+
+## Ubuntu 16.04 (xenial) 
 
 First, configure the pydio repository as well as its dependencies
 
@@ -76,9 +104,9 @@ Now, install pydio
 
     sudo apt-get install pydio
     sudo apt-get install pydio-all
+    sudo apt-get install php-xml
 
-
-## Ubuntu 14.04
+## Ubuntu 14.04 (trusty)
 
 Stop apache if it is running
 
