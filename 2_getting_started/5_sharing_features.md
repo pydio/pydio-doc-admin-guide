@@ -3,7 +3,7 @@ With Pydio, it is possible to share your folders and files publicly, privately a
 Administration
 --------------
 
-[:image-popup:5_customize_users_interface/sharing_features_admin_screens.png]
+[:image-popup:5_customize_users_interface/sharing_features_admin_screens_updated.png]
 
 ### Public sharing
 

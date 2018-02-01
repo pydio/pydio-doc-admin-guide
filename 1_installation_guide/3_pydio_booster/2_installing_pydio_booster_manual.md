@@ -1,6 +1,6 @@
 ## Installing Binary
 
-You can download our booster from [DOWNLOAD PYDIO BOOSTER](https://download.pydio.com/pub/booster/release/0.8.6/) choosing the correct version for your architecture.
+You can download our booster from [DOWNLOAD PYDIO BOOSTER](https://download.pydio.com/pub/booster/release/1.2.0/) choosing the correct version for your architecture.
 
 ## Network Configuration
 
@@ -13,14 +13,18 @@ Before being able to configure Pydio Booster you will need to generate a **TOKEN
 
 ### Initial Pydio setup
 
-Go to Message Queuing plugin configuration:
-[:image-popup:pydio_booster/booster_plugin.jpg]
-[:image-popup:pydio_booster/booster_gen_key.jpg]
+Go to Message Queuing plugin configuration **Application Parameters > Pydio Booster**:
+[:image-popup:1_installation_guide/booster_main_config.png]
+Here you can enable the socket for Booster and set the parameters.
 
-And scroll down to Generate keys. The resulting file should be available in **data/plugins/core.mq/apikey**. You will need the information from this file replace the **TOKENP** and **TOKENS** in the following sample configuration files.
+
+
+[:image-popup:1_installation_guide/booster_gen_key.png]
+
+Now scroll down to **Administrative API key** and press **Generate API Key**. The resulting file should be available in **data/plugins/core.mq/apikey**(it will be found in this form **TOKENP:TOKENS**). You will need the information from this file to replace the **TOKENP** and **TOKENS** in the following sample configuration files.
 
 Pydio Booster component was built on top of Caddy, leveraging NSQ, it implements websockets and an upload server.
-Here is a sample configuration files to make it work, it's also useful for advanced configurations:
+Here is a sample configuration files to make it work use them and change the values to the ones that you have, it's also useful for advanced configurations:
 
 pydioconf.sample:
 
@@ -113,20 +117,18 @@ pydiocaddy.sample:
 
 To run Pydio Booster you simply need to run:
 
-    /path/to/pydio -c /path/to/pydioconf
+    /path/to/pydiobooster -conf /path/to/pydioconf
 
-
-Make sure to pass an absolute path to the conf.
+`For the path/to/pydiobooster, pydiobooster stands for the file that you downloaded above it should be named Pydio by default`
+**Make sure to pass an absolute path to the conf.**
 
 However especially if you want to use the upload feature we recommend you to run it changing the process' owner:
 
-    su www-data -c "/path/to/pydio -c /path/to/pydioconf"
-    # OR
-    sudo -u www-data /path/to/pydio -c /path/to/pydioconf
+    sudo -u www-data /path/to/pydiobooster -conf /path/to/pydioconf
 
 ## Troubleshooting
 
-You can check the websocket status in your web browser's developer console reloading the page with the console open (Chrome). You should not see a `switching back to polling` message.
+You can check the websocket status in your web browser's **developer tools** reloading the page with the **console** open (Chrome). If you dont see a `switching back to polling` message it means that it's working.
 
 You should regularly check your logs.
 

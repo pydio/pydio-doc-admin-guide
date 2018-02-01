@@ -56,7 +56,7 @@ If when testing the API access, you have an infinite authorization loop, try unc
 The content of the .htaccess file is only understood by Apache ModRewrite. If you are using another webserver, please refer to the dedicated How-To’s in our knowledge base:
 
 - [Installing Pydio on Windows + IIS](https://pyd.io/configure-applicationpool-for-pydio-in-windows2012-iis8/)
-- [Installing Pydio on Nginx](https://pyd.io/nginx/)
+- [Installing Pydio on Nginx](https://pydio.com/en/docs/kb/system/installing-linux-distribution-nginx-0#content)
 
 ### _Testing rewrite is working_
 

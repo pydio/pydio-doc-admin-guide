@@ -12,7 +12,7 @@ Last but not least, it’s important to understand that the PydioSync client is 
 
 ### Rest Api
 
-The first important thing to check is that the REST API is correctly working. If you went through the previous chapter of this Administrator Guide, you probably already made sure that the RewriteRules are correctly activated and translated by the server. Otherwise, please [go back to this page now](https://pyd.io/docs/v6/getting-started/check-apis/)! Only once it’s sure you can get further.
+The first important thing to check is that the REST API is correctly working. If you went through the previous chapter of this Administrator Guide, you probably already made sure that the RewriteRules are correctly activated and translated by the server. Otherwise, please [go back to this page now](https://pydio.com/en/docs/v8/checking-apis)! Only once it’s sure you can get further.
 
 Testing URL (on pydio default workspace)
 

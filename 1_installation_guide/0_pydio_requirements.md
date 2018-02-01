@@ -15,10 +15,10 @@ Pydio Enterprise Distribution requires **PHP 5.6 or later**. Recommended version
 
 The following PHP extensions are required as well for the core pydio installation: 
 
-- Mbstring, gd, dom-xml, intl
-- Mysql, PostgreSQL or Sqlite php extension for connecting to the database
-- OpenSSL or Mcrypt. The latter will be deprecated in next versions of PHP so you should prefer using Open SSL. 
-- Opcache or equivalent Opcode Caching extension
+- `Mbstring`, `gd`, `dom-xml`, `intl`
+- `Mysql`, `PostgreSQL` or `Sqlite` php extension for connecting to the database
+- `OpenSSL` or `Mcrypt`. The latter will be deprecated in next versions of PHP so you should prefer using Open SSL. 
+- `Opcache` or equivalent Opcode Caching extension
 - [ED] **IonCube Loaders** must be installed configured as a zend_extension in your php.ini. Please see https://ioncube.com/loaders.php to pick the right version for your OS / PHP Version.
 
 #### Additional Recommended setup:

@@ -10,10 +10,10 @@ There are some differences for running Pydio Enterprise Distribution (ED) compar
 
 ### Set up upgrade channel
 
-In the administrative dashboard, under Upgrade section:
+Go to **Menu > Logs & Other data > Upgrade ** :
 
 - Change the update site to https://update.pydio.com/auth/
-- Update the target channel to "Install Enterprise Distribution" : this will be for the migration only, after the operation make sure to switch back to "Stable" channel.
+- Update the target channel to "Install Enterprise Distribution" : this will be for the migration only, after the operation make sure to switch back to **"Stable"** channel.
 - In the Authenticated Update Site section, copy and paste the API Keys you took from your account. 
 
 [:image-popup:1_installation_guide/migration/migrate_01_update_site.png]

@@ -12,7 +12,7 @@ With Pydio, in order to manage your data, you can create workspaces.
 Let's create a simple workspace that will store all files and folders in a directory on the Pydio server, let's say **/var/data/files**. This
 directory can (and actually should) be anywhere on the filesystem, outside of Pydio install directory, as long as the web server software has a write permission on it.
 
-Go to "Workspaces & Users" > "Workspaces" then click on the "+WORKSPACE" button:
+Go to **Workspaces & Users > Workspaces** then click on the **+WORKSPACE** button:
 
 1 - Select a template or driver:
 - Choose "From driver"
@@ -35,11 +35,11 @@ Go to "Workspaces & Users" > "Workspaces" then click on the "+WORKSPACE" button:
 
 4 - Click on the CREATE button to save this workspace.
 
-You have now created your first workspace with Pydio Enterprise dashboard.
+You have now created your first workspace with Pydio dashboard.
 
 ### Create a user and assign rights
 
-To create a user, go to "Workspaces & Users" > "Users" then click on the "+USER" button:
+To create a user, go to **Workspaces & Users > Users** then click on the "+USER" button:
 
 Fill the primary information inside the popup.
 
@@ -50,4 +50,4 @@ These fields are optionals, but feel free to fill them.
 
 Now go to "Workspace Accesses" tab and there you can allow your user to access your workspace the way you want:
 
-[:image-popup:2_getting_started/user_permissions.png]
+[:image-popup:2_getting_started/user_permission.png]

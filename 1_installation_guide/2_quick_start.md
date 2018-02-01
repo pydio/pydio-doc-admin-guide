@@ -14,11 +14,12 @@ While **“Warnings”** can be generally ignored without preventing the applica
 
 **“Error”** failing tests must be fixed before going further, otherwise the application will very surely crash.
 
-Once you think you have correctly fixed the issue, simply reload the page to see if the test now correctly passes. See the Troubleshooting section for an exhaustive list of tests and solutions.
+
+Once you think you have correctly fixed the issue, simply reload the page to see if the test now correctly passes. See the **[Troubleshooting](https://pydio.com/en/docs/v8/troubleshooting)** section for an exhaustive list of tests and solutions.
 
 ### Pydio Installation Wizard
 
-After the diagnostic tool, an easy wizard will guide will guide you through the configuration of the platform. Make sure to gather the necessary information before starting: create a database and prepare its credentials.
+After the diagnostic tool, an easy wizard will guide you through the configuration of the platform. Make sure to gather the necessary information before starting: create a database and prepare its credentials.
 
 [:image-popup:1_installation_guide/installer/01-welcome.png]
 
