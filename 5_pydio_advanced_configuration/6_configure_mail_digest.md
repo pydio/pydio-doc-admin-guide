@@ -53,6 +53,8 @@ Subject Prepend : Before the subject of Pydio, you can add a prefix so the mail 
 
 + Layout Folder : The folder where are the layout   
 
+If you're going to use another configuration you can find links to guides **[here](https://pydio.com/en/docs/kb/plugins/setting-emailers)**.
+
 ##Configure the diget in My Profile
 
 Go to "My Account" in the top right of your Pydio and configure your own digest frequency
@@ -65,57 +67,10 @@ Don't forget to save before leaving the page
 
 We configured the digest mail, but we need to activate an action to send the mail. The action who send the grouped email, **consume_mail_queue**, need to be called to work. That's why we gonna create a scheduler or CRONTAB in our Pydio. The scheduler gonna call the action with some frequency we get chosen. But first, we need to enable the scheduler. 
 
-We need to go to "Setting" page and at the bottom left "Available Plugins" > "Action Plugins" > "Tasks Scheduler"
-
-[:image-popup:6_pydio_advanced_configuration/config_mail_digest_5.png]
-
-If the logo scheduler was not in the bottom left, you should forget to enable the "Command-line Active" in the "Application Core" Section
-
-[:image-popup:6_pydio_advanced_configuration/config_mail_digest_6.png]
+We need to go to "Setting" page and at the bottom left **Application Parameters > Scheduler**.
 
 ##Create the CRON
 
-Now we can create a CRON when you click to the "Scheduler" icon and to "NEW TASKS"
+You can go to this how-to that will explain to you how to use the CRON & Schedule tasks.
 
-[:image-popup:6_pydio_advanced_configuration/config_mail_digest_7.png]
-
-+ Label : The name of the task ( usefull when you have many CRON to find the good one easily)   
-
-+ Schedule : The CRONTAB expression, maybe the hardest part to fill. The format is Minutes Hours Day Week Month. If you don't know how to do it, you can go at the end of the doc to see some exmples   
-
-+ User(s): The user who gonna do the action, can be a list of users ( separated with comma or with * )   
-
-+ Repository ID: The id of the workspaces, in our case we can choose "All Repositories"   
-
-Now we need to choose the action and his parameters by clicking to "Parameters" tab
-
-+ Action : Obviously, it's the action who the CRON gonna do, they are sorted by the plugin so you need to go to "core.mailr" and to "consume_mail_queue"   
-
-Param Name and Param Value can be empty for this action.   
-Click to "OK" to validate the CRON.
-
-[:image-popup:6_pydio_advanced_configuration/config_mail_digest_8.png]
-
-You can click to the play button on the right of every CRON to start them.
-
-You CRON for the mail digest is now complete.
-
-If you get some notification, you gonna get an email like this :
-
-[:image-popup:6_pydio_advanced_configuration/config_mail_digest_9.png]
-
-We can see here that the layout was successfully edited.
-
-##CRON expression
-
-Here are some exemple of CRON expression :
-
-+ ` */5 * * * *` : Every 5 minutes   
-
-+ `30 14 * *` : At 14:30 every day   
-
-+ `00 12 * 3` : At 12:00 every Wednesday   
-
-+ `25 12 12 4 *` : At 12:25 on the 12th in April every year   
-
-Or you can use [this tool](http://crontab.guru/)
+https://pydio.com/en/docs/kb/plugins/using-tasks-scheduler
