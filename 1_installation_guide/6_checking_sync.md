@@ -49,7 +49,7 @@ In some cases, you can be disallowed to install triggers in your DB, or some spe
 ### Workspace configuration
 Now that the DB is correctly setup, make sure to enable the “Syncable Workspace (meta.syncable)” plugin in your workspace. This is done via the “Workspace Features” tab of the workspace creation window. For the default workspaces (Default Files and My Files), this should be the case by default, and you can verify this inside the file conf/bootstrap_repositories.php. Finally, make sure that the according parameter “Workspace is Syncable” is set to Yes.
 
-[:image-popup:1_installation_guide/getting_started_ws_syncable.png]
+[:image-popup:1_installation_guide/getting_started_ws_syncable_update.png]
 
 This parameter can be refined by a group/user/role edition, so if you are testing with a given user, make sure she does not have the parameter set to No because of inheritance.
 

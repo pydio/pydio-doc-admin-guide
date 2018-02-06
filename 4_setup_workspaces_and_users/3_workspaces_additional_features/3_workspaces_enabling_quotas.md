@@ -1,5 +1,6 @@
 ### The meta.quota plugin
 If you need to enable some storage limitations for your users, the **meta.quota** plugin can be added as a workspace feature.
+To add it to workspaces go to **Workspaces & Users > Workspaces > Choose a workspace and edit it** and add the User Quota Feature.
 
 This will allow the following behaviors:
 

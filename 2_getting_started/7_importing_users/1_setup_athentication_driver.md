@@ -6,14 +6,18 @@ Although configuration backends are few (basically serialized files or DB), auth
 + auth.serial, auth.sql: “Internal“ implementations, that keep all data inside Pydio, and that are very close to their “conf” counter part.
 + auth.ldap, auth.cas: SSO like implementations that can query an LDAP/AD directory or a CAS server.
 + auth.ftp, auth.smb: specific implementations that are linked to a workspace for performing authentication “dynamically”.
-+ auth.remote, auth.cmsms, auth.phpbb: bridges allowing to use an external PHP CMS as a user directory. Currently there are WordPress, Joomla and Drupal counterparts, as well as detailed how-to to log to any existing system.
++ auth.remote, auth.cmsms, auth.phpbb: bridges allowing to use an external PHP CMS as a user directory. Currently there are WordPress, Joomla and Drupal counterparts, as well as detailed **[how-to](https://pydio.com/en/docs/kb/authentication/authentication-your-cms)** to log to any existing system.
 
-The following articles will go through the most used implementations. Use the Application Parameters > Authentication to switch the backend.
+The following articles will go through the most used implementations. Use the **Application Parameters > Authentication** to switch the backend.
 
 ### One ore two instances? Master or Slave?
 If you open the Authentication panel, below the first set of generic parameters, you will see two sections: Main Instance & Secondary Instance (optional).
 
-[:image-popup:2_getting_started/setup_authentication_driver.png]
+[:image-popup:2_getting_started/setup_authentication_driver_update.png]
+
+For Master Driver :
+
+[:image-popup:2_getting_started/setup_authentication_master_driver.png]
 
 By default, depending on the value you chose at install, you will see the “Main Instance” set with a value (either Serialized or DB) and the associated options, and the secondary instance is not used.
 
@@ -21,6 +25,8 @@ This secondary instance can be used in two different situations:
 
 + **You want to “merge” two different data sources** for authenticating the users. For example, your company already manages two directories, one for internal users and the other for external collaborators, and you want to keep them separate. You also want to **let the user choose at login time** to which backend she will log. You use the “User Choice” Mode and define a secondary auth plugin instance for that.
 + **Your primary directory is readonly**. It is for example very frequently the case if you are connecting to a central LDAP directory. In that case, if you define your Main Instance to point to this directory, users of Pydio will not be able to create new temporary users to share folders! That’s why you will configure a secondary instance using one of the Pydio “internal” implementation (serialized files or DB), which will maintain a secondary directory for external users, without having to pollute your central directory. Using **the “Master / Slave” mode**, will put this second instance as a slave of the first one, allowing also better performances and caching the original users inside the secondary store as well.
+
+>If you're going to use a remote authentification you should in most cases put the Pydio database in the secondary driver so that if you have an issue with you're remote authentifcation you can log with your Pydio database and administrate.
 
 Note: for those familiar with the previous versions of Pydio, this is nothing more than the encapsulation of the **auth.multi** plugin.
 

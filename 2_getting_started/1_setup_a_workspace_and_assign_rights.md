@@ -39,7 +39,7 @@ You have now created your first workspace with Pydio dashboard.
 
 ### Create a user and assign rights
 
-To create a user, go to **Workspaces & Users > Users** then click on the "+USER" button:
+To create a user, go to **Workspaces & Users > Users** then click on the **+USER** button:
 
 Fill the primary information inside the popup.
 

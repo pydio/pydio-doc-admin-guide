@@ -11,7 +11,7 @@ For background, make sure to use high resolution images, but save them as JPG to
 
 ## Enable the branding tool:
 
-First of all, you need to enable the branding tool. To do so, please go to the administration dashboard, then to Users Features > Appearance.
+First of all, you need to enable the branding tool. To do so, please go to the administration dashboard, then to Users **Features > Appearance**.
 
 In the Main Options tab, make sure it's set like that:
 [:image-popup:5_customize_users_interface/vanity_enable_branding_tool.png]
@@ -84,4 +84,4 @@ For example, the button below is using the Material 'rocket' icon, with label "P
 ## Save settings:
 
 Once you are ready, click on the "Save" button then "Close". It will change the settings to hide the branding tool, and use the branding data you have just configured. If you want 
- to disable this branding and see the original colors, just go to the User Features > Appearance and toggle the settings here.
+ to disable this branding and see the original colors, just go to the User **Features > Appearance** and toggle the settings here.

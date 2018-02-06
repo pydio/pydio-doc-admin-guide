@@ -12,11 +12,13 @@ A part of that, it's working neatly, and implementing versioning through a git r
 [:image-popup:4_setup_workspaces_and_users/workspaces_versioning.png]
 
 ### Installing
+First enable this plugin go to **All Plugins > Available Plugins > Workspaces Meta Aspects > Git-based Versioning**.
+
+To enable this feature go to **Workspaces & Users > Workspaces > Choose a workspace and edit it** and **Git-based Versioning** to the workspace.
+
 Once installed, you will be able to see a list of actions of what happened on a given file, eventually download a given previous revision, or directly reverse the current revision to a previous one (thus creating a new revision). To install, simply make sure that the **_GIT_** command is accessible through the command-line on your server, and that the **_PEAR/VersionControl_Git_** client is installed as well.
 
 Previous implementation was based on SVN instead of Git. As they share some client resources (history browser), the meta.svn plugin must be installed as well (it is by default).
-
-Then add a "Git-based versioning" feature to the workspace.
 
 ### Troubleshooting
 When switching for the first time to this workspace and making a file operation (upload, move, whatever), a "git init" operation will be launched. If you encounter strange errors, maybe you can manually initiate the workspace by applying the following command line at the root of your workspace path :

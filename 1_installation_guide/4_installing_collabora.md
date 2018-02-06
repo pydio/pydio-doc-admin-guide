@@ -12,11 +12,14 @@ This documentation describes how to deploy Collabora CODE application, which is 
 In this documentation, you have to replace <your-domain> with a suitable domain matching your certificates eg. office.yourdomain.com
 You also have to replace <your-escaped-domain> with the same subdomain where dots are "escaped", eg. office\.yourdomain\.com
 
+
+Here we will give you an example on one configuration if you want more detail about collabora you can go **[Here](https://www.collaboraoffice.com/code/)**.
 ### Start Docker Image
+You can find a link to the docker for collabora **[here](https://hub.docker.com/r/collabora/code/)**
 
 Install Docker on a server. 
 
-    $ docker pull collabora/code
+    <!-- $ docker pull collabora/code -->
     $ docker run -t -d -p 127.0.0.1:9980:9980 -e \
          "domain=<your-escaped-domain>" --cap-add MKNOD collabora/code
 

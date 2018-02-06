@@ -14,18 +14,9 @@ Administration
 * If you want it to work for folders as well - make sure that one of ‘Minisites and Workspaces’ or ‘Minisites’ is chosen.
 
 #####  Advanced configuration
+To do an advanced configuration you have to go to **All Plugins > Available Plugins > Action Plugins > Sharing Features** and edit it by clicking on the pen that's located on the right of this line.
 
-* Link Generation
-
-	* **Use Rewrite Rule** - Setting this, the default url will contain no php extension and no query string query arguments.
-	* **Hash Minimum Length** - The minimum length for a file
-		Hash user-editable** - Allows end users to choose their own hash for the link
-	* **Maximum file expiration limit** _0 = unlimited_
-	* **Maximum file download limit** _0 = unlimited_
-	* **Set password mandatory** - Requires users to set a password for their public link
-	* **Force External Mailer** 
-	* **Create QRCode** _(deprecated)_
-
+The settings are pretty straighforward so it should be easy to obtain what you wish. You can for example change the number of downloads allowed from a link, give it an expiration time and such.
 ### Private sharing
 	
 ##### Installation
@@ -50,7 +41,7 @@ The _Share Dialog Box_ is accessible by clicking on the _Share_ button in the In
 
 ### Public sharing
 
-[:image-popup:5_customize_users_interface/share_dialog_public_sharing.png]
+[:image-popup:5_customize_users_interface/share_dialog_public_sharing_update.png]
 
 This functionality is useful if you want to share files or folders from your Pydio to multiple users that don’t have an account in your Pydio network. When you activate it, a public url is generated and you can then copy and paste it to share it with anybody with an Internet access. They will be given access to a mini-version of the Pydio interface where they can view the file or folder you wanted them to see.
 
@@ -60,16 +51,13 @@ Still not feeling reassured about that, why not try privately sharing with known
 
 ### Users
 
-[:image-popup:5_customize_users_interface/share_dialog_users.png]
+[:image-popup:5_customize_users_interface/share_dialog_users_update.png]
 
 This functionality is great if you want to share files or folders to users that have an account within your Pydio network (Local users)
-
-Since version _6.4_ of Pydio, you can also share with who have an account on another Pydio instance, or even instances of other Storage Platforms such as ownCloud (Remote Users) Warning : the instance needs to be reachable from the server where the Pydio server is installed (talk to your Pydio administrator if you need it to be setup or if you have an error after sharing).
 
 Simply go to the _Users_ section of the _Share Dialog Box_, and :
 
 * For **local users**, start entering the username of the person you want to share your stuff with.
-* For **remote users**, enter the url of the Pydio instance the user is registered with (e.g. http://www.pydio.example/pydio) and then the username. It will send a request to the user and he will need to either accept or decline your invitation. The request will show ‘pending’ as long as the request is not being answered by the remote user.
 
 Once the file has been shared, or the invitation has been accepted, you will be able modify the permissions assigned to the user (read/write).
 
@@ -79,15 +67,12 @@ Once the file has been shared, or the invitation has been accepted, you will be 
 
 For people who know their way round the sharing world, a few advanced perks have been added such as :
 
-* Description
-	* **Label**
-	* **Description**
+
+* **Description** - You can write a descritpion if you want to.
 
 * **Notification** - If enabled, this will trigger [Alerts](https://pydio.com/en/docs/v6-enterprise/watches-and-notifications) whenever the content has been accessed or modified.
 
-* **Layout** - Defines a default layout.
-
-* **Share Visibility** - Enable users wioth whom you share the workspace to view and edit the sharing options you have set up.
+* **Share Visibility** - Enable users wioth whom you share the workspace to view and edit the sharing options you have set up (by default it's private).
 
 ### Items shared with me
 
@@ -96,8 +81,6 @@ For people who know their way round the sharing world, a few advanced perks have
 If you can share files and folders with others, people can also share files or folders with you (tadaaam !) If you’re wondering where to find those items, just look at the left bar (directly visible on  the home page, or by hovering over the button on the left hand side) under the section _Shared with me_.
 
 ### Shared Files
-
-[:image-popup:5_customize_users_interface/shared_files.png]
 
 If files are shared with you, you will see a Workspace named _SHARED FILES_, where you will find **all files** shared by **all users**, local or remote.
 

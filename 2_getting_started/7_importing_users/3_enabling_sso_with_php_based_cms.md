@@ -7,7 +7,7 @@ Then, you can go in "All plugins" > Available Plugins > Authentification Backend
 Supported CMS are currently PHP-based : WordPress, Joomla! and Drupal. There is also a “blank” implementation that should allow you to plug to your own CMS. For the first three, you will have to install a dedicated “plugin” or “module” (depending on the CMS) to make the connexion effective. See the dedicated page Extensions > Bridges for more info about versions supported and download links.
 
 ### Install the dedicated plugin in the CMS
-Download the Pydio-CMS-Bridges package from the [dedicated page](https://pydio.com/en/products/downloads/cms-bridges), and unzip it on your local computer. Locate the correct plugin from the content of the folder
+Download the Pydio-CMS-Bridges package from the [dedicated page](https://pydio.com/en/get-pydio/downloads/cms-bridges), and unzip it on your local computer. Locate the correct plugin from the content of the folder
 
 + **WordPress**: all WordPress version
 + **Joomla!**
@@ -38,3 +38,5 @@ The Authentication must work in two ways : when successfully logging in from the
 Remote Authentication Parameters
 
 [:image-popup:2_getting_started/cms_server_connection.png]
+
+**[Here's a how-to with example to enable your remote authenticaton with a cms](https://pydio.com/en/docs/kb/authentication/authentication-your-cms)**

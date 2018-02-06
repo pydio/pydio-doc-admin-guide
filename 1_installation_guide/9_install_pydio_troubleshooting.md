@@ -73,6 +73,8 @@ Now you need to configure your PHP for Ioncube, you just add this part at first 
 After that you can resolve the last warning, the output buffering, all you need to do it's to edit all of your php.ini:
 `output_buffering = Off`
 
+You can find your php.ini using `php -i | grep "Loaded Configuration File"`.
+
 After that you just need to restart apache and the "Pydio Diagnostic Tool".
 
 ## MySQL extension issue:
