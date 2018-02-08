@@ -29,7 +29,7 @@ As all plugins are loaded dynamically to construct the full state of the applica
 
 Most of the time, you’ll have to simply CLEAR THE SERVER CACHE : simply remove the two files **_/data/cache/plugins_requires.ser_**  and **_/data/cache/plugins_cache.ser_**. Another way to clear the cache without accessing the server directly is to edit any plugin configuration via the GUI (for example disable then re-enable a plugin) : the cache is automatically cleared at this moment.
 
-You can use he following commands to clear the cache : `rm -f plugins_*`.
+You can use the following commands to clear the cache : `rm -f plugins_*`.
 Or you can use the Refresh cache button located at the top in **All Plugins > Available Plugins**
 ### Understanding plugins lifecycle
 By default, all plugin have the following lifecycle :

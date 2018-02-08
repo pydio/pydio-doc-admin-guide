@@ -6,9 +6,11 @@ This page is here to help you configure the mail digest and the mail sender. The
 
 You need to go to your Setting page, then click to the mail icon in your left and enable the feature by clicking in the "Activate Queue" field.
 
-[:image-popup:6_pydio_advanced_configuration/config_mail_digest_0.png]
+[:image-popup:6_pydio_advanced_configuration/config_mail_digest_0_update.png]
 
 ##Configure the Mailer Plugin
+
+###**This example is for the Enterprise Edition**
 
 Now we need to configure the Mailer plugin to avoid any problem when Pydio send a mail.
 I take the easiest exemple by using the smtp of Gmail with PHPMailer
@@ -53,24 +55,27 @@ Subject Prepend : Before the subject of Pydio, you can add a prefix so the mail 
 
 + Layout Folder : The folder where are the layout   
 
-If you're going to use another configuration you can find links to guides **[here](https://pydio.com/en/docs/kb/plugins/setting-emailers)**.
+###**For the community Edition**
 
-##Configure the diget in My Profile
+If you're going to use the mailer you will need to set some things up you can find links to guides that will help you facilitate this task **[here](https://pydio.com/en/docs/kb/plugins/setting-emailers)**.
 
-Go to "My Account" in the top right of your Pydio and configure your own digest frequency
+Then when you will configure it you can use the example above you will have some differences but the principle is the same.
+
+##Configure the digest in My Profile
+
+Go to **My Account > My Profile** on the top right of your Pydio and configure your own digest frequency.
+Dont forget to put you email so that you get the notifications.
 
 [:image-popup:6_pydio_advanced_configuration/config_mail_digest_account.png]
 
-Don't forget to save before leaving the page
+Don't forget to save before leaving the page.
 
-##Enable and configure the CRON
 
-We configured the digest mail, but we need to activate an action to send the mail. The action who send the grouped email, **consume_mail_queue**, need to be called to work. That's why we gonna create a scheduler or CRONTAB in our Pydio. The scheduler gonna call the action with some frequency we get chosen. But first, we need to enable the scheduler. 
+##Enable and configure the Task with a CRON expression
 
-We need to go to "Setting" page and at the bottom left **Application Parameters > Scheduler**.
+We configured the digest mail, but we need to activate an action to send the mail. The action that sends grouped email is named **consume_mail_queue** and need to be called to work. That's why we gonna create a **Task** in our Pydio. The scheduler is going to call this action at the frequency that we configured with the CRON expression.
 
-##Create the CRON
 
-You can go to this how-to that will explain to you how to use the CRON & Schedule tasks.
+You can go to this how-to that will explain to you in details how to use the scheduler and  Schedule tasks.
 
 https://pydio.com/en/docs/kb/plugins/using-tasks-scheduler
