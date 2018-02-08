@@ -6,7 +6,7 @@ You can download our booster from [DOWNLOAD PYDIO BOOSTER](https://download.pydi
 
 The diagram below shows how Pydio Booster will communicate with your server.
 
-[:image-popup:pydio_booster/booster_network_configuration.png]
+[:image-popup:1_installation_guide/booster_network_configuration.png]
 
 ## Configure and start
 Before being able to configure Pydio Booster you will need to generate a **TOKENP** and **TOKENS** pair.

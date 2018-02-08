@@ -103,3 +103,7 @@ To help you in that task, we’ve setup a script that will try to use the API to
 
 **Please note**: If your server is not located at the document root (e.g. https://yourserver.tld/pydio/), there is a small issue in the current version of this script. Please grab the latest version from github and replace the script before testing (https://raw.githubusercontent.com/pydio/pydio-core/develop/core/src/runTests.php).
 
+### Install and Use the SYNC Desktop Client
+
+You can read **[this how-to](https://pydio.com/en/docs/kb/miscellaneous/use-pydio-sync-client#content)** that will explain how install and use the sync client,
+the desktop client is easy to install and use.

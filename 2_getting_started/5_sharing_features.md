@@ -76,9 +76,9 @@ For people who know their way round the sharing world, a few advanced perks have
 
 ### Items shared with me
 
-[:image-popup:5_customize_users_interface/shared_with_me.png]
+[:image-popup:5_customize_users_interface/shared_with_me_update.png]
 
-If you can share files and folders with others, people can also share files or folders with you (tadaaam !) If you’re wondering where to find those items, just look at the left bar (directly visible on  the home page, or by hovering over the button on the left hand side) under the section _Shared with me_.
+If you can share files and folders with others, people can also share files or folders with you (tadaaam !) If you’re wondering where to find those items, just look at the left bar (directly visible on  the home page ) under the section _Shared with me_ it works like a list you can expand it.
 
 ### Shared Files
 
