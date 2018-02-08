@@ -41,3 +41,5 @@ In both case, the WebDAV activation (and password configuration) is under the us
 + **Authorization mechanism** may fail in the Apache + PHP as CGI case, and some more lines need to be added to the .htaccess file to ensure correct headers redirection. See the .htaccess file for more info, simply uncomment the lines.
 
 + There are plenty of documentation about WebDAV, both client and server on the web, one very useful website is the wiki of the **SabreDAV** project. It is the library we use, and most well-kown webDAV clients are carefully documented. See for example http://sabre.io/dav/ for the previous problem.
+
+See **[HERE](https://pydio.com/en/docs/kb/system/troubleshooting-webdav-server)** for more informations about troubleshooting.

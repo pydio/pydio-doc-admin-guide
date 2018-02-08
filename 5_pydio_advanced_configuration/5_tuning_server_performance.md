@@ -24,12 +24,15 @@ Same as download, the ZIP operation necessary for multiple download of files can
 
 This requires having the ZIP utilitary available through the command line (working ok on Linux & Windows systems), and when triggering a full folder download, Pydio will launch a zip command on the OS, monitor its progress and display the percentage to the user, and once it’s done, trigger a download of the created archive.
 
+You can enable this feature by going to **All Plugins > Available Plugins > Action Plugins** and enable **Zip Delegation**.
 ### Make use of a Cache Server mechanism
  
  Caching helps in consistently reducing hefty/slow operations and minimizing system resources needed to load a page. Thus boosting the performance to a great extent. Pydio provides an option to configure third party vendor's caching service with pydio.
  
- Though caching service was introduced in pydio v6.2.X, the ease of configuring it has been greatly enhanced in the later versions. Now one can directly configure the caching options from pydio admin panel.
+ Though caching service was introduced in pydio v6.2.X, the ease of configuring it has been greatly enhanced in the later versions. Now you can directly configure the caching options from Pydio admin panel.
  
  Along with the PHP Accelerator (**PHP APC**) pydio provides **memcache**, **memcached**, **redis**, **xcache** options by default to configure cache server.. The **NOSQL keyvalue** stores like memcache, memcached and Redis runs a server on a local port to provide the caching service.
 
-[:image-popup:6_pydio_advanced_configuration/cache_service_configuration.png]
+[:image-popup:6_pydio_advanced_configuration/cache_service_configuration_update.png]
+
+You can look at [this how-to](https://pydio.com/en/docs/kb/miscellaneous/optimizing-pydio-performances)that will help you use a caching mechanism.
