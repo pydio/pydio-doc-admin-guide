@@ -3,10 +3,12 @@ Installation on CentOS/RHEL 7
 
 _In this guide, we will take you through all the steps required for you to have Pydio Cells running on a CentOs/RHEL 7 server._
 
-### Additional repos for CentOS 7.
+### Additional repos for CentOS 7
+
 By default, the version of some packages such as PHP or MySQL (MariaDB) is far from current released version. Therefore, we need to use some extra repositories to get recent versions.
 
 #### EPEL release
+
 `sudo yum install epel-release scl-utils`
 
 ##### Software collection release
