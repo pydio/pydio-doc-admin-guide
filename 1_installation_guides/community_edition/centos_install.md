@@ -22,6 +22,7 @@ RedHat: `sudo yum-config-manager --enable rhel-server-rhscl-7-rpms`
 Currently, you can use either MySQL or MariaDB as backend for Pydio Cells.
 
 ##### MySQL
+
 To install MySQL, first install MySQL 5.6 official community release repository.
 
 `sudo rpm -i  http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm`
@@ -29,6 +30,7 @@ To install MySQL, first install MySQL 5.6 official community release repository.
 > Note: don't forget to execute `sudo yum update`
 
 You must then
+
 ```bash
 # install mysql-community-server package
 sudo yum install mysql-community-server
@@ -53,9 +55,10 @@ sudo systemctl start rh-mariadb102-mariadb
 ```
 
 ##### Post install configuration
+
 It's now time to create a user and a database for Cells.
 
-```
+```sh
 # Go to mysql mode
 sudo mysql -u root
 # Create new user and set password
@@ -97,7 +100,7 @@ In next step, we change default Unix **user** for the PHP-FPM worker pool from *
 
 By default, this service is listening on 9000 port, and we could change it here too if necessary.
 
-```
+```sh
 sudo vi /etc/opt/rh/rh-php71/php-fpm.d/www.conf
 
 ; ... some is omitted
@@ -125,7 +128,7 @@ After having installed both php-fpm and database services, you can now install a
 
 Log in or switch to **cell** user. 
 
-```
+```sh
 wget https://download.pydio.com/pub/cells/release/0.9.0/linux-amd64/cells
 chmod +x cells
 ```
@@ -134,9 +137,9 @@ chmod +x cells
 
 You have two ways to setup Pydio Cells after launching the first command: by command line or by web. In this how-to, we use the web interface to setup.
 
-```
+```sh
 su - cell
-./pydio install
+./cells install
 Welcome to Pydio Cells installation
 Pydio Cells services will be configured to run on this machine. Make sure to prepare the following data
  - IPs and ports for binding the webserver to outside world
@@ -149,11 +152,12 @@ Use the arrow keys to navigate: ↓ ↑ → ←
   ▸ Browser-based (requires a browser access)
     Command line (performed in this terminal)
 ```
+
 Select url and port for **pydio cell** service.
 
 > Note: Because pydio cell is launched by an non-root user, so you cannot use any ports less than 1024 in CentOS.
 
-```
+```sh
 ✔ Browser-based (requires a browser access)
 Use the arrow keys to navigate: ↓ ↑ → ←
 ? Bind Url (ip:port or yourdomain.tld that the webserver will listen. If internal and external urls differ, use internal here):
@@ -167,7 +171,7 @@ Now you can use a web browser with this address to continue with the setup. At t
 
 Next time, please use this command to start pydio:
 
-`./pydio start `
+`./cells start`
 
 ###  Data and configuration files of Pydio Cells
 
@@ -188,4 +192,4 @@ If, after a successful installation and when you try to navigate to the main app
 
 > Access denied.
 
-Insure you have modified SELinux to be in permissive mode.  
+Insure you have modified SELinux to be in permissive mode.
