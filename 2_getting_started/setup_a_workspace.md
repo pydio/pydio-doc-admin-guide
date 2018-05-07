@@ -16,7 +16,7 @@ After this menu will appear :
 
 1. **Root nodes** : you can choose and add nodes that you have created with the storage menu as seen in the **[Managing Storage]()** guide.
 
-**Set Generic Options** : 
+**Set Generic Options** :
 
 1. **Label** : This is the name of the workspace.
 
