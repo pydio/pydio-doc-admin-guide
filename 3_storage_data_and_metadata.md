@@ -23,11 +23,11 @@ You will find more information on both storage in the dedicated sub-sections.
 
 ## Workspaces 
 
-Another of the core concept of Pydio Cells is the **"Workspace"**. Basically, a workspace can be seen as a virtual drive mounted to access a set of data. 
+Another of the core concept of Pydio Cells are the **"Workspaces"**. Basically, a workspace can be seen as a virtual drive mounted to access a set of data. 
 
-In most case, a workspace will access a set of folders and files, locally or remotely via various types of protocol, but it can also be an access to other type of data, like a database content (MySQL repositories), or even the Pydio configurations themselves (Settings workspace). The way the files are accessed is defined when creating the workspace, by choosing a **"datasource"** to map the data.
+In most case, a workspace will access a set of folders and files, locally or remotely via various types of protocol, but it can also be an access to other type of data, like a database content (MySQL repositories), or even the Pydio configurations themselves (Settings workspace). The way the files are accessed is defined when creating the workspace, by choosing a **"Datasource"** to map the data.
 
-With this version of Pydio, we have brought the **workspace** concept to the next level by introducing the concept of **Cell**: basically, now you can define virtual workspaces that provide direct access to any set of heterogeneous sources that can be:
+With this version of Pydio, we have brought the **Workspace** concept to the next level by introducing the concept of **Cell**: basically, now you can define virtual workspaces that provide direct access to any set of heterogeneous sources that can be:
 
 - a set of workspace
 - a single folder from within a given workspace
