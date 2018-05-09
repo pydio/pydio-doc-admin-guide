@@ -1,3 +1,3 @@
-** TODO **
+**TODO**
 
 ### Configure Collabora Online Plugin 

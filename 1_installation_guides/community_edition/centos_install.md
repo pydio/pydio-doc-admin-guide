@@ -1,5 +1,3 @@
-Installation on CentOS/RHEL 7
-===================
 
 _In this guide, we will take you through all the steps required for you to have Pydio Cells running on a CentOs/RHEL 7 server._
 

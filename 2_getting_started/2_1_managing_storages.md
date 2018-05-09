@@ -1,11 +1,13 @@
-## Managing storage with Pydio Cells
 
-Storage in Pydio cells has changed, the workflow is not the same as the previous versions we will see in details how you can manage your storage with Cells.
+Storage management in **Pydio Cells** has completely changed comparing to previous versions. In this chapter, we will present the workflow used in details and explain how you can manage your storage.
 
 ## Storage
-In Pydio Cells storage has completely changed. In comparison, with Pydio 8, you had to mount the storage to your server to store data and then create a workspace using the path to that storage.
 
-Now with Pydio Cells the workflow has changed. You create a datasource that will be used to store the data and then you can create your workspaces etc...
+For the record, in Pydio 8, to store data, you had to mount the storage to your server, and then create a workspace using the path to that storage.
+
+Now, with Pydio Cells, you create a datasource that can be seen as a driver to access your data. When you define a new workspace, you then choose among the specified data source which one to use.
+
+A deeper dive in the datasource / workspace concepts is done in the next chapter. Here, we will introduce the minimum information necessary for you to start using Cells with a minimum of effort.
 
 ### Datasources
 

@@ -1,4 +1,3 @@
-# Sharing with Pydio Cells
 
 To share with Pydio cells you have many ways, but here you will see the most common ways to do that.
 

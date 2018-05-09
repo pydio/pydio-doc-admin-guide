@@ -1,4 +1,3 @@
-# Installation guide for Ubuntu
 
 _In this guide, you will find all the steps required for you to have Pydio Cells running on an Ubuntu system. We will be covering the following versions: Ubuntu 14.04, Ubuntu 16.04 & Ubuntu 17.10._
 

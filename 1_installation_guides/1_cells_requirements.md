@@ -1,4 +1,3 @@
-## Requirements
 
 For Pydio Cells to work you will be needing some specific packages and such.
 As a matter of fact we will provide you the list of the required packages and such so that you can use Pydio Cells at it's fullest.

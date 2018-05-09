@@ -1,6 +1,4 @@
-# Setting up workspaces
-
-In this guide you will see how you can create and manage workspaces with Pydio Cells.
+In this chapter, you will see how you can create and manage workspaces with Pydio Cells.
 
 *You have to be on the settings to be able to do the operations below*
 

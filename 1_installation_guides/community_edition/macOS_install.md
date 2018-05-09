@@ -1,4 +1,3 @@
-# Installation guide for macOS
 
 _This guide describes the steps required to have Pydio Cells running on macOS._
 
