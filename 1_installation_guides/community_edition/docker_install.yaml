@@ -2,4 +2,4 @@ title: "Docker Image"
 language: und
 menu: "-- Docker Image"
 weight: 5
-menu_name: menu-community-install
+menu_name: menu-administration-guide
