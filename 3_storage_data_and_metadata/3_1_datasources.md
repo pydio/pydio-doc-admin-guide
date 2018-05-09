@@ -96,3 +96,7 @@ The process of defining a new policy is quite straight forward and easy:
 1. First go to your `Admin Settings Page`
 1.     
 
+### Encryption 
+
+Pydio Cells comes also out of the box with basic encryption features. This can be configured and fine tune on a Datasource basis: the additionnal security brought by encryption comes at the cost of a higher CPU load ().
+
