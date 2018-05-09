@@ -8,4 +8,7 @@ Namely, for the time being:
 
 These features are just but a few of the next surprises we have prepared for you with this entirely rewritten version. Now that the version 1.0 of Pydio Cells is out, we will quickly build on it and add more cool features very soon; stay tuned! 
 
+In this category we will provide you with advanced guides to make use of the advanced features of Pydio Cells.
+
+
 [:summary]

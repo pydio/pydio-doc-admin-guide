@@ -3,4 +3,5 @@ In this this chapter you can find installation manual for every OS we currently 
 
 As we are now using [Golang](https://golang.org/) (Google's programming language) Pydio is now a small binary that you can launch via CLI. It's so easy that you will be astonished.
 
+
 [:summary]

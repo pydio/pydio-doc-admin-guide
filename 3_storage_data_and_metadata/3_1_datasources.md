@@ -1,8 +1,9 @@
+
 Datasources abstract the effective connection to a given type of data storage at a given address (that might give access to data via a proxy, typically to enable load balancing) using a specific driver.
 
-When adding a new data repository to your Pydio Cells instance, you typically first define a datasource and then define workspaces that use it. 
+When adding a new data repository to your Pydio Cells instance, you typically first define a datasource and then define workspaces that use it.
 
-Without diving to deep into the details, it helps to understand the basics of what is a datasource technically speaking. 
+Without diving to deep into the details, it helps to understand the basics of what is a datasource technically speaking.
 
 Roughly said, it is service that stands as the interface between your store (a local or remote file system, a S3 object storage...) and the Pydio Cells system.
 It connects to the store on one hand and then exposes its files to the other internal services of Pydio Cells via a gRPC API. The takeaway here is that each datasource uses a distinct port to communicate with the rest of the application (typically 9001, 9002, 9003...).  
@@ -19,7 +20,7 @@ In the below paragraphs, we dive into the specificity of the various datasources
 
 To create a new datasource go to:
 
-`Admin Settings Page >> Storage >> + Datasource` (link on the top right corner of the page) 
+`Admin Settings Page >> Storage >> + Datasource` (link on the top right corner of the page)
 
 [TODO add screenshot ?]
 
@@ -46,7 +47,7 @@ The most standard driver you can use is actually the File System datasource: it 
 
 ** TODO peer and folder **
 
-Here, the most important parameter will be the **PATH**. In one word as in thousand : **THE PATH PARAMETER MUST BE AN ABSOLUTE PATH** on the chosen peer, which means it must be a path starting from the root of the chosen server. 
+Here, the most important parameter will be the **PATH**. In one word as in thousand : **THE PATH PARAMETER MUST BE AN ABSOLUTE PATH** on the chosen peer, which means it must be a path starting from the root of the chosen server.
 The good news is that there are a couple of available keywords you can use in this field (and in any other field actually), that will be automatically resolved by the application to an absolute path (see below).
 
 Possible values can then be:
@@ -82,7 +83,7 @@ By default, the versioning policy of the Home Edition of Pydio Cells cannot be c
 
 [TODO present each default policies]
 
-#### Assigning a Given Policy to a Datasource 
+#### Assigning a Given Policy to a Datasource
 
 Versionning can be enabled/disabled for a given datasource in the corresponding datasource editor that can be accessed via:
 `Settings >> Storage >> _(chose a given data source to open the editor dialog)_ >> DataManagement >> Versioning Policy`.
@@ -96,11 +97,9 @@ The process of defining a new policy is quite straight forward and easy:
 1. First go to your `Admin Settings Page`
 1.     
 
-### Encryption 
+### Encryption
 
 Pydio Cells also comes out-of-the-box with basic encryption features. This can be configured and fine tuned on a datasource by datasource basis, typically using this feature for sensible documents only.
 Indeed, the additionnal security brought by encryption comes at the cost of a higher CPU load (encryption and decryption require computation) and also a higher risk of loosing data in the case the decryption key get lost.
 
 Please refer to the corresponding section of the Security chapter to learn how to configure this feature.
- 
-
