@@ -27,6 +27,8 @@ Every time a datasource has its state updated, the index service publishes event
 In Pydio Cells to create a datasource go to ** Data Management > Storage **
 then on the top right of the screen press **+DATASOURCE** now you will have to fill fields such as :
 
+![datasource interface](/images/2_getting_started/datasource_interface.png)
+
 * **DataSource Identifier** : the name of your datasource how it's identified within Pydio.
 
 * **Internal port** : By default the port is 9002.
@@ -34,6 +36,9 @@ then on the top right of the screen press **+DATASOURCE** now you will have to f
 * **Storage** : For the moment you have 2 options, `Local File System` using your local storage or `Remote Object Storage (S3)` to connect to a remote object storage as it's named.
 
 For the `Local file System` :
+
+![datasource interface local file system](/images/2_getting_started/datasource_interface_local_file_system.png)
+
 
 * **Peer Address** : Where the storage is located.
 
@@ -49,6 +54,8 @@ be wary that it's really heavy on the CPU so for a smooth experience have plenty
 
 The `Remote Object Storage (S3)` requires different fields such as :
 
+![datasource interface s3](/images/2_getting_started/datasource_interface_S3.png)
+
 * **Bucket name** : the name of the bucket created to store the data of Pydio.
 
 * **S3 Api Key** : the key (can be seen as a login) that identifies you.
@@ -58,18 +65,3 @@ The `Remote Object Storage (S3)` requires different fields such as :
 * **Internal Path** : how the data should be structured inside the bucket.
 
 * **Custom Endpoint** : your access policy to the storage.
-
-### Workspaces
-
-Pydio Cells workspaces work the same way they used to in Pydio 8. The only changes are how drivers are managed. Because we are using **Datasources**, you can allocate a single or multiple nodes, to a workspace.
-
-To create a workspace go to ** Data Management > Workspaces ** then click on the top right button **+WORKSPACE** then :
-
-##### Driver options :
-* **Root Nodes** : you can allocate one or many nodes to your workspace.
-
-##### Set Generic Options :
-* **Label** : name your workspace.
-* **Description** : a brief Description of your workspace.
-* **Default rights** : the default rights for users in this workspace.
-* **Alias** : instead of the generic unique ID you can use an Alias.

@@ -8,7 +8,7 @@ In this guide you will see how you can create and manage workspaces with Pydio C
 
 To create a workspace go to **Data Management > Workspaces**, then click on **+WORKSPACE** located on the right.
 
-After this menu will appear : 
+After this menu will appear :
 
 ![Create User workspace](/images/2_getting_started/create_workspace.png)
 
@@ -31,6 +31,8 @@ After this menu will appear :
 You can also edit your workspaces after the creation.
 
 To modify a workspace go to **Data Management > Workspaces** and just left click the workspace of your choice, you will then have all the previous fields allowing you to modify them.
+
+![modifyworkspace](/images/2_getting_started/modify_workspace.png)
 
 ## Manage the rights to your workspace
 
