@@ -8,4 +8,4 @@ For the record, under the hood, such workspaces are stored under **TODO ...** in
 
 Thus although it seem that all users access the "same" workspace, this workspace is actually always pointing to a different user, depending on the user logged.
 
-~~ As you guessed it, this also requires the Workspace to be configured to automatically **"Create"** the personal folder when it is necessary. For this, you set the "Create" option to true in the workspace configuration. ~~
+~~ As you guessed it, this also requires the Workspace to be configured to automatically **"Create"** the personal folder when it is necessary. For this, you set the "Create" option to true in the workspace configuration.~~
