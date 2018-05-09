@@ -1,3 +1,5 @@
+# Create Users, Roles and Groups
+
 We are going to show you step by step, how to create users/roles/groups with Pydio's Cells interface.
 
 *First step you have to be on the Admin settings panel.*
@@ -22,7 +24,7 @@ Groups allow you to manage the rights, parameters and actions of many users at o
 
 Now to create a user go to **Identity Managment > People**, then click on **+GROUP** located on the top right.
 
-Then the following menu will appear : 
+Then the following menu will appear :
 
 ![Create User image](/images/2_getting_started/create_group.png)
 

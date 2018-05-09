@@ -1,4 +1,4 @@
-## Managing storage with Pydio Cells
+# Managing storage with Pydio Cells
 
 Storage in Pydio cells has changed, the workflow is not the same as the previous versions we will see in details how you can manage your storage with Cells.
 
