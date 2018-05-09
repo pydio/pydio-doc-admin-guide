@@ -1,4 +1,3 @@
-# Storage, data and metadata
 
 At this step, you have a running instance of Pydio Cells running on your server. You can now connect as an administrator to fine tune the installation and start customising the tool to fit with your specific organisation's needs actual business data. 
 
