@@ -98,5 +98,9 @@ The process of defining a new policy is quite straight forward and easy:
 
 ### Encryption 
 
-Pydio Cells comes also out of the box with basic encryption features. This can be configured and fine tune on a Datasource basis: the additionnal security brought by encryption comes at the cost of a higher CPU load ().
+Pydio Cells also comes out-of-the-box with basic encryption features. This can be configured and fine tuned on a datasource by datasource basis, typically using this feature for sensible documents only.
+Indeed, the additionnal security brought by encryption comes at the cost of a higher CPU load (encryption and decryption require computation) and also a higher risk of loosing data in the case the decryption key get lost.
+
+Please refer to the corresponding section of the Security chapter to learn how to configure this feature.
+ 
 

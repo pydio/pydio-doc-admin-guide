@@ -1,5 +1,3 @@
-## Creating Users/roles/groups Pydio Cells
-
 We are going to show you step by step, how to create users/roles/groups with Pydio's Cells interface.
 
 *First step you have to be on the Admin settings panel.*
