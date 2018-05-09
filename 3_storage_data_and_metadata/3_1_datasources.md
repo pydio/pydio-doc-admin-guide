@@ -13,7 +13,7 @@ It is also important to note that datasources provide a unique entry point for s
 
 We will thus explain the way versioning is handle in Pydio Cells at the end of this chapter.
 
-## Create and configure a datasource
+### Create and configure a datasource
 
 In the below paragraphs, we dive into the specificity of the various datasources (drivers) but first, let's go through some common parameters you will have to set up, whatever the driver you select.
 
@@ -25,7 +25,7 @@ To create a new datasource go to:
 
 It opens a configuration Dialog.
 
-### Generic Parameters
+#### Generic Parameters
 **Datasource Identifier**
 
 
@@ -38,11 +38,11 @@ It opens a configuration Dialog.
 
 **Alias** : this is automatically generated from the workspace label (like the "slugs" in Wordpress for example), and can be used as a workspace identifier for all the low-level operations : building the WebDAV server URLs, triggering an action via the Command Line, etc.
 
-### Filesystem Datasources
+#### Filesystem Datasources
 
 The most standard driver you can use is actually the File System datasource: it has the huge advantage of storing the files directly on a local or network file system, thus on the other way round, to read any existing data stored in a file system and empower it with Pydio Cells capabilities.
 
-### Defining peer address and path
+##### Defining peer address and path
 
 ** TODO peer and folder **
 
@@ -58,7 +58,7 @@ Possible values can then be:
 + `AJXP_DATA_PATH/files`: AJXP_DATA_PATH is defined in the bootstrap_context.php file, it is pointing by default to AJXP_INSTALL_PATH/data, e.g. the folder that Pydio write into
 + `/home/AJXP_USER`: AJXP_USER is automatically replaced by the current user name, which answer the next question~~
 
-### Other driver parameters
+##### Other driver parameters
 Please see the plugin identity card for a complete description of all the options provided by the access.fs driver. Some are global (plugin options applicable to all workspaces), some are "instance", e.g. defined on a per-workspace basis.
 
 Interesting options to note:
@@ -68,12 +68,7 @@ In the "Global part" (E.g. you have to go to Available Plugins > Workspaces Driv
 In the instance part (options you see when creating a repository), the **Pagination** parameters will trigger a paginated view if a folder contains more than XXX number of items, the **File Creation Mask** is a chmod value applied at file creation, and the **Purge Days** can be setup to clear all files older than this number of days. This later option is not automatic, you have to set up a cron job (or see the Scheduler tool) to actually trigger the purge.
 
 
-
 ### Create a S3 Datasource connector
-
-
-
-
 
 ### Versioning
 
