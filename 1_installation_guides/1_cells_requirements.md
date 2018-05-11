@@ -7,9 +7,9 @@ With Pydio Cells the webserver is provided within the binary, we are using [Cadd
 
 ## Php
 
-We recommend you to use PHP 7 as it's faster than PHP 5 that will soon no longer be supported by Pydio, for the moment if you cannot upgrade you can still use Pydio with PHP 5.5.9.
+We recommend you to use PHP 7 as it's faster than PHP 5 that will soon be no longer supported by Pydio, for the moment if you cannot upgrade you can still use Pydio with PHP 5.5.9.
 
-You also need the following packages :
+You also require the following packages :
 
 * **php-fpm**
 * **php-gd**
@@ -30,8 +30,8 @@ Pydio needs both **80** & **443** ports to be available, you can run either one 
 
 ## Hardware
 
-For Pydio Cells to work smoothly you should meet the following :
+For Pydio Cells to run smoothly you should meet the following requirements:
 
 * **RAM** : 2gb minimum
 * **CPU** : 2 cores minimum
-* **HD**  : we recommand you to use an ssd as it has faster access time and huge writing/reading speeds.
+* **HD**  : we recommend you to use an ssd as it has faster access time and huge writing/reading speeds.
