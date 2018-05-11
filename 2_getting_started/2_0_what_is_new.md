@@ -18,6 +18,6 @@ Policies are the new way to restrict access, features, ... with more details, yo
 
 #### Micro services
 
-Micro services as their name says are, little services that serves one main task, but if you put them all together they will serve to a greater scheme.
+Micro services as their name says ,are small services that serves one task, but once they are put together they serve a greater scheme. They allow to manage everything with ease without having to shut down all the services, you can work on one service and it's stat
 
-You can get a look at the services status in **Backend > Services**
+You can get a look at the services status in **Backend > Services** and you will then have all the informations.
