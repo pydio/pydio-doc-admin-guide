@@ -27,11 +27,9 @@ To create a new datasource go to:
 It opens a configuration Dialog.
 
 #### Generic Parameters
+
 **Datasource Identifier**
-
-
-**Default Rights** : this settings is very handy to apply automatically an access right to all users for this workspace. If you set it e.g. to "Read", all new users will by default have a Read access to this workspace. This is particularly handy when you are binding Pydio to an external users directory : when a user logs for the first time, his Pydio counterpart is created at this moment, and using default rights is a good way to assign some workspace by defaults for all users.
-
+This is the internal id of this datasource. It cannot be changed afterwards. You should use a word with lower case letters, numbers and dash (-), for instance, pre-configured datasources in Pydio Cells are named: `pydiods1`, `personal` and `cells`. 
 
 **Default Rights** : this settings is very handy to apply automatically an access right to all users for this workspace. If you set it e.g. to "Read", all new users will by default have a Read access to this workspace. This is particularly handy when you are binding Pydio to an external users directory : when a user logs for the first time, his Pydio counterpart is created at this moment, and using default rights is a good way to assign some workspace by defaults for all users.
 
@@ -45,10 +43,13 @@ The most standard driver you can use is actually the File System datasource: it 
 
 ##### Defining peer address and path
 
-** TODO peer and folder **
+The **Peer Address** field lets you define the IP adress or hostname of the machine that really hosts to corresponding file systems. 
 
-Here, the most important parameter will be the **PATH**. In one word as in thousand : **THE PATH PARAMETER MUST BE AN ABSOLUTE PATH** on the chosen peer, which means it must be a path starting from the root of the chosen server.
-The good news is that there are a couple of available keywords you can use in this field (and in any other field actually), that will be automatically resolved by the application to an absolute path (see below).
+The **Path** is then the path to the directory on the server's file system that will be then served as the root of this datasource. In one word as in thousand : **THE PATH PARAMETER MUST BE AN ABSOLUTE PATH** on the chosen peer, which means it must be a path starting from the root of the chosen server.
+
+Once you have chosen a peer, note that the systems automatically discovers the available directories that are then presented in a popup list.
+
+Note also that there are a couple of available keywords you can use in this field (and in any other field actually), that will be automatically resolved by the application to an absolute path (see below).
 
 Possible values can then be:
 
@@ -59,8 +60,11 @@ Possible values can then be:
 + `AJXP_DATA_PATH/files`: AJXP_DATA_PATH is defined in the bootstrap_context.php file, it is pointing by default to AJXP_INSTALL_PATH/data, e.g. the folder that Pydio write into
 + `/home/AJXP_USER`: AJXP_USER is automatically replaced by the current user name, which answer the next question~~
 
+
+**TODO: Is the below part still relevant???**
+
 ##### Other driver parameters
-Please see the plugin identity card for a complete description of all the options provided by the access.fs driver. Some are global (plugin options applicable to all workspaces), some are "instance", e.g. defined on a per-workspace basis.
+Please see the plugin identity card for a complete description of all the options provided by the access.fs driver. Some are global (plugin options applicable to all workspaces), some are "instance", e.g. defined on a per-workspace basis.
 
 Interesting options to note:
 
@@ -71,24 +75,29 @@ In the instance part (options you see when creating a repository), the **Paginat
 
 ### Create a S3 Datasource connector
 
+**=====================
+       TODO
+=====================**
+
 ### Versioning
 
 Versioning is provided out-of-the-box by Pydio Cells. In a few words, when versioning is turned on, everytime a user modifies a file, it creates a new version of this file that is then considered as the reference for this file. The old version is then stored in a technical data repository and eventually discarded depending on the pruning policies (more on this in the corresponding paragraph below).
 
 Please, note that versionning has a cost in terms of the amount of data that is stored in your various data stores and have to be correctly configured and monitored in order to avoid exponential use of data space.
 
-#### Default Pruning Policies
+#### Default Versioning Policies
 
-By default, the versioning policy of the Home Edition of Pydio Cells cannot be configured. The Admin can only choose to apply them or not _on a datasource basis_.
+_Note: By default, the versioning policy of Pydio Cells Home Edition cannot be configured. The Admin can only choose to apply them or not **on a datasource basis**._
 
 [TODO present each default policies]
+
 
 #### Assigning a Given Policy to a Datasource
 
 Versionning can be enabled/disabled for a given datasource in the corresponding datasource editor that can be accessed via:
 `Settings >> Storage >> _(chose a given data source to open the editor dialog)_ >> DataManagement >> Versioning Policy`.
 
-#### [ED] Defining a Pruning Policy
+#### [ED] Defining a Versioning Policy
 
 In **Pydio Cells Enterprise Edition**, we have brought versionning one step further by giving you the option to define custom pruning policies that will fit to __your__ business specific needs and requirement.
 
