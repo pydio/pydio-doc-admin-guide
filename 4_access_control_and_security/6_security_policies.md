@@ -14,14 +14,14 @@ Admin defines condition on subjects and choose to allow or deny resources access
 
 ##### defining a security policy
 
-
-In **Identity management** click on **Security policies**
-
 Note that creating security policies is very tricky so make sure your understand very well what you do. A mistake can lead to a situation where resources cannot be accessed at all.
+
+In the admin left panel click on "**Security policies**" in the "**Identity management**" section.
+
 
 To help you defining your security policies you can check examples of some basic security policies.
 
-To create a policy rule click on the **+NEW POLICY** at the top-right. Here is the form description:
+To create a policy rule click on the "**+NEW POLICY**" at the top-right. Here is the form description:
 
 * **name**: The policy name
 
