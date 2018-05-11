@@ -4,9 +4,13 @@ In this chapter we are going to have a close look at the logs and where they are
 
 With pydio cells you have a logging system allowing you to always be informed about what's happening. The logs are storing every event happening on pydio cells such as a user creation, access, errors and more.
 
-
-
 #### Pydio cells interface logs
+
+*To enable the logs you will have to get this environment variable to this value
+`PYDIO_LOGS_LEVEL=production`*
+you can use the following command `export PYDIO_LOGS_LEVEL=production`.
+
+
 
 You have for instance in the pydio cells interface the **server logs** you can find them in **Backend > Logs** :
 
@@ -22,7 +26,7 @@ You can read them as the following :
 
 you can filter what you want to display by choosing the type of filter first then you fill the filed that are just on it's left (*Filter Logs*), to do so click on the **inverted triangle** then choose the type :
 
-* **Full-text search** : you can filter the result by anything you want such as usernames etc...
+* **Full-text search** : you can filter the result by anything such as usernames, etc...
 
 * **Pick one day** : pretty straightforward you will have a calendar displaying, allowing you to choose the day of the logs.
 
