@@ -2,7 +2,7 @@ In this chapter we are going to have a further look at the enterprise dashboard.
 
 ### [ED] The Enterprise Dashboard
 
-The enterprise Dashboard offers you a detailed view of what is happening inside your pydio cells such as *recent events*, *access*, *etc...*
+The enterprise Dashboard offers you a quick and detailed view of what is happening inside your pydio cells such as *recent events*, *access*, *etc...*
 
 Now lets take a look at the dashboard and see some of it's features :
 
@@ -17,4 +17,8 @@ By default you can move the widgets by drag and dropping them, if you want to fu
 For instance you can add graphs *small* or *big* and customize them choose for example the sampling frequency, what data it's going to use (downloads, uploads, etc...)
 you can also add widgets displaying the events and such, like *server status*, *most active* and so on so forth, like the previous widgets you can choose your sampling frequency, etc...
 
-Here's a screenshot example
+Here's a screenshot example :
+
+![ent dashboard](/images/2_getting_started/ent_dashboard_widget.png)
+
+you can choose charts, filter which workspaces you want to monitor, put a filenames filter and choose a refresh interval.
