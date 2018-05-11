@@ -20,11 +20,13 @@ One of the Cells abilities is to integrate with the environment it is install in
 
 Login with admin user and go to "Settings". Click on External Directory.
 To add new directory, click on "DIRECTORY" or click on existed ldap to modify configurations.
+
 <img src="http://images.vpydio.fr/local/Selection_862.png" alt="" width="600">
 
 ### Step 2:
 
 In this step, you will create a ldap directory with an openldap server.
+
 <img src="http://images.vpydio.fr/local/Selection_863.png" alt="" width="600">
 
 #### Basic settings for connection to ldap Server
