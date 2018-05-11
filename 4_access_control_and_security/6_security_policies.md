@@ -9,12 +9,10 @@ Security policies allow admin to restrict access to resources and can be created
 * etc...
 
 ##### how does a security policy work?
---------------------------------------
 
 Admin defines condition on subjects and choose to allow or deny resources access when the condition matches.
 
 ##### defining a security policy
---------------------------------
 
 
 In **Identity management** click on **Security policies**
