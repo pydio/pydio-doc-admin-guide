@@ -48,16 +48,56 @@ You can then define permissions via Rules and Policies directly at this level, e
 **GOTCHAS** TODO add a few problematic corner cases while using cells?
 
 
-### Personal workspaces
+### Personal Workspaces and Template Paths
 
-This is one of the many out-of-the-box cool features of Pydio Cells: with no further configuration, each user have her own personal space, in which other users cannot access. It is very similar to the `home` folder concept that you find in various operating systems.
+#### Personal Workspaces
+
+This is one of the many out-of-the-box cool features of Pydio Cells: with no further configuration, each user have her own personal space, in which other users cannot access. It is very similar to the `home` or `My Files` folders that you can find in various operating systems.
 
 In contrary to former versions of Pydio, you do not have to configure anything to provide user with this capability. 
 
-For the record, under the hood, such workspaces are stored under **TODO ...** in a sub folder named after current user login. 
+Under the hood, the _"physical"_ effective path toward the default node that is used for storing personal users data in separate folders is dynamically computed.
 
-Thus although it seem that all users access the "same" workspace, this workspace is actually always pointing to a different user, depending on the user logged.
+You might change the rule that determines this path by going to:
 
-~~ As you guessed it, this also requires the Workspace to be configured to automatically **"Create"** the personal folder when it is necessary. For this, you set the "Create" option to true in the workspace configuration.~~
+`Admin Settings >> left-hand menu >> Template Paths >> MY-FILES text field`
+
+As seen there, the default path is defined by:
+
+`Path = DataSources.personal + "/" + User.Name;`
+
+Where:
+
+- **DataSources.personal** is a default built-in file system datasource that points towards the `<cells data dir>/data/personal` data sub directory of your Pydio installation
+- **User.name** is the login of the corresponding user
+
+Thus, although it seem that all users access the "same" workspace, this workspace is actually always pointing to a different user, depending on the user logged.
+
+#### Template Paths
+
+More generally speaking, Template Paths are dynamically computed depending on the context. They can be used as roots for workspaces in replacement of a fixed datasource path. 
+
+As quoted above, it is used to create the Personal Files workspace. It is also used to determine the location of the users Cells folders: as we have already seen in previous sections, the Cells concept adds an indirection level that brings us the possibility to gather nodes from various sources. Under the hood, this is done by creating a Node for this cell that will then reference the path to its various children and can be used as a target when defining rules and policies.
+
+Yet, we give you the option to change the default configuration and define a specific path where these nodes will be stored, typically if you want to use another datasource than the default built-in file system datasource that points towards the `<cells data dir>/data/cells` subdirectory of your Pydio Cells installation.
+
+#### Dynamic Nodes
+
+In the same page of the admin settings, where you can configure personnal folders and Cells you can also create specific dynamic nodes.
+
+Let's say for instance that you are configuring Pydio Cells for an enterprise and that you want to give to each employee an access to her own payslips.
+
+First you have to:
+- create a (encrypted) datasource that point to a secure storage, here we will name it: `administrativeDocs`
+- create a workspace called `Admin Docs` that will use to this datasource
+- give access to this workspace only to the _"Accounting"_ and _"Management"_ groups  
+- create a subfolder named `Payslips` in this workspace
+
+Then you can:
+- create a new rule by clicking on the `+ DYNAMIC NODE` button that is in the top right corner of the page.
+- name it `Payslip folders` for instance
+- edit the default path using: `DataSources.administrativeDocs + "/Payslips/" + User.Name;`
+- save 
+
 
 ### Technical Workspaces 
