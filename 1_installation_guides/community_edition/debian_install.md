@@ -62,7 +62,7 @@ sudo apt install php7.0 php7.0-fpm php7.0-gd php7.0-curl php7.0-intl php7.0-xml
     ```
 
 #### MySQL
-
+*You can skip this step if you already have a database*
 
 You first have to configure the mysql-server installer in order to install the appropriate version
 ``` bash

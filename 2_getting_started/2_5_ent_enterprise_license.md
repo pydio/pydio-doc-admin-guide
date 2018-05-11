@@ -4,7 +4,7 @@ In this chapter we are going to see where you can find your enterprise license s
 
 #### Website
 
-To find your **[Enterprise Edition]** go to pydio's website, **User account > my licenses** click on the first license that will take you to the extended menu where you will see a long string as seen in this screenshot :
+To find your **[Enterprise Edition]** go to pydio's website, **User account > my licenses** click on **see all licenses** then you can click on more for the concerned license this will take you to the extended menu where you will see the license key :
 
 ![ent license website](/images/2_getting_started/ent_license_website.png)
 
