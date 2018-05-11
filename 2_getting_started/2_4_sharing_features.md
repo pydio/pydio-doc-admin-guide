@@ -3,7 +3,7 @@ In this chapter you will see how to use another main feature of pydio Cells "sha
 ### Sharing with Cells
 
 Cells is the new way to share with Pydio, a cell is a space where you and the invited people have access to the same resources, you can control the access to the said resources and even more.
-Roughly speaking a cell is a workspace with a group of invited people/groups (you can invite as many as you want) that have access to the same resources and can modify it and such.
+Roughly speaking a cell is a workspace with a group of invited people/groups (you can invite as many as you want) that have access to the same resources and can modify them and such.
 
 
 Now let's see how you can use cells, there is two ways to create a cell.
