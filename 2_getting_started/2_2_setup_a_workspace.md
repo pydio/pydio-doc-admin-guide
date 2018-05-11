@@ -1,12 +1,16 @@
 In this chapter, you will see how you can create and manage workspaces with Pydio Cells.
 
-*You have to be on the settings to be able to do the operations below*
+*You have to be on the settings menu to be able to do the operations below*
+
+# What is a workspace
+
+Workspaces are a core feature in Pydio and with Pydio Cells we kept the same formula, a workspace allows you to store data inside multiple folders all gathered under one big folder/container (the workspace), you can use multiple type of storages from local files to others systems such as S3 buckets and more.
 
 ## Create a workspace
 
 To create a workspace go to **Data Management > Workspaces**, then click on **+WORKSPACE** located on the right.
 
-After this menu will appear :
+Then this menu will appear :
 
 ![Create User workspace](/images/2_getting_started/create_workspace.png)
 

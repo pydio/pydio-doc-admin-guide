@@ -133,6 +133,8 @@ A menu will appear.
 
 *Subsequent steps are then pretty much the same in the browser or in the CLI*
 
+1. **Enterprise License key** : put the license key of your enterprise version, if you need help fetching it here is our guide about [where do you get your license]().
+
 1. **Database connection** : put your database informations.
 
 2. **PHP-FPM Detection** : the installer detects your version of php-fpm and if there are missing packages.

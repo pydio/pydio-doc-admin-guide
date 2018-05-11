@@ -10,8 +10,6 @@ With pydio cells you have a logging system allowing you to always be informed ab
 `PYDIO_LOGS_LEVEL=production`*
 you can use the following command `export PYDIO_LOGS_LEVEL=production`.
 
-
-
 You have for instance in the pydio cells interface the **server logs** you can find them in **Backend > Logs** :
 
 ![server logs](/images/2_getting_started/server_logs.png)
@@ -22,6 +20,8 @@ You can read them as the following :
 3. **User** : the username of whom it happened to
 4. **Service** : the service that is handling it
 5. **Message** : what happened with the service concerned (such as stopping, restarting, etc...)
+
+*You can left click any error to have a detailed windows*
 
 
 you can filter what you want to display by choosing the type of filter first then you fill the filed that are just on it's left (*Filter Logs*), to do so click on the **inverted triangle** then choose the type :
@@ -37,4 +37,8 @@ you can filter what you want to display by choosing the type of filter first the
 You can also look at the logs from your server, they are located in `~/.config/pydio/cells/logs`.
 
 #### [ED] Audit logs
-On the **Enterprise Edition** you have an audit log, it's
+
+On the **Enterprise Edition** you have an audit log, an audit log stores every single event/detail allowing you to retrace them if the need arise.
+For example if you have a security breach it will allow you to retrace the events bacl to when the breach happened and see what was compromised.
+
+It's is located in the logs folder `~/.config/pydio/cells/logs` filed under the name `audit.log`.

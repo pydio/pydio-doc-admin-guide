@@ -1,18 +1,17 @@
-
-To share with Pydio cells you have many ways, but here you will see the most common ways to do that.
-
-## Cells
-
-Cells is the new way of sharing data with Pydio Cells. You can now easily share and manage data with multiple users/groups. A cell is a new space that enables you to share, attach one or multiple folders to it and expand it as much as you want.
+In this chapter you will see how to use another main feature of pydio Cells "sharing", you will see all the means to share files, folders and more.
 
 ### Sharing with Cells
 
-There is two ways to create a cell.
+Cells is the new way to share with Pydio, a cell is a space where you and the invited people have access to the same resources, you can control the access to the said resources and even more.
+Roughly speaking a cell is a workspace with a group of invited people/groups (you can invite as many as you want) that have access to the same resources and can modify them and such.
 
-The main way is by going on your **HOME** page and clicking the **Create a Cells** located in the menu on the left sidebar.
+
+Now let's see how you can use cells, there is two ways to create a cell.
+
+The main way is by going on your **HOME** page and clicking the **Create a Cells** button located in the menu on the left sidebar.
 
 #### Create a Cell :
-Then you will have the following menu displaying : 
+Then you will have the following menu displaying :
 
 
 ![Create User workspace](/images/2_getting_started/create_cell_1.png)
@@ -55,13 +54,10 @@ Now you will have new fields displaying to you.
 
 * **Link Label** : The label of your link(you have a menu displaying all of your public links and to recognize them you can put a label)
 
-* **Link Description** : It will be autofield with the date of creation, but you can also add a short description if you wish to.
+* **Link Description** : It will be autofield with the date of creation, but you can also add a short description to it if you wish.
 
 Then there is 3 different tabs :
 
 1. **Link** : This is where you can get your link, you can also choose the permissions that users have on this share.
 2. **Access** : You can choose if you want to put a password an expiration date for the link, a limited number of downloads and the layout of the GUI when people are on the link.
 3. **Visibility** : You can choose to whom this link will be visible on the shares menu.
-
-
-

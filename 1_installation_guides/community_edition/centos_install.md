@@ -16,7 +16,7 @@ CentOS: `sudo yum install centos-release-scl`
 RedHat: `sudo yum-config-manager --enable rhel-server-rhscl-7-rpms`
 
 ### 1 Database
-
+*You can skip this step if you already have a database*
 Currently, you can use either MySQL or MariaDB as backend for Pydio Cells.
 
 ##### MySQL
@@ -70,7 +70,7 @@ GRANT ALL PRIVILEGES ON pydio.* to 'cell'@'localhost';
 FLUSH PRIVILEGES;
 ```
 
-### 1.3 Creation of dedicated system account for Pydio Cells
+### 2 Creation of dedicated system account for Pydio Cells
 
 It's highly recommend to run Pydio Cells with a dedicated `cell` user.
 
@@ -80,7 +80,7 @@ In order to create a new user and its home directory, execute this command:
 
 `sudo useradd -m cell `
 
-### 1.4 SELinux
+### 3 SELinux
 
 There is no available configuration of SELinux for Pydio Cells. Please make sure that SELinux is disabled or running in permissive mode.
 
@@ -88,7 +88,7 @@ To temporary disable SELinux: `sudo setenforce 0`.
 
 You can also permanently disable SELinux in `/etc/selinux/config`.
 
-## 2 PHP-FPM
+## 4 PHP-FPM
 
 Install PHP-FPM and some mandatory extensions. In this example, we use PHP version 7.1. However, you can use 7.0 or 7.2 instead.
 
@@ -120,18 +120,18 @@ sudo systemctl enable rh-php71-php-fpm
 sudo systemctl start rh-php71-php-fpm
 ```
 
-## 3 Installation and configuration of Pydio Cells
+## 5 Installation and configuration of Pydio Cells
 
 After having installed both php-fpm and database services, you can now install and configure Pydio Cells.
 
-Log in or switch to **cell** user. 
+Log in or switch to **cell** user.
 
 ```sh
 wget https://download.pydio.com/pub/cells/release/0.9.0/linux-amd64/cells
 chmod +x cells
 ```
 
-### 3.1 Setup Pydio Cells
+### 5.1 Setup Pydio Cells
 
 You have two ways to setup Pydio Cells after launching the first command: by command line or by web. In this how-to, we use the web interface to setup.
 
@@ -171,7 +171,7 @@ Next time, please use this command to start pydio:
 
 `./cells start`
 
-###  Data and configuration files of Pydio Cells
+### Data and configuration files of Pydio Cells
 
 You will find all config files/data in directory home of **cell** user:
 
