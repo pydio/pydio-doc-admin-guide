@@ -8,6 +8,7 @@ With pydio cells you have a logging system allowing you to always be informed ab
 
 *To enable the logs you will have to get this environment variable to this value
 `PYDIO_LOGS_LEVEL=production`*
+
 you can use the following command `export PYDIO_LOGS_LEVEL=production`.
 
 You have for instance in the pydio cells interface the **server logs** you can find them in **Backend > Logs** :

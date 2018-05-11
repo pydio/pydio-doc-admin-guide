@@ -117,6 +117,8 @@ FLUSH PRIVILEGES;
 First, give execution rights to the binary. For instance, you can use `sudo chmod u+x <binary>`.
 
 Then, to launch the installer, type: `./<binary> install`. For instance: `./cells install`.
+*For the enterprise edition the binary will be named `cells-enterprise`*
+
 
 **For the enterprise edition refer to [this guide]() to get your license key allowing you to complete the installation**
 
