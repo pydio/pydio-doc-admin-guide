@@ -38,16 +38,6 @@ If you then edit the workspace and select Read-only permission, this will also d
 
 *About the Recycle Bin*: **TODO**
 
-### Cells: shared workspaces
-
-Cells are a new central concept in this version of the Pydio tool and are a great way to simply and securely share data among users.
-
-Technically speaking, creating a cell tranparently adds an indirection level that enable the definition of set of heterogeneous data (either files or folder, even from various datasources).
-You can then define permissions via Rules and Policies directly at this level, e.g. on this data set, as if the underlying data was really present under this virtual folder.
-
-**GOTCHAS** TODO add a few problematic corner cases while using cells?
-
-
 ### Personal Workspaces and Template Paths
 
 #### Personal Workspaces
@@ -56,7 +46,7 @@ This is one of the many out-of-the-box cool features of Pydio Cells: with no fur
 
 In contrary to former versions of Pydio, you do not have to configure anything to provide user with this capability. 
 
-Under the hood, the _"physical"_ effective path toward the default node that is used for storing personal users data in separate folders is dynamically computed.
+Under the hood, the _"physical"_ effective path toward the default node that is used for storing user personal data in separate folders is dynamically computed.
 
 You might change the rule that determines this path by going to:
 
@@ -71,7 +61,7 @@ Where:
 - **DataSources.personal** is a default built-in file system datasource that points towards the `<cells data dir>/data/personal` data sub directory of your Pydio installation
 - **User.name** is the login of the corresponding user
 
-Thus, although it seem that all users access the "same" workspace, this workspace is actually always pointing to a different user, depending on the user logged.
+Thus, although it seem that all users access the "same" workspace, this workspace is actually always pointing to a different folder, depending on the user logged.
 
 #### Template Paths
 
@@ -81,9 +71,22 @@ As quoted above, it is used to create the Personal Files workspace. It is also u
 
 Yet, we give you the option to change the default configuration and define a specific path where these nodes will be stored, typically if you want to use another datasource than the default built-in file system datasource that points towards the `<cells data dir>/data/cells` subdirectory of your Pydio Cells installation.
 
-#### Dynamic Nodes
+#### Create and manage specific Template Paths
 
-In the same page of the admin settings, where you can configure personnal folders and Cells you can also create specific dynamic nodes.
+In addition to the two template paths presented above (namely for the `My Files` and `Cells` folders), you can define dynamic folders of your own, depending on your business needs.
+
+In the page of the admin settings where you configure Personnal Folders and Cells:
+`Admin Settings >> left-hand menu >> Template Paths `
+
+Click on the top right `+TEMPLATE PATH` button to create new custom template.
+
+Enter a label for this path and click `CREATE`.
+
+You now can edit the default script to fit your needs. 
+
+##### A small real life example
+
+Here is a complete step by step example to illustrate the use of this feature.
 
 Let's say for instance that you are configuring Pydio Cells for an enterprise and that you want to give to each employee an access to her own payslips.
 
@@ -99,5 +102,4 @@ Then you can:
 - edit the default path using: `DataSources.administrativeDocs + "/Payslips/" + User.Name;`
 - save 
 
-
-### Technical Workspaces 
+**TODO finalise the description of the example**
