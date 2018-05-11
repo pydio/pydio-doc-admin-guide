@@ -1,4 +1,4 @@
-What are the new features packed with Pydio Cells, what's new lets take a look at all of them.
+What are the new features packed in with Pydio Cells, what's new lets take a look at all of them.
 
 ### What's new with Pydio Cells
 
