@@ -9,7 +9,7 @@ wget https://download.pydio.com/pub/cells/release/0.9.0/linux-amd64/cells
 chmod +x cells
 ```
 
-## Installation
+## Package Installation
 
 #### UBUNTU 16 & 17 :
 On both of those versions as they're not old, the installation process should be the easiest.
@@ -117,6 +117,8 @@ FLUSH PRIVILEGES;
 First, give execution rights to the binary. For instance, you can use `sudo chmod u+x <binary>`.
 
 Then, to launch the installer, type: `./<binary> install`. For instance: `./cells install`.
+
+**For the enterprise edition refer to [this guide]() to get your license key allowing you to complete the installation**
 
 A menu will appear.
 

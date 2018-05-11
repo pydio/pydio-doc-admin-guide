@@ -4,9 +4,7 @@ In this chapter we are going to see where you can find your enterprise license s
 
 #### Website
 
-To find your **[Enterprise Edition]** go to pydio's website, **User account > my licenses** click on **see all licenses** then you can click on more for the concerned license this will take you to the extended menu where you will see the license key :
-
-![ent license website](/images/2_getting_started/ent_license_website.png)
+Right now to get your Enterprise License you must contact our support here, we will then provide you with your license key that will be used for the installation process.
 
 
 #### Pydio cells dashboard (after installation)

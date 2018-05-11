@@ -150,7 +150,7 @@ to be able to bind those ports to Pydio you need to give the binary the rights t
 
 Basically to do that you can use this command :
 ``` bash
-sudo setcap CAP_NET_BIND_SERVICE=+eip pydio`
+sudo setcap CAP_NET_BIND_SERVICE=+eip pydio
 # Replace <pydio> with full path to the Pydio Cells binary.
 ```
 
@@ -160,6 +160,7 @@ Execute the command below and follow the instructions.
 ``` bash
 ./cells install
 ```
+**For the enterprise edition refer to this guide to get your license key allowing you to complete the installation**
 
 After the install is successfully done, if you ever have to stop Pydio Cells and want to run it again just run:
 
