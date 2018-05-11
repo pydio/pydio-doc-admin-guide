@@ -10,8 +10,6 @@ With pydio cells you have a logging system allowing you to always be informed ab
 `PYDIO_LOGS_LEVEL=production`*
 you can use the following command `export PYDIO_LOGS_LEVEL=production`.
 
-
-
 You have for instance in the pydio cells interface the **server logs** you can find them in **Backend > Logs** :
 
 ![server logs](/images/2_getting_started/server_logs.png)
@@ -22,6 +20,8 @@ You can read them as the following :
 3. **User** : the username of whom it happened to
 4. **Service** : the service that is handling it
 5. **Message** : what happened with the service concerned (such as stopping, restarting, etc...)
+
+*You can left click any error to have a detailed windows*
 
 
 you can filter what you want to display by choosing the type of filter first then you fill the filed that are just on it's left (*Filter Logs*), to do so click on the **inverted triangle** then choose the type :
