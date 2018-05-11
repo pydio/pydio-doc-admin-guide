@@ -1,5 +1,5 @@
 
-Storage management in **Pydio Cells** has completely changed comparing to previous versions. In this chapter, we will present the workflow used in details and explain how you can manage your storage.
+Storage management in **Pydio Cells** has completely changed compared to the previous versions. In this chapter, we will present the workflow used in details and explain how you can manage your storage.
 
 ## Storage
 
