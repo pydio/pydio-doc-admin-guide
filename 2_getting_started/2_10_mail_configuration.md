@@ -21,7 +21,7 @@ Queue Type  |  How you want Pydio to handle the mailing either when it's created
 
 2. **Sendmail**
 
-For sendmail make sure that you have installed and configured it, make also sure that the `/usr/bin/sendmail` path is correct, then choose the queue type as it's explained above.
+For sendmail make sure that you have installed and configured it on your server (depending on which version you are using), make also sure that the `/usr/bin/sendmail` path is correct, then choose the queue type as it's explained above.
 
 3. **Send Grid**
 
