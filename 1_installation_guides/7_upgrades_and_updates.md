@@ -4,12 +4,8 @@ _NOTE: upgrading from a previous major version of Pydio (typically 8 and below) 
 
 ### Upgrading from a previous version of Pydio Cells
 
-Even if we put a strong effort on code quality, we know that we will surely find some bugs. 
+The upgrade process is easily done, you just have to go to ** > ** and then choose the recent version that you wish to upgrade to.
 
-Thus we have already prepared an upgrade workflow that is largely automated and really easy, all you will have to do is :
+### Update Channels
 
-
-1. **Download the latest binary [right here](link)**
-2. **Replace your Old Binary with the newest**
-3. **Empty your cache** : to empty the cache you can use `sudo rm -rf ~/.config/pydio/cells/static/pydio/.....`
-4. **TBD**
+You have the choice to either use only the stable released versions, or use our nightly channel giving you more updates but with risks, as we say "with great powers comes a great responsibility".  
