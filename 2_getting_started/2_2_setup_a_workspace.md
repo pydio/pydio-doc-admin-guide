@@ -40,4 +40,4 @@ To modify a workspace go to **Data Management > Workspaces** and just left click
 
 The managment of rights for your workspaces goes through the users/groups/roles interface, so basically the access to them will depend on the access rights that you granted to users/groups/roles.
 
-To have a better understanding of the rights you can read this **[guide]().
+To have a better understanding of the rights you can read this **[guide]().**
