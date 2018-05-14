@@ -1,4 +1,3 @@
-
 _This document will guide you through steps to have Pydio Cells configured and running on debian 8 and 9._
 
 #### Pydio Cells
