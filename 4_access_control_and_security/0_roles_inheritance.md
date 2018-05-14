@@ -7,6 +7,7 @@ The key concept to understand is that "everything is a role", and roles are merg
 #### Roles
 
 The role abstraction is used by the system when you define authorizations and policies. A role is composed of a set of the following : 
+
 - _Access Control List_: this will attach a permission for this role to access any Node of the global tree (either via a Workspace or a Cell and their root nodes, or directly applied on specific files or folders). This permission can either be fixed (Read, Write) or dynamically computed at runtime by a Security Policy (see [Security Policies]() section.)
 - _Actions_: enables or disables available actions in the GUI
 - _Parameters_: override the global values of a parameter
