@@ -22,7 +22,7 @@ To create a new datasource go to:
 
 `Admin Settings Page >> Storage >> + Datasource` (link on the top right corner of the page)
 
-[TODO add screenshot ?]
+![datasource interface](/images/2_getting_started/datasource_interface.png)
 
 It opens a configuration Dialog.
 
@@ -75,9 +75,19 @@ In the instance part (options you see when creating a repository), the **Paginat
 
 ### Create a S3 Datasource connector
 
-**=====================
-       TODO
-=====================**
+The `Remote Object Storage (S3)` requires different fields such as :
+
+![datasource interface s3](/images/2_getting_started/datasource_interface_S3.png)
+
+* **Bucket name** : the name of the bucket created to store the data of Pydio.
+
+* **S3 Api Key** : the key (can be seen as a login) that identifies you.
+
+* **S3 Api Secret** : the secret (can be seen as a password) that completes the identification process giving you the ability to store your data in your bucket.
+
+* **Internal Path** : how the data should be structured inside the bucket.
+
+* **Custom Endpoint** : your access policy to the storage.
 
 ### Versioning
 
