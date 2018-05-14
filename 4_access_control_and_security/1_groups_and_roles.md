@@ -4,7 +4,7 @@ Now that everything is correctly setup and configured, we will go a step further
 
 ### Main Concepts
  
-The identity management features of Pydio Cells rely on an **internal user directory** that is implemented using a database and an index.
+The identity management feature of Pydio Cells relies on an **internal user directory** that is implemented using a database and an index.
 Basically, it means that a user (or a group or a role) is also a generic *Node* in the system. 
 Thus, it can be shared, assigned some ACLs or policies or enriched with metadata.
 
@@ -14,7 +14,7 @@ A user represent a single person or entity. The user _Object_ provides first and
 
 In addition to her group and assigned roles, main properties of a user are her `username` (the login she uses to connect to the system) and a technical Unique ID (that is a `String UUID`) 
 
-It can also be enriched with metadata, like various information (name, photo...), activities and audit logs.
+A user can also be enriched with metadata, like various information (name, photo...), activities and audit logs.
 
 #### Groups
 
@@ -28,6 +28,7 @@ A user can only be part of one group and is characterised by her login and the p
 #### Roles
 
 The role abstraction is used by the system when you define authorisations and policies. Each user and group is always at least attached with a _canonical_ role that represents it.
+
 Thus, for instance, when you assign specific permissions to a given user, these permissions are assigned under the hood to the canonical role that have the same name.
 
 Roles also add an indirection level that permits the definition of dynamic _groups_ that will evolve depending on external conditions.
@@ -131,7 +132,63 @@ _or_
 
 In addition to the check box, you can also open a popup list by clicking on the 3-dots `more` button that lays on the left of the boxes and then choose a given policy template that will be applied for this user/group/role on this workspace/subfolder, rather than explicitely defining permissions.
 
-You can thus for instance only enable access and modification of a whole workspace during office hours or from a given IP address.  
+You can thus, for instance, only enable access and modification of a whole workspace during office hours or from a given IP address.  
+
+###### Application Pages
+
+**TODO**
+
+###### Shares 
+
+This page displays a list of the Shares (Cells) that are **owned** by this user.
+This list is one of the few non dynamic views of **Pydio Cells** and must be explicitely refreshed upon request.
+
+
+##### Group Editor
+
+Once you have created a group (or clicked on the `edit` button that is bound to an existing group), you are presented with a dialog that offers many options.
+Most of them, namely the whole `Access Controls` and `Customize Parameters` sections, are the same that the ones used in the `User Editor`, excepted that configurations are applied at a `Group` level rather than at the `User` level.
+
+Please, refer to the previous section of this guide to get more information on the subject.
+
+Yet, the first section of the group editor, called `Summary`, is specific to the group level.
+
+Here you can edit following information: 
+
+**Group ID**: this is the full path of the edited group, last segment of the path being the ID of the group. This information cannot be changed after group creation.
+
+**Group Label**: the display name for this group.
+
+**Default Repository**: **TODO**
+
+**Users Lock Action**: Here you can define an action that will be triggered automatically at users login. 
+
+It can be logout (to lock out the users), pass_change (to force password change), or anything else. Warning, this is a powerful feature, handle with care.
+
+#### From the user perspective
+
+In addition to the user management features for the system administrator that have been presented in the previous section, users and groups can also be accessed, used and partly configured by regular users using the `Address Book`.
+
+Althought mainly targeted for end users, general understanding of this feature is helpful for Pydio Cells administrator. 
+
+##### Using Address Book
+
+The `Address Book` is mainly used to select a user or a group, typically when configuring a `Cell`. In such case, the address book opens a popup list where a user can choose a category between `Shared Users`, `Teams` or `Directory` and then pick up one of the defined user or group.
+
+##### Managing the Address Book
+
+More generally, a user can explicitely open her address book via her settings menu (the 3 dot "_more_" menu icon that is next to one user's display name in the top left corner).
+
+A dialog opens with following sections:
+
+###### Shared Users
+
+###### Teams
+
+###### Directory
+
+
+
 
 
 
