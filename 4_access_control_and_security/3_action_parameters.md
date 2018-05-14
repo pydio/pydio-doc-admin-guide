@@ -31,7 +31,7 @@ for instance in this screen i wanted the user to not have the ability to create 
 ```
 
 
- you have a lot of choices but the principle is easy you can also do that for groups, you choose the action and what is it targeting, and then you have a slider allowing to enable or disable it.
+ you have a lot of choices but the principle is easy you can also do that for groups and roles, you choose the action and what is it targeting (for instance it could be the core.conf, and then you have a slider allowing to enable or disable it.
 
  The choices are multiple and it's up to you to custom it.
 
