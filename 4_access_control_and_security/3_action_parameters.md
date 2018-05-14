@@ -8,18 +8,15 @@ To do so go and edit your `user/group/role` and then choose one of the following
 
 ![capture](/images/4_access_control_and_security/action_parameters_menu.png)
 
-for example let's choose `application parameters`,
+for example let's choose `application parameters`, and click on the **+** on the top right.
 
 
 
-The interface will look like this,
+Now you will have a menu displaying, the interface will look like this.
 
 ![capture](/images/4_access_control_and_security/action_parameters_interface.png)
 
-it's a list
-
-
-
+it's a list of every actions and parameters that you can configure.
 
 #### Actions
 
@@ -30,7 +27,7 @@ As seen in this screen capture,
 ![capture](/images/4_access_control_and_security/action_parameters_example.png)
 
 ```
-for instance in this screen i wanted the user
+for instance in this screen i wanted the user to not have the ability to create cells
 ```
 
 
