@@ -52,7 +52,8 @@ The rules that will apply when trying to detect if the user has a right to acces
 
 #### Examples
 
-This model provides great flexibility to assign permissions on the Administrator side. Typical schemes can look like : 
+This model provides great flexibility to assign permissions on the Administrator side. Typical schemes can look like :
+ 
 - Assign Read/Write on workspace Personal Files to Root Group (all users)
 - Assign Read/Write access on workspace Accountants to group Accountants, same on workspace Engineers to group Engineers, etc...
 - Assign Read access on workspace "Marketing Files" to Root Group, but Write access on this workspace to role "Marketing Editors". Then assign role "Marketing Editors" to a subset of users in various groups
