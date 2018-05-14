@@ -6,14 +6,15 @@ Basically actions and parameters if chosen correctly can save you lot's of time 
 
 To do so go and edit your `user/group/role` and then choose one of the following :
 
-![capture](images/4_access_control_and_security/action_parameters_menu.png)
+![capture](/images/4_access_control_and_security/action_parameters_menu.png)
 
-for example let's choose `application parameters`.
+for example let's choose `application parameters`,
+
 
 
 The interface will look like this,
 
-![capture](images/4_access_control_and_security/action_parameters_interface.png)
+![capture](/images/4_access_control_and_security/action_parameters_interface.png)
 
 it's a list
 
@@ -26,7 +27,7 @@ With actions, you can either restrict particular actions or if it was already re
 
 As seen in this screen capture,
 
-![capture](images/4_access_control_and_security/action_parameters_example.png)
+![capture](/images/4_access_control_and_security/action_parameters_example.png)
 
 ```
 for instance in this screen i wanted the user
