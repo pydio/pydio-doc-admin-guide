@@ -7,6 +7,7 @@ The scheduler in Pydio give you the ability to schedule and execute tasks withou
 ![](/images/5_advanced/scheduler_interface.png)
 
 The main interface looks like this :
+
 Label | Owner | Trigger | Last Execution | Status
 --- | --- | --- | --- | --- | ---
 it's the name of the task(usually its goal) | who launched the task ( for system jobs it's usually the system user) | the type of trigger either manual, an event or periodic | the last time this task ran | it's current status ( for instance those tasks were finished)
