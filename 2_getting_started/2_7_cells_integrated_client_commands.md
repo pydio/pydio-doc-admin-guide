@@ -1,3 +1,4 @@
+### Cells Binary intergrated commands
 
 As you might have already noticed, Pydio Cells web interface provides you with a rich user experience.
 Yet at Pydio we love `sysadmins` (some of us even _are_ sysadmins). So we are doing our best to make their day-to-day job as smooth as possible.

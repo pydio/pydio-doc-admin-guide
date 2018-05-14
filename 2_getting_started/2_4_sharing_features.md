@@ -42,15 +42,13 @@ You can right click on any folder and choose **Share** now you will be able to e
 
 ### Sharing with Public links
 
-You can also share using a public link, to create a public link choose the folder/file that you want to share and right click on it a menu will appear click on **Share** then you will have the following menu :
-
-![Create User workspace](/images/2_getting_started/public_link_1.png)
+You can also share using a public link, to create a public link choose the folder/file that you want to share and right click on it a menu will appear click on **Share** then you will have a menu popping :
 
 Click on **Enable Public Links** to enable them.
 
 Now you will have new fields displaying to you.
 
-![Create User workspace](/images/2_getting_started/public_link_2.png)
+![Create User workspace](/images/2_getting_started/public_link.png)
 
 * **Link Label** : The label of your link(you have a menu displaying all of your public links and to recognize them you can put a label)
 

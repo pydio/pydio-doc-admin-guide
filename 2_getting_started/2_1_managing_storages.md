@@ -24,7 +24,7 @@ Every time a datasource has its state updated, the index service publishes event
 
 #### Using Datasources
 
-In Pydio Cells to create a datasource go to ** Data Management > Storage **
+In Pydio Cells to create a datasource go to **Data Management > Storage**
 then on the top right of the screen press **+DATASOURCE** now you will have to fill fields such as :
 
 ![datasource interface](/images/2_getting_started/datasource_interface.png)
@@ -33,11 +33,9 @@ then on the top right of the screen press **+DATASOURCE** now you will have to f
 
 * **Internal port** : By default the port is 9002.
 
-* **Storage** : For the moment you have 2 options, `Local File System` using your local storage or `Remote Object Storage (S3)` to connect to a remote object storage as it's named.
+* **Storage Type** : For the moment you have 2 options, `Local File System` using your local storage or `Remote Object Storage (S3)` to connect to a remote object storage as it's named.
 
 For the `Local file System` :
-
-![datasource interface local file system](/images/2_getting_started/datasource_interface_local_file_system.png)
 
 
 * **Peer Address** : Where the storage is located.

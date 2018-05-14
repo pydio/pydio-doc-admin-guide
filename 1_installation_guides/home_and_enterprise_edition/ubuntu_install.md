@@ -4,9 +4,17 @@ _In this guide, you will find all the steps required for you to have Pydio Cells
 #### Pydio Cells
 
 Download the Cells Binary on your server using the following command :
+
+**Home Edition**
 ```
 wget https://download.pydio.com/pub/cells/release/0.9.0/linux-amd64/cells
 chmod +x cells
+```
+**Enterprise Edition**
+
+```
+wget https://download.pydio.com/pub/cells-enterprise/release/0.9.1/linux-amd64/cells-enterprise
+chmod +x cells-enterprise
 ```
 
 ## Package Installation

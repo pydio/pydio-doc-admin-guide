@@ -35,3 +35,11 @@ For Pydio Cells to run smoothly you should meet the following requirements:
 * **RAM** : 2gb minimum
 * **CPU** : 2 cores minimum
 * **HD**  : we recommend you to use an ssd as it has faster access time and huge writing/reading speeds.
+
+### Cells Binary
+
+You can get the cells binary from our public servers [here](https://download.pydio.com/pub/)
+or you can use the links below :
+
+* **[Home Edition](https://download.pydio.com/pub/cells/release/0.9.1/linux-amd64/cells)**
+* **[Enterprise Edition](https://download.pydio.com/pub/cells-enterprise/release/0.9.1/linux-amd64/cells-enterprise)**

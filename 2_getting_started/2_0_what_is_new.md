@@ -12,7 +12,7 @@ Let's start with cells the new way to share, cells are basically a workspace and
 
 Datasources are an object storage file system allowing you to expand it to your will.
 
-#### Policies
+#### [ED]Policies
 
 Policies are the new way to restrict access, features, ... with more details, you can choose the time, the day etc...
 
