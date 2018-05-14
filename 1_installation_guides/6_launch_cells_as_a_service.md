@@ -1,6 +1,4 @@
-# Launch pydio cells as a background service.
-
-In this guide you are going to see how you can launch Pydio Cells as a background service using [Supervisor](http://supervisord.org/), we will also provide you with all the steps and a simple configuration file thus allowing you to do that.
+_In this guide you are going to see how you can launch Pydio Cells as a background service using [Supervisor](http://supervisord.org/), we will also provide you with all the steps and a simple configuration file thus allowing you to do that._
 
 We are going to see the main Linux systems such as :
 
