@@ -1,4 +1,4 @@
-In this chapter we will talk about the scheduler and how it enables you to program redudant tasks with ease.
+In this chapter we will talk about the scheduler and how it enables you to program redudant tasks with ease thus optimizing your workflow.
 
 ### Using The internal Scheduler
 
