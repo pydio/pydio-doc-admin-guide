@@ -69,16 +69,95 @@ Here you must define:
 
 * **Actions**: Wether this rule is applied on `write`, `read` or both actions  
 
-* **Condition**: One or more JSON objects that enables scripting the effective condition, (see following section to go through so explained examples).
+* **Condition**: One or more JSON objects that enables scripting the effective condition, (see following section).
 
 An then save.
 
 To completely remove a Policy Template, click on the `DELETE POLICY` button.
 
 
-##### Security Policy Examples Explained
+##### Ladon conditions 
 
-**TODO**
+As already explained, Security Policies in Pydio Cells are built upon the [Ladon](https://github.com/ory/ladon) SDK. The smallest building block are `conditions` that are basically boolean assertions (e.g. `if` statements) scripted in JSON.
+
+Ladon comes with a few built-in conditions that are well explained in their [main README page](https://github.com/ory/ladon#conditions).
+
+For instance one of the simplest condidion is the `StringMatchCondition` that simply returns `true` if the passed string matches a given patter and that can be used so:
+
+```json
+{
+  "type": "StringMatchCondition",
+  "options": {
+    "matches": "localhost|127.0.0.1|::1"
+  }
+}
+``` 
+
+where `type` is the name of the condition and `options.matches` simply defines the corresponding regexp.
+
+For convenience, **Pydio Cells** adds some common and useful conditions:
+
+**StringNotMatchCondition**: simply checks if the passed string does **NOT** match this pattern.
+
+Syntax is the same as the ladon's built-in `StringMatchCondition` but will returns the oposite:
+
+```json
+{
+  "type": "StringNotMatchCondition",
+  "options": {
+    "matches": "localhost|127.0.0.1|::1"
+  }
+}
+```
+
+Note the specific type that is String*Not*MatchCondition
+
+**OfficeHoursCondition**: returns true if current server time is within pre-defined day time period within the week and that can typically be used to define a policy that will prevent access to certain resources outside business times.
+
+For instance:
+
+```json
+{
+  "type": "OfficeHoursCondition",
+  "options": {
+    "matches": "Monday-Friday/09:00/18:30"
+  }
+}
+```
+
+Definition of valid days can be either defined using:
+- a single day: `Sunday`
+- interval like `Monday-Friday` 
+- a list of days like `Monday,Tuesday,Friday` or `Monday, Tuesday, Friday`.
+
+Times are expressed with `HH:mm` format (hours are in 24 hours format) and are currently compared to current **server** time, **not the client time**. Thus, someone in Australia that connects on Monday 11AM Sydney's time to a **Pydio Cells** instance that is hosted in Berlin and that has such a policy won't be able to connect. 
+
+**WithinPeriodCondition**: checks wether current server time was within the configured period at the time of the check.
+
+```json
+{
+  "type": "WithinPeriodCondition",
+  "options": {
+    "matches": "2018-02-01T00:00+0100/2018-04-01T00:00+0100"
+  }
+}
+```
+
+Date times used to define the boundaries of the period are expressed with an iso 8601 formatted string, e.g: "2006-01-02T15:04-0700".
 
 
+**DateAfterCondition**: returns true when checked if current server time is **after** configured date time.
+
+For instance:
+
+```json
+{
+  "type": "DateAfterCondition",
+  "options": {
+    "matches": "2018-02-28T23:59+0100"
+  }
+}
+```
+
+Where reference time is expressed with an iso 8601 formatted string
 
