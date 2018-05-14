@@ -69,11 +69,15 @@ For instance when editing a group via `Admin Settings >> People >> (Pick up a gr
 
 This is a specific Enterprise Distribution feature: starting with Pydio 8, you can import users massively using a Comma Separated file.
 
-### The hierarchy
+### The inheritance
 
-With Pydio you have a hierarchical system that schematically would look like the pyramidal system you have the top and the bottom, and lets say for instance that you start from the top which would be the user and that you decided that this user will not be able to download, and now in the stage beneath users is groups, and that groups has the download parameter enabled therefore if we follow the rule that the user is on top of the group he will indeed not be able to download, this principle apply to roles as well following this simple scheme as chown bellow :
+Practically, one will probably not want to define X roles and apply them one by one to the users. But the other power of this object is that it is shared by Groups and Users as well. Which means a user automatically will provide its own role (internally name AJXP_USER_/userlogin), and if he belongs to a group, this group will also provide a specific group (named AJXP_GRP_/groupPath/groupName).
 
-[image pyramidal system]()
+You can see that editing a user or a group, you’ll find the same tabs ACL, Actions and Parameters that you would find in the role edition. They correspond to the specific roles created for each object ( a group or a user).
+
+![role interface](/image/4_access_control_and_security/roles_interface.png)
+
+Once configured, the various roles that are applicable to a user will be « added » in the following order : first the groups roles (if a user belongs to a subgroup, then the parent group role is applied, then the subgroup role), then the administrator-defined roles, then the proper user role. This is summarized in the figure below :
 
 ### Importing existing users
 
