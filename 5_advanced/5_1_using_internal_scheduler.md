@@ -31,6 +31,8 @@ you can **Enable multiple** and **Clear All** which clears the history.
 User jobs are usually task that where launched by users such as compression, share etc ...
 They are created and launched when an user create an event like clicking on the button compression it will then run the task which will compress the file/folder.
 
+You can interact with user jobs as explained with the system jobs.
+
 ### Create your own jobs
 
 With Pydio you have the ability to create and therefore auto-run tasks of your choice, the configuration is pretty advanced and it's up to you to chose which suits you the best, right now it's not enabled but it's on our roadmap and you can expect it soon to be released.
