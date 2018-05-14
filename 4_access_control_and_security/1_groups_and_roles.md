@@ -27,7 +27,7 @@ This is a specific Enterprise Distribution feature: starting with Pydio 8, you c
 
 ### The hierarchy
 
-With Pydio you have a hierarchical system that schematically would look like the pyramidal system you have the top and the bottom, and lets say for example you start from the top which would be the user and that you decided that this user will not be able to download, and now in the pyramid beneath users is groups, and that groups has the download parameter enabled therefore if we follow the rule that the user is on top of the group he will indeed not be able to download, this principle apply to roles as well following this simple scheme as chown bellow :
+With Pydio you have a hierarchical system that schematically would look like the pyramidal system you have the top and the bottom, and lets say for instance that you start from the top which would be the user and that you decided that this user will not be able to download, and now in the stage beneath users is groups, and that groups has the download parameter enabled therefore if we follow the rule that the user is on top of the group he will indeed not be able to download, this principle apply to roles as well following this simple scheme as chown bellow :
 
 [image pyramidal system]()
 
