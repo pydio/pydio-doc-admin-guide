@@ -4,16 +4,13 @@ In this chapter we will talk about the scheduler and how it enables you to progr
 
 The scheduler in Pydio give you the ability to schedule and execute tasks without having to intervene, the point is for instance, if you want to clear the recycle bin every first day of the month you will just have to configure a task, instead of launching a script or else to clear it.
 
-![](/images/5_advanced/scheduler_interface.png)
-
 The main interface looks like this :
 
+![](/images/5_advanced/scheduler_interface.png)
 
 Label | Owner | Trigger | Last Execution | Status
 --- | --- | --- | --- | --- 
 it's the name of the task(usually its goal) | who launched the task ( for system jobs it's usually the system user) | the type of trigger either manual, an event or periodic | the last time this task ran | it's current status ( for instance those tasks were finished)
-
-
 
 ### System jobs
 
