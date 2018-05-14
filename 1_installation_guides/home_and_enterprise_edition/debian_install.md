@@ -3,9 +3,16 @@ _This document will guide you through steps to have Pydio Cells configured and r
 
 #### Pydio Cells
 
+**Home Edition**
 ```
 wget https://download.pydio.com/pub/cells/release/0.9.0/linux-amd64/cells
 chmod +x cells
+```
+**Enterprise Edition**
+
+```
+wget https://download.pydio.com/pub/cells-enterprise/release/0.9.1/linux-amd64/cells-enterprise
+chmod +x cells-enterprise
 ```
 
 ## Requirements installation

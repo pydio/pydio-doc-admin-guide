@@ -124,9 +124,16 @@ After having installed both php-fpm and database services, you can now install a
 
 Log in or switch to **cell** user.
 
+**Home Edition**
 ```
 wget https://download.pydio.com/pub/cells/release/0.9.0/linux-amd64/cells
 chmod +x cells
+```
+**Enterprise Edition**
+
+```
+wget https://download.pydio.com/pub/cells-enterprise/release/0.9.1/linux-amd64/cells-enterprise
+chmod +x cells-enterprise
 ```
 
 ### 5.1 Setup Pydio Cells
