@@ -83,7 +83,7 @@ Once configured, the various roles that are applicable to a user will be « adde
 
 For example, a user U1 from group G1, to whom one have applied a specific role R, will then have a « merged » role that result in the addition of the following :
 
-AJXP_GRP_/G1 + R + AJXP_USR_/U1 = user runtime role.
+**AJXP_GRP_/G1 + R + AJXP_USR_/U1 = user runtime role.**
 
 
 ### Importing existing users
