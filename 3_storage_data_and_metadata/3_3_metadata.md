@@ -16,7 +16,7 @@ The chapters below will describe the most commons "meta" plugins used to add fea
 
 Metadata can be used to enrich files informations. They are visible in the right panel that appear when a file is selected. 
 
-[image/file_list_right_panel]
+![](images/3_storage_data_and_metadata/file_list_right_panel.png)
 
 
 You can define almost any type of files metadata and specify for example the order they appear and whether they can be used as search criteria.

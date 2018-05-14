@@ -2,15 +2,35 @@ In this chapter we will look at how actions and parameters can help you micro ma
 
 ### Parameters and actions
 
-Basically actions and parameters if chosen rightfully can save you lot's of time and give you the custom experience that you wanted. You can control everything from for instance the buttons displaying and the action that users/groups are allowed to use, to even using the plugins such as the mailer, compressing file and even more.
+Basically actions and parameters if chosen correctly can save you lot's of time and give you the custom experience that you wanted. You can control everything from for instance the buttons displaying and the action that users/groups are allowed to use, to even using the plugins such as the mailer, compressing file and even more.
+
+To do so go and edit your `user/group/role` and then choose one of the following :
+
+![capture](images/4_access_control_and_security/action_parameters_menu.png)
+
+for example let's choose `application parameters`.
+
+
+The interface will look like this,
+
+![capture](images/4_access_control_and_security/action_parameters_interface.png)
+
+it's a list
+
+
+
 
 #### Actions
 
-With the actions menu, you can either restrict particular actions or if it was already restricted allow it for a user that wasn't supposed to.
+With actions, you can either restrict particular actions or if it was already restricted allow it for a user that wasn't supposed to.
 
 As seen in this screen capture,
 
-[capture]()
+![capture](images/4_access_control_and_security/action_parameters_example.png)
+
+```
+for instance in this screen i wanted the user
+```
 
 
  you have a lot of choices but the principle is easy you can also do that for groups, you choose the action and what is it targeting, and then you have a slider allowing to enable or disable it.
@@ -19,4 +39,4 @@ As seen in this screen capture,
 
 #### Parameters
 
-With the parameters menu, you can control parameters either affecting a specific workspace or multiple ones at once, parameters are for example :
+With parameters, you can control parameters either affecting a specific workspace or multiple ones at once, parameters are for example :
