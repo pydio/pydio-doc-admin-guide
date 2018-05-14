@@ -24,27 +24,32 @@ You can define almost any type of files metadata and specify for example the ord
 In the admin left panel menu click the option metadata in the "Data management" section. And on the On right-top click on the NAMESPACE button to add define one.
 
 
-**Name**: The name of the metada with no space.
+| Fields| Descrption|
+|-------|-----------|
+|**Name**| The name of the metada with no space.|
+|**Label**| The name of the metadata as it appears in the interface.
+|**Order**| The position number of the appearance|
+|**Type**|  **text**, **long text**, **starts rate**, **Extensible tags**, **Selection**, **Color Lables**|
 
-**Label**: The name of the metadata as it appears in the interface.
+Metadata type are various here are some example of use case.
 
-**Order**: The position number of the appearance
-
-**Type**:  The type of metada
-
- * comment text
- * rate stars
- * selection
- * etc
-
-**Options**:
-
- * Index in search engine: When enabled adds set the metadata as search option
- 
- * Restrict visibility to admins: When enabled only admins users are able to see it.
-
- * Restrict edition to admins: When enabled only admins users are able to edit it
+| Meta Type| Examples|
+|----------|---------|
+|**text**| a small text that is attached to files and appear in file list item.|
+|**long text**| same as **text** but is bigger|
+|**stars rate**| rate in a range of 1-5|
+|**Extensible tags**|  text|
+|**Selection**|  List of key value pair|
+|**Color Labels**|  text|
 
 
+Options:
 
-[:summary]
+In addition of enriching file info, metadata are use in may others part of Cells like the search engine , the security policies, the tasks scheduling and many other features. When defining a metadata the admin can choose  whether or not it is visible or editable by other everyone. The options help adjusting metada restrictions:
+
+
+| Fields| Descrption|
+|-------|-----------|
+|**Index in search engine**| When enabled adds set the metadata as search option.|
+|**Restrict visibility to admins**| When enabled only admins users are able to see it|
+|**Restrict edition to admins**| When enabled only admins users are able to edit it|
