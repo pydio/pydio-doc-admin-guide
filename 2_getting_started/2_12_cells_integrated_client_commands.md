@@ -8,7 +8,7 @@ Thus Pydio Cells comes out-of-the-box with a powerfull CLI (Command Line Interfa
 For instance, you can simply launch the server from a terminal by typing:
 
 ```sh
-cd <path to your Pydio Cells binary file> 
+cd <path to your Pydio Cells binary file>
 # For Home Edition
 ./cells start  
 # For Enterprise Edition
@@ -19,7 +19,7 @@ _Note: it is **NOT** the correct way of launching the application when running i
 In the rest of this section, when showing terminal commands, we will assume that:
 
 - we are in the folder as the binary file _or_ that the application has been installed in the `PATH` of your operating system.
-- we are using Pydio Cells Home Edition. For this matters, both versions are pretty the same. 
+- we are using Pydio Cells Home Edition. For this matters, both versions are pretty the same.
 
 A last important remark before we get our hands dirty: **Pydio Cells** comes also with an extended command line tools, `cells-ctl` that is a simple but full fledge client that offers most of the important end-user features that can be found in the web interface. You will find more information about this tools in the corresponding section of the _Advanced_ chapter.      
 
@@ -36,7 +36,7 @@ or, for a specific subcommand:
 
 With the CLI, you can among other:
 
-**Launch the installation process** (and optionnaly completely go through it, with thus no need for a graphical interface to install Pydio) 
+**Launch the installation process** (and optionnaly completely go through it, with thus no need for a graphical interface to install Pydio)
 
 `./cells install`
 
@@ -49,11 +49,11 @@ With the CLI, you can among other:
 ./cells start -x pydio.rest.gateway.dav
 ```
 
-**Display Configuration** of the running instance. 
+**Display Configuration** of the running instance.
 
 `./cells config list`
 
-That is among others handy to retrieve the default credential used by the front end to communicate with the backend. 
+That is among others handy to retrieve the default credential used by the front end to communicate with the backend.
 
 **List Services**: Pydio Cells is built following principles of the Micro Service architecture, having each part of the application communicating with the rest via messages and auto discovery using a registry. More on this in the corresponding section of this guide.
 
