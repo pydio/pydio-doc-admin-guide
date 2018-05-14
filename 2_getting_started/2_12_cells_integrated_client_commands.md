@@ -4,7 +4,7 @@ Pydio Cells comes out-of-the-box with a powerful CLI (Command Line Interface) to
 
 For instance, you can simply launch the server from a terminal by typing:  
 `$ ./cells start`  
-or for Enterprise edition
+or for Enterprise edition  
 `$ ./cells-enterprise start`  
 
 _Note: it is not the correct way of launching the application when running in production mode, as it will exit when closing the terminal._
