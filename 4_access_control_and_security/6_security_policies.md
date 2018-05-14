@@ -1,4 +1,3 @@
-
 Security policies allow admin to restrict access to resources and can be created based on lots of criteria:
 
 * the request source IP
@@ -9,10 +8,9 @@ Security policies allow admin to restrict access to resources and can be created
 
 When talking of _resources_ in the context of _Security Policies_, it can be:
 
-* a workspace, a file or a folder
-* a group or a user 
-* a REST API endpoint
-* ... 
+* A file or a folder, and by association a Workspace, via ACLs
+* A REST API endpoint
+* An OpenId Connect operation 
 
 To gain a deeper understanding of the model, the reader will find these links valuable:
 

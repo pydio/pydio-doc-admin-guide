@@ -1,20 +1,4 @@
-
-
-<img src="http://images.vpydio.fr/local/Selection_553.png" alt="" width="85">&nbsp;&nbsp;&nbsp;<strong><font size="+1" ><font size="+1.3">Knowledge Base</font></font></strong>
-**Code**: KB0004312
-**Category**: PYD-migration | MAP- | DAP -
-**Author**: Pydio team
-**Pydio Version**: ENT-9
-**Revision No**: 1.0
-**Tags**:
-**Subject**: KB004312. Setup auth ldap
-_________________________________________________________________
-## Summary:
-
 One of the Cells abilities is to integrate with the environment it is install in. This goes for user creation/authentication as it is able to import and authenticate user from an existing LDAP server. Additionnaly Cells allows admin to configure users synchronization rate and mapping of LDAP user attributes against Cells user attributes.
-
-
-## Configuration:
 
 ### Step 1:
 

@@ -10,8 +10,6 @@ To do so go and edit your `user/group/role` and then choose one of the following
 
 for example let's choose `application parameters`, and click on the **+** on the top right.
 
-
-
 Now you will have a menu displaying, the interface will look like this.
 
 ![capture](/images/4_access_control_and_security/action_parameters_interface.png)
@@ -33,7 +31,7 @@ for instance in this screen i wanted the user to not have the ability to create 
 
  you have a lot of choices but the principle is easy you can also do that for groups and roles, you choose the action and what is it targeting (for instance it could be the core.conf, and then you have a slider allowing to enable or disable it.
 
- The choices are multiple and it's up to you to custom it.
+ The choices are multiple and it's up to you to customize it.
 
 #### Parameters
 
