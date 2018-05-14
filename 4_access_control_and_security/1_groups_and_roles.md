@@ -75,9 +75,16 @@ Practically, one will probably not want to define X roles and apply them one by 
 
 You can see that editing a user or a group, you’ll find the same tabs ACL, Actions and Parameters that you would find in the role edition. They correspond to the specific roles created for each object ( a group or a user).
 
-![role interface](/image/4_access_control_and_security/roles_interface.png)
+![role interface](/images/4_access_control_and_security/roles_interface.png)
 
 Once configured, the various roles that are applicable to a user will be « added » in the following order : first the groups roles (if a user belongs to a subgroup, then the parent group role is applied, then the subgroup role), then the administrator-defined roles, then the proper user role. This is summarized in the figure below :
+
+![roles representation](/images/4_access_control_and_security/roles_representation.png)
+
+For example, a user U1 from group G1, to whom one have applied a specific role R, will then have a « merged » role that result in the addition of the following :
+
+AJXP_GRP_/G1 + R + AJXP_USR_/U1 = user runtime role.
+
 
 ### Importing existing users
 
