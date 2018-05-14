@@ -126,13 +126,3 @@ You can then assign static permission on a folder by bolder basis.
 When doing so, you have one more option that is represented by an additionnal `children` check box. The helper message that appear  
 
 
-
-
-
-
-
-
-
-
-
-
