@@ -1,44 +1,44 @@
-In this chapter you will see how to use another main feature of pydio Cells "sharing", you will see all the means to share files, folders and more.
-
 ### Sharing with Cells
 
-Cells is the new way to share with Pydio, a cell is a space where you and the invited people have access to the same resources, you can control the access to the said resources and even more.
-Roughly speaking a cell is a workspace with a group of invited people/groups (you can invite as many as you want) that have access to the same resources and can modify them and such.
+Pydio Cells delivers file sharing and collaboration, in a way that is more familiar, comfortable and intuitive for users of modern collaborative apps. It lets users decide how to share files and information, based on knowledge of their own teams, workflows and working patterns. This end-user freedom also takes the responsibility for creating effective workspaces away from overburdened administrators.
 
+The Cells concept will be familiar to modern workers used to collaborating on “channels” within popular group-chat applications. 
+Cells can be shared internally or externally to the organisation, with users able to add new individuals and groups to the Cell.  In-app, instant messaging within each Cell, then provides a focused channel for group communication around the theme.
 
-Now let's see how you can use cells, there is two ways to create a cell.
+End-users can now create their own, flexible "Cells": combining files and folders from any location, or picking users from their address book.
 
-The main way is by going on your **HOME** page and clicking the **Create a Cells** button located in the menu on the left sidebar.
+#### Creating Cells from scratch
 
-#### Create a Cell :
-Then you will have the following menu displaying :
-
+When using the "Create Cell" button in the left-hand column, the following menu is displayed:
 
 ![Create User workspace](/images/2_getting_started/create_cell_1.png)
 
 * **Title** : the name for the cell.
-* **Description** : you can add a short Description of your cell.
-
-Click on **Next**
+* **Description** : add a short description of your cell to inform users about the topic.
 
 ![Create User workspace](/images/2_getting_started/create_cell_2.png)
 
-* **Users/groups** : You can now choose a single or multiple groups/users that will have access to this cell. You can also choose how they can interact within it.
+* **Users/groups** : Pick a single or multiple groups/users that will have access to this cell. You can also choose how they can interact within it.
 
 ![Create User workspace](/images/2_getting_started/create_cell_3.png)
 
-* **Add an existing Folder** : You can either choose an existing folder and the cell will be created within this folder or let Pydio create an empty folder for you.
+* **Add an existing Folder** : Pick an existing folder from any of your current workspaces, to feed the Cell with data. You can also leave the cell empty and a dedicated folder will be created on the underlying storage.
 
-Click on **Go** now your cell is created.
+Click on **Create Cell Now!** to finish the process.
 
-Within a cell you can use the same features as if you where using a workspace such as compressing files, etc ...
+#### Creating Cells from folders/files
 
-
-#### Another way to create cells :
-
-You can right click on any folder and choose **Share** now you will be able to either add this folder to an existing cell or create a new cell with this new folder.
+When using the **Share** action (either in right-click menu or in the information column), one can directly add a folder or a file to an existing cell, or create a new cell with this new folder.
 
 ![Create User workspace](/images/2_getting_started/create_cell_4.png)
+
+#### Creating Cells from Address Book
+
+When browsing the Adress Book in the right-hand column, clicking on the vertical dots for a user opens providing the following options : 
+
+* **Create a cell with this user**
+* **Add user to current Cell** if you are currently inside a Cell
+* **Remove from current Cell** if the user is part of the current Cell and you have the right to edit this Cell.
 
 ### Sharing with Public links
 

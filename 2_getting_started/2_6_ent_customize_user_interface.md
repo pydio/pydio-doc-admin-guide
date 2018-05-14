@@ -1,8 +1,6 @@
-In this chapter we will have a look on the UI customization for the Enterprise Edition.
+_Note: This is an Enterprise Edition feature_ 
 
-### [ED] Customise User Interface
-
-To customize your UI go to the admin Settings, then to **All Plugins > Availble Plugins > Action Plugins** enable **Vanitizer** refresh(very important step) and then go back to your home page.
+To customize your UI go to the admin Settings, then to **All Plugins > Availble Plugins > Action Plugins** enable **Vanitizer**, reload the page (very important step) and then go back to your home page.
 Now you will have a menu on the bottom left displaying it will look like this :
 
 ![Vanitizer](/images/2_getting_started/ent_vanitizer.png)
