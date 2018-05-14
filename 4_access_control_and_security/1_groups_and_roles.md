@@ -121,8 +121,18 @@ For each workspace, we can manually define permission for this user by simply ch
 
 When a workspace contains subfolder, you can extends the corresponding line by clicking on the `+` sign that is next to the workspace label.
 
-You can then assign static permission on a folder by bolder basis.
+You can then assign static permissions on a folder by folder basis.
 
-When doing so, you have one more option that is represented by an additionnal `children` check box. The helper message that appear  
+When doing so, you have one more option that is represented by an additionnal `children` check box. The helper message that appears when checking the box are very helpful and self-explanatory, yet the basic idea of this check box is to choose if :
+
+- permissions for this folder are defined at this level
+_or_
+- if they are delegated to the children level and so on.
+
+In addition to the check box, you can also open a popup list by clicking on the 3-dots `more` button that lays on the left of the boxes and then choose a given policy template that will be applied for this user/group/role on this workspace/subfolder, rather than explicitely defining permissions.
+
+You can thus for instance only enable access and modification of a whole workspace during office hours or from a given IP address.  
+
+
 
 
