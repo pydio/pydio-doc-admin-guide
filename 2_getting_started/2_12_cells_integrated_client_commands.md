@@ -1,50 +1,68 @@
-### Cells Binary intergrated commands
+### Using CLI
 
-As you might have already noticed, Pydio Cells web interface provides you with a rich user experience.
-Yet at Pydio we love `sysadmins` (some of us even _are_ sysadmins). So we are doing our best to make their day-to-day job as smooth as possible.
+Pydio Cells comes out-of-the-box with a powerful CLI (Command Line Interface) to control the services, integrate with the host system and perform admin tasks with no need for a graphical interface.
 
-Thus Pydio Cells comes out-of-the-box with a powerfull CLI (Command Line Interface) to control the services, integrate with the host system and perform admin tasks with no need for a Graphical Interface.
+For instance, you can simply launch the server from a terminal by typing:  
+`$ ./cells start`  
+or for Enterprise edition  
+`$ ./cells-enterprise start`  
 
-For instance, you can simply launch the server from a terminal by typing:
-
-```sh
-cd <path to your Pydio Cells binary file>
-# For Home Edition
-./cells start  
-# For Enterprise Edition
-./cells-enterprise start  
-```
-_Note: it is **NOT** the correct way of launching the application when running in production mode._
+_Note: it is not the correct way of launching the application when running in production mode, as it will exit when closing the terminal._
 
 In the rest of this section, when showing terminal commands, we will assume that:
 
-- we are in the folder as the binary file _or_ that the application has been installed in the `PATH` of your operating system.
-- we are using Pydio Cells Home Edition. For this matters, both versions are pretty the same.
+- You are in the folder as the binary file _or_ that the application has been installed in the `PATH` of your operating system.
+- You are using Pydio Cells Home Edition. For this matters, both versions are pretty the same, just replace `cells` by `cells-enterprise`.
 
-A last important remark before we get our hands dirty: **Pydio Cells** comes also with an extended command line tools, `cells-ctl` that is a simple but full fledge client that offers most of the important end-user features that can be found in the web interface. You will find more information about this tools in the corresponding section of the _Advanced_ chapter.      
+Pydio Cells comes also with an extended command line tools, `cells-ctl` that is a simple but full fledge client offering most of the important end-user features that can be found in the web interface. You will find more information about this tools in the corresponding section of the _Advanced_ chapter.
 
-### The Basics
+### Commands List
 
-Like the rest of the Pydio Cells User Interface, either graphical or not, this tool has a precise and very helpful documentation.
-In case of doubt, you can always type:
+```
+$ ./cells --help
 
-`./cells --help`
+Usage:
+  ./cells [flags]
+  ./cells [command]
 
-or, for a specific subcommand:
+Available Commands:
+  config      Configuration Manager
+  doc         Generate ReST documentation for this command
+  help        Help about any command
+  install     Pydio Cells Installer
+  install-cli Pydio Cells Command-Line Installer
+  list        List all available services and their statuses
+  start       Start Cells services
+  stop        Stop one or more services
+  update      Check for available updates and apply them
+  version     Display current version of this software
 
-`./cells start --help`
+Flags:
+      --fork               Used internally by application when forking processes
+      --grpc_cert string   Certificates used for communication via grpc
+      --grpc_key string    Certificates used for communication via grpc
+  -h, --help               help for ./cells
+      --log string         Sets the log level mode (default "info")
+      --registry string    Registry used to manage services (default "nats")
 
-With the CLI, you can among other:
+Use "./cells [command] --help" for more information about a command.
+
+```
+
 
 **Launch the installation process** (and optionnaly completely go through it, with thus no need for a graphical interface to install Pydio)
 
 `./cells install`
 
-**Start and stop the server** or a given service:
+**Start and the server** or a given service:
 
 ```
 # For instance, to enable debug mode
 ./cells start --log debug
+
+# Start just a couple of services
+./cells start nats pydio.grpc.config pydio.api.proxy
+
 # Start all services except one, here the dav server
 ./cells start -x pydio.rest.gateway.dav
 ```
@@ -55,12 +73,38 @@ With the CLI, you can among other:
 
 That is among others handy to retrieve the default credential used by the front end to communicate with the backend.
 
-**List Services**: Pydio Cells is built following principles of the Micro Service architecture, having each part of the application communicating with the rest via messages and auto discovery using a registry. More on this in the corresponding section of this guide.
+**List Services**: Pydio Cells is built following principles of the Micro Service architecture, having each part of the application communicating with the rest via messages and auto discovery using a registry. To see the currently running services, use the 'list' command: 
 
-Simply typing:
+```
+$ ./cells list
 
-`./cells list`
+ GENERIC SERVICES                           
+ # discovery                                
+ nats                            [X]        
+ # frontend                                 
+ pydio.api.front-plugins         [X]        
+ # gateway                                  
+ micro.api                       [X]        
+ pydio.api.websocket             [X]        
+ pydio.rest.gateway.dav          [X]        
+ pydio.rest.gateway.wopi         [X]        
+                                            
+ GRPC SERVICES                              
+ # broker                                   
+ pydio.grpc.activity             [X]        
+ pydio.grpc.chat                 [X]        
+ pydio.grpc.log                  [X]        
+ pydio.grpc.mailer               [X]        
+ # data                                     
+ pydio.grpc.data-key             [X]        
+ pydio.grpc.docstore             [X]        
+ pydio.grpc.meta                 [X]        
+ pydio.grpc.search               [X]        
+
+[...]
+
+```
 
 You can access a real time list of the services known by the application and there status.
 
-For additional information, we strongly encourage you to refer to the manual page that can be found in-line simply typing: `./cells --help`
+For additional information, we strongly encourage you to refer to the manual page that can be found in-line: `./cells --help`

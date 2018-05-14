@@ -1,11 +1,11 @@
-In this chapter we will have a closer look at the audit logs and how they can help you in your experience.
+In the **Cells Enterprise Edition**, an audit log will gather all non-technical events to help focus on business logic when analysing logs for compliance, or for example when tracing events after a security breach.
 
-### [ED] Audit logs
+Audit Logs are accessible via the **Activity** tab in the Settings Dashboard. An interface similar to the System Logs allows browsing, searching and filtering of these logs. Clicking on a row will give details about the event. 
 
-On the **Enterprise Edition** you have an audit log, an audit log stores every single event/detail allowing you to retrace them if the need arise.
-For example if you have a security breach it will allow you to retrace the events back to when the breach happened and see what was compromised.
+Logs are grouped using a unique Request-Id as they may be produced by a unique action going through various micro-services.
 
-It's is located in the logs folder `~/.config/pydio/cells/logs` filed under the name `audit.log`.
+When using Supervisorctl service, audit logs are also available in the `~/.config/pydio/cells/logs/audit.log` file (rotated every day).
 
-You can also export logs from the pydio cells interface go to **Backend > Logs** and then, but first you have to filter them as said in the previous section [system_logs]()
-then you will be able to click on the export button, choose your format CSV or XLSX.
+#### Exporting logs
+
+For an easier analysis, audit logs can be exported in XLSX or CSV format. To do that, you can use the button in the top-right of the audit logs screen. Please note that you must first filter the logs (either by searching or by restricting to a given period) to avoid exporting the whole base of logs at once.
