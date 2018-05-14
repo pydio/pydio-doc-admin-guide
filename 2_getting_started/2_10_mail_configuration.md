@@ -17,12 +17,12 @@ Server Hostname  | the SMTP server's hostname, *for example gmail's smtp is `smt
 Server Port  |  The port of the SMTP server, *for example gmail's default port is `465`*
 Connection User  | The username of the google address that you're going to use, such * john.doe@gmail.com, john.doe@pydio.com (as long as it's an email from google's services)*
 Connection Password  | password of the user above
-Queue Type  |  How you want Pydio to handle the mailing either when it's created or queue it and send it at once.
+Queue Type  |  Right now do not modify this field, we will give you further instructions when it will be ok.
 
 2. **Sendmail**
 
-For sendmail make sure that you have installed and configured it on your server (depending on which version you are using), make also sure that the `/usr/bin/sendmail` path is correct, then choose the queue type as it's explained above.
+For sendmail make sure that you have installed and configured it on your server (depending on which version you are using), make also sure that the `/usr/bin/sendmail` path is correct.
 
 3. **Send Grid**
 
-For sendgrid get the **api key** and put it in that field after that all the mailing will be handled. For the queue type refer to the 1st paragraph.
+For sendgrid get the **api key** and put it in that field after that all the mailing will be handled. 
