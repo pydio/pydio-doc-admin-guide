@@ -14,7 +14,7 @@ In this documentation, you have to replace <your-domain> with the name of the do
 
 You also have to replace <your-escaped-domain> with the same subdomain where dots are "escaped", eg. office\.yourdomain\.com
 
-We only provide on this page an example of configuration that meet the basic requirements for the plugin to work with Cells. If you want more detail about the different configuration collabora offer, you can visit **[this link](https://www.collaboraoffice.com/code/)**.
+We only provide on this page an example of configuration that meet the basic requirements for the plugin to work with Pydio Cells. If you want more detail about the different configurations Collabora offer, you can visit **[this link](https://www.collaboraoffice.com/code/)**.
 
 ##### Start Docker Image
 
