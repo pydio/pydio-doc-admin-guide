@@ -94,7 +94,7 @@ use quit to leave the supervisor menu, and that should be it after all of those 
 ## 2.CentOS
 
 ### Monitoring Pydio Cells' services by Supervisord
-The configure is base on a system whose **pydio** account as in this [tutorial](https://github.com/pydio/cells/wiki/Install-CentOS)
+The configuration is based on a system whose **pydio** account exists as in this [tutorial](https://github.com/pydio/cells/wiki/Install-CentOS)
 
 - Install supervisor: `yum install supervisor`
 - Create a new file /etc/supervisord.d/cell.ini with following content:
