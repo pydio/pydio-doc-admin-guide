@@ -18,7 +18,7 @@ We only provide on this page an example of configuration that meet the basic req
 
 ##### Start Docker Image
 
-Install Docker on a server. 
+**[Install Docker](https://docs.docker.com/install/)** on a server. 
 
     $ docker pull collabora/code
     $ docker run -t -d -p 127.0.0.1:9980:9980 -e "domain=<your-escaped-domain>" --cap-add MKNOD collabora/code
