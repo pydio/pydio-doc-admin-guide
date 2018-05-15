@@ -27,3 +27,114 @@ pydio.grpc.policies [storing policies in DB]  => pydio.rest.policies [providing 
 
 ## Global Architecture
 
+You can find below the global architecture schema. Services are not all represented here.
+
+[:image-popup:5_advanced/cells_architecture.png]
+
+
+## Services Tags
+
+As you can see on the schema above, services are also grouped by their logical category. This is just a naming convention and has no technical impact. These groups are tags attached to services, and can be used to organize information when listing services. 
+
+This is the case when you use `./cells list` command : 
+
+```
+ GENERIC SERVICES                                      
+ # discovery                                           
+ nats                                       [X]        
+ # frontend                                            
+ pydio.api.front-plugins                    [X]        
+ # gateway                                             
+ micro.api                                  [X]        
+ pydio.api.websocket                        [X]        
+ pydio.rest.gateway.dav                     [X]        
+ pydio.rest.gateway.wopi                    [X]        
+                                                       
+ GRPC SERVICES                                         
+ # broker                                              
+ pydio.grpc.activity                        [X]        
+ pydio.grpc.chat                            [X]        
+ pydio.grpc.log                             [X]        
+ pydio.grpc.mailer                          [X]        
+ # data                                                
+ pydio.grpc.data-key                        [X]        
+ pydio.grpc.docstore                        [X]        
+ pydio.grpc.meta                            [X]        
+ pydio.grpc.search                          [X]        
+ pydio.grpc.tree                            [X]        
+ pydio.grpc.versions                        [X]        
+ # datasource                                          
+ pydio.grpc.data.index                      [X]        
+ pydio.grpc.data.index.cells                [X]        
+ pydio.grpc.data.index.newdatasource        [X]        
+ pydio.grpc.data.index.personal             [X]        
+ pydio.grpc.data.index.pydiods1             [X]        
+ pydio.grpc.data.index.s3                   [X]        
+ pydio.grpc.data.objects                    [X]        
+ pydio.grpc.data.objects.gateway1           [X]        
+ pydio.grpc.data.objects.local1             [X]        
+ pydio.grpc.data.objects.local2             [X]        
+ pydio.grpc.data.sync                       [X]        
+ pydio.grpc.data.sync.cells                 [X]        
+ pydio.grpc.data.sync.newdatasource         [X]        
+ pydio.grpc.data.sync.personal              [X]        
+ pydio.grpc.data.sync.pydiods1              [X]        
+ pydio.grpc.data.sync.s3                    [X]        
+ # discovery                                           
+ pydio.grpc.config                          [X]        
+ pydio.grpc.update                          [X]        
+ # gateway                                             
+ pydio.grpc.gateway.data                    [X]        
+ pydio.grpc.gateway.proxy                   [X]        
+ # idm                                                 
+ pydio.grpc.acl                             [X]        
+ pydio.grpc.auth                            [X]        
+ pydio.grpc.policy                          [X]        
+ pydio.grpc.role                            [X]        
+ pydio.grpc.share                           [X]        
+ pydio.grpc.user                            [X]        
+ pydio.grpc.user-key                        [X]        
+ pydio.grpc.user-meta                       [X]        
+ pydio.grpc.workspace                       [X]        
+ # scheduler                                           
+ pydio.grpc.jobs                            [X]        
+ pydio.grpc.tasks                           [X]        
+ pydio.grpc.timer                           [X]        
+                                                       
+ REST SERVICES                                         
+ # broker                                              
+ pydio.rest.activity                        [X]        
+ pydio.rest.log                             [X]        
+ pydio.rest.mailer                          [X]        
+ # data                                                
+ pydio.rest.docstore                        [X]        
+ pydio.rest.meta                            [X]        
+ pydio.rest.search                          [X]        
+ pydio.rest.tree                            [X]        
+ # discovery                                           
+ pydio.rest.config                          [X]        
+ pydio.rest.update                          [X]        
+ # frontend                                            
+ pydio.rest.frontend                        [X]        
+ # idm                                                 
+ pydio.rest.acl                             [X]        
+ pydio.rest.auth                            [X]        
+ pydio.rest.graph                           [X]        
+ pydio.rest.policy                          [X]        
+ pydio.rest.role                            [X]        
+ pydio.rest.share                           [X]        
+ pydio.rest.user                            [X]        
+ pydio.rest.user-meta                       [X]        
+ pydio.rest.workspace                       [X]        
+ # scheduler                                           
+ pydio.rest.jobs                            [X]        
+```
+
+Let's explain briefly the roles of each groups of services : 
+
+- **Discovery**:  These are the core services necessary to run Pydio Cells. Includes among other the nats service, which allow all micro-services to auto-discover the others magically.
+- **Gateway**: "Front" services facing the world
+- **IDM**: as "Identity Management", all the authentication / authorizations related services
+- **Scheduler**: Background jobs manager
+- **Broker**: Loosely-coupled services mostly listening on events to trigger some actions, like storing user's feeds of activities, sending emails, etc..
+- **DataSource**: DataSource services (objects / index / sync) as explained in the DataSource chapter.
