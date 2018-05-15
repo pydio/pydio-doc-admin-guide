@@ -4,7 +4,7 @@ The image of ovf can be download from https://download.pydio.com/pub/cells-enter
 
 where "VERSION" is release version of cells.
 
-For example: https://download.pydio.com/pub/cells-enterprise/release/0.9.2/ovf/Cells-Enterprise-OVF-VERSION.zip
+For example: https://download.pydio.com/pub/cells-enterprise/release/0.9.2/ovf/Cells-Enterprise-OVF-0.9.2.zip
 
 A md5 file is also available on the same location for integrity verification.
 
