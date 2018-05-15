@@ -1,5 +1,3 @@
-**TODO**
-
 ### Configure Collabora Online Plugin
 
 Collabora Online is a powerful LibreOffice-based online office suite which supports all major document, spreadsheet and presentation file formats:​ DOC, DOCX, PPT, PPTX, XLS, XLS, ODF, ODS, ODP.  
@@ -18,7 +16,7 @@ You also have to replace <your-escaped-domain> with the same subdomain where dot
 
 Here we will give you an example on one configuration if you want more detail about collabora you can go **[Here](https://www.collaboraoffice.com/code/)**.
 
-#### Start Docker Image
+##### Start Docker Image
 You can find a link to the docker for collabora **[here](https://hub.docker.com/r/collabora/code/)**
 
 Install Docker on a server. 
@@ -28,11 +26,9 @@ Install Docker on a server.
 
 Note: this docker image does not work on Ubuntu 14.04 LTS, because Ubuntu 14.04 LTS has missing kernel compile option CONFIG_AUFS_XATTR=y, which is leading to setcap not working on docker’s aufs storage. Upstream bug: https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1557776
 
-## Configuring Pydio Plugin to connect to CODE
+##### Configuring Pydio Plugin to connect to CODE
 
 In the Settings panel, go to All Plugins > Features Plugins > Editors and enable the Collabora Online plugin. 
-
-[:image-popup:1_installation_guide/collabora-enterprise.png]
 
 Edit its parameters as follow: 
 
@@ -41,10 +37,8 @@ Edit its parameters as follow:
  - Web Socket Connector Host: `<your-domain>`
  - Web Socket Connector Port: `9980` (see virtual host configuration above).
  
-## Test and start editing docs ! 
+##### Test and start editing docs ! 
  
 Switch to a workspace and use the "New Folder" > "You can also create an empty Document" link to create e.g. an ODT Document.
 
 Double click the new file to edit, you should now be able to edit it directly in Pydio!
-
-[:image-popup:1_installation_guide/collabora-test.png]
