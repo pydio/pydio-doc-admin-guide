@@ -18,15 +18,15 @@ In the admin left panel menu click the option metadata in the "Data management" 
 |**Name**| The name of the metada with no space.|
 |**Label**| The name of the metadata as it appears in the interface.
 |**Order**| The position number of the appearance|
-|**Type**|  **text**, **long text**, **starts rate**, **Extensible tags**, **Selection**, **Color Lables**|
+|**Type**|  **Text**, **Long text**, **Starts rate**, **Extensible tags**, **Selection**, **Color Lables**|
 
 Metadata type are various here are some example of use case.
 
 | Meta Type| Examples|
 |----------|---------|
-|**text**| a small text that is attached to files and appear in file list item.|
-|**long text**| same as **text** but is bigger|
-|**stars rate**| rate in a range of 1-5|
+|**Text**| a small text that is attached to files and appear in file list item.|
+|**Long text**| same as **text** but is bigger|
+|**Stars rate**| rate in a range of 1-5|
 |**Extensible tags**|  text|
 |**Selection**|  List of key value pair|
 |**Color Labels**|  text|
