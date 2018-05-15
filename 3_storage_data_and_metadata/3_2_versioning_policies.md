@@ -8,6 +8,8 @@ When defining a datasource, you can pick on of the available Versioning Policies
 
 Pydio Cells comes bundled with a default set of Versioning Policies, as described below: 
 
+[!image-popup:4_access_control_and_security/versioning_policies_interface.png]
+
 * **Keep All**: never delete any version of any files
 * **Max 30 days** : Keep all versions before 15 days, then only 10 versions, then delete all versions older that 30 days.
 * **Regular Pruning** : Will keep 10 versions in the last 10 minutes, in the last 3 hours, in the last day, in the last 10 days, and finally delete all after 30 days.
@@ -19,7 +21,9 @@ _Note: The Home Edition comes with the default set of Versioning Policies and th
 
 In **Pydio Cells Enterprise Edition**, we have brought versionning one step further by giving you the option to define custom pruning policies that will fit to __your__ business specific needs and requirement.
 
-Go to your `Settings Page` then under DataManagement > Storage use the "+ VERSIONING POLICY" to create your own policy. 
+Go to your `Settings Page` then under **DataManagement > Storage use the "+ VERSIONING POLICY"** to create your own policy. 
+
+[!image-popup:4_access_control_and_security/adding_versioning_policies.png]
 
 * **Storage** Will define where the versions will be stored. The default values will use the default datasource (pydiods1 defined at install) under a specific "versions" bucket. 
 * **Size Limits** Allows you to define a couple of limitations on a per-file basis or on a per-bucket basis to prune versions automatically when a given amount of storage space is reached.
