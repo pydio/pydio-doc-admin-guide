@@ -1,5 +1,7 @@
 For this chapter we will have a look at the mailing system integrated to Pydio Cells, we will see the different means of configuration.
 
+**Please Note**: at the moment, this configuration requires a **restart of the server** to be properly taken into account.
+
 ### Configure Mails
 
 To configure the mailer go ** Application Parameters > Mailers** :
@@ -14,10 +16,10 @@ Mailer engine  | What type of engine you're going to use to send the mails you w
 Field | Description
 --- | ---
 Server Hostname  | the SMTP server's hostname, *for example gmail's smtp is `smtp.gmail.com`*
-Server Port  |  The port of the SMTP server, *for example gmail's default port is `465`*
-Connection User  | The username of the google address that you're going to use, such * john.doe@gmail.com, john.doe@pydio.com (as long as it's an email from google's services)*
+Server Port  |  The port of the SMTP server, *for example gmail's default port is `587`*
+Connection User  | The username of the address used to connect to this SMTP server, such * john.doe@gmail.com, john.doe@pydio.com*
 Connection Password  | password of the user above
-Queue Type  |  Right now do not modify this field, we will give you further instructions when it will be ok.
+Queue Type  |  Right now do not modify this field.
 
 2. **Sendmail**
 
