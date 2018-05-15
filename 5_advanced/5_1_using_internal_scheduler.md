@@ -6,7 +6,7 @@ The scheduler in Pydio give you the ability to schedule and execute tasks withou
 
 The main interface looks like this :
 
-![](/images/5_advanced/scheduler_interface.png)
+[!image-popup:5_advanced/scheduler_interface.png]
 
 Label | Owner | Trigger | Last Execution | Status
 --- | --- | --- | --- | --- 
@@ -19,7 +19,7 @@ Their main job is to make sure that your Pydio Cells in running healthy and smoo
 
 As seen in this screenshot ( we took the sync DataSource pydiods1 job) :
 
-![](/images/5_advanced/scheduler_example.png)
+[!image-popup:5_advanced/scheduler_example.png]
 
 You can **Run Now** which will force the task to run right now ,
 **Disable job** this will disable the task therefore it will no longer run or 

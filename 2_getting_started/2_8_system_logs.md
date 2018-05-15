@@ -16,7 +16,7 @@ Switching to 'production' mode can be done by two ways:
 
 Once activated, in the pydio cells interface you can find the logs under **Backend > Logs** :
 
-![server logs](/images/2_getting_started/server_logs.png)
+[!image-popup:2_getting_started/server_logs.png]
 
 You can read them as the following :
 1. **Date** : the at time when the event happened

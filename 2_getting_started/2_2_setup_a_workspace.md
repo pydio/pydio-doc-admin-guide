@@ -20,9 +20,9 @@ To create a workspace go to **Data Management > Workspaces**, then click on **+W
 
 Then this menu will appear :
 
-[!image-popup:images/2_getting_started/create_workspace.png]
+[!image-popup:2_getting_started/create_workspace.png]
 
-[!image-popup:/images/2_getting_started/create_workspace.png]
+
 
 1. **Root nodes** : Using the auto-complete field, pick one or more nodes ( = files or folders ) from the available datasources to compose your workspace contents. The **cells** and **my-files** are specific paths that can only be selected (you cannot browse their children) and will be resolved automatically at run-time. Note that you can add as many nodes as necessary.    
 2. **Label** : This is the name of the workspace.
@@ -32,7 +32,7 @@ Then this menu will appear :
 
 After its creation, you can still modify a workspace by going to **Data Management > Workspaces** and clicking on the workspace of your choice.
 
-![modifyworkspace](/images/2_getting_started/modify_workspace.png)
+[!image-popup:2_getting_started/modify_workspace.png]
 
 ### Providing access rights to your workspace
 

@@ -40,6 +40,7 @@ Now we have a authentication token can do some expamples.
 The rest API reference can be found int he admin Panel in the **ALL PLUGINS** section. And if we want to get the current authenticated user info, we can check what the API references tells us:
 
 ![REST API : user get info](./images/api_doc_user_service_get_info "Logo Title Text 1")
+[!image-popup:]
 
 So to get the information about the current authenticated user we can use this command:
 

@@ -13,7 +13,7 @@ Now to create a user go to **Identity Managment > People**, then click on **+USE
 
 Then the following menu will appear (as shown on the screenshot below):
 
-![Create User image](/images/2_getting_started/create_user.png)
+[!image-popup:2_getting_started/create_user.png]
 
 * **User Login** : Put the login of the user that you want to create
 
@@ -27,7 +27,7 @@ Now to create a user go to **Identity Managment > People**, then click on **+GRO
 
 Then the following menu will appear :
 
-![Create User image](/images/2_getting_started/create_group.png)
+[!image-popup:2_getting_started/create_group.png]
 
 * **Group Identifier** : how the groups is identified in pydio's file system(useful for api etc...).
 * **Group Label** : you can put a label (a name).
@@ -40,6 +40,6 @@ To create a role go to **Identity Management > Roles**, then click on **+ROLE** 
 
 Then the following menu will appear (as seen on the screenshot below):
 
-![Create Role image](/images/2_getting_started/create_role.png)
+[!image-popup:2_getting_started/create_role.png]
 
 * **Role Identifier** : Put the name of your choice for the role that you are going to create.

@@ -5,7 +5,8 @@ In this chapter, we will first guide you throught the process of creating a new 
 In Pydio Cells to create a datasource go to **Data Management > Storage**
 then on the top right of the screen press **+DATASOURCE** now you will have to fill fields such as :
 
-![datasource interface](/images/2_getting_started/datasource_interface.png)
+
+[!image-popup:2_getting_started/datasource_interface.png]
 
 * **DataSource Identifier** : the name of your datasource how it's identified within Pydio internally.
 
@@ -35,7 +36,7 @@ Once you have chosen a peer, note that the systems automatically discovers the a
 
 This connector will allow the use of a remote S3-compliant storage as datasource for Pydio Cells. Under the hood, an object service is started in Gateway mode using the Api KEY/SECRET you will provide.
 
-![datasource interface s3](/images/2_getting_started/datasource_interface_S3.png)
+[!image-popup:2_getting_started/datasource_interface_S3.png]
 
 * **Bucket name** : the name of the bucket on the remote storage to store the data of Pydio.
 
