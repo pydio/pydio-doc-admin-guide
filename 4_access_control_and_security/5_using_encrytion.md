@@ -14,11 +14,11 @@ For a given file an unique random AES key of 256 bits is generated and encrypted
 
 Although fast and secure AES-GCM does not support stream mode. So when encrypting gigabytes sized file or a stream with unknown size, Cells proceed by encrypting the data as a sequence of fixed size block. This way the memory usage stays low as in normal stream mode. Plus in order to keep the same security strength, each block is enrypted whith an unique set of parameters (IV, Nonce, Key).
 
-At the end the encrypted file is a concatenation of encrypted blocks and when read is decrypted by block.
+At the end the encrypted file is a concatenation of encrypted blocks and decrypted by block while being read.
 
 ##### Security comes with cost
 
-For a file of N blocks the result of the encryption uses at least N*44 additional bytes on the storage.
+Put aside the additional CPU usage when using encryption, encrypted file size are superior than the original's. For a file of N blocks the result of the encryption uses at least N*44 additional bytes on the storage.
 
 ### **Enabling the encryption on a datasource**
 
