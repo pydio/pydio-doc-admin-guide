@@ -7,8 +7,6 @@ A user with admin rights can configure datasources and workspaces by going to `T
 
 ## Datasources 
 
-_TODO enhance_
-
 Datasources are the connectors to your physical data repositories. 
 With Pydio Cells, we put a strong focus on conforming to standards and we use widely spread APIs: thus, datasources are a generic interface that conforms to the Amazon S3 protocol.  
 
@@ -36,6 +34,6 @@ Cells are then easily sharable between users and groups and bring the ability to
 
 One of the cool features of cells is that it comes with no (or only little) additional costs in term of storage used: we do not copy the files but rather maintain sets of _shortcuts_ that are transparent to the end users but and point to the effective data.
 
-The mapping is maintenained via the main internal index. See Overall architecture [documentation](/en/docs/cells/v1/pydio-cells-internals-0) to learn more about these concepts.
+The mapping is maintenained via the main internal index. See Overall architecture [documentation](/en/docs/cells/v1/pydio-cells-internals) to learn more about these concepts.
 
 [:summary]
