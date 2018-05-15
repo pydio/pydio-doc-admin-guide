@@ -5,7 +5,7 @@ One of the Cells abilities is to integrate with the environment it is install in
 Login with admin user and go to "Settings". Click on External Directory.
 To add new directory, click on "DIRECTORY" or click on existed ldap to modify configurations.
 
-![memberOf mapping options](/images/4_access_control_and_security/ldap_new_directory.png)
+![memberOf mapping options](images/4_access_control_and_security/ldap_new_directory.png)
 
 ### Step 2:
 
@@ -61,7 +61,6 @@ We need to specify Pydio the absoluted path to the certificate of ldap server (6
 
 #### User Filter
 ![memberOf mapping options](/images/4_access_control_and_security/ldap_user_filters.png)
-<img src="http://images.vpydio.fr/local/Selection_875.png" alt="" width="600">
 
 ##### 1) User's DN:
 You can define more than one distinguished name (DN) of an organization unit (or a container in Active Directory) in ldap tree where Pydio will looking for users to import to its database.
