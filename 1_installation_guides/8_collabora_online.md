@@ -27,14 +27,16 @@ Note: this docker image does not work on Ubuntu 14.04 LTS, because Ubuntu 14.04 
 
 ##### Configuring Pydio Plugin to connect to CODE
 
-In the Settings panel, go to All Plugins > Features Plugins > Editors and enable the Collabora Online plugin. 
+Go to Settings > All Plugins > Features Plugins > Editors and enable the Collabora Online plugin. 
 
-Change the parameters to : 
+Change the plugin parameters to : 
 
  - Url to the Libre Office Editor iFrame: `/loleaflet/dist/loleaflet.html`
  - WebSocket use TLS: `true`
  - Web Socket Connector Host: `<your-domain>`
  - Web Socket Connector Port: `9980` (see virtual host configuration above).
+ 
+ Remember to save.
  
 ##### Test and start editing docs ! 
  
