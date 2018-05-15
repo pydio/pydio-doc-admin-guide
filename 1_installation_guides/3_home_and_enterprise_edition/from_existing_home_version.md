@@ -8,7 +8,7 @@ The upgrade process is not that hard but it requires you to follow every step to
 
 2. Replace your `cells` binary with the `cells-enterprise`binary.
 
-3. [Get your Enterprise License key](link to license key guide).
+3. [Get your Enterprise License key](/en/docs/cells/v1/ed-interface-branding).
 
 4. Put the key in a file named `pydio-license` and put it in `/.config/pydio/cells/`.
 

@@ -18,7 +18,7 @@ then on the top right of the screen press **+DATASOURCE** now you will have to f
 
 * **Versioning Policy**: How files version history will be kept. Please read the next page for more info. Leaving this empty does not enable versioning on this datasource.
 
-* **Encryption**: Whether data is encrypted at rest on this datasource. Warning, the additionnal security brought by encryption comes at the cost of a higher CPU load (encryption and decryption require computation) and also a higher risk of loosing data in the case the decryption key get lost. Please refer to the corresponding section of the Security chapter to learn how to configure this feature.
+* **Encryption**: Whether data is encrypted at rest on this datasource. Warning, the additionnal security brought by encryption comes at the cost of a higher CPU load (encryption and decryption require computation) and also a higher risk of loosing data in the case the decryption key get lost. Please refer to the corresponding [section](/en/docs/cells/v1/using-encryption) of the Security chapter to learn how to configure this feature.
 
 
 #### Filesystem Datasources

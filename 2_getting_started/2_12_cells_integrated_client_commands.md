@@ -14,7 +14,7 @@ In the rest of this section, when showing terminal commands, we will assume that
 - You are in the folder as the binary file _or_ that the application has been installed in the `PATH` of your operating system.
 - You are using Pydio Cells Home Edition. For this matters, both versions are pretty the same, just replace `cells` by `cells-enterprise`.
 
-Pydio Cells comes also with an extended command line tools, `cells-ctl` that is a simple but full fledge client offering most of the important end-user features that can be found in the web interface. You will find more information about this tools in the corresponding section of the _Advanced_ chapter.
+Pydio Cells comes also with an extended command line tools, `cells-ctl` that is a simple but full fledge client offering most of the important end-user features that can be found in the web interface. You will find more information about this tools in the corresponding section of the [Advanced](/en/docs/cells/v1/advanced) chapter.
 
 ### Commands List
 

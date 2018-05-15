@@ -13,7 +13,7 @@ From an admin point-of-view, Workspaces will generally be the basic unit to gran
 
 ### Standard workspace
 
-As you have already seen in chapter 2 of this guide, it is straight forward and easy to define a simple workspace: please refer to section #2.2 for a step by step guide.
+As you have already seen in chapter 2 of this guide, it is straight forward and easy to define a simple workspace: please refer to this [section](/en/docs/cells/v1/creating-workspaces) for a step by step guide.
 
 You then have a direct access to the root of the underlying datasource and can start using it.
 
