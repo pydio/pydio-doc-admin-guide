@@ -1,29 +1,24 @@
+
 _This document will guide you through steps to have Pydio Cells configured and running on debian 8 and 9._
 
 #### Pydio Cells
 
-**Home Edition**
-```
+You will need the Pydio Cells binary that is ~165MB, so you might want to already start dowloading it while going through the Pre Requisite part of this guide.
+
+```sh
 wget https://download.pydio.com/pub/cells/release/0.9.0/linux-amd64/cells
-chmod +x cells
-```
-**Enterprise Edition**
-
-```
-wget https://download.pydio.com/pub/cells-enterprise/release/0.9.1/linux-amd64/cells-enterprise
-chmod +x cells-enterprise
 ```
 
-## Requirements installation
+### Requirements
+
+Starting with a fresh and correctly installed and configured Debian 8 or 9 system, with at least standard system utilities and a user that is in the `sudo` group.
 
 #### PHP
 
+* [DEBIAN 8 ONLY]  Add the PHP 7 repository
+    PHP 7 package are not available from official package list, so you need to add them.
 
-*   Add the PHP 7 repository (FOR DEBIAN 8 ONLY)
-
-    PHP 7 package are not available from official package list, so you need to add them
-
-``` bash
+```sh
 sudo echo "deb http://packages.dotdeb.org jessie all" > /etc/apt/sources.list.d/dotdeb.list
 wget -O- https://www.dotdeb.org/dotdeb.gpg | sudo apt-key add
 sudo apt update
@@ -31,7 +26,7 @@ sudo apt update
 
 * Install
 
-``` bash
+```sh
 sudo apt install php7.0 php7.0-fpm php7.0-gd php7.0-curl php7.0-intl php7.0-xml
 ```
 
@@ -43,7 +38,7 @@ sudo apt install php7.0 php7.0-fpm php7.0-gd php7.0-curl php7.0-intl php7.0-xml
 
     You simply have to add this directive ***listen = 9000*** to the fpm configs file
 
-    ``` bash
+    ```sh
     # Note that you must execute the *2* following lines at a time.
     sudo sed -i '$ a\
     listen=9000' /etc/php/7.0/fpm/php-fpm.conf
@@ -51,41 +46,59 @@ sudo apt install php7.0 php7.0-fpm php7.0-gd php7.0-curl php7.0-intl php7.0-xml
 
     ##### UNIX Socket
 
-    with your favorite editor open the /var/run/php7-fpm.sock and edit it to have something similar:
+    You have to insure the user that runs the Pydio Cells binary has sufficient rights on the socket.
+    You have many options, we usually add the corresponding user to the default `www-data` group and change the `listen.owner` directive of the fpm configuration file by doing:
+    
+    ```sh
+    # as root user
+    # addgroup <the_correct_user> www-data, for instance:
+    addgroup cells www-data
+    ```
+    And then open the `/etc/php/${PHP_VERSION}/fpm/pool.d/www.conf` conf file to have somthing like:
 
-    ``` bash
-    listen.owner= <user>
-    listen.group= <group>
+    ```sh
+    #listen.owner= <the_correct_user> 
+    listen.owner= cells
+    listen.group= www-data
     ```
 
-    Replace `<user>` with the name of the user that run Pydio Cells and `<group>` with the name of the group the user belong to.
+* Finalisation
 
+    Enable and restart PHP FPM service to apply the changes:
 
-    Now restart/reload php-fpm to apply the changes:
-
-    ``` bash
-    sudo /etc/init.d/php7.0-fpm restart
+    ```sh
+    sudo systemctl enable php7.0-fpm
+    sudo systemctl restart php7.0-fpm
     ```
 
-#### MySQL
-*You can skip this step if you already have a database*
+#### Database
 
-You first have to configure the mysql-server installer in order to install the appropriate version
-``` bash
+Pydio Cells can be installed with both MySQL Server (v5.6 or higher) and MariaDB, depending on your preference.
+
+##### MySQL
+
+To install the appropriate version, you first have to configure the mysql-server installer:
+
+```sh
 wget https://repo.mysql.com//mysql-apt-config_0.8.9-1_all.deb
 sudo dpkg -i mysql-apt-config_0.8.9-1_all.deb
 ```
 
-Press 'Enter' on the version of mysql-server you would like to install and press 'Enter' on 'OK'.
+To configure the version of MySQL Server you will use:
+   - Select the `MySQL Server & Cluster` option and press `Enter`
+   - Select the correct option (`mysql-5.6` or `mysql-5.7`) and press `Enter`
+   -  back on the first list, select `Ok`  and press `Enter`
 
-``` bash
-sudo apt intall mysql-server
+You can then install the server:
+
+```sh
+sudo apt update
+sudo apt install mysql-server
 ```
 
 #### MariaDB install
 
-*   Add the repository
-
+* Add the repository
     You first need to add the MariadDB repository key and add the package repository
 
     ##### Debian 8
@@ -115,38 +128,34 @@ sudo apt intall mysql-server
 
 #### Database  Configuration
 
-We recommend you create a database dedicated to Pydio Cells. Here are how you can create a database named `pydio` and a user named `cellsuser` with all priviledges on it.
+By default, a new database will be created by the system during the installation process. You only need a user with database management permissions.
 
-``` bash
+If you would rather do it manually, you may create a dedicated user and an empty database:
+
+```sh
 # Get into the mysql mode
-sudo mysql -u root -p
+mysql -u root -p
 ```
 
-and execute the following queries:
-``` SQL
-/*Create new user and set password*/
-CREATE USER 'cellsuser'@'localhost' IDENTIFIED BY 'password';
+and execute following queries:
 
-/* Create new database */
-CREATE DATABASE pydio;
-
-/* Grant permission */
-GRANT ALL PRIVILEGES ON pydio.* to 'cellsuser'@'localhost';
-
-/* apply changes: */
+```SQL
+CREATE USER 'cells'@'localhost' IDENTIFIED BY '<change password here>';
+CREATE DATABASE cells;
+GRANT ALL PRIVILEGES ON cells.* to 'cells'@'localhost';
 FLUSH PRIVILEGES;
 ```
 
 ## Pydio Cells installation
 
-We assume you downloaded the Pydio Cells binary and saved it as `cells`.
+We assume you have downloaded the Pydio Cells binary and saved it as `cells`.
 
 #### Rights
 
 First, give execution rights to the binary:
 
-``` bash
-sudo chmod u+x pydio
+```sh
+sudo chmod u+x cells
 ```
 
 #### On HTTP standard ports: 80 and 443
@@ -154,40 +163,67 @@ sudo chmod u+x pydio
 By default you cannot use those ports if you are not a root user (sudo, root, etc...)
 to be able to bind those ports to Pydio you need to give the binary the rights to use them even though it's not launched as a root user.
 
-Basically to do that you can use this command :
-``` bash
-sudo setcap CAP_NET_BIND_SERVICE=+eip pydio
-# Replace <pydio> with full path to the Pydio Cells binary.
+You can use this command :
+
+```sh
+sudo setcap CAP_NET_BIND_SERVICE=+eip cells
+# Replace <cells> with full path to the Pydio Cells binary.
 ```
 
 #### Install
 
 Execute the command below and follow the instructions.
-``` bash
+
+```sh
 ./cells install
 ```
-**For the enterprise edition refer to this guide to get your license key allowing you to complete the installation**
 
 After the install is successfully done, if you ever have to stop Pydio Cells and want to run it again just run:
 
-``` bash
+```sh
 ./cells start
 ```
 
 ## Troubleshooting
 
-* The php-fpm Service might not be started, you can look at its status using : `sudo service php<version>-fpm status` and then `start` it if needed.
+Generally, you might want to have a look at the log file that is located in `~/.config/pydio/cells/logs`.
 
-* Forgot to Add `listen = 9000` to the php-fpm.conf file if you're using the TCP socket.
+### FPM and Websocket issues
 
-* Forgot to change the `listen.owner=` or `listen.group=` located in ``<php-fpm path>/pool.d/www.conf`` for the UNIX socket users.
+_You have installed and started Pydio Cells with no problem, but when you connect, you only see a blank page with `File not found.` message._
 
-* You can look at the webserver's error file located in `~/.config/pydio/cells/logs`.
+It's usually related to a misconfiguration of the websocket, you should check the following
 
-* _/lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.14' not found_ :
+#### Is the php-fpm service running?
+
+To check service status, do:
+
+```sh
+sudo systemctl status php<version>-fpm
+# Enable and start it, if necessary
+sudo systemctl enable php<version>-fpm
+sudo systemctl start php<version>-fpm
+```
+
+#### Is the socket correctly configured?
+
+If you are using the TCP socket, you might have forgot to add `listen = 9000` to the php-fpm.conf file.
+
+For the UNIX socket users, you might have forgot to change the `listen.owner=` or `listen.group=` located in ``<php-fpm path>/pool.d/www.conf`` file.
+
+### Database server issue
+
+_After starting, you see a bunch of errors starting with: `ERROR	pydio.grpc.meta	Failed to init DB provider	{"error": "Error 1071: Specified key was too long; max key length is 767 bytes handling data_meta_0.1.sql"}` and the web page is unreachable_
+
+You might have an unsupported version of the mysql server: you should use MySQL server version 5.6 or higher or MariaDB version 10.2 or higher. 
+
+### Various
+
+_You see this error: `/lib/x86_64-linux-gnu/libc.so.6: version 'GLIBC_2.14' not found`_
+
 The version of libc6 is outdated. Run these commands to upgrade it.
 
-```
+```sh
 sudo apt-get update
 sudo apt-get install libc6
 ```
