@@ -23,7 +23,7 @@ As seen in this screenshot ( we took the sync DataSource pydiods1 job) :
 
 You can **Run Now** which will force the task to run right now ,
 **Disable job** this will disable the task therefore it will no longer run or 
-you can **Enable multiple** and **Clear All** which clears the history.
+you can **Enable multiple**  or **Clear All** which clears the history.
 
 
 ### User Jobs
