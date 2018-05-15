@@ -10,9 +10,9 @@ This documentation describes how to deploy the Collabora CODE docker image (comm
 
 ##### Prerequisite 
 
-In this documentation, you have to replace &lt;your-domain&gt; with the name of the domain where your Pydio Cells installation is setup.
+In this documentation, you have to replace _&lt;your-domain&gt;_ with the name of the domain where your Pydio Cells installation is setup.
 
-You also have to replace &lt;your-escaped-domain&gt; with the same subdomain where dots are "escaped", eg. office\.yourdomain\.com
+You also have to replace _&lt;your-escaped-domain&gt;_ with the same subdomain where dots are "escaped", eg. office\.yourdomain\.com
 
 We only provide on this page an example of configuration that meet the basic requirements for the plugin to work with Pydio Cells. If you want more detail about the different configurations Collabora offer, you can visit **[this link](https://www.collaboraoffice.com/code/)**.
 
