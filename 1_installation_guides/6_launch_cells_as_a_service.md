@@ -93,15 +93,16 @@ use quit to leave the supervisor menu, and that should be it after all of those 
 
 ## 2.CentOS
 
-## Monitoring Pydio Cells' services by Supervisord
+### Monitoring Pydio Cells' services by Supervisord
+The configure is base on a system whose **pydio** account as in this [tutorial](https://github.com/pydio/cells/wiki/Install-CentOS)
 
 - Install supervisor: `yum install supervisor`
 - Create a new file /etc/supervisord.d/cell.ini with following content:
 
 ```
-[program:cell]
-command=/home/cell/pydio start
-directory=/home/cell       ; directory to cwd to before exec (def no cwd)
+[program:cells]
+command=/home/pydio/cells start
+directory=/home/pydio       ; directory to cwd to before exec (def no cwd)
 ;umask=022                     ; umask for process (default None)
 ;priority=999                  ; the relative start priority (default 999)
 autostart=true                ; start at supervisord start (default: true)
@@ -113,15 +114,15 @@ stopsignal=QUIT               ; signal used to kill process (default TERM)
 stopwaitsecs=10               ; max num secs to wait b4 SIGKILL (default 10)
 stopasgroup=false             ; send stop signal to the UNIX process group (default false)
 ;killasgroup=false             ; SIGKILL the UNIX process group (def false)
-user=cell                 ; setuid to this UNIX account to run the program
+user=pydio                 ; setuid to this UNIX account to run the program
 
 redirect_stderr=true          ; redirect proc stderr to stdout (default false)
-stdout_logfile=/home/cell/.config/Pydio/Server/logs/cell.out
+stdout_logfile=/home/pydio/.config/pydio/cells/logs/cell.out
 stdout_logfile_maxbytes=1MB   ; max # logfile bytes b4 rotation (default 50MB)
 stdout_logfile_backups=10     ; # of stdout logfile backups (default 10)
 stdout_capture_maxbytes=1MB   ; number of bytes in 'capturemode' (default 0)
 ;stdout_events_enabled=false   ; emit events on stdout writes (default false)
-stderr_logfile=/home/cell/.config/Pydio/Server/logs/cell_err.log        ; stderr log path, NONE for none; default AUTO
+stderr_logfile=/home/pydio/.config/pydio/cells/logs/cell_err.log        ; stderr log path, NONE for none; default AUTO
 ;stderr_logfile_maxbytes=1MB   ; max # logfile bytes b4 rotation (default 50MB)
 ;stderr_logfile_backups=10     ; # of stderr logfile backups (default 10)
 ;stderr_capture_maxbytes=1MB   ; number of bytes in 'capturemode' (default 0)
@@ -136,3 +137,42 @@ stderr_logfile=/home/cell/.config/Pydio/Server/logs/cell_err.log        ; stderr
 
 You can test this config by restarting the machine and **Pydio Cells** now is launched by supervisord. To watch the output, try this command:
 `tail -f /home/cell/.config/Pydio/Server/logs/cell.out`
+
+### Configure cells with systemd service
+
+Create new file /etc/systemd/system/cells.service with content:
+
+```
+[Unit]
+Description=Pydio Cells
+Documentation=https://pydio.com
+Wants=network-online.target
+After=network-online.target
+AssertFileIsExecutable=/home/pydio/cells
+[Service]
+WorkingDirectory=/home/pydio/.config/
+User=pydio
+Group=pydio
+PermissionsStartOnly=true
+#ExecStartPre=echo \"Start pydio cells-enterprise service\""
+ExecStart=/home/pydio/cells start
+Restart=on-failure
+StandardOutput=journal
+StandardError=inherit
+LimitNOFILE=65536
+TimeoutStopSec=5
+KillSignal=INT
+SendSIGKILL=yes
+SuccessExitStatus=0
+[Install]
+WantedBy=multi-user.target
+
+```
+
+Then enable cells service:
+`systemctl enable cells `
+`systemctl start cells `
+
+The output of cells service can be seen via journal service
+
+`journalctl -f `
