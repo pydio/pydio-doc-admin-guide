@@ -127,7 +127,7 @@ Then, to launch the installer, type: `./<binary> install`. For instance: `./cell
 *For the enterprise edition the binary will be named `cells-enterprise`*
 
 
-**For the enterprise edition refer to [this guide]() to get your license key allowing you to complete the installation**
+**For the enterprise edition refer to [this guide](/en/docs/cells/v1/enterprise-edition-requirements) to get your license key allowing you to complete the installation**
 
 A menu will appear.
 
@@ -144,7 +144,7 @@ A menu will appear.
 
 *Subsequent steps are then pretty much the same in the browser or in the CLI*
 
-1. **Enterprise License key** : put the license key of your enterprise version, if you need help fetching it here is our guide about [where do you get your license]().
+1. **Enterprise License key** : put the license key of your enterprise version, if you need help fetching it here is our guide about [where do you get your license](/en/docs/cells/v1/ed-interface-branding).
 
 1. **Database connection** : put your database informations.
 

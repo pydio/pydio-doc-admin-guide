@@ -8,7 +8,7 @@ The key concept to understand is that "everything is a role", and roles are merg
 
 The role abstraction is used by the system when you define authorizations and policies. A role is composed of a set of the following : 
 
-- _Access Control List_: this will attach a permission for this role to access any Node of the global tree (either via a Workspace or a Cell and their root nodes, or directly applied on specific files or folders). This permission can either be fixed (Read, Write) or dynamically computed at runtime by a Security Policy (see [Security Policies]() section.)
+- _Access Control List_: this will attach a permission for this role to access any Node of the global tree (either via a Workspace or a Cell and their root nodes, or directly applied on specific files or folders). This permission can either be fixed (Read, Write) or dynamically computed at runtime by a Security Policy (see [Security Policies](/en/docs/cells/v1/security-policies) section.)
 - _Actions_: enables or disables available actions in the GUI
 - _Parameters_: override the global values of a parameter
 
@@ -76,7 +76,7 @@ Policies are a powerful feature of Pydio Cells used to dynamically assign ACLs d
 
 Once a Policy template has been defined via the `Admin Settings >> Security Policies` page, you can apply it instead of using static "READ / WRITE / DENY".
 
-For instance when editing a group via `Admin Settings >> People >> (Pick up a group for edit) >> Workspaces Accesses`, you can click on the `more` icon that is on the left of the check box of one of the workspace and choose a custom policy. See the [Security Policies]() chapter.
+For instance when editing a group via `Admin Settings >> People >> (Pick up a group for edit) >> Workspaces Accesses`, you can click on the `more` icon that is on the left of the check box of one of the workspace and choose a custom policy. See the [Security Policies](/en/docs/cells/v1/security-policies) chapter.
 
 #### ACLs Merging Rules
 

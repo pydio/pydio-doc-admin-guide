@@ -2,8 +2,9 @@ _In this guide you are going to see how you can launch Pydio Cells as a backgrou
 
 We are going to see the main Linux systems such as :
 
-1. [Ubuntu and Debian]()
-2. [CentOS]()  
+1. [Ubuntu](/en/docs/cells/v1/ubuntu-systems)
+2. [Debian](/en/docs/cells/v1/debian-systems)
+3. [CentOS](/en/docs/cells/v1/centosrhel-systems)  
 
 ## 1.Ubuntu and Debian
 We will show you a simple Ubuntu & Debian configuration for Supervisor that will help you launch Pydio Cells as a background service.
