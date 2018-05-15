@@ -36,6 +36,6 @@ Cells are then easily sharable between users and groups and bring the ability to
 
 One of the cool features of cells is that it comes with no (or only little) additional costs in term of storage used: we do not copy the files but rather maintain sets of _shortcuts_ that are transparent to the end users but and point to the effective data.
 
-The mapping is maintenained via the main internal index. See Overall architecture documentation to learn more about these concepts.
+The mapping is maintenained via the main internal index. See Overall architecture [documentation](/en/docs/cells/v1/pydio-cells-internals-0) to learn more about these concepts.
 
 [:summary]

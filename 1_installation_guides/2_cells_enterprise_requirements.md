@@ -1,4 +1,4 @@
-_In terms of requirements, Cells Enterprise Edition has the exact same technical requirements as Cells Home edition (see previous page). It justs requires an additional license file as exposed below._
+_In terms of requirements, Cells Enterprise Edition has the exact same technical requirements as Cells Home edition (see previous [page](/en/docs/cells/v1/requirements)). It justs requires an additional license file as exposed below._
 
 ### Obtaining an enterprise license
 
