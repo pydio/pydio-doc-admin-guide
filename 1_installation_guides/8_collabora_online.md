@@ -14,10 +14,9 @@ In this documentation, you have to replace <your-domain> with the name of the do
 
 You also have to replace <your-escaped-domain> with the same subdomain where dots are "escaped", eg. office\.yourdomain\.com
 
-Here we will give you an example on one configuration if you want more detail about collabora you can go **[Here](https://www.collaboraoffice.com/code/)**.
+We only provide on this page an example of configuration that meet the basic requirements for the plugin to work with Cells. If you want more detail about the different configuration collabora offer, you can visit **[this link](https://www.collaboraoffice.com/code/)**.
 
 ##### Start Docker Image
-You can find a link to the docker for collabora **[here](https://hub.docker.com/r/collabora/code/)**
 
 Install Docker on a server. 
 
@@ -30,7 +29,7 @@ Note: this docker image does not work on Ubuntu 14.04 LTS, because Ubuntu 14.04 
 
 In the Settings panel, go to All Plugins > Features Plugins > Editors and enable the Collabora Online plugin. 
 
-Edit its parameters as follow: 
+Change the parameters to : 
 
  - Url to the Libre Office Editor iFrame: `/loleaflet/dist/loleaflet.html`
  - WebSocket use TLS: `true`
