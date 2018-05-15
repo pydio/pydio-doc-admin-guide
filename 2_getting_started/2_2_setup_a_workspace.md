@@ -22,6 +22,8 @@ Then this menu will appear :
 
 [!image-popup:images/2_getting_started/create_workspace.png]
 
+[!image-popup:/images/2_getting_started/create_workspace.png]
+
 1. **Root nodes** : Using the auto-complete field, pick one or more nodes ( = files or folders ) from the available datasources to compose your workspace contents. The **cells** and **my-files** are specific paths that can only be selected (you cannot browse their children) and will be resolved automatically at run-time. Note that you can add as many nodes as necessary.    
 2. **Label** : This is the name of the workspace.
 3. **Description** : You can put a description about what your workspace contains for example.
