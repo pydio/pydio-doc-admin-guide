@@ -36,4 +36,4 @@ After its creation, you can still modify a workspace by going to **Data Manageme
 
 ### Providing access rights to your workspace
 
-Once a workspace is created, use the Users, Groups and Roles interfaces to eventually grant access to your users (see next chapter).
+Once a workspace is created, use the Users, Groups and Roles interfaces to eventually grant access to your users (see next [chapter](/en/docs/cells/v1/users-roles-and-groups)).

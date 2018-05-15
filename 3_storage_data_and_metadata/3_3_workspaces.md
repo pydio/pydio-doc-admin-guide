@@ -9,15 +9,15 @@ In this section, we will introduce the most widely used types of workspace namel
 - basic workspaces that refers only to a subtree of a datasource
 - personal file workspaces, and more generally speaking template-path-based workspaces
 
-From an admin point-of-view, Workspaces will generally be the basic unit to grant accesses to any part of the tree to users. You will see how this apply in Chapter and how users, groups and roles can make this really flexible.
+From an admin point-of-view, Workspaces will generally be the basic unit to grant accesses to any part of the tree to users. You will see how this apply in this chapter and how users, groups and roles can make this really flexible.
 
 ### Standard workspace
 
-As you have already seen in chapter 2 of this guide, it is straight forward and easy to define a simple workspace: please refer to this [section](/en/docs/cells/v1/creating-workspaces) for a step by step guide.
+As you have already seen in [chapter 2](/en/docs/cells/v1/getting-started) of this guide, it is straight forward and easy to define a simple workspace: please refer to this [section](/en/docs/cells/v1/creating-workspaces) for a step by step guide.
 
 You then have a direct access to the root of the underlying datasource and can start using it.
 
-**About the Default Rights**: the default rights is a specific policy that is applied to the "Root Group" of the application, which mean to all users. If you create or edit a new workspace and select the Read-Write option, all your user will see this workspace appears in there workspace list (in the left menu) and can start uploading and modifying files. This can then be overriden on a per-user, per-group or per-role basis (see Chapter 4).
+**About the Default Rights**: the default rights is a specific policy that is applied to the "Root Group" of the application, which mean to all users. If you create or edit a new workspace and select the Read-Write option, all your user will see this workspace appears in there workspace list (in the left menu) and can start uploading and modifying files. This can then be overriden on a per-user, per-group or per-role basis (see [Chapter 4](/en/docs/cells/v1/access-control-and-security)).
 
 **About the Recycle Bin**: The Recycle Bin is a specific folder created at the first connection to this workspace. When present, the "Delete" action will in fact be replaced by a "Move To Recycle Bin" action. Only inside the recycle bin itself will the Delete action be actually performed.
 

@@ -76,7 +76,7 @@ Policies are a powerful feature of Pydio Cells used to dynamically assign ACLs d
 
 Once a Policy template has been defined via the `Admin Settings >> Security Policies` page, you can apply it instead of using static "READ / WRITE / DENY".
 
-For instance when editing a group via `Admin Settings >> People >> (Pick up a group for edit) >> Workspaces Accesses`, you can click on the `more` icon that is on the left of the check box of one of the workspace and choose a custom policy. See the [Security Policies](/en/docs/cells/v1/security-policies) chapter.
+For instance when editing a group via `Admin Settings >> People >> (Pick up a group for edit) >> Workspaces Accesses`, you can click on the `more` icon that is on the left of the check box of one of the workspace and choose a custom policy. See the [Security Policies](/en/docs/cells/v1/security-policies) section.
 
 #### ACLs Merging Rules
 

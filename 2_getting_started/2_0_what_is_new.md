@@ -31,7 +31,7 @@ Resource-based security policies are similar to Amazon Resource-Based policies. 
 * OpenID Connect Access Point (to allow/disallow login operations)
 * [ED] ACLs: using policies instead of simple Read/Write assignments
 
-See the dedicated chapter. Home Edition comes with the basic REST policies for securing the installation, whereas Enterprise Edition allows creation of security policies.
+See the dedicated [chapter](/en/docs/cells/v1/security-policies). Home Edition comes with the basic REST policies for securing the installation, whereas Enterprise Edition allows creation of security policies.
 
 #### [ED] Auditable Logs
 

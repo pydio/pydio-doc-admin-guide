@@ -137,4 +137,4 @@ Let's explain briefly the roles of each groups of services :
 - **IDM**: as "Identity Management", all the authentication / authorizations related services
 - **Scheduler**: Background jobs manager
 - **Broker**: Loosely-coupled services mostly listening on events to trigger some actions, like storing user's feeds of activities, sending emails, etc..
-- **DataSource**: DataSource services (objects / index / sync) as explained in the DataSource chapter.
+- **DataSource**: DataSource services (objects / index / sync) as explained in the DataSource [chapter](/en/docs/cells/v1/understanding-datasources).
