@@ -42,19 +42,25 @@ Of course, these rules are not "written" manually by end-users, but we provide a
 
 Visibility can be set up by end-users via their Address Book.
 
-@TODO Screenshot Address book User => Visibility Popup
+For users :
 
-@TODO Screenshot Address book Team => Visibility Popup
+[!image-popup:4_access_control_and_security/edit_visibility_user.png]
+[!image-popup:4_access_control_and_security/edit_visibility_popup_user.png]
 
+For teams :
+
+[!image-popup:4_access_control_and_security/edit_visibility_team.png]
+[!image-popup:4_access_control_and_security/edit_visibility_popup_team.png]
 
 #### Links
 
 Managing links visibility will allow the users to let the link they create appear on the files, when inside a workspace shared with other users.
 
-@TODO Screenshot Share Link => Visibility Tab
+
+[!image-popup:4_access_control_and_security/shared_link_visibility.png]
 
 #### Cells
 
 As Cells are ways to share data with other users, you can notice that when you select users for sharing, then by default the Visibility rules will grant "Read" access to this Cell to these users. Warning, this "Read" access is just about being able to **read the "metadata" of this Cell**, and is not to be mixed up with the Read/Write **permissions** that define the actual content of the cell.
 
-@TODO Screenshot Cells => Visibility Tab
+[!image-popup:4_access_control_and_security/shared_cells_visibility.png]
