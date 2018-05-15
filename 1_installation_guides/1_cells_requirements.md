@@ -37,7 +37,6 @@ At the moment Pydio Cells supports:
 
 Pydio Cells webserver maybe bound to any port that suits your security rule. However, if it is exposed directly to the outside world, it will probably need **80** or **443** ports to be available to serve on standard HTTP/HTTPS ports. See the following os-specific sections for learning how to configure the service properly.
 
-
 ### Cells Binary
 
 You can get the cells binary from our public servers [here](https://download.pydio.com/pub/)
