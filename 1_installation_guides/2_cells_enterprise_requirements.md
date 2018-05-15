@@ -18,4 +18,4 @@ If installing using Cells browser-based installer, you can copy/paste the licens
 
 After installation, the "Enterprise License" menu in the Settings panel will display the status of your current license, showing expiration time and number of users used.
 
-![ent license interface](/images/2_getting_started/ent_license_interface.png)
+![ent license interface](/en/docs/cells/v1/ed-interface-branding)
