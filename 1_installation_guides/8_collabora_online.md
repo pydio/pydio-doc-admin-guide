@@ -33,7 +33,7 @@ Change the plugin parameters to :
 
  - Url to the Libre Office Editor iFrame: `/loleaflet/dist/loleaflet.html`
  - WebSocket use TLS: `true`
- - Web Socket Connector Host: `<your-domain>`
+ - Web Socket Connector Host: _`<your-domain>`_
  - Web Socket Connector Port: `9980` (see virtual host configuration above).
  
  Remember to save.
