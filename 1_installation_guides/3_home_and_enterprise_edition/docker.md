@@ -9,7 +9,7 @@ Now for how to run and use this image we will provide you with examples, and sit
 
 This is the base docker command :
 
-`docker run -it -d --name cells -t -v /<localstorage>/:/home/cells/.config/pydio/cells/ -e "CELLS_BIND<address>:<port>" -e "CELLS_EXTERNAL=<address>:<port>" -p 8080:8080 pydio/cells`
+`docker run -it -d --name cells -t -v /<localstorage>/:/home/cells/.config/pydio/cells/ -e "CELLS_BIND=<address>:<port>" -e "CELLS_EXTERNAL=<address>:<port>" -p 8080:8080 pydio/cells`
 
 for the details :
 
