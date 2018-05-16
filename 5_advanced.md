@@ -1,14 +1,11 @@
 
-In the last chapter of this guide, we will put the focus on specific features of Pydio Cells that bring high added value:
+In the last chapter of this guide, we first introduce the overall architecture of the Pydio Cells Server and then put the focus on specific features to go one step further, namely:
 
-Namely, for the time being: 
-- the embedded scheduler
-- the webdav server
-- the REST API
+- Embedded scheduler
+- Webdav server
+- REST API
 
-These features are just but a few of the next surprises we have prepared for you with this entirely rewritten version. Now that the version 1.0 of Pydio Cells is out, we will quickly build on it and add more cool features very soon; stay tuned! 
-
-In this category we will provide you with advanced guides to make use of the advanced features of Pydio Cells.
-
+These features are just but a few of the next surprises we have prepared for you with this entirely rewritten piece of software.  
+Now that the version 1.0 of Pydio Cells is out, we will quickly build on it and add more cool features very soon; stay tuned! 
 
 [:summary]
