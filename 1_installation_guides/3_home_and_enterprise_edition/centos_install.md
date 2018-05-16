@@ -127,7 +127,7 @@ su - cells
 ```bash
 wget https://download.pydio.com/pub/cells/release/1.0.0/linux-amd64/cells
 chmod u+x cells
-# f you need to use the standard http (80) or https (443) port, please execute this command:
+# if you need to use the standard http (80) or https (443) port, please execute this command:
 setcap 'cap_net_bind_service=+ep' cells
 ./cells install
 ```
