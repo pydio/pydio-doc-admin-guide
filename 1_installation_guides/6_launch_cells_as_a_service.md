@@ -6,7 +6,7 @@ We are going to see the main Linux systems such as :
 2. [Debian](/en/docs/cells/v1/debian-systems)
 3. [CentOS](/en/docs/cells/v1/centosrhel-systems)  
 
-## 1.Ubuntu and Debian
+## Ubuntu and Debian
 We will show you a simple Ubuntu & Debian configuration for Supervisor that will help you launch Pydio Cells as a background service.
 
 ### Requirements
@@ -92,7 +92,7 @@ supervisor>
 ```
 use quit to leave the supervisor menu, and that should be it after all of those steps you should be able to have cells starting, auto-restarting by itself on background.
 
-## 2.CentOS
+## CentOS
 
 ### Monitoring Pydio Cells' services by Supervisord
 The configuration is based on a system whose **pydio** account exists as in this [tutorial](https://github.com/pydio/cells/wiki/Install-CentOS)
