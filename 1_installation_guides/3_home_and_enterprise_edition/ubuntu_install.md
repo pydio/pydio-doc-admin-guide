@@ -1,6 +1,7 @@
-_In this guide, you will find all the steps required for you to have Pydio Cells running on an Ubuntu system. We will be covering the following versions: Ubuntu 14.04, Ubuntu 16.04 & Ubuntu 17.10._
 
-#### Pydio Cells
+_This guide describes the steps required to have Pydio Cells running on Ubuntu 14.04, 16.04 & 17.10._
+
+### Get the binary file
 
 Download the Cells Binary on your server using the following command :
 
@@ -18,14 +19,14 @@ chmod +x cells-enterprise
 
 ## Package Installation
 
-#### UBUNTU 16 & 17 :
+### UBUNTU 16 & 17 :
 On both of those versions as they're not old, the installation process should be the easiest.
 
-##### Install PHP
+#### Install PHP
 To install php and it's packages use the following commands:
 `sudo apt install php php-fpm php-gd php-curl php-intl php-xml`.
 
-##### Install Database
+#### Install Database
 *You can skip this step if you already have a database*
 
 To install MySQL use : `sudo apt install mysql-server`
@@ -34,9 +35,9 @@ or for mariaDB use : `sudo apt install mariadb-server`
 
 *if you missed a step during the installation process you can use `mysql_secure_installation` command to redo it again, it works for both.*
 
-#### UBUNTU 14 :
+### UBUNTU 14 :
 
-##### Install PHP
+#### Install PHP
 You can install PHP 7 on ubuntu 14 by following those steps:
 
 * `sudo apt-get update`
@@ -63,14 +64,13 @@ To install php 5 and relevant related packages, use following command:
 sudo apt install -y php5-cli php5-fpm php5-gd php5-xmlrpc php5-intl php5-curl
 ```
 
-##### Install Database
+#### Install Database
 
 To install MySQL use: `sudo apt-get install mysql-server-5.6`
 
 or mariaDB: `sudo apt-get install mariadb-server`
 
 *If you missed a step during the installation process, you can use `mysql_secure_installation` command to redo it again. It works for both MySQL and MariaDB*
-
 
 Additional guides to get more information:
 
@@ -80,7 +80,7 @@ Additional guides to get more information:
 - [Install mariaDB](https://www.vultr.com/docs/install-mariadb-on-ubuntu-14-04)
 
 
-## Final steps
+### Final steps
 
 #### Php FPM
 For php FPM you can choose to use the TCP socket or the UNIX socket we will provide you both solutions.
@@ -127,7 +127,7 @@ GRANT ALL PRIVILEGES ON cells.* to 'cells'@'localhost';
 FLUSH PRIVILEGES;
 ```
 
-## Starting with Pydio
+## Starting with Pydio Cells
 
 First, give execution rights to the binary. For instance, you can use `sudo chmod u+x <binary>`.
 
@@ -167,14 +167,9 @@ If you have a warning because you're using php 5.5.9, don't worry and press next
 To stop Pydio you can press `ctrl + c` and then to start it again use this command
 `./<binary> start`, for instance `./cells start`.
 
-
-
 ## Troubleshooting
 
-* The php-fpm Service might not be started, you can look at its status using : `sudo service php<version>-fpm status` and then `sudo service php<version>-fpm start` it if needed.
-
-* Forgot to Add `listen = 9000` to the php-fpm.conf file if you're using the TCP socket.
-
-* Forgot to change the `listen.owner` or `listen.group` directives, located in `<php-fpm path>/pool.d/www.conf` for the UNIX socket users.
-
-* You can look at the webserver's error file located in `~/.config/pydio/cells/logs/caddy_errors.log`.
+- The php-fpm Service might not be started, you can look at its status using : `sudo service php<version>-fpm status` and then `sudo service php<version>-fpm start` it if needed.
+- Forgot to Add `listen = 9000` to the php-fpm.conf file if you're using the TCP socket.
+- Forgot to change the `listen.owner` or `listen.group` directives, located in `<php-fpm path>/pool.d/www.conf` for the UNIX socket users.
+- You can look at the webserver's error file located in `~/.config/pydio/cells/logs/caddy_errors.log`.

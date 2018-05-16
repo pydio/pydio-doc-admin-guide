@@ -1,5 +1,5 @@
 
-_This document will guide you through the steps to have Pydio Cells configured and running on debian 8 and 9._
+_This guide describes the steps required to have Pydio Cells running on Debian 8 and 9._
 
 #### Downloading the binary file
 
@@ -9,13 +9,13 @@ You will need the Pydio Cells binary that is ~165MB. You might want to already s
 wget https://download.pydio.com/pub/cells/release/0.9.0/linux-amd64/cells
 ```
 
-### Requirements
+## Requirements
 
 We assume you start the installation process with a fresh and correctly installed and configured Debian 8 or 9 system, with at least standard system utilities and a user that is in the `sudo` group.
 
-#### PHP
+### PHP
 
-* [DEBIAN 8 ONLY]  Add the PHP 7 repository
+- **[DEBIAN 8 ONLY]  Add the PHP 7 repository**
     PHP 7 package are not available from official package list, so you need to add them.
 
 ```sh
@@ -24,17 +24,17 @@ wget -O- https://www.dotdeb.org/dotdeb.gpg | sudo apt-key add
 sudo apt update
 ```
 
-* Install
+- **Install**
 
 ```sh
 sudo apt install php7.0 php7.0-fpm php7.0-gd php7.0-curl php7.0-intl php7.0-xml
 ```
 
-* FPM configuration
+- **FPM configuration**
 
     Pydio can communicate with fpm though TCP socket or UNIX socket. You have to edit the fpm config file and tell whether to listen on TCP port 9000 or to listen on UNIX socket at /var/run/php7-fpm.sock. Here are steps to do so.
 
-    ##### TCP Socket
+    #### TCP Socket
 
     You simply have to add this directive ***listen = 9000*** to the fpm configs file
 
@@ -44,7 +44,7 @@ sudo apt install php7.0 php7.0-fpm php7.0-gd php7.0-curl php7.0-intl php7.0-xml
     listen=9000' /etc/php/7.0/fpm/php-fpm.conf
     ```
 
-    ##### UNIX Socket
+    #### UNIX Socket
 
     You have to insure the user that runs the Pydio Cells binary has sufficient rights on the socket.
     You have many options, we usually add the corresponding user to the default `www-data` group and change the `listen.owner` directive of the fpm configuration file by doing:
@@ -62,7 +62,7 @@ sudo apt install php7.0 php7.0-fpm php7.0-gd php7.0-curl php7.0-intl php7.0-xml
     listen.group= www-data
     ```
 
-* Finalisation
+- **Finalisation**
 
     Enable and restart PHP FPM service to apply the changes:
 
@@ -71,11 +71,11 @@ sudo apt install php7.0 php7.0-fpm php7.0-gd php7.0-curl php7.0-intl php7.0-xml
     sudo systemctl restart php7.0-fpm
     ```
 
-#### Database
+### Database
 
 Pydio Cells can be installed with both MySQL Server (v5.6 or higher) and MariaDB, depending on your preference.
 
-##### MySQL
+#### MySQL
 
 To install the appropriate version, you first have to configure the mysql-server installer:
 
@@ -97,7 +97,7 @@ sudo apt update
 sudo apt install mysql-server
 ```
 
-#### MariaDB install
+#### MariaDB
 
 * Add the repository  
     You first need to add the MariadDB repository key and add the package repository
@@ -118,7 +118,7 @@ sudo apt install mysql-server
     sudo add-apt-repository 'deb [arch=amd64] http://www.ftp.saix.net/DB/mariadb/repo/10.1/debian stretch main'
     ```
 
-*   Install
+* Install
 
     You can now install MariaDB server with:
 
@@ -127,7 +127,7 @@ sudo apt install mysql-server
     sudo apt install mariadb-server
     ```
 
-#### Database  Configuration
+#### Database Configuration
 
 By default, a new database will be created by the system during the installation process. You only need a user with database management permissions.
 
@@ -151,7 +151,7 @@ FLUSH PRIVILEGES;
 
 We assume you have downloaded the Pydio Cells binary and saved it as `cells`.
 
-#### Rights
+### Rights
 
 First, give execution rights to the binary:
 
@@ -159,19 +159,19 @@ First, give execution rights to the binary:
 sudo chmod u+x cells
 ```
 
-#### On HTTP standard ports: 80 and 443
+### On HTTP standard ports: 80 and 443
 
-By default you cannot use those ports if you are not a root user (sudo, root, etc...)
-to be able to bind those ports to Pydio you need to give the binary the rights to use them even though it's not launched as a root user.
+By default you cannot use those ports if you are not a root user.  
+To be able to bind those ports to Pydio, you need to give the binary the rights to use them even though it's not launched as a root user.
 
-You can use this command :
+You can use this command:
 
 ```sh
 sudo setcap CAP_NET_BIND_SERVICE=+eip cells
 # Replace <cells> with full path to the Pydio Cells binary.
 ```
 
-#### Install
+### Install
 
 Execute the command below and follow the instructions.
 
