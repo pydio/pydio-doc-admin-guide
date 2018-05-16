@@ -2,7 +2,7 @@ Pydio Cells comes as statically linked binaries that do not require specific dep
 
 ### Hardware
 
-For Pydio Cells to run smoothly you should meet the following requirements:
+For Pydio Cells to run smoothly, you should meet the following requirements:
 
 * **RAM** : 4Gb is recommended
 * **CPU** : 2 cores minimum
@@ -10,8 +10,8 @@ For Pydio Cells to run smoothly you should meet the following requirements:
 
 ### Operating System
 
-* **Ulimit**: Make sure to set the number of allowed open files for the binary to something greater than 2K, for production use a limit of 8K is recommended (see `ulimit -n`).
-* **GlibC** : The only hard requirement of Cells binary is using a GLibc library > 2.14. This should be ok on most modern operating systems, this may exclude for example Debian 6.
+* **Ulimit**: Make sure to set the number of allowed open files for the binary to something greater than 2K. For production use a limit of 8K is recommended (see `ulimit -n`).
+* **GlibC** : The only hard requirement of Cells binary is using a GLibc library > 2.14. This should be OK on most modern operating systems, this may exclude for example Debian 6.
 
 ### Software
 
@@ -31,7 +31,7 @@ We recommend the usage **PHP 7+** for its overall better performances, but you c
 At the moment Pydio Cells supports:
 
 * **MySQL** version 5.6 and above.
-* **MariaDB** version 10 and above.
+* **MariaDB** version 10.2 and above.
 
 ### Networking
 
