@@ -1,20 +1,23 @@
 _In this guide, you will find all the steps required for installation and configure Cells Enterprise with pre-built vm image._
 
-The image of ovf can be download from https://download.pydio.com/pub/cells-enterprise/release/VERSION/ovf/Cells-Enterprise-OVF-VERSION.zip
+## Download OVF Package
 
-where "VERSION" is release version of cells.
+The image of OVF can be downloaded from 
 
-For example: https://download.pydio.com/pub/cells-enterprise/release/0.9.2/ovf/Cells-Enterprise-OVF-0.9.2.zip
+```
+https://download.pydio.com/pub/cells-enterprise/release/VERSION/ovf/Cells-Enterprise-OVF-VERSION.zip
+```
+where "VERSION" is release version of cells. Get for example: [https://download.pydio.com/pub/cells-enterprise/release/1.0.0/ovf/Cells-Enterprise-OVF-1.0.0.zip](https://download.pydio.com/pub/cells-enterprise/release/1.0.0/ovf/Cells-Enterprise-OVF-1.0.0.zip). An md5 file is also available on the same location for integrity verification.
 
-A md5 file is also available on the same location for integrity verification.
+This Zip archive contains the OVF itself plus the following files: 
 
-You will find out some text file accompanied with zip file:
+- **EULA**: End-user license aggrement
+- **Import_to_Hyper_V.txt**: instructions for importing vm image into Hyper-V system
+- **Import_to_VMWare_System.txt**: some notes for importing vm image into different version of VMWare system
 
-**EULA**: End-user license aggrement
-**Import_to_Hyper_V.txt**: instructions for importing vm image into Hyper-V system
-**Import_to_VMWare_System.txt**: some notes for importing vm image into different version of VMWare system
+## Launching a VM
 
-In this guide, virtualbox is use for importing ovf file.
+In this guide, we will use Oracle VirtualBox to launch the virtual machine.
 
 Virtual Machine requirements
 
@@ -23,29 +26,11 @@ Virtual Machine requirements
 - CPU support: VT-x/AMD-V
 - NICs: bridged adaptor
 
-## 2 Predefined accounts
+### Setup and config at the first time
 
-There are two pre-build accounts accessible via ssh
-username: *root*
-password: *PydioVAPP*
-
-username: *pydio*
-password: *PydioVAPP*
-
-There are two account for mysql
-username: *root*
-password:
-
-username: *pydio@localhost*
-password:
-
-A predefined database is *cells*
-
-
-## 3 Setup and config at the first time
 After importing vm image into VirtualBox, a specific script will be launch at the fist boot of the machine and you can interact with cells service via web browser to setup/config **cells**. Following the message in vm screen, you can see the url of service in format: https://ipaddress/
 
-> Note: A self-singed certificate is used so please ignore the warning message on your web browser.
+> Note: A self-signed certificate is used, ignore the warning message on your web browser.
 
 You just follow steps in web interface to finalize the configuration. All parameters is set by default except admin's password.
 
@@ -55,9 +40,21 @@ You can see on web page the progress of installation. It takes several minute to
 
 At this step, you can login to Cells-Enterprise with credential you've enter during the setup. It's highly recommended to restart virtual machine.
 
-## 4 Notes for configuration
+### Predefined accounts
 
-#### 4.1 systemd service
+If you ever need to login to the VM system, Ssh accounts and technical accounts are created as follow:
+
+* Administrative user: *root* / *PydioVAPP* (ssh access)
+* User: *pydio* / *PydioVAPP* (ssh access)
+* MySQL username: *root* / No password
+* MySQL username: *pydio@localhost* / No password
+
+The predefined database created in MySQL is *cells*
+
+## Notes for configuration
+
+### Systemd service
+
 **Cell-Enterprise** service is running under **pydio** user. You find out all files in /home/pydio/.config/pydio/cells and it's configured to start at the boot time by using systemd
 
 Manually start/stop **Cell-Enterprise**
@@ -71,20 +68,20 @@ You can consult the output of **Cell-Enterprise** service by using command:
 
 start/stop some others service:
 
-MariaDB: 
-`systemctl start rh-mariadb102-mariadb `
+MariaDB:   
+`systemctl start rh-mariadb102-mariadb `  
 `systemctl stop rh-mariadb102-mariadb `
 
-PHP-FPM:
-`systemctl start rh-php71-php-fpm`
+PHP-FPM:  
+`systemctl start rh-php71-php-fpm`  
 `systemctl stop rh-php71-php-fpm`
 
-#### 4.2 firewalld service
+### Firewalld service
 
 Firewalld service is active and open two ports:
-443: **Cells-Enterprise**
-22: **ssh**
+* 443: **Cells-Enterprise**
+* 22: **ssh**
 
-#### 4.3 SELinux
+### SELinux
 
 SELinux is running in *permissive* mode
