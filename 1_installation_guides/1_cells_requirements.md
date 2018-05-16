@@ -10,16 +10,16 @@ For Pydio Cells to run smoothly, you should meet the following requirements:
 
 ### Operating System
 
-* **Ulimit**: Make sure to set the number of allowed open files for the binary to something greater than 2K. For production use a limit of 8K is recommended (see `ulimit -n`).
+* **Ulimit**: Make sure to set the number of allowed open files for the binary to something greater than 2K. For production use a minimum of 8K is recommended (see `ulimit -n`).
 * **GlibC** : The only hard requirement of Cells binary is using a GLibc library > 2.14. This should be OK on most modern operating systems, this may exclude for example Debian 6.
 
 ### Software
 
-#### Php-FPM
+#### PHP-FPM
 
-Pydio Cells comes with a self-embedded Web server (based on the [Caddy](https://caddyserver.com/docs) project) and does not require any additional Apache or Nginx http services. The backend features were fully rewritten in Golang and are also embedded in the binary, but the Frontend code still contains some PHP and a fastcgi connection must be available between pydio binary and php-fpm.
+Pydio Cells comes with a self-embedded Web server (based on the [Caddy](https://caddyserver.com/docs) project) and does not require any additional Apache or Nginx http services. The backend features were fully rewritten in Golang and are also embedded in the binary, but the Frontend code still contains some PHP and a fastcgi connection must be available between pydio cells binary and php-fpm.
 
-We recommend the usage **PHP 7+** for its overall better performances, but you can still use Pydio with PHP 5.5.9. Pydio Cells frontend will also require the following php extensions along with php:
+We recommend the usage **PHP 7+** for its overall better performances, but you can also use Pydio Cells with PHP >= 5.5.9. Pydio Cells frontend also requires the following php extensions :
 
 * **php-gd**
 * **php-intl**
@@ -35,13 +35,11 @@ At the moment Pydio Cells supports:
 
 ### Networking
 
-Pydio Cells webserver maybe bound to any port that suits your security rule. However, if it is exposed directly to the outside world, it will probably need **80** or **443** ports to be available to serve on standard HTTP/HTTPS ports. See the following [os-specific 
-sections](/en/docs/cells/v1/os-specific-guides) to configure the service properly.
+Pydio Cells webserver may be bound to any port that suits your security rule. However if you need to set it on the standard HTTP (**80**) and HTTPS (**443**) ports, please refer to the following [os-specific sections](/en/docs/cells/v1/os-specific-guides).
 
 ### Cells Binary
 
-You can get the cells binary from our [public servers](https://download.pydio.com/pub/)
-or you can use the links below :
+Download the Pydio Cells binary for your OS from the [download page](https://pydio.com/download/) or use the direct links below :
 
-* **[Home Edition](https://download.pydio.com/pub/cells/release/0.9.1/linux-amd64/cells)**
-* **[Enterprise Edition](https://download.pydio.com/pub/cells-enterprise/release/0.9.1/linux-amd64/cells-enterprise)**
+* **[Home Edition](https://download.pydio.com/pub/cells/release/1.0.0/linux-amd64/cells)**
+* **[Enterprise Edition](https://download.pydio.com/pub/cells-enterprise/release/1.0.0/linux-amd64/cells-enterprise)**
