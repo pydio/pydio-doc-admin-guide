@@ -1,4 +1,5 @@
-The identity management feature of Pydio Cells relies on an **internal user directory** that is implemented using a database and an index. In Enterprise Edition, you can import external directories (namely ActiveDirectory or LDAP) that will be synchronized with the internal user directory.
+The identity management feature of Pydio Cells relies on an **internal user directory** that is implemented using a database and an index.  
+In Enterprise Edition, you can import external directories (namely ActiveDirectory or LDAP) that will be synchronized with the internal user directory.
 
 The key concept to understand is that "everything is a role", and roles are merged together at runtime to provide an effective role for any logged user.
 
@@ -8,9 +9,9 @@ The key concept to understand is that "everything is a role", and roles are merg
 
 The role abstraction is used by the system when you define authorizations and policies. A role is composed of a set of the following : 
 
-- _Access Control List_: this will attach a permission for this role to access any Node of the global tree (either via a Workspace or a Cell and their root nodes, or directly applied on specific files or folders). This permission can either be fixed (Read, Write) or dynamically computed at runtime by a Security Policy (see [Security Policies](/en/docs/cells/v1/security-policies) section.)
-- _Actions_: enables or disables available actions in the GUI
-- _Parameters_: override the global values of a parameter
+- **Access Control List**: this will attach a permission for this role to access any Node of the global tree (either via a Workspace or a Cell and their root nodes, or directly applied on specific files or folders). This permission can either be fixed (Read, Write) or dynamically computed at runtime by a Security Policy (see [Security Policies section](/en/docs/cells/v1/security-policies) ).
+- **Actions**: enables or disables available actions in the GUI
+- **Parameters**: override the global values of a parameter
 
 Roles can be created manually by an Administrator, and then applied to any users. Roles are also used under the hood to define users Teams.
 
