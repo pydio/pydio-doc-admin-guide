@@ -11,26 +11,25 @@ We are going to show you step by step, how to create users/roles/groups with Pyd
 
 Now to create a user go to **Identity Managment > People**, then click on **+USER** located on the top right.
 
-Then the following menu will appear (as shown on the screenshot below):
+Then the following menu will appear:
 
 [:image-popup:2_getting_started/create_user.png]
 
-* **User Login** : Put the login of the user that you want to create
-
-* **User Password** : Put the password of the user, you will have to type it twice to assure it's validity.
+- **User Login**: this can **not** be changed afterwards.  
+- **User Password**: Put the password of the user, you will have to type it twice to insure it's validity.
 
 ### Groups
 
-Groups allow you to manage the rights, parameters and actions of many users at once, it is usually used to regroup users that have the same usage of Pydio or usage of the same workspaces etc...
+Groups allow you to manage the rights, parameters and actions of many users at once, it is usually used to regroup users that have the same usage of Pydio Cells, use the same workspaces, or etc...
 
-Now to create a user go to **Identity Managment > People**, then click on **+GROUP** located on the top right.
+To create a user go to **Identity Managment > People**, then click on **+GROUP** located on the top right.
 
-Then the following menu will appear :
+Following menu appears:
 
 [:image-popup:2_getting_started/create_group.png]
 
-* **Group Identifier** : how the groups is identified in pydio's file system(useful for api etc...).
-* **Group Label** : you can put a label (a name).
+- **Group Identifier**: how the groups is identified in pydio's file system (useful for api etc...).
+- **Group Label**: human friendly name for this group.
 
 ### Roles
 
@@ -38,8 +37,8 @@ Roles are containers for access lists to grant access to workspace or customized
 
 To create a role go to **Identity Management > Roles**, then click on **+ROLE** located on the top right.
 
-Then the following menu will appear (as seen on the screenshot below):
+Following menu appears:
 
 [:image-popup:2_getting_started/create_role.png]
 
-* **Role Identifier** : Put the name of your choice for the role that you are going to create.
+* **Role Identifier**: Put the name of your choice for the role that you are going to create.

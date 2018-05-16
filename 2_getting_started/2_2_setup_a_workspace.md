@@ -1,4 +1,4 @@
-_In Pydio Cells (like in Pydio), Workspaces provide the "basic unit" for assigning access rights to users. But unlike in previous versions, they are now fully decoupled from the actual data location, as this is handled via the "DataSources"._
+_In Pydio Cells, Workspaces provide the "basic unit" for assigning access rights to users. But unlike in previous versions, they are now fully decoupled from the actual data location, as this is handled via the "DataSources"._
 
 ### Default Datasources
 
@@ -36,4 +36,4 @@ After its creation, you can still modify a workspace by going to **Data Manageme
 
 ### Providing access rights to your workspace
 
-Once a workspace is created, use the Users, Groups and Roles interfaces to eventually grant access to your users (see next [chapter](/en/docs/cells/v1/users-roles-and-groups)).
+Once a workspace is created, use the Users, Groups and Roles interfaces to grant effective permissions to your users as we will see [in the next chapter](/en/docs/cells/v1/users-roles-and-groups).
