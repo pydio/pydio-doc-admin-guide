@@ -175,7 +175,7 @@ You will find all config files/data in directory home of **cells** user:
 
 **PHP files for frontend**: /home/cells/.config/pydio/cells/static/pydio
 
-### Monitoring Pydio Cells' services by Supervisord
+### Monitoring Pydio Cells services by Supervisord
 
 - Install supervisor: `yum install supervisor`
 - Create a new file /etc/supervisord.d/cell.ini with following content:
