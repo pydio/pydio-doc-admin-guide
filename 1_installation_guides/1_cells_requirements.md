@@ -6,11 +6,11 @@ For Pydio Cells to run smoothly, you should meet the following requirements:
 
 * **RAM** : 4Gb is recommended
 * **CPU** : 2 cores minimum
-* **HD**  : we recommend you to use an SSD as it has faster access time and huge writing/reading speeds.
+* **HD**  : we recommend you use an SSD as it has faster access time and huge writing/reading speeds.
 
 ### Operating System
 
-* **Ulimit**: Make sure to set the number of allowed open files for the binary to something greater than 2K. For production use a minimum of 8K is recommended (see `ulimit -n`).
+* **Ulimit**: Make sure to set the number of allowed open files for the binary to something greater than 2K. For production, a minimum of 8K is recommended (see `ulimit -n`).
 * **GlibC** : The only hard requirement of Cells binary is using a GLibc library > 2.14. This should be OK on most modern operating systems, this may exclude for example Debian 6.
 
 ### Software
