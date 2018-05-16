@@ -2,10 +2,10 @@ _This guide describes the steps required to have Pydio Cells running on a CentOs
 
 [:image-popup:1_installation_guides/logos-os/logo-centos.png]
 
-## Requirements 
+## Prerequisites 
 
-### Additional repos for CentOS 7.
-By default, the version of some packages such as PHP or MySQL (MariaDB) is far from current released version. Therefore, we need to use some extra repositories to get recent versions.
+### Repositories
+The version of packages such as PHP or MySQL (MariaDB) is outdated by default. We need to use extra repositories with more recent versions.
 
 #### EPEL release
 ```bash
@@ -68,17 +68,6 @@ GRANT ALL PRIVILEGES ON cells.* to 'cells'@'localhost';
 FLUSH PRIVILEGES;
 ```
 
-### Creation of dedicated system account for Pydio Cells
-It's highly recommend to run Pydio Cells with a dedicated user.
-
-In this guide, we use **cells** and its home directory **/home/cells**.
-
-In order to create a new user and its home directory, execute this command:
-
-```sh
-sudo useradd -m cells
-```
-
 ### SELinux
 There is no available configuration of SELinux for Pydio Cells. Please make sure that SELinux is disabled or running in permissive mode.
 
@@ -87,13 +76,13 @@ To temporary disable SELinux: `sudo setenforce 0`.
 You can also permanently disable SELinux in `/etc/selinux/config`.
 
 ### PHP-FPM
-Install PHP-FPM and the required extensions. In this example we use PHP version 7.1, but you can use any version >= 5.5.9.
+In this example we use PHP version 7.1, but you can use any version >= 5.5.9.
 
 ```bash
 sudo yum install rh-php71-php-fpm rh-php71-php-common rh-php71-php-intl rh-php71-php-gd rh-php71-php-mbstring rh-php71-php-xml rh-php71-php-curl rh-php71-php-opcache
 ```
 
-The default **user** for the PHP-FPM worker pool needs to be changed from **apache** to **cells**. Change the port the service is listening to if required.
+The default **user** for the PHP-FPM worker pool needs to be changed to **cells**. Change the port the service is listening to if required.
 
 ```bash
 sudo vi /etc/opt/rh/rh-php71/php-fpm.d/www.conf
@@ -117,68 +106,62 @@ sudo systemctl enable rh-php71-php-fpm
 sudo systemctl start rh-php71-php-fpm
 ```
 
-## Installation and configuration
-Log in or switch to **cells** user. 
+### Dedicated User
+It is recommended to use a dedicated user to run Pydio Cells.
+
+In this guide, we use **cells** and its home directory **/home/cells**.
+
+In order to create a new user and its home directory execute this command:
+
+```sh
+sudo useradd -m cells
+```
+
+Switch to this user to run the installation
+
 ```bash
 su - cells
+```
+
+## Install Pydio Cells
+```bash
 wget https://download.pydio.com/pub/cells/release/1.0.0/linux-amd64/cells
 chmod u+x cells
-```
-
-If you need to use the standard http (80) or https (443) port, please execute this command:
-```bash
+# if you need to use the standard http (80) or https (443) port, please execute this command:
 setcap 'cap_net_bind_service=+ep' cells
+./cells install
 ```
 
-### Setup Pydio Cells
-You have two ways to setup Pydio Cells after launching the first command: using the Command Line or via the Web Interface. In this guide, we use the web interface.
+Follow the short set of instructions to finish off the Pydio Cells installation
 
-```
-$ ./cells install
-Welcome to Pydio Cells installation
-Pydio Cells services will be configured to run on this machine. Make sure to prepare the following data
- - IPs and ports for binding the webserver to outside world
- - MySQL 5.6+ (or MariaDB equivalent) server access
- - PHP-FPM 7+ for running frontend
-Pick your installation mode when you are ready.
+## Post-installation
 
-Use the arrow keys to navigate: ↓ ↑ → ←
-? Installation mode:
-  ▸ Browser-based (requires a browser access)
-    Command line (performed in this terminal)
-```
-Select url and port for **Cells** service.
+### Manual start
 
-```
-✔ Browser-based (requires a browser access)
-Use the arrow keys to navigate: ↓ ↑ → ←
-? Bind Url (ip:port or yourdomain.tld that the webserver will listen. If internal and external urls differ, use internal here):
-+   Other
-  ▸ http://192.168.0.133:8080
-    http://localhost:8080
-    http://0.0.0.0:8080
+```bash
+./cells start
 ```
 
-Using a web browser, go to this address and continue with the setup. At the end, the page will automatically reload and boom ... **Pydio Cells** is working.
+### Files location
 
-Next time, please use this command to start pydio:
-
-`./cells start `
-
-### Data and configuration files of Pydio Cells
-
-You will find all config files/data in directory home of **cells** user:
-
-**Configuration of all services of** **Cells**: /home/cells/.config/pydio/cells/pydio.json
+**Configuration**: /home/cells/.config/pydio/cells/pydio.json
 
 **Data**: /home/cells/.config/pydio/cells/data
 
 **PHP files for frontend**: /home/cells/.config/pydio/cells/static/pydio
 
-### Monitoring Pydio Cells services by Supervisord
+### Monitoring
 
-- Install supervisor: `yum install supervisor`
-- Create a new file /etc/supervisord.d/cell.ini with following content:
+#### Supervisord
+
+##### Install
+```bash
+yum install supervisor
+systemctl enable supervisor && systemctl start supervisor
+```
+
+##### Configure
+Create and edit a file _/etc/supervisord.d/cell.ini_ with the following content:
 
 ```
 [program:cells]
@@ -212,20 +195,17 @@ stderr_logfile=/home/cells/.config/pydio/cells/logs/cell_err.log        ; stderr
 ;serverurl=AUTO                ; override serverurl computation (childutils)
 ```
 
-- Enable supervisor start with system `systemctl enable supervisor && systemctl start supervisor`
-- Update new program to supervisor: `supervisorctl update`
-- Start cell program in supervisor: `supervisorctl start cells `
+Update supervisor and start cells
 
-You can test this config by restarting the machine and **Pydio Cells** now is launched by supervisord. 
-
-To watch the log output, you can use this command:
-```sh 
-tail -f /home/cells/.config/pydio/cells/logs/cells.out
+```bash
+supervisorctl update
+supervisorctl start cells
 ```
 
-### Configure cells with systemd service
+#### Systemd
 
-Create new file /etc/systemd/system/cells.service with content:
+##### Configure
+Create and edit a file _/etc/systemd/system/cells.service_ with the following content:
 
 ```
 [Unit]
@@ -253,13 +233,15 @@ SuccessExitStatus=0
 WantedBy=multi-user.target
 ```
 
-Then enable cells service:
+Enable and start cells
 `systemctl enable cells `
 `systemctl start cells `
 
-The output of cells service can be seen via journal service
+##### Logs
 
-`journalctl -f `
+```bash
+journalctl -f cells
+```
 
 ## Troubleshooting
 
