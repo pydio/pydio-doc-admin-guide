@@ -18,20 +18,20 @@ Pydio Cells can be installed with both MySQL Server (v5.6 or higher) and MariaDB
 
 #### MySQL
 
-To install the appropriate version, you first have to configure the mysql-server installer:
+##### Repository
 
 ```bash
 wget https://repo.mysql.com/mysql-apt-config_0.8.9-1_all.deb
 sudo dpkg -i mysql-apt-config_0.8.9-1_all.deb
 ```
 
-To configure the version of MySQL Server you will use:
+To access the correct repository :
 
 - Select the `MySQL Server & Cluster` option and press `Enter`
 - Select the correct option (`mysql-5.6` or `mysql-5.7`) and press `Enter`
-- Back on the first list, select `Ok`  and press `Enter`
+- Back on the first list, select `Ok` and press `Enter`
 
-You can then install the server:
+##### Install
 
 ```bash
 sudo apt update
@@ -40,34 +40,30 @@ sudo apt install mysql-server
 
 #### MariaDB
 
-* Add the repository  
-    
-    You first need to add the MariadDB repository key and add the package repository
+##### Repository  
 
-    ##### Debian 8
+###### Debian 8
 
-    ``` bash
-    sudo apt-get install software-properties-common
-    sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xcbcb082a1bb943db
-    sudo add-apt-repository 'deb [arch=amd64,i386,ppc64el] http://www.ftp.saix.net/DB/mariadb/repo/10.1/debian jessie main'
-    ```
+``` bash
+sudo apt-get install software-properties-common
+sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xcbcb082a1bb943db
+sudo add-apt-repository 'deb [arch=amd64,i386,ppc64el] http://www.ftp.saix.net/DB/mariadb/repo/10.1/debian jessie main'
+```
 
-    ##### Debian 9
+###### Debian 9
 
-    ``` bash
-    sudo apt-get install software-properties-common
-    sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xF1656F24C74CD1D8
-    sudo add-apt-repository 'deb [arch=amd64] http://www.ftp.saix.net/DB/mariadb/repo/10.1/debian stretch main'
-    ```
+``` bash
+sudo apt-get install software-properties-common
+sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xF1656F24C74CD1D8
+sudo add-apt-repository 'deb [arch=amd64] http://www.ftp.saix.net/DB/mariadb/repo/10.1/debian stretch main'
+```
 
-* Install
+##### Install
 
-    You can now install MariaDB server with:
-
-    ``` bash
-    sudo apt update
-    sudo apt install mariadb-server
-    ```
+``` bash
+sudo apt update
+sudo apt install mariadb-server
+```
     
 #### Post install configuration
 By default, a new database will be created by the system during the installation process. You only need a user with database management permissions.
