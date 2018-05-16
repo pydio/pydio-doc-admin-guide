@@ -1,12 +1,14 @@
 _In this guide, we will take you through all the steps required for you to have Pydio Cells running on a CentOs/RHEL 7 server._
 
+## Requirements 
+
 ### Additional repos for CentOS 7.
 By default, the version of some packages such as PHP or MySQL (MariaDB) is far from current released version. Therefore, we need to use some extra repositories to get recent versions.
 
 #### EPEL release
 `sudo yum install epel-release scl-utils`
 
-##### Software collection release
+#### Software collection release
 
 CentOS: `sudo yum install centos-release-scl`
 
@@ -16,7 +18,7 @@ RedHat: `sudo yum-config-manager --enable rhel-server-rhscl-7-rpms`
 
 Currently, you can use either MySQL or MariaDB as backend for Pydio Cells.
 
-##### MySQL
+#### MySQL
 To install MySQL, first install MySQL 5.6 official community release repository.
 
 `sudo rpm -i  http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm`
@@ -34,7 +36,7 @@ sudo systemctl enable mysqld
 sudo systemctl start mysqld
 ```
 
-##### MariaDB
+#### MariaDB
 
 To install MariaDB, follow below steps
 
@@ -47,7 +49,7 @@ sudo systemctl enable rh-mariadb102-mariadb
 sudo systemctl start rh-mariadb102-mariadb
 ```
 
-##### Post install configuration
+#### Post install configuration
 
 By default, a new database will be created by the system during the installation process. You only need a user with database management permissions.
 
@@ -82,7 +84,7 @@ To temporary disable SELinux: `sudo setenforce 0`.
 
 You can also permanently disable SELinux in `/etc/selinux/config`.
 
-## PHP-FPM
+### PHP-FPM
 
 Install PHP-FPM and some mandatory extensions. In this example, we use PHP version 7.1. However, you can use 7.0 or 7.2 instead.
 
@@ -116,7 +118,7 @@ sudo systemctl enable rh-php71-php-fpm
 sudo systemctl start rh-php71-php-fpm
 ```
 
-## Installation and configuration of Pydio Cells
+## Installation and configuration
 
 After having installed both php-fpm and database services, you can now install and configure Pydio Cells.
 
@@ -176,7 +178,7 @@ You will find all config files/data in directory home of **cells** user:
 
 **PHP files for frontend**: /home/cells/.config/pydio/cells/static/pydio
 
-## Monitoring Pydio Cells' services by Supervisord
+### Monitoring Pydio Cells' services by Supervisord
 
 - Install supervisor: `yum install supervisor`
 - Create a new file /etc/supervisord.d/cell.ini with following content:
@@ -224,7 +226,7 @@ To watch the log output, you can use this command:
 tail -f /home/cells/.config/pydio/cells/logs/cells.out
 ```
 
-## Configure cells with systemd service
+### Configure cells with systemd service
 
 Create new file /etc/systemd/system/cells.service with content:
 
@@ -273,4 +275,3 @@ If, after a successful installation and when you try to navigate to the main app
 > Access denied.
 
 Insure you have modified SELinux to be in permissive mode.  
-
