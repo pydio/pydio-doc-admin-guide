@@ -58,12 +58,14 @@ Here is a complete step by step example to illustrate the use of this feature.
 Let's say for instance that you are configuring Pydio Cells for an enterprise and that you want to give to each employee an access to her own payslips.
 
 First you have to:
+
 - create a (encrypted) datasource that point to a secure storage, here we will name it: `administrativeDocs`
-- create a workspace called `Admin Docs` that will use to this datasource
+- create a workspace called `Admin Docs` that will use this datasource
 - give access to this workspace only to the _"Accounting"_ and _"Management"_ groups  
 - create a subfolder named `Payslips` in this workspace
 
 Then you can:
+
 - create a new rule by clicking on the `+ DYNAMIC NODE` button that is in the top right corner of the page.
 - name it `Payslip folders` for instance
 - edit the default path using: `DataSources.administrativeDocs + "/Payslips/" + User.Name;`
