@@ -2,10 +2,10 @@ _This guide describes the steps required to have Pydio Cells running on a CentOs
 
 [:image-popup:1_installation_guides/logos-os/logo-centos.png]
 
-## Requirements 
+## Prerequisites 
 
-### Additional repos for CentOS 7.
-By default, the version of some packages such as PHP or MySQL (MariaDB) is far from current released version. Therefore, we need to use some extra repositories to get recent versions.
+### Repositories
+The version of packages such as PHP or MySQL (MariaDB) is outdated by default. We need to use extra repositories with more recent versions.
 
 #### EPEL release
 ```bash
@@ -68,17 +68,6 @@ GRANT ALL PRIVILEGES ON cells.* to 'cells'@'localhost';
 FLUSH PRIVILEGES;
 ```
 
-### Creation of dedicated system account for Pydio Cells
-It's highly recommend to run Pydio Cells with a dedicated user.
-
-In this guide, we use **cells** and its home directory **/home/cells**.
-
-In order to create a new user and its home directory, execute this command:
-
-```sh
-sudo useradd -m cells
-```
-
 ### SELinux
 There is no available configuration of SELinux for Pydio Cells. Please make sure that SELinux is disabled or running in permissive mode.
 
@@ -117,10 +106,25 @@ sudo systemctl enable rh-php71-php-fpm
 sudo systemctl start rh-php71-php-fpm
 ```
 
-## Installation and configuration
-Log in or switch to **cells** user. 
+### Dedicated User
+It's highly recommend to run Pydio Cells with a dedicated user.
+
+In this guide, we use **cells** and its home directory **/home/cells**.
+
+In order to create a new user and its home directory execute this command:
+
+```sh
+sudo useradd -m cells
+```
+
+Switch to this user to run the installation
+
 ```bash
 su - cells
+```
+
+## Installation and configuration
+```bash
 wget https://download.pydio.com/pub/cells/release/1.0.0/linux-amd64/cells
 chmod u+x cells
 ```
