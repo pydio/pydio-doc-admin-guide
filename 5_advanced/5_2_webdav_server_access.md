@@ -1,18 +1,46 @@
-In this chapter we will see how you can use the webdav protocol along side pydio to access your files from other means.
+In this section, we see how to use the webdav protocol alongside Pydio Cells various client interfaces to access your files.
 
 ### Configure and use webdav Access
 
-With Pydio Cells webdav is now by default integrated, you can now access it through `<the-address-of- your-pydio>/dav/` and then you will be asked to log in using your pydio login and password, we will give you examples to give you a clear picture of the principle.
+Webdav is integrated out of the box. You can now access it through at the following address: `<the-address-of- your-pydio>/dav/`. You then have to log in using your credentials.
 
-For instance i have pydio installed on a server and i access it through `192.168.0.1:8080`, then to access the webdav i will have to use the following `http(s)://192.168.0.1:8080/dav/`,
-the same goes for domain names my pydio's domain name is for instance `my_pydio.net` then use `http(s)://my_pydio.net/dav/`.
+For instance:
 
-*Be advised that webdav is not a sync client, therefore if you don't have access to the server you will not be able to interact with it proceed with caution.*
+_I have Pydio Cells installed on a server. I access it at `192.168.0.1:8080`._: to access the webdav, use the following address `http(s)://192.168.0.1:8080/dav/`.  
 
-### Using webdav with the integrated file browsers of linux, mac and windows machines.
+With domain names, it goes the same: if your pydio's domain name is `example.com` then use `http(s)://example.com/dav/`.
 
-* **For MacOS** : do the following **go to your finder > right click > connect to a server** and then you will have a menu displaying, add your address like the examples above `http://192.168.0.1:8080/dav/` after that you will be prompted to put in your login informations, you can now access to your files located in your pydio server through the macos finder, it is mounted as a remote disk so if you the connection is lost you also loose your ability to see/interact with the finder.
+*Be advised that webdav is not a sync client, therefore if you don't have access to the server, you will not be able to interact with it. Proceed with caution.*
 
-* **For ubuntu(linux users)** : for ubuntu users or other linux users you can use nautilus the file manager, and as seen in this screenshot (ubuntu 18) if you click on other locations, you will have a field on the bottom allowing you to put the address of the webdav for instance `http://192.168.0.1:8080/dav/` after that you'll be prompted for login and password and you're good to go.
+### Using webdav with integrated file browsers
 
-* **Windows** :  For windows 10 users go to **This pc** on top you will have a menu **Add a network connection** then put the informations of your webdav connection, when you are finishied with that on the top menu go to **Map a network drive** then choose a letter and the drive which will be the network one that you added previously and it's done you can now browse and use it as you wish.
+#### MacOS
+
+Do the following: **go to your finder > right click > connect to a server**.
+
+In the menu that pops up, add your address like in the examples above, for instance: `http://192.168.0.1:8080/dav/`
+
+You are then prompted to put in your login informations.
+
+You can now access to your files located in your pydio server through the macos finder. It is mounted as a remote disk: if you the connection is lost you also loose your ability to see/interact with the finder.
+
+#### Ubuntu (Linux users)
+
+Ubuntu or other linux users can use the Nautilus file manager.
+
+As seen in the below screenshot (ubuntu 18), if you click on `Other locations`, you open a field on the bottom allowing you to enter the address of the webdav.  
+For instance: `http://192.168.0.1:8080/dav/`. You are then prompted for login and password and you are good to go.
+
+#### Windows 
+
+Windows 10 users must:
+- Go to **This pc** 
+- On the top part, click on **Add a network connection** 
+- Put the information of your webdav connection
+
+Once you have done this:
+
+- go in the top menu to **Map a network drive** 
+- choose a letter and the network drive that you previously added
+   
+It's done. You can now browse and use it as you wish.

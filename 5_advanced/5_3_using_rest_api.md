@@ -1,17 +1,17 @@
-### Using the rest API
 
-This document will guide you through a quick start with a REST API usig CURL
+This document guides you through a quick start with a REST API using CURL.
 
-#### Requirements
+## Requirements
 
-The API_KEY and API_SECRET are required to perform any request.They can be found in "**Configs Backend**" in the admin settings.
+The API_KEY and API_SECRET are required to perform any request. They can be found in "**Configs Backend**" in the admin settings.
 
+### Retrieving an authentication token
 
-#### Retrieving an authentication token
+In addition of the API and SECRET, most of the request require an authentication token. 
 
-In addition of the API and SECRET most of the request required an authentication token. here is the command to get anauthentication token:
+To get an authentication token via the command line, execute:
 
-``` bash
+```sh
 curl -X POST '<URL>/auth/dex/token' \
 -u <API_KEY>:<APISECRET> \
 -H 'Cache-Control: no-cache' \
@@ -19,7 +19,7 @@ curl -X POST '<URL>/auth/dex/token' \
 -d 'grant_type=password&username=<USER>&password=<PASSWORD>&scope=email%20profile%20pydio&nonce=<NONCE>'
 ```
 
-with
+where:
 
 - **API_KEY**: The API access Key generated at the install
 - **API_SECRET**: The API secret also generated at the install
@@ -28,9 +28,9 @@ with
 - **PASSWORD**: The user password
 - **NONCE**: a random string
 
-and it returns a JSON response similar to this:
+It returns a JSON response similar to this:
 
-``` JSON
+```JSON
 {
     "access_token":     "base64_content",
     "token_type":       "bearer",
@@ -40,16 +40,15 @@ and it returns a JSON response similar to this:
 }
 ```
 
+### Send request using the authentication token
 
-#### Send request using the authentication token
+We now have an authentication token, let us make some example calls.
 
-Now we have a authentication token can do some expamples.
-
-The rest API reference can be found int he admin Panel in the **ALL PLUGINS** section. And if we want to get the current authenticated user info, we can check what the API references tells us:
+The REST API reference can be found in the admin Panel in the **ALL PLUGINS** section. So, let's say that we want to get the current authenticated user info, we can check what the API references tells us:
 
 [:image-popup:5_advanced/rest_user_service_get_ref.png]
 
-So to get the information about the current authenticated user we can use this command:
+To get the information about the current authenticated user we can use this command:
 
 ``` Bash
 curl -X GET \
@@ -58,6 +57,7 @@ curl -X GET \
   -H 'Authorization: Bearer <TOKEN>' \
   -H 'Cache-Control: no-cache'
 ```
+
 with
 
 - **API_KEY**: The API access Key generated at the install
