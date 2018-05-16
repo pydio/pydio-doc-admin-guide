@@ -13,7 +13,7 @@ Mailer engine  | What type of engine you're going to use to send the mails you w
 
 Depending on the engine you have chosen, you see one of the following form:
 
-#### 1. **SMTP Server**
+#### 1. SMTP Server
 
 Field | Description
 --- | ---
@@ -23,14 +23,16 @@ Connection User  | The username of the address used to connect to this SMTP serv
 Connection Password  | password of the user above
 Queue Type  |  Right now do not modify this field.
 
-#### 2. **Sendmail**
+#### 2. Sendmail
 
 In order to use sendmail:
+
 - Make sure that you have installed and configured it on your server
 - (Depending on which version you are using), make also sure that the `/usr/bin/sendmail` path is correct.
 
-#### 3. **Send Grid**
+#### 3. Send Grid
 
 To use sendgrid, you only have to:
+
 - Retrieve your specific **API key** 
 - Put it in the corresponding field.

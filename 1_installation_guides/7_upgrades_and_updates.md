@@ -10,7 +10,7 @@ To perform the in-app upgrade:
 
 - Go to **Backend > Upgrade** 
 - Click on `Check now`
-- If there is any update avaiable it appears.
+- If there is any update available, it appears in the list.
 - If more than one version is available, select the version you want
 - The application automatically upgrades, following these steps: 
    - Download the selected binary
@@ -24,4 +24,4 @@ To perform the in-app upgrade:
 
 You can select the channel in which you want to get the upgrades. By default, use the **stable** channel that only publishes carefully tested and non breaking updates. 
 
-The **nightly** channel publishes updates more often with the latest version of the code but with higher risks of failure or systems errors. Use it with caution and only on non-production facig systems.
+The **nightly** channel publishes updates more often with the latest version of the code but with higher risks of failure or systems errors. Use it with caution and only on non-production facing systems.

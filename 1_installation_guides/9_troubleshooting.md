@@ -1,8 +1,6 @@
 In this section, we gather known installation problems with strategies to fix them.
 
-### Troubleshooting
-
-#### Php-fpm
+### Php-fpm
 
 The most common issue is that you did not start the php-fpm service.
 
@@ -14,7 +12,7 @@ One common issue is that you did not use and therefore configured php-fpm to use
 
 * Change the `listen.owner=` or `listen.group=` located in `<php-fpm path>/pool.d/www.conf` for the UNIX socket users.
 
-#### Progress during  browser install
+### Progress during browser install
 
 - No progress appears during install
 

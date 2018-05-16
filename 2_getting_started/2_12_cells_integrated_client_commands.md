@@ -56,11 +56,13 @@ Use "./cells [command] --help" for more information about a command.
 
 **Launch the installation process** (and optionnaly completely go through it, with thus no need for a graphical interface to install Pydio)
 
-`./cells install`
+```sh
+./cells install
+```
 
 **Start and the server** or a given service:
 
-```
+```sh
 # For instance, to enable debug mode
 ./cells start --log debug
 
@@ -73,11 +75,13 @@ Use "./cells [command] --help" for more information about a command.
 
 **Display Configuration** of the running instance.
 
-`./cells config list`
+```sh
+./cells config list
+```
 
-That is among others handy to retrieve the default credential used by the front end to communicate with the backend.
+That is handy to retrieve the default credential used by the front end to communicate with the backend.
 
-**List Services**: Pydio Cells is built following principles of the Micro Service architecture, having each part of the application communicating with the rest via messages and auto discovery using a registry. To see the currently running services, use the 'list' command: 
+**List Services**: Pydio Cells is built following principles of the Micro Service architecture, having each part of the application communicating with the rest via messages and auto discovery using a registry (see the [overall architecture section](/en/docs/cells/v1/pydio-cells-internals) to get a better understanding). To list the currently registered services and their respective status, use the 'list' command: 
 
 ```
 $ ./cells list
@@ -109,6 +113,4 @@ $ ./cells list
 
 ```
 
-You can access a real time list of the services known by the application and there status.
-
-For additional information, we strongly encourage you to refer to the manual page that can be found in-line when using the tool: `./cells --help`
+For additional information, we strongly encourage you to refer to the manual page that can be found in-line when using the tool: `./cells --help`.
