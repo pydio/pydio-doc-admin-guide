@@ -35,7 +35,7 @@ At the moment Pydio Cells supports:
 
 ### Networking
 
-Pydio Cells webserver may be bound to any port that suits your security rule. However, if you need to set it on the standard HTTP (**80**) and HTTPS (**443**) ports, see the following [os-specific sections](/en/docs/cells/v1/os-specific-guides) to configure the service properly.
+Pydio Cells webserver may be bound to any port that suits your security rule. However if you need to set it on the standard HTTP (**80**) and HTTPS (**443**) ports, please refer to the following [os-specific sections](/en/docs/cells/v1/os-specific-guides).
 
 ### Cells Binary
 
