@@ -33,15 +33,13 @@ Install MySQL 5.6 official community release repository.
 ```bash
 sudo rpm -i http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm
 sudo yum update
-```
 
-You must then
-```bash
 # install mysql-community-server package
 sudo yum install mysql-community-server
 
 # Set mysqld to start after reboot
 sudo systemctl enable mysqld
+
 # start the service now
 sudo systemctl start mysqld
 ```
@@ -59,12 +57,9 @@ sudo systemctl start rh-mariadb102-mariadb
 ```
 
 #### Post install configuration
-
 By default, a new database will be created by the system during the installation process. You only need a user with database management permissions.
 
-If you would rather do it manually, you may create a dedicated user and an empty database. To do so, first go to MySQL mode: `sudo mysql -u root`.
-
-Then execute following queries:
+If you would rather do it manually, you may create a dedicated user and an empty database by executing the following SQL queries :
 
 ```SQL
 CREATE USER 'cells'@'localhost' IDENTIFIED BY '<your-password-here>';
