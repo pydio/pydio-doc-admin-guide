@@ -1,24 +1,27 @@
-### Using CLI
 
 Pydio Cells comes out-of-the-box with a powerful CLI (Command Line Interface) to control the services, integrate with the host system and perform admin tasks with no need for a graphical interface.
 
 For instance, you can simply launch the server from a terminal by typing:  
-`$ ./cells start`  
-or for Enterprise edition  
-`$ ./cells-enterprise start`  
 
-_Note: it is not the correct way of launching the application when running in production mode, as it will exit when closing the terminal._
+```sh
+# Home Edition
+$ ./cells start  
+# Enterprise edition  
+$ ./cells-enterprise start
+```  
+
+_NOTE: it is not the correct way of launching the application when running in production mode, as it will exit when closing the terminal._
 
 In the rest of this section, when showing terminal commands, we will assume that:
 
-- You are in the folder as the binary file _or_ that the application has been installed in the `PATH` of your operating system.
+- You are in the same folder as the binary file _or_  the application has been installed in the `PATH` of your Operating System.
 - You are using Pydio Cells Home Edition. For this matters, both versions are pretty the same, just replace `cells` by `cells-enterprise`.
 
-Pydio Cells comes also with an extended command line tools, `cells-ctl` that is a simple but full fledge client offering most of the important end-user features that can be found in the web interface. You will find more information about this tools in the corresponding section of the [Advanced](/en/docs/cells/v1/advanced) chapter.
+Pydio Cells comes also with an extended command line tool, `cells-ctl` that is a simple but full fledge client offering most of the important end-user features that can be found in the web interface. You will find more information about this tools in the corresponding section of the [Advanced chapter](/en/docs/cells/v1/advanced).
 
-### Commands List
+### Available Commands
 
-```
+```sh
 $ ./cells --help
 
 Usage:
@@ -49,6 +52,7 @@ Use "./cells [command] --help" for more information about a command.
 
 ```
 
+### A few highlights
 
 **Launch the installation process** (and optionnaly completely go through it, with thus no need for a graphical interface to install Pydio)
 
@@ -107,4 +111,4 @@ $ ./cells list
 
 You can access a real time list of the services known by the application and there status.
 
-For additional information, we strongly encourage you to refer to the manual page that can be found in-line: `./cells --help`
+For additional information, we strongly encourage you to refer to the manual page that can be found in-line when using the tool: `./cells --help`

@@ -1,29 +1,30 @@
-### Smartphone Apps
 
-Pydio is available for iOS and Android.
+Pydio Cells client applications are available for iOS and Android devices.
 
-The mobile applications allow you to browse and preview your files.
+These mobile applications allow you to browse and preview your files.
 
-Depending on your server's configuration you can also:
-- Synchronise files (Keep them offline)
-- Force users to have a pin code
-- Prevent users from saving the password
-- Use a Qrcode to log in easily
+Depending on your server configuration, you can also:
 
-Both application use aggressive caching techniques to minize network traffic. The Android app is especially careful with data usage and does not by default load thumbnails or allow transfers without wifi, everything is configurable.
+- Synchronise files (Keep them offline)  
+- Force users to use a pin code  
+- Prevent users from saving the password  
+- Use a QR code to log in easily  
+
+Both application use aggressive caching techniques to minimize network traffic. The Android app is especially careful with data usage and does not by default load thumbnails or allow transfer without WLAN.  
+Yet, everything is configurable.
 
 Here are the links to download each application:
 
-[Android application](https://play.google.com/store/apps/details?id=com.pydio.android.pydioPro)
+- [Android application](https://play.google.com/store/apps/details?id=com.pydio.android.pydioPro)
+- [iOS application](https://itunes.apple.com/us/app/pydiopro/id1109419882)
 
-[iOS application](https://itunes.apple.com/us/app/pydiopro/id1109419882)
+### Connect to a running Pydio server.
 
-Now, we need to connect the application to the Pydio server.
-
-To do that simply start the application and fill the requested fields:
+Start the application and fill in the requested fields:
 
 [:image-popup:2_getting_started/ios_settings.jpg]
 
 If you see this page, congratulations, you are now connected!
+
 [:image-popup:2_getting_started/good_to_go.jpg]
 
