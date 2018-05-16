@@ -44,18 +44,19 @@ Visibility can be set up by end-users via their Address Book.
 
 For users :
 
-[:image-popup:4_access_control_and_security/edit_visibility_user.png]
+[:image-popup:4_access_control_and_security/edit_visibility_user.png]  
+
 [:image-popup:4_access_control_and_security/edit_visibility_popup_user.png]
 
 For teams :
 
-[:image-popup:4_access_control_and_security/edit_visibility_team.png]
+[:image-popup:4_access_control_and_security/edit_visibility_team.png]  
+
 [:image-popup:4_access_control_and_security/edit_visibility_popup_team.png]
 
 #### Links
 
 Managing links visibility will allow the users to let the link they create appear on the files, when inside a workspace shared with other users.
-
 
 [:image-popup:4_access_control_and_security/shared_link_visibility.png]
 
