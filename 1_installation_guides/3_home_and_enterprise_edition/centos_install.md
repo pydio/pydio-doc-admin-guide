@@ -69,10 +69,9 @@ FLUSH PRIVILEGES;
 ```
 
 ### Creation of dedicated system account for Pydio Cells
+It's highly recommend to run Pydio Cells with a dedicated user.
 
-It's highly recommend to run Pydio Cells with a dedicated `cells` user.
-
-In this how-to, we use **cells** and its home directory **/home/cells**.
+In this guide, we use **cells** and its home directory **/home/cells**.
 
 In order to create a new user and its home directory, execute this command:
 
@@ -81,7 +80,6 @@ sudo useradd -m cells
 ```
 
 ### SELinux
-
 There is no available configuration of SELinux for Pydio Cells. Please make sure that SELinux is disabled or running in permissive mode.
 
 To temporary disable SELinux: `sudo setenforce 0`.
@@ -89,21 +87,18 @@ To temporary disable SELinux: `sudo setenforce 0`.
 You can also permanently disable SELinux in `/etc/selinux/config`.
 
 ### PHP-FPM
+Install PHP-FPM and the required extensions. In this example we use PHP version 7.1, but you can use any version >= 5.5.9.
 
-Install PHP-FPM and some mandatory extensions. In this example, we use PHP version 7.1. However, you can use 7.0 or 7.2 instead.
-
-```sh
+```bash
 sudo yum install rh-php71-php-fpm rh-php71-php-common rh-php71-php-intl rh-php71-php-gd rh-php71-php-mbstring rh-php71-php-xml rh-php71-php-curl rh-php71-php-opcache
 ```
 
-In next step, we change default Unix **user** for the PHP-FPM worker pool from **apache** to **cells**.
+The default **user** for the PHP-FPM worker pool needs to be changed from **apache** to **cells**. Change the port the service is listening to if required.
 
-By default, this service is listening on 9000 port, and we could change it here too if necessary.
-
-```
+```bash
 sudo vi /etc/opt/rh/rh-php71/php-fpm.d/www.conf
 
-; ... some is omitted
+; ... omitted
 
 ; Unix user/group of processes
 ; RPM: apache user chosen to provide access to the same directories as httpd
@@ -117,29 +112,29 @@ listen = 127.0.0.1:9000
 
 Then enable and start the PHP-FPM service:
 
-```sh
+```bash
 sudo systemctl enable rh-php71-php-fpm
 sudo systemctl start rh-php71-php-fpm
 ```
 
 ## Installation and configuration
-
-After having installed both php-fpm and database services, you can now install and configure Pydio Cells.
-
 Log in or switch to **cells** user. 
-
-```
-wget https://download.pydio.com/pub/cells/release/0.9.2/linux-amd64/cells
+```bash
+su - cells
+wget https://download.pydio.com/pub/cells/release/1.0.0/linux-amd64/cells
 chmod u+x cells
 ```
 
-### Setup Pydio Cells
+If you need to use the standard http (80) or https (443) port, please execute this command:
+```bash
+setcap 'cap_net_bind_service=+ep' cells
+```
 
-You have two ways to setup Pydio Cells after launching the first command: using the Command Line or via the web interface. In this how-to, we use the web interface to setup.
+### Setup Pydio Cells
+You have two ways to setup Pydio Cells after launching the first command: using the Command Line or via the Web Interface. In this guide, we use the web interface.
 
 ```
-[root@localhost ~]# su - cells
-[cells@localhost ~]$ ./cells install
+$ ./cells install
 Welcome to Pydio Cells installation
 Pydio Cells services will be configured to run on this machine. Make sure to prepare the following data
  - IPs and ports for binding the webserver to outside world
@@ -154,8 +149,6 @@ Use the arrow keys to navigate: ↓ ↑ → ←
 ```
 Select url and port for **Cells** service.
 
-> Note: Because **Cells** is launched by an non-root user, so you cannot use any ports less than 1024 in CentOS. In order to be able to open 443 or 80 port, please execute this command: `setcap 'cap_net_bind_service=+ep' /home/pydio/cells`
-
 ```
 ✔ Browser-based (requires a browser access)
 Use the arrow keys to navigate: ↓ ↑ → ←
@@ -166,7 +159,7 @@ Use the arrow keys to navigate: ↓ ↑ → ←
     http://0.0.0.0:8080
 ```
 
-Now, you can use a web browser with this address to continue with the setup. At the end, the page will automatically reload and boom ... **Pydio Cells** is working.
+Using a web browser, go to this address and continue with the setup. At the end, the page will automatically reload and boom ... **Pydio Cells** is working.
 
 Next time, please use this command to start pydio:
 
