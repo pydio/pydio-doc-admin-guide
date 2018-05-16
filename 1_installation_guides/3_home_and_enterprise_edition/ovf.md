@@ -10,13 +10,13 @@ A md5 file is also available on the same location for integrity verification.
 
 You will find out some text file accompanied with zip file:
 
-**EULA**: End-user license aggrement
-**Import_to_Hyper_V.txt**: instructions for importing vm image into Hyper-V system
-**Import_to_VMWare_System.txt**: some notes for importing vm image into different version of VMWare system
+- **EULA**: End-user license aggrement
+- **Import_to_Hyper_V.txt**: instructions for importing vm image into Hyper-V system
+- **Import_to_VMWare_System.txt**: some notes for importing vm image into different version of VMWare system.
 
 In this guide, virtualbox is use for importing ovf file.
 
-Virtual Machine requirements
+Virtual Machine requirements:
 
 - RAM : 4G
 - CPU : 2 vCores
@@ -25,21 +25,21 @@ Virtual Machine requirements
 
 ## 2 Predefined accounts
 
-There are two pre-build accounts accessible via ssh
-username: *root*
-password: *PydioVAPP*
+There are two pre-build accounts accessible via ssh:
+username: *root*  
+password: *PydioVAPP*  
 
-username: *pydio*
-password: *PydioVAPP*
+username: *pydio*  
+password: *PydioVAPP*  
 
-There are two account for mysql
-username: *root*
-password:
+There are two account for mysql  
+username: *root*  
+password:  
 
-username: *pydio@localhost*
-password:
+username: *pydio@localhost*  
+password:  
 
-A predefined database is *cells*
+A predefined database is *cells*.
 
 
 ## 3 Setup and config at the first time
@@ -62,22 +62,30 @@ At this step, you can login to Cells-Enterprise with credential you've enter dur
 
 Manually start/stop **Cell-Enterprise**
 
-`systemctl start cells`
-`systemctl stop cells`
+
+systemctl start cells
+systemctl stop cells
+```
 
 You can consult the output of **Cell-Enterprise** service by using command:
 
-`journalctl -f `
+```sh
+journalctl -f
+```
 
 start/stop some others service:
 
 MariaDB: 
-`systemctl start rh-mariadb102-mariadb `
-`systemctl stop rh-mariadb102-mariadb `
+```sh
+systemctl start rh-mariadb102-mariadb
+systemctl stop rh-mariadb102-mariadb
+```
 
 PHP-FPM:
-`systemctl start rh-php71-php-fpm`
-`systemctl stop rh-php71-php-fpm`
+```sh
+systemctl start rh-php71-php-fpm
+systemctl stop rh-php71-php-fpm
+```
 
 #### 4.2 firewalld service
 
