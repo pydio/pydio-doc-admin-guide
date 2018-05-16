@@ -239,7 +239,9 @@ Enable and start cells
 
 ##### Logs
 
-`journalctl -f cells`
+```bash
+journalctl -f cells
+```
 
 ## Troubleshooting
 
