@@ -5,7 +5,6 @@ In this chapter, we will first guide you throught the process of creating a new 
 In Pydio Cells to create a datasource go to **Data Management > Storage**
 then on the top right of the screen press **+DATASOURCE** now you will have to fill fields such as :
 
-
 [:image-popup:2_getting_started/datasource_interface.png]
 
 * **DataSource Identifier** : the name of your datasource how it's identified within Pydio internally.
@@ -19,7 +18,6 @@ then on the top right of the screen press **+DATASOURCE** now you will have to f
 * **Versioning Policy**: How files version history will be kept. Please read the next page for more info. Leaving this empty does not enable versioning on this datasource.
 
 * **Encryption**: Whether data is encrypted at rest on this datasource. Warning, the additionnal security brought by encryption comes at the cost of a higher CPU load (encryption and decryption require computation) and also a higher risk of loosing data in the case the decryption key get lost. Please refer to the corresponding [section](/en/docs/cells/v1/using-encryption) of the Security chapter to learn how to configure this feature.
-
 
 #### Filesystem Datasources
 
