@@ -14,26 +14,28 @@ Switching to 'production' mode can be done by two ways:
 
 #### Browsing the logs
 
-Once activated, in the pydio cells interface you can find the logs under **Backend > Logs** :
+Once activated, you can find the logs in your admin dashboard under **Backend > Logs**:
 
 [:image-popup:2_getting_started/server_logs.png]
 
-You can read them as the following :
-1. **Date** : the at time when the event happened
-2. **I.P** : the ip if it happened elsewhere (could be a user etc...)
-3. **User** : the username of whom it happened to
-4. **Service** : the service that is handling it
-5. **Message** : what happened with the service concerned (such as stopping, restarting, etc...)
+You can read them as the following:
 
-*You can left click any error to have a detailed windows*
+1. **Date**: the at time when the event happened  
+2. **I.P**: the ip if it happened elsewhere (could be a user etc...)  
+3. **User** the username of whom it happened to  
+4. **Service**: the service that is handling it  
+5. **Message**: what happened with the service concerned (such as stopping, restarting, etc...)  
 
-You can filter what you want to display by choosing the type of filter first then you fill the filed that are just on it's left (*Filter Logs*), to do so click on the **inverted triangle** then choose the type :
+*You can left click on any error to popup a detailed windows*
 
-* **Full-text search** : you can filter the result by anything such as usernames, etc...
+You can directly search the logs by using the search field in the top right corner.
 
-* **Pick one day** : pretty straightforward you will have a calendar displaying, allowing you to choose the day of the logs.
+To do advanced filtering, click on the **inverted triangle** to choose a filter type and enter the your parameters in the field that is on its left.
 
-* **Time Period** : you can choose more than one day by putting **from** this day **to** that day.
+Filter types are:
+- **Full-text search** (selected by default): filter by anything such as usernames, etc...
+- **Pick one day**: pretty straightforward, choose a date day to see log for this day.
+- **Time Period** : you can choose more than one day by putting **from** this day **to** that day.
 
 #### Logs location on the server
 
