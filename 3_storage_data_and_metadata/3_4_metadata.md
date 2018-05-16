@@ -4,7 +4,7 @@ Metadata namespaces are predefined by the Admin and their value can be freely ad
 
 Metadata can be used to enrich files informations. They are visible in the right panel that appear when a file is selected. 
 
-[!image-popup:3_storage_data_and_metadata/file_list_right_panel.png]
+[:image-popup:3_storage_data_and_metadata/file_list_right_panel.png]
 
 You can define almost any type of files metadata and specify for example the order they appear and whether they can be used as search criteria.
 

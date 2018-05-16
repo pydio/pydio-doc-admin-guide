@@ -20,7 +20,7 @@ To create a workspace go to **Data Management > Workspaces**, then click on **+W
 
 Then this menu will appear :
 
-[!image-popup:2_getting_started/create_workspace.png]
+[:image-popup:2_getting_started/create_workspace.png]
 
 
 
@@ -32,7 +32,7 @@ Then this menu will appear :
 
 After its creation, you can still modify a workspace by going to **Data Management > Workspaces** and clicking on the workspace of your choice.
 
-[!image-popup:2_getting_started/modify_workspace.png]
+[:image-popup:2_getting_started/modify_workspace.png]
 
 ### Providing access rights to your workspace
 

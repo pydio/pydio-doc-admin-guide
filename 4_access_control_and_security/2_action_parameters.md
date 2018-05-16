@@ -6,13 +6,13 @@ Basically actions and parameters if chosen correctly can save you lot's of time 
 
 To do so go and edit your `user/group/role` and then choose one of the following :
 
-[!image-popup:4_access_control_and_security/action_parameters_menu.png]
+[:image-popup:4_access_control_and_security/action_parameters_menu.png]
 
 for example let's choose `application parameters`, and click on the **+** on the top right.
 
 Now you will have a menu displaying, the interface will look like this.
 
-[!image-popup:4_access_control_and_security/action_parameters_interface.png]
+[:image-popup:4_access_control_and_security/action_parameters_interface.png]
 
 it's a list of every actions and parameters that you can configure.
 
@@ -23,7 +23,7 @@ With actions, you can either restrict particular actions or if it was already re
 As seen in this screen capture,
 
 
-[!image-popup:4_access_control_and_security/action_parameters_example.png]
+[:image-popup:4_access_control_and_security/action_parameters_example.png]
 ```
 for instance in this screen i wanted the user to not have the ability to create cells
 ```
