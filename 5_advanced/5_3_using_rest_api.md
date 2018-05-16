@@ -19,7 +19,16 @@ curl -X POST '<URL>/auth/dex/token' \
 -d 'grant_type=password&username=<USER>&password=<PASSWORD>&scope=email%20profile%20pydio&nonce=<NONCE>'
 ```
 
-this returns a JSON response similar to this:
+with
+
+- **API_KEY**: The API access Key generated at the install
+- **API_SECRET**: The API secret also generated at the install
+- **URL**: The URL of the server
+- **USER**: The name of the user to authenticate
+- **PASSWORD**: The user password
+- **NONCE**: a random string
+
+and it returns a JSON response similar to this:
 
 ``` JSON
 {
@@ -31,14 +40,6 @@ this returns a JSON response similar to this:
 }
 ```
 
-with
-
-- **API_KEY**: The API access Key generated at the install
-- **API_SECRET**: The API secret also generated at the install
-- **URL**: The URL of the server
-- **USER**: The name of the user to authenticate
-- **PASSWORD**: The user password
-- **NONCE**: a random string
 
 #### Send request using the authentication token
 
