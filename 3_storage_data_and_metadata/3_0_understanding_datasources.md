@@ -12,6 +12,8 @@ Each datasource is virtually composed 3 micro-services :
 * **An Index service** : Stores the data state and stands as the only source of truth for request on data state. This uses a highly optimized SQL model for storing/retrieving hierarchical data information (using nested sets).
 * **A Synchronizer** : Receives events from the storage and maintains the index synchronized 
 
+[:image-popup:3_storage_data_and_metadata/architecture_datasources.png]
+
 The unidirectional synchronizer is the key here : when any change is applied to the storage (e.g. a user uploads an image), the sync will receive an event only once this operation is finished, and then update the index accordingly. This event will also be forwarded to other services like the websocket service (for updating user interface), the scheduler (for computing image thumbnail), and so on.
 
 By design, when defining Object storage e.g. on a folder **folder-name** on the server, it will start on the **parent** folder and expose the folder **folder-name** as an S3 bucket. For this reason, if many datasources point to sibling folders, a factorization mechanism will start only one Object storage on the parent folder and expose all the children as s3 buckets. That's why we say that datasources are "virtually" composed of 3 sub-services. 
