@@ -22,8 +22,8 @@ Now, we need to connect the application to the Pydio server.
 
 To do that simply start the application and fill the requested fields:
 
-[:image-popup:2_getting_started/ios_config.jpg]
+[:image-popup:2_getting_started/ios_capture.jpg]
 
 If you see this page, congratulations, you are now connected!
-[:image-popup:2_getting_started/ios_list.jpg]
+[:image-popup:2_getting_started/ios_capture.jpg]
 
