@@ -4,20 +4,24 @@ Upgrading from Pydio 8 and below is **currently not possible** because we have c
 
 ### Upgrading Cells
 
-For any running Cells / Cells-Enterprise binary, upgrade process is a simple as replacing the old binary with the latest one and restarting the service. You can do that manually by downloading the latest binary, or by using the in-app upgrade via the Settings panel.
+On a running Cells / Cells-Enterprise system, upgrade process is as simple as replacing the old binary with the latest one and restarting the service. You can do it manually (by downloading the latest binary) or use the in-app upgrade via the `Settings` panel.
 
-Go to **Backend > Upgrade** and then click on check now, after that if there is any update avaiable it will appear. If one or more versions are available, you can select the version you want and the application will automatically upgrade itself, following the steps below: 
+To perform the in-app upgrade: 
 
-* Download the selected binary
-* Verify checksum
-* Verify crypto signature using the public key embedded in Cells, to make sure this comes from our servers.
-* Backup existing binary
-* Replace with new binary.
-
-Then you have to manually restart Cells.
+- Go to **Backend > Upgrade** 
+- Click on `Check now`
+- If there is any update avaiable it appears.
+- If more than one version is available, select the version you want
+- The application automatically upgrades, following these steps: 
+   - Download the selected binary
+   - Verify checksum
+   - Verify crypto signature using the public key embedded in Cells, to make sure this comes from our servers.
+   - Backup existing binary
+   - Replace with new binary.
+- You then have to manually restart Pydio Cells
 
 ### Update Channels
 
-You select the channel in which you want to get the upgrades. By default, use the **stable** channel that will provide you with tested and stable updates. 
+You can select the channel in which you want to get the upgrades. By default, use the **stable** channel that only publishes carefully tested and non breaking updates. 
 
-The **nightly** channel will provide regular updates but it's up to you as they might be risks involved, so use it with caution.
+The **nightly** channel publishes updates more often with the latest version of the code but with higher risks of failure or systems errors. Use it with caution and only on non-production facig systems.
