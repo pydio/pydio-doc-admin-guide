@@ -145,7 +145,9 @@ Follow the short set of instructions to finish off the Pydio Cells installation
 ### Files location
 
 **Configuration**: /home/cells/.config/pydio/cells/pydio.json
+
 **Data**: /home/cells/.config/pydio/cells/data
+
 **PHP files for frontend**: /home/cells/.config/pydio/cells/static/pydio
 
 ### Monitoring
