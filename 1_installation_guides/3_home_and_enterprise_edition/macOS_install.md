@@ -1,8 +1,10 @@
 _This guide describes the steps required to have Pydio Cells running on macOS._
 
-#### PHP
+## Requirements
 
-PHP FPM is required to run the Pydio frontend. To install, run the following commands :
+### PHP
+
+PHP FPM is required to run the Pydio frontend. To install, run the following commands:
 
 ```
 brew tap homebrew/dupes
@@ -11,8 +13,8 @@ brew tap homebrew/homebrew-php
 brew install php72 php72-intl
 ```
 
-#### Database 
-*you can skip this step if you already have a database*
+### Database 
+*you can skip this step if you already have a database.*
 
 You can use either MySQL (>= 5.6) or MariaDB as your Database Management System. Both are available in Homebrew.
 
@@ -22,7 +24,7 @@ or
 
 ## Installation
 
-#### Pydio
+### Pydio
 
 Download Pydio Cells Binary on your server/machine using the following command :
 
@@ -31,7 +33,7 @@ wget https://download.pydio.com/pub/cells/release/0.9.0/darwin-amd64/cells
 chmod +x cells
 ```
 
-#### Port 80 & 443
+### Port 80 & 443
 
 You can only use these ports if you are connected as root.
 
@@ -45,18 +47,17 @@ To prevent Apache from starting during launch, you may use :
 
 ```sudo launchctl unload -w /System/Library/LaunchDaemons/org.apache.httpd.plist```
 
-#### Database configuration
+### Database configuration
 
-In this section, we assume you have installed MySql server. Adapt the following steps to your current installation
+In this section, we assume you have installed MySql server. Adapt the following steps to your current installation.
 
 ```
 # Go to mysql mode
 sudo mysql -u root
 # Create new user and set password
-CREATE USER 'cell'@'localhost' IDENTIFIED BY 'cell';
-SET password for 'cell'@'localhost' = PASSWORD('your password goes here');
+CREATE USER 'cells'@'localhost' IDENTIFIED BY 'cells';
+SET password for 'cells'@'localhost' = PASSWORD('your password goes here');
 ```
-<a name="starting" />
 
 ## Starting with Pydio
 
@@ -68,18 +69,18 @@ Then, to launch the installer, type:
 
 A menu will appear.
 
-* **Installation mode** : you can use a browser or cli to install Pydio Cells.
+* **Installation mode** : you can use a browser or CLI to install Pydio Cells.
 
-* **bind url** : internal url for PYDIO in most common cases it's `<ip>:<port>`(example : `192.168.0.192:80`) if you are going to use SSL you should put your secure port `443` or else.
+* **Bind URL** : internal url for PYDIO in most common cases it's `<ip>:<port>`(example : `192.168.0.192:80`) if you are going to use SSL you should put your secure port `443` or else.
 
-* **external url** : used to access Pydio from outside, usually it will auto fill using the field above and should stay the same.
+* **External URL** : used to access Pydio from outside, usually it will auto fill using the field above and should stay the same.
 
-* **Choose SSL Activation mode** : You can now choose how you're going to activate your SSL, you have 2 choices.
-  * **Provide paths to certificate/key files** : if you already have a certificate/key you can use them.
-  * **Generate a self-signed certificate** : we will create a self signed certificate for you, be advised this should only be used for staging purposes.
+* **Choose SSL Activation mode** : You can now choose how you're going to activate your SSL, you have 2 choices:
+   * **Provide paths to certificate/key files** : if you already have a certificate/key you can use them.
+   * **Generate a self-signed certificate** : we will create a self signed certificate for you, be advised this should only be used for staging purposes.
 
 
-*Subsequent steps are then pretty much the same in the browser or in the CLI*
+*Subsequent steps are then pretty much the same in the browser or in the CLI.*
 
 1. **Database connection** : put your database informations.
 
@@ -94,8 +95,6 @@ If you have a warning because you're using php 5.5.9, don't worry and press next
 
 To stop Pydio you can press `ctrl + c` and then to start it again use this command
 `./cells start`.
-
-<a name="trouble" />
 
 ## Troubleshooting
 
