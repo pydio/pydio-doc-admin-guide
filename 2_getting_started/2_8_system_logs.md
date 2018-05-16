@@ -1,18 +1,18 @@
-In this chapter we are going to have a close look at the logs and where they are stored and what is stored in them.
+In this chapter, we have a closer look at the logs, where they are stored and what is stored.
 
 ### System Logs
 
-With pydio cells you have a logging system allowing you to always be informed about what's happening. The logs are storing every event happening on pydio cells such as a user creation, access, errors and more.
+With pydio cells you have a logging system allowing you to always be informed about what is happening. Logs are recording every event such as user creations, accesses, errors and more.
 
 #### Enabling logs in interface
 
-Following the standard 12-factor architecture pattern for micro services, all logs are redirected by default to the standard output. By default, the output is formatted in an apache-like format. To enable the logs collection by the dedicated Cells service, you have to switch the "production" mode in order to output logs in JSON format. This format will allow further logs aggregation by external systems like ELK (Elastic Search, Logstash, Kibana).
+Following the standard 12-factor architecture pattern for micro services, all logs are redirected by default to the standard output. By default, the output is formatted in an apache-like format. To enable the logs collection by the dedicated Pydio Cells service, you have to switch to the "production" mode: log messages are then output in JSON format. This format allows later log aggregation by external systems like ELK (Elastic Search, Logstash, Kibana).
 
 Switching to 'production' mode can be done by two ways: 
-* Setting the **PYDIO_LOGS_LEVEL** environment variable to "production": use `export PYDIO_LOGS_LEVEL=production` in the command line before starting cells
-* Passing the `--log=production` parameter to the cells start command.
+* Setting the **PYDIO_LOGS_LEVEL** environment variable to "production":  you can use `export PYDIO_LOGS_LEVEL=production` in the Command Line before starting Pydio Cells.
+* Passing the `--log=production` parameter to the Pydio Cells `start` command.
 
-#### Browsing logs
+#### Browsing the logs
 
 Once activated, in the pydio cells interface you can find the logs under **Backend > Logs** :
 
