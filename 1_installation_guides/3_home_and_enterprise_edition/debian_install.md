@@ -1,5 +1,7 @@
 
-_This guide describes the steps required to have Pydio Cells running on Debian 8 and 9._
+_This guide describes the steps required to have Pydio Cells running on Debian 8 and Debian 9._
+
+[:image-popup:1_installation_guides/logos-os/logo-debian.png]
 
 #### Downloading the binary file
 

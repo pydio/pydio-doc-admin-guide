@@ -1,4 +1,6 @@
-_In this guide, you will find all the steps required for installation and configure Cells Enterprise with pre-built vm image._
+_This guide describes the steps required to have the Pydio Cells running via an OVF disk image._
+
+[:image-popup:1_installation_guides/logos-os/logo-ovf.png]
 
 ## Download OVF Package
 

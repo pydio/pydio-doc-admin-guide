@@ -1,4 +1,6 @@
-With pydio cells we are using docker a fast deployment solution that every admin loves.
+_This guide describes the steps required to have the Pydio Cells Docker container running._
+
+[:image-popup:1_installation_guides/logos-os/logo-docker.png]
 
 ### Pydio's Cell docker image
 
