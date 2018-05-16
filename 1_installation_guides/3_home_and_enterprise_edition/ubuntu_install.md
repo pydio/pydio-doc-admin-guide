@@ -1,6 +1,8 @@
 
 _This guide describes the steps required to have Pydio Cells running on Ubuntu 14.04, 16.04 & 17.10._
 
+[:image-popup:1_installation_guides/logos-os/logo-ubuntu.png]
+
 ### Get the binary file
 
 Download the Cells Binary on your server using the following command :
