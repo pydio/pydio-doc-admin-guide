@@ -1,12 +1,14 @@
 _In this guide, we will take you through all the steps required for you to have Pydio Cells running on a CentOs/RHEL 7 server._
 
+## Requirements 
+
 ### Additional repos for CentOS 7.
 By default, the version of some packages such as PHP or MySQL (MariaDB) is far from current released version. Therefore, we need to use some extra repositories to get recent versions.
 
 #### EPEL release
 `sudo yum install epel-release scl-utils`
 
-##### Software collection release
+#### Software collection release
 
 CentOS: `sudo yum install centos-release-scl`
 
@@ -16,7 +18,7 @@ RedHat: `sudo yum-config-manager --enable rhel-server-rhscl-7-rpms`
 
 Currently, you can use either MySQL or MariaDB as backend for Pydio Cells.
 
-##### MySQL
+#### MySQL
 To install MySQL, first install MySQL 5.6 official community release repository.
 
 `sudo rpm -i  http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm`
@@ -34,7 +36,7 @@ sudo systemctl enable mysqld
 sudo systemctl start mysqld
 ```
 
-##### MariaDB
+#### MariaDB
 
 To install MariaDB, follow below steps
 
@@ -47,32 +49,32 @@ sudo systemctl enable rh-mariadb102-mariadb
 sudo systemctl start rh-mariadb102-mariadb
 ```
 
-##### Post install configuration
-It's now time to create a user and a database for Cells.
+#### Post install configuration
 
-```
-# Go to mysql mode
-sudo mysql -u root
-# Create new user and set password
-CREATE USER 'pydio'@'localhost' IDENTIFIED BY 'pydio';
-UPDATE mysql.user SET Password=PASSWORD('your-password-here') WHERE USER='pydio' AND Host='localhost';
-# Create new database
+By default, a new database will be created by the system during the installation process. You only need a user with database management permissions.
+
+If you would rather do it manually, you may create a dedicated user and an empty database. To do so, first go to MySQL mode: `sudo mysql -u root`.
+
+Then execute following queries:
+
+```SQL
+CREATE USER 'cells'@'localhost' IDENTIFIED BY '<your-password-here>';
 CREATE DATABASE cells;
-# Grant permission
-GRANT ALL PRIVILEGES ON cells.* to 'pydio'@'localhost';
-# Flush permission:
+GRANT ALL PRIVILEGES ON cells.* to 'cells'@'localhost';
 FLUSH PRIVILEGES;
 ```
 
 ### Creation of dedicated system account for Pydio Cells
 
-It's highly recommend to run Pydio Cells with a dedicated `pydio` user.
+It's highly recommend to run Pydio Cells with a dedicated `cells` user.
 
-In this how-to, we use **pydio** and its home directory **/home/pydio**.
+In this how-to, we use **cells** and its home directory **/home/cells**.
 
 In order to create a new user and its home directory, execute this command:
 
-`sudo useradd -m pydio `
+```sh
+sudo useradd -m cells
+```
 
 ### SELinux
 
@@ -82,13 +84,15 @@ To temporary disable SELinux: `sudo setenforce 0`.
 
 You can also permanently disable SELinux in `/etc/selinux/config`.
 
-## PHP-FPM
+### PHP-FPM
 
 Install PHP-FPM and some mandatory extensions. In this example, we use PHP version 7.1. However, you can use 7.0 or 7.2 instead.
 
-`sudo yum install rh-php71-php-fpm rh-php71-php-common rh-php71-php-intl rh-php71-php-gd rh-php71-php-mbstring rh-php71-php-xml rh-php71-php-curl rh-php71-php-opcache `
+```sh
+sudo yum install rh-php71-php-fpm rh-php71-php-common rh-php71-php-intl rh-php71-php-gd rh-php71-php-mbstring rh-php71-php-xml rh-php71-php-curl rh-php71-php-opcache
+```
 
-In next step, we change default Unix **user** for the PHP-FPM worker pool from **apache** to **pydio**.
+In next step, we change default Unix **user** for the PHP-FPM worker pool from **apache** to **cells**.
 
 By default, this service is listening on 9000 port, and we could change it here too if necessary.
 
@@ -100,7 +104,7 @@ sudo vi /etc/opt/rh/rh-php71/php-fpm.d/www.conf
 ; Unix user/group of processes
 ; RPM: apache user chosen to provide access to the same directories as httpd
 ; user = apache
-user = pydio
+user = cells
 ; RPM: Keep a group allowed to write in log dir.
 group = apache
 
@@ -109,29 +113,29 @@ listen = 127.0.0.1:9000
 
 Then enable and start the PHP-FPM service:
 
-```bash
+```sh
 sudo systemctl enable rh-php71-php-fpm
 sudo systemctl start rh-php71-php-fpm
 ```
 
-## Installation and configuration of Pydio Cells
+## Installation and configuration
 
 After having installed both php-fpm and database services, you can now install and configure Pydio Cells.
 
-Log in or switch to **pydio** user. 
+Log in or switch to **cells** user. 
 
 ```
 wget https://download.pydio.com/pub/cells/release/0.9.2/linux-amd64/cells
-chmod +x cells
+chmod u+x cells
 ```
 
 ### Setup Pydio Cells
 
-You have two ways to setup Pydio Cells after launching the first command: by command line or by web. In this how-to, we use the web interface to setup.
+You have two ways to setup Pydio Cells after launching the first command: using the Command Line or via the web interface. In this how-to, we use the web interface to setup.
 
 ```
-[root@localhost ~]# su - pydio
-[pydio@localhost ~]$ ./cells install
+[root@localhost ~]# su - cells
+[cells@localhost ~]$ ./cells install
 Welcome to Pydio Cells installation
 Pydio Cells services will be configured to run on this machine. Make sure to prepare the following data
  - IPs and ports for binding the webserver to outside world
@@ -158,51 +162,51 @@ Use the arrow keys to navigate: ↓ ↑ → ←
     http://0.0.0.0:8080
 ```
 
-Now you can use a web browser with this address to continue with the setup. At the end, the page will automatically reload and boom ... **Cells** is working.
+Now, you can use a web browser with this address to continue with the setup. At the end, the page will automatically reload and boom ... **Pydio Cells** is working.
 
 Next time, please use this command to start pydio:
 
-`./pydio start `
+`./cells start `
 
 ### Data and configuration files of Pydio Cells
 
-You will find all config files/data in directory home of **pydio** user:
+You will find all config files/data in directory home of **cells** user:
 
-**Configuration of all services of** **Cells**: /home/pydio/.config/pydio/cells/pydio.json
+**Configuration of all services of** **Cells**: /home/cells/.config/pydio/cells/pydio.json
 
-**Data**: /home/pydio/.config/pydio/cells/data
+**Data**: /home/cells/.config/pydio/cells/data
 
-**PHP files for frontend**: /home/pydio/.config/pydio/cells/static/pydio
+**PHP files for frontend**: /home/cells/.config/pydio/cells/static/pydio
 
-## Monitoring Pydio Cells' services by Supervisord
+### Monitoring Pydio Cells' services by Supervisord
 
 - Install supervisor: `yum install supervisor`
 - Create a new file /etc/supervisord.d/cell.ini with following content:
 
 ```
 [program:cells]
-command=/home/pydio/cells start
-directory=/home/pydio       ; directory to cwd to before exec (def no cwd)
-;umask=022                     ; umask for process (default None)
-;priority=999                  ; the relative start priority (default 999)
+command=/home/cells/cells start
+directory=/home/cells         ; directory to cwd to before exec (def no cwd)
+;umask=022                    ; umask for process (default None)
+;priority=999                 ; the relative start priority (default 999)
 autostart=true                ; start at supervisord start (default: true)
 autorestart=unexpected        ; whether/when to restart (default: unexpected)
-startsecs=15                   ; number of secs prog must stay running (def. 1)
+startsecs=15                  ; number of secs prog must stay running (def. 1)
 startretries=5                ; max # of serial start failures (default 3)
 exitcodes=0,2                 ; 'expected' exit codes for process (default 0,2)
-stopsignal=INT               ; signal used to kill process (default TERM)
+stopsignal=INT                ; signal used to kill process (default TERM)
 stopwaitsecs=10               ; max num secs to wait b4 SIGKILL (default 10)
 stopasgroup=false             ; send stop signal to the UNIX process group (default false)
-;killasgroup=false             ; SIGKILL the UNIX process group (def false)
-user=pydio                 ; setuid to this UNIX account to run the program
+;killasgroup=false            ; SIGKILL the UNIX process group (def false)
+user=cells                    ; setuid to this UNIX account to run the program
 
 redirect_stderr=true          ; redirect proc stderr to stdout (default false)
-stdout_logfile=/home/pydio/.config/pydio/cells/logs/cells.out
+stdout_logfile=/home/cells/.config/pydio/cells/logs/cells.out
 stdout_logfile_maxbytes=1MB   ; max # logfile bytes b4 rotation (default 50MB)
 stdout_logfile_backups=10     ; # of stdout logfile backups (default 10)
 stdout_capture_maxbytes=1MB   ; number of bytes in 'capturemode' (default 0)
-;stdout_events_enabled=false   ; emit events on stdout writes (default false)
-stderr_logfile=/home/pydio/.config/pydio/cells/logs/cell_err.log        ; stderr log path, NONE for none; default AUTO
+;stdout_events_enabled=false  ; emit events on stdout writes (default false)
+stderr_logfile=/home/cells/.config/pydio/cells/logs/cell_err.log        ; stderr log path, NONE for none; default AUTO
 ;stderr_logfile_maxbytes=1MB   ; max # logfile bytes b4 rotation (default 50MB)
 ;stderr_logfile_backups=10     ; # of stderr logfile backups (default 10)
 ;stderr_capture_maxbytes=1MB   ; number of bytes in 'capturemode' (default 0)
@@ -215,10 +219,14 @@ stderr_logfile=/home/pydio/.config/pydio/cells/logs/cell_err.log        ; stderr
 - Update new program to supervisor: `supervisorctl update`
 - Start cell program in supervisor: `supervisorctl start cells `
 
-You can test this config by restarting the machine and **Pydio Cells** now is launched by supervisord. To watch the output, try this command:
-`tail -f /home/pydio/.config/pydio/cells/logs/cells.out`
+You can test this config by restarting the machine and **Pydio Cells** now is launched by supervisord. 
 
-## Configure cells with systemd service
+To watch the log output, you can use this command:
+```sh 
+tail -f /home/cells/.config/pydio/cells/logs/cells.out
+```
+
+### Configure cells with systemd service
 
 Create new file /etc/systemd/system/cells.service with content:
 
@@ -228,14 +236,14 @@ Description=Pydio Cells
 Documentation=https://pydio.com
 Wants=network-online.target
 After=network-online.target
-AssertFileIsExecutable=/home/pydio/cells
+AssertFileIsExecutable=/home/cells/cells
 [Service]
-WorkingDirectory=/home/pydio/.config/
-User=pydio
-Group=pydio
+WorkingDirectory=/home/cells/.config/
+User=cells
+Group=cells
 PermissionsStartOnly=true
 #ExecStartPre=echo \"Start pydio cells-enterprise service\""
-ExecStart=/home/pydio/cells start
+ExecStart=/home/cells/cells start
 Restart=on-failure
 StandardOutput=journal
 StandardError=inherit
@@ -246,7 +254,6 @@ SendSIGKILL=yes
 SuccessExitStatus=0
 [Install]
 WantedBy=multi-user.target
-
 ```
 
 Then enable cells service:
@@ -262,9 +269,9 @@ The output of cells service can be seen via journal service
 ### Frontend
 
 #### SELinux is enforced
+
 If, after a successful installation and when you try to navigate to the main application page with your browser, you land on a blank page with following message:
 
 > Access denied.
 
 Insure you have modified SELinux to be in permissive mode.  
-

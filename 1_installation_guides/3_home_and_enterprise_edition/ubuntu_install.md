@@ -32,7 +32,7 @@ To install MySQL use : `sudo apt install mysql-server`
 
 or for mariaDB use : `sudo apt install mariadb-server`
 
-*if you missed a step during the installation process you can use `mysql_secure_installation` command to redo it again, it works for both*
+*if you missed a step during the installation process you can use `mysql_secure_installation` command to redo it again, it works for both.*
 
 #### UBUNTU 14 :
 
@@ -50,14 +50,21 @@ You can install PHP 7 on ubuntu 14 by following those steps:
 then for the other packages `sudo apt-get install php7.0-dom php7.0-curl php7.0-gd php7.0-intl`
 
 * for php 7.1
-`sudo apt-get install php7.1-cli`
-:`sudo apt-get install php7.1-dom php7.1-curl php7.1-gd php7.1-intl`
+
+```sh
+sudo apt-get install php7.1-cli
+sudo apt-get install php7.1-dom php7.1-curl php7.1-gd php7.1-intl
+```
 
 or use the default repositories and get php 5.
 To install php 5 and relevant related packages, use following command:
-`sudo apt install -y php5-cli php5-fpm php5-gd php5-xmlrpc php5-intl php5-curl`.
+
+```sh
+sudo apt install -y php5-cli php5-fpm php5-gd php5-xmlrpc php5-intl php5-curl
+```
 
 ##### Install Database
+
 To install MySQL use: `sudo apt-get install mysql-server-5.6`
 
 or mariaDB: `sudo apt-get install mariadb-server`
@@ -65,14 +72,12 @@ or mariaDB: `sudo apt-get install mariadb-server`
 *If you missed a step during the installation process, you can use `mysql_secure_installation` command to redo it again. It works for both MySQL and MariaDB*
 
 
-Additional guides for more informations :
-* [official MySQL installation guide](https://dev.mysql.com/doc/mysql-apt-repo-quick-guide/en/)
+Additional guides to get more information:
 
-* [install mysql](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-14-04)
-
-* [official mariaDB installation guide](https://downloads.mariadb.org/mariadb/repositories/#mirror=cnrs&distro=Ubuntu&distro_release=trusty--ubuntu_trusty&version=10.2)
-
-* [install mariaDB](https://www.vultr.com/docs/install-mariadb-on-ubuntu-14-04)
+- [Official MySQL installation guide](https://dev.mysql.com/doc/mysql-apt-repo-quick-guide/en/)
+- [Install mysql](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-14-04)
+- [Official mariaDB installation guide](https://downloads.mariadb.org/mariadb/repositories/#mirror=cnrs&distro=Ubuntu&distro_release=trusty--ubuntu_trusty&version=10.2)
+- [Install mariaDB](https://www.vultr.com/docs/install-mariadb-on-ubuntu-14-04)
 
 
 ## Final steps
@@ -85,7 +90,10 @@ For php FPM you can choose to use the TCP socket or the UNIX socket we will prov
 You need to make sure that php-fpm is listening on port 9000. To do so,
 edit it with your favorite text-editor, for example `nano /etc/php/<version>/fpm/php-fpm.conf` and add this at the end of the file `listen = 9000`.
 
-Now restart/reload php-fpm `service php<version>-fpm reload`.
+Now restart/reload php-fpm:
+```
+sudo service php<version>-fpm reload
+```
 
 ##### UNIX Socket
 
@@ -93,7 +101,7 @@ First step is to modify in this file``<path to php fpm>/pool.d/www.conf``the val
 You can also uncomment `listen.mode = 0660` if you want to restrict some parts.
 
 
-Make sure to restart/reload php-fpm `service php<version>-fpm reload`.
+Make sure to restart/reload php-fpm `sudo service php<version>-fpm reload`.
 
 #### Port 80 & 443
 By default you cannot use those ports if you are not a root user (sudo, root, etc...)
@@ -103,21 +111,21 @@ Basically to do that you can use this command : `sudo setcap CAP_NET_BIND_SERVIC
 
 #### Database configuration
 
-In this section, we assume you have installed MySql server 5.7+. Adapt the following steps to your current installation
-```
-# Go to mysql mode
-sudo mysql -u root
-# Create new user and set password
-CREATE USER 'cell'@'localhost' IDENTIFIED BY 'cell';
-SET password for 'cell'@'localhost' = PASSWORD('your password goes here');
-# Create new database
-CREATE DATABASE pydio;
-# Grant permission
-GRANT ALL PRIVILEGES ON pydio.* to 'cell'@'localhost';
-# Flush permission:
+By default, a new database will be created by the system during the installation process. You only need a user with database management permissions.
+
+If you would rather do it manually, you may create a dedicated user and an empty database.
+In this section, we assume you have installed MySql server 5.7+. Adapt the following steps to your current installation.
+
+So first go to MySQL mode: `sudo mysql -u root`.
+
+Then execute following queries:
+
+```SQL
+CREATE USER 'cells'@'localhost' IDENTIFIED BY '<your password goes here>';
+CREATE DATABASE cells;
+GRANT ALL PRIVILEGES ON cells.* to 'cells'@'localhost';
 FLUSH PRIVILEGES;
 ```
-
 
 ## Starting with Pydio
 
@@ -127,7 +135,7 @@ Then, to launch the installer, type: `./<binary> install`. For instance: `./cell
 *For the enterprise edition the binary will be named `cells-enterprise`*
 
 
-**For the enterprise edition refer to [this guide](/en/docs/cells/v1/enterprise-edition-requirements) to get your license key allowing you to complete the installation**
+**For the enterprise edition [refer to this guide](/en/docs/cells/v1/enterprise-edition-requirements) to get your license key allowing you to complete the installation**
 
 A menu will appear.
 
@@ -141,10 +149,9 @@ A menu will appear.
   * **Provide paths to certificate/key files** : if you already have a certificate/key you can use them.
   * **Generate a self-signed certificate** : we will create a self signed certificate for you, be advised this should only be used for staging purposes.
 
-
 *Subsequent steps are then pretty much the same in the browser or in the CLI*
 
-1. **Enterprise License key** : put the license key of your enterprise version, if you need help fetching it here is our guide about [where do you get your license](/en/docs/cells/v1/ed-interface-branding).
+1. **Enterprise License key** : put the license key of your enterprise version, if you need help fetching it, please refer to the [Enterprise Edition Requirements] (en/docs/cells/v1/enterprise-edition-requirements) guide.
 
 1. **Database connection** : put your database informations.
 
@@ -168,6 +175,6 @@ To stop Pydio you can press `ctrl + c` and then to start it again use this comma
 
 * Forgot to Add `listen = 9000` to the php-fpm.conf file if you're using the TCP socket.
 
-* Forgot to change the `listen.owner=` or `listen.group=` located in ``<php-fpm path>/pool.d/www.conf`` for the UNIX socket users.
+* Forgot to change the `listen.owner` or `listen.group` directives, located in `<php-fpm path>/pool.d/www.conf` for the UNIX socket users.
 
 * You can look at the webserver's error file located in `~/.config/pydio/cells/logs/caddy_errors.log`.

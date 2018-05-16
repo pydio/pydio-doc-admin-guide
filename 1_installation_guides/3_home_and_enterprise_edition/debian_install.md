@@ -1,9 +1,9 @@
 
-_This document will guide you through steps to have Pydio Cells configured and running on debian 8 and 9._
+_This document will guide you through the steps to have Pydio Cells configured and running on debian 8 and 9._
 
-#### Pydio Cells
+#### Downloading the binary file
 
-You will need the Pydio Cells binary that is ~165MB, so you might want to already start dowloading it while going through the Pre Requisite part of this guide.
+You will need the Pydio Cells binary that is ~165MB. You might want to already start dowloading it while going through the _Requirements_ part of this guide.
 
 ```sh
 wget https://download.pydio.com/pub/cells/release/0.9.0/linux-amd64/cells
@@ -11,7 +11,7 @@ wget https://download.pydio.com/pub/cells/release/0.9.0/linux-amd64/cells
 
 ### Requirements
 
-Starting with a fresh and correctly installed and configured Debian 8 or 9 system, with at least standard system utilities and a user that is in the `sudo` group.
+We assume you start the installation process with a fresh and correctly installed and configured Debian 8 or 9 system, with at least standard system utilities and a user that is in the `sudo` group.
 
 #### PHP
 
@@ -85,9 +85,10 @@ sudo dpkg -i mysql-apt-config_0.8.9-1_all.deb
 ```
 
 To configure the version of MySQL Server you will use:
-   - Select the `MySQL Server & Cluster` option and press `Enter`
-   - Select the correct option (`mysql-5.6` or `mysql-5.7`) and press `Enter`
-   -  back on the first list, select `Ok`  and press `Enter`
+
+- Select the `MySQL Server & Cluster` option and press `Enter`
+- Select the correct option (`mysql-5.6` or `mysql-5.7`) and press `Enter`
+-  back on the first list, select `Ok`  and press `Enter`
 
 You can then install the server:
 
@@ -98,7 +99,7 @@ sudo apt install mysql-server
 
 #### MariaDB install
 
-* Add the repository
+* Add the repository  
     You first need to add the MariadDB repository key and add the package repository
 
     ##### Debian 8
@@ -209,11 +210,11 @@ sudo systemctl start php<version>-fpm
 
 If you are using the TCP socket, you might have forgot to add `listen = 9000` to the php-fpm.conf file.
 
-For the UNIX socket users, you might have forgot to change the `listen.owner=` or `listen.group=` located in ``<php-fpm path>/pool.d/www.conf`` file.
+For the UNIX socket users, you might have forgot to change the `listen.owner` or `listen.group` directives located in the `<php-fpm path>/pool.d/www.conf` file.
 
 ### Database server issue
 
-_After starting, you see a bunch of errors starting with: `ERROR	pydio.grpc.meta	Failed to init DB provider	{"error": "Error 1071: Specified key was too long; max key length is 767 bytes handling data_meta_0.1.sql"}` and the web page is unreachable_
+_After start, the web page is unreachable and you see a bunch of errors starting with: `ERROR	pydio.grpc.meta	Failed to init DB provider	{"error": "Error 1071: Specified key was too long; max key length is 767 bytes handling data_meta_0.1.sql"}`._
 
 You might have an unsupported version of the mysql server: you should use MySQL server version 5.6 or higher or MariaDB version 10.2 or higher. 
 

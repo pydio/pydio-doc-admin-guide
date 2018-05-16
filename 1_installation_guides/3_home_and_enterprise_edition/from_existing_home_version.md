@@ -8,10 +8,14 @@ The upgrade process is not that hard but it requires you to follow every step to
 
 2. Replace your `cells` binary with the `cells-enterprise`binary.
 
-3. [Get your Enterprise License key](/en/docs/cells/v1/ed-interface-branding).
+3. [Get your Enterprise License key](/en/docs/cells/v1/enterprise-edition-requirements).
 
 4. Put the key in a file named `pydio-license` and put it in `/.config/pydio/cells/`.
 
-5. Clear pydio's cells cache using for instance `rm -rf ~/.config/pydio/cells/static/pydio/data/cache/plugins_*`
+5. Clear pydio's cells cache. You might use this command (with care):
 
-6. Now run `cells-enterprise start`and you should be good to go.
+```sh 
+rm -f ~/.config/pydio/cells/static/pydio/data/cache/plugins_*
+```
+
+6. Now run `./cells-enterprise start` and you should be good to go.
