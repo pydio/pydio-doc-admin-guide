@@ -1,5 +1,7 @@
 _This guide describes the steps required to have Pydio Cells running on macOS._
 
+[:image-popup:1_installation_guides/logos-os/logo-mac.png]
+
 ## Requirements
 
 ### PHP
