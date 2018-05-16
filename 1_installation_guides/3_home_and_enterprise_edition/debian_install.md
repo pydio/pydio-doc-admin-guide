@@ -67,6 +67,18 @@ sudo apt install mysql-server
     sudo apt update
     sudo apt install mariadb-server
     ```
+    
+#### Post install configuration
+By default, a new database will be created by the system during the installation process. You only need a user with database management permissions.
+
+If you would rather do it manually, you may create a dedicated user and an empty database by executing the following SQL queries :
+
+```SQL
+CREATE USER 'cells'@'localhost' IDENTIFIED BY '<your-password-here>';
+CREATE DATABASE cells;
+GRANT ALL PRIVILEGES ON cells.* to 'cells'@'localhost';
+FLUSH PRIVILEGES;
+```
 
 ### PHP
 
@@ -125,26 +137,6 @@ sudo apt install php7.0 php7.0-fpm php7.0-gd php7.0-curl php7.0-intl php7.0-xml
     sudo systemctl enable php7.0-fpm
     sudo systemctl restart php7.0-fpm
     ```
-
-#### Database Configuration
-
-By default, a new database will be created by the system during the installation process. You only need a user with database management permissions.
-
-If you would rather do it manually, you may create a dedicated user and an empty database:
-
-```sh
-# Get into the mysql mode
-mysql -u root -p
-```
-
-and execute following queries:
-
-```SQL
-CREATE USER 'cells'@'localhost' IDENTIFIED BY '<change password here>';
-CREATE DATABASE cells;
-GRANT ALL PRIVILEGES ON cells.* to 'cells'@'localhost';
-FLUSH PRIVILEGES;
-```
 
 ## Pydio Cells installation
 
