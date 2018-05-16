@@ -41,6 +41,7 @@ sudo apt install mysql-server
 #### MariaDB
 
 * Add the repository  
+    
     You first need to add the MariadDB repository key and add the package repository
 
     ##### Debian 8
@@ -138,37 +139,33 @@ sudo apt install php7.0 php7.0-fpm php7.0-gd php7.0-curl php7.0-intl php7.0-xml
     sudo systemctl restart php7.0-fpm
     ```
 
-## Pydio Cells installation
+### Dedicated User
+It's highly recommend to run Pydio Cells with a dedicated user.
 
-#### Downloading the binary file
+In this guide, we use **cells** and its home directory **/home/cells**.
 
-You will need the Pydio Cells binary that is ~165MB. You might want to already start dowloading it while going through the _Requirements_ part of this guide.
-
-```sh
-wget https://download.pydio.com/pub/cells/release/0.9.0/linux-amd64/cells
-```
-
-### Rights
-
-First, give execution rights to the binary:
+In order to create a new user and its home directory execute this command:
 
 ```sh
-sudo chmod u+x cells
+sudo useradd -m cells
 ```
 
-### On HTTP standard ports: 80 and 443
+Switch to this user to run the installation
 
-By default you cannot use those ports if you are not a root user.  
-To be able to bind those ports to Pydio, you need to give the binary the rights to use them even though it's not launched as a root user.
-
-You can use this command:
-
-```sh
-sudo setcap CAP_NET_BIND_SERVICE=+eip cells
-# Replace <cells> with full path to the Pydio Cells binary.
+```bash
+su - cells
 ```
 
-### Install
+## Installation and configuration
+```bash
+wget https://download.pydio.com/pub/cells/release/1.0.0/linux-amd64/cells
+chmod u+x cells
+```
+
+If you need to use the standard http (80) or https (443) port, please execute this command:
+```bash
+setcap 'cap_net_bind_service=+ep' cells
+```
 
 Execute the command below and follow the instructions.
 
@@ -198,6 +195,7 @@ To check service status, do:
 
 ```sh
 sudo systemctl status php<version>-fpm
+
 # Enable and start it, if necessary
 sudo systemctl enable php<version>-fpm
 sudo systemctl start php<version>-fpm
