@@ -19,6 +19,11 @@ One common issue is that you did not use and therefore configured php-fpm to use
 
 - No progress appear during install
 
-If the console displays something similar to what is shown in the image below that means there is nothing to worry about. The login page appear after a page refresh.
+If during the install there is no progress and the console is show some activities it is OK. A manual refresh at the end of the install will laod the login page.
 
 [:image-popup:1_installation_guides/troubleshooting_install_no_progress.png]
+
+
+- The wizard is stucked at the end of the install
+
+If after the install the page does not refresh automatically in ssl self-signed mode it is OK. A manual refresh will laod the login page
