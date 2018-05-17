@@ -12,6 +12,18 @@ You need the 64-bit version of one of these Debian or Raspbian versions:
 - Stretch 9 (stable) / Raspbian Stretch
 - Jessie 8 (LTS) / Raspbian Jessie
 
+#### Dedicated User
+
+It's highly recommend to run Pydio Cells with a dedicated user.
+
+In this guide, we use **cells** and its home directory **/home/cells**.
+
+In order to create a new user and its home directory execute this command:
+
+```sh
+sudo useradd -m cells
+```
+
 ### Database
 
 Pydio Cells can be installed with both MySQL Server (v5.6 or higher) and MariaDB.
@@ -40,7 +52,7 @@ sudo apt install mysql-server
 
 #### MariaDB
 
-##### Repository  
+##### Repositories
 
 ###### Debian 8
 
@@ -60,12 +72,13 @@ sudo add-apt-repository 'deb [arch=amd64] http://www.ftp.saix.net/DB/mariadb/rep
 
 ##### Install
 
-``` bash
+```sh
 sudo apt update
 sudo apt install mariadb-server
 ```
-    
+
 #### Post install configuration
+
 By default, a new database will be created by the system during the installation process. You only need a user with database management permissions.
 
 If you would rather do it manually, you may create a dedicated user and an empty database by executing the following SQL queries :
@@ -81,12 +94,15 @@ FLUSH PRIVILEGES;
 
 - **[DEBIAN 8 ONLY]  Add the PHP 7 repository**
     PHP 7 package are not available from official package list, so you need to add them.
+    
+    First open or create this file: `/etc/apt/sources.list.d/dotdeb.list`
+    and append this line if necessary: `deb http://packages.dotdeb.org jessie all`
 
-```sh
-sudo echo "deb http://packages.dotdeb.org jessie all" > /etc/apt/sources.list.d/dotdeb.list
-wget -O- https://www.dotdeb.org/dotdeb.gpg | sudo apt-key add
-sudo apt update
-```
+    then:
+    ```sh
+    wget -O- https://www.dotdeb.org/dotdeb.gpg | sudo apt-key add
+    sudo apt update
+    ```
 
 - **Install**
 
@@ -113,18 +129,22 @@ sudo apt install php7.0 php7.0-fpm php7.0-gd php7.0-curl php7.0-intl php7.0-xml
     You have to insure the user that runs the Pydio Cells binary has sufficient rights on the socket.
     You have many options, we usually add the corresponding user to the default `www-data` group and change the `listen.owner` directive of the fpm configuration file by doing:
     
-    ```sh
-    # as root user
-    # addgroup <the_correct_user> www-data, for instance:
-    addgroup cells www-data
-    ```
-    And then open the `/etc/php/${PHP_VERSION}/fpm/pool.d/www.conf` conf file to have somthing like:
+    And then open the `/etc/php/${PHP_VERSION}/fpm/pool.d/www.conf` conf file to have something like:
 
     ```sh
-    #listen.owner= <the_correct_user> 
+    #listen.owner= <the_correct_user>
     listen.owner= cells
     listen.group= www-data
     ```
+    Then, add the cells user to www-data group and add write permission to the www-data group to the php folder: 
+    ```sh
+    # as *root* user
+    # addgroup <the_correct_user> www-data, for instance:
+    addgroup cells www-data
+    chmod g+w /run/php
+    ```
+
+    Note: if you were logged in as user `cells` when you did `su -`, you have to log out and back in for the permission update to be effective.
 
 - **Finalisation**
 
@@ -135,32 +155,23 @@ sudo apt install php7.0 php7.0-fpm php7.0-gd php7.0-curl php7.0-intl php7.0-xml
     sudo systemctl restart php7.0-fpm
     ```
 
-### Dedicated User
-It's highly recommend to run Pydio Cells with a dedicated user.
-
-In this guide, we use **cells** and its home directory **/home/cells**.
-
-In order to create a new user and its home directory execute this command:
+## Installation and configuration
 
 ```sh
-sudo useradd -m cells
-```
-
-Switch to this user to run the installation
-
-```bash
-su - cells
-```
-
-## Installation and configuration
-```bash
 wget https://download.pydio.com/pub/cells/release/1.0.0/linux-amd64/cells
-chmod u+x cells
+sudo chmod u+x cells
 ```
 
 If you need to use the standard http (80) or https (443) port, please execute this command:
-```bash
+
+```sh
 setcap 'cap_net_bind_service=+ep' cells
+```
+
+Switch to the **cells** user to run the installation and start the app:
+
+```sh
+su - cells
 ```
 
 Execute the command below and follow the instructions.
