@@ -95,11 +95,8 @@ FLUSH PRIVILEGES;
 - **[DEBIAN 8 ONLY]  Add the PHP 7 repository**
     PHP 7 package are not available from official package list, so you need to add them.
     
-    First open or create this file: `/etc/apt/sources.list.d/dotdeb.list`
-    and append this line if necessary: `deb http://packages.dotdeb.org jessie all`
-
-    then:
     ```sh
+    echo "deb http://packages.dotdeb.org jessie all" | sudo tee -a /etc/apt/sources.list.d/dotdeb.list
     wget -O- https://www.dotdeb.org/dotdeb.gpg | sudo apt-key add
     sudo apt update
     ```
