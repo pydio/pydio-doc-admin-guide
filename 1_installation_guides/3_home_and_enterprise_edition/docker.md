@@ -12,7 +12,7 @@ Now for how to run and use this image we will provide you with examples, and sit
 This is the base docker command:
 
 ```sh 
-docker run -it -d --name cells -t -v /<localstorage>/:/root/.config/pydio/cells/ -e "CELLS_BIND=<address>:<port>" -e "CELLS_EXTERNAL=<address>:<port>" -p 8080:8080 pydio/cells
+docker run -it -d --name cells -t -v /<localstorage>/:/home/cells/.config/pydio/cells/ -e "CELLS_BIND=<address>:<port>" -e "CELLS_EXTERNAL=<address>:<port>" -p 8080:8080 pydio/cells
 ```
 
 For the details:
@@ -27,7 +27,7 @@ For the details:
 So, for instance: 
 
 ```sh 
-docker run -it -d --name cells -t -v /home/my_pc/documents:/root/.config/pydio/cells/ -e "CELLS_BIND=192.168.0.198:8080" -e "CELLS_EXTERNAL=192.168.0.198:8080" -p 8080:8080 pydio/cells
+docker run -it -d --name cells -t -v /home/my_pc/documents:/home/cells/.config/pydio/cells/ -e "CELLS_BIND=192.168.0.198:8080" -e "CELLS_EXTERNAL=192.168.0.198:8080" -p 8080:8080 pydio/cells
 ```
 
 Make always sure that the -p `<outside>:` is the same as the `CELLS_EXTERNAL` and the -p `:<inside>` as `CELLS_BINDS`.
