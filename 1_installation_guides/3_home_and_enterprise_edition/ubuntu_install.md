@@ -8,10 +8,10 @@ _This guide describes the steps required to have Pydio Cells running on Ubuntu._
 
 You need the 64-bit version of one of these Ubuntu version:
 
-- Ubuntu 16.04 LTS (Xenial Xerus)
 - Ubuntu 18.04 LTS (Bionic Beaver)
+- Ubuntu 16.04 LTS (Xenial Xerus)
 
-You can also find hints to prepare a 14.04 environment at the bottom of this page
+You can also find hints to prepare a 14.04 environment at the bottom of this page.
 
 #### Dedicated User
 
@@ -23,22 +23,48 @@ In order to create a new user and its home directory execute this command:
 
 ```sh
 sudo useradd -m cells
+sudo passwd cells
+```
+
+#### Default web serveur
+
+Depending on your installation of Ubuntu, you may have Apache2 already configured and running by default on your server.
+If you want to use default `80`and `443` ports for your pydio instance, you have to disable and stop the apache 2 service:
+
+```sh
+sudo systemctl stop apache2
+sudo systemctl disable apache2
 ```
 
 ### Database
 
-Pydio Cells can be installed with both MySQL Server (v5.6 or higher) and MariaDB (v10.1 or higher).
+Pydio Cells can be installed with both MySQL Server (v5.6 or higher) and MariaDB (v10.2 or higher).
 
-To install MySQL use:
+#### MySQL server
 
 ```sh
+# On Ubuntu 18.04
+sudo apt-get install mysql-server-5.7
+# On Ubuntu 16.04
 sudo apt-get install mysql-server-5.6
 ```
 
-For MariaDB:
+#### MariaDB server
+
+On Ubuntu 18.04, you currently must use MariaDB 10.2, here is the [official installation guide on the MariaDB website](https://downloads.mariadb.org/mariadb/repositories/#distro=Ubuntu&version=10.2&distro_release=bionic--ubuntu_bionic)
+
+At the time of writing, the default mirror did not have a release file in its repository for MariaDB 10.2, so we rather advise to do:
 
 ```sh
-sudo apt-get install mariadb-server
+sudo apt-get install software-properties-common
+sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8
+sudo add-apt-repository 'deb [arch=amd64] http://mirror.23media.de/mariadb/repo/10.2/ubuntu bionic main'
+```
+
+You can then run:
+
+```sh
+sudo apt install mariadb-server-10.2
 ```
 
 #### Configuration
@@ -46,7 +72,8 @@ sudo apt-get install mariadb-server
 By default, a new database will be created by the system during the installation process. You only need a user with database management permissions.
 
 If you would rather do it manually, you may create a dedicated user and an empty database.
-So first go to MySQL mode: `sudo mysql -u root`.
+
+So first go to MySQL mode: `mysql -u root -p` and enter the password you have defined during the installation process.
 
 Then execute following queries:
 
@@ -65,7 +92,7 @@ To install php and its packages use following command:
 sudo apt install php php-fpm php-gd php-curl php-intl php-xml
 ```
 
-For php FPM you can choose to use TCP or Unix sockets depending on your preferences. Here are configuration steps for both solutions.
+For PHP FPM you can choose to use TCP or Unix sockets depending on your preferences. Here are configuration steps for both solutions.
 
 #### TCP Socket
 
@@ -109,7 +136,7 @@ Note: if you were logged in as user `cells` when you did `su -`, you have to log
 Restart and enable PHP-FPM service with these commands (after replacing the version)
 
 ```sh
-sudo systemctl restart php<version>-fpm
+sudo systemctl enable php<version>-fpm
 sudo systemctl restart php<version>-fpm
 ```
 
@@ -121,15 +148,17 @@ Get Pydio Cells binary:
 # Home edition
 wget https://download.pydio.com/pub/cells/release/1.0.0/linux-amd64/cells
 sudo chmod u+x cells
+sudo chown cells.cells cells
 # Enterprise edition
 wget https://download.pydio.com/pub/cells/release/1.0.0/linux-amd64/cells-enterprise
-sudo chmod u+x cells
+sudo chmod u+x cells-enterprise
+sudo chown cells.cells cells-enterprise
 ```
 
 If you need to use the standard http (80) or https (443) port, please execute this command:
 
 ```sh
-setcap 'cap_net_bind_service=+ep' cells
+sudo setcap 'cap_net_bind_service=+ep' cells
 ```
 
 Switch to the **cells** user to run the installation and start the app:
@@ -185,6 +214,19 @@ If you have a problem with your database, you might already want to refer to the
 
 - [Official MySQL installation guide](https://dev.mysql.com/doc/mysql-apt-repo-quick-guide/en/)
 - [Official mariaDB installation guide](https://downloads.mariadb.org/mariadb/repositories/#mirror=cnrs&distro=Ubuntu&version=10.2)
+
+#### Installing maria DB 10.2 fails
+
+_During the MariaDB installation process, when trying to add the repository recommnnded by the MariaDB official documentation, you get such an error: `E: The repository 'http://mirror2.hs-esslingen.de/mariadb/repo/10.2/ubuntu bionic Release' does not have a Release file.
+N: Updating from such a repository can't be done securely, and is therefore disabled by default.`_
+
+This happens because the tried repository does not exposes the compulsory release file. To solve this issue, go back to the [official MariaDB website](https://downloads.mariadb.org/mariadb/repositories/#distro=Ubuntu&version=10.2&distro_release=bionic--ubuntu_bionic) and try with another mirror.
+
+For the record, despite the error seen above, the repository might have been added. To unregister it, do for instance:
+
+```sh
+sudo add-apt-repository --remove 'deb [arch=amd64] http://mirror2.hs-esslingen.de/mariadb/repo/10.2/ubuntu bionic main'
+```
 
 ## Legacy Ubuntu version
 
