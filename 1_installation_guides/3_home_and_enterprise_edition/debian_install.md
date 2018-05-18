@@ -26,7 +26,7 @@ sudo useradd -m cells
 
 ### Database
 
-Pydio Cells can be installed with both MySQL Server (v5.6 or higher) and MariaDB.
+Pydio Cells can be installed with both MySQL Server (v5.6 or higher) and MariaDB (v10.1 or higher).
 
 #### MySQL
 
@@ -124,14 +124,16 @@ sudo apt install php7.0 php7.0-fpm php7.0-gd php7.0-curl php7.0-intl php7.0-xml
     #### UNIX Socket
 
     You have to insure the user that runs the Pydio Cells binary has sufficient rights on the socket.
-    You have many options, we usually add the corresponding user to the default `www-data` group and change the `listen.owner` directive of the fpm configuration file by doing:
+    You have many options, we usually add the corresponding user to the default `www-data` group and change the `listen.owner` directive of the fpm configuration file.
     
-    And then open the `/etc/php/${PHP_VERSION}/fpm/pool.d/www.conf` conf file to have something like:
+    So edit the `/etc/php/${PHP_VERSION}/fpm/pool.d/www.conf` configuration file to have something like:
 
     ```sh
+    ...(content omitted)...
     #listen.owner= <the_correct_user>
     listen.owner= cells
     listen.group= www-data
+    ...(content omitted)...
     ```
     Then, add the cells user to www-data group and add write permission to the www-data group to the php folder: 
     ```sh

@@ -1,58 +1,216 @@
-
-_This guide describes the steps required to have Pydio Cells running on Ubuntu 14.04, 16.04 & 17.10._
+_This guide describes the steps required to have Pydio Cells running on Ubuntu._
 
 [:image-popup:1_installation_guides/logos-os/logo-ubuntu.png]
 
-### Get the binary file
+## Requirements
 
-Download the Cells Binary on your server using the following command :
+### OS requirements
 
-**Home Edition**
+You need the 64-bit version of one of these Ubuntu version:
+
+- Ubuntu 16.04 LTS (Xenial Xerus)
+- Ubuntu 18.04 LTS (Bionic Beaver)
+
+You can also find hints to prepare a 14.04 environment at the bottom of this page
+
+#### Dedicated User
+
+It's highly recommend to run Pydio Cells with a dedicated user.
+
+In this guide, we use **cells** and its home directory **/home/cells**.
+
+In order to create a new user and its home directory execute this command:
+
+```sh
+sudo useradd -m cells
 ```
-wget https://download.pydio.com/pub/cells/release/0.9.0/linux-amd64/cells
-chmod +x cells
+
+### Database
+
+Pydio Cells can be installed with both MySQL Server (v5.6 or higher) and MariaDB (v10.1 or higher).
+
+To install MySQL use:
+
+```sh
+sudo apt-get install mysql-server-5.6
 ```
-**Enterprise Edition**
 
+For MariaDB:
+
+```sh
+sudo apt-get install mariadb-server
 ```
-wget https://download.pydio.com/pub/cells-enterprise/release/0.9.1/linux-amd64/cells-enterprise
-chmod +x cells-enterprise
+
+#### Configuration
+
+By default, a new database will be created by the system during the installation process. You only need a user with database management permissions.
+
+If you would rather do it manually, you may create a dedicated user and an empty database.
+So first go to MySQL mode: `sudo mysql -u root`.
+
+Then execute following queries:
+
+```SQL
+CREATE USER 'cells'@'localhost' IDENTIFIED BY '<your password goes here>';
+CREATE DATABASE cells;
+GRANT ALL PRIVILEGES ON cells.* to 'cells'@'localhost';
+FLUSH PRIVILEGES;
 ```
 
-## Package Installation
+### PHP & PHP FPM
 
-### UBUNTU 16 & 17 :
-On both of those versions as they're not old, the installation process should be the easiest.
+To install php and its packages use following command:
 
-#### Install PHP
-To install php and it's packages use the following commands:
-`sudo apt install php php-fpm php-gd php-curl php-intl php-xml`.
+```sh
+sudo apt install php php-fpm php-gd php-curl php-intl php-xml
+```
+
+For php FPM you can choose to use TCP or Unix sockets depending on your preferences. Here are configuration steps for both solutions.
+
+#### TCP Socket
+
+Configure php-fpm to listen on port 9000:
+
+```sh
+# Beware to replace with your installed version of PHP in the command
+echo "listen = 9000" | sudo tee -a /etc/php/<version>/fpm/php-fpm.conf
+```
+
+#### UNIX Socket
+
+You have to insure the user that runs the Pydio Cells binary has sufficient rights on the socket.
+You have many options, we usually add the corresponding user to the default `www-data` group and change the `listen.owner` directive of the fpm configuration file.
+
+To do so, edit the `/etc/php/${PHP_VERSION}/fpm/pool.d/www.conf` conf file to have something like:
+
+```sh
+...content omitted...
+#listen.owner= <the_correct_user>
+listen.owner= cells
+listen.group= www-data
+...content omitted...
+```
+
+You might also uncomment the `listen.mode = 0660` line if you want to be more restrictive.
+
+Then, add the cells user to www-data group and add write permission to the www-data group to the php folder:
+
+```sh
+# as *root* user
+# addgroup <the_correct_user> www-data, for instance:
+addgroup cells www-data
+chmod g+w /run/php
+```
+
+Note: if you were logged in as user `cells` when you did `su -`, you have to log out and back in for the permission update to be effective.
+
+#### Finalisation
+
+Restart and enable PHP-FPM service with these commands (after replacing the version)
+
+```sh
+sudo systemctl restart php<version>-fpm
+sudo systemctl restart php<version>-fpm
+```
+
+## Installation and configuration
+
+Get Pydio Cells binary:
+
+```sh
+# Home edition
+wget https://download.pydio.com/pub/cells/release/1.0.0/linux-amd64/cells
+sudo chmod u+x cells
+# Enterprise edition
+wget https://download.pydio.com/pub/cells/release/1.0.0/linux-amd64/cells-enterprise
+sudo chmod u+x cells
+```
+
+If you need to use the standard http (80) or https (443) port, please execute this command:
+
+```sh
+setcap 'cap_net_bind_service=+ep' cells
+```
+
+Switch to the **cells** user to run the installation and start the app:
+
+```sh
+su - cells
+```
+
+Execute the command below and follow the instructions.
+
+```sh
+./cells install
+```
+
+You can [refer to this page](/en/docs/cells/v1/install-pydio-cells) to get more details on the installation process.
+After the install is successfully done, if you ever have to stop Pydio Cells and want to run it again just run:
+
+```sh
+./cells start
+```
+
+## Troubleshooting
+
+### Networking issues
+
+_ You got this kind of error: `ERROR   nats    Could not run   {“error”: “No private IP address found, and explicit IP not provided”}`_
+
+The simplest way is to create an alias on the network interface with a 10.0.X address.
+For example, if the main interface is eth0, just add the following in the `/etc/network/interface` file.
+
+```conf
+auto eth0:1
+allow-hotplug eth0:1
+iface eth0:1 inet static
+address 10.0.0.1
+netmask 255.255.255.0
+```
+
+Then restart networking services.
+
+### PHP-FPM & WebSockets
+
+You can always look at the webserver's error file located in `~/.config/pydio/cells/logs/caddy_errors.log`.
+
+- The php-fpm Service might not be started, you can look at its status using : `sudo service php<version>-fpm status` and then `sudo service php<version>-fpm start` if needed.
+
+- Forgot to Add `listen = 9000` to the php-fpm.conf file if you're using the TCP socket.
+- Forgot to change the `listen.owner` or `listen.group` directives, located in `<php-fpm path>/pool.d/www.conf` for the UNIX socket users.
+
+### Database
+
+If you have a problem with your database, you might already want to refer to the official documentation and insure you are correctly set up:
+
+- [Official MySQL installation guide](https://dev.mysql.com/doc/mysql-apt-repo-quick-guide/en/)
+- [Official mariaDB installation guide](https://downloads.mariadb.org/mariadb/repositories/#mirror=cnrs&distro=Ubuntu&version=10.2)
+
+## Legacy Ubuntu version
+
+### UBUNTU 14
 
 #### Install Database
-*You can skip this step if you already have a database*
 
 To install MySQL use : `sudo apt install mysql-server`
 
 or for mariaDB use : `sudo apt install mariadb-server`
 
-*if you missed a step during the installation process you can use `mysql_secure_installation` command to redo it again, it works for both.*
-
-### UBUNTU 14 :
-
 #### Install PHP
+
 You can install PHP 7 on ubuntu 14 by following those steps:
 
-* `sudo apt-get update`
-* `sudo apt-get install python-software-properties`(in case you don't have it)
-* `sudo add-apt-repository ppa:ondrej/php`
-* `sudo apt-get update`
-* you can install either php 7.0 or php 7.1 to install only php client without apache2 you have to use the following commands :
+- `sudo apt-get update`
+- `sudo apt-get install python-software-properties`(in case you don't have it)
+- `sudo add-apt-repository ppa:ondrej/php`
+- `sudo apt-get update`
+- you can install either php 7.0 or php 7.1 to install only php client without apache2 you have to use the following commands :
 
-* for php 7.0
+- for php 7.0
 `sudo apt-get install php7.0-cli`
 then for the other packages `sudo apt-get install php7.0-dom php7.0-curl php7.0-gd php7.0-intl`
 
-* for php 7.1
+- for php 7.1
 
 ```sh
 sudo apt-get install php7.1-cli
@@ -66,112 +224,7 @@ To install php 5 and relevant related packages, use following command:
 sudo apt install -y php5-cli php5-fpm php5-gd php5-xmlrpc php5-intl php5-curl
 ```
 
-#### Install Database
-
-To install MySQL use: `sudo apt-get install mysql-server-5.6`
-
-or mariaDB: `sudo apt-get install mariadb-server`
-
-*If you missed a step during the installation process, you can use `mysql_secure_installation` command to redo it again. It works for both MySQL and MariaDB*
-
 Additional guides to get more information:
 
-- [Official MySQL installation guide](https://dev.mysql.com/doc/mysql-apt-repo-quick-guide/en/)
 - [Install mysql](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-14-04)
-- [Official mariaDB installation guide](https://downloads.mariadb.org/mariadb/repositories/#mirror=cnrs&distro=Ubuntu&distro_release=trusty--ubuntu_trusty&version=10.2)
 - [Install mariaDB](https://www.vultr.com/docs/install-mariadb-on-ubuntu-14-04)
-
-
-### Final steps
-
-#### Php FPM
-For php FPM you can choose to use the TCP socket or the UNIX socket we will provide you both solutions.
-
-##### TCP Socket
-
-You need to make sure that php-fpm is listening on port 9000. To do so,
-edit it with your favorite text-editor, for example `nano /etc/php/<version>/fpm/php-fpm.conf` and add this at the end of the file `listen = 9000`.
-
-Now restart/reload php-fpm:
-```
-sudo service php<version>-fpm reload
-```
-
-##### UNIX Socket
-
-First step is to modify in this file``<path to php fpm>/pool.d/www.conf``the values `listen.owner= <user>` and `listen.group= <group>`(usually the group and owner have the same values, for example : you have a user named Pydio then the group will be also named Pydio) and add the user/group that will be launching Pydio.
-You can also uncomment `listen.mode = 0660` if you want to restrict some parts.
-
-
-Make sure to restart/reload php-fpm `sudo service php<version>-fpm reload`.
-
-#### Port 80 & 443
-By default you cannot use those ports if you are not a root user (sudo, root, etc...)
-to be able to bind those ports to Pydio you need to give the binary the rights to use them even though it's not launched as a root user.
-
-Basically to do that you can use this command : `sudo setcap CAP_NET_BIND_SERVICE=+eip <binary>` then the binary will be able to bind the ports without root privileges.
-
-#### Database configuration
-
-By default, a new database will be created by the system during the installation process. You only need a user with database management permissions.
-
-If you would rather do it manually, you may create a dedicated user and an empty database.
-In this section, we assume you have installed MySql server 5.7+. Adapt the following steps to your current installation.
-
-So first go to MySQL mode: `sudo mysql -u root`.
-
-Then execute following queries:
-
-```SQL
-CREATE USER 'cells'@'localhost' IDENTIFIED BY '<your password goes here>';
-CREATE DATABASE cells;
-GRANT ALL PRIVILEGES ON cells.* to 'cells'@'localhost';
-FLUSH PRIVILEGES;
-```
-
-## Starting with Pydio Cells
-
-First, give execution rights to the binary. For instance, you can use `sudo chmod u+x <binary>`.
-
-Then, to launch the installer, type: `./<binary> install`. For instance: `./cells install`.
-*For the enterprise edition the binary will be named `cells-enterprise`*
-
-
-**For the enterprise edition [refer to this guide](/en/docs/cells/v1/enterprise-edition-requirements) to get your license key allowing you to complete the installation**
-
-A menu will appear.
-
-* **Installation mode** : you can use a browser or cli to install Pydio Cells.
-
-* **bind url** : internal url for PYDIO in most common cases it's `<ip>:<port>`(example : `192.168.0.192:80`) if you are going to use SSL you should put your secure port `443` or else.
-
-* **external url** : used to access Pydio from outside, usually it will auto fill using the field above and should stay the same.
-
-* **Choose SSL Activation mode** : You can now choose how you're going to activate your SSL, you have 2 choices.
-  * **Provide paths to certificate/key files** : if you already have a certificate/key you can use them.
-  * **Generate a self-signed certificate** : we will create a self signed certificate for you, be advised this should only be used for staging purposes.
-
-*Subsequent steps are then pretty much the same in the browser or in the CLI*
-
-1. **Enterprise License key** : put the license key of your enterprise version, if you need help fetching it, please refer to the [Enterprise Edition Requirements] (en/docs/cells/v1/enterprise-edition-requirements) guide.
-
-1. **Database connection** : put your database informations.
-
-2. **PHP-FPM Detection** : the installer detects your version of php-fpm and if there are missing packages.
-If you have a warning because you're using php 5.5.9, don't worry and press next.
-
-3. **Admin User** : Pydio's Admin user informations.
-
-4. **Advanced Settings** : you can skip this part for the time being.
-
-5. **Apply Installation** : you will have progress bar. If you are using the web-based installer, the page will then reload automatically, so don't quit this page or press anything.
-
-To stop Pydio you can press `ctrl + c` and then to start it again use this command
-`./<binary> start`, for instance `./cells start`.
-
-## Troubleshooting
-
-- The php-fpm Service might not be started, you can look at its status using : `sudo service php<version>-fpm status` and then `sudo service php<version>-fpm start` it if needed.
-- Forgot to Add `listen = 9000` to the php-fpm.conf file if you're using the TCP socket.
-- Forgot to change the `listen.owner` or `listen.group` directives, located in `<php-fpm path>/pool.d/www.conf` for the UNIX socket users.
-- You can look at the webserver's error file located in `~/.config/pydio/cells/logs/caddy_errors.log`.
