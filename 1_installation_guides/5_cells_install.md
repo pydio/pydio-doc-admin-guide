@@ -24,8 +24,8 @@ A first **Installation mode**  menu appears in your terminal, choose if you want
 
 Then, define the url parameters of your instance:
 
-- **bind url**: internal url for Pydio cells: the various services reaches each other through the gateway at this address. In most common cases, it is `<ip>:<port>`(example: `192.168.0.192:80`). If you are going to use SSL you should put your secure port `443` or else.
-- **external url**: world facing URL of Pydio Cells. Usually, you can use the same URL as the bind URL. Thus this field is auto-filled with the value you have just entered and can be left untouched. In the case where you want to set up a more exotic configuration, adapt the URL here.
+- **Bind Host**: internal url for Pydio cells: the various services reaches each other through the gateway at this address. In most common cases, it is `<ip>:<port>`(example: `192.168.0.192:80`). If you are going to use SSL you should put your secure port `443` or else.
+- **External HOST**: world facing URL of Pydio Cells. Usually, you can use the same URL as the bind URL. Thus this field is auto-filled with the value you have just entered and can be left untouched. In the case where you want to set up a more exotic configuration, adapt the URL here.
 - **Choose SSL Activation mode**:
   - **Provide paths to certificate/key files**: if you already have a certificate/key, you can use them.
   - **Generate a self-signed certificate**: Pydio Cells generates a self signed certificate. Be advised this should **not** be used for system in production.

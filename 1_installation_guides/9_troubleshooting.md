@@ -9,21 +9,18 @@ On a linux-like system, using the `cells` user, you will find the Pydio files at
 - **Configuration**: `/home/cells/.config/pydio/cells/pydio.json`
 - **Logs**: `~/.config/pydio/cells/logs`.
 - **Data**: `/home/cells/.config/pydio/cells/data`
-- **PHP files for frontend**: `/home/cells/.config/pydio/cells/static/pydio`
+- **PHP files for the frontend**: `/home/cells/.config/pydio/cells/static/pydio`
 
 ## Connection issues
 
-### Php-fpm
+### PHP-FPM
 
 The most common issue is that you did not start the php-fpm service.
 
-* Verify the status using `sudo service php<version>-fpm status` and then `sudo service php<version>-fpm start` if needed.
-
-One common issue is that you did not use and therefore configured php-fpm to use TCP/UNIX socket.
-
-* Add `listen = 9000` to the php-fpm.conf file if you're using the TCP socket.
-
-* Change the `listen.owner=` or `listen.group=` located in `<php-fpm path>/pool.d/www.conf` for the UNIX socket users.
+- Verify the status using `sudo service php<version>-fpm status` and then `sudo service php<version>-fpm start` if needed.
+- Another common issue is that you did not configured php-fpm to use TCP/UNIX socket.
+   - Add `listen = 9000` to the php-fpm.conf file if you're using the TCP socket.
+   - Change the `listen.owner=` or `listen.group=` located in `<php-fpm path>/pool.d/www.conf` for the UNIX socket users.
 
 ### Progress during browser install
 
