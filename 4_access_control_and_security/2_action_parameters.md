@@ -22,16 +22,13 @@ With actions, you can either restrict particular actions or if it was already re
 
 As seen in this screen capture,
 
-
 [:image-popup:4_access_control_and_security/action_parameters_example.png]
-```
-for instance in this screen i wanted the user to not have the ability to create cells
-```
 
+for instance in this screen I wanted the user to not have the ability to create cells.
 
- you have a lot of choices but the principle is easy you can also do that for groups and roles, you choose the action and what is it targeting (for instance it could be the core.conf, and then you have a slider allowing to enable or disable it.
+You have a lot of choices but the principle is easy. You can also do that for groups and roles, you choose the action and what it is targeting (for instance it could be the core.conf), and then you have a slider allowing to enable or disable it.
 
- The choices are multiple and it's up to you to customize it.
+The choices are multiple and it is up to you to customize it.
 
 #### Parameters
 

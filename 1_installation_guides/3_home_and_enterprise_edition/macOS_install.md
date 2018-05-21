@@ -57,7 +57,7 @@ In this section, we assume you have installed MySql server. Adapt the following 
 # Go to mysql mode
 sudo mysql -u root
 # Create new user and set password
-CREATE USER 'cells'@'localhost' IDENTIFIED BY 'your password goes here';
+CREATE USER 'pydio'@'localhost' IDENTIFIED BY 'your password goes here';
 ```
 
 ## Starting with Pydio

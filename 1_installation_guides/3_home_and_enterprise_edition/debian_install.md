@@ -16,12 +16,12 @@ You need the 64-bit version of one of these Debian or Raspbian versions:
 
 It's highly recommend to run Pydio Cells with a dedicated user.
 
-In this guide, we use **cells** and its home directory **/home/cells**.
+In this guide, we use **pydio** and its home directory **/home/pydio**.
 
 In order to create a new user and its home directory execute this command:
 
 ```sh
-sudo useradd -m cells
+sudo useradd -m pydio
 ```
 
 ### Database
@@ -84,9 +84,9 @@ By default, a new database will be created by the system during the installation
 If you would rather do it manually, you may create a dedicated user and an empty database by executing the following SQL queries :
 
 ```SQL
-CREATE USER 'cells'@'localhost' IDENTIFIED BY '<your-password-here>';
+CREATE USER 'pydio'@'localhost' IDENTIFIED BY '<your-password-here>';
 CREATE DATABASE cells;
-GRANT ALL PRIVILEGES ON cells.* to 'cells'@'localhost';
+GRANT ALL PRIVILEGES ON cells.* to 'pydio'@'localhost';
 FLUSH PRIVILEGES;
 ```
 
@@ -131,19 +131,19 @@ sudo apt install php7.0 php7.0-fpm php7.0-gd php7.0-curl php7.0-intl php7.0-xml
     ```sh
     ...(content omitted)...
     #listen.owner= <the_correct_user>
-    listen.owner= cells
+    listen.owner= pydio
     listen.group= www-data
     ...(content omitted)...
     ```
-    Then, add the cells user to www-data group and add write permission to the www-data group to the php folder: 
+    Then, add the pydio user to www-data group and add write permission to the www-data group to the php folder:
     ```sh
     # as *root* user
     # addgroup <the_correct_user> www-data, for instance:
-    addgroup cells www-data
+    addgroup pydio www-data
     chmod g+w /run/php
     ```
 
-    Note: if you were logged in as user `cells` when you did `su -`, you have to log out and back in for the permission update to be effective.
+    Note: if you were logged in as user `pydio` when you did `su -`, you have to log out and back in for the permission update to be effective.
 
 - **Finalisation**
 
@@ -167,10 +167,10 @@ If you need to use the standard http (80) or https (443) port, please execute th
 setcap 'cap_net_bind_service=+ep' cells
 ```
 
-Switch to the **cells** user to run the installation and start the app:
+Switch to the **pydio** user to run the installation and start the app:
 
 ```sh
-su - cells
+su - pydio
 ```
 
 Execute the command below and follow the instructions.

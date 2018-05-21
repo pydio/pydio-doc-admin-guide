@@ -41,4 +41,4 @@ Filter types are:
 
 #### Logs location on the server
 
-When using Supervisorctl, logs are also written on-file on the server, they are located in `~/.config/pydio/cells/logs/cells.out`. They are rotated on a per-day basis.
+When using Supervisorctl, logs are also written on-file on the server, they are located in `~/.config/pydio/cells/logs/cells.log`. They are rotated on a per-day basis.

@@ -17,13 +17,13 @@ You can also find hints to prepare a 14.04 environment at the bottom of this pag
 
 It's highly recommend to run Pydio Cells with a dedicated user.
 
-In this guide, we use **cells** and its home directory **/home/cells**.
+In this guide, we use **pydio** and its home directory **/home/pydio**.
 
 In order to create a new user and its home directory execute this command:
 
 ```sh
-sudo useradd -m cells
-sudo passwd cells
+sudo useradd -m pydio
+sudo passwd pydio
 ```
 
 #### Default web serveur
@@ -78,9 +78,9 @@ So first go to MySQL mode: `mysql -u root -p` and enter the password you have de
 Then execute following queries:
 
 ```SQL
-CREATE USER 'cells'@'localhost' IDENTIFIED BY '<your password goes here>';
+CREATE USER 'pydio'@'localhost' IDENTIFIED BY '<your password goes here>';
 CREATE DATABASE cells;
-GRANT ALL PRIVILEGES ON cells.* to 'cells'@'localhost';
+GRANT ALL PRIVILEGES ON cells.* to 'pydio'@'localhost';
 FLUSH PRIVILEGES;
 EXIT
 ```
@@ -114,23 +114,23 @@ To do so, edit the `/etc/php/${PHP_VERSION}/fpm/pool.d/www.conf` conf file to ha
 ```sh
 ...content omitted...
 #listen.owner= <the_correct_user>
-listen.owner= cells
+listen.owner= pydio
 listen.group= www-data
 ...content omitted...
 ```
 
 You might also uncomment the `listen.mode = 0660` line if you want to be more restrictive.
 
-Then, add the cells user to www-data group and add write permission to the www-data group to the php folder:
+Then, add the pydio user to www-data group and add write permission to the www-data group to the php folder:
 
 ```sh
 # as *root* user
 # addgroup <the_correct_user> www-data, for instance:
-addgroup cells www-data
+addgroup pydio www-data
 chmod g+w /run/php
 ```
 
-Note: if you were logged in as user `cells` when you did `su -`, you have to log out and back in for the permission update to be effective.
+Note: if you were logged in as user `pydio` when you did `su -`, you have to log out and back in for the permission update to be effective.
 
 #### Finalisation
 
@@ -149,11 +149,11 @@ Get Pydio Cells binary:
 # Home edition
 wget https://download.pydio.com/pub/cells/release/1.0.0/linux-amd64/cells
 sudo chmod u+x cells
-sudo chown cells.cells cells
+sudo chown pydio.pydio cells
 # Enterprise edition
 wget https://download.pydio.com/pub/cells/release/1.0.0/linux-amd64/cells-enterprise
 sudo chmod u+x cells-enterprise
-sudo chown cells.cells cells-enterprise
+sudo chown pydio.pydio cells-enterprise
 ```
 
 If you need to use the standard http (80) or https (443) port, please execute this command:
@@ -162,10 +162,10 @@ If you need to use the standard http (80) or https (443) port, please execute th
 sudo setcap 'cap_net_bind_service=+ep' cells
 ```
 
-Switch to the **cells** user to run the installation and start the app:
+Switch to the **pydio** user to run the installation and start the app:
 
 ```sh
-su - cells
+su - pydio
 ```
 
 Execute the command below and follow the instructions.

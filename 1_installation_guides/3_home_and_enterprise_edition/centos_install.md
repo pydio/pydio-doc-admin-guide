@@ -70,9 +70,9 @@ By default, a new database will be created by the system during the installation
 If you would rather do it manually, you may create a dedicated user and an empty database by executing the following SQL queries :
 
 ```SQL
-CREATE USER 'cells'@'localhost' IDENTIFIED BY '<your-password-here>';
+CREATE USER 'pydio'@'localhost' IDENTIFIED BY '<your-password-here>';
 CREATE DATABASE cells;
-GRANT ALL PRIVILEGES ON cells.* to 'cells'@'localhost';
+GRANT ALL PRIVILEGES ON cells.* to 'pydio'@'localhost';
 FLUSH PRIVILEGES;
 ```
 
@@ -92,7 +92,7 @@ In this example we use PHP version 7.1, but you can use any version >= 5.5.9.
 sudo yum install rh-php71-php-fpm rh-php71-php-common rh-php71-php-intl rh-php71-php-gd rh-php71-php-mbstring rh-php71-php-xml rh-php71-php-curl rh-php71-php-opcache
 ```
 
-The default **user** for the PHP-FPM worker pool needs to be changed to **cells**. Change the port the service is listening to if required.
+The default **user** for the PHP-FPM worker pool needs to be changed to **pydio**. Change the port the service is listening to if required.
 
 ```bash
 sudo vi /etc/opt/rh/rh-php71/php-fpm.d/www.conf
@@ -102,7 +102,7 @@ sudo vi /etc/opt/rh/rh-php71/php-fpm.d/www.conf
 ; Unix user/group of processes
 ; RPM: apache user chosen to provide access to the same directories as httpd
 ; user = apache
-user = cells
+user = pydio
 ; RPM: Keep a group allowed to write in log dir.
 group = apache
 
@@ -120,19 +120,19 @@ sudo systemctl start rh-php71-php-fpm
 
 It is recommended to use a dedicated user to run Pydio Cells.
 
-In this guide, we use **cells** and its home directory **/home/cells**.
+In this guide, we use **pydio** and its home directory **/home/pydio**.
 
 In order to create a new user and its home directory execute this command:
 
 ```sh
-sudo useradd -m cells
-sudo passwd cells
+sudo useradd -m pydio
+sudo passwd pydio
 ```
 
 Switch to this user to run the installation
 
 ```sh
-su - cells
+su - pydio
 ```
 
 ## Install Pydio Cells
