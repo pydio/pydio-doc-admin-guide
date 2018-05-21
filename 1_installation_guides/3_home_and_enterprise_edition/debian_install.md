@@ -179,6 +179,8 @@ Execute the command below and follow the instructions.
 ./cells install
 ```
 
+You can [refer to this page](/en/docs/cells/v1/install-pydio-cells) to get more details on the installation process.
+
 After the install is successfully done, if you ever have to stop Pydio Cells and want to run it again just run:
 
 ```sh

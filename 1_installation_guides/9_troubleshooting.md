@@ -1,5 +1,18 @@
 In this section, we gather known installation problems with strategies to fix them.
 
+## Various Information
+
+### Files location
+
+On a linux-like system, using the `cells` user, you will find the Pydio files at the following locations:
+
+- **Configuration**: `/home/cells/.config/pydio/cells/pydio.json`
+- **Logs**: `~/.config/pydio/cells/logs`.
+- **Data**: `/home/cells/.config/pydio/cells/data`
+- **PHP files for frontend**: `/home/cells/.config/pydio/cells/static/pydio`
+
+## Connection issues
+
 ### Php-fpm
 
 The most common issue is that you did not start the php-fpm service.

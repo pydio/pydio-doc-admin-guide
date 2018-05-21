@@ -115,16 +115,18 @@ In order to create a new user and its home directory execute this command:
 
 ```sh
 sudo useradd -m cells
+sudo passwd cells
 ```
 
 Switch to this user to run the installation
 
-```bash
+```sh
 su - cells
 ```
 
 ## Install Pydio Cells
-```bash
+
+```sh
 wget https://download.pydio.com/pub/cells/release/1.0.0/linux-amd64/cells
 chmod u+x cells
 # if you need to use the standard http (80) or https (443) port, please execute this command:
@@ -132,7 +134,7 @@ setcap 'cap_net_bind_service=+ep' cells
 ./cells install
 ```
 
-Follow the short set of instructions to finish off the Pydio Cells installation
+Follow the short set of instructions to finish off the Pydio Cells installation. You can [refer to this page](/en/docs/cells/v1/install-pydio-cells) to get more details on the installation process.
 
 ## Post-installation
 
@@ -253,4 +255,4 @@ If, after a successful installation and when you try to navigate to the main app
 
 > Access denied.
 
-Insure you have modified SELinux to be in permissive mode.  
+Insure you have modified SELinux to be in permissive mode.
