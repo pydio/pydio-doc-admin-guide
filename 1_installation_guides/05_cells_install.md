@@ -9,7 +9,7 @@ First, give execution rights to the binary. For instance: `sudo chmod u+x <binar
 
 Then, to launch the installer:
 
-- [optionnal but recommanded] switch to / log in as the specific user you have created to run pydio cells
+- [optionnal but recommanded] switch to / log in as the specific user you have created to run Pydio Cells
 - go to the directory where your binary resides
 - simply type:
 
@@ -24,7 +24,7 @@ A first **Installation mode**  menu appears in your terminal, choose if you want
 
 Then, define the url parameters of your instance:
 
-- **Bind Host**: internal url for Pydio cells: the various services reaches each other through the gateway at this address. In most common cases, it is `<ip>:<port>`(example: `192.168.0.192:80`). If you are going to use SSL you should put your secure port `443` or else.
+- **Bind Host**: internal url for Pydio Cells: the various services reaches each other through the gateway at this address. In most common cases, it is `<ip>:<port>`(example: `192.168.0.192:80`). If you are going to use SSL you should put your secure port `443` or else.
 - **External HOST**: world facing URL of Pydio Cells. Usually, you can use the same URL as the bind URL. Thus this field is auto-filled with the value you have just entered and can be left untouched. In the case where you want to set up a more exotic configuration, adapt the URL here.
 - **Choose SSL Activation mode**:
   - **Provide paths to certificate/key files**: if you already have a certificate/key, you can use them.
@@ -46,7 +46,7 @@ _Subsequent steps are then pretty much the same in the browser or in the CLI_.
 
 ## Next steps
 
-To stop Pydio cells, press `CTRL + C` in the terminal where you launched the installer.
+To stop Pydio Cells, press `CTRL + C` in the terminal where you launched the installer.
 
 You might start it again using this command to insure everything work as expected:
 

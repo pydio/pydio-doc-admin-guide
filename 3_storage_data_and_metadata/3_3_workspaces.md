@@ -34,12 +34,11 @@ As seen there, the default path is defined by `Path = DataSources.personal + "/"
 
 Thus, although it seem that all users access the "same" workspace, this workspace is actually always pointing to a different folder, depending on the user logged.
 
-
 ### Template Paths
 
-More generally speaking, Template Paths are dynamically computed depending on the context. They can be used as roots for workspaces in replacement of a fixed datasource path. 
+More generally speaking, Template Paths are dynamically computed depending on the context. They can be used as roots for workspaces in replacement of a fixed datasource path.
 
-As quoted above, it is used to create the Personal Files workspace. It is also used to determine the location of the users Cells folders: as we have already seen in previous sections, the Cells concept adds an indirection level that brings us the possibility to gather nodes from various sources. But when a user creates a Cell from scratch and without any existing folder, we have to provide a folder to start storing contents. This is were the Cells template path is used, to create different folders for each cells, sharded amongst user logins.
+As quoted above, it is used to create the Personal Files workspace. It is also used to determine the location of the users Cells folders: as we have already seen in previous sections, the Cells concept adds an indirection level that brings us the possibility to gather nodes from various sources. But when a user creates a Cell from scratch and without any existing folder, we have to provide a folder to start storing contents. This is were the Cells template path is used, to create different folders for each Cell, sharded amongst user logins.
 
 Template Paths can be used for sharding data accross many datasources, or to point to existing server based on e.g. a user ID.
 
@@ -47,7 +46,7 @@ Template Paths can be used for sharding data accross many datasources, or to poi
 
 In Cells **Enterprise Edition**, in addition to the two template paths presented above (namely for the `My Files` and `Cells` folders), you can define dynamic folders of your own, depending on your business needs.
 
-In the page of the admin settings where you configure Personnal Folders and Cells: `Admin Settings >> left-hand menu >> Template Paths `. Click on the top right `+TEMPLATE PATH` button to create new custom template.
+In the page of the admin settings where you configure Personnal Folders and Cells: `Admin Settings >> left-hand menu >> Template Paths`. Click on the top right `+TEMPLATE PATH` button to create new custom template.
 
 The syntax used to create Template Paths is **JavaScript**. The embedded editor provides a contextual auto-completion feature exposing available variables for ease of use. Basically, the role of the script is to compute the output of the `Path` variable depending on the context.
 
