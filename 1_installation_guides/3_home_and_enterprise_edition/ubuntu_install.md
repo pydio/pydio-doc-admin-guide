@@ -28,8 +28,7 @@ sudo passwd cells
 
 #### Default web serveur
 
-Depending on your installation of Ubuntu, you may have Apache2 already configured and running by default on your server.
-If you want to use default `80`and `443` ports for your pydio instance, you have to disable and stop the apache 2 service:
+Depending on your installation of Ubuntu, you may have Apache2 already configured and running by default on your server. If you want to use default `80`and `443` ports for your Pydio Cells instance, you have to disable and stop the Apache 2 service:
 
 ```sh
 sudo systemctl stop apache2
@@ -51,14 +50,15 @@ sudo apt-get install mysql-server-5.6
 
 #### MariaDB server
 
-On Ubuntu 18.04, you currently must use MariaDB 10.2, here is the [official installation guide on the MariaDB website](https://downloads.mariadb.org/mariadb/repositories/#distro=Ubuntu&version=10.2&distro_release=bionic--ubuntu_bionic)
-
-At the time of writing, the default mirror did not have a release file in its repository for MariaDB 10.2, so we rather advise to do:
+You currently must use MariaDB 10.2, here is the [official installation guide on the MariaDB website](https://downloads.mariadb.org/mariadb/repositories/#distro=Ubuntu&version=10.2)
 
 ```sh
 sudo apt-get install software-properties-common
 sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8
+# Ubuntu 18.04
 sudo add-apt-repository 'deb [arch=amd64] http://mirror.23media.de/mariadb/repo/10.2/ubuntu bionic main'
+# Ubuntu 16.04
+sudo add-apt-repository 'deb [arch=amd64,i386,ppc64el] http://mirror.23media.de/mariadb/repo/10.2/ubuntu xenial main'
 ```
 
 You can then run:
@@ -82,6 +82,7 @@ CREATE USER 'cells'@'localhost' IDENTIFIED BY '<your password goes here>';
 CREATE DATABASE cells;
 GRANT ALL PRIVILEGES ON cells.* to 'cells'@'localhost';
 FLUSH PRIVILEGES;
+EXIT
 ```
 
 ### PHP & PHP FPM
@@ -198,6 +199,22 @@ netmask 255.255.255.0
 ```
 
 Then restart networking services.
+
+#### Unable to bind port 443
+
+_You have configured the bind URL with port 443 and enable redirection of port 80. You get an error page "Unable to connect" when you try to connect_ 
+
+Check the error log, if you sse such an error:
+
+```sh
+2018-05-21T10:55:57.532+0200	ERROR	pydio.grpc.gateway.proxy	Could not run 	{"error": "listen tcp :443: bind: permission denied"}
+```
+
+You probably did not give permission to the `cells` binary file to use reserved ports. To fix this:
+
+```sh
+sudo setcap 'cap_net_bind_service=+ep' cells
+```
 
 ### PHP-FPM & WebSockets
 
