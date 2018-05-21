@@ -4,12 +4,12 @@ _This guide describes the steps required to have the Pydio Cells running via an 
 
 ## Download OVF Package
 
-The image of OVF can be downloaded from 
+The image of OVF can be downloaded from:
 
 ```
 https://download.pydio.com/pub/cells-enterprise/release/VERSION/ovf/Cells-Enterprise-OVF-VERSION.zip
 ```
-where "VERSION" is release version of cells. Get for example: [https://download.pydio.com/pub/cells-enterprise/release/1.0.0/ovf/Cells-Enterprise-OVF-1.0.0.zip](https://download.pydio.com/pub/cells-enterprise/release/1.0.0/ovf/Cells-Enterprise-OVF-1.0.0.zip). An md5 file is also available on the same location for integrity verification.
+where "VERSION" is the release version of Pydio Cells. Get for example: [https://download.pydio.com/pub/cells-enterprise/release/1.0.0/ovf/Cells-Enterprise-OVF-1.0.0.zip](https://download.pydio.com/pub/cells-enterprise/release/1.0.0/ovf/Cells-Enterprise-OVF-1.0.0.zip). An md5 file is also available on the same location for integrity verification.
 
 This Zip archive contains the OVF itself plus the following files: 
 
@@ -57,32 +57,39 @@ The predefined database created in MySQL is *cells*
 
 ### Systemd service
 
-**Cell-Enterprise** service is running under **pydio** user. You find out all files in /home/pydio/.config/pydio/cells and it's configured to start at the boot time by using systemd
+**cells-enterprise** service is running under **pydio** user. You find out all files in /home/pydio/.config/pydio/cells and it's configured to start at the boot time by using systemd
 
-Manually start/stop **Cell-Enterprise**
+Manually start/stop **cells-enterprise**
 
 `systemctl start cells`
 `systemctl stop cells`
 
-You can consult the output of **Cell-Enterprise** service by using command:
+You can consult the output of **cells-enterprise** service by using command:
 
-`journalctl -f `
+`journalctl -f`
 
 start/stop some others service:
 
-MariaDB:   
-`systemctl start rh-mariadb102-mariadb `  
-`systemctl stop rh-mariadb102-mariadb `
+MariaDB:
 
-PHP-FPM:  
-`systemctl start rh-php71-php-fpm`  
-`systemctl stop rh-php71-php-fpm`
+```sh
+systemctl start rh-mariadb102-mariadb
+systemctl stop rh-mariadb102-mariadb
+```
+
+PHP-FPM:
+
+```sh
+systemctl start rh-php71-php-fpm
+systemctl stop rh-php71-php-fpm
+```
 
 ### Firewalld service
 
 Firewalld service is active and open two ports:
-* 443: **Cells-Enterprise**
-* 22: **ssh**
+
+- 443: **cells-enterprise**
+- 22: **ssh**
 
 ### SELinux
 

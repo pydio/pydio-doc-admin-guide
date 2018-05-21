@@ -2,7 +2,7 @@ _This guide describes the steps required to have the Pydio Cells Docker containe
 
 [:image-popup:1_installation_guides/logos-os/logo-docker.png]
 
-### Pydio's Cell docker image
+### Pydio Cells docker image
 
 You can get our image [from our docker hub](https://hub.docker.com/r/pydio/cells/)
 or use the following command `docker pull pydio/cells`.
@@ -11,7 +11,7 @@ Now for how to run and use this image we will provide you with examples, and sit
 
 This is the base docker command:
 
-```sh 
+```sh
 docker run -it -d --name cells -t -v /<localstorage>/:/root/.config/pydio/cells/ -e "CELLS_BIND=<address>:<port>" -e "CELLS_EXTERNAL=<address>:<port>" -p 8080:8080 pydio/cells
 ```
 
@@ -24,9 +24,9 @@ For the details:
 * -e : are ENV variable in this order `<which ENV variable will have that value inside the container>:<value>`
 * -p : port bind in this order` <outside>:<inside container>`
 
-So, for instance: 
+So, for instance:
 
-```sh 
+```sh
 docker run -it -d --name cells -t -v /home/my_pc/documents:/root/.config/pydio/cells/ -e "CELLS_BIND=192.168.0.198:8080" -e "CELLS_EXTERNAL=192.168.0.198:8080" -p 8080:8080 pydio/cells
 ```
 

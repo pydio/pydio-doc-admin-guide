@@ -37,9 +37,9 @@ Below is the global architecture schema (not all services are represented here):
 
 As you can see on the schema above, services are also grouped by their logical category. This is just a naming convention and has no technical impact. These groups are tags attached to services, and can be used to organize information when listing services. 
 
-This is the case when you use `./cells list` command : 
+This is the case when you use `./cells list` command :
 
-```
+```sh
  GENERIC SERVICES                                      
  # discovery                                           
  nats                                       [X]        

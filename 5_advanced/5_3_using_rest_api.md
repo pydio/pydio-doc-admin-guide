@@ -62,7 +62,7 @@ with
 
 - **API_KEY**: The API access Key generated at the install
 - **API_SECRET**: The API secret also generated at the install
-- **URL**: The url of your cells server
+- **URL**: The url of your Pydio Cells server
 - **USER**: the user login
 - **TOKEN**: The `id_token` field in the response of the authentication
 

@@ -17,7 +17,7 @@ For Pydio Cells to run smoothly, you should meet the following requirements:
 
 #### PHP-FPM
 
-Pydio Cells comes with a self-embedded Web server (based on the [Caddy](https://caddyserver.com/docs) project) and does not require any additional Apache or Nginx http services. The backend features were fully rewritten in Golang and are also embedded in the binary, but the Frontend code still contains some PHP and a fastcgi connection must be available between pydio cells binary and php-fpm.
+Pydio Cells comes with a self-embedded Web server (based on the [Caddy](https://caddyserver.com/docs) project) and does not require any additional Apache or Nginx http services. The backend features were fully rewritten in Golang and are also embedded in the binary, but the Frontend code still contains some PHP and a fastcgi connection must be available between Pydio Cells binary and php-fpm.
 
 We recommend the usage **PHP 7+** for its overall better performances, but you can also use Pydio Cells with PHP >= 5.5.9. Pydio Cells frontend also requires the following php extensions :
 
