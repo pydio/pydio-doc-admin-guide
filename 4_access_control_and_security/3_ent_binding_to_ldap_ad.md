@@ -7,13 +7,11 @@ To add new directory, click on "DIRECTORY" or click on existed ldap to modify co
 
 [:image-popup:4_access_control_and_security/ldap_new_directory.png]
 
-
 ### Step 2:
 
 In this step, you will create a ldap directory with an openldap server.
 
 [:image-popup:4_access_control_and_security/ldap_general_options.png]
-
 
 #### Basic settings for connection to ldap Server
 
