@@ -32,4 +32,5 @@ The choices are multiple and it is up to you to customize it.
 
 #### Parameters
 
-With parameters, you can control parameters either affecting a specific workspace or multiple ones at once, parameters are for example :
+With parameters, you can control parameters either affecting a specific workspace or multiple ones at once and overide them, for instance you can ovride the default quotas of the workspace and more.
+There is lots of parameters and customization available you can put specific values or on the other hand enable/disable them.
