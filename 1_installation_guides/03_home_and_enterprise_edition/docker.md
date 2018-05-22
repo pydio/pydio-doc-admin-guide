@@ -48,9 +48,52 @@ Note: If you [add new datasources](https://pydio.com/fr/docs/cells/v1/managing-d
 
 #### Environment variable
 
+The Pydio Cells docker image uses two environment variables to define the url internal to the application and the url external to the application
 
+- `CELLS_BIND` : internal url - used by services to talk between each others
+- `CELLS_EXTERNAL` : external url - used in links, etc..
 
 ### Example setup with docker compose
+
+```sh
+version: '3'
+services:
+
+    # Cells image with two named volumes for the static and for the data
+    cells:
+        image: cells:latest
+        restart: always
+        volumes: ["static:/root/.config/pydio/cells/static/pydio", "data:/root/.config/pydio/cells/data"]
+        ports: ["8080:8080"]
+        environment:
+            - CELLS_BIND=192.168.0.1:8080
+            - CELLS_EXTERNAL=demo.pydio.com
+        network_mode: "host"
+
+    # MySQL image with a default database cells and a dedicated user pydio
+    mysql:
+         image: mysql:5.7
+         restart: always
+         environment:
+             MYSQL_ROOT_PASSWORD: P@ssw0rd
+             MYSQL_DATABASE: cells
+             MYSQL_USER: pydio
+             MYSQL_PASSWORD: P@ssw0rd
+         command: [mysqld, --character-set-server=utf8mb4, --collation-server=utf8mb4_unicode_ci]
+         ports: ["3306:3306"]
+         network_mode: "host"
+
+    # PHP FPM image with the static named volume from the cells container
+    php:
+        image: cells-php:latest
+        restart: always
+        volumes: ["static:/root/.config/pydio/cells/static/pydio"]
+        network_mode: "host"
+
+volumes:
+    static: {}
+    data: {}
+```
 
 ### Public access
 
