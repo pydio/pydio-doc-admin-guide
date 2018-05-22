@@ -105,4 +105,4 @@ Note : We use network mode host to facilitate the setup. This option is not avai
 
 We recommend you [run behind a proxy](https://pydio.com/fr/docs/cells/v1/run-behind-proxy) to encrypt the content you want to publish over the internet.
 
-A proxy can also be setup as docker containers using the [nginx-proxy](https://github.com/jwilder/nginx-proxy) and [docker-letsencrypt-nginx-proxy-companion](https://github.com/JrCs/docker-letsencrypt-nginx-proxy-companion) containers.
+The [nginx-proxy](https://github.com/jwilder/nginx-proxy) and [docker-letsencrypt-nginx-proxy-companion](https://github.com/JrCs/docker-letsencrypt-nginx-proxy-companion) containers can also be used to setup your proxy.
