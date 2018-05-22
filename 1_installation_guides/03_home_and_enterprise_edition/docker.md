@@ -8,7 +8,7 @@ The Pydio cells image is designed to be used in a micro-service environment. It 
 
 In order to have a fully working Pydio Cells environment, you need to run a database (MySQL or MariaDB) and a PHP-FPM (to handle the frontend) on the same network. A basic setup is described on this page.
 
-#### Using the image
+#### Run the container
 
 ```sh
 docker run -d -p 8080:8080 pydio/cells
