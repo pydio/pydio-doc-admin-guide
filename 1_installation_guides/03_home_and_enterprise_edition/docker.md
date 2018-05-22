@@ -53,6 +53,8 @@ The Pydio Cells docker image uses two environment variables to define the url in
 - `CELLS_BIND` : internal url - used by services to talk between each others
 - `CELLS_EXTERNAL` : external url - used in links, etc..
 
+Note : CELLS_BIND and CELLS_EXTERNAL can only use different ports at the time of writing. They must share the same host.
+
 ### Example setup with docker compose
 
 ```sh
@@ -66,7 +68,7 @@ services:
         volumes: ["static:/root/.config/pydio/cells/static/pydio", "data:/root/.config/pydio/cells/data"]
         ports: ["8080:8080"]
         environment:
-            - CELLS_BIND=192.168.0.1:8080
+            - CELLS_BIND=demo.pydio.com:8080
             - CELLS_EXTERNAL=demo.pydio.com
         network_mode: "host"
 
@@ -95,6 +97,12 @@ volumes:
     data: {}
 ```
 
+Note : We use network mode host to facilitate the setup. This option is not available on MacOS X and the cells_bind variable must always be the name of the service (in our case cells) in order for the setup to work.
+
 ### Public access
 
 #### HTTPS
+
+We recommend you [run behind a proxy](https://pydio.com/fr/docs/cells/v1/run-behind-proxy) to encrypt the content you want to publish over the internet.
+
+A proxy can also be setup as docker containers using the [nginx-proxy](https://github.com/jwilder/nginx-proxy) and [docker-letsencrypt-nginx-proxy-companion](https://github.com/JrCs/docker-letsencrypt-nginx-proxy-companion) containers.
