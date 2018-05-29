@@ -26,7 +26,7 @@ sudo useradd -m pydio
 
 ### Database
 
-Pydio Cells can be installed with both MySQL Server (v5.6 or higher) and MariaDB (v10.1 or higher).
+Pydio Cells can be installed with both MySQL Server (v5.6 or higher) and MariaDB (v10.2 or higher).
 
 #### MySQL
 
