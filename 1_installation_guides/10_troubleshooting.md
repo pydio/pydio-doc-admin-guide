@@ -13,7 +13,9 @@ On a linux-like system, using the `pydio` user, you will find the Pydio files at
 
 ## Connection issues
 
-### PHP-FPM
+### PHP
+
+#### PHP-FPM
 
 The most common issue is that you did not start the php-fpm service.
 
