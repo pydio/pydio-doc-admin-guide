@@ -61,6 +61,13 @@ sudo yum install rh-mariadb102-mariadb-server
 sudo systemctl enable rh-mariadb102-mariadb
 # start the service
 sudo systemctl start rh-mariadb102-mariadb
+
+# run the post installation script
+mysql_secure_installation
+
+# you can then check everything is fine
+mysql -V
+which mysql
 ```
 
 #### Post install configuration
@@ -107,6 +114,8 @@ user = pydio
 group = apache
 
 listen = 127.0.0.1:9000
+
+; ... omitted
 ```
 
 Then enable and start the PHP-FPM service:
