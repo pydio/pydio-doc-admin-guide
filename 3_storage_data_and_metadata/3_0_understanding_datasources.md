@@ -1,28 +1,35 @@
 ### Concepts
 
-In previous versions of Pydio, Workspaces were used to both define a way to access datasources and a way to manage ACLs on the data. Pydio Cells now provides a strong decoupling between technical storages and business logic: "datasources" define actual storages where data lies, and workspaces can point to any point of the datasources trees to define ACLs. This is in fact how the Cells feature was achieved.
+In previous versions of Pydio, Workspaces were used to both define a way to access datasources and a way to manage ACLs on the data. Pydio Cells now provides a strong decoupling between technical storages and business logic:
 
-Technically speaking, a datasource provides access to data internally, by continuously listening to and storing changes, to maintain its own consistent data index. These indexes are then aggregated by Pydio into a global tree (by the pydio.grpc.tree service) and used by the other services. That way, datasources can be distributed across many nodes as needed. 
+- the **datasources** define the actual storage where the data lies
+- the **workspaces** point to any point in the tree of any datasource and defines ACLs by adding or removing permissions and policies.
+- the **cells** are then virtual workspaces that point to _many_ points in the various datasource trees and add share features and metadata.
+
+Each **datasource** provides access to data internally and maintains its own consistent index by continuously listening to and storing changes. Indexes from the various datasources are then aggregated by the `pydio.grpc.tree` service into a global tree that is exposed to and used by other services. That way, datasources can be distributed across as many nodes as needed.
 
 ### Services Involved
 
 Each datasource is virtually composed 3 micro-services :
 
-* **An Object service** : Provides access to the data, and can be accessed by any tool that talks Amazon S3 protocol. This object storage is defined by its URL and its Bucket name. This service is really in charge of talking to the underlying storage.
-* **An Index service** : Stores the data state and stands as the only source of truth for request on data state. This uses a highly optimized SQL model for storing/retrieving hierarchical data information (using nested sets).
-* **A Synchronizer** : Receives events from the storage and maintains the index synchronized 
+- An **Object service**: Provides access to the data, and can be accessed by any tool that talks Amazon S3 protocol. This object storage is defined by its URL and its Bucket name. This service is really in charge of talking to the underlying storage.
+- An **Index service**: Stores the data state. It stands as the only source of truth for request on data state. This uses a highly optimized SQL model for storing/retrieving hierarchical data information (using nested sets).
+- A **Synchronizer**: Receives events from the storage and maintains the index synchronized.
 
 [:image-popup:3_storage_data_and_metadata/architecture_datasources.png]
 
-The unidirectional synchronizer is the key here : when any change is applied to the storage (e.g. a user uploads an image), the sync will receive an event only once this operation is finished, and then update the index accordingly. This event will also be forwarded to other services like the websocket service (for updating user interface), the scheduler (for computing image thumbnail), and so on.
+The unidirectional synchronizer is key here:  
+when a change is applied to the storage (e.g. a user uploads an image), the sync only receives an event _after this operation has finished_. It then updates the index accordingly. The same event is also forwarded to other services like the websocket service (for updating user interface), the scheduler (for computing image thumbnail), and so on.
 
-By design, when defining Object storage e.g. on a folder **folder-name** on the server, it will start on the **parent** folder and expose the folder **folder-name** as an S3 bucket. For this reason, if many datasources point to sibling folders, a factorization mechanism will start only one Object storage on the parent folder and expose all the children as s3 buckets. That's why we say that datasources are "virtually" composed of 3 sub-services. 
+One interresting point of design: when declaring a new data source with local file system storage type, e.g. on a folder **folder-name** on the server, the corresponding object service (a minio server) is started pointing to the **parent** folder. It exposes the folder **folder-name** as an S3 bucket.  
+For this reason, if more than one datasource point to sibling folders, a factorization mechanism starts only _one_ Object storage on the parent folder and exposes all the children as s3 buckets.  
+That's why we say that datasources are _virtually_ composed of 3 sub-services.
 
 ### Seeing it in action
 
-Each services of the datasources are forked by the main cells process. For this reason, when you look at the running processes, you will see something similar to the ones below:
+Each services of the datasources are forked by the main `cells` process. For this reason, when you look at the running processes, you will see something similar to the ones below:
 
-```
+```sh
 $ ps au | grep cells
 pydio 85237  17,4  0,5 0:13.85 ./cells start
 pydio 85239   0,9  0,3 0:01.15 ./cells start --fork pydio.grpc.data.objects.local1
@@ -42,9 +49,9 @@ As you can see here, there are 2 objects services launched (local1, local2) and 
 
 ### Supported Storages
 
-Datasource can be seen as a driver to access your data. It can currently be connected to two types of storages : 
+Datasource can be seen as a driver to access your data. It can currently be connected to two types of storages:
 
-* **Local FileSystem** : folder located on the same server as where the service is running
-* **Object Storage**: S3-compatible remote storage (can be a proper S3 or anything implementing the API).
+- **Local FileSystem**: folder located on the same server as where the service is running
+- **Object Storage**: S3-compatible remote storage (can be a proper S3 or anything implementing the API).
 
 You will see next how to create and manage datasources via the admin interface.
