@@ -21,4 +21,4 @@ The upgrade process is not that hard but it requires you to follow every step to
     ```
 
 1. Now run `./cells-enterprise start` to insure the app starts correctly.
-1. If you are running under production, please remember you should rather [configure the app to start as a service](https://pydio.com/en/docs/cells/v1/launching-cells-service).
+1. If you are running under production, please remember you should rather [configure the app to start as a service](https://pydio.com/en/docs/cells/v1/launching-cells-service). In such case, you also have to adapt the supervisor or systemd conf file (depending on your setup) to change the name of the launched binary from `cells` to `cells-enterprise`.

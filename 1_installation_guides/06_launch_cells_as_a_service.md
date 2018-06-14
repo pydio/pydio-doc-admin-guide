@@ -1,4 +1,4 @@
-_In this guide, we explain how you launch Pydio Cells as a background service using systemd or [Supervisor](http://supervisord.org/)._ 
+_In this guide, we explain how you launch Pydio Cells as a background service using systemd or [Supervisor](http://supervisord.org/)_.
 
 We cover commonly used Linux system, namely:
 
@@ -37,6 +37,13 @@ SendSIGKILL=yes
 SuccessExitStatus=0
 [Install]
 WantedBy=multi-user.target
+```
+
+If you are running Pydio Cells in a production environment, you probably want to enable production logging:
+
+```conf
+# Add en environment variable in the [Service] section
+Environment=PYDIO_LOGS_LEVEL=production
 ```
 
 Then, enable and start the service:
@@ -168,10 +175,8 @@ You now have Pydio Cells running as a daemon and auto-restarting after server re
 
 On a RHEL/CentOS system, you have two options:
 
-- Use Supervisor
 - Run as a service
-
-We will introduce them both.
+- Use Supervisor
 
 ### Configure Cells as a systemd service
 
@@ -201,6 +206,17 @@ SendSIGKILL=yes
 SuccessExitStatus=0
 [Install]
 WantedBy=multi-user.target
+```
+
+If you are running Pydio Cells in a production environment, you probably want to enable production logging.  
+You have 2 options:
+
+```conf
+# Add en environment variable in the [Service] section
+Environment=PYDIO_LOGS_LEVEL=production
+
+# *or* replace the 13th line with
+ExecStart=/home/pydio/cells start --log production
 ```
 
 Then, enable and start the service:
