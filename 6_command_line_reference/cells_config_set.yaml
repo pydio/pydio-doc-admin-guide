@@ -1,5 +1,5 @@
 title: "cells config set"
 menu: "cells config set"
 language: und
-menu: menu-administration-guide
+menu_name: menu-administration-guide
 weight: 5
