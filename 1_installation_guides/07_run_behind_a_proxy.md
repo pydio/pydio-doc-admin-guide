@@ -52,7 +52,7 @@ The example below shows the configuration of a proxy that serves the demo.pydio.
 
 ```conf
 
-https://demo.pydio.com {
+demo.pydio.com {
 	log stdout
 
 	tls /etc/certs/pydio.crt /etc/certs/pydio.key
