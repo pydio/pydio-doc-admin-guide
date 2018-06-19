@@ -48,8 +48,6 @@ Note: If you [add new datasources](https://pydio.com/fr/docs/cells/v1/managing-d
 
 #### Environment variable
 
-The Pydio Cells docker image uses two environment variables to define the url internal to the application and the url external to the application
-
 - `CELLS_NO_SSL`: uses ssl or not (default to 0 => uses ssl)
 - `CELLS_BIND` : internal url - used by services to talk between each others
 - `CELLS_EXTERNAL` : external url - used in links, etc..
