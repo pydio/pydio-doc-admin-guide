@@ -48,7 +48,7 @@ Please note:
 
 ## Using [Caddy](https://caddyserver.com) as a reverse proxy
 
-The example below shows the configuration of a proxy that serves the demo.pydio.com url and redirects to a cells environment running on port 8080 of the localhost :
+The example below shows the configuration of a proxy that serves the demo.pydio.com url and redirects to a Pydio Cells environment running on port 8080 of the localhost :
 
 ```conf
 
