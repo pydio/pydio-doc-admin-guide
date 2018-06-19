@@ -147,11 +147,11 @@ Get Pydio Cells binary:
 
 ```sh
 # Home edition
-wget https://download.pydio.com/pub/cells/release/1.0.0/linux-amd64/cells
+wget https://download.pydio.com/pub/cells/release/1.0.1/linux-amd64/cells
 sudo chmod u+x cells
 sudo chown pydio.pydio cells
 # Enterprise edition
-wget https://download.pydio.com/pub/cells-enterprise/release/1.0.0/linux-amd64/cells-enterprise
+wget https://download.pydio.com/pub/cells-enterprise/release/1.0.1/linux-amd64/cells-enterprise
 sudo chmod u+x cells-enterprise
 sudo chown pydio.pydio cells-enterprise
 ```
