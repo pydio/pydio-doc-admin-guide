@@ -48,8 +48,7 @@ Note: If you [add new datasources](https://pydio.com/fr/docs/cells/v1/managing-d
 
 #### Environment variable
 
-The Pydio Cells docker image uses two environment variables to define the url internal to the application and the url external to the application
-
+- `CELLS_NO_SSL`: uses ssl or not (default to 0 => uses ssl)
 - `CELLS_BIND` : internal url - used by services to talk between each others
 - `CELLS_EXTERNAL` : external url - used in links, etc..
 
@@ -68,9 +67,9 @@ services:
         volumes: ["static:/root/.config/pydio/cells/static/pydio", "data:/root/.config/pydio/cells/data"]
         ports: ["8080:8080"]
         environment:
-            - CELLS_BIND=demo.pydio.com:8080
-            - CELLS_EXTERNAL=demo.pydio.com
-        network_mode: "host"
+            - CELLS_BIND=localhost:8080
+            - CELLS_EXTERNAL=localhost:8080
+            - CELLS_NO_SSL=1
 
     # MySQL image with a default database cells and a dedicated user pydio
     mysql:
@@ -83,21 +82,17 @@ services:
              MYSQL_PASSWORD: P@ssw0rd
          command: [mysqld, --character-set-server=utf8mb4, --collation-server=utf8mb4_unicode_ci]
          ports: ["3306:3306"]
-         network_mode: "host"
 
     # PHP FPM image with the static named volume from the cells container
     php:
         image: pydio/cells-php-fpm:latest
         restart: always
         volumes: ["static:/root/.config/pydio/cells/static/pydio"]
-        network_mode: "host"
 
 volumes:
     static: {}
     data: {}
 ```
-
-Note : We use network mode host to facilitate the setup. This option is not available on MacOS X and the cells_bind variable must always be the name of the service (in our case cells) in order for the setup to work.
 
 ### Public access
 

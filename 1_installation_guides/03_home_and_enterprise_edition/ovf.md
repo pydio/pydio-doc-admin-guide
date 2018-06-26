@@ -9,7 +9,7 @@ The image of OVF can be downloaded from:
 ```
 https://download.pydio.com/pub/cells-enterprise/release/VERSION/ovf/Cells-Enterprise-OVF-VERSION.zip
 ```
-where "VERSION" is the release version of Pydio Cells. Get for example: [https://download.pydio.com/pub/cells-enterprise/release/1.0.0/ovf/Cells-Enterprise-OVF-1.0.0.zip](https://download.pydio.com/pub/cells-enterprise/release/1.0.0/ovf/Cells-Enterprise-OVF-1.0.0.zip). An md5 file is also available on the same location for integrity verification.
+where "VERSION" is the release version of Pydio Cells. Get for example: [https://download.pydio.com/pub/cells-enterprise/release/1.0.1/ovf/Cells-Enterprise-OVF-1.0.1.zip](https://download.pydio.com/pub/cells-enterprise/release/1.0.1/ovf/Cells-Enterprise-OVF-1.0.1.zip). An md5 file is also available on the same location for integrity verification.
 
 This Zip archive contains the OVF itself plus the following files: 
 

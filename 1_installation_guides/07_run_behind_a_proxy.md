@@ -45,3 +45,27 @@ Please note:
 
 - The AllowEncodedSlashes On that may be necessary if not activated globally in apache (to call APIs like /a/meta/bulk/path%2F%to%2Ffolder
 - When I configure Cells, even on another port, I actually **make sure to bind it directly to the cells.example.com** as well (like Apache). This is necessary for the presigned URL used with S3 API for uploads and downloads (they used signed headers and a mismatch between received Host headers may break the signature). Another option is to still bind Cells using a local IP, then in the Admin Settings, under Configs Backend, use the field “Replace Host Header for S3 Signature” and use the internal IP here.
+
+## Using [Caddy](https://caddyserver.com) as a reverse proxy
+
+The example below shows the configuration of a proxy that serves the demo.pydio.com url and redirects to a Pydio Cells environment running on port 8080 of the localhost :
+
+```conf
+
+demo.pydio.com {
+	log stdout
+
+	tls /etc/certs/pydio.crt /etc/certs/pydio.key
+
+	timeouts 0
+
+	# And the rest to pydio
+	proxy / localhost:8080 {
+		insecure_skip_verify
+		transparent
+		websocket
+	}
+}
+```
+
+To properly configure the certificates that you want to use, please refer to the [tls plugin page of the caddy documentation](https://caddyserver.com/docs/tls).
