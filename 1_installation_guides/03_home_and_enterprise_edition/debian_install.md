@@ -157,7 +157,7 @@ sudo apt install php7.0 php7.0-fpm php7.0-gd php7.0-curl php7.0-intl php7.0-xml
 ## Installation and configuration
 
 ```sh
-wget https://download.pydio.com/pub/cells/release/1.0.1/linux-amd64/cells
+wget https://download.pydio.com/pub/cells/release/1.0.3/linux-amd64/cells
 sudo chmod u+x cells
 ```
 

@@ -147,11 +147,11 @@ Get Pydio Cells binary:
 
 ```sh
 # Home edition
-wget https://download.pydio.com/pub/cells/release/1.0.1/linux-amd64/cells
+wget https://download.pydio.com/pub/cells/release/1.0.3/linux-amd64/cells
 sudo chmod u+x cells
 sudo chown pydio.pydio cells
 # Enterprise edition
-wget https://download.pydio.com/pub/cells-enterprise/release/1.0.1/linux-amd64/cells-enterprise
+wget https://download.pydio.com/pub/cells-enterprise/release/1.0.3/linux-amd64/cells-enterprise
 sudo chmod u+x cells-enterprise
 sudo chown pydio.pydio cells-enterprise
 ```
@@ -202,12 +202,12 @@ Then restart networking services.
 
 #### Unable to bind port 443
 
-_You have configured the bind URL with port 443 and enable redirection of port 80. You get an error page "Unable to connect" when you try to connect_ 
+_You have configured the bind URL with port 443 and enable redirection of port 80. You get an error page "Unable to connect" when you try to connect_.
 
 Check the error log, if you sse such an error:
 
 ```sh
-2018-05-21T10:55:57.532+0200	ERROR	pydio.grpc.gateway.proxy	Could not run 	{"error": "listen tcp :443: bind: permission denied"}
+2018-05-21T10:55:57.532+0200   ERROR   pydio.grpc.gateway.proxy   Could not run   {"error": "listen tcp :443: bind: permission denied"}
 ```
 
 You probably did not give permission to the `cells` binary file to use reserved ports. To fix this:
@@ -264,10 +264,9 @@ You can install PHP 7 on ubuntu 14 by following those steps:
 - `sudo add-apt-repository ppa:ondrej/php`
 - `sudo apt-get update`
 - you can install either php 7.0 or php 7.1 to install only php client without apache2 you have to use the following commands :
-
 - for php 7.0
-`sudo apt-get install php7.0-cli`
-then for the other packages `sudo apt-get install php7.0-dom php7.0-curl php7.0-gd php7.0-intl`
+  `sudo apt-get install php7.0-cli`
+  then for the other packages `sudo apt-get install php7.0-dom php7.0-curl php7.0-gd php7.0-intl`
 
 - for php 7.1
 

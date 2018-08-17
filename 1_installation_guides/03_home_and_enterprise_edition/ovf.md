@@ -9,9 +9,10 @@ The image of OVF can be downloaded from:
 ```
 https://download.pydio.com/pub/cells-enterprise/release/VERSION/ovf/Cells-Enterprise-OVF-VERSION.zip
 ```
-where "VERSION" is the release version of Pydio Cells. Get for example: [https://download.pydio.com/pub/cells-enterprise/release/1.0.1/ovf/Cells-Enterprise-OVF-1.0.1.zip](https://download.pydio.com/pub/cells-enterprise/release/1.0.1/ovf/Cells-Enterprise-OVF-1.0.1.zip). An md5 file is also available on the same location for integrity verification.
 
-This Zip archive contains the OVF itself plus the following files: 
+where "VERSION" is the release version of Pydio Cells. Get for example: [https://download.pydio.com/pub/cells-enterprise/release/1.0.3/ovf/Cells-Enterprise-OVF-1.0.3.zip](https://download.pydio.com/pub/cells-enterprise/release/1.0.3/ovf/Cells-Enterprise-OVF-1.0.3.zip). An md5 file is also available on the same location for integrity verification.
+
+This Zip archive contains the OVF itself plus the following files:
 
 - **EULA**: End-user license aggrement
 - **Import_to_Hyper_V.txt**: instructions for importing vm image into Hyper-V system
@@ -46,10 +47,10 @@ At this step, you can login to Cells-Enterprise with credential you've enter dur
 
 If you ever need to login to the VM system, Ssh accounts and technical accounts are created as follow:
 
-* Administrative user: *root* / *PydioVAPP* (ssh access)
-* User: *pydio* / *PydioVAPP* (ssh access)
-* MySQL username: *root* / No password
-* MySQL username: *pydio@localhost* / No password
+- Administrative user: *root* / *PydioVAPP* (ssh access)
+- User: *pydio* / *PydioVAPP* (ssh access)
+- MySQL username: *root* / No password
+- MySQL username: *pydio@localhost* / No password
 
 The predefined database created in MySQL is *cells*
 
