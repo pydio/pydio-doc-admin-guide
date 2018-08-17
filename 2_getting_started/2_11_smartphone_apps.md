@@ -27,4 +27,3 @@ Start the application and fill in the requested fields:
 If you see this page, congratulations, you are now connected!
 
 [:image-popup:2_getting_started/good_to_go.jpg]
-

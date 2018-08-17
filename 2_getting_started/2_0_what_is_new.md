@@ -27,9 +27,10 @@ In Pydio 8, Workspaces were defining both a way to access the actual storage (e.
 ### Security Policies
 
 Resource-based security policies are similar to Amazon Resource-Based policies. This flexible concept allows creation of complex rules based on many parameters like request IP address, server time, files metadata, etc. These rules can then be applied on the following resources:
-* REST Access points (can be applied to one or many HTTP Method)
-* OpenID Connect Access Point (to allow/disallow login operations)
-* [ED] ACLs: using policies instead of simple Read/Write assignments
+
+- REST Access points (can be applied to one or many HTTP Method)
+- OpenID Connect Access Point (to allow/disallow login operations)
+- [ED] ACLs: using policies instead of simple Read/Write assignments
 
 See the dedicated [chapter on security](/en/docs/cells/v1/security-policies): Home Edition comes with a generic set of policies to secure the installation, whereas Enterprise Edition allows fine tuning and creation of bespoke policies.
 

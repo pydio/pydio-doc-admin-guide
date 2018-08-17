@@ -11,4 +11,3 @@ With 3 different tabs:
 - **Palette**: change the colors of the different items such as the menu bar or the buttons.
 - **Css**: type raw CSS right here to modify some elements. We recommand you to use your browser's _Developer Tool_ allowing you to modify in live and see directly the end result.
 - **Buttons**: add new buttons to either trigger a custom javascript or redirect to an external URL. The customization is pretty straight forward: you name your button, choose its location and icon and then put your link or js snippet.
-

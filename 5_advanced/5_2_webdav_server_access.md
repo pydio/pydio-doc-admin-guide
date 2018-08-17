@@ -31,16 +31,17 @@ Ubuntu or other linux users can use the Nautilus file manager.
 As seen in the below screenshot (ubuntu 18), if you click on `Other locations`, you open a field on the bottom allowing you to enter the address of the webdav.  
 For instance: `http://192.168.0.1:8080/dav/`. You are then prompted for login and password and you are good to go.
 
-#### Windows 
+#### Windows
 
 Windows 10 users must:
+
 - Go to **This pc** 
-- On the top part, click on **Add a network connection** 
+- On the top part, click on **Add a network connection**
 - Put the information of your webdav connection
 
 Once you have done this:
 
-- go in the top menu to **Map a network drive** 
+- go in the top menu to **Map a network drive**
 - choose a letter and the network drive that you previously added
-   
+
 It's done. You can now browse and use it as you wish.

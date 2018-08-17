@@ -32,7 +32,6 @@ Below is the global architecture schema (not all services are represented here):
 
 [:image-popup:5_advanced/cells_architecture.png]
 
-
 ## Services Tags
 
 As you can see on the schema above, services are also grouped by their logical category. This is just a naming convention and has no technical impact. These groups are tags attached to services, and can be used to organize information when listing services. 
@@ -131,7 +130,7 @@ This is the case when you use `./cells list` command :
  pydio.rest.jobs                            [X]        
 ```
 
-Let's explain briefly the roles of each groups of services : 
+Let's explain briefly the roles of each groups of services:
 
 - **Discovery**:  These are the core services necessary to run Pydio Cells. It includes among others the `nats` service, which allows all micro-services to auto-discover the others magically.
 - **Gateway**: "Front" services facing the world

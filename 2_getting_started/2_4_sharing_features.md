@@ -22,7 +22,7 @@ When using the "Create Cell" button from the left-hand panel, the following menu
 
 [:image-popup:2_getting_started/create_cell_3.png]
 
-* **Add an existing Folder**: Pick an existing folder from any of your current workspaces, to feed the Cell with data. You can also leave the cell empty and a dedicated folder will be created on the underlying storage.
+- **Add an existing Folder**: Pick an existing folder from any of your current workspaces, to feed the Cell with data. You can also leave the cell empty and a dedicated folder will be created on the underlying storage.
 
 Click on **Create Cell Now!** to finish the process.
 
@@ -34,7 +34,7 @@ When using the **Share** action (either in right-click menu or in the informatio
 
 ## Creating Cells from Address Book
 
-When browsing the Adress Book in the right-hand column, clicking on the vertical dots for a user opens providing the following options : 
+When browsing the Adress Book in the right-hand column, clicking on the vertical dots for a user opens providing the following options:
 
 - **Create a cell with this user**
 - **Add user to current Cell**: if you are currently inside a Cell
@@ -56,5 +56,5 @@ You should now see these new fields:
 Then there are 3 different tabs:
 
 1. **Link**: This is where you can get your link, you can also choose the permissions that users have on this share.
-2. **Access**: You can choose if you want to put a password an expiration date for the link, a limited number of downloads and the layout of the GUI when people follow the link.
-3. **Visibility**: You can choose to whom this link is visible on the shares menu.
+1. **Access**: You can choose if you want to put a password an expiration date for the link, a limited number of downloads and the layout of the GUI when people follow the link.
+1. **Visibility**: You can choose to whom this link is visible on the shares menu.

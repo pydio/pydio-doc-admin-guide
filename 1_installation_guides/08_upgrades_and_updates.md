@@ -1,8 +1,8 @@
-### Upgrading from Pydio 8
+## Upgrading from Pydio 8
 
 Upgrading from Pydio 8 and below is **currently not possible** because we have changed most of our code from PHP language to GO language. We are working on a migration process and we will provide you ASAP with a solution. If you are currently using an Enterprise version of Pydio 8 and need to migrate now, please get in touch directly with us.
 
-### Upgrading Cells
+## Upgrading Cells
 
 On a running Cells / Cells-Enterprise system, upgrade process is as simple as replacing the old binary with the latest one and restarting the service. You can do it manually (by downloading the latest binary) or use the in-app upgrade via the `Settings` panel.
 
@@ -23,10 +23,11 @@ To perform the in-app upgrade:
 _**Warning**: if you are running Cells on Linux system using well known ports 80 and/or 443, you have to authorize the new binary file to use these with_:
 
 ```sh
+# As a root user
 setcap 'cap_net_bind_service=+ep' cells
 ```
 
-### Update Channels
+## Update Channels
 
 You can select the channel in which you want to get the upgrades. By default, use the **stable** channel that only publishes carefully tested and non breaking updates.
 

@@ -91,40 +91,6 @@ To temporary disable SELinux: `sudo setenforce 0`.
 
 You can also permanently disable SELinux in `/etc/selinux/config`.
 
-### PHP-FPM
-
-In this example we use PHP version 7.1, but you can use any version >= 5.5.9.
-
-```bash
-sudo yum install rh-php71-php-fpm rh-php71-php-common rh-php71-php-intl rh-php71-php-gd rh-php71-php-mbstring rh-php71-php-xml rh-php71-php-curl rh-php71-php-opcache
-```
-
-The default **user** for the PHP-FPM worker pool needs to be changed to **pydio**. Change the port the service is listening to if required.
-
-```bash
-sudo vi /etc/opt/rh/rh-php71/php-fpm.d/www.conf
-
-; ... omitted
-
-; Unix user/group of processes
-; RPM: apache user chosen to provide access to the same directories as httpd
-; user = apache
-user = pydio
-; RPM: Keep a group allowed to write in log dir.
-group = apache
-
-listen = 127.0.0.1:9000
-
-; ... omitted
-```
-
-Then enable and start the PHP-FPM service:
-
-```bash
-sudo systemctl enable rh-php71-php-fpm
-sudo systemctl start rh-php71-php-fpm
-```
-
 ### Dedicated User
 
 It is recommended to use a dedicated user to run Pydio Cells.

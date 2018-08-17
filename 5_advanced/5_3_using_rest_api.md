@@ -65,4 +65,3 @@ with
 - **URL**: The url of your Pydio Cells server
 - **USER**: the user login
 - **TOKEN**: The `id_token` field in the response of the authentication
-

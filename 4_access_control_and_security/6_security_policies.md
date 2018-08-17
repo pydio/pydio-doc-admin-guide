@@ -10,12 +10,11 @@ When talking of _resources_ in the context of _Security Policies_, it can be:
 
 - A file or a folder, and by extension a workspace, via ACLs
 - A REST API endpoint
-- An OpenId Connect operation 
+- An OpenId Connect operation
 
 To gain a deeper understanding of the model, the reader will find these links valuable:
 
-- [IAM Policies - AWS Identity and Access Management](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html): 
-Learn all about AWS Identity and Access Management (IAM) policies and how they work.
+- [IAM Policies - AWS Identity and Access Management](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html): learn all about AWS Identity and Access Management (IAM) policies and how they work.
 - The Github [Ladon](https://github.com/ory/ladon) page: Ladon is the SDK for access control policies that is used uner the hood.
 
 ## How do Security Policies work?
@@ -67,7 +66,7 @@ And then save.
 
 To completely remove a Policy Template, click on the `DELETE POLICY` button.
 
-### Ladon conditions 
+### Ladon conditions
 
 As already explained, Security Policies in Pydio Cells are built upon the [Ladon](https://github.com/ory/ladon) SDK. The smallest building block are `conditions` that are basically boolean assertions (e.g. `if` statements) scripted in JSON.
 
@@ -117,11 +116,12 @@ For instance:
 ```
 
 Definition of valid days can be either defined using:
+
 - a single day: `Sunday`
-- interval like `Monday-Friday` 
+- interval like `Monday-Friday`
 - a list of days like `Monday,Tuesday,Friday` or `Monday, Tuesday, Friday`.
 
-Times are expressed with `HH:mm` format (hours are in 24 hours format) and are currently compared to current **server** time, **not the client time**. Thus, someone in Australia that connects on Monday 11AM Sydney's time to a **Pydio Cells** instance that is hosted in Berlin and that has such a policy won't be able to connect. 
+Times are expressed with `HH:mm` format (hours are in 24 hours format) and are currently compared to current **server** time, **not the client time**. Thus, someone in Australia that connects on Monday 11AM Sydney's time to a **Pydio Cells** instance that is hosted in Berlin and that has such a policy won't be able to connect.
 
 **WithinPeriodCondition**: checks wether current server time was within the configured period at the time of the check.
 
@@ -135,7 +135,6 @@ Times are expressed with `HH:mm` format (hours are in 24 hours format) and are c
 ```
 
 Date times used to define the boundaries of the period are expressed with an iso 8601 formatted string, e.g: "2006-01-02T15:04-0700".
-
 
 **DateAfterCondition**: returns true when checked if current server time is **after** configured date time.
 

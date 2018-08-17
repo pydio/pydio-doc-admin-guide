@@ -1,13 +1,13 @@
-One of the Cells abilities is to integrate with the environment it is install in. This goes for user creation/authentication as it is able to import and authenticate user from an existing LDAP server. Additionnaly Cells allows admin to configure users synchronization rate and mapping of LDAP user attributes against Cells user attributes.
+One of the Cells nice features is to integrate with the environment it is installed in. This goes for user creation/authentication as it is able to import and authenticate user from an existing LDAP server. Additionnaly Cells allows admin to configure users synchronization rate and mapping of LDAP user attributes against Cells user attributes.
 
-### Step 1:
+### Step 1
 
 Login with admin user and go to "Settings". Click on External Directory.
 To add new directory, click on "DIRECTORY" or click on existed ldap to modify configurations.
 
 [:image-popup:4_access_control_and_security/ldap_new_directory.png]
 
-### Step 2:
+### Step 2
 
 In this step, you will create a ldap directory with an openldap server.
 
@@ -20,17 +20,20 @@ In this step, you will create a ldap directory with an openldap server.
 ##### 1) IP address of host name of ldap server and Port
 
 Example:
+
 - 127.0.0.1:389
 - ldap.domain.com:389
 - ldap.domain.com:639
+
 If you do not specify the port in sever address, the default port is 389
 
-##### 2) Connection Type:
+##### 2) Connection Type
 
-##### 3) Binding DN: 
+##### 3) Binding DN
 
 Dependings on ldap, this field accept user id, distinguished Name, or username@domain.com format
-For example:
+For instance:
+
 - pydio@lab.py
 - cn=pydio,ou=company,dc=lab,dc=py
 
@@ -46,32 +49,35 @@ If you are working with Active Directory, you can get dN of user object
 
 ##### Advanced Settings
 
-##### 5) Skip certificate verification:
+##### 5) Skip certificate verification
 
 If this option is turn on, pydio will verify the certificate of ldap server before start to connect. Please make sure that the CA certificate is trusted by system (OS).
 
-##### 6) 7) SSL or STARTTLS connection:
+##### 6) 7) SSL or STARTTLS connection
 
 We need to specify Pydio the absoluted path to the certificate of ldap server (6) or the content of this certificate in base64 format (7)
 
 > Note: You can easily get certificate by using following command
+>
+> `openssl s_client -showcerts -connect ldapserver.com:389 </dev/null 2>/dev/null|openssl x509 -outform PEM >mycertfile.pem`
 
-> `openssl s_client -showcerts -connect ldapserver.com:389 </dev/null 2>/dev/null|openssl x509 -outform PEM >mycertfile.pem `
+##### 8) Default paging size
 
-##### 8) Default paging size:
 500 records is default value in openldap, and 1000 is number of record for one page in Active Directory
 
 #### User Filter
 
 [:image-popup:4_access_control_and_security/ldap_user_filters.png]
 
-##### 1) User's DN:
+##### 1) User's DN
+
 You can define more than one distinguished name (DN) of an organization unit (or a container in Active Directory) in ldap tree where Pydio will looking for users to import to its database.
 For example:
 ou=company,dc=vpydio,dc=fr
 ou=visitor,dc=vpydio,dc=fr
 
 ##### 2) Filter
+
 If you are working at first time with ldap, please visit this [page on LDAP syntax](https://social.technet.microsoft.com/wiki/contents/articles/5392.active-directory-ldap-syntax-filters.aspx) to get more information about LDAP syntax and some examples.
 
 Filter specifies the conditions that must be met for users in ldap to be imported to Pydio. In this filter we usually combine a clause to filter only user object class with another conditions.
@@ -83,7 +89,6 @@ Filter specifies the conditions that must be met for users in ldap to be importe
 
 *Example:* Filter user objects in ldap whose *department* attribute value is *staff*
   `(&(objectClass=user)(department=staff))`
-
 
 **Note:** It's highly recommended to create in Active Directory a specific security group for Pydio to make filter string more simple.
 

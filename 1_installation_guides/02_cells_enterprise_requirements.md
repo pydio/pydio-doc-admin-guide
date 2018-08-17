@@ -8,7 +8,7 @@ Licenses are based on a per-user model and an expiration time. Users count is ba
 
 ### Installing the license
 
-If installing using Cells browser-based installer, you can copy/paste the license key directly in the installation form. However, if you want to install Cells using the command-line tool, you first have to manually copy the license key inside a file named pydio-license at the following location : 
+If installing using Cells browser-based installer, you can copy/paste the license key directly in the installation form. However, if you want to install Cells using the command-line tool, you first have to manually copy the license key inside a file named pydio-license at the following location:
 
 **For linux**: `~/.config/pydio/cells/pydio-license`
 

@@ -36,8 +36,6 @@ _Subsequent steps are then pretty much the same in the browser or in the CLI_.
 
 1. [ED] **Enterprise License key**: put the license key here. Please refer to the [Enterprise Edition Requirements] (en/docs/cells/v1/enterprise-edition-requirements) guide if you have not yet your key.
 1. **Database connection**: database connecion parameters. The user that is used must have all permission granted on the corresponding database.
-1. **PHP-FPM Detection**: The installer detects your version of php-fpm and if there are missing packages.
-   If you have a warning because you're using php 5.5.9, don't worry and press next.
 1. **Admin User** : Pydio's Admin user informations.
 1. **Advanced Settings** : you might change here the ports that are used internally by the various services when communication over the bind URL. Default used ports are non invasive, so you probably can skip this part.
 1. **Apply Installation** : you are done. A progress bar appears while the parameters are applied.

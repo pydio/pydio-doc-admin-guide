@@ -37,29 +37,29 @@ Additionally, an ordered list of Roles can be attached to any users.
 
 #### Computing Effective Role
 
-As you probably understood by now, when a user is logged in, this user may have a certain number of Roles applying to her and used compute her actual role : 
+As you probably understood by now, when a user is logged in, this user may have a certain number of Roles applying to her and used compute her actual role:
 
-- If the user is part of nested groups /management/directors, she will inherit each Group Role starting from root: 
-    + _RootRole_ defined for "/"
-    + _ManagementRole_ defined for "/management"
-    + _DirectorsRole_ defined for "/directors"
-- If the user has some arbitrary roles applied, e.g. "Subscriber" applied by admin and "Team of John" because she's part of a user team : 
-    + _SubscriberRole_
-    + _TeamOfJohnRole_
+- If the user is part of nested groups /management/directors, she will inherit each Group Role starting from root:
+  - _RootRole_ defined for "/"
+  - _ManagementRole_ defined for "/management"
+  - _DirectorsRole_ defined for "/directors"
+- If the user has some arbitrary roles applied, e.g. "Subscriber" applied by admin and "Team of John" because she's part of a user team:
+  - _SubscriberRole_
+  - _TeamOfJohnRole_
 - Finally the user always has her own canonical role
-    + _CanonicalUserRole_
-    
+  - _CanonicalUserRole_
+
 The rules that will apply when trying to detect if the user has a right to access a node or should see a given action for example will be computed by **merging the various roles values in this order**: from top (always _RootRole_ first) to bottom (always _CanonicalUserRole_ last).
 
 #### Examples
 
-This model provides great flexibility to assign permissions on the Administrator side. Typical schemes can look like :
- 
+This model provides great flexibility to assign permissions on the Administrator side. Typical schemes can look like:
+
 - Assign Read/Write on workspace Personal Files to Root Group (all users)
 - Assign Read/Write access on workspace Accountants to group Accountants, same on workspace Engineers to group Engineers, etc...
 - Assign Read access on workspace "Marketing Files" to Root Group, but Write access on this workspace to role "Marketing Editors". Then assign role "Marketing Editors" to a subset of users in various groups
-- Deny Access on Personal Files to role "External Users", and make this role automatically applied to any user created by users (shared users), 
-- Etc...
+- Deny Access on Personal Files to role "External Users", and make this role automatically applied to any user created by users (shared users),
+- etc.
 
 ### Access Control Lists
 
@@ -69,7 +69,7 @@ Access Control Lists allows the Administrator to actually apply the strategies d
 
 The basic operation to assign right goes throught the "Read" / "Write" / "Deny" checkboxes. The first two will grant corresponding privilege to the currently edited object. The "Deny" operation is used to override a right that would have been applied by a role higher in the chain.
 
-When editing ACLs, we recommend sticking to the Workspace level of granularity, to make your security model more maintainable. In some cases, you may require to directly assign rights at a folder level. For that you can use the "+" button next to the workspace name to list the workspace children and assign rights accordingly. 
+When editing ACLs, we recommend sticking to the Workspace level of granularity, to make your security model more maintainable. In some cases, you may require to directly assign rights at a folder level. For that you can use the "+" button next to the workspace name to list the workspace children and assign rights accordingly.
 
 #### [ED] Policies
 

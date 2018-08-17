@@ -53,18 +53,18 @@ The example below shows the configuration of a proxy that serves the demo.pydio.
 ```conf
 
 demo.pydio.com {
-	log stdout
+  log stdout
 
-	tls /etc/certs/pydio.crt /etc/certs/pydio.key
+  tls /etc/certs/pydio.crt /etc/certs/pydio.key
 
-	timeouts 0
+  timeouts 0
 
-	# And the rest to pydio
-	proxy / localhost:8080 {
-		insecure_skip_verify
-		transparent
-		websocket
-	}
+  # And the rest to pydio
+  proxy / localhost:8080 {
+    insecure_skip_verify
+    transparent
+    websocket
+  }
 }
 ```
 

@@ -19,7 +19,7 @@ In the rest of this section, when showing terminal commands, we will assume that
 
 Pydio Cells comes also with an extended command line tool, `cells-ctl` that is a simple but full fledge client offering most of the important end-user features that can be found in the web interface. You will find more information about this tools in the corresponding section of the [Advanced chapter](/en/docs/cells/v1/advanced).
 
-### Available Commands
+## Available Commands
 
 ```sh
 $ ./cells --help
@@ -52,7 +52,7 @@ Use "./cells [command] --help" for more information about a command.
 
 ```
 
-### A few highlights
+## A few highlights
 
 **Launch the installation process** (and optionnaly completely go through it, with thus no need for a graphical interface to install Pydio)
 
@@ -83,31 +83,31 @@ That is handy to retrieve the default credential used by the front end to commun
 
 **List Services**: Pydio Cells is built following principles of the Micro Service architecture, having each part of the application communicating with the rest via messages and auto discovery using a registry (see the [overall architecture section](/en/docs/cells/v1/pydio-cells-internals) to get a better understanding). To list the currently registered services and their respective status, use the 'list' command: 
 
-```
+```sh
 $ ./cells list
 
- GENERIC SERVICES                           
- # discovery                                
- nats                            [X]        
- # frontend                                 
- pydio.api.front-plugins         [X]        
- # gateway                                  
- micro.api                       [X]        
- pydio.api.websocket             [X]        
- pydio.rest.gateway.dav          [X]        
- pydio.rest.gateway.wopi         [X]        
-                                            
- GRPC SERVICES                              
- # broker                                   
- pydio.grpc.activity             [X]        
- pydio.grpc.chat                 [X]        
- pydio.grpc.log                  [X]        
- pydio.grpc.mailer               [X]        
- # data                                     
- pydio.grpc.data-key             [X]        
- pydio.grpc.docstore             [X]        
- pydio.grpc.meta                 [X]        
- pydio.grpc.search               [X]        
+ GENERIC SERVICES
+ # discovery
+ nats                            [X]
+ # frontend
+ pydio.api.front-plugins         [X]
+ # gateway
+ micro.api                       [X]
+ pydio.api.websocket             [X]
+ pydio.rest.gateway.dav          [X]
+ pydio.rest.gateway.wopi         [X]
+
+ GRPC SERVICES
+ # broker
+ pydio.grpc.activity             [X]
+ pydio.grpc.chat                 [X]
+ pydio.grpc.log                  [X]
+ pydio.grpc.mailer               [X]
+ # data
+ pydio.grpc.data-key             [X]
+ pydio.grpc.docstore             [X]
+ pydio.grpc.meta                 [X]
+ pydio.grpc.search               [X]
 
 [...]
 

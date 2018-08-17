@@ -6,7 +6,7 @@ _This guide describes the steps required to have the Pydio Cells running via an 
 
 The image of OVF can be downloaded from:
 
-```
+```sh
 https://download.pydio.com/pub/cells-enterprise/release/VERSION/ovf/Cells-Enterprise-OVF-VERSION.zip
 ```
 
@@ -76,13 +76,6 @@ MariaDB:
 ```sh
 systemctl start rh-mariadb102-mariadb
 systemctl stop rh-mariadb102-mariadb
-```
-
-PHP-FPM:
-
-```sh
-systemctl start rh-php71-php-fpm
-systemctl stop rh-php71-php-fpm
 ```
 
 ### Firewalld service

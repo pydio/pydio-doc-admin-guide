@@ -29,7 +29,6 @@ First in **DATA MANAGEMENT > Storage** section, the admin must generate at least
 |**Identifier**|a unique string that identifies the key|
 |**Label**| The name of the key as it appears in the key list|
 
-
 Once keys are generated encryption option can be enabled. in datasource create/edit form enabled to the encryption option at the bottom.
 
->  **DISCLAIMER: Keys are stored in the default database and if they ever get lost the encrypted data could not be recovered.**
+> **DISCLAIMER: Keys are stored in the default database and if they ever get lost the encrypted data could not be recovered.**
