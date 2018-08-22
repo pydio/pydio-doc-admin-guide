@@ -24,7 +24,7 @@ In order to create a new user and its home directory execute this command:
 ```sh
 sudo useradd -m -s /bin/bash pydio
 sudo passwd pydio
-# in order to ease later manipulation, you might also add your current admin user that has sudo rights to the pydio group
+# to ease later manipulation, you might also add your current user to the pydio group
 sudo usermod -aG pydio <youruser>
 sudo chmod -R g+w /home/pydio
 # log out and back in for the group modification to be taken into account
@@ -36,6 +36,12 @@ _Note: the `-s /bin/bash` option is not strictly required. It insures you are us
 
 Pydio Cells can be installed with both MySQL Server (v5.6 or higher) and MariaDB (v10.2 or higher).
 
+#### MariaDB server
+
+We currently use MariaDB 10.3, here is the [official installation guide on the MariaDB website](https://downloads.mariadb.org/mariadb/repositories/#distro=Ubuntu&version=10.3).
+
+Simply enter there your system specifications and follow the detailed instructions.
+
 #### MySQL server
 
 ```sh
@@ -44,12 +50,6 @@ sudo apt-get install mysql-server-5.7
 # On Ubuntu 16.04
 sudo apt-get install mysql-server-5.6
 ```
-
-#### MariaDB server
-
-You currently must use MariaDB 10.3, here is the [official installation guide on the MariaDB website](https://downloads.mariadb.org/mariadb/repositories/#distro=Ubuntu&version=10.3).
-
-Simply enter there your system specifications and follow the detailed instructions.
 
 #### Configuration
 
