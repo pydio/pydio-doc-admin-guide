@@ -111,10 +111,9 @@ You might also uncomment the `listen.mode = 0660` line if you want to be more re
 Then, add the pydio user to www-data group and add write permission to the www-data group to the php folder:
 
 ```sh
-# as *root* user
 # addgroup <the_correct_user> www-data, for instance:
-addgroup pydio www-data
-chmod g+w /run/php
+sudo addgroup pydio www-data
+sudo chmod g+w /run/php
 ```
 
 Note: if you were logged in as user `pydio` when you did `su -`, you have to log out and back in for the permission update to be effective.
