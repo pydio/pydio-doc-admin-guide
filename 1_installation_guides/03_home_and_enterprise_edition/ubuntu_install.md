@@ -26,15 +26,6 @@ sudo useradd -m pydio
 sudo passwd pydio
 ```
 
-#### Default web serveur
-
-Depending on your installation of Ubuntu, you may have Apache2 already configured and running by default on your server. If you want to use default `80`and `443` ports for your Pydio Cells instance, you have to disable and stop the Apache 2 service:
-
-```sh
-sudo systemctl stop apache2
-sudo systemctl disable apache2
-```
-
 ### Database
 
 Pydio Cells can be installed with both MySQL Server (v5.6 or higher) and MariaDB (v10.2 or higher).
@@ -50,22 +41,9 @@ sudo apt-get install mysql-server-5.6
 
 #### MariaDB server
 
-You currently must use MariaDB 10.2, here is the [official installation guide on the MariaDB website](https://downloads.mariadb.org/mariadb/repositories/#distro=Ubuntu&version=10.2)
+You currently must use MariaDB 10.3, here is the [official installation guide on the MariaDB website](https://downloads.mariadb.org/mariadb/repositories/#distro=Ubuntu&version=10.3).
 
-```sh
-sudo apt-get install software-properties-common
-sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8
-# Ubuntu 18.04
-sudo add-apt-repository 'deb [arch=amd64] http://mirror.23media.de/mariadb/repo/10.2/ubuntu bionic main'
-# Ubuntu 16.04
-sudo add-apt-repository 'deb [arch=amd64,i386,ppc64el] http://mirror.23media.de/mariadb/repo/10.2/ubuntu xenial main'
-```
-
-You can then run:
-
-```sh
-sudo apt install mariadb-server-10.2
-```
+Simply enter your system's characteristics there and follow the detailed instructions.
 
 #### Configuration
 
@@ -87,7 +65,13 @@ EXIT
 
 ### PHP & PHP FPM
 
-To install php and its packages use following command:
+> **WARNING**:  
+> if you are installing Pydio Cells on an Ubuntu Server (rather than Desktop), you have to enable the universe repository prior to launch the php installation, you can do so by doing the following:
+> ```sh
+> sudo add-apt-repository universe
+> ```
+
+To install php and its packages, use following command:
 
 ```sh
 sudo apt install php php-fpm php-gd php-curl php-intl php-xml
@@ -102,6 +86,9 @@ Configure php-fpm to listen on port 9000:
 ```sh
 # Beware to replace with your installed version of PHP in the command
 echo "listen = 9000" | sudo tee -a /etc/php/<version>/fpm/php-fpm.conf
+# for instance
+echo "listen = 9000" | sudo tee -a /etc/php/7.2/fpm/php-fpm.conf
+
 ```
 
 #### UNIX Socket
@@ -139,6 +126,18 @@ Restart and enable PHP-FPM service with these commands (after replacing the vers
 ```sh
 sudo systemctl enable php<version>-fpm
 sudo systemctl restart php<version>-fpm
+# For instance
+sudo systemctl enable php7.2-fpm
+sudo systemctl restart php7.2-fpm
+```
+
+#### Default web serveur
+
+Depending on your installation of Ubuntu (and also if you installed php-fpm from the universe repository on Ubuntu Server), you may have Apache2 already configured and running by default on your server. If you want to use default `80`and `443` ports for your Pydio Cells instance, you have to disable and stop the Apache 2 service:
+
+```sh
+sudo systemctl stop apache2
+sudo systemctl disable apache2
 ```
 
 ## Installation and configuration
