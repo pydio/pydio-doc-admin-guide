@@ -22,9 +22,15 @@ In this guide, we use **pydio** and its home directory **/home/pydio**.
 In order to create a new user and its home directory execute this command:
 
 ```sh
-sudo useradd -m pydio
+sudo useradd -m -s /bin/bash pydio
 sudo passwd pydio
+# in order to ease later manipulation, you might also add your current admin user that has sudo rights to the pydio group
+sudo usermod -aG pydio <youruser>
+sudo chmod -R g+w /home/pydio
+# log out and back in for the group modification to be taken into account
 ```
+
+_Note: the `-s /bin/bash` option is not strictly required. It insures you are using bash shell when logged in with this user and have, among others, access to bash history feature_.
 
 ### Database
 
@@ -43,7 +49,7 @@ sudo apt-get install mysql-server-5.6
 
 You currently must use MariaDB 10.3, here is the [official installation guide on the MariaDB website](https://downloads.mariadb.org/mariadb/repositories/#distro=Ubuntu&version=10.3).
 
-Simply enter your system's characteristics there and follow the detailed instructions.
+Simply enter there your system specifications and follow the detailed instructions.
 
 #### Configuration
 
@@ -144,6 +150,7 @@ sudo systemctl disable apache2
 Get Pydio Cells binary:
 
 ```sh
+cd /home/pydio
 # Home edition
 wget https://download.pydio.com/pub/cells/release/1.0.3/linux-amd64/cells
 sudo chmod u+x cells
