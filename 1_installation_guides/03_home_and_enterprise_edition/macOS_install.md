@@ -21,7 +21,7 @@ or
 Download Pydio Cells Binary on your server/machine using the following command :
 
 ```sh
-wget https://download.pydio.com/pub/cells/release/1.2.0/darwin-amd64/cells
+wget https://download.pydio.com/pub/cells/release/1.1.0/darwin-amd64/cells
 chmod +x cells
 ```
 
