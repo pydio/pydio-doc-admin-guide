@@ -69,3 +69,49 @@ demo.pydio.com {
 ```
 
 To properly configure the certificates that you want to use, please refer to the [tls plugin page of the caddy documentation](https://caddyserver.com/docs/tls).
+
+
+## Run your Docker Container behind an Apache reverse Proxy using SSL
+
+The process is pretty much the same as the previous example on apache,
+when you run you docker container either with the command `docker run` or in a docker-compose file have to specify `CELLS_BIND` and `CELLS_EXTERNAL`.
+
+To illustrate the concept above an example is provided.
+
+For instance you have your cells container running on a server that has an address such as : `192.168.1.12`
+you decide to run your container on port `7070` and therefore to run your container behind the proxy you will to have set
+`CELLS_BIND = 192.168.1.12:7070` and `CELLS_EXTERNAL = 192.168.1.12` (can be in the docker-compose or as environement variables in the docker run command).
+
+If you want to use SSL do not forget to also put `CELLS_NO_SSL = 0` that is SSL on cells side but even if you want to use SSL for your Apache Proxy you will have to enable it (and set the certificates path for the proxy to use).
+
+
+Then create configuration file for apache proxy (if used as it is , it will work when you have ssl enabled on both the proxy and cells) with the following:
+
+```conf
+<IfModule mod_ssl.c>
+<VirtualHost *:443>
+  ServerName domain.pydio.com
+  # May be necessary for API direct accesses
+  AllowEncodedSlashes On
+  RewriteEngine On
+   # Make sure to proxy SSL
+  SSLProxyEngine On
+  # Disable SSLProxyCheck : maybe necessary if Cells is configured with self_signed
+  SSLProxyCheckPeerCN Off
+  SSLProxyCheckPeerName Off
+  SSLProxyVerify none
+
+  # The Certificate path
+    SSLCertificateFile /home/user/cert/apache.crt
+    SSLCertificateKeyFile /home/user/cert/apache.key
+
+  # Proxy WebSocket
+  RewriteCond %{HTTP:Upgrade} =websocket [NC]
+  RewriteRule /(.*)           wss://192.168.0.153:8080/$1 [P,L]
+   # Finally simple proxy instruction
+  ProxyPass "/" "https://192.168.1.12:7070/"
+  ProxyPassReverse "/" "https://192.168.1.12:7070/"
+
+</VirtualHost>
+</IfModule>
+```

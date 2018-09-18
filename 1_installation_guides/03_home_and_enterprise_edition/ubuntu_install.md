@@ -22,22 +22,25 @@ In this guide, we use **pydio** and its home directory **/home/pydio**.
 In order to create a new user and its home directory execute this command:
 
 ```sh
-sudo useradd -m pydio
+sudo useradd -m -s /bin/bash pydio
 sudo passwd pydio
+# to ease later manipulation, you might also add your current user to the pydio group
+sudo usermod -aG pydio <youruser>
+sudo chmod -R g+w /home/pydio
+# log out and back in for the group modification to be taken into account
 ```
 
-#### Default web serveur
-
-Depending on your installation of Ubuntu, you may have Apache2 already configured and running by default on your server. If you want to use default `80`and `443` ports for your Pydio Cells instance, you have to disable and stop the Apache 2 service:
-
-```sh
-sudo systemctl stop apache2
-sudo systemctl disable apache2
-```
+_Note: the `-s /bin/bash` option is not strictly required. It insures you are using bash shell when logged in with this user and have, among others, access to bash history feature_.
 
 ### Database
 
 Pydio Cells can be installed with both MySQL Server (v5.6 or higher) and MariaDB (v10.2 or higher).
+
+#### MariaDB server
+
+We currently use MariaDB 10.3, here is the [official installation guide on the MariaDB website](https://downloads.mariadb.org/mariadb/repositories/#distro=Ubuntu&version=10.3).
+
+Simply enter there your system specifications and follow the detailed instructions.
 
 #### MySQL server
 
@@ -46,25 +49,6 @@ Pydio Cells can be installed with both MySQL Server (v5.6 or higher) and MariaDB
 sudo apt-get install mysql-server-5.7
 # On Ubuntu 16.04
 sudo apt-get install mysql-server-5.6
-```
-
-#### MariaDB server
-
-You currently can use MariaDB 10.3, here is the [official installation guide on the MariaDB website](https://downloads.mariadb.org/mariadb/repositories/#distro=Ubuntu&version=10.3)
-
-```sh
-sudo apt-get install software-properties-common
-sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xF1656F24C74CD1D8
-# Ubuntu 18.04
-sudo add-apt-repository 'deb [arch=amd64] http://mirror.23media.de/mariadb/repo/10.3/ubuntu bionic main'
-# Ubuntu 16.04
-sudo add-apt-repository 'deb [arch=amd64,i386,ppc64el] http://mirror.23media.de/mariadb/repo/10.3/ubuntu xenial main'
-```
-
-You can then run:
-
-```sh
-sudo apt install mariadb-server-10.3
 ```
 
 #### Configuration
@@ -90,12 +74,13 @@ EXIT
 Get Pydio Cells binary:
 
 ```sh
+cd /home/pydio
 # Home edition
-wget https://download.pydio.com/pub/cells/release/1.0.3/linux-amd64/cells
+wget https://download.pydio.com/pub/cells/release/1.0.4/linux-amd64/cells
 sudo chmod u+x cells
 sudo chown pydio.pydio cells
 # Enterprise edition
-wget https://download.pydio.com/pub/cells-enterprise/release/1.0.3/linux-amd64/cells-enterprise
+wget https://download.pydio.com/pub/cells-enterprise/release/1.0.4/linux-amd64/cells-enterprise
 sudo chmod u+x cells-enterprise
 sudo chown pydio.pydio cells-enterprise
 ```
