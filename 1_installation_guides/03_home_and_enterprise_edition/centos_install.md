@@ -6,7 +6,7 @@ _This guide describes the steps required to have Pydio Cells running on a CentOs
 
 ### Repositories
 
-The version of packages such as PHP or MySQL (MariaDB) is outdated by default. We need to use extra repositories with more recent versions.
+The version of packages such MySQL (MariaDB) is outdated by default. We need to use extra repositories with more recent versions.
 
 #### EPEL release
 
