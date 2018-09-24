@@ -1,3 +1,4 @@
+
 In this section, we gather known installation problems with strategies to fix them.
 
 ## Various Information
@@ -61,3 +62,11 @@ You probably did not give permission to the `cells` binary file to use reserved 
 ```sh
 sudo setcap 'cap_net_bind_service=+ep' cells
 ```
+
+### Unable to log in
+
+_After a re-install, when trying to login, you get a `could not load session store: securecookie: the value is not valid` error_.
+
+This is bound to the part of the session mechanism that resides in the browser, on client side.
+
+To solve the issue, get rid of all cookie for this site and refresh the page.

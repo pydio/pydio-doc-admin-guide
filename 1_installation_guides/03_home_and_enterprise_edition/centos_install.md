@@ -4,33 +4,15 @@ _This guide describes the steps required to have Pydio Cells running on a CentOs
 
 ## Prerequisites 
 
-### Repositories
-
-The version of packages such as PHP or MySQL (MariaDB) is outdated by default. We need to use extra repositories with more recent versions.
-
-#### EPEL release
-
-```sh
-sudo yum install epel-release scl-utils
-```
-
-#### Software collection release
-
-CentOS:
-
-```sh
-sudo yum install centos-release-scl
-```
-
-RedHat:
-
-```sh
-sudo yum-config-manager --enable rhel-server-rhscl-7-rpms
-```
-
 ### Database
 
-You can either use MySQL or MariaDB.
+The only hard requirement is a running MySQL DB server. We recommand a recent version of MariaDB or the MySQL community server.
+
+#### MariaDB
+
+We currently use MariaDB 10.3, here is the [official installation guide on the MariaDB website](https://downloads.mariadb.org/mariadb/repositories/#distro=CentOS&version=10.3&mirror=23Media&distro_release=centos7-ppc64--centos7).
+
+Simply enter there your system specifications and follow the detailed instructions.
 
 #### MySQL
 
@@ -48,26 +30,6 @@ sudo systemctl enable mysqld
 
 # start the service now
 sudo systemctl start mysqld
-```
-
-#### MariaDB
-
-To install MariaDB, follow below steps
-
-```sh
-# install the RPM
-sudo yum install rh-mariadb102-mariadb-server
-# start MariaDB after reboot
-sudo systemctl enable rh-mariadb102-mariadb
-# start the service
-sudo systemctl start rh-mariadb102-mariadb
-
-# run the post installation script
-mysql_secure_installation
-
-# you can then check everything is fine
-mysql -V
-which mysql
 ```
 
 #### Post install configuration
