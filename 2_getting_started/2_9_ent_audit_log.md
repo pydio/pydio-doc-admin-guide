@@ -1,4 +1,4 @@
-In the **Cells Enterprise Edition**, an audit log will gather all non-technical events to help focus on business logic when analysing logs for compliance or when tracing events after a security breach.
+In the **Enterprise Edition**, an audit log gathers all non-technical events to help focus on business logic when analysing logs for compliance or when tracing events after a security breach.
 
 Audit Logs are accessible via the **Activity** tab in the Settings Dashboard. An interface similar to the System Logs allows browsing, searching and filtering of these logs. Clicking on a row displays more details about the event.
 

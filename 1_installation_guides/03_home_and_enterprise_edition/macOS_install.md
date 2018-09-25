@@ -18,7 +18,7 @@ or
 
 ### Pydio
 
-Download Pydio Cells Binary on your server/machine using the following command :
+Download Pydio Cells Binary on your server/machine using the following command:
 
 ```sh
 wget https://download.pydio.com/pub/cells/release/1.1.0/darwin-amd64/cells
@@ -31,11 +31,11 @@ You can only use these ports if you are connected as root.
 
 By default, Apache is running on macOS, so you need to ensure that it - or no other webservers - is bound to these ports.
 
-To stop the default Apache, you can use :
+To stop the default Apache, you can use:
 
 ```sudo apachectl stop```
 
-To prevent Apache from starting during launch, you may use :
+To prevent Apache from starting during launch, you may use:
 
 ```sudo launchctl unload -w /System/Library/LaunchDaemons/org.apache.httpd.plist```
 

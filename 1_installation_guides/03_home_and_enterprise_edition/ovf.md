@@ -87,4 +87,4 @@ Firewalld service is active and open two ports:
 
 ### SELinux
 
-SELinux is running in *permissive* mode
+SELinux is running in *permissive* mode.

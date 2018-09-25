@@ -11,14 +11,10 @@ You need the 64-bit version of one of these Ubuntu version:
 - Ubuntu 18.04 LTS (Bionic Beaver)
 - Ubuntu 16.04 LTS (Xenial Xerus)
 
-You can also find hints to prepare a 14.04 environment at the bottom of this page.
-
 #### Dedicated User
 
-It's highly recommend to run Pydio Cells with a dedicated user.
-
-In this guide, we use **pydio** and its home directory **/home/pydio**.
-
+It's highly recommend to run Pydio Cells with a dedicated user.  
+In this guide, we use **pydio** and its home directory **/home/pydio**.  
 In order to create a new user and its home directory execute this command:
 
 ```sh

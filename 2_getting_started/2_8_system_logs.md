@@ -27,7 +27,7 @@ You can read them as the following:
 4. **Service**: the service that is handling it  
 5. **Message**: what happened with the service concerned (such as stopping, restarting, etc...)  
 
-*You can left click on any error to popup a detailed windows*
+*You can left click on any error to popup a detailed windows*.
 
 You can directly search the logs by using the search field in the top right corner.
 

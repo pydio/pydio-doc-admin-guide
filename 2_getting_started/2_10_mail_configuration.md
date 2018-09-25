@@ -1,6 +1,6 @@
-In this chapter, we will have a look at the mailing system integrated to Pydio Cells and guide you through the various possible configurations.
+In this chapter, we have a look at the mailing system integrated to Pydio Cells and guide you through some sample configurations.
 
-**Please Note**: for the time being, this configuration requires a **restart of the server** to be properly taken into account.
+**Please Note**: this configuration requires a **restart of the server** to be properly taken into account.
 
 ## Configure Mails
 
@@ -34,5 +34,5 @@ In order to use sendmail:
 
 To use sendgrid, you only have to:
 
-- Retrieve your specific **API key** 
+- Retrieve your specific **API key**
 - Put it in the corresponding field.

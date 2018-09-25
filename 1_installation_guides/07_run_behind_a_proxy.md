@@ -1,6 +1,4 @@
-_In this section, we introduce some examples configuration to run Pydio Cells behind a proxy._ 
-
-For the time being, we only cover Apache.
+_In this section, we introduce some examples configuration to run Pydio Cells behind a proxy._
 
 ## Using Apache as a reverse proxy
 
@@ -70,7 +68,6 @@ demo.pydio.com {
 
 To properly configure the certificates that you want to use, please refer to the [tls plugin page of the caddy documentation](https://caddyserver.com/docs/tls).
 
-
 ## Run your Docker Container behind an Apache reverse Proxy using SSL
 
 The process is pretty much the same as the previous example on apache,
@@ -83,7 +80,6 @@ you decide to run your container on port `7070` and therefore to run your contai
 `CELLS_BIND = 192.168.1.12:7070` and `CELLS_EXTERNAL = 192.168.1.12` (can be in the docker-compose or as environement variables in the docker run command).
 
 If you want to use SSL do not forget to also put `CELLS_NO_SSL = 0` that is SSL on cells side but even if you want to use SSL for your Apache Proxy you will have to enable it (and set the certificates path for the proxy to use).
-
 
 Then create configuration file for apache proxy (if used as it is , it will work when you have ssl enabled on both the proxy and cells) with the following:
 

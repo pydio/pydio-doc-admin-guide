@@ -1,6 +1,6 @@
 _Note: This is an Enterprise Edition feature_ 
 
-To customize your UI go to the admin Settings, then to **All Plugins > Availble Plugins > Action Plugins** enable **Vanitizer**, reload the page (very important step) and then go back to your home page.
+To customize your UI go to the admin Settings, then to **All Plugins > Available Plugins > Action Plugins** enable **Vanitizer**, reload the page (very important step) and then go back to your home page.
 
 You now have a menu on the bottom left that looks like this:
 

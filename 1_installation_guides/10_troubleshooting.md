@@ -13,7 +13,7 @@ On a linux-like system, using the `pydio` user, you will find the Pydio files at
 
 ## Installation issues
 
-### Progress freeses during browser install
+### Progress freezes during browser install
 
 - No progress appears during install
 

@@ -16,6 +16,6 @@ If installing using Cells browser-based installer, you can copy/paste the licens
 
 ### License Status
 
-After installation, the "Enterprise License" menu in the Settings panel will display the status of your current license, showing expiration time and number of users used.
+After installation, the "Enterprise License" menu in the Settings panel displays the status of your current license, showing expiration time and number of users used.
 
 [:image-popup:1_installation_guides/enterprise_license.png]

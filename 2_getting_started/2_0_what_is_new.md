@@ -14,7 +14,7 @@ To go further with collaboration, user-defined teams and users can be shared wit
 
 ### Versioning
 
-Cells directly embeds a versioning mechanism to allow end-users to revert documents to any previous version with ease. 
+Cells directly embeds a versioning mechanism to allow end-users to revert documents to any previous version with ease.
 
 Versioning policies define retention periods (how many versions of a file are kept for a given time) and can be applied on a per-datasource basis (see below). The Home Edition comes with a set of predefined policies, whereas the Enterprise Edition allows admin to create their own policies.
 

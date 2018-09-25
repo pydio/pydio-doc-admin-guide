@@ -4,7 +4,7 @@ Upgrading from Pydio 8 and below is **currently not possible** because we have c
 
 ## Upgrading Cells
 
-On a running Cells / Cells-Enterprise system, upgrade process is as simple as replacing the old binary with the latest one and restarting the service. You can do it manually (by downloading the latest binary) or use the in-app upgrade via the `Settings` panel.
+On a running Cells / Cells-Enterprise system, upgrade process is as simple as replacing the old binary with the latest one and restarting the service. You can do it manually (by downloading the latest binary or use the in-app upgrade via the `Settings` panel.
 
 To perform the in-app upgrade:
 
