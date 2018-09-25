@@ -70,3 +70,18 @@ _After a re-install, when trying to login, you get a `could not load session sto
 This is bound to the part of the session mechanism that resides in the browser, on client side.
 
 To solve the issue, get rid of all cookie for this site and refresh the page.
+
+## Still stuck?
+
+In case you do not find the answer you are looking for here, please do not ask question in github issues, nor in Twitter or other social feed: our preferred communication channel is our Forum.
+
+So, what should I do in case of:
+
+- Install or upgrade issue? Search the [F.A.Q](https://pydio.com/en/docs/faq) or [READ THE DOCS](https://pydio.com/en/docs)
+- No answer yet? [Search our forum](https://forum.pydio.com/)
+- Still stuck? It's time to ask the community via the [FORUM](https://forum.pydio.com/)
+
+And only if you're invited to:
+
+- Post a github issue: make sure to put as much detail as possible.
+- or submit a pull request.
