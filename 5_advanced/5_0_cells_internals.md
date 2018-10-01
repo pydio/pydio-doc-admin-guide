@@ -28,9 +28,9 @@ You can for instance find following services in Pydio Cells:
 
 ## Global Architecture
 
-Below is the global architecture schema (not all services are represented here):
+Below is the global architecture schema (not all services are represented here). Please see the developer guide to learn more about the detailed architecture.
 
-[:image-popup:5_advanced/cells_architecture.png]
+[:image-popup:5_advanced/architecture-overview.png]
 
 
 ## Services Tags
