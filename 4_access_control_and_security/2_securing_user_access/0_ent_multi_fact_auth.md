@@ -31,7 +31,7 @@ To enable the google authenticator:
 3. Click on test, to verify that it's functionning.
 4. Save.
 
-*Do not forget to note the recovery code, if you ever loose your authenticator(smartphone or could be a reinstall/data loss) it will enabled you to log back in and set a new one or remove it.*
+*Do not forget to note the recovery code, if you ever loose your authenticator(smartphone or could be a reinstall/data loss) it will enable you to log back in and set a new one or remove it.*
 
 ### Yubikey
 
