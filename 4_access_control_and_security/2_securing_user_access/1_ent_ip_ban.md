@@ -1,4 +1,6 @@
-With cells enterprise there is an ip ban feature that can be configured as you wish.
+By default the ip ban feature is enabled to protect the pydio cells instance from brute force attacks such a DDOS attack.
+
+It's also protecting users from having someone on the exterior trying to guess their password.
 
 ### Ip ban service
 
