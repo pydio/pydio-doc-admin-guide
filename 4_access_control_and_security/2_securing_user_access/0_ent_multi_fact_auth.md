@@ -1,6 +1,7 @@
 ### Multi Factor Authentication
 
 [:image-popup:4_access_control_and_security/securing_user_access/yubikey.png]
+
 [:image-popup:4_access_control_and_security/securing_user_access/google_authenticator.png]
 
 With the enterprise version we offer an higher degree of security for users by enabling them to use authenticators such as the [Google Authenticator App](https://en.wikipedia.org/wiki/Google_Authenticator) or a [Yubikey](https://www.yubico.com/).
@@ -10,11 +11,13 @@ To enable this feature, on the left menu in the **Appliation Parameters** sectio
 *To display the **Authentication** menu you have to be on advanced mode, to do so enable the slider that is located on the top right as seen on this screenshot*
 
 [:image-popup:4_access_control_and_security/securing_user_access/advanced_menu.png]
+
 [:image-popup:4_access_control_and_security/securing_user_access/enable_multi_auth_plugin.png]
 
 Now each user has to go on it's setting page that is located on the home page top left (the 3 dots).
 
 [:image-popup:4_access_control_and_security/securing_user_access/user_settings.png]
+
 [:image-popup:4_access_control_and_security/securing_user_access/user_multi_auth.png]
 
 Choose the prefered mean of authentication and follow the instructions below for further details on each of them.
