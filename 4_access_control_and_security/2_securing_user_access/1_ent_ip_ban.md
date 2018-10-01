@@ -2,8 +2,8 @@ With cells enterprise there is an ip ban feature that can be configured as you w
 
 ### Ip ban service
 
-You can see all the current bans and choose perform an action on them.
-You can unban or blacklist an the banned ip, there will be further details about that below.
+All the current bans are displayed on this interface you can choose perform an action on the bans listed such as
+unbanning or blacklisting a banned ip, there will be further details about that below.
 
 [:image-popup:4_access_control_and_security/securing_user_access/ip_ban_interface.png]
 

@@ -1,4 +1,4 @@
-### MultiFactor Authentication
+### Multi Factor Authentication
 
 [:image-popup:4_access_control_and_security/securing_user_access/yubikey.png]
 [:image-popup:4_access_control_and_security/securing_user_access/google_authenticator.png]
