@@ -1,6 +1,6 @@
 ### Multi Factor Authentication
 
-[:image-popup:4_access_control_and_security/securing_user_access/yubikey.png] [:image-popup:4_access_control_and_security/securing_user_access/google_authenticator.png]
+[:image-popup:4_access_control_and_security/securing_user_access/yubikey_logo.png] [:image-popup:4_access_control_and_security/securing_user_access/google_authenticator_logo.png]
 
 With the enterprise version we offer a higher degree of security for users by enabling them to use authenticators such as the [Google Authenticator App](https://en.wikipedia.org/wiki/Google_Authenticator) or a [Yubikey](https://www.yubico.com/).
 
