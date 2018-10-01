@@ -10,7 +10,7 @@ The main interface looks like this:
 [:image-popup:5_advanced/scheduler_interface.png]
 
 Label | Owner | Trigger | Last Execution | Status
---- | --- | --- | --- | --- 
+--- | --- | --- | --- | ---
 Human friendly name of the task (usually its goal) | Who launched the task ( for system jobs it's usually the system user) | Type of the trigger: manual, on-event or periodic | Last time it ran | Current status (in the figure above, all tasks were done)
 
 ### System jobs
@@ -39,4 +39,3 @@ You can interact with user jobs in a similar manner as you do with system jobs, 
 
 With Pydio you can define, configure and schedule (and therefore auto-run) the task of your choice.  
 This feature is not yet enabled but it's on our roadmap and you can expect it to be released soon.
-

@@ -1,15 +1,15 @@
 _In Pydio Cells, Workspaces provide the "basic unit" for assigning access rights to users. But unlike in previous versions, they are now fully decoupled from the actual data location, as this is handled via the "DataSources"._
 
 Datasources are internally exposed via a "tree" service that dynamically aggregates all datasources into one big virtual filesystem.
-A workspace is then a view on a business relevant subpart of this virtual tree, with specific permissions and metadata. 
+A workspace is then a view on a business relevant subpart of this virtual tree, with specific permissions and metadata.
 
 ### Default Datasources
 
 After installation, Pydio Cells comes with a set of default datasources that are directly usable to create workspaces:
 
-* **pydiods1** : a generic datasource that can be used to create workspaces shared accross users
-* **personal** : a user-oriented datasource where the personal files of each users are stored
-* **cells** : another user-oriented datasource used when users create empty cells with no specific folders in them.
+- **pydiods1** : a generic datasource that can be used to create workspaces shared accross users
+- **personal** : a user-oriented datasource where the personal files of each users are stored
+- **cells** : another user-oriented datasource used when users create empty cells with no specific folders in them.
 
 The 2 last ones are used in cunjonction with "Template Paths" nodes: these paths contain contextual information (like the user name) and are resolved at runtime to point to the correct location.
 

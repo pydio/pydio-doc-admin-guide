@@ -229,7 +229,7 @@ systemctl start cells
 The output of the service can be seen via the journal service:
 
 ```sh
-journalctl -f
+journalctl -f -u cells
 ```
 
 ### Using Supervisord

@@ -12,7 +12,6 @@ In the admin left panel menu click the option metadata in the "Data management" 
 
 ### Basic Namespaces Parameters
 
-
 | Fields| Descrption|
 |-------|-----------|
 |**Name**| The name of the metada with no space.|
@@ -31,11 +30,9 @@ Metadata type are various here are some example of use case.
 |**Selection**|  List of key value pair|
 |**Color Labels**|  text|
 
-
 ### Visibility Restrictions
 
 In addition of enriching file info, metadata are use in may others part of Cells like the search engine, the security policies, the tasks scheduling and many other features. When defining a metadata the admin can choose  whether or not it is visible or editable by other everyone. The options help adjusting metada restrictions:
-
 
 | Fields| Descrption|
 |-------|-----------|

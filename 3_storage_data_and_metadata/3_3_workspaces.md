@@ -50,7 +50,7 @@ In the page of the admin settings where you configure Personnal Folders and Cell
 
 The syntax used to create Template Paths is **JavaScript**. The embedded editor provides a contextual auto-completion feature exposing available variables for ease of use. Basically, the role of the script is to compute the output of the `Path` variable depending on the context.
 
-##### Example 1 : Personal Payslip
+##### Example 1: Personal Payslip
 
 Here is a complete step by step example to illustrate the use of this feature.
 
@@ -68,11 +68,11 @@ Then you can:
 - create a new rule by clicking on the `+ DYNAMIC NODE` button that is in the top right corner of the page.
 - name it `Payslip folders` for instance
 - edit the default path using: `DataSources.administrativeDocs + "/Payslips/" + User.Name;`
-- save 
+- save
 
 ##### Example 2: Users distributed on X servers
 
-Organisations with huge number of users generally will store their "home" folders on various fileservers. Assuming you have 4 servers where users are distributed as follow : 
+Organisations with huge number of users generally will store their "home" folders on various fileservers. Assuming you have 4 servers where users are distributed as follow:
 
 - Server 1: Users from A to J
 - Server 2: Users from K to P
@@ -81,9 +81,10 @@ Organisations with huge number of users generally will store their "home" folder
 On each server, folders are stored under /homes/a/azerty, /homes/b/bvcxqf, where azerty and bvcxqf would be a user logins.
 
 You would have defined 3 datasources pointing to (and name respectively) server1, server2 and server3 (exposing the /homes folder for each).
- 
+
 You could use the following template path script :
-```
+
+```script
 var first = User.Name.charAt(0);
 var ds = "";
 if (first < 'K') {
@@ -94,6 +95,6 @@ if (first < 'K') {
     ds = DataSources.server3;
 }
 Path = ds + "/" + first + "/" + User.Name + "/home";
-``` 
+```
 
 The computed Path would then dynamically point to the right folder.

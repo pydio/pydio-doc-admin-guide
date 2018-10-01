@@ -1,22 +1,12 @@
-_This guide describes the steps required to have Pydio Cells running on macOS._
+_This guide describes the steps required to have Pydio Cells running on macOS_.
 
 [:image-popup:1_installation_guides/logos-os/logo-mac.png]
 
 ## Requirements
 
-### PHP
+### Database
 
-PHP FPM is required to run the Pydio frontend. To install, run the following commands:
-
-```sh
-brew tap homebrew/dupes
-brew tap homebrew/versions
-brew tap homebrew/homebrew-php
-brew install php72 php72-intl
-```
-
-### Database 
-*you can skip this step if you already have a database.*
+*You can skip this step if you already have a database*.
 
 You can use either MySQL (>= 5.6) or MariaDB as your Database Management System. Both are available in Homebrew.
 
@@ -28,10 +18,10 @@ or
 
 ### Pydio
 
-Download Pydio Cells Binary on your server/machine using the following command :
+Download Pydio Cells Binary on your server/machine using the following command:
 
 ```sh
-wget https://download.pydio.com/pub/cells/release/0.9.0/darwin-amd64/cells
+wget https://download.pydio.com/pub/cells/release/1.1.0/darwin-amd64/cells
 chmod +x cells
 ```
 
@@ -41,11 +31,11 @@ You can only use these ports if you are connected as root.
 
 By default, Apache is running on macOS, so you need to ensure that it - or no other webservers - is bound to these ports.
 
-To stop the default Apache, you can use :
+To stop the default Apache, you can use:
 
 ```sudo apachectl stop```
 
-To prevent Apache from starting during launch, you may use :
+To prevent Apache from starting during launch, you may use:
 
 ```sudo launchctl unload -w /System/Library/LaunchDaemons/org.apache.httpd.plist```
 
@@ -80,8 +70,5 @@ After the install is successfully done, if you ever have to stop Pydio Cells and
 
 ## Troubleshooting
 
-* The php-fpm service might not be started, you can look at its status using : `brew services list` and then `brew services start php72` if needed.
-
-* The database ervice might not be started, you can look at its status using : `brew services list` and then `brew services start mysql` if needed.
-
-* You can look at the webserver's error file located in `~/.config/pydio/cells/logs/caddy_errors.log`.
+- The database service might not be started, you can look at its status using : `brew services list` and then `brew services start mysql` if needed.
+- You can look at the webserver's error file located in `~/.config/pydio/cells/logs/caddy_errors.log`.

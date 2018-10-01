@@ -41,4 +41,4 @@ Following menu appears:
 
 [:image-popup:2_getting_started/create_role.png]
 
-* **Role Identifier**: Put the name of your choice for the role that you are going to create.
+- **Role Identifier**: Put the name of your choice for the role that you are going to create.

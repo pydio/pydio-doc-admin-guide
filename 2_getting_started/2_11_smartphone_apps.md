@@ -10,7 +10,7 @@ Depending on your server configuration, you can also:
 - Prevent users from saving the password  
 - Use a QR code to log in easily  
 
-Both application use aggressive caching techniques to minimize network traffic. The Android app is especially careful with data usage and does not by default load thumbnails or allow transfer without WLAN.  
+Both application use aggressive caching techniques to minimize network traffic. The Android app is  careful with data usage and does not by default load thumbnails or allow transfer without WLAN.  
 Yet, everything is configurable.
 
 Here are the links to download each application:
@@ -24,7 +24,6 @@ Start the application and fill in the requested fields:
 
 [:image-popup:2_getting_started/ios_settings.jpg]
 
-If you see this page, congratulations, you are now connected!
+When you see this pagen; congratulations, you are now connected!
 
 [:image-popup:2_getting_started/good_to_go.jpg]
-

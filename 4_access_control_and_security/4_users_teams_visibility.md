@@ -4,7 +4,7 @@ Pydio Cells provides an additional layer of collaboration for the end-users: res
 
 These policies are using the same approach as security policies, with a "Deny By Default" behaviour and a possible set of rules that can be applied to any resources, with users, roles or groups as "Subjects".
 
-Concretely, this means that when a user creates a shared user in her Address Book, she can defines how this new object will be "seen" by other people, and eventually let other people edit this object as well. 
+Concretely, this means that when a user creates a shared user in her Address Book, she can defines how this new object will be "seen" by other people, and eventually let other people edit this object as well.
 
 ### Rules Examples
 
@@ -36,7 +36,7 @@ Again, this behaviour can be applied in a similar manner to Teams, Cells and Lin
 
 ### User Interface
 
-Of course, these rules are not "written" manually by end-users, but we provide an interface for that. Users can find the "Visibility" panel at various places in the interface, for handling exactly that. 
+Of course, these rules are not "written" manually by end-users, but we provide an interface for that. Users can find the "Visibility" panel at various places in the interface, for handling exactly that.
 
 #### Users and Teams
 

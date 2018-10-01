@@ -4,33 +4,15 @@ _This guide describes the steps required to have Pydio Cells running on a CentOs
 
 ## Prerequisites 
 
-### Repositories
-
-The version of packages such as PHP or MySQL (MariaDB) is outdated by default. We need to use extra repositories with more recent versions.
-
-#### EPEL release
-
-```sh
-sudo yum install epel-release scl-utils
-```
-
-#### Software collection release
-
-CentOS:
-
-```sh
-sudo yum install centos-release-scl
-```
-
-RedHat:
-
-```sh
-sudo yum-config-manager --enable rhel-server-rhscl-7-rpms
-```
-
 ### Database
 
-You can either use MySQL or MariaDB.
+The only hard requirement is a running MySQL DB server. We recommand a recent version of MariaDB or the MySQL community server.
+
+#### MariaDB
+
+We currently use MariaDB 10.3, here is the [official installation guide on the MariaDB website](https://downloads.mariadb.org/mariadb/repositories/#distro=CentOS&version=10.3&mirror=23Media&distro_release=centos7-ppc64--centos7).
+
+Simply enter there your system specifications and follow the detailed instructions.
 
 #### MySQL
 
@@ -48,26 +30,6 @@ sudo systemctl enable mysqld
 
 # start the service now
 sudo systemctl start mysqld
-```
-
-#### MariaDB
-
-To install MariaDB, follow below steps
-
-```sh
-# install the RPM
-sudo yum install rh-mariadb102-mariadb-server
-# start MariaDB after reboot
-sudo systemctl enable rh-mariadb102-mariadb
-# start the service
-sudo systemctl start rh-mariadb102-mariadb
-
-# run the post installation script
-mysql_secure_installation
-
-# you can then check everything is fine
-mysql -V
-which mysql
 ```
 
 #### Post install configuration
@@ -91,40 +53,6 @@ To temporary disable SELinux: `sudo setenforce 0`.
 
 You can also permanently disable SELinux in `/etc/selinux/config`.
 
-### PHP-FPM
-
-In this example we use PHP version 7.1, but you can use any version >= 5.5.9.
-
-```bash
-sudo yum install rh-php71-php-fpm rh-php71-php-common rh-php71-php-intl rh-php71-php-gd rh-php71-php-mbstring rh-php71-php-xml rh-php71-php-curl rh-php71-php-opcache
-```
-
-The default **user** for the PHP-FPM worker pool needs to be changed to **pydio**. Change the port the service is listening to if required.
-
-```bash
-sudo vi /etc/opt/rh/rh-php71/php-fpm.d/www.conf
-
-; ... omitted
-
-; Unix user/group of processes
-; RPM: apache user chosen to provide access to the same directories as httpd
-; user = apache
-user = pydio
-; RPM: Keep a group allowed to write in log dir.
-group = apache
-
-listen = 127.0.0.1:9000
-
-; ... omitted
-```
-
-Then enable and start the PHP-FPM service:
-
-```bash
-sudo systemctl enable rh-php71-php-fpm
-sudo systemctl start rh-php71-php-fpm
-```
-
 ### Dedicated User
 
 It is recommended to use a dedicated user to run Pydio Cells.
@@ -147,7 +75,7 @@ su - pydio
 ## Install Pydio Cells
 
 ```sh
-wget https://download.pydio.com/pub/cells/release/1.0.1/linux-amd64/cells
+wget https://download.pydio.com/pub/cells/release/1.1.0/linux-amd64/cells
 chmod u+x cells
 # if you need to use the standard http (80) or https (443) port, please execute this command:
 setcap 'cap_net_bind_service=+ep' cells

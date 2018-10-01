@@ -6,28 +6,27 @@ When defining a datasource, you can pick on of the available Versioning Policies
 
 ### Default Versioning Policies
 
-Pydio Cells comes bundled with a default set of Versioning Policies, as described below: 
+Pydio Cells comes bundled with a default set of Versioning Policies, as described below:
 
 [:image-popup:4_access_control_and_security/version_policies_interface.png]
 
-* **Keep All**: never delete any version of any files
-* **Max 30 days** : Keep all versions before 15 days, then only 10 versions, then delete all versions older that 30 days.
-* **Regular Pruning** : Will keep 10 versions in the last 10 minutes, in the last 3 hours, in the last day, in the last 10 days, and finally delete all after 30 days.
+- **Keep All**: never delete any version of any files
+- **Max 30 days**: Keep all versions before 15 days, then only 10 versions, then delete all versions older that 30 days.
+- **Regular Pruning**: Will keep 10 versions in the last 10 minutes, in the last 3 hours, in the last day, in the last 10 days, and finally delete all after 30 days.
 
 
 ### [ED] Defining a Versioning Policy
 
-_Note: The Home Edition comes with the default set of Versioning Policies and they cannot be edited._ 
+_Note: The Home Edition comes with the default set of Versioning Policies and they cannot be edited._
 
 In **Pydio Cells Enterprise Edition**, we have brought versionning one step further by giving you the option to define custom pruning policies that will fit to __your__ business specific needs and requirement.
 
-Go to your `Settings Page` then under **DataManagement > Storage use the "+ VERSIONING POLICY"** to create your own policy. 
+Go to your `Settings Page` then under **DataManagement > Storage use the "+ VERSIONING POLICY"** to create your own policy.
 
 [:image-popup:4_access_control_and_security/adding_versioning_policies.png]
 
-* **Storage** Will define where the versions will be stored. The default values will use the default datasource (pydiods1 defined at install) under a specific "versions" bucket. 
-* **Size Limits** Allows you to define a couple of limitations on a per-file basis or on a per-bucket basis to prune versions automatically when a given amount of storage space is reached.
-* **Retention Periods** Define how versions will be pruned on a timely basis. Each retention period is composed of two parameters : 
-    + _Period Start_ : time elapsed since a version was created
-    + _Max number of versions_: number of versions to keep during this period. Special numbers are -1 to keep all versions, or 0 to remove all versions.
-
+- **Storage**: Will define where the versions will be stored. The default values will use the default datasource (pydiods1 defined at install) under a specific "versions" bucket.
+- **Size Limits** Allows you to define a couple of limitations on a per-file basis or on a per-bucket basis to prune versions automatically when a given amount of storage space is reached.
+- **Retention Periods** Define how versions will be pruned on a timely basis. Each retention period is composed of two parameters:
+  - _Period Start_ : time elapsed since a version was created
+  - _Max number of versions_: number of versions to keep during this period. Special numbers are -1 to keep all versions, or 0 to remove all versions.

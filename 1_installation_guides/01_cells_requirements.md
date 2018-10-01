@@ -15,20 +15,9 @@ For Pydio Cells to run smoothly, you should meet the following requirements:
 
 ### Software
 
-#### PHP-FPM
+Pydio Cells comes with a self-embedded Web server (based on the [Caddy](https://caddyserver.com/docs) project) and does not require any additional Apache or Nginx http services. The backend features were fully rewritten in Golang and the frontend code now only rely on Javascript (more specifically React and Redux). They are also embedded in the binary.
 
-Pydio Cells comes with a self-embedded Web server (based on the [Caddy](https://caddyserver.com/docs) project) and does not require any additional Apache or Nginx http services. The backend features were fully rewritten in Golang and are also embedded in the binary, but the Frontend code still contains some PHP and a fastcgi connection must be available between Pydio Cells binary and php-fpm.
-
-We recommend the usage **PHP 7+** for its overall better performances, but you can also use Pydio Cells with PHP >= 5.5.9. Pydio Cells frontend also requires the following php extensions :
-
-* **php-gd**
-* **php-intl**
-* **php-dom**
-* **php-curl**
-
-#### MySQL Database
-
-At the moment Pydio Cells supports:
+Thus the only remaining hard requirement is the database. At the time of writing, Pydio Cells supports:
 
 * **MySQL** version 5.6 and above.
 * **MariaDB** version 10.2 and above.
@@ -41,5 +30,5 @@ Pydio Cells webserver may be bound to any port that suits your security rule. Ho
 
 Download the Pydio Cells binary for your OS from the [download page](https://pydio.com/download/) or use the direct links below :
 
-* **[Home Edition](https://download.pydio.com/pub/cells/release/1.0.1/linux-amd64/cells)**
-* **[Enterprise Edition](https://download.pydio.com/pub/cells-enterprise/release/1.0.1/linux-amd64/cells-enterprise)**
+* **[Home Edition](https://download.pydio.com/pub/cells/release/1.1.0/linux-amd64/cells)**
+* **[Enterprise Edition](https://download.pydio.com/pub/cells-enterprise/release/1.1.0/linux-amd64/cells-enterprise)**

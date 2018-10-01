@@ -2,7 +2,7 @@ In this section, we see how to use the webdav protocol alongside Pydio Cells var
 
 ### Configure and use webdav Access
 
-Webdav is integrated out of the box. You can now access it through at the following address: `<the-address-of- your-pydio>/dav/`. You then have to log in using your credentials.
+Webdav is integrated out of the box. You can access it with valid credentials at the following address: `<the-address-of- your-pydio>/dav/`.
 
 For instance:
 
@@ -10,7 +10,7 @@ _I have Pydio Cells installed on a server. I access it at `192.168.0.1:8080`._: 
 
 With domain names, it goes the same: if your pydio's domain name is `example.com` then use `http(s)://example.com/dav/`.
 
-*Be advised that webdav is not a sync client, therefore if you don't have access to the server, you will not be able to interact with it. Proceed with caution.*
+*Be advised that webdav is not a sync client. If you are off-line and therefore have no access to the server, you will not be able to interact with your files. Proceed with caution.*
 
 ### Using webdav with integrated file browsers
 
@@ -31,16 +31,17 @@ Ubuntu or other linux users can use the Nautilus file manager.
 As seen in the below screenshot (ubuntu 18), if you click on `Other locations`, you open a field on the bottom allowing you to enter the address of the webdav.  
 For instance: `http://192.168.0.1:8080/dav/`. You are then prompted for login and password and you are good to go.
 
-#### Windows 
+#### Windows
 
 Windows 10 users must:
+
 - Go to **This pc** 
-- On the top part, click on **Add a network connection** 
+- On the top part, click on **Add a network connection**
 - Put the information of your webdav connection
 
 Once you have done this:
 
-- go in the top menu to **Map a network drive** 
+- go in the top menu to **Map a network drive**
 - choose a letter and the network drive that you previously added
-   
+
 It's done. You can now browse and use it as you wish.
