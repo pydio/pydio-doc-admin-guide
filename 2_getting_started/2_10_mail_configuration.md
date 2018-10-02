@@ -29,7 +29,7 @@ In order to use sendmail:
 
 - Make sure that you have installed and configured it on your server
 - (Depending on which version you are using), make also sure that the `/usr/bin/sendmail` path is correct.
-- For more security and to protect the field from getting exposed or used with paths that should not be accessible, you can configure the path in the Pydio.json file located in `~/.config/pydio/cells/<here>` and look for this:
+- For more security and to protect the field from getting exposed or used with paths that should not be accessible, you can configure the path for the mailer inside the Pydio.json file located in `~/.config/pydio/cells/<here>`, look for this part and put the where your mailer is:
 
 ```json
     "pydio.grpc.mailer": {
