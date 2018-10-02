@@ -6,6 +6,10 @@ Basically actions and parameters if chosen correctly can save you lot's of time 
 
 To do so go and edit your `user/group/role` and then choose one of the following :
 
+[:image-popup:4_access_control_and_security/action_parameters_add_1.png]
+
+[:image-popup:4_access_control_and_security/action_parameters_add_2.png]
+
 [:image-popup:4_access_control_and_security/action_parameters_menu.png]
 
 for example let's choose `application parameters`, and click on the **+** on the top right.
