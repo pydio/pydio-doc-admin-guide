@@ -20,7 +20,9 @@ To perform the in-app upgrade:
   - Replace with new binary.
 - You then have to manually restart Pydio Cells
 
-_**Warning**: if you are running Cells on Linux system using well known ports 80 and/or 443, you have to authorize the new binary file to use these with_:
+### Running cells using well known ports
+
+If you are running Cells on Linux system using well known ports 80 and/or 443, you have to authorize the new binary file to use them:
 
 ```sh
 # As a root user
@@ -32,3 +34,4 @@ setcap 'cap_net_bind_service=+ep' cells
 You can select the channel in which you want to get the upgrades. By default, use the **stable** channel that only publishes carefully tested and non breaking updates.
 
 The **nightly** channel publishes updates more often with the latest version of the code but with higher risks of failure or systems errors. Use it with caution and only on non-production facing systems.
+ 
