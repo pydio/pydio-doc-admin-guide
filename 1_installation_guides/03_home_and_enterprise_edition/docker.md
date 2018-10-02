@@ -4,7 +4,7 @@ _This guide describes the steps required to have the Pydio Cells Docker containe
 
 ### How to use the Pydio Cells docker image
 
-The Pydio cells image is designed to be used in a micro-service environment. It only contains what is strictly necessary to run the Pydio Cells binary and nothing more.
+The [Pydio cells image](https://hub.docker.com/r/pydio/cells/) is designed to be used in a micro-service environment. It only contains what is strictly necessary to run the Pydio Cells binary and nothing more.
 
 In order to have a fully working Pydio Cells environment, you need to run a database (MySQL or MariaDB) on the same network. A basic setup is described on this page.
 
