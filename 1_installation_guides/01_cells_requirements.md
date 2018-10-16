@@ -22,7 +22,7 @@ Thus the only remaining hard requirement is the database. At the time of writing
 * **MySQL** version 5.6 and above.
 * **MariaDB** version 10.2 and above.
 
-_Disclaimer we do not support yet the new **mysql 8 authentication method** be advised for mysql 8 you can  only use the legacy method for the mean time_.
+_Be advised we do not support yet the new **mysql 8 authentication method** right now mysql 8 can only be used with the legacy method with cells for the mean time (it's on our roadmap)_.
 
 ### Networking
 

@@ -1,11 +1,11 @@
 
-## How to upgrade your Home Edition to Enterprise Edition
+## How to upgrade your Home Edition to the Enterprise Edition
 
 The upgrade process is easy. Please follow below steps:
 
 1. Download the [Cells Enterprise Binary](https://download.pydio.com/pub/cells-enterprise/release/1.2.0/linux-amd64/cells-enterprise)
 2. Retrieve your license key from our site [Get your Enterprise License key](/en/docs/cells/v1/enterprise-edition-requirements).
-3. Put the key in a file named `pydio-license` and put it in `/.config/pydio/cells/`.
+3. Put the key in a file named `pydio-license` and put it in `/.config/pydio/cells/` (1).
 4. Stop your running cells instance and optionnaly remove the `cells` binary.
 
 5. If you are running a linux server and using standard 80 and 443 ports, you must authorize the binary to use these ports:
@@ -16,3 +16,5 @@ The upgrade process is easy. Please follow below steps:
 
 1. Now run `./cells-enterprise start` to insure the app starts correctly.
 1. If you are running under production, please remember you should rather [configure the app to start as a service](https://pydio.com/en/docs/cells/v1/launching-cells-service). In such case, you also have to adapt the supervisor or systemd conf file (depending on your setup) to change the name of the launched binary from `cells` to `cells-enterprise`.
+
+__(1)__ For macos users the path is `~/Library/Application\ Support/Pydio/cells` the `~` being your home path.
