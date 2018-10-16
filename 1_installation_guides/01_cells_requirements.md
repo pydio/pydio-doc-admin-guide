@@ -22,6 +22,8 @@ Thus the only remaining hard requirement is the database. At the time of writing
 * **MySQL** version 5.6 and above.
 * **MariaDB** version 10.2 and above.
 
+_Disclaimer we do not support yet the new **mysql 8 authentication** method be advised for mysql 8 you can  only use the legacy method for the mean time_.
+
 ### Networking
 
 Pydio Cells webserver may be bound to any port that suits your security rule. However if you need to set it on the standard HTTP (**80**) and HTTPS (**443**) ports, please refer to the following [os-specific sections](/en/docs/cells/v1/os-specific-guides).
