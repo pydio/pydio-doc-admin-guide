@@ -1,4 +1,4 @@
-## Clean uninstallalation
+## Clean uninstallation
 
 In this guide we will go through the steps to perform a clean uninstallation.
 
@@ -7,10 +7,10 @@ In this guide we will go through the steps to perform a clean uninstallation.
 On most of the OS pydio cells does not put the resources in multiple folders, it is concentrated in a single folder.
 To remove cells you only have to remove the pydio cells folder and remove the cells database.
 
-To remove the folder on *linux* distributions you can make use of rm such as :
+To remove the folder on _linux_ distributions you can make use of rm such as :
 `rm -r ~/.config/pydio/cells`.
 
-To remove the cells folder on *MacOS* this :
+To remove the cells folder on _MacOS_ this :
 `rm -r ~/Library/Application\ Support/Pydio/cells`.
 _For macos users do not make the mistake to remove the 'Pydio' folder the sync app also stores configuration inside it_.
 
