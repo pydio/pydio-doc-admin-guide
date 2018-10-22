@@ -20,7 +20,7 @@ You can now access the Pydio Cells installer at [https://localhost:8080](https:/
 
 Pydio Cells requires a MySQL or MariaDB database. It is recommended to use a separate database and a dedicated user with access to that database. A complete example can be found in the docker-compose section of this guide.
 
-_Be advised if you pull the latest mysql image it will be MySQL 8 which has a new authentication method which is for the moment not compatible (it's on our roadmap)_.
+_Be advised if you pull the latest mysql image it will be MySQL 8 which has a new authentication method and which is for the moment not compatible (it's on our roadmap)_.
 _We advise you to pull MySQL version 5.7_
 
 #### Persistent data
