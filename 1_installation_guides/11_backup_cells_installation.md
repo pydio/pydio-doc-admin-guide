@@ -4,7 +4,7 @@ In this guide we are going to explain how you can create a backup of your Pydio 
 
 We are also going to see how you can recover your cells installation assuming that you backed it up.
 
-### Back up the configs & default Data Location
+### Backup the configs & default Data Location
 
 To create a backup of your pydio cells installation which is quite simple, you just need to copy the entirety of the pydio cells folder in another location(another hard-drive etc... wherever you want at your discretion).
 
@@ -21,13 +21,13 @@ You can also backup all of your database, one way could be to export the databas
 
 __(1)__ For macos users the path is `~/Library/Application\ Support/Pydio/cells` the `~` being your home path.
 
-### Back your datasources
+### Backup your datasources
 
 To back other datasources you only need to copy the parent repository of the datasource (this step is mandatory) because the parent repository contains the `.minio.sys` folder which is required to have a functioning datasource [*you can find more details about datasources here*](https://pydio.com/en/docs/developer-guide/data).
 
 For instance your datasource is located in this path, `/home/pydio/datasource/firstds` the `.minio.sys` will be located in `/home/pydio/datasource/<location of .minio.sys>` then to back your datasource you must atleast back the parent folder `datasource` it's path being `/home/pydio/datasource` because it contains both your datasource(containing the data) and `.minio.sys`(the datasource config file).
 
-### Back up your database
+### Backup your database
 
 To back up the database you can use the `mysql dump` tool which will give you an sql file with all the datas at the moment of the backup, here's an example for the cells database, `mysqldump -u <user> -p cells > /home/pydio/cells_back.sql`,
 to explain the command and the options, `-u <user>` is to use a specific user, `-p` will prompt you for the mysql passowrd then `cells` is the database name, `> /home/pydio/cells.sql` is to choose where you want to target the save, you can choose which ever path you want as long as you can write inside it.
