@@ -39,4 +39,4 @@ in details, `-u <user>`, `-p` work as explained above, `cells`(make sure it alre
 
 As it is explained previously if you have saved all of your cells installation (the `~/.config/pydio/cells` folder) somewhere you can rest assured that it will always be usable, you only need a cells binary and the folder to be put in its default location which is for linux distributions `~/.config/pydio/cells` and for MacOS `~/Library/Application\ Support/Pydio/cells`, and then you can **start** cells `./cells start` if you copied all the folder it's initial location `~/.config/pydio/cells` (the path needs to be the same), cells will use the `pydio.json` to recover the configuration and will run directly you do not need to install it.
 
-**If you recover on another server that has a different ip you must change all of the occurences in the `pydio.json` such as bind_host, external_host and the datasources host.**
+**If you recover on another server that has a different address you must change all of the occurences in the `pydio.json` such as bind_host, external_host and the datasources host.**
