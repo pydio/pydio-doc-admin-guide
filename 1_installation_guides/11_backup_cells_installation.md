@@ -30,7 +30,7 @@ For instance your datasource is located in this path, `/home/pydio/datasource/fi
 ### Backup your database
 
 To back up the database you can use the `mysql dump` tool which will give you an sql file with all the datas at the moment of the backup, here's an example for the cells database, `mysqldump -u <user> -p cells > /home/pydio/cells_back.sql`,
-to explain the command and the options, `-u <user>` is to use a specific user, `-p` will prompt you for the mysql passowrd then `cells` is the database name, `> /home/pydio/cells.sql` is to choose where you want to target the save, you can choose which ever path you want as long as you can write inside it.
+to explain the command and the options, `-u <user>` is to use a specific mysql user, `-p` will prompt you for the mysql passowrd then `cells` is the database name, `> /home/pydio/cells.sql` is to choose where you want to target the save, you can choose which ever path you want as long as you can write inside it.
 
 To import the database from your sql backup file use the following command : `mysql -u root -p cells < /home/pydio/cells_back.sql`,
 in details, `-u <user>`, `-p` work as explained above, `cells`(make sure it already exists) is the database name then `< PathToTheSqlFile.sql`
