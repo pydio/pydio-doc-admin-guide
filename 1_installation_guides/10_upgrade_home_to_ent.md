@@ -1,4 +1,4 @@
-## How to upgrade your Home Edition to the Enterprise Edition
+## How to upgrade your Home Edition to Enterprise Edition
 
 The upgrade process is easy. Please follow below steps:
 
