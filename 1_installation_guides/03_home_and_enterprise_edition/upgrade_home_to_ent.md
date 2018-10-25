@@ -3,7 +3,7 @@
 
 The upgrade process is easy. Please follow below steps:
 
-1. Download the [Cells Enterprise Binary](https://pydio.com/)
+1. Download the [Cells Enterprise Binary](https://pydio.com/en/download)
 2. To retrieve your license key, contact our support.
 3. Put the key in a file named `pydio-license` and put it in `/.config/pydio/cells/` (1).
 4. Stop your running cells instance and optionnaly remove the `cells` binary.
