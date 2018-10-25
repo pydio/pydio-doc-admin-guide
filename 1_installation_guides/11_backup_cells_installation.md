@@ -40,3 +40,26 @@ in details, `-u <user>`, `-p` work as explained above, `cells`(make sure it alre
 As it is explained previously if you have saved all of your cells installation (the `~/.config/pydio/cells` folder) somewhere you can rest assured that it will always be usable, you only need a cells binary and the folder to be put in its default location which is for linux distributions `~/.config/pydio/cells` and for MacOS `~/Library/Application\ Support/Pydio/cells`, and then you can **start** cells `./cells start` if you copied all the folder it's initial location `~/.config/pydio/cells` (the path needs to be the same), cells will use the `pydio.json` to recover the configuration and will run directly you do not need to install it.
 
 **If you recover on another server that has a different address you must change all of the occurences in the `pydio.json` such as bind_host, external_host and the datasources host.**
+
+## Clean uninstallation
+
+In this guide we will go through the steps to perform a clean uninstallation.
+
+### How to perform a clean uninstall
+
+On most of the OS pydio cells does not put the resources in multiple folders, it is concentrated in a single folder.
+To remove cells you only have to remove the pydio cells folder and remove the cells database.
+
+To remove the folder on _linux_ distributions you can make use of rm such as :
+`rm -r ~/.config/pydio/cells`.
+
+To remove the cells folder on _MacOS_ this :
+`rm -r ~/Library/Application\ Support/Pydio/cells`.
+_For macos users do not make the mistake to remove the 'Pydio' folder the sync app also stores configuration inside it_.
+
+For any additional datasource that you are not going to make use of, you can just clear the parent folder.
+
+Then clean the database with this command after you have logged in mysql :
+`drop database cells;` (or any other name if you named it).
+
+And you are good to go, there is no more traces of the previous install or of cells in general.
