@@ -6,7 +6,7 @@ This is typically suited to fit compliance rules from your company or GDPR europ
 You must first enable the plugin, located on the left menu under the **Authentication** setting.
 [:image-popup:4_access_control_and_security/securing_user_access/enable_disclaimer_plugin.png]
 
-*If you do not see the menu it means that you did not have the advanced settings enabled, to do so follow the instruction on the screenshot*
+*If you do not see the menu it means that you did not have the advanced settings enabled, to do so follow the instruction on the screenshot below*
 
 [:image-popup:4_access_control_and_security/securing_user_access/advanced_menu.png]
 

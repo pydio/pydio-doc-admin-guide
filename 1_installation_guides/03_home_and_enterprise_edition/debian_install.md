@@ -54,28 +54,9 @@ sudo apt install mysql-server
 
 ##### Repositories
 
-###### Debian 8
+We currently use MariaDB 10.3, here is the [official installation guide on the MariaDB website](https://downloads.mariadb.org/mariadb/repositories/#distro=CentOS&version=10.3&mirror=23Media&distro_release=centos7-ppc64--centos7).
 
-``` bash
-sudo apt-get install software-properties-common
-sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xcbcb082a1bb943db
-sudo add-apt-repository 'deb [arch=amd64,i386,ppc64el] http://www.ftp.saix.net/DB/mariadb/repo/10.1/debian jessie main'
-```
-
-###### Debian 9
-
-``` bash
-sudo apt-get install software-properties-common
-sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xF1656F24C74CD1D8
-sudo add-apt-repository 'deb [arch=amd64] http://www.ftp.saix.net/DB/mariadb/repo/10.1/debian stretch main'
-```
-
-##### Install MariaDB
-
-```sh
-sudo apt update
-sudo apt install mariadb-server
-```
+Simply enter there your system specifications and follow the detailed instructions.
 
 #### Post install configuration
 
