@@ -5,7 +5,13 @@ This document guides you through a quick start with a REST API using CURL.
 
 The API_KEY and API_SECRET are required to perform any request. They can be found in "**Configs Backend**" in the admin settings.
 
+You can also retrieve them with the binary,using the command `cells-enterprise config list` or `cells config list`.
+They are under the pydio.grpc.auth service section.
+
+
 They can also be found in the `pydio.json` file located in your cells folder such as `.config/pydio/cells/pydio.json`.
+
+
 
 [:image-popup:5_advanced/api_key_secret.png]
 
