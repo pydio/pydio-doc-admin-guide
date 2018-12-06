@@ -46,3 +46,5 @@ Remember to save.
 Switch to a workspace and use the "New Folder" > "You can also create an empty Document" link to create e.g. an ODT Document.
 
 Double click on the new file to edit, you are now able to edit it directly in Pydio Cells using collabora online editor!
+
+[:image-popup:1_installation_guides/office_online/collabora_interface.png]

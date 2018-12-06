@@ -23,9 +23,9 @@ To enable the plugin, go to `Application parameters > Available Plugins > Only O
 
 #### OnlyOffice docker image
 
-The docker image only offers the features of the *[community edition](https://www.onlyoffice.com/compare-editions.aspx)*.
+There is an [OnlyOffice docker image](https://hub.docker.com/r/onlyoffice/documentserver/),
+the image only offers the features of the *[community edition](https://www.onlyoffice.com/compare-editions.aspx)*.
 
-There is an [onlyoffice docker image](https://hub.docker.com/r/onlyoffice/documentserver/) corresponding to the community editon.
 The container's default port is 80 so redirect it to another port - by default we use 9980 in the Pydio Cells config
 
 ```shell
@@ -33,3 +33,9 @@ docker run -i -t -d -p 9980:80 --restart=always onlyoffice/documentserver
 ```
 
 Note: refer to docker.io web site to install correct version of docker. Typically, on Ubuntu, you should install docker using `apt install docker.io`, the simple `docker` package installs something else that is irrelevant here.
+
+### Start editing documents
+
+Now you can edit all of your docs, presentations, and more easily, double click on the file and a window will appear with the only office interface and then you can edit it right of the bat.
+
+[:image-popup:1_installation_guides/office_online/onlyoffice_interface.png]
