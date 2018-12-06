@@ -26,7 +26,7 @@ docker run -t -d -p 9980:9980 -e "extra_params=-o:ssl.enable=false" collabora/co
 ```
 _for testing puposes ssl is disabled, but we advise you to always have it on_
 
-You can find all the details on the docker image such as the env variables, etc... **[Docker CODE offical documentation](https://www.collaboraoffice.com/code/docker/)**.
+You can find all the details on the docker image such as the env variables, etc... **[Docker CODE official documentation](https://www.collaboraoffice.com/code/docker/)**.
 
 
 ### Configure Pydio Plugin to connect to CODE
