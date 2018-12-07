@@ -99,6 +99,15 @@ Execute the command below and follow the instructions.
 ./cells install
 ```
 
+**Before you start installing here's two of the most important parameters that you need to understand:**
+```
+CELLS_BIND : address where the application http server is bound to. It MUST contain a server name and a port.
+CELLS_EXTERNAL : url the end user will use to connect to the application.
+Example:
+If you want your application to run on the localhost at port 8080 and use the url mycells.mypydio.com, then set CELLS_BIND to localhost:8080 and CELLS_EXTERNAL to mycells.mypydio.com
+After the install is successfully done, if you ever have to stop Pydio Cells and want to run it again just run:
+```
+
 You can [refer to this page](/en/docs/cells/v1/install-pydio-cells) to get more details on the installation process.
 After the install is successfully done, if you ever have to stop Pydio Cells and want to run it again just run:
 
