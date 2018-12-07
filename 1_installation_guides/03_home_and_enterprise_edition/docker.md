@@ -16,6 +16,21 @@ docker run -d -p 8080:8080 pydio/cells
 
 You can now access the Pydio Cells installer at [https://localhost:8080](https://localhost:8080). A complete example can be found in the docker-compose section of this guide.
 
+If you want to access your container from outside you must then change atleast the `CELLS_EXTERNAL` and also (it's recommended) to have persisting data you need to have a volume (you can sort it with multiple volumes if you wish, but for our example we are going to store everyting into a single folder).
+
+Here's an example of a command that runs a cells container with persistent data and external access:
+
+```sh
+docker run -d -e CELLS_EXTERNAL=192.168.0.172:8080 -e CELLS_BIND=192.168.0.172:8080 -p 8080:8080 -v /home/cells/volume/:/root/.config/pydio/ pydio/cells
+```
+
+* -e `CELLS_EXTERNAL` is required to give it external access
+* -e `CELLS_BIND` can be, the server running the container address or localhost.
+* -v `/home/cells/volume/:/root/.config/pydio/` basically i have a folder on my server located here `/home/cells/volume/` and i want the content to be the all of the cells configuration/datasource that are located inside the container in `root/.config/pydio/`.
+
+_This was only an example on how you can run a Cells container, you can find below all of the envorinment variables, data configurations for cells, docker-compose examples and more_
+
+
 #### External database
 
 Pydio Cells requires a MySQL or MariaDB database. It is recommended to use a separate database and a dedicated user with access to that database. A complete example can be found in the docker-compose section of this guide.
@@ -40,10 +55,11 @@ Note: If you [add new datasources](https://pydio.com/fr/docs/cells/v1/managing-d
 #### Environment variable
 
 - `CELLS_NO_SSL`: uses ssl or not (default to 0 => uses ssl)
-- `CELLS_BIND` : internal url - used by services to talk between each others
-- `CELLS_EXTERNAL` : external url - used in links, etc..
+- `CELLS_BIND` : address where the application http server is bound to. It MUST contain a server name and a port.
+- `CELLS_EXTERNAL` : url the end user will use to connect to the application.
 
-Note : CELLS_BIND and CELLS_EXTERNAL can only use different ports at the time of writing. They must share the same host.
+Example:
+If you want your application to run on the localhost at port 8080 and use the url mycells.mypydio.com, then set CELLS_BIND to localhost:8080 and CELLS_EXTERNAL to mycells.mypydio.com
 
 ### Example setup with docker compose
 
