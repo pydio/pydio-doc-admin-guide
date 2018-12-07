@@ -32,5 +32,5 @@ Pydio Cells webserver may be bound to any port that suits your security rule. Ho
 
 Download the Pydio Cells binary for your OS from the [download page](https://pydio.com/download/) or use the direct links below :
 
-* **[Home Edition](https://download.pydio.com/pub/cells/release/1.2.2/linux-amd64/cells)**
-* **[Enterprise Edition](https://download.pydio.com/pub/cells-enterprise/release/1.2.2/linux-amd64/cells-enterprise)**
+* **[Home Edition](https://download.pydio.com/pub/cells/release/1.2.3/linux-amd64/cells)**
+* **[Enterprise Edition](https://download.pydio.com/pub/cells-enterprise/release/1.2.3/linux-amd64/cells-enterprise)**
