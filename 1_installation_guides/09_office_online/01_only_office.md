@@ -36,6 +36,6 @@ Note: refer to docker.io web site to install correct version of docker. Typicall
 
 ### Start editing documents
 
-Now you can edit all of your docs, presentations, and more easily, double click on the file and a window will appear with the only office interface and then you can edit it right of the bat.
+Now you can edit all of your docs, presentations, and more easily, double click on the file and a window will appear with the only office interface and then you can edit it right off the bat.
 
 [:image-popup:1_installation_guides/office_online/onlyoffice_interface.png]
