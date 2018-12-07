@@ -11,6 +11,11 @@ Binding Host (Internal, Other): cells.example.com:7070
 External Host: cells.example.com
 ```
 
+* Binding Host : address where the application http server is bound to. It MUST contain a server name and a port.
+* External host : url the end user will use to connect to the application.
+* Example:
+  If you want your application to run on the localhost at port 8080 and use the url mycells.mypydio.com, then set CELLS_BIND to localhost:8080 and CELLS_EXTERNAL to mycells.mypydio.com
+
 ### Configure Apache
 
 Edit Apache mod_ssl configuration file to have this:
@@ -72,6 +77,15 @@ To properly configure the certificates that you want to use, please refer to the
 
 The process is pretty much the same as the previous example on apache,
 when you run you docker container either with the command `docker run` or in a docker-compose file have to specify `CELLS_BIND` and `CELLS_EXTERNAL`.
+
+Here's what CELLS_BIND and CELLS_EXTERNAL mean to give a you a general understanding.
+
+```
+CELLS_BIND : address where the application http server is bound to. It MUST contain a server name and a port.
+CELLS_EXTERNAL : url the end user will use to connect to the application.
+Example:
+If you want your application to run on the localhost at port 8080 and use the url mycells.mypydio.com, then set CELLS_BIND to localhost:8080 and CELLS_EXTERNAL to mycells.mypydio.com
+```
 
 To illustrate the concept above an example is provided.
 
