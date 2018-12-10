@@ -28,6 +28,8 @@ _Be advised we do not support yet the new **mysql 8 authentication method** righ
 
 Pydio Cells webserver may be bound to any port that suits your security rule. However if you need to set it on the standard HTTP (**80**) and HTTPS (**443**) ports, please refer to the following [os-specific sections](/en/docs/cells/v1/os-specific-guides).
 
+**If you wish to use the 0.0.0.0 address you must respect this rule, cells_bind must have this form `cells_bind=0.0.0.0:<port>` and `cells_external=<domain name,address>:<port>` the port is mandatory in both otherwise you will have a grey screen stuck in the loading**
+
 ### Cells Binary
 
 Download the Pydio Cells binary for your OS from the [download page](https://pydio.com/download/) or use the direct links below :

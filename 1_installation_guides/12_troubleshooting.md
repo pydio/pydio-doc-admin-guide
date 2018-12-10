@@ -63,6 +63,10 @@ You probably did not give permission to the `cells` binary file to use reserved 
 sudo setcap 'cap_net_bind_service=+ep' cells
 ```
 
+### 0.0.0.0 address
+
+If you wish to use the 0.0.0.0 address you must respect this rule, cells_bind has to be exactly like this `cells_bind=0.0.0.0:<port>` and `cells_external=<domain name,address>:<port>`, the *port* is mandatory in both otherwise you will have a grey screen stuck in the loading
+
 ### Unable to log in
 
 _After a re-install, when trying to login, you get a `could not load session store: securecookie: the value is not valid` error_.
