@@ -10,7 +10,7 @@ The most standard driver you can use is actually the File System datasource: it 
 
 **Warning** when defining the path to the root folder of your datasource on the server, observe the following:
 
-*The path must be atleast 2 levels down for instance `/<home>/<datas>/`*
+*The path must be atleast 2 levels down, for instance `/<home>/<datas>/`*
 
 - **The path must be absolute** on the chosen peer: it must start from the root of the chosen server.  
   Once you have chosen a peer, note that the system automatically discovers the available directories and presents them in a popup list.
