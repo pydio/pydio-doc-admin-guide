@@ -5,9 +5,7 @@ Pydio cells enterprise is compatible with google cloud object storage, therefore
 First you need to generate credentials if you dont have any of them,
 open the menu on your GCS dashbord (the top left burger) and then go to the following section **APIs & Services > Credentials**.
 
-[:image-popup:3_storage_data_and_metadata/datasource_config/gcs_interface.png]
-
-[:image-popup:3_storage_data_and_metadata/datasource_config/gcs_interface.png]
+[:image-popup:3_storage_data_and_metadata/datasource_config/gcs_create_credentials.png]
 
 then click on **Create credentials** and select **Service account key**:
 

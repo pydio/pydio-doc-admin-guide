@@ -1,6 +1,6 @@
 ## S3 Datasources
 
-This connector allows using a remote S3-compliant storage as datasource for Pydio Cells, for instance you can connect an Amazon S3 storage or Minio storage.
+This connector allows using a remote S3-compliant storage as datasource for Pydio Cells, for instance you can connect to a minio storage, .... .
 
 Under the hood, an object service is started in Gateway mode using the Api KEY/SECRET you will provide.
 
@@ -12,6 +12,11 @@ Under the hood, an object service is started in Gateway mode using the Api KEY/S
 - **Internal Path**: Additional Path appendended to the bucket name when querying the remote storage.
 - **Custom Endpoint**: If the remote storage is Amazon S3, you can leave this empty. Otherwise, provide here the http/https URL to connect to the s3-compatible storage.
 
+
+## How to configure Amazon S3 storage and minio
+
+We provide you 2 examples of connection with S3 storages, you can use them to understand how the datasources interact with S3 connectors.
+
 ### Connect with Amazon S3 Storage
 
 To connect your datasource to your S3 bucket you need some sort of credentials which are composes of an **accessKey** and a **secretKey** in your amazon s3 they match as the following,
@@ -19,7 +24,7 @@ To connect your datasource to your S3 bucket you need some sort of credentials w
 - **S3 Api key**: `access key id`
 - **S3 Api secret**: `secret access key`
   
-you can get them on your amazon aws account, here a piece of documentation from the amazon doc that will point you to the right place, [https://aws.amazon.com/blogs/security/wheres-my-secret-access-key/](https://aws.amazon.com/blogs/security/wheres-my-secret-access-key/).
+you can get them on your amazon aws account, here is a piece of documentation from the amazon doc that will point you to the right place, [https://aws.amazon.com/blogs/security/wheres-my-secret-access-key/](https://aws.amazon.com/blogs/security/wheres-my-secret-access-key/).
 
 [:image-popup:3_storage_data_and_metadata/datasource_config/s3_credentials.png]
 
