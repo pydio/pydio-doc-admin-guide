@@ -14,7 +14,23 @@ Under the hood, an object service is started in Gateway mode using the Api KEY/S
 
 ### Connect with Amazon S3 Storage
 
-## TODO
+To connect your datasource to your S3 bucket you need some sort of credentials which are composes of an **accessKey** and a **secretKey** in your amazon s3 they match as the following,
+
+- **S3 Api key**: `access key id`
+- **S3 Api secret**: `secret access key`
+  
+you can get them on your amazon aws account, here a piece of documentation from the amazon doc that will point you to the right place, [https://aws.amazon.com/blogs/security/wheres-my-secret-access-key/](https://aws.amazon.com/blogs/security/wheres-my-secret-access-key/).
+
+[:image-popup:3_storage_data_and_metadata/datasource_config/s3_credentials.png]
+
+then once you have all of the informations and assuming that you already created your bucket, these are the mandatory fields to get your datasource to work:
+
+- **Bucket name**: your amazon S3 created bucket name.
+- **S3 Api key**: the `access key id` that you retrieve as explained above
+- **S3 Api secret**: the `secret access key` that you retrieve as explained above
+  
+(optional parameters)
+- **Internal path**: you can make the datasource point to a specific "folder" in your s3 storage.
 
 ### Connect with Minio Storage
 
