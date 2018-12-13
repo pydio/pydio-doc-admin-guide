@@ -74,7 +74,7 @@ FLUSH PRIVILEGES;
 ## Installation and configuration
 
 ```sh
-wget https://download.pydio.com/pub/cells/release/1.2.3/linux-amd64/cells
+wget https://download.pydio.com/pub/cells/release/1.2.4/linux-amd64/cells
 sudo chmod u+x cells
 ```
 
