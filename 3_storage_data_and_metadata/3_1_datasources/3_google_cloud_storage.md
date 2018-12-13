@@ -1,4 +1,4 @@
-## Google cloud storage datasource
+## Google Cloud Storage datasource
 
 Pydio cells enterprise is compatible with google cloud object storage, therefore you can have datasources that are connected to your google cloud storage buckets.
 
