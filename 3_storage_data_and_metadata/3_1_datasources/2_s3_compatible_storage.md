@@ -34,12 +34,12 @@ then once you have all of the informations and assuming that you already created
 
 ### Connect with Minio Storage
 
-To connect with a minio storage, first you need to retrieve your minio server **AccessKey** and **SecretKey** ( there is many ways for that, you can also define them yourself), the details can be found in [minio's documentation](https://docs.minio.io/docs/minio-quickstart-guide.html).
+To connect with a minio storage, first you need to retrieve your minio server **AccessKey** and **SecretKey** ( there is many ways for that, you can also define them yourself), the details can be found inside [minio's documentation](https://docs.minio.io/docs/minio-quickstart-guide.html).
 
 Then you will need to fill the fields as the following:
 
 - **Bucket name**: pretty straightforward your bucket name that you created with minio.
 - **S3 Api Key**: the `accessKey` that you retrieved as explained above.
-- **S3 Api Secret**: the `secretKey` that you retrieved as explained above
-- **Internal Path**: if you want to point to a specific "folder"(sort of speaking) in your bucket.
-- **Custom Endpoint**: is the address where your Minio server is running, usually `<address>:9000`, for instance `http://192.168.0.116:9000`
+- **S3 Api Secret**: the `secretKey` that you retrieved as explained above.
+- **Internal Path**: if you want to point to a specific "folder" (sort of speaking) in your bucket (it's an optional parameter).
+- **Custom Endpoint**: is the address where your Minio server is running, usually `<address>:9000`, for instance `http://192.168.0.116:9000`.
