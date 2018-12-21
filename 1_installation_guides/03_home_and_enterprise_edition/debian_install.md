@@ -54,9 +54,13 @@ sudo apt install mysql-server
 
 ##### Repositories
 
-We currently use MariaDB 10.3, here is the [official installation guide on the MariaDB website](https://downloads.mariadb.org/mariadb/repositories/#distro=CentOS&version=10.3&mirror=23Media&distro_release=centos7-ppc64--centos7).
+We currently use MariaDB 10.3, here is the [official installation guide on the MariaDB website](https://downloads.mariadb.org/mariadb/repositories/#distro=Debian&version=10.3).
 
 Simply enter there your system specifications and follow the detailed instructions.
+
+In production system, you probably want to secure your installation by executing:
+
+`mysql_secure_installation`
 
 #### Post install configuration
 
@@ -93,7 +97,8 @@ su - pydio
 Execute the command below and follow the instructions.
 
 **Before you start installing here's two of the most important parameters that you need to understand:**
-```
+
+```sh
 CELLS_BIND : address where the application http server is bound to. It MUST contain a server name and a port.
 CELLS_EXTERNAL : url the end user will use to connect to the application.
 Example:
