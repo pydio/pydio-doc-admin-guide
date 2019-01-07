@@ -111,13 +111,13 @@ This filter will get all member of staff group included all member in nested gro
 You can map user's attributes in ldap to pydio by defining some mapping rules.
 There are three parts in each rule:
 - Left Attribute: is attribute name of user object in ldapserver
-- Right Attribute: is attribute name of user object in pydio
+- Right Attribute: is attribute name of user object in pydio. They are casesensitive names e.g: **displayName**, **email**, **Roles**
 - Rule String: You can define this string as a filter for mapping process. It can be blank, a list of value, or regular expression string.
 
 
 <img src="http://images.vpydio.fr/local/Selection_867.png" alt="" width="600">
 
-Example: *department* is an attribute of user object in ldap, it accept following values: finance, admin, hr, marketing, it_helpdesk, it_hardware. But you would like to map only "admin", "it_helpdesk", "it_hardware" values to Roles in Pydio, you can define as following:
+Example: *department* is an attribute of user object in ldap, it accepts following values: finance, admin, hr, marketing, it_helpdesk, it_hardware. But you would like to map only "admin", "it_helpdesk", "it_hardware"  values to Roles in Pydio, you can define as following:
 
     Left Attribute: department
     Rule String: admin,it_helpdesk,it_hardware
@@ -125,10 +125,10 @@ Example: *department* is an attribute of user object in ldap, it accept followin
 
 If you would like to map only values starting by "it_", in this case, you can use preg format.
 
+    Left Attribute: department
+    Rule String: preg:^it_
+    Right Attribute: Roles
 
-  Left Attribute: department
-  Rule String: preg:^it_
-  Right Attribute: Roles
 
 
 #### MemberOf mapping
@@ -139,9 +139,10 @@ If you would like to map only values starting by "it_", in this case, you can us
   Left Attribute: memberOf
   Rule String:
   Right Attribute: Roles
+```
 
 The values of *memberOf* attribute can content any group in ldap directory. That why you need to define group filtering to precise a list of group to be mapped to Pydio.
-```
+
 
 3) Group DN: is the DN of one ore more organization unit in ldap directory where pydio will look for groups. If memberOf values has some groups in other locations, they will be ignored.
 
@@ -170,3 +171,6 @@ or
   Fake memberOf Attribute: memberuid
   Fake memberOf Attribute Format: uid
 ```
+
+
+<img src="http://images.vpydio.fr/local/Selection_877.png" alt="" width="600">
