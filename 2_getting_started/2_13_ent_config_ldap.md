@@ -8,16 +8,16 @@ In Cells, a ldap server will be seen as a external authentication source. With f
 Login with admin user and go to "Settings". Click on External Directory.
 To add new directory, click on "DIRECTORY" or click on existed ldap to modify configurations.
 
-<img src="http://images.vpydio.fr/local/Selection_862.png" alt="" width="600">
+<img src="../images/2_getting_started/2_13_ldap/Selection_862.png" alt="" width="600">
 
 ### Step 2:
 In this step, you will create a ldap directory to connect to an openldap server.
 
-<img src="http://images.vpydio.fr/local/Selection_863.png" alt="" width="600">
+<img src="../images/2_getting_started/2_13_ldap/Selection_863.png" alt="" width="600">
 
 #### Basic settings for connection to ldap Server
 
-<img src="http://images.vpydio.fr/local/Selection_873.png" alt="" width="600">
+<img src="../images/2_getting_started/2_13_ldap/Selection_873.png" alt="" width="600">
 
 ##### 1) IP address of host name of ldap server and Port
 
@@ -40,7 +40,7 @@ For example:
 
 If you are working with Active Directory, you can get dN of user object
 
-<img src="http://images.vpydio.fr/local/Selection_874.png" alt="" width="375">
+<img src="../images/2_getting_started/2_13_ldap/Selection_874.png" alt="" width="375">
 
 > Note: It's highly recommended to use an ldap user and delegate this user to allow to do "*Read all user information*" task. Please visit this link for further information: https://www.msptechs.com/safely-delegate-control-active-directory/
 
@@ -62,7 +62,7 @@ We need to specify Pydio the absoluted path to the certificate of ldap server (6
 500 records is default value in openldap, and 1000 is number of record for one page in Active Directory
 
 #### User Filter
-<img src="http://images.vpydio.fr/local/Selection_875.png" alt="" width="600">
+<img src="../images/2_getting_started/2_13_ldap/Selection_875.png" alt="" width="600">
 
 ##### 1) User's DN:
 You can define more than one distinguished name (DN) of an organization unit (or a container in Active Directory) in ldap tree where Pydio will looking for users to import to its database.
@@ -115,7 +115,7 @@ There are three parts in each rule:
 - Rule String: You can define this string as a filter for mapping process. It can be blank, a list of value, or regular expression string.
 
 
-<img src="http://images.vpydio.fr/local/Selection_867.png" alt="" width="600">
+<img src="../images/2_getting_started/2_13_ldap/Selection_867.png" alt="" width="600">
 
 Example: *department* is an attribute of user object in ldap, it accepts following values: finance, admin, hr, marketing, it_helpdesk, it_hardware. But you would like to map only "admin", "it_helpdesk", "it_hardware"  values to Roles in Pydio, you can define as following:
 
@@ -152,7 +152,7 @@ Example: `(objectClass=group)` or `(objectClass=groupOfNames)`
 
 5) Id Attribute: Pydio will take the value of this attribute of group object to use as Role id in Pydio.
 
-<img src="http://images.vpydio.fr/local/Selection_876.png" alt="" width="600">
+<img src="../images/2_getting_started/2_13_ldap/Selection_876.png" alt="" width="600">
 
 Some ldap directories does not support *memberOf* attribute by default, if you turn off "Native MemberOf support", Pydio will try to calculate this attribute from "Fake memberof Attribute" and its format.
 
@@ -173,4 +173,4 @@ or
 ```
 
 
-<img src="http://images.vpydio.fr/local/Selection_877.png" alt="" width="600">
+<img src="../images/2_getting_started/2_13_ldap/Selection_877.png" alt="" width="600">
