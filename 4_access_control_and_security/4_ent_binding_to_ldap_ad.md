@@ -1,6 +1,6 @@
 _Ldap authentication plugin is the most important plugin in Cells Enterprise. It enables Cells to be well integrated with existing system such as a SSO solution._
 
-In Cells, a ldap server will be seen as an external authentication source. With flexible parameters and options in configuration, you can quickly extract from your directory a list of user to be imported to Cells. The configuration of mapping users as similar as the config in Pydio PHP. An advanced feature of ldap module in Cells now enables you to add many ldap domains as many as you want.
+In Cells, a ldap server will be seen as an external authentication source. With flexible parameters and options in configuration, you can quickly extract from your directory a list of user to be imported to Cells. The configuration to map users as similar as the one in Pydio PHP( Pydio 8). An advanced feature of ldap module in Cells now enables you to add many ldap domains as many as you want.
 
 ## Configuration
 
