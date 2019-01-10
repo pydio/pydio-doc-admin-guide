@@ -104,3 +104,13 @@ volumes:
 We recommend you [run behind a proxy](https://pydio.com/fr/docs/cells/v1/run-behind-proxy) to encrypt the content you want to publish over the internet.
 
 The [nginx-proxy](https://github.com/jwilder/nginx-proxy) and [docker-letsencrypt-nginx-proxy-companion](https://github.com/JrCs/docker-letsencrypt-nginx-proxy-companion) containers can also be used to setup your proxy.
+
+### Troubleshooting 
+
+#### Check that after a server or container reboot that the address is the same
+
+If you ever restart your server and or your containers docker might attribute you another address for your containers.
+
+For instance docker usually has containers addresses looking like this `172.17.0.5` and therefore in Cells the default datasources or the ones that you will be creating on the filesystem will all be using this peer address by default.
+
+You might stumble upon this issue, if that's the case you need to access the `pydio.json` file and change the old occurrences of the address with the newest one.
