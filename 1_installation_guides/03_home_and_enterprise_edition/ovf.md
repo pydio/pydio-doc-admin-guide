@@ -10,7 +10,7 @@ The OVH image can be downloaded from:
 https://download.pydio.com/pub/cells-enterprise/release/VERSION/ovf/Cells-Enterprise-OVF-VERSION.zip
 ```
 
-where "VERSION" is the release version of Pydio Cells. Get for example: [https://download.pydio.com/pub/cells-enterprise/release/1.2.4/ovf/Cells-Enterprise-OVF-1.2.4.zip](https://download.pydio.com/pub/cells-enterprise/release/1.2.4/ovf/Cells-Enterprise-OVF-1.2.4.zip). An md5 file is also available on the same location for integrity verification.
+where "VERSION" is the release version of Pydio Cells. Get for example: [https://download.pydio.com/pub/cells-enterprise/release/1.2.5/ovf/Cells-Enterprise-OVF-1.2.5.zip](https://download.pydio.com/pub/cells-enterprise/release/1.2.5/ovf/Cells-Enterprise-OVF-1.2.5.zip). An md5 file is also available on the same location for integrity verification.
 
 This Zip archive contains the OVF itself plus the following files:
 
