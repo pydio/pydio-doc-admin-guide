@@ -9,17 +9,17 @@ In Cells, a ldap server will be seen as an external authentication source. With 
 Login with admin user and go to **Settings**. Click on **External Directory**.
 To add new directory, click on "DIRECTORY" or click on existing ldap to modify it's configuration.
 
-[:image-popup:2_getting_started/2_13_ldap/Selection_862.png.png]
+[:image-popup:4_access_control_and_security/2_13_ldap/Selection_862.png]
 
 ### Step 2
 
 In this step, you will create a ldap directory to connect an openldap server.
 
-[:image-popup:2_getting_started/2_13_ldap/Selection_863.png.png]
+[:image-popup:4_access_control_and_security/2_13_ldap/Selection_863.png]
 
 #### Basic settings for connection to ldap Server
 
-[:image-popup:2_getting_started/2_13_ldap/Selection_873.png.png]
+[:image-popup:4_access_control_and_security/2_13_ldap/Selection_873.png]
 
 ##### 1) IP address of host name of ldap server and Port
 
@@ -44,7 +44,7 @@ For example:
 
 If you are working with an Active Directory, you can get the dN of user object
 
-[:image-popup:2_getting_started/2_13_ldap/Selection_874.png.png]
+[:image-popup:4_access_control_and_security/2_13_ldap/Selection_874.png]
 
 > Note: It's highly recommended to use an ldap user and delegate this user to be allowed to do "*Read all user information*" task. Please visit this link for further information: https://www.msptechs.com/safely-delegate-control-active-directory/
 
@@ -72,7 +72,7 @@ We need to specify to Pydio the absolute path to the certificate of the ldap ser
 
 #### User Filter
 
-[:image-popup:2_getting_started/2_13_ldap/Selection_875.png.png]
+[:image-popup:4_access_control_and_security/2_13_ldap/Selection_875.png]
 
 ##### 1) User's DN
 
@@ -132,7 +132,7 @@ There are three parts in each rule:
 - Right Attribute: is the attribute name of the user object in pydio. _They are case sensitive names e.g: **displayName**, **email**, **Roles**_
 - Rule String: You can define this string as a filter for the mapping process. It can be blank, contain a list of value, or a regular expression string.
 
-[:image-popup:2_getting_started/2_13_ldap/Selection_867.png.png]
+[:image-popup:4_access_control_and_security/2_13_ldap/Selection_867.png]
 
 Example: *department* is an attribute of user object in ldap, it accepts the following values: _finance, admin, hr, marketing, it_helpdesk, it_hardware_.
 But you would like to map only **"admin"**, **"it_helpdesk"**, **"it_hardware"**  values to Roles in Pydio to do so, define them as the following:
@@ -167,7 +167,7 @@ Example: `(objectClass=group)` or `(objectClass=groupOfNames)`
 
 4) Id Attribute: Pydio will take the value of this attribute of group object to use as **Role id** in Pydio.
 
-[:image-popup:2_getting_started/2_13_ldap/Selection_876.png.png]
+[:image-popup:4_access_control_and_security/2_13_ldap/Selection_876.png]
 
 Some ldap directories does not support *memberOf* attribute by default, if you turn off "Native MemberOf support", Pydio will try to calculate this attribute from "Fake memberof Attribute" and its format.
 
@@ -188,4 +188,4 @@ or
   Fake memberOf Attribute Format: uid
 ```
 
-[:image-popup:2_getting_started/2_13_ldap/Selection_877.png.png]
+[:image-popup:4_access_control_and_security/2_13_ldap/Selection_877.png]
