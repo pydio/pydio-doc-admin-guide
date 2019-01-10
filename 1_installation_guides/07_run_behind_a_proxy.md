@@ -73,6 +73,9 @@ demo.pydio.com {
 }
 ```
 
+If you Caddy reverse proxy is not on the same machine as your Cells instance you may have to take a look at the following clues.
+
+
 To properly configure the certificates that you want to use, please refer to the [tls plugin page of the caddy documentation](https://caddyserver.com/docs/tls).
 
 ## Run your Docker Container behind an Apache reverse Proxy using SSL
