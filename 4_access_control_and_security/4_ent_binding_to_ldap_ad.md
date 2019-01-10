@@ -21,6 +21,8 @@ In this step, you will create a ldap directory to connect an openldap server.
 
 [:image-popup:4_access_control_and_security/2_13_ldap/Selection_873.png]
 
+_You can use the numbers inside this screenshot to refer to the setting_
+
 #### 1) IP address of host name of ldap server and Port
 
 Example:
@@ -40,7 +42,7 @@ For example:
 - pydio@lab.py
 - cn=pydio,ou=company,dc=lab,dc=py
 
-#### Active Directory Notes
+### Active Directory Notes
 
 If you are working with an Active Directory, you can get the dN of user object
 
@@ -50,7 +52,7 @@ If you are working with an Active Directory, you can get the dN of user object
 
 #### 4) User's password
 
-#### Advanced Settings
+### Advanced Settings
 
 #### 5) Skip certificate verification
 
@@ -73,6 +75,8 @@ openssl s_client -showcerts -connect ldapserver.com:389 </dev/null 2>/dev/null|o
 ### User Filter
 
 [:image-popup:4_access_control_and_security/2_13_ldap/Selection_875.png]
+
+_You can use the screeshots and the numbers inside them to refer to the setting_
 
 #### 1) User's DN
 
@@ -128,41 +132,42 @@ You can map user's attributes in ldap to pydio by defining some mapping rules.
 
 There are three parts in each rule:
 
-- Left Attribute: is the attribute name of user object in ldapserver
-- Right Attribute: is the attribute name of the user object in pydio. _They are case sensitive names e.g: **displayName**, **email**, **Roles**_
-- Rule String: You can define this string as a filter for the mapping process. It can be blank, contain a list of value or a regular expression string.
+- **Left Attribute:** is the attribute name of user object in ldapserver
+- **Right Attribute:** is the attribute name of the user object in pydio. _They are case sensitive names e.g: **displayName**, **email**, **Roles**_
+- **Rule String:** You can define this string as a filter for the mapping process. It can be blank, contain a list of value or a regular expression string.
 
 [:image-popup:4_access_control_and_security/2_13_ldap/Selection_867.png]
 
+_You can use the screeshots and the numbers inside them to refer to the setting_
+
 **Example**: `department` is an attribute of user object in ldap, it accepts the following values: **finance, admin, hr, marketing, it_helpdesk, it_hardware**.
 
-But you would like to map only **"admin"**, **"it_helpdesk"**, **"it_hardware"**  values to Roles in Pydio to do so, define them as the following:
+But you would like to map only **"admin"**, **"it_helpdesk"**, **"it_hardware"**  values to Roles in Pydio, to do so define them as the following:
 
-    Left Attribute: department
-    Rule String: admin,it_helpdesk,it_hardware
-    Right Attribute: Roles
+- **Left Attribute**: `department`
+- **Rule String**: `admin,it_helpdesk,it_hardware`
+- **Right Attribute**: `Roles`
 
 If you would like to map only values starting by **"it_"**, in this case, you can use preg format.
 
-    Left Attribute: department
-    Rule String: preg:^it_
-    Right Attribute: Roles
+- **Left Attribute:** `department`
+- **Rule String:** `preg:^it_`
+- **Right Attribute:** `Roles`
 
 ### MemberOf mapping
 
 1) MemberOf mapping is a specific case of mapping user's attribute to Roles. MemberOf is a multiple value attribute of user object which itself contains a list of groups where this user is a member. You should define a rule.
 
-```conf
-  Left Attribute: memberOf
-  Rule String:
-  Right Attribute: Roles
-```
+- **Left Attribute:** `memberOf`
+- **Rule String:**
+- **Right Attribute:** `Roles`
+
 
 The values of *memberOf* attribute can contain any group in the ldap directory. Thats why you need to define group filtering to precise the list of groups to be mapped with Pydio.
 
-2) Group DN: is the DN of one or more organization unit in the ldap directory where pydio will search for groups. If memberOf values have some groups in other locations, they will be ignored.
+1) Group DN: is the DN of one or more organization unit in the ldap directory where pydio will search for groups. If memberOf values have some groups in other locations, they will be ignored.
 
-3) Group Filter: Like **User Filter**
+2) Group Filter: Like **User Filter**
 
 Example: `(objectClass=group)` or `(objectClass=groupOfNames)`
 
@@ -177,16 +182,13 @@ Some ldap directories do not support **memberOf** attribute by default, if you t
 
 Values of two options are usually:
 
-```conf
-  Fake memberOf Attribute: member
-  Fake memberOf Attribute Format: dn
-```
+- **Fake memberOf Attribute:** `member`
+- **Fake memberOf Attribute Format:** `dn`
 
 or 
 
-```conf
-  Fake memberOf Attribute: memberuid
-  Fake memberOf Attribute Format: uid
-```
+- **Fake memberOf Attribute:** `memberuid`
+- **Fake memberOf Attribute Format:** `uid`
+
 
 [:image-popup:4_access_control_and_security/2_13_ldap/Selection_877.png]
