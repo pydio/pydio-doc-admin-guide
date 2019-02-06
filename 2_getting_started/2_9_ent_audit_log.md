@@ -19,17 +19,20 @@ First you must generate the audit log using this button:
 
 > a progress bar will appear so that you can keep track of the progression.
 
-Once the logs are generated you will be able to filter them and get the information that you want, you can filter them:
+Once the logs are generated you will be able to filter them and get the information that you want, you can filter them by:
 
 [:image-popup:2_getting_started/audit_log/audit_log_interface.png]
+
+> You can refer to the numbers on the screenshot for each section below.
 
 1. Type of data: Files or Folders only
 
 2. Path Prefix: is the path to the resource; the path prefix can contain a wildcard at the end, the path must be of this form:
    * for a simple case inside a public workspace `<datasource>/<resource>`
-   * for a the personal files case or such `<datasource>/<username>/<resource>`
+   * for a the personal files cases `<datasource>/<username>/<resource>`
    * you can use a wildcard at the end as said for instance `<datasource>/*` or `<datasource>/<folder>/*` and so on.
-> the following screenshots will illustrate the path filter for you.
+
+> the following screenshots are of examples that will illustrate the path filter for you.
 
 [:image-popup:2_getting_started/audit_log/filtering_example1.png]
 
@@ -67,6 +70,8 @@ it will display the following menu:
 ### Cells
 
 You can retrieve the cells activity the same way you did for the workspaces (by clicking the graph button that will appear when your mouse is on the cells)
+
+[:image-popup:2_getting_started/audit_log/cells_audit_options.png]
 
 [:image-popup:2_getting_started/audit_log/cells_activity.png]
 
