@@ -20,31 +20,45 @@ External Host: cells.example.com
 
 ### Configure Apache
 
+You must enable the following mods with apache :
+- `proxy`
+- `proxy_http`
+- `proxy_wstunnel`
+
 Edit Apache mod_ssl configuration file to have this:
 
 ```conf
-<IfModule mod_ssl.c>
-<VirtualHost *:443>
-  ServerName domain.pydio.com
-  # May be necessary for API direct accesses
+Listen 8080
+<VirtualHost *:8080>
+ServerName demo.fr
+ServerAdmin demo.fr
   AllowEncodedSlashes On
   RewriteEngine On
-   # Make sure to proxy SSL
-  SSLProxyEngine On
-  # Disable SSLProxyCheck : maybe necessary if Cells is configured with self_signed
-  SSLProxyCheckPeerCN Off
-  SSLProxyCheckPeerName Off
-  SSLProxyVerify none
+  #SSLProxyEngine On
+  #SSLProxyVerify None
+  #SSLProxyCheckPeerCN Off
+  #SSLProxyCheckPeerName Off
 
-  # Proxy WebSocket
-  RewriteCond %{HTTP:Upgrade} =websocket [NC]
-  RewriteRule /(.*)           wss://cells.example.com:7070/$1 [P,L]
-   # Finally simple proxy instruction
-  ProxyPass "/" "https://cells.example.com:7070/"
-  ProxyPassReverse "/" "https://cells.example.com:7070/"
+  #Proxy WebSocket
+  #RewriteCond %{HTTP:Upgrade} =websocket [NC]
+  #RewriteRule /(.*) wss://127.0.0.1:8080/$1 [P,L]
+  ProxyPassMatch "/ws/(.*)" ws://192.168.0.172:8080/ws/$1 nocanon
+
+  #Finally simple proxy instruction
+  ProxyPass "/" "http://192.168.0.172:8080/"
+  ProxyPassReverse "/" "http://192.168.0.172:8080/"
+
+  #Uncoment if you are going to use SSL
+  #SSLEngine on
+  #SSLCertificateFile /etc/ssl/localcerts/server.crt
+  #SSLCertificateKeyFile /etc/ssl/localcerts/server.key
+  #SSLCertificateChainFile /etc/ssl/localcerts/bundled.crt
+
+ErrorLog ${APACHE_LOG_DIR}/error-ssl.log
+CustomLog ${APACHE_LOG_DIR}/access-ssl.log combined
 </VirtualHost>
-</IfModule>
 ```
+> For this example my proxy is running on `192.168.0.176`, while my cells is running on another server `192.168.0.172:8080` .
 
 Please note:
 
