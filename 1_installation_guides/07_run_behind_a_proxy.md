@@ -43,6 +43,11 @@ ServerAdmin demo.fr
   #RewriteCond %{HTTP:Upgrade} =websocket [NC]
   #RewriteRule /(.*) wss://127.0.0.1:8080/$1 [P,L]
   ProxyPassMatch "/ws/(.*)" ws://192.168.0.172:8080/ws/$1 nocanon
+  # for ssl
+  # ProxyPassMatch "/ws/(.*)" wss://ip.or.domain.server/ws/$1 nocanon
+  
+  # onlyoffice
+  # ProxyPassMatch "/onlyoffice/(.*)/websocket$" ws://192.168.0.172:8080/onlyoffice/$1/websocket nocanon
 
   #Finally simple proxy instruction
   ProxyPass "/" "http://192.168.0.172:8080/"
@@ -58,11 +63,13 @@ ErrorLog ${APACHE_LOG_DIR}/error-ssl.log
 CustomLog ${APACHE_LOG_DIR}/access-ssl.log combined
 </VirtualHost>
 ```
-> For this example my proxy is running on `192.168.0.176`, while my cells is running on another server `192.168.0.172:8080` .
+
+> For this example my proxy is running on `192.168.0.176`, while my cells is running on another server `192.168.0.172` under the port `8080` .
 
 Please note:
 
-- The AllowEncodedSlashes On that may be necessary if not activated globally in apache (to call APIs like /a/meta/bulk/path%2F%to%2Ffolder
+- The **AllowEncodedSlashes** On that may be necessary if not activated globally in apache (to call APIs like /a/meta/bulk/path%2F%to%2Ffolder
+
 - When I configure Cells, even on another port, I actually **make sure to bind it directly to the cells.example.com** as well (like Apache). This is necessary for the presigned URL used with S3 API for uploads and downloads (they used signed headers and a mismatch between received Host headers may break the signature). Another option is to still bind Cells using a local IP, then in the Admin Settings, under Configs Backend, use the field “Replace Host Header for S3 Signature” and use the internal IP here.
 
 ## Using [Caddy](https://caddyserver.com) as a reverse proxy
@@ -87,7 +94,7 @@ demo.pydio.com {
 }
 ```
 
-If you Caddy reverse proxy is not on the same machine as your Cells instance you may have to take a look at the following clues.
+If your Caddy reverse proxy is not on the same machine as your Cells instance you may have to take a look at the following clues.
 
 
 To properly configure the certificates that you want to use, please refer to the [tls plugin page of the caddy documentation](https://caddyserver.com/docs/tls).
@@ -110,8 +117,9 @@ If you want your application to run on the localhost at port 8080 and use the ur
 To illustrate the concept above an example is provided.
 
 For instance you have your cells container running on a server that has an address such as : `192.168.1.12`
-you decide to run your container on port `7070` and therefore to run your container behind the proxy you will to have set
-`CELLS_BIND = 192.168.1.12:7070` and `CELLS_EXTERNAL = 192.168.1.12` (can be in the docker-compose or as environement variables in the docker run command).
+you decide to run your container on port `7070` and therefore to run your container behind the proxy you will have  to set:
+`CELLS_BIND = 192.168.1.12:7070` and `CELLS_EXTERNAL = 192.168.1.12` 
+> (can be done in the docker-compose or as environment variables in the docker run command).
 
 If you want to use SSL do not forget to also put `CELLS_NO_SSL = 0` that is SSL on cells side but even if you want to use SSL for your Apache Proxy you will have to enable it (and set the certificates path for the proxy to use).
 
@@ -137,8 +145,8 @@ Then create configuration file for apache proxy (if used as it is , it will work
 
   # Proxy WebSocket
   RewriteCond %{HTTP:Upgrade} =websocket [NC]
-  RewriteRule /(.*)           wss://192.168.0.153:8080/$1 [P,L]
-   # Finally simple proxy instruction
+  # RewriteRule /(.*)           wss://192.168.0.12:8080/$1 [P,L]
+  # Finally simple proxy instruction
   ProxyPass "/" "https://192.168.1.12:7070/"
   ProxyPassReverse "/" "https://192.168.1.12:7070/"
 
