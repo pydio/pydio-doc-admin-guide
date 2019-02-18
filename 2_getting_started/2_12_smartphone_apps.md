@@ -15,8 +15,8 @@ Yet, everything is configurable.
 
 Here are the links to download each application:
 
-- [Android application](https://play.google.com/store/apps/details?id=com.pydio.android.pydioPro)
-- [iOS application](https://itunes.apple.com/us/app/pydiopro/id1109419882)
+- [Android application](https://play.google.com/store/apps/details?id=com.pydio.android.cells&hl=en)
+- [iOS application](https://itunes.apple.com/fr/app/pydio-pro/id1109419882?mt=8)
 
 ### Connect to a running Pydio server.
 
