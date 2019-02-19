@@ -4,7 +4,7 @@ The best way to run cells in production is to set it as a service and put it beh
 
 ### Run cells behind a proxy
 
-Proxies are one of the most common way to secure your webservers for instance you don't expose your servers ip, you can also enable SSL encrypting the communication even more, they can also enhance the performance 
+Proxies are one of the most common way to secure your webservers for instance you don't expose your server's ip, you can also enable SSL encrypting the communication even more.
 
 Please refer your our knowledge base for more comprehensive guides on how to setup a proxy with cells.
 
@@ -20,3 +20,4 @@ Refer to our knowledge base for a comprehensive guide on how to setup your cells
 
 - [run cells as a service with **systemd**](https://pydio.com/en/docs/kb/devops/cells-service-systemd)
 - [run cells as a service with **supervisor**](https://pydio.com/en/docs/kb/devops/cells-service-supervisor)
+
