@@ -6,7 +6,7 @@ _This guide describes the steps required to have Pydio Cells running on a CentOs
 
 ### Database
 
-The only hard requirement is a running MySQL DB server. We recommand a recent version of MariaDB or the MySQL community server.
+The only hard requirement is a running MySQL DB server. We recommend a recent version of MariaDB or the MySQL community server.
 
 #### MariaDB
 
