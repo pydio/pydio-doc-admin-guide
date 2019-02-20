@@ -1,5 +1,3 @@
-## Running cells in production
-
 The best way to run cells in production is to set it as a service and put it behind a proxy, below we will give you some of the most common and most used ways to do that.
 
 ### Run cells behind a proxy
