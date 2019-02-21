@@ -30,7 +30,7 @@ A manual refresh will load the login page.
 
 ### No private address
 
-_ You got this kind of error: `ERROR   nats    Could not run   {“error”: “No private IP address found, and explicit IP not provided”}`_
+_You got this kind of error: `ERROR   nats    Could not run   {“error”: “No private IP address found, and explicit IP not provided”}`_
 
 This typically happens on small VPS that are hosted in the cloud and don't have a private address by default.
 
