@@ -30,6 +30,8 @@ Pydio Cells webserver may be bound to any port that suits your security rule. Ho
 
 **If you wish to use the 0.0.0.0 address you must respect this rule, cells_bind must have this form `cells_bind=0.0.0.0:<port>` and `cells_external=<domain name,address>:<port>` the port is mandatory in both otherwise you will have a grey screen stuck in the loading**
 
+- A private ip is required to run cells as it is used by one of your dependencies, make sure that you have one before running cells.
+
 ### Cells Binary
 
 Download the Pydio Cells binary for your OS from the [download page](https://pydio.com/download/) or use the direct links below :
