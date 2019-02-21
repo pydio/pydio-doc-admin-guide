@@ -103,8 +103,10 @@ INTERNAL_URL : address where the application http server is bound to. It MUST co
 EXTERNAL_URL : url the end user will use to connect to the application.
 Example:
 If you want your application to run on the localhost at port 8080 and use the url mycells.mypydio.com, then set INTERNAL_URL to localhost:8080 and EXTERNAL_URL to http://mycells.mypydio.com (or https)
-After the install is successfully done, if you ever have to stop Pydio Cells and want to run it again just run:
+
 ```
+
+After the install is successfully done, if you ever have to stop Pydio Cells and want to run it again just run:
 
 ```sh
 ./cells install
