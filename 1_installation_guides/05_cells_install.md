@@ -24,8 +24,7 @@ A first **Installation mode**  menu appears in your terminal, choose if you want
 
 Then, define the url parameters of your instance:
 
-- **Bind Host**: internal url for Pydio Cells: the various services reaches each other through the gateway at this address. In most common cases, it is `<ip>:<port>`(example: `192.168.0.192:80`). If you are going to use SSL you should put your secure port `443` or else.
-- **External HOST**: world facing URL of Pydio Cells. Usually, you can use the same URL as the bind URL. Thus this field is auto-filled with the value you have just entered and can be left untouched. In the case where you want to set up a more exotic configuration, adapt the URL here.
+- **Internal Url**: internal url for Pydio Cells: the various services reaches each other through the gateway at this address. In most common cases, it is `<ip>:<port>`(example: `192.168.0.192:80`). If you are going to use SSL you should put your secure port `443` or else.
 - **Choose SSL Activation mode**:
   - **Provide paths to certificate/key files**: if you already have a certificate/key, you can use them.
   - **Use Let's Encrypt**: this option is based on the built-in caddy feature to create and manage certificate using the [Let's Encrypt CA](https://letsencrypt.org/). Beware that if you use this option:
@@ -34,7 +33,9 @@ Then, define the url parameters of your instance:
     _Warning: if you launch the app with an invalid configuration, you might have your DNS temporary black listed on Let's encrypt due to failing multiple retries to get your certificate_.  
   - **Generate a self-signed certificate**: Pydio Cells generates a self signed certificate. Be advised this should **not** be used for system in production.
   - **Provide paths to certificate/key files**: if you already have a certificate/key, you can use them.
-
+- **External Url**: world facing URL of Pydio Cells. Usually, you can use the same URL as the bind URL. Thus this field is auto-filled with the value you have just entered and can be left untouched. In the case where you want to set up a more exotic configuration, adapt the URL here the external Url must always have the protocol such as for instance `https://my-domain.com` (or http).
+The external Url is your mean to access Cells therefore if you are running a reverse proxy this will in the mean case be like this , external_url = reverse_proxy_url used to access.
+ 
 _Subsequent steps are then pretty much the same in the browser or in the CLI_.
 
 ## Installation process
