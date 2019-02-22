@@ -24,9 +24,9 @@ Here's an example of a command that runs a cells container with persistent data 
 docker run -d -e CELLS_EXTERNAL=192.168.0.172:8080 -e CELLS_BIND=192.168.0.172:8080 -p 8080:8080 -v /home/cells/volume/:/root/.config/pydio/ pydio/cells
 ```
 
-* -e `CELLS_EXTERNAL` is required to give it external access
-* -e `CELLS_BIND` can be, the server running the container address or localhost.
-* -v `/home/cells/volume/:/root/.config/pydio/` basically i have a folder on my server located here `/home/cells/volume/` and i want the content to be the all of the cells configuration/datasource that are located inside the container in `root/.config/pydio/`.
+* **-e** *CELLS_EXTERNAL* is required to give it external access
+* **-e** *CELLS_BIND* can be, the server running the container address or localhost.
+* **-v** */home/cells/volume/:/root/.config/pydio/* basically i have a folder on my server located here `/home/cells/volume/` and i want the content to be the all of the cells configuration/datasource that are located inside the container in `root/.config/pydio/`.
 
 _This was only an example on how you can run a Cells container, you can find below all of the envorinment variables, data configurations for cells, docker-compose examples and more_
 
@@ -101,7 +101,7 @@ volumes:
 
 #### HTTPS
 
-We recommend you [run behind a proxy](https://pydio.com/fr/docs/cells/v1/run-behind-proxy) to encrypt the content you want to publish over the internet.
+We recommend you [run behind a proxy](https://pydio.com/en/docs/kb/devops) to encrypt the content you want to publish over the internet.
 
 The [nginx-proxy](https://github.com/jwilder/nginx-proxy) and [docker-letsencrypt-nginx-proxy-companion](https://github.com/JrCs/docker-letsencrypt-nginx-proxy-companion) containers can also be used to setup your proxy.
 
