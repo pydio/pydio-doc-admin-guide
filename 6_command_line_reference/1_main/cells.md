@@ -25,11 +25,8 @@ variable to one of the following values:
 
 ### Services Discovery
 
-Micro services need a registry mechanism to discover each other. By default, Pydio Cells ships with Nats.io and Consul.io implementations.
-You don't need to install any dependency. By default, Cells uses the NATS implementation. You can switch to consul by using
-the flag --registry=consul.
-
-
+Micro services need a registry mechanism to discover each other. By default, Pydio Cells ships with Nats.io.
+You don't need to install any dependency. By default, Cells uses the NATS implementation.
 
 ```
 ./cells [flags]
