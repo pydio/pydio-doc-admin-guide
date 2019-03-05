@@ -1,11 +1,12 @@
 
-The best way to run Pydio Cells in a production environment is to start it as a service and put it behind a proxy. We gather in this page relevant resources that points toward various step by step guides that explain how to achieve this.
+The best way to run Pydio Cells in a production environment is to start it as a service and put it behind a proxy.  
+In this page, we gather pointers to various step by step guides from our knowledge base that explain how to achieve this.
 
 ### Run Pydio Cells behind a proxy
 
-Proxies are one of the most common way to secure your webservers: you do not expose your server's ip, you can enable SSL cipher communication with clients and even more.
+Proxies are one of the most common way to secure your webservers: it hides the IP of your App server, it can provides TLS encryption for the client/server communication (https) and much more.
 
-Please refer your our knowledge base for comprehensive guides on how to setup a proxy with Cells.
+In our knowledge base we have a growing number of comprehensive guides to setup various proxies with Cells:
 
 - [proxy with **Apache2**](https://pydio.com/en/docs/kb/devops/proxying-cells-apache)
 - [proxy with **Caddy**](https://pydio.com/en/docs/kb/devops/proxying-cells-caddy)
