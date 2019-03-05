@@ -1,21 +1,21 @@
-The best way to run cells in production is to set it as a service and put it behind a proxy, below we will give you some of the most common and most used ways to do that.
 
-### Run cells behind a proxy
+The best way to run Pydio Cells in a production environment is to start it as a service and put it behind a proxy. We gather in this page relevant resources that points toward various step by step guides that explain how to achieve this.
 
-Proxies are one of the most common way to secure your webservers for instance you don't expose your server's ip, you can also enable SSL encrypting the communication even more.
+### Run Pydio Cells behind a proxy
 
-Please refer your our knowledge base for more comprehensive guides on how to setup a proxy with cells.
+Proxies are one of the most common way to secure your webservers: you do not expose your server's ip, you can enable SSL cipher communication with clients and even more.
 
-- [proxy with **apache2**](https://pydio.com/en/docs/kb/devops/proxying-cells-apache)
-- [proxy with **caddy**](https://pydio.com/en/docs/kb/devops/proxying-cells-caddy)
-- [proxy with **nginx**](https://pydio.com/en/docs/kb/devops/proxying-cells-nginx)
-- [proxy a **docker** instance](https://pydio.com/en/docs/kb/devops/proxying-cells-docker)
+Please refer your our knowledge base for comprehensive guides on how to setup a proxy with Cells.
 
-### Run cells as a service
+- [proxy with **Apache2**](https://pydio.com/en/docs/kb/devops/proxying-cells-apache)
+- [proxy with **Caddy**](https://pydio.com/en/docs/kb/devops/proxying-cells-caddy)
+- [proxy with **Nginx**](https://pydio.com/en/docs/kb/devops/proxying-cells-nginx)
+- [proxy a **Docker** instance](https://pydio.com/en/docs/kb/devops/proxying-cells-docker)
 
-Running cells as a service is a good way to ensure that you have your server running if an event such as a power failure or else happens.
-Refer to our knowledge base for a comprehensive guide on how to setup your cells as a service.
+### Run Cells as a service
+
+Running Cells as a service is a good way to ensure that you have your server running if an event such as a power failure or else happens.
+Refer to our knowledge base for a comprehensive guide on how to setup your Cells instance as a service.
 
 - [run cells as a service with **systemd**](https://pydio.com/en/docs/kb/devops/cells-service-systemd)
 - [run cells as a service with **supervisor**](https://pydio.com/en/docs/kb/devops/cells-service-supervisor)
-
