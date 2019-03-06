@@ -41,6 +41,6 @@ Those are the minimum requirements, if you are using the latest versions of the 
 
 * **Firefox**: starting with version 52
 * **Chrome**: 52
-* **Edge**:
+* **Edge**: 42
 * **Opera**: 42
 * **Safari**: 12
