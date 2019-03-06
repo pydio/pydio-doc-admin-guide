@@ -34,3 +34,13 @@ Download the Pydio Cells binary for your OS from the [download page](https://pyd
 
 * **[Home Edition](https://download.pydio.com/pub/cells/release/1.4.0/linux-amd64/cells)**
 * **[Enterprise Edition](https://download.pydio.com/pub/cells-enterprise/release/1.4.0/linux-amd64/cells-enterprise)**
+
+### Browsers
+
+Those are the minimum requirements, if you a new latest versions of the following browsers you should not have any issue.
+
+* **Firefox**: starting with version 52
+* **Chrome**: 52
+* **Edge**:
+* **Opera**: 42
+* **Safari**: 12
