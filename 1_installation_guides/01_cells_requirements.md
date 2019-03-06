@@ -36,5 +36,5 @@ _A private ip is required to run cells as it is used by one of your dependencies
 
 Download the Pydio Cells binary for your OS from the [download page](https://pydio.com/download/) or use the direct links below :
 
-* **[Home Edition](https://download.pydio.com/pub/cells/release/1.4.0/linux-amd64/cells)**
-* **[Enterprise Edition](https://download.pydio.com/pub/cells-enterprise/release/1.4.0/linux-amd64/cells-enterprise)**
+* **[Home Edition](https://download.pydio.com/pub/cells/release/1.4.1/linux-amd64/cells)**
+* **[Enterprise Edition](https://download.pydio.com/pub/cells-enterprise/release/1.4.1/linux-amd64/cells-enterprise)**
