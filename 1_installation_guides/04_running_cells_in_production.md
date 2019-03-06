@@ -1,5 +1,5 @@
 
-The best way to run Pydio Cells in a production environment is to start it as a service and put it behind a proxy.  
+The best way to run Pydio Cells in a production environment is to start it as a service and put it behind a proxy.
 In this page, we gather pointers to various step by step guides from our knowledge base that explain how to achieve this.
 
 ### Run Pydio Cells behind a proxy

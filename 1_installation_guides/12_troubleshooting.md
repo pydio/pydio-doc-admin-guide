@@ -28,25 +28,6 @@ A manual refresh will load the login page.
 
 ## Networking issues
 
-### No private address
-
-_You got this kind of error: `ERROR   nats    Could not run   {“error”: “No private IP address found, and explicit IP not provided”}`_
-
-This typically happens on small VPS that are hosted in the cloud and don't have a private address by default.
-
-The simplest way is to create an alias on the network interface with a 10.0.X address.
-For example, if the main interface is eth0, just add the following in the `/etc/network/interface` file.
-
-```conf
-auto eth0:1
-allow-hotplug eth0:1
-iface eth0:1 inet static
-address 10.0.0.1
-netmask 255.255.255.0
-```
-
-Then restart networking services.
-
 ### Unable to bind port 443
 
 _You have configured the bind URL with port 443 and enable redirection of port 80. You get an error page "Unable to connect" when you try to connect_.

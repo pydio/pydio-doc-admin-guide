@@ -2,13 +2,13 @@ _This section covers the basics of the Pydio Cells architecture. Although not ne
 
 ## Introduction
 
-Pydio Cells is composed of a set of **micro-services**, which are small, mono-oriented, independant programs communicating together only via defined API's. This does improve flexibility and overall scalability of the system.
+Pydio Cells is composed of a set of **micro-services**, which are small, mono-oriented, independent programs communicating together only via defined API's. This does improve flexibility and overall scalability of the system.
 
-This is transparent for standard, one-node deployments: when you run Pydio Cells with the standard `./cells start` command, all services are started altogether, and a dedicated "proxy" service provides the glue to expose only one HTTP address to the users. You certainly do not "have to" run each service independantly on different machines. 
+This is transparent for standard, one-node deployments: when you run Pydio Cells with the standard `./cells start` command, all services are started altogether, and a dedicated "proxy" service provides the glue to expose only one HTTP address to the users. You certainly do not "have to" run each service independently on different machines. 
 
-### Services are stateless and fully independants
+### Services are stateless and fully independent
 
-As exposed, each micro service exposes its own API, using either a gRPC Protocol or a REST HTTP protocol (more on that later). Also, each micro service comes with its own storage. Some services rely on a MySQL storage, whereas others currently embed their own on-file database (based on BoltDB). This is important as it allows to scale each service independantly depending on the load applied on this service. 
+As exposed, each micro service exposes its own API, using either a gRPC Protocol or a REST HTTP protocol (more on that later). Also, each micro service comes with its own storage. Some services rely on a MySQL storage, whereas others currently embed their own on-file database (based on BoltDB). This is important as it allows to scale each service independently depending on the load applied on this service. 
 
 Again, the complexity is hidden from you for standard deployments: the central configuration shares one database for all services. Inside this database, each service creates its own tables and relies only on these tables. There are *no relational links* betweens the tables of different services. By correctly tweaking the configuration file, you can assign a different database server for each server without issue.
 

@@ -28,6 +28,8 @@ You can:
 - **Disable job**: disable the task that will therefore no longer run
 - **Enable multiple** or **Clear All** which clears the history.
 
+**You can also click on any job to have an history of it's events such as errors.**
+
 ### User Jobs
 
 User jobs are usually tasks launched by users such as compression, share etc ...

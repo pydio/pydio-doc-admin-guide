@@ -22,15 +22,11 @@ Thus the only remaining hard requirement is the database. At the time of writing
 * **MySQL** version 5.6 and above.
 * **MariaDB** version 10.2 and above.
 
-_Be advised we do not support yet the new **mysql 8 authentication method** right now mysql 8 can only be used with the legacy method with cells for the mean time (it's on our roadmap)_.
-
 ### Networking
 
 Pydio Cells webserver may be bound to any port that suits your security rule. However if you need to set it on the standard HTTP (**80**) and HTTPS (**443**) ports, please refer to the following [os-specific sections](/en/docs/cells/v1/os-specific-guides).
 
-**If you wish to use the 0.0.0.0 address you must respect this rule, cells_bind must have this form `cells_bind=0.0.0.0:<port>` and `cells_external=<domain name,address>:<port>` the port is mandatory in both otherwise you will have a grey screen stuck in the loading**
-
-_A private ip is required to run cells as it is used by one of your dependencies, make sure that you have one before running cells, refer to the [troubleshooting](https://pydio.com/en/docs/cells/v1/troubleshooting) in the **Networking** section for hints to work around it._
+**If you wish to use the 0.0.0.0 address you must respect this rule, cells_bind must have this form `internal_url=0.0.0.0:<port>` and `external_url=<domain name,address>:<port>` the port is mandatory in both otherwise you will have a grey screen stuck in the loading**
 
 ### Cells Binary
 

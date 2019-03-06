@@ -2,6 +2,8 @@
 
 Upgrading from Pydio 8 and below is **currently not possible** because we have changed most of our code from PHP language to GO language. We are working on a migration process and we will provide you ASAP with a solution. If you are currently using an Enterprise version of Pydio 8 and need to migrate now, please get in touch directly with us.
 
+> Currently we have on the enterprise edition a beta version of the migration tool.
+
 ## Upgrading Cells
 
 On a running Cells / Cells-Enterprise system, upgrade process is as simple as replacing the old binary with the latest one and restarting the service. You can do it manually (by downloading the latest binary or use the in-app upgrade via the `Settings` panel.
