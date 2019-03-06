@@ -37,7 +37,7 @@ Download the Pydio Cells binary for your OS from the [download page](https://pyd
 
 ### Browsers
 
-Those are the minimum requirements, if you a new latest versions of the following browsers you should not have any issue.
+Those are the minimum requirements, if you are using the latest versions of the following browsers you should not have any issue.
 
 * **Firefox**: starting with version 52
 * **Chrome**: 52
