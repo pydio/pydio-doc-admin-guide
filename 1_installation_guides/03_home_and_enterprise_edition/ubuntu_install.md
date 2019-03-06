@@ -30,7 +30,7 @@ _Note: the `-s /bin/bash` option is not strictly required. It insures you are us
 
 ### Database
 
-Pydio Cells can be installed with both MySQL Server (v5.6 or higher) and MariaDB (v10.2 or higher).
+Pydio Cells can be installed with both MySQL Server (v5.6 or higher) and MariaDB (v10.3 or higher).
 
 #### MariaDB server
 
@@ -75,6 +75,7 @@ cd /home/pydio
 wget https://download.pydio.com/pub/cells/release/1.4.1/linux-amd64/cells
 sudo chmod u+x cells
 sudo chown pydio.pydio cells
+
 # Enterprise edition
 wget https://download.pydio.com/pub/cells-enterprise/release/1.4.1/linux-amd64/cells-enterprise
 sudo chmod u+x cells-enterprise
@@ -100,9 +101,11 @@ Execute the command below and follow the instructions.
 ```
 
 **Before you start installing here's two of the most important parameters that you need to understand:**
-```
+
+```text
 INTERNAL_URL : address where the application http server is bound to. It MUST contain a server name and a port.
 EXTERNAL_URL : url the end user will use to connect to the application.
+
 Example:
 If you want your application to run on the localhost at port 8080 and use the url mycells.mypydio.com, then set INTERNAL_URL to localhost:8080 and EXTERNAL_URL to mycells.mypydio.com
 After the install is successfully done, if you ever have to stop Pydio Cells and want to run it again just run:

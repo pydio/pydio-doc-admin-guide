@@ -4,7 +4,7 @@ The most standard driver you can use is actually the File System datasource: it 
 
 [:image-popup:3_storage_data_and_metadata/datasource_config/file_system_interface.png]
 
-- **Peer Address**: address of the server where the storage is located. This is necessary for distributed setup where Pydio Cells may run on various machines. Active peers should be automatically detected and proposed in the list.
+- **Peer Address**: address of the server where the storage is located. This is necessary for distributed setup where Pydio Cells may run on various machines. Active peers should be automatically detected and proposed in the list. (You can now choose the hostname which in case of an ip change will not disturb your datasources)
 - **Path**: path to the directory on the server file system that is served as the root of this datasource.
 - **Storage is MacOS**: if the Peer is running on MacOS, enable this to perform UTF8 names normalization, or you may see strange issues with names containing accented characters.
 

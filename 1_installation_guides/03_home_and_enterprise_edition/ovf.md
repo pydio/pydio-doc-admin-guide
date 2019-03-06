@@ -14,7 +14,7 @@ where "VERSION" is the release version of Pydio Cells. Get for example: [https:/
 
 This Zip archive contains the OVF itself plus the following files:
 
-- **EULA**: End-user license aggrement
+- **EULA**: End-user license agreement
 - **Import_to_Hyper_V.txt**: instructions for importing vm image into Hyper-V system
 - **Import_to_VMWare_System.txt**: some notes for importing vm image into different version of VMWare system
 

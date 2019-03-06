@@ -1,6 +1,6 @@
 ## Create a backup of your Cells installation and recover from it
 
-In this guide we are going to explain how you can create a backup of your Pydio Cells instance to make sure that if an issue occurs at any time being such as hard-drive failure, a power loss, bad upgrade process and so on, not data or configuration is lost.
+In this guide we are going to explain how you can create a backup of your Pydio Cells instance to make sure that if an issue occurs at any time being such as hard-drive failure, a power loss, bad upgrade process and so on, neither data or configuration is lost.
 
 We are also going to see how you can recover your cells installation assuming that you backed it up.
 
@@ -9,7 +9,7 @@ We are also going to see how you can recover your cells installation assuming th
 To create a backup of your pydio cells installation which is quite simple, you just need to copy the entirety of the pydio cells folder in another location(another hard-drive etc... wherever you want at your discretion).
 
 For instance on my linux (debian) installation my cells is located here `~/.config/pydio/cells`
-therefore i have to use this command `cp -r ~/.config/pydio/cells cells-backup`**(1)** to copy and therefore back my pydio cells.
+therefore i have to use this command `cp -r ~/.config/pydio/cells cells-backup` **(1)** to copy and therefore back my pydio cells.
 
 _We advise you to regularly do a backup once it's done it will take lesser time to do the next copy to the same folder will just add the new data onto it_.
 

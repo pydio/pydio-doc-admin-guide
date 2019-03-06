@@ -9,7 +9,7 @@ First, give execution rights to the binary. For instance: `sudo chmod u+x <binar
 
 Then, to launch the installer:
 
-- [optionnal but recommanded] switch to / log in as the specific user you have created to run Pydio Cells
+- [optional but recommended] switch to / log in as the specific user you have created to run Pydio Cells
 - go to the directory where your binary resides
 - simply type:
 
@@ -61,7 +61,7 @@ You might start it again using this command to insure everything work as expecte
 ./cells-enterprise start
 ```
 
-Yet this is not the recommanded way to start Pydio Cells when running in production. Please refer to the [following chapter](/en/docs/cells/v1/launching-cells-service) to finalise integration of your Cells instance with the host system.
+Yet this is not the recommanded way to start Pydio Cells when running in production. Please refer to the [following chapter](/en/docs/cells/v1/running-cells-in-production) to finalise integration of your Cells instance with the host system.
 
 If you encounter any issue during the installation process, please refer to the [generic troubleshooting section of this guide](/en/docs/cells/v1/troubleshooting) or to the specific trouble shooting section that is at the bottom of each one of the [OS specific installation guides](/en/docs/cells/v1/os-specific-guides).
 
