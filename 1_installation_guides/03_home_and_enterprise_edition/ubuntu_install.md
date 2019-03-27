@@ -77,7 +77,7 @@ sudo chmod u+x cells
 sudo chown pydio.pydio cells
 
 # Enterprise edition
-wget https://download.pydio.com/pub/cells-enterprise/release/1.4.1/linux-amd64/cells-enterprise
+wget https://download.pydio.com/pub/cells-enterprise/release/1.4.2/linux-amd64/cells-enterprise
 sudo chmod u+x cells-enterprise
 sudo chown pydio.pydio cells-enterprise
 ```
