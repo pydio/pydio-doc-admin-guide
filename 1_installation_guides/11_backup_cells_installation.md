@@ -1,29 +1,45 @@
-## Create a backup of your Cells installation and recover from it
+## Backup and restore
 
-In this guide we are going to explain how you can create a backup of your Pydio Cells instance to make sure that if an issue occurs at any time being such as hard-drive failure, a power loss, bad upgrade process and so on, neither data or configuration is lost.
+We explain here how to backup and restore your instance of Pydio Cells, so that you do not loose data nor configuration in case of a disaster such as hard-drive failure, power loss, bad upgrade process, etc.
 
-We are also going to see how you can recover your cells installation assuming that you backed it up.
+This procedure is adapted for simple mono-node installation. If you have made multi-node installation, be aware that you must backup both storage and datasource for each one of your nodes.
 
-### Backup the configs & default Data Location
+### Backup configuration and default data location
 
-To create a backup of your pydio cells installation which is quite simple, you just need to copy the entirety of the pydio cells folder in another location(another hard-drive etc... wherever you want at your discretion).
+If you have made a vanilla install, default _Home_ folder for the Pydio Cells installation is located at:
 
-For instance on my linux (debian) installation my cells is located here `~/.config/pydio/cells`
-therefore i have to use this command `cp -r ~/.config/pydio/cells cells-backup` **(1)** to copy and therefore back my pydio cells.
+- `/home/pydio/.config/pydio/cells` for Linux users
+- `~/Library/Application\ Support/Pydio/cells` for MacOS users
 
-_We advise you to regularly do a backup once it's done it will take lesser time to do the next copy to the same folder will just add the new data onto it_.
+The `cells` folder contains all configuration. It is also the parent of the `data` subfolder that contains the default datasources that are created at install.
 
-Now that the cells installation is backed up if you ever face an issue you can just copy back this folder into `~/.config/pydio/cells` then do a `./cells start` with a new or old binary and you are good to go.
+So create a backup of this folder, for instance:
 
-All the informations about the host, the database, plugins configurations etc.. are stored inside this file `~/.config/pydio/cells/pydio.json`
+```sh
+cp -r ~/.config/pydio/cells cells-backup
 
-You can also backup all of your database, one way could be to export the database into a sql file another would be to copy the database into another one.
+# or with rsync
+TODO put command
+```
 
-__(1)__ For macos users the path is `~/Library/Application\ Support/Pydio/cells` the `~` being your home path.
+**Notes**:
 
-### Backup your datasources
+- We advise you to use rsync to regularly backup this folder: after first time, the followings will be quicker because it only transfers the difference.
+- If you ever happen to mess with your installation **without impacting the DB** you can always restore this folder to your last backup and then do a `./cells start` with a new or old binary. You should be good to go.
+- All the information about network, database and plugins configuration are stored inside the `.../cells/pydio.json` file.
 
-To back other datasources you only need to copy the parent repository of the datasource (this step is mandatory) because the parent repository contains the `.minio.sys` folder which is required to have a functioning datasource [*you can find more details about datasources here*](https://pydio.com/en/docs/developer-guide/data).
+### Backup additionnal your datasources
+
+All datasources are defined by 3 things:
+
+- the **configuration** that is stored in the `pydio.json`file (see above)
+- the **files** that are stored in this datasource 
+-  
+
+ya quoi dans le minio ? 
+quid du versionoing ? de l'encription? 
+
+To backup other datasources you only need to copy the parent repository of the datasource (this step is mandatory) because the parent repository contains the `.minio.sys` folder which is required to have a functioning datasource [*you can find more details about datasources here*](https://pydio.com/en/docs/developer-guide/data).
 
 For instance your datasource is located in this path, `/home/pydio/datasource/firstds` the `.minio.sys` will be located in `/home/pydio/datasource/<location of .minio.sys>` then to back your datasource you must atleast back the parent folder `datasource` it's path being `/home/pydio/datasource` because it contains both your datasource(containing the data) and `.minio.sys`(the datasource config file).
 
