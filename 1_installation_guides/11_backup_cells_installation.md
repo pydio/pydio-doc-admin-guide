@@ -17,11 +17,16 @@ The `cells` folder is also the parent of the `data` subfolder that contains the 
 So create a backup of this folder, for instance:
 
 ```sh
-cp -r ~/.config/pydio/cells /home/pydio/backups/cells-backup
+# If possible, it is always to stop Cells before doing the backup
+systemctl stop cells
 
-# or with rsync
-TODO put command
+# Using rsync, first time will be longer and then we will only incrementaly add and/or remove new files
+rsync -avr --delete /home/pydio/.config/pydio/cells/ /home/pydio/backups/cells
 ```
+
+**WARNING**: proceed with extra care with rsync when using the `--delete` flag:  
+inverting source and target folders will wipe everything in the source folders...  
+So be carefull to really use: `rsync -avr --delete <source folder> <target folder>`
 
 **Notes**:
 
@@ -31,18 +36,29 @@ TODO put command
 
 ### Backup additionnal datasources
 
-All datasources are defined by 4 things:
+#### File system datasource
+
+All _file based_  datasources are defined by 4 things:
 
 1. the **configuration** that is stored in the `pydio.json`file (see above)
 1. the **files** that are stored in this datasource
 1. a related index that is stored as tables in the configured DB
-1. _for file system based DS_: a `.minio.sys` folder that is located in the parent of the DS root folder
+1. _for file system based DS_: a `.minio.sys` folder that is located in the parent of the DS root folder (this contains s3/minio meta data for the files)
 
 You can find [more details about datasources here](https://pydio.com/en/docs/developer-guide/data).
 
 To backup such a datasource, we must at least backup configuration (see preceeding paragraph) and the files.
-The index and the content of the `.minio.sys` folder can be automaticcally restored after data restoration by running a resync from the admin interface.
-You can yet safely include this folder in your backups.
+The index and the content of the `.minio.sys` folder can be automatically restored after data restoration by running a resync from the admin interface.
+You can yet safely include this folder in your backups (and it is even better).
+
+#### S3 datasource
+
+This is the beauty and main advantage of using a S3 backend for your datasources: this system is fully decoupled from your Pydio Cells instance.
+You should be able to directly manage your backup policies via your S3 provider manager interface.
+
+The configuration of this datasource is stored in the main `cells` folder (see above) and is backuped and restored together with your main system.
+
+Note the Enterprise distribution offers 2 more datasource types (Google Cloud and Azure Blob storage) that are to be backuped the same way.
 
 ### Backup the database
 
@@ -79,7 +95,7 @@ If you followed the above step, restoring the data is quite easy:
 
 If you recover on another server or if some of the configuration like database, URLs, IP addresses have changed, you must double check in the `pydio.json` configuration file that can be found at the root of the `cells` folder and adapt the values to the new one, typically:
 
-- if hostname as changed, change `.defaults.urlInternal` property, you miight also want to check `.PeerAdress` property of the various DS
+- if hostname as changed, change `.defaults.urlInternal` property, you might also want to check `.PeerAdress` property of the various DS
 - if public URL has changed, you have to change all occurences of it (currently 4 in v1.4 and newer)
 - if DB configuration has changed: adapt `.databases.dsn` property
 
