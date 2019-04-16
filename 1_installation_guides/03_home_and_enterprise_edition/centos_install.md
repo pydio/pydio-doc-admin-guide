@@ -75,7 +75,7 @@ su - pydio
 ## Install Pydio Cells
 
 ```sh
-wget https://download.pydio.com/pub/cells/release/1.4.1/linux-amd64/cells
+wget https://download.pydio.com/pub/cells/release/1.5.0/linux-amd64/cells
 chmod u+x cells
 # if you need to use the standard http (80) or https (443) port, please execute this command:
 setcap 'cap_net_bind_service=+ep' cells
