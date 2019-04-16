@@ -1,54 +1,112 @@
-## Create a backup of your Cells installation and recover from it
+## Backup and restore
 
-In this guide we are going to explain how you can create a backup of your Pydio Cells instance to make sure that if an issue occurs at any time being such as hard-drive failure, a power loss, bad upgrade process and so on, neither data or configuration is lost.
+We explain here how to backup and restore your instance of Pydio Cells, so that you do not loose data nor configuration in case of a disaster such as hard-drive failure, power loss, bad upgrade process, etc.
 
-We are also going to see how you can recover your cells installation assuming that you backed it up.
+This procedure is adapted for simple mono-node installation. If you have made multi-node installation, be aware that you must backup both storage and datasource for each one of your nodes.
 
-### Backup the configs & default Data Location
+### Backup configuration and default data location
 
-To create a backup of your pydio cells installation which is quite simple, you just need to copy the entirety of the pydio cells folder in another location(another hard-drive etc... wherever you want at your discretion).
+If you have made a vanilla install, default _Home_ folder for the Pydio Cells installation is located at:
 
-For instance on my linux (debian) installation my cells is located here `~/.config/pydio/cells`
-therefore i have to use this command `cp -r ~/.config/pydio/cells cells-backup` **(1)** to copy and therefore back my pydio cells.
+- `/home/pydio/.config/pydio/cells` for Linux users
+- `~/Library/Application\ Support/Pydio/cells` for MacOS users
 
-_We advise you to regularly do a backup once it's done it will take lesser time to do the next copy to the same folder will just add the new data onto it_.
+The `cells` folder contains all configuration.  
+The `cells` folder is also the parent of the `data` subfolder that contains the default datasources that are created at install. Please note that these default datasources contains in addition to the default _business_ datasources, the hidden internal datasource that is used to store among others version files, thumbnails, etc.
 
-Now that the cells installation is backed up if you ever face an issue you can just copy back this folder into `~/.config/pydio/cells` then do a `./cells start` with a new or old binary and you are good to go.
+So create a backup of this folder, for instance:
 
-All the informations about the host, the database, plugins configurations etc.. are stored inside this file `~/.config/pydio/cells/pydio.json`
+```sh
+# If possible, it is always to stop Cells before doing the backup
+systemctl stop cells
 
-You can also backup all of your database, one way could be to export the database into a sql file another would be to copy the database into another one.
+# Using rsync, first time will be longer and then we will only incrementaly add and/or remove new files
+rsync -avr --delete /home/pydio/.config/pydio/cells/ /home/pydio/backups/cells
+```
 
-__(1)__ For macos users the path is `~/Library/Application\ Support/Pydio/cells` the `~` being your home path.
+**WARNING**: proceed with extra care with rsync when using the `--delete` flag:  
+inverting source and target folders will wipe everything in the source folders...  
+So be carefull to really use: `rsync -avr --delete <source folder> <target folder>`
 
-### Backup your datasources
+**Notes**:
 
-To back other datasources you only need to copy the parent repository of the datasource (this step is mandatory) because the parent repository contains the `.minio.sys` folder which is required to have a functioning datasource [*you can find more details about datasources here*](https://pydio.com/en/docs/developer-guide/data).
+- We advise you to use rsync to regularly backup this folder: after first time, the followings will be quicker because it only transfers the difference.
+- If you ever happen to mess with your installation **without impacting the DB** you can always restore this folder to your latest backup and then do a `./cells start` with a new (or a restored old) binary. You should be good to go.
+- All the information about network, database and plugins configuration are stored inside the `.../cells/pydio.json` file.
 
-For instance your datasource is located in this path, `/home/pydio/datasource/firstds` the `.minio.sys` will be located in `/home/pydio/datasource/<location of .minio.sys>` then to back your datasource you must atleast back the parent folder `datasource` it's path being `/home/pydio/datasource` because it contains both your datasource(containing the data) and `.minio.sys`(the datasource config file).
+### Backup additionnal datasources
 
-### Backup your database
+#### File system datasource
 
-To back up the database you can use the `mysql dump` tool which will give you an sql file with all the datas at the moment of the backup, here's an example for the cells database, `mysqldump -u <user> -p cells > /home/pydio/cells_back.sql`,
-to explain the command and the options, `-u <user>` is to use a specific mysql user, `-p` will prompt you for the mysql passowrd then `cells` is the database name, `> /home/pydio/cells.sql` is to choose where you want to target the save, you can choose which ever path you want as long as you can write inside it.
+All _file based_  datasources are defined by 4 things:
 
-To import the database from your sql backup file use the following command : `mysql -u root -p cells < /home/pydio/cells_back.sql`,
-in details, `-u <user>`, `-p` work as explained above, `cells`(make sure it already exists) is the database name then `< PathToTheSqlFile.sql`
+1. the **configuration** that is stored in the `pydio.json`file (see above)
+1. the **files** that are stored in this datasource
+1. a related index that is stored as tables in the configured DB
+1. _for file system based DS_: a `.minio.sys` folder that is located in the parent of the DS root folder (this contains s3/minio meta data for the files)
+
+You can find [more details about datasources here](https://pydio.com/en/docs/developer-guide/data).
+
+To backup such a datasource, we must at least backup configuration (see preceeding paragraph) and the files.
+The index and the content of the `.minio.sys` folder can be automatically restored after data restoration by running a resync from the admin interface.
+You can yet safely include this folder in your backups (and it is even better).
+
+#### S3 datasource
+
+This is the beauty and main advantage of using a S3 backend for your datasources: this system is fully decoupled from your Pydio Cells instance.
+You should be able to directly manage your backup policies via your S3 provider manager interface.
+
+The configuration of this datasource is stored in the main `cells` folder (see above) and is backuped and restored together with your main system.
+
+Note the Enterprise distribution offers 2 more datasource types (Google Cloud and Azure Blob storage) that are to be backuped the same way.
+
+### Backup the database
+
+In a vanilla single node instance, you configure a database connection at install time, usually the `cells` db. In such case, you only need to backup (and restore) this single database.
+
+To perform a backup, you can use default mysql tool that is usually installed with your DB softaware.  
+Typically on Linux:
+
+```sh
+mysqldump -u pydio -p cells > /home/pydio/backups/cells_sqldump_$(date -u +%Y-%m-%d).sql
+```
+
+where:
+
+- `-u <user>`: defines the user to be used
+- `-p` prompts you for the mysql passowrd
+- `cells`: your database name
+- `> /home/pydio/backups/cells_sqldump_$(date -u +%Y-%m-%d).sql`tells the tool where to store resulting data.
+
+You might adapt these options to your use case.
 
 ### Recovery
 
-As it is explained previously if you have saved all of your cells installation (the `~/.config/pydio/cells` folder) somewhere you can rest assured that it will always be usable, you only need a cells binary and the folder to be put in its default location which is for linux distributions `~/.config/pydio/cells` and for MacOS `~/Library/Application\ Support/Pydio/cells`, and then you can **start** cells `./cells start` if you copied all the folder it's initial location `~/.config/pydio/cells` (the path needs to be the same), cells will use the `pydio.json` to recover the configuration and will run directly you do not need to install it.
+#### Restoring the data
 
-**If you recover on another server that has a different address you must change all of the occurences in the `pydio.json` such as bind_host, external_host and the datasources host.**
+If you followed the above step, restoring the data is quite easy:
+
+- Restore the `cells` parent folder (under e.g. `/home/pydio/.config/pydio/cells` on Linux or `~/Library/Application\ Support/Pydio/cells` on MacOS)
+- Restore the database from your sql backup file: make sure to create an empty `cells` with correct owner and use the following command:
+  `mysql -u pydio -p cells < /home/pydio/backups/cells_sqldump_<relevant_date>.sql`
+- Optionnaly restore the folders of any additional external filesystem datasources
+
+#### Post restoration and before launching the app
+
+If you recover on another server or if some of the configuration like database, URLs, IP addresses have changed, you must double check in the `pydio.json` configuration file that can be found at the root of the `cells` folder and adapt the values to the new one, typically:
+
+- if hostname as changed, change `.defaults.urlInternal` property, you might also want to check `.PeerAdress` property of the various DS
+- if public URL has changed, you have to change all occurences of it (currently 4 in v1.4 and newer)
+- if DB configuration has changed: adapt `.databases.dsn` property
+
+You can then retrieve the relevant Pydio Cells binary and simply relaunch the app.
+
+You should connect as an `admin` user after first restart and check that all datasources are correctly up and running, and optionnaly also rerun a sync if you where not able to correctly backup and restore the index and parent `.minio.sys` folder.
 
 ## Clean uninstallation
 
-In this guide we will go through the steps to perform a clean uninstallation.
-
-### How to perform a clean uninstall
-
-On most of the OS pydio cells does not put the resources in multiple folders, it is concentrated in a single folder.
-To remove cells you only have to remove the pydio cells folder and remove the cells database.
+In vanilla single node setups, Pydio Cells does not put resources in multiple folders: everything is centralized in the `cells` folder and in the database.
+So, to remove Pydio Cells, you mainly need to remove these 2 items and the Cells binary.
 
 To remove the folder on _linux_ distributions you can make use of rm such as :
 `rm -r ~/.config/pydio/cells`.
@@ -57,9 +115,9 @@ To remove the cells folder on _MacOS_ this :
 `rm -r ~/Library/Application\ Support/Pydio/cells`.
 _For macos users do not make the mistake to remove the 'Pydio' folder the sync app also stores configuration inside it_.
 
-For any additional datasource that you are not going to make use of, you can just clear the parent folder.
+For any additional datasource that you will not use anymore, you can clear the parent folder.
 
 Then clean the database with this command after you have logged in mysql :
 `drop database cells;` (or any other name if you named it).
 
-And you are good to go, there is no more traces of the previous install or of cells in general.
+You are then good to go: there is nothing else remaining of the previous install or of Pydio Cells in general.
