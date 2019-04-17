@@ -20,14 +20,14 @@ Another case would be a school, you have multiple classes each with its own resp
 
 To make use of group tenancy, groups must all be located at the root level as seen in this screenshot.
 
-[:image-popup:5_advanced/root_group_level.png]
+[:image-popup:4_access_control_and_security/root_group_level.png]
 
 * groups must all be located at the root level to be acknowleged by the policy (see screen above).
 
 Once you have all the requirements go inside the menu(left bar menu, _make sure that you have enabled advanced parameters to see the complete list_) **Advanced Settings > Users Visibility** and enable **Users visible only to their group**.
 
-[:image-popup:5_advanced/group_tenancy.png]
+[:image-popup:4_access_control_and_security/group_tenancy.png]
 
 _**Once you have the setting enabled, a task will be launched and therefore you must wait for the job to completly finish (the job recomputes the users policies)**_
 
-[:image-popup:5_advanced/group_tenancy_job.png]
+[:image-popup:4_access_control_and_security/group_tenancy_job.png]
