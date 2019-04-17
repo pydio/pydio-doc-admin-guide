@@ -28,6 +28,6 @@ Once you have all the requirements go inside the menu(left bar menu, _make sure 
 
 _**Once you have the setting enabled, a task will be launched and therefore you must wait for the job to completly finish (the job recomputes the users policies)**_
 
-Screenshot of the task that.
+Screenshot of the task that computes the policies.
 
 [:image-popup:4_access_control_and_security/group_tenancy_job.png]
