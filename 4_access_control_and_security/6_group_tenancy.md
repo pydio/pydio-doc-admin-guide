@@ -12,7 +12,7 @@ In the context of Pydio Cells, group tenancy means that users of a group (A) can
 
 [:image-popup:4_access_control_and_security/group_tenancy.png]
 
-### For the record 
+### For the record
 
 - by default, every user can see every other user that is defined in your instance, even if one or the two of them have been nested in a group.
 - please keep in mind that all users always see the users that have been defined at the root (`/`) level; even if the users that have been defined in 2 distinct non-root groups cannot see each other.
@@ -20,11 +20,8 @@ In the context of Pydio Cells, group tenancy means that users of a group (A) can
 
 [:image-popup:4_access_control_and_security/group_tenancy_job.png]
 
-### Examples 
+### Examples
 
 If you look at the first screenshot above, any user inside the group **emerald** will still see **admin** or any user at this level, but they will not see users of group **rhinestone** or any other.
 
-Another use case could be a school: let'S say you have multiple classes each with its own respective group. You do not want the students of **junior_class_1** to be able to share documents with **junior_class_2** (because they one of the class has a test 2 days before the other, for instance :) ).
-
-
-
+Another use case could be a school: let's say you have multiple classes each with its own respective group. You do not want the students of **junior_class_1** to be able to share documents with **junior_class_2** (because one of the classes has a test 2 days before the other, for instance :) ).
