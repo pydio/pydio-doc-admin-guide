@@ -1,4 +1,4 @@
-Pydio Cells provides an additional layer for visibility by giving you the ability to restrain the scope for groups, meaning that you can choose if users of group A can interact (share for instance, see and everything else) with users of group B.
+Pydio Cells provides an additional layer for visibility by giving you the ability to restrain the scope for groups, meaning that you can choose if users of any group can interact (share for instance, or everything else) with users of other groups.
 
 ### What is group tenancy inside Pydio Cells
 
