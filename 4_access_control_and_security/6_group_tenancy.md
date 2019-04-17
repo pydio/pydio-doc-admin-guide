@@ -12,7 +12,7 @@ In the context of Pydio Cells, group tenancy means that users of a group (A) can
 
 [:image-popup:4_access_control_and_security/group_tenancy.png]
 
-For the record: 
+### For the record 
 
 - by default, every user can see every other user that is defined in your instance, even if one or the two of them have been nested in a group.
 - please keep in mind that all users always see the users that have been defined at the root (`/`) level; even if the users that have been defined in 2 distinct non-root groups cannot see each other.
