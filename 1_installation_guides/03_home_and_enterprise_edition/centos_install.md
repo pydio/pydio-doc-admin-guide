@@ -2,7 +2,7 @@ _This guide describes the steps required to have Pydio Cells running on a CentOs
 
 [:image-popup:1_installation_guides/logos-os/logo-centos.png]
 
-## Prerequisites 
+## Prerequisites
 
 ### Database
 
@@ -10,9 +10,16 @@ The only hard requirement is a running MySQL DB server. We recommend a recent ve
 
 #### MariaDB
 
-We currently use MariaDB 10.3, here is the [official installation guide on the MariaDB website](https://downloads.mariadb.org/mariadb/repositories/#distro=CentOS&version=10.3&mirror=23Media&distro_release=centos7-ppc64--centos7).
+We currently use MariaDB 10.3, here is the [official installation guide on the MariaDB website](https://downloads.mariadb.org/mariadb/repositories/#distro=CentOS&version=10.3&distro_release=centos7-amd64--centos7).
 
-Simply enter there your system specifications and follow the detailed instructions.
+Double check that the system specifications are OK and follow the detailed instructions.
+
+After installation, you should enable and start the service:
+
+```sh
+sudo systemctl enable mariadb
+sudo systemctl start mariadb
+```
 
 #### MySQL
 
@@ -55,7 +62,7 @@ You can also permanently disable SELinux in `/etc/selinux/config`.
 
 ### Dedicated User
 
-It is recommended to use a dedicated user to run Pydio Cells.
+It is recommended to use a dedicated non-admin user to run Pydio Cells.
 
 In this guide, we use **pydio** and its home directory **/home/pydio**.
 
@@ -66,7 +73,7 @@ sudo useradd -m pydio
 sudo passwd pydio
 ```
 
-Switch to this user to run the installation
+To switch to this user:
 
 ```sh
 su - pydio
@@ -75,11 +82,16 @@ su - pydio
 ## Install Pydio Cells
 
 ```sh
+# As pydio user
 wget https://download.pydio.com/pub/cells/release/1.5.0/linux-amd64/cells
 chmod u+x cells
-# if you need to use the standard http (80) or https (443) port, please execute this command:
-setcap 'cap_net_bind_service=+ep' cells
-./cells install
+```
+
+If you want to use the standard HTTP (80) and/or HTTPS (443) ports, you have to give corresponding permissions to the binary file:
+
+```sh
+# As your admin  user
+sudo setcap 'cap_net_bind_service=+ep' /home/pydio/cells
 ```
 
 **Before you start installing here's two of the most important parameters that you need to understand:**
@@ -93,11 +105,21 @@ If you want your application to run on the localhost at port 8080 and use the ur
 After the install is successfully done, if you ever have to stop Pydio Cells and want to run it again just run:
 ```
 
-Follow the short set of instructions to finish off the Pydio Cells installation. You can [refer to this page](/en/docs/cells/v1/install-pydio-cells) to get more details.
+You can now run the installer:
+
+```sh
+# As pydio user
+./cells install
+```
+
+Follow the short set of instructions. You can also [refer to this page](/en/docs/cells/v1/install-pydio-cells) to get more details.  
+Once the installation as finished, you might have to stop and restart the application (typically if you have chosen the CLI installer).
 
 ```sh
 ./cells start
 ```
+
+Note that is not the prefered way to [run Pydio Cells in a production context](/en/docs/cells/v1/running-cells-production).
 
 ## Troubleshooting
 
