@@ -1,19 +1,31 @@
 _LDAP authentication plugin is one of the most important plugin of the Enterprise Distribution. It enables Cells to be well integrated with existing systems such as a SSO solution._
 
-In Cells, a LDAP server is seen as an external authentication source. With flexible parameters and options in configuration, you can quickly extract a list of users from your directory to be imported in Cells. The configuration to map users is similar as the one in Pydio PHP (Pydio 8). An advanced feature of the LDAP module now enables you to add as many LDAP domains as you want.
+In Cells, a LDAP server is seen as an external authentication source.  
+You can extract a subset of users from your directory to be imported in Cells, using flexible parameters and configuration options.  
+
+For long-time Pydio users, the mechanism used is quite similar to the one used in legacy Pydio 8 and older.  
+We have yet added an interresting advanced feature: the LDAP module can now be bound to more than one directory server with as many LDAP domains as you want.
 
 ## Overview
 
-Generally speaking, the integration is achieved using a Master / Slave model, where your LDAP is the master.
-Synchronisation happens regularly (time and frequence are defined for each connection, see configuration details below) and any modification done in your LDAP will overwrite the corresponding value in Cells during the next synchronisation (which happens by default every night at 3AM).
+Generally speaking, the integration is achieved using a Master/Slave model, where your LDAP is the master. Any modification done in your LDAP will overwrite the corresponding value in Cells during the next synchronisation.
 
-As a consequence, we strongly advise that you configure your user interface to prevent the end users from manually modifying any attribute that are mapped to an existing LDAP attribute, typically you should remove the `My Account` button from the various menu for LDAP defined users. See last paragraph of this section for more info on this.
+As a consequence, we strongly advise that you configure your user interface to prevent the end-user from manually modifying any attribute that is mapped to an existing LDAP attribute.  
+Typically you should remove the `My Account` button from the various menu for LDAP defined users.  
+See last paragraph of this section for more info on this.
+
+The synchronisation happens regularly (time and frequence are defined for each connection) and is in fact managed by the scheduler: the configuration seen below only creates a new job in the scheduler.  
+It is then possible to get more info about the synchronisation and to trigger it manually:
+
+- Go to `Cells Console >> Backend >> Scheduler`
+- Open editor for the synchronisation task by clicking on it on the list.  
+  It is usually named: `<name of your LDAP connexion> > Synchronize external directories`
 
 ### Supported Servers
 
-The LDAP connector embedded in Cells ED is compliant to the LDAP standard and thus can be used with servers that are implementing this protocol. You must install and configure your server before connecting it in Pydio Cells.
-
-Internally, for development and testing purposes, we use these 2 servers, that are known to integrate smoothly with Cells:
+The LDAP connector embedded in Cells ED is compliant with the LDAP standard. Thus, it can be used with servers that are implementing this protocol.  
+You must install and configure your server before connecting it in Pydio Cells.  
+Internally, we use the 2 below servers for development and testing purposes. They are known to integrate smoothly with Cells:
 
 - [OpenLDAP](https://openldap.org): a free, open source implementation of the Lightweight Directory Access Protocol developed by the OpenLDAP Project
 - [Apache Directory](https://directory.apache.org/): an extensible and embeddable directory server developped by the Apache Software Foundation, which has been certified LDAPv3 compatible by the Open Group
@@ -50,9 +62,11 @@ _Use the numbers inside the above screenshot to refer to the settings_.
 
 The IP address (or hostname) and port of your server. For instance:
 
-- 127.0.0.1:389
-- ldap.domain.com:389
-- ldap.domain.com:639
+```conf
+127.0.0.1:389
+ldap.domain.com:389
+ldap.domain.com:639
+```
 
 If you do not specify any port, default port `389` is used.
 
@@ -62,17 +76,16 @@ With this option, you define the type of connection you use. It is not recommand
 
 #### 3) Binding DN
 
-The distinguished name of a power user in your directory that has sufficient privbileges to list other users and groups.
-This field accept user ID, distinguished name or email. Choose the format that is relevant, depending on the LDAP software you use. For instance:
+The distinguished name of a power user in your directory that has sufficient privileges to list other users and groups.  
+This field accepts user ID, distinguished name or email. Choose the format that is relevant, depending on the LDAP software you use. For instance:
 
-- pydio@lab.py
-- cn=pydio,ou=company,dc=lab,dc=py
+```conf
+pydio-admin@example.com
+cn=pydio-admin,ou=company,dc=example,dc=com
+```
 
-> **Active Directory Notes**
->
-> It is highly recommended to use a dedicated LDAP user with delegated read privileges on the corresponding users. This can be done via the `Read all user information` task. You can visit [this link for further information](https://www.msptechs.com/safely-delegate-control-active-directory/).
->
-> In Active Directory, you can get the dn of the chosen user user via the properties popup:
+**Note:** in Active Directory, it is highly recommended to use a dedicated LDAP user with delegated read privileges on the corresponding users. This can be done via the `Read all user information` task. You can visit [this link for further information](https://www.msptechs.com/safely-delegate-control-active-directory/).  
+In Active Directory, you can get the dn of the chosen user user via the properties popup:
 
 [:image-popup:4_access_control_and_security/2_13_ldap/Selection_874.png]
 
@@ -80,17 +93,13 @@ This field accept user ID, distinguished name or email. Choose the format that i
 
 The password of the above user
 
-__**Advanced Settings**__:
-
 #### 5) Skip certificate verification
 
-[TO BE CHECKED]
-
-If this option is enabled, Pydio Cells will **not** verify the certificate of the LDAP server before connecting. In such case, please make sure that the CA certificate is trusted by the operating system (OS).
+Turn this option ON if you are using a self-signed certificate **that you trust**. Use this option with extra care at your own risk.
 
 #### 6 & 7) Root Certificate Path and Data
 
-This is only used for SSL and STARTTLS connections.
+This is only used for SSL and StartTLS connections.
 You need to specify the absolute path to the certificate of the LDAP server (6) or the content of this certificate in base64 format (7).
 
 **Note:** You can retrieve the public part of your server's certificate using the following command:
@@ -102,9 +111,14 @@ openssl s_client -showcerts -connect ldapserver.com:389 </dev/null 2>/dev/null|o
 #### 8) Page size
 
 This defines the maximum number of objects that are returned at each call.
+
+Please note that the maximum page size is defined on the server (hard limit), but you might use this option to reduce page size on the client size.
 For the record, default page size is 500 in OpenLDAP and 1000 in Active Directory.
 
 ### User Filter
+
+You have to define **at least one** user filter to define which users are to be imported from your external directory to Pydio Cells. You might only import a subset of your existing user base, depending on the filter you define.  
+The tab looks like this:
 
 [:image-popup:4_access_control_and_security/2_13_ldap/Selection_875.png]
 
@@ -112,16 +126,18 @@ _Use the numbers inside the above screenshot to refer to the settings_.
 
 #### 1) DN
 
-You can define more than one distinguished name **(DN)** of an organization unit (or a container in Active Directory) in the LDAP tree. Cells will retrieve the corresponding users and import them to its internal user directory.
-
+You can define more than one distinguished name (dn) of an organization unit (or a container in Active Directory) in the LDAP tree.  
+Cells will retrieve the corresponding users and import them to its internal user directory.  
 For instance:
 
-- ou=company,dc=vpydio,dc=fr
-- ou=visitor,dc=vpydio,dc=fr
+```conf
+ou=company,dc=example,dc=com
+ou=visitor,dc=example,dc=com
+```
 
 #### 2) Filter
 
-Additionally, you might specify conditions that must be met for a LDAP user to be imported in Cells. For instance:
+Additionally, you have to specify at least on simple condition that must be met for a LDAP user to be imported in Cells. For instance:
 
 - Filtering by object class:
   - `(objectClass=user)`
@@ -137,13 +153,14 @@ When using Active Directory, it is highly recommanded to create a specific secur
 In Cells, the filter will look like this :
 
 ```conf
- (&(objectClass=user)(memberOf=CN=staff,OU=company,DC=lab,DC=py))
+ (&(objectClass=user)(memberOf=CN=staff,OU=company,DC=example,DC=org))
 ```
 
-In Active Directory, if you want to also retrieve users from nested groups, you must specify this `memberOf` attribute: `memberOf:1.2.840.113556.1.4.1941`. For instance, this retrieves all members of the `staff` group including all members in the nested groups.
+In Active Directory, if you want to also retrieve users from nested groups, you must specify this `memberOf` attribute: `memberOf:1.2.840.113556.1.4.1941`.  
+For instance, this retrieves all members of the `staff` group including all members in the nested groups.
 
 ```conf
-(&(objectClass=user)(memberOf:1.2.840.113556.1.4.1941:=CN=staff,OU=company,DC=lab,DC=py))
+(&(objectClass=user)(memberOf:1.2.840.113556.1.4.1941:=CN=staff,OU=company,DC=example,DC=com))
 ```
 
 ### Simple Mappings
@@ -154,21 +171,23 @@ You can map user attributes that are defined in your LDAP to user attributes in 
 - **Right Attribute:** the attribute name of the user object in Cells.
 - **Rule String:** you might add a filter for the mapping process. This field can be blank, contain a list of value or a regular expression.
 
-_**Warning**: In Pydio Cells, user attribute names are **case sensitive**. E.g: displayName, email, Roles_
+_**Warning**: In Pydio Cells, user attribute names are **case sensitive**_.  
+_E.g: displayName, email, Roles_
 
 #### A basic example
 
 Let's say you have a `department` attribute on user objects in your LDAP model.  
 This attribute can have following values:
 
-- `finance`,
-- `admin`,
-- `hr`,
-- `marketing`,
-- `it_helpdesk`,
-- `it_hardware`.
+- `finance`
+- `admin`
+- `hr`
+- `marketing`
+- `it_helpdesk`
+- `it_hardware`
 
-But you only want to map `admin`, `it_helpdesk` and `it_hardware` values to Roles in Pydio Cells. In order to do so, you might define the following mapping rule:
+But you only want to map `admin`, `it_helpdesk` and `it_hardware` values to Roles in Pydio Cells.  
+In order to do so, you might define the following mapping rule:
 
 - **Left Attribute**: `department`
 - **Rule String**: `admin,it_helpdesk,it_hardware`
@@ -206,7 +225,8 @@ Example: `(objectClass=group)` or `(objectClass=groupOfNames)`
 
 5) ID Attribute: Pydio will take the value of this attribute of group object to use as **Role ID** in Cells.
 
-Some LDAP directories do not support **memberOf** attribute by default. If you turn off the `Native MemberOf support` toggle, Cells tries to calculate this attribute from the `Fake memberof Attribute` value and its format.
+Some LDAP directories do not support `memberOf` attribute by default.  
+If you turn off the `Native MemberOf support` toggle, Cells tries to calculate this attribute from the `Fake memberof Attribute` value and its format.
 
 - Fake `memberOf` Attribute: name of the attribute of group object which holds the member identity. In OpendLDAP, this value is usually `member` or `memberuid`.
 - Depending on the value of `Fake memberOf Attribute` and the schema of your LDAP, the corresponding format is usually `dn` or `uid`.
@@ -239,4 +259,4 @@ The easiest way to prevent LDAP-defined users to change information that are def
 
 Insure the MyAccount toggle is turned of and you are set: the button is then hidden for the corresponding users.
 
-Depending on your specific configuration, you might want to do this for various groups or define a specific role that can be applied to relevant group and users.
+Depending on your specific configuration, you might want to do this for various groups or define a specific role that can be applied to relevant groups and users.
