@@ -28,7 +28,7 @@ You must install and configure your server before connecting it in Pydio Cells.
 Internally, we use the 2 below servers for development and testing purposes. They are known to integrate smoothly with Cells:
 
 - [OpenLDAP](https://openldap.org): a free, open source implementation of the Lightweight Directory Access Protocol developed by the OpenLDAP Project
-- [Apache Directory](https://directory.apache.org/): an extensible and embeddable directory server developped by the Apache Software Foundation, which has been certified LDAPv3 compatible by the Open Group
+- [Active Directory](https://en.wikipedia.org/wiki/Active_Directory): a directory service of Microsoft that supports LDAP versions 2 and 3
 
 Fell free to contact us if you have questions about another specific implementation.
 
