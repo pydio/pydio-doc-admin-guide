@@ -39,3 +39,7 @@ Note: refer to docker.io web site to install correct version of docker. Typicall
 Now you can edit all of your docs, presentations, and more easily, double click on the file and a window will appear with the only office interface and then you can edit it right off the bat.
 
 [:image-popup:1_installation_guides/office_online/onlyoffice_interface.png]
+
+### Specific configs of onlyoffice service
+
+If you have problem in saving file, there are several options in config of onlyoffice service that you may change to match your server. They can be found in this link: https://api.onlyoffice.com/editors/save
