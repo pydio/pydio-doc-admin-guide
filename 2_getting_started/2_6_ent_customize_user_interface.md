@@ -65,6 +65,21 @@ It is pretty straight forward:
 
 [TODO] give more details about the possible pre-defined location.
 
+#### Example:
+
+| Field Name  | Example setting  | Info about the field
+|---|---|---|
+| Label  | MyCustomButton  | This field is your button name that will be displated on the interface |
+| Button Location | Left panel widget  | Where the button will be located, in our case it's right next to your username on the left panel |
+| Button Icon | [Font Awesome] desktop  | This will display your button as a specific icon (works only for some fields, otherwise the Label is displayed|
+| Button Link | empty | In this case this filed is empty |
+| Link Target| default setting | Also empty because we are not using the Button Link (this setting works with Button Link)|
+| Javascript Snippet| `alert("This will pop an alert on Cells");` | This is where the javascript must be written, here is a simple javascript snippet that will pop an alert when you press the button |
+
+For this example the button will be located here and it will look like this:
+
+- [:image-popup:2_getting_started/vanitizer/button_location_left_panel_widget.png]
+
 ### Further customisation
 
 You might also have a look at the _Appearance_ page by going to: **Cells Console > Application Parameters > Appearance**.
