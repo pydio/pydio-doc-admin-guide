@@ -142,7 +142,7 @@ Additionally, you have to specify at least on simple condition that must be met 
 - Filtering by object class:
   - `(objectClass=user)`
   - `(objectClass=person)`
-  - `(objectClass=inetOrgPersion)`
+  - `(objectClass=inetOrgPerson)`
 - Only import users whose *department* attribute value is *staff*:
   - `(&(objectClass=user)(department=staff))`
 
