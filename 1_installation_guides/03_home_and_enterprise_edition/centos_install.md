@@ -83,7 +83,7 @@ su - pydio
 
 ```sh
 # As pydio user
-wget https://download.pydio.com/pub/cells/release/1.5.3/linux-amd64/cells
+wget https://download.pydio.com/pub/cells/release/1.6.0/linux-amd64/cells
 chmod u+x cells
 ```
 

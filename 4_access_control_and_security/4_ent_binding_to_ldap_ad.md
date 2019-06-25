@@ -217,7 +217,7 @@ _The above screenshot shows an example of `memberOf` mapping, where:_
 
 2) Mapping: defines the name of the attribute that is to be used *in your LDAP server*. This is useful to emulate the `memberOf` feature if it is not supported by your implementation.
 
-3) DN: is the DN of one or more organization unit in the ldap directory where pydio will search for groups. If memberOf values have some groups in other locations, they will be ignored.
+3) DN: is the DN of one or more organization unit in the LDAP directory in which the connector searches for groups. If memberOf values have some groups in other locations, they will be ignored.
 
 4) Group Filter: Like **User Filter**
 
