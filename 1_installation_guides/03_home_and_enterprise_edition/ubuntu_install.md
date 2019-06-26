@@ -26,7 +26,7 @@ sudo chmod -R g+w /home/pydio
 # log out and back in for the group modification to be taken into account
 ```
 
-_Note: the `-s /bin/bash` option is not strictly required. It insures you are using bash shell when logged in with this user and have, among others, access to bash history feature_.
+_Note: the `-s /bin/bash` option is not strictly required. It ensures you are using bash shell when logged in with this user and have, among others, access to bash history feature_.
 
 ### Database
 
@@ -122,7 +122,7 @@ After the install is successfully done, if you ever have to stop Pydio Cells and
 
 ### Database
 
-If you have a problem with your database, you might already want to refer to the official documentation and insure you are correctly set up:
+If you have a problem with your database, you might already want to refer to the official documentation and ensure you are correctly set up:
 
 - [Official MySQL installation guide](https://dev.mysql.com/doc/mysql-apt-repo-quick-guide/en/)
 - [Official mariaDB installation guide](https://downloads.mariadb.org/mariadb/repositories/#mirror=cnrs&distro=Ubuntu&version=10.3)
