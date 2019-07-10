@@ -52,7 +52,7 @@ _Subsequent steps are then pretty much the same in the browser or in the CLI_.
 
 To stop Pydio Cells, press `CTRL + C` in the terminal where you launched the installer.
 
-You might start it again using this command to insure everything work as expected:
+You might start it again using this command to ensure everything work as expected:
 
 ```sh
 # Home edition
@@ -61,7 +61,7 @@ You might start it again using this command to insure everything work as expecte
 ./cells-enterprise start
 ```
 
-Yet this is not the recommanded way to start Pydio Cells when running in production. Please refer to the [following chapter](/en/docs/cells/v1/running-cells-in-production) to finalise integration of your Cells instance with the host system.
+Yet this is not the recommanded way to start Pydio Cells when running in production. Please refer to the [following chapter](/en/docs/cells/v1/running-cells-in-production) to finalize integration of your Cells instance with the host system.
 
 If you encounter any issue during the installation process, please refer to the [generic troubleshooting section of this guide](/en/docs/cells/v1/troubleshooting) or to the specific trouble shooting section that is at the bottom of each one of the [OS specific installation guides](/en/docs/cells/v1/os-specific-guides).
 

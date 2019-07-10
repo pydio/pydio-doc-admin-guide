@@ -16,7 +16,7 @@ Then the following menu will appear:
 [:image-popup:2_getting_started/create_user.png]
 
 - **User Login**: this can **not** be changed afterwards.  
-- **User Password**: Put the password of the user, you will have to type it twice to insure it's validity.
+- **User Password**: Put the password of the user, you will have to type it twice to ensure it's validity.
 
 ### Groups
 

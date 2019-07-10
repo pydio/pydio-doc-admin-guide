@@ -257,6 +257,6 @@ The easiest way to prevent LDAP-defined users to change information that are def
 - In the upper right corner, choose the `All Workspaces` option from the `Add for...` drop down list
 - Search for the `My Account` action of the `action.user` category by simply typing `my account` in the quick search field, and select it
 
-Insure the MyAccount toggle is turned of and you are set: the button is then hidden for the corresponding users.
+ensure the MyAccount toggle is turned of and you are set: the button is then hidden for the corresponding users.
 
 Depending on your specific configuration, you might want to do this for various groups or define a specific role that can be applied to relevant groups and users.

@@ -131,4 +131,4 @@ If, after a successful installation and when you try to navigate to the main app
 
 > Access denied.
 
-Insure you have modified SELinux to be in permissive mode.
+ensure you have modified SELinux to be in permissive mode.
