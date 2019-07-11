@@ -49,8 +49,6 @@ For the record, we have based the design of the web interface on the [Material D
 
  We suggest that you to use your browser's _Developer Tool_: you can then directly modify it and monitor the end result in your browser.
 
- [TODO] add more details and some examples.
-
 ### Buttons
 
 This option can be used to add custom button buttons in predefined places of the user interface.
@@ -60,16 +58,19 @@ It is pretty straight forward:
 
 - name your button
 - choose its location
-- optionnaly, add an icon. It is strongly recommanded if the other buttons that are in the same menu have icons.
+- optionally, add an icon. It is strongly recommended if the other buttons that are in the same menu have icons.
 - put your link (with protocol, otherwise the link is considered local by the app) **OR** a Javascript snippet.
 
-[TODO] give more details about the possible pre-defined location.
+Location presets:
+ 
+[:image-popup:2_getting_started/vanitizer/vanitizer_simple_button_layout.png]
+
 
 #### Example:
 
 | Field Name  | Example setting  | Info about the field
 |---|---|---|
-| Label  | MyCustomButton  | This field is your button name that will be displated on the interface |
+| Label  | MyCustomButton  | This field is your button name that will be displayed on the interface |
 | Button Location | Left panel widget  | Where the button will be located, in our case it's right next to your username on the left panel |
 | Button Icon | [Font Awesome] desktop  | This will display your button as a specific icon (works only for some fields, otherwise the Label is displayed|
 | Button Link | empty | In this case this filed is empty |
@@ -80,10 +81,10 @@ For this example the button will be located here and it will look like this:
 
 - [:image-popup:2_getting_started/vanitizer/button_location_left_panel_widget.png]
 
-### Further customisation
+### Further customization
 
 You might also have a look at the _Appearance_ page by going to: **Cells Console > Application Parameters > Appearance**.
-You can there customise main design artifacts of your Pydio Cell instance, like:
+You can there customize main design artifacts of your Pydio Cell instance, like:
 
 - Background images
 - Application title (shown in the end-user's browser tool bar and tabs)
