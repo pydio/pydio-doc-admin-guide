@@ -21,9 +21,9 @@ Once the logs are generated, filter them and retrieve the information that you a
 1. Type of data: Files or Folders only
 
 2. Path Prefix: is the path to the resource; the path prefix can contain a wildcard at the end, the path must be of this form:
-   * for a simple case inside a public workspace `<datasource>/<resource>`
-   * for a the personal files cases `<datasource>/<username>/<resource>`
-   * you can use a wildcard at the end as said for instance `<datasource>/*` or `<datasource>/<folder>/*` and so on.
+   - for a simple case inside a public workspace `<datasource>/<resource>`
+   - for a the personal files cases `<datasource>/<username>/<resource>`
+   - you can use a wildcard at the end as said for instance `<datasource>/*` or `<datasource>/<folder>/*` and so on.
 
 > the following screenshots are of examples that will illustrate the path filter field.
 
@@ -81,7 +81,7 @@ You can retrieve all the activity that happened around a public link the same wa
 (By clicking the graph button on the right of the green icon and name of the owner)
 it will display a recap of who accessed the public link and such.
 
-[:image-popup:2_getting_started/audit_log/public_ling_activity.png]
+[:image-popup:2_getting_started/audit_log/public_link_activity.png]
 
 * **node**: path to the shared resource in this case.
 * **owner**: who created the shared link.
