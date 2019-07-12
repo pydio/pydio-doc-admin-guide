@@ -4,7 +4,7 @@ Pydio Cells comes as statically linked binaries that do not require specific dep
 
 For Pydio Cells to run smoothly, you should meet the following requirements:
 
-* **RAM** : 4Gb is recommended
+* **RAM** : 4 GB is recommended
 * **CPU** : 2 cores minimum
 * **HD**  : we recommend you use an SSD as it has faster access time and huge writing/reading speeds.
 

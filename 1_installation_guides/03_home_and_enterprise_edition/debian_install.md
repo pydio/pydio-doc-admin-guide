@@ -9,6 +9,7 @@ _This guide describes the steps required to have Pydio Cells running on Debian 8
 
 You need the 64-bit version of one of these Debian or Raspbian versions:
 
+- Debian 10 (buster) LTS 
 - Stretch 9 (stable) / Raspbian Stretch
 - Jessie 8 (LTS) / Raspbian Jessie
 
@@ -53,6 +54,8 @@ sudo apt install mysql-server
 #### MariaDB
 
 ##### Repositories
+
+_If you are using Debian 10 you can skip this step, MariaDB 10.3 is the default packages_
 
 We currently use MariaDB 10.3, here is the [official installation guide on the MariaDB website](https://downloads.mariadb.org/mariadb/repositories/#distro=Debian&version=10.3).
 
@@ -99,7 +102,7 @@ Execute the command below and follow the instructions.
 **Before you start installing here's two of the most important parameters that you need to understand:**
 
 ```sh
-INTERNAL_URL : address where the application http server is bound to. It MUST contain a server name and a port, should be of this form <ip-or-domain>:<port>.
+INTERNAL_URL(other) : address where the application http server is bound to. It MUST contain a server name and a port, should be of this form <ip-or-domain>:<port>.
 EXTERNAL_URL : url the end user will use to connect to the application.
 Example:
 If you want your application to run on the localhost at port 8080 and use the url mycells.mypydio.com, then set INTERNAL_URL to localhost:8080 and EXTERNAL_URL to http://mycells.mypydio.com (or https)
