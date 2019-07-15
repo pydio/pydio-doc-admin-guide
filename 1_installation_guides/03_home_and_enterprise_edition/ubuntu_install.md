@@ -13,7 +13,7 @@ You need the 64-bit version of one of these Ubuntu version:
 
 #### Dedicated User
 
-It's highly recommend to run Pydio Cells with a dedicated user.  
+It's highly recommended to run Pydio Cells with a dedicated user.  
 In this guide, we use **pydio** and its home directory **/home/pydio**.  
 In order to create a new user and its home directory execute this command:
 
