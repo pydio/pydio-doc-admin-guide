@@ -67,3 +67,5 @@ _Refer to the numbers on the screenshot for the list below_
 2. To modify the application name go to **Application Core > Main Options** and change the **Application Title** setting.
 
 3. To modify the footer (bottom text) go to **Advanced Settings > UI Customization** and modify **Emails Template Footer**.
+
+_By the Way the test mail will not display the message_
