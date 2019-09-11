@@ -90,3 +90,12 @@ You can there customize main design artifacts of your Pydio Cell instance, like:
 - Application title (shown in the end-user's browser tool bar and tabs)
 - Logo
 - And so on.
+
+
+### Change the favicon
+
+You can change the Favicon by going to the following menu: **Cells Console > Advanced Settings > UI Customization**.
+
+- Click on the default picture
+- A menu will open allowing to put your favicon
+- Make sure that your Favicon has the right size
