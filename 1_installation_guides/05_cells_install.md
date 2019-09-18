@@ -3,6 +3,22 @@ _Once you have prepared your environment following one of the OS specific guide 
 
 If you are installing the enterprise edition, you should first [get your license key](/en/docs/cells/v1/enterprise-edition-requirements) to be able to complete the installation.
 
+- [Environment Variables](#environment-variables)
+- [Launching the installer](#launching-the-installer)
+- [Installation process](#installation-process)
+- [Next steps](#next-steps)
+
+## Environment Variables
+
+You can use the default settings or modify the following environment variables:
+
+| ENV                | content                            | default                    |
+| ------------------ | ---------------------------------- | -------------------------- |
+| CELLS_WORKING_DIR  | the standard application directory |                            |
+| CELLS_DATA_DIR     | the default datasource             | CELLS_WORKING_DIR/data     |
+| CELLS_LOG_DIR      | the default logs location          | CELLS_WORKING_DIR/logs     |
+| CELLS_SERVICES_DIR | location of services-specific data | CELLS_WORKING_DIR/services |
+
 ## Launching the installer
 
 First, give execution rights to the binary. For instance: `sudo chmod u+x <binary>`.
@@ -40,11 +56,11 @@ _Subsequent steps are then pretty much the same in the browser or in the CLI_.
 
 ## Installation process
 
-1. [ED] **Enterprise License key**: put the license key here. Please refer to the [Enterprise Edition Requirements guide] (en/docs/cells/v1/enterprise-edition-requirements) to get one if necessary.
-1. **Database connection**: database connection parameters. DB user must have `ALL PRIVILEGES` granted on the corresponding database.
-1. **Admin User**: Cells' admin user informations.
-1. **Advanced Settings**: you might change here the ports that are used internally by the various services when communication over the bind URL. Default used ports are non invasive, so you probably can skip this part.
-1. **Apply Installation**: you are done. A progress bar appears while the parameters are applied.
+1. [ED] **Enterprise License key**: put the license key here. Please refer to the [Enterprise Edition Requirements guide](en/docs/cells/v1/enterprise-edition-requirements) to get one if necessary.
+2. **Database connection**: database connection parameters. DB user must have `ALL PRIVILEGES` granted on the corresponding database.
+3. **Admin User**: Cells' admin user information.
+4. **Advanced Settings**: you might change here the ports that are used internally by the various services when communication over the bind URL. Default used ports are non invasive, so you probably can skip this part.
+5. **Apply Installation**: you are done. A progress bar appears while the parameters are applied.
     - if you are using the web-based installer, the page reloads automatically when ready. Don't quit this page or press anything.
     - if you are using the CLI installer, you can stop and restart the app once you have seen the success message.
 
@@ -61,7 +77,7 @@ You might start it again using this command to ensure everything work as expecte
 ./cells-enterprise start
 ```
 
-Yet this is not the recommanded way to start Pydio Cells when running in production. Please refer to the [following chapter](/en/docs/cells/v1/running-cells-in-production) to finalize integration of your Cells instance with the host system.
+Yet this is not the recommended way to start Pydio Cells when running in production. Please refer to the [following chapter](/en/docs/cells/v1/running-cells-in-production) to finalize integration of your Cells instance with the host system.
 
 If you encounter any issue during the installation process, please refer to the [generic troubleshooting section of this guide](/en/docs/cells/v1/troubleshooting) or to the specific trouble shooting section that is at the bottom of each one of the [OS specific installation guides](/en/docs/cells/v1/os-specific-guides).
 
