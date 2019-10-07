@@ -28,6 +28,10 @@ Pydio Cells webserver may be bound to any port that suits your security rule. Ho
 
 **If you wish to use the 0.0.0.0 address you must respect this rule, cells_bind must have this form `internal_url=0.0.0.0:<port>` and `external_url=<domain name,address>:<port>` the port is mandatory in both otherwise you will have a grey screen stuck in the loading**
 
+If you plan to support Desktop Synchronization clients, Cells will require an alternative gRPC port to be accessible from outside. 
+By default this port is randomly picked and advertised automatically by Cells to the Sync clients. However, if you need to 
+fix this port and open it in your firewall or proxy, set the PYDIO_GRPC_EXTERNAL environment variable with the port you want to use.
+
 ### Cells Binary
 
 Download the Pydio Cells binary for your OS from the [download page](https://pydio.com/download/) or use the direct links below :
