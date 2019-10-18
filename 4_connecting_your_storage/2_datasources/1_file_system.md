@@ -2,7 +2,7 @@
 
 The most standard driver you can use is actually the File System datasource: it has the huge advantage of storing the files directly on a local or network file system, thus on the other way round, to read any existing data stored in a file system and empower it with Pydio Cells capabilities.
 
-[:image-popup:3_storage_data_and_metadata/datasource_config/file_system_interface.png]
+[:image-popup:4_connecting_your_datasource/datasource_config/file_system_interface.png]
 
 - **Peer Address**: address of the server where the storage is located. This is necessary for distributed setup where Pydio Cells may run on various machines. Active peers should be automatically detected and proposed in the list. (You can now choose the hostname which in case of an ip change will not disturb your datasources)
 - **Path**: path to the directory on the server file system that is served as the root of this datasource.
