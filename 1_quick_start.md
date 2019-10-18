@@ -1,3 +1,1 @@
-Quick start
-
 [:summary]

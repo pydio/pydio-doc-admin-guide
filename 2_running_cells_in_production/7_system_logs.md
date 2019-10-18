@@ -17,7 +17,7 @@ Switching to 'production' mode can be done by two ways:
 
 Once activated, you can find the logs in your admin dashboard under **Backend > Logs**:
 
-[:image-popup:2_getting_started/server_logs.png]
+[:image-popup:2_running_cells_in_production/server_logs.png]
 
 You can read them as the following:
 
