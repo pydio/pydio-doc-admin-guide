@@ -1,4 +1,4 @@
-## S3 Datasources
+### S3 Datasources
 
 This connector allows using a remote S3-compliant storage as datasource for Pydio Cells, for instance you can connect your cells to a minio storage.
 
@@ -12,7 +12,7 @@ Under the hood, an object service is started in Gateway mode using the Api KEY/S
 - **Internal Path**: Additional Path appended to the bucket name when querying the remote storage.
 - **Custom Endpoint**: If the remote storage is Amazon S3, you can leave this empty. Otherwise, provide right here the http/https URL for to the s3-compatible storage.
 
-## How to configure Amazon S3 storage and minio
+## How to configure Amazon S3 storage or Minio
 
 We provide you with 2 examples of connections with S3 storages, you can use them to understand how the datasources interact with the S3 connectors.
 

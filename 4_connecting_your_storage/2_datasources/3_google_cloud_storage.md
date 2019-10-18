@@ -1,6 +1,6 @@
-## Google Cloud Storage datasource
-
 Pydio cells enterprise is compatible with google cloud object storage, therefore you can have datasources that are connected to your google cloud storage buckets.
+
+### Google Cloud Storage datasource
 
 First you need to generate credentials if you dont have any of them,
 open the menu on your GCS dashboard (the top left burger) and then go to the following section **APIs & Services > Credentials**.
