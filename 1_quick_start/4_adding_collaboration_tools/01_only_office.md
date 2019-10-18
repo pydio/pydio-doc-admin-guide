@@ -19,7 +19,9 @@ To enable the plugin, go to `Application parameters > Available Plugins > Only O
 - Only office Host: _`<host where OnlyOffice is running>`_
 - Only office Port: _`<OnlyOffice instance port>`_ usually it is running on `9980`
 
-[:image-popup:1_installation_guides/office_online/only_office_plugin.png]
+<!-- [:image-popup:1_quick_start/office_online/only_office_plugin.png] -->
+[:image-popup:1_quick_start/office_online/only_office_plugin.png]
+
 
 #### OnlyOffice docker image
 
@@ -38,7 +40,7 @@ Note: refer to docker.io web site to install correct version of docker. Typicall
 
 Now you can edit all of your docs, presentations, and more easily, double click on the file and a window will appear with the only office interface and then you can edit it right off the bat.
 
-[:image-popup:1_installation_guides/office_online/onlyoffice_interface.png]
+[:image-popup:1_quick_start/office_online/onlyoffice_interface.png]
 
 ### Specific configs of onlyoffice service
 

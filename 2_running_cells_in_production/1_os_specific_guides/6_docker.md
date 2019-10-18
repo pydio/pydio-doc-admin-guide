@@ -1,6 +1,6 @@
 _This guide describes the steps required to have the Pydio Cells Docker container running._
 
-[:image-popup:1_installation_guides/logos-os/logo-docker.png]
+[:image-popup:2_running_cells_in_production/logos-os/logo-docker.png]
 
 ### How to use the Pydio Cells docker image
 

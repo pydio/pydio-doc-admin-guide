@@ -46,4 +46,4 @@ Switch to a workspace and right-click to display a pop-up menu from which you ca
 
 Double-click on the new file to edit. You are now able to edit it directly in Pydio Cells using the Collabora online editor!
 
-[:image-popup:1_installation_guides/office_online/collabora_interface.png]
+[:image-popup:1_quick_start/office_online/collabora_interface.png]
