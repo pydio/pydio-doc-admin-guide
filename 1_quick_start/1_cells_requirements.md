@@ -14,5 +14,5 @@ For Pydio Cells to run smoothly, you should meet the following requirements:
 
 ### Database
 
-* **MySQL** version 5.6 and above.
-* **MariaDB** version 10.2 and above.
+* **MySQL** version 5.7 and above.
+* **MariaDB** version 10.3 and above.
