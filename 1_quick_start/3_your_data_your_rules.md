@@ -1,13 +1,13 @@
 # TODO
 
-## Add an User
+## Add a User
 
 ## Add a storage
 
 ### Add a FileSystem Storage
 
 
-### Add External storage
+### Add an External storage
 - See,
 
 [link to 4_connecting_your_storage/2_datasources]()
