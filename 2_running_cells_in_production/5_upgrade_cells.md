@@ -2,7 +2,7 @@
 
 
 
-## Update your Pydio Cells to the latest release
+## Update Pydio Cells to the latest version
 
 [:image-popup:2_running_cells_in_production/upgrade_web_ui.png]
 
@@ -14,7 +14,7 @@
   setcap 'cap_net_bind_service=+ep' cells-enterprise
 ```
 
-## Upgrade your Pydio Cells Home to Pydio Cells Enterprise
+## Upgrade Pydio Cells Home to Pydio Cells Enterprise
 
 [:image-popup:2_running_cells_in_production/upgrade_web_ui.png]
 
