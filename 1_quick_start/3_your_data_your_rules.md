@@ -6,7 +6,6 @@
 
 ### Add a FileSystem Storage
 
-
 ### Add an External storage
 - See,
 

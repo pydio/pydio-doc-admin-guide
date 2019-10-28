@@ -1,6 +1,5 @@
 # TODO
 
-
 In this section, we gather known installation problems with strategies to fix them.
 
 ## Cells Server
@@ -57,12 +56,11 @@ To solve the issue, get rid of all cookie for this site and refresh the page.
 
 ## Cells Sync
 
-
 ### Cannot list workspaces
 
-You might have a reverse proxy in this case you must strictly use https on cells and on the reverse proxy, please refer to our dedicated documentation [link to reverse proxy how-to]().
+If you are getting an error when you attempt to list the workspaces then your server might be running behind a reverse proxy, in this case you must use **SSL** on **Cells** and on the **reverse proxy**, please refer to our dedicated documentation [link to reverse proxy how-to]().
 
-### I do not my workspaces
+### I do see not my workspaces
 
 Make sure that your workspaces are syncable (enable settings in workspace menu)
 

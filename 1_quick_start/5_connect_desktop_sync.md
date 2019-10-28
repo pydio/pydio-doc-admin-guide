@@ -29,4 +29,4 @@ Once you have your Account set, lets create a task to synchronize **personal-fil
 
 - Make sure that the workspaces have **Allow Desktop Sync** enabled.
 - If your server is behind a reverse proxy, refer to the reverse proxy documentation.
-- For macos might require folder access **System Preferences > Security & Privacy > Files and Folders or Full Disk Access** and allow access.
+- MacOS users might require additional permissions; **System Preferences > Security & Privacy > Files and Folders or Full Disk Access** and allow access.
