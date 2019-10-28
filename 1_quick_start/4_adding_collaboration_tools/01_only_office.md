@@ -22,7 +22,6 @@ To enable the plugin, go to `Application parameters > Available Plugins > Only O
 <!-- [:image-popup:1_quick_start/office_online/only_office_plugin.png] -->
 [:image-popup:1_quick_start/office_online/only_office_plugin.png]
 
-
 #### OnlyOffice docker image
 
 There is an [OnlyOffice docker image](https://hub.docker.com/r/onlyoffice/documentserver/),
@@ -44,4 +43,42 @@ Now you can edit all of your docs, presentations, and more easily, double click 
 
 ### Specific configs of onlyoffice service
 
-If you have problem in saving file, there are several options in config of onlyoffice service that you may change to match your server. They can be found in this link: https://api.onlyoffice.com/editors/save
+We have noticed that documents are only pushed back to Pydio Cells, when _everybody_ closes the opened document.
+This can lead to nasty behaviour and data loss.
+
+You should configured your docker image manually to workaround this (for further details, please refer to the [OnlyOffice online documentation](https://api.onlyoffice.com/editors/save)) by performing the following:
+
+```sh
+# ssh to the target server
+# Retrieve the id of the correct container
+$ docker ps
+CONTAINER ID....
+c263411ad1d0       onlyoffice/documentserver
+# log into the container
+docker exec -it c2 /bin/sh
+# edit local.json file
+nano /etc/onlyoffice/documentserver/local.json
+# add this under services/CoAuthoring 
+    "autoAssembly": {
+        "enable": true,
+        "interval": "5m"
+     },
+# save, exit
+# restart the container and you should be good to go
+```
+
+For the record, the begining of the file should look like this:
+
+```json
+{
+ "services": {
+   "CoAuthoring": {
+     "autoAssembly": {
+       "enable": true,
+       "interval": "5m"
+     },
+     "sql": {
+     ...
+```
+
+And you can validate that your change has been successful by leaving a modified OO document opened in a tab and check (even better with another user) that the modification date of the corresponding file changes.
