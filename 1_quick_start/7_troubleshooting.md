@@ -1,9 +1,8 @@
 # TODO
 
-
 In this section, we gather known installation problems with strategies to fix them.
 
-## Various Information
+## Cells Server
 
 ### Files location
 
@@ -12,8 +11,6 @@ On a linux-like system, using the `pydio` user, you will find the Pydio files at
 - **Configuration**: `/home/pydio/.config/pydio/cells/pydio.json`
 - **Logs**: `/home/pydio/.config/pydio/cells/logs`.
 - **Data**: `/home/pydio/.config/pydio/cells/data`
-
-## Installation issues
 
 ### Progress freezes during browser install
 
@@ -27,8 +24,6 @@ During the installation process, if there is no progress bar but the console is 
 
 After the install, if the page does not refresh automatically in ssl self-signed mode it is OK.  
 A manual refresh will load the login page.
-
-## Networking issues
 
 ### Unable to bind port 443
 
@@ -57,6 +52,21 @@ _After a re-install, when trying to login, you get a `could not load session sto
 This is bound to the part of the session mechanism that resides in the browser, on client side.
 
 To solve the issue, get rid of all cookie for this site and refresh the page.
+
+
+## Cells Sync
+
+### Cannot list workspaces
+
+If you are getting an error when you attempt to list the workspaces then your server might be running behind a reverse proxy, in this case you must use **SSL** on **Cells** and on the **reverse proxy**, please refer to our dedicated documentation [link to reverse proxy how-to]().
+
+### I do see not my workspaces
+
+Make sure that your workspaces are syncable (enable settings in workspace menu)
+
+### Unable to create or list folder on local system
+
+- Macos users might require permissions, **System Preferences > Security & Privacy > Files and Folders** and allow access.
 
 ## Still stuck?
 
