@@ -2,31 +2,30 @@
 
 ## Add a Pydio Cells Account
 
-Before starting to Synchronize data, you must first add your Pydio Cells Account to give access to the **Cells Sync Client**.
+In order to be able to synchronize data, you must configure the connection from your Cells Sync Client to your Cells server with a valid account.
 
-- Start your Cells Sync go to **Accounts > Add Account**
-- Type the URL of your Pydio Cells, for instance `https://cells.example.com`
-- A Browser tab should open inviting you to connect to your Cells
-- Type your credentials and press **Enter**
-- You will be redirected back to your **Cells Sync Client**.
+- Start your Cells Sync go to **Accounts > Add Account**,
+- Type the URL of your Pydio Cells, for instance `https://cells.example.com`,
+- A new tab in your default browser (as defined in your OS) opens and invites you to connect to your Cells server,
+- Type your credentials and press **Enter**,
+- You are then redirected back to your **Cells Sync Client**.
 
 [:image-popup:1_quick_start/sync-account.gif]
 
 ## Create a task to sync a Workspace with a local folder
 
-Once you have your Account set, lets create a task to synchronize **personal-files** to a **local folder**.
+Now that your account is set, let's create a task to synchronize your **personal-files** space on your server to a **local folder** of your choice.
 
 - Go to the menu **Tasks > Create Task**.
-- In the **Cells Account** section click and choose your preferd Cells Instance.
-- Then on the field on its right (path), choose the path.
-- In this case we will choose **Personal Files** (blue checkmark on its left, when selected) then click on **Select**.
-- In Your **Computer** section select the local path where you want the data to be stored.
+- In the **Cells Account** section click and choose the correct connection.
+- Then choose a path on the `path` field on its right.
+- In our current example, we choose **Personal Files** (blue checkmark on its left, when selected) and then click on **Select**.
+- In  **Your Computer** section, select the local path where you want the data to be stored.
 
 [:image-popup:1_quick_start/sync-create-task.gif]
 
-
 ## Notes
 
-- Make sure that the workspaces have **Allow Desktop Sync** enabled.
+- Make sure that the corresponding workspace in your Cells server has **Allow Desktop Sync** enabled.
 - If your server is behind a reverse proxy, refer to the reverse proxy documentation.
 - MacOS users might require additional permissions; **System Preferences > Security & Privacy > Files and Folders or Full Disk Access** and allow access.
