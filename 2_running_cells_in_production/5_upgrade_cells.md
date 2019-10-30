@@ -36,14 +36,14 @@ Click on **Upgrade to Cells Enterprise**:
 - Identitfy the latest version number available (for instance 1.6.2).
 - to update run `./cells update --version=1.6.2`.
 - Make sure to run if you are under linux and are using port 80/443 `setcap 'cap_net_bind_service=+ep' cells`.
-- Restart your instance and you should be running with the latest version.
+- Restart Cells.
 
 ### Upgrade Pydio Cells Home to Pydio Cells Enterprise
 
 - Stop your Cells
 - Download the latest Cells-enterprise binary and replace replace the current one (if you are using systemd either rename the binary to cells or update your cells.service target)
 - Add the license (logged as the user running Cells), create this file `~/.config/pydio/cells/pydio-license` and put your License Key.
-- Restart your Cells instance
+- Restart Cells.
 
 
 ## Notes
