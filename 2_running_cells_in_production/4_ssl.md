@@ -12,11 +12,11 @@ The Pydio Cells installer has an automated way of adding a valid SSL certificate
 
 ## Adding SSL post Installation
 
-## Change certificate with the  Cells binary
+## Change certificate with the Cells binary
 
 [:image-popup:2_running_cells_in_production/cells_cli_ssl_mod.png]
 
-You can change at any time your with the Cells binary, by running the following command:
+You can change at any time your SSL mod with the Cells binary, run the following command:
 
 - Make sure that your Cells is stopped (meaning service too)
 - `./cells config ssl mode`
