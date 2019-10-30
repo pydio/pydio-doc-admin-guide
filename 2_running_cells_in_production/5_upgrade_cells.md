@@ -32,13 +32,13 @@ Click on **Upgrade to Cells Enterprise**:
 ### Update Pydio Cells to the latest version
 
 - Stop your Cells
-- Download the latest Cells binary and replace it, make sure to set the capabilites.
+- Download the latest Cells binary and replace the current one, make sure to set the capabilites.
 - Restart your instance and you should be running with the latest version.
 
 ### Upgrade Pydio Cells Home to Pydio Cells Enterprise
 
 - Stop your Cells
-- Download the latest Cells-enterprise binary and replace it with the current one (if you are using systemd either rename the binary to cells or update your cells.service target)
+- Download the latest Cells-enterprise binary and replace replace the current one (if you are using systemd either rename the binary to cells or update your cells.service target)
 - Put the license (logged as the user running Cells), create this file `~/.config/pydio/cells/pydio-license` and put your License Key.
 - Restart your Cells instance
 
