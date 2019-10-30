@@ -1,6 +1,4 @@
-# TODO
-
-windows 10
+_This guide describes the steps required to have Pydio Cells running on Windows_
 
 ## Install Cells on Windows 10
 

@@ -4,8 +4,9 @@
 
 [:image-popup:2_running_cells_in_production/update_cells_webui.png]
 
-You can check if there are new updates available by pressing the **Check** button,
-if that is the case select the version and proceed to install once it's finished you will be invited to restart your Cells instance, on linux **make sure** if you are binded to ports (80 or 443) to set the capabilites with :
+- You can check if there are new updates available by pressing the **Check** button,
+- if that is the case select the version and proceed to install once it's finished you will be invited to restart your Cells instance.
+-  on linux **make sure** if you are binded to ports (80 or 443) to set the capabilites with :
 
 ```sh
   setcap 'cap_net_bind_service=+ep' cells
@@ -39,7 +40,7 @@ Click on **Upgrade to Cells Enterprise**:
 
 - Stop your Cells
 - Download the latest Cells-enterprise binary and replace replace the current one (if you are using systemd either rename the binary to cells or update your cells.service target)
-- Put the license (logged as the user running Cells), create this file `~/.config/pydio/cells/pydio-license` and put your License Key.
+- Add the license (logged as the user running Cells), create this file `~/.config/pydio/cells/pydio-license` and put your License Key.
 - Restart your Cells instance
 
 
