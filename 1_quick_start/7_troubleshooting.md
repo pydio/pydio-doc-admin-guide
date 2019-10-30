@@ -1,16 +1,23 @@
-# TODO
+You can find below a list of problems commonly encountered when installing and configuring Pydio Cells, together with strategies to diagnose and fix them.
 
-In this section, we gather known installation problems with strategies to fix them.
+You can find more use cases and solution in [our FAQ](https://pydio.com/en/docs/faq), [our Knowledge Base](https://pydio.com/en/docs/knowledge-base) and [our forum](https://forum.pydio.com/).
 
 ## Cells Server
 
-### Files location
+### Cells working directories
 
-On a linux-like system, using the `pydio` user, you will find the Pydio files at the following locations:
+By default, application data is stored under the standard OS application dir:
 
-- **Configuration**: `/home/pydio/.config/pydio/cells/pydio.json`
-- **Logs**: `/home/pydio/.config/pydio/cells/logs`.
-- **Data**: `/home/pydio/.config/pydio/cells/data`
+- Linux: ${USER_HOME}/.config/pydio/cells
+- Darwin: ${USER_HOME}/Library/Application Support/Pydio/cells
+- Windows: ${USER_HOME}/ApplicationData/Roaming/Pydio/cells
+
+You can customize the various storage locations with the following ENV variables:
+
+- `CELLS_WORKING_DIR` : replace the whole standard application dir
+- `CELLS_DATA_DIR` : replace the location for storing default datasources (default `CELLS_WORKING_DIR/data`)
+- `CELLS_LOG_DIR` : replace the location for storing logs (default `CELLS_WORKING_DIR/logs`)
+- `CELLS_SERVICES_DIR` : replace location for services-specific data (default `CELLS_WORKING_DIR/services`)
 
 ### Progress freezes during browser install
 
@@ -52,7 +59,6 @@ _After a re-install, when trying to login, you get a `could not load session sto
 This is bound to the part of the session mechanism that resides in the browser, on client side.
 
 To solve the issue, get rid of all cookie for this site and refresh the page.
-
 
 ## Cells Sync
 
