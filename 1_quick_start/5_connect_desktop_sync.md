@@ -1,5 +1,9 @@
 # Connect Cells Sync dekstop client
 
+## TODO
+
+Explain how to download / install
+
 ## Add a Pydio Cells Account
 
 In order to be able to synchronize data, you must configure the connection from your Cells Sync Client to your Cells server with a valid account.
