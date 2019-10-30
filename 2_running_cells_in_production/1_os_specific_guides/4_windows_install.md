@@ -37,6 +37,6 @@ provide your database informations and you are good to go.
 
 Once the installation is done the folder containing your data and settings is located under %APPDATA%.
 
-> It might require to enable the setting; display **hidden files/folders**
+> To display the folder, this might require enabling the setting, display **hidden files/folders**
 
 **Data Location** : `C:\Users\pydio\AppData\Roaming\Pydio\cells`
