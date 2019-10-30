@@ -1,4 +1,4 @@
-The Pydio Cells installer has an automated way of adding a valid SSL certificate making use of the embeded webserver [**Caddy**](https://caddyserver.com) that has an implementation with [**Let's Encrypt**](https://letsencrypt.org/).
+The Pydio Cells installer has an automated way of adding a valid SSL certificate making use of the embeded webserver [**Caddy**](https://caddyserver.com) which has an implementation with [**Let's Encrypt**](https://letsencrypt.org/).
 
 ## Adding SSL pre Installation
 
@@ -17,6 +17,7 @@ The Pydio Cells installer has an automated way of adding a valid SSL certificate
 [:image-popup:2_running_cells_in_production/cells_cli_ssl_mod.png]
 
 You can change at any time your with the Cells binary, by running the following command:
+
 - Make sure that your Cells is stopped (meaning service too)
 - `./cells config ssl mode`
 

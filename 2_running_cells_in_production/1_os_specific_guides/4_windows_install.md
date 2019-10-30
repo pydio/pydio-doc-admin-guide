@@ -18,6 +18,7 @@ Open your terminal (powershell by default on windows) then proceed to install wi
 > Note, on powershell (terminal) the keys to navigate are H-J-K-L ( J = UP, K = DOWN).
 
 The binary will ask you to choose a mean of installation :
+
 - **browser based**: will open a browser tab with an intuitive installer.
 - **command line interface**: for advanced users, pretty straight forward.
 
