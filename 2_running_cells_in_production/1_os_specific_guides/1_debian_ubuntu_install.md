@@ -1,17 +1,20 @@
 
-_This guide describes the steps required to have Pydio Cells running on Debian 8, Debian 9 and Debian 10_.
+_This guide describes the steps required to have Pydio Cells running on Debian and Ubuntu.
 
 [:image-popup:2_running_cells_in_production/logos-os/logo-debian.png]
+[:image-popup:2_running_cells_in_production/logos-os/logo-ubuntu.png]
 
 ## Requirements
 
 ### OS requirements
 
-You need the 64-bit version of one of these Debian or Raspbian versions:
+You need the 64-bit version of one of these Debian or Ubuntu versions:
 
 - Debian 10 (buster) LTS 
 - Stretch 9 (stable) / Raspbian Stretch
 - Jessie 8 (LTS) / Raspbian Jessie
+- Ubuntu 18.04 (bionic beaver)
+- Ubuntu 16.04 (xenial xerus)
 
 #### Dedicated User
 
@@ -27,7 +30,7 @@ sudo useradd -m pydio
 
 ### Database
 
-Pydio Cells can be installed with both MySQL Server (v5.6 or higher) and MariaDB (v10.2 or higher).
+Pydio Cells can be installed with both MySQL Server (5.7 or higher) and MariaDB (10.3 or higher).
 
 #### MySQL
 
@@ -41,7 +44,7 @@ sudo dpkg -i mysql-apt-config_0.8.9-1_all.deb
 To access the correct repository :
 
 - Select the `MySQL Server & Cluster` option and press `Enter`
-- Select the correct option (`mysql-5.6` or `mysql-5.7`) and press `Enter`
+- Select the correct option (`mysql-5.7` or `mysql-8`) and press `Enter`
 - Back on the first list, select `Ok` and press `Enter`
 
 ##### Install
@@ -55,9 +58,9 @@ sudo apt install mysql-server
 
 ##### Repositories
 
-_If you are using Debian 10 you can skip this step, MariaDB 10.3 is the default packages_
+_If you are using Debian 10 or Ubuntu 18.04 you can skip this step, MariaDB 10.3 is in the default packages_
 
-We currently use MariaDB 10.3, here is the [official installation guide on the MariaDB website](https://downloads.mariadb.org/mariadb/repositories/#distro=Debian&version=10.3).
+We currently use MariaDB 10.4, here is the [official installation guide on the MariaDB website](https://downloads.mariadb.org/mariadb/repositories/#distro=Debian&version=10.4).
 
 Simply enter there your system specifications and follow the detailed instructions.
 
@@ -104,15 +107,9 @@ Execute the command below and follow the instructions.
 ```sh
 INTERNAL_URL(other) : address where the application http server is bound to. It MUST contain a server name and a port, should be of this form <ip-or-domain>:<port>.
 EXTERNAL_URL : url the end user will use to connect to the application.
+
 Example:
 If you want your application to run on the localhost at port 8080 and use the url mycells.mypydio.com, then set INTERNAL_URL to localhost:8080 and EXTERNAL_URL to http://mycells.mypydio.com (or https)
-
-```
-
-After the install is successfully done, if you ever have to stop Pydio Cells and want to run it again just run:
-
-```sh
-./cells install
 ```
 
 You can [refer to this page](/en/docs/cells/v1/install-pydio-cells) to get more details on the installation process.
@@ -122,6 +119,8 @@ After the install is successfully done, if you ever have to stop Pydio Cells and
 ```sh
 ./cells start
 ```
+
+**It is advised to add Cells as a service with systemd (or supervisor).**
 
 ## Troubleshooting
 
