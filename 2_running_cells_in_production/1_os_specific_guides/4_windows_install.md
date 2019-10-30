@@ -1,7 +1,5 @@
 # TODO
 
-[:image-popup:2_running_cells_in_production/logos-os/logo-windows.png]
-
 windows 10
 
 ## Install Cells on Windows 10
@@ -13,13 +11,33 @@ windows 10
 
 ### Install Cells
 
-Download the Pydio Cells executable [Download Server](https://download.pydio.com/pub/cells/release/2.0.0-rc1/windows-amd64/)
+Download the Pydio Cells executable [Download Server](https://download.pydio.com/pub/cells/release/2.0.0-rc1/windows-amd64/).
 
-Then proceed to install with the following command `.\cells.exe install`.
+Open your terminal (powershell by default on windows) then proceed to install with the following command :
+
+- `.\cells.exe install`
 
 > Note, on powershell (terminal) the keys to navigate are H-J-K-L ( J = UP, K = DOWN).
 
-[:image-popup:2_running_cells_in_production/logos-os/logo-windows.png]
+The binary will ask you to choose a mean of installation :
+- **browser based**: will open a browser tab with an intuitive installer.
+- **command line interface**: for advanced users, pretty straight forward.
+
+Then you have 2 important settings:
+
+- **INTERNAL_URL :** address where the application http server is bound to. It MUST contain a server name and a port.
+- **EXTERNAL_URL :** url the end user will use to connect to the application.
+
+There are also multiple ways to add SSL to your installation:
+- **SELF_SIGNED :** creates a self_signed certificate.
+- **LETS_ENCRYPT :** automagically generates a valid certificate for a domain ([see lets encrypt site](https://letsencrypt.org/))
+- **Provide your own certificate :** pass your already generated certificates.
+
+provide your database informations and you are good to go.
 
 
+Once the installation is done the folder containing your data and settings is located under %APPDATA%.
 
+> It might require to enable the setting; display **hidden files/folders**
+
+**Data Location** : `C:\Users\pydio\AppData\Roaming\Pydio\cells`
