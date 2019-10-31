@@ -13,7 +13,7 @@ Handle nodes restoration from recycle bin
 
 Name | Description | Type | Required
 ---|---|---|---
-**Nodes** |  | _array_ |   
+**Nodes** | Restore this node from the recycle bin to its original location | _array_ |   
 
 
 ### Body Example
@@ -21,39 +21,7 @@ Name | Description | Type | Required
 {
   "Nodes": [
     {
-      "AppearsIn": [
-        {
-          "Path": "string",
-          "WsLabel": "string",
-          "WsUuid": "string"
-        }
-      ],
-      "Commits": [
-        {
-          "Data": "string",
-          "Description": "string",
-          "Event": {
-            "Metadata": {},
-            "Optimistic": true,
-            "Silent": true,
-            "Source": "[Recursive structure]",
-            "Target": "[Recursive structure]",
-            "Type": "string"
-          },
-          "MTime": "string",
-          "OwnerUuid": "string",
-          "Size": "string",
-          "Uuid": "string"
-        }
-      ],
-      "Etag": "string",
-      "MTime": "string",
-      "MetaStore": {},
-      "Mode": 10,
-      "Path": "string",
-      "Size": "string",
-      "Type": "string",
-      "Uuid": "string"
+      "Path": "string"
     }
   ]
 }

@@ -13,13 +13,13 @@ List jobs associated with current user
 
 Name | Description | Type | Required
 ---|---|---|---
-**EventsOnly** |  | _boolean_ |   
-**JobIDs** |  | _array_ |   
-**LoadTasks** |  | _#/definitions/jobsTaskStatus_ |   
-**Owner** |  | _string_ |   
-**TasksLimit** |  | _integer_ |   
-**TasksOffset** |  | _integer_ |   
-**TimersOnly** |  | _boolean_ |   
+**EventsOnly** | Filter with only event-based jobs | _boolean_ |   
+**JobIDs** | Load jobs by their ID | _array_ |   
+**LoadTasks** | Load tasks that correspond to the given TaskStatus | _#/definitions/jobsTaskStatus_ |   
+**Owner** | Restrict to a specific owner (current user by default) | _string_ |   
+**TasksLimit** | Lmit the number of results | _integer_ |   
+**TasksOffset** | Start listing at a given position | _integer_ |   
+**TimersOnly** | Filter with only timer-based jobs | _boolean_ |   
 
 
 ### Body Example

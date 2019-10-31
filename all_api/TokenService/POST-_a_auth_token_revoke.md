@@ -13,7 +13,7 @@ Revoke a JWT token
 
 Name | Description | Type | Required
 ---|---|---|---
-**TokenId** |  | _string_ |   
+**TokenId** | Pass a specific Token ID to be revoked. If empty, request will use current JWT | _string_ |   
 
 
 ### Body Example

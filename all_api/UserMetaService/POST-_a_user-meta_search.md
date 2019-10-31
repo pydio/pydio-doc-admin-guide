@@ -13,11 +13,11 @@ Search a list of meta by node Id or by User id and by namespace
 
 Name | Description | Type | Required
 ---|---|---|---
-**MetaUuids** |  | _array_ |   
-**Namespace** |  | _string_ |   
-**NodeUuids** |  | _array_ |   
-**ResourceQuery** |  | _#/definitions/serviceResourcePolicyQuery_ |   
-**ResourceSubjectOwner** |  | _string_ |   
+**MetaUuids** | Look for meta by their unique identifier | _array_ |   
+**Namespace** | Filter meta by their namespace | _string_ |   
+**NodeUuids** | Look for all meta for a list of nodes | _array_ |   
+**ResourceQuery** | Filter meta by policies query | _#/definitions/serviceResourcePolicyQuery_ |   
+**ResourceSubjectOwner** | Filter meta by owner (in the sense of the policies) | _string_ |   
 
 
 ### Body Example

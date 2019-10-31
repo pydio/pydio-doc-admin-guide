@@ -13,16 +13,16 @@ Load the the feeds of the currently logged user
 
 Name | Description | Type | Required
 ---|---|---|---
-**AsDigest** |  | _boolean_ |   
-**BoxName** |  | _string_ |   
-**Context** |  | _#/definitions/activityStreamContext_ |   
-**ContextData** |  | _string_ |   
+**AsDigest** | Compute a digest of all unread activities | _boolean_ |   
+**BoxName** | Target inbox or outbox for the given object | _string_ |   
+**Context** | Define the context of the stream | _#/definitions/activityStreamContext_ |   
+**ContextData** | Value for the context (e.g. User Id, Node Id) | _string_ |   
 **Language** |  | _string_ |   
-**Limit** |  | _string_ |   
-**Offset** |  | _string_ |   
-**PointOfView** |  | _#/definitions/activitySummaryPointOfView_ |   
-**StreamFilter** |  | _string_ |   
-**UnreadCountOnly** |  | _boolean_ |   
+**Limit** | Limit the number of results | _string_ |   
+**Offset** | Start listing at a given position | _string_ |   
+**PointOfView** | Provide context for building the human-readable strings of each activity | _#/definitions/activitySummaryPointOfView_ |   
+**StreamFilter** | Json-encoded filter | _string_ |   
+**UnreadCountOnly** | Count last activities that were not loaded yet | _boolean_ |   
 
 
 ### Body Example

@@ -13,13 +13,13 @@ List/Search users
 
 Name | Description | Type | Required
 ---|---|---|---
-**CountOnly** |  | _boolean_ |   
+**CountOnly** | Return counts only, no actual results | _boolean_ |   
 **GroupBy** |  | _integer_ |   
-**Limit** |  | _string_ |   
-**Offset** |  | _string_ |   
-**Operation** |  | _#/definitions/serviceOperationType_ |   
-**Queries** |  | _array_ |   
-**ResourcePolicyQuery** |  | _#/definitions/restResourcePolicyQuery_ |   
+**Limit** | Limit number of results | _string_ |   
+**Offset** | Start listing at a given position | _string_ |   
+**Operation** | Combine single queries with AND or OR logic | _#/definitions/serviceOperationType_ |   
+**Queries** | Atomic queries that will be combined using the Operation Type (AND or OR) | _array_ |   
+**ResourcePolicyQuery** | Policies queries to filter the search context | _#/definitions/restResourcePolicyQuery_ |   
 
 
 ### Body Example

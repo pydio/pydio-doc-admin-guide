@@ -13,9 +13,9 @@ Create dirs or empty files inside the tree
 
 Name | Description | Type | Required
 ---|---|---|---
-**Nodes** |  | _array_ |   
-**Recursive** |  | _boolean_ |   
-**TemplateUUID** |  | _string_ |   
+**Nodes** | A list of nodes that must be created | _array_ |   
+**Recursive** | If nodes are created inside non-existing folders, whether the parents should be created automatically or not | _boolean_ |   
+**TemplateUUID** | Use a template to create this node | _string_ |   
 
 
 ### Body Example
@@ -23,39 +23,7 @@ Name | Description | Type | Required
 {
   "Nodes": [
     {
-      "AppearsIn": [
-        {
-          "Path": "string",
-          "WsLabel": "string",
-          "WsUuid": "string"
-        }
-      ],
-      "Commits": [
-        {
-          "Data": "string",
-          "Description": "string",
-          "Event": {
-            "Metadata": {},
-            "Optimistic": true,
-            "Silent": true,
-            "Source": "[Recursive structure]",
-            "Target": "[Recursive structure]",
-            "Type": "string"
-          },
-          "MTime": "string",
-          "OwnerUuid": "string",
-          "Size": "string",
-          "Uuid": "string"
-        }
-      ],
-      "Etag": "string",
-      "MTime": "string",
-      "MetaStore": {},
-      "Mode": 10,
-      "Path": "string",
-      "Size": "string",
-      "Type": "string",
-      "Uuid": "string"
+      "Path": "string"
     }
   ],
   "Recursive": true,

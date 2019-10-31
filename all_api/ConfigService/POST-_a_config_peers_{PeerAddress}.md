@@ -13,8 +13,8 @@ List folders on a peer, starting from root
 
 Name | Description | Type | Required
 ---|---|---|---
-**Path** |  | _string_ |   
-**PeerAddress** |  | _string_ |   
+**Path** | Path to the parent folder for listing | _string_ |   
+**PeerAddress** | Restrict listing to a given peer | _string_ |   
 
 
 ### Body Example

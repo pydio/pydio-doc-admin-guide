@@ -13,11 +13,11 @@ Delete one or more ACLs
 
 Name | Description | Type | Required
 ---|---|---|---
-**Action** |  | _#/definitions/idmACLAction_ |   
-**ID** |  | _string_ |   
-**NodeID** |  | _string_ |   
-**RoleID** |  | _string_ |   
-**WorkspaceID** |  | _string_ |   
+**Action** | Action on which this ACL provides control | _#/definitions/idmACLAction_ |   
+**ID** | Unique ID of this ACL | _string_ |   
+**NodeID** | Associated Node | _string_ |   
+**RoleID** | Associated Role | _string_ |   
+**WorkspaceID** | Associated Workspace | _string_ |   
 
 
 ### Body Example

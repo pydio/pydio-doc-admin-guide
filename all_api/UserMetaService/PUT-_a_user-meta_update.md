@@ -13,8 +13,8 @@ Update/delete user meta
 
 Name | Description | Type | Required
 ---|---|---|---
-**MetaDatas** |  | _array_ |   
-**Operation** |  | _#/definitions/UpdateUserMetaRequestUserMetaOp_ |   
+**MetaDatas** | List of metadatas to update or delete | _array_ |   
+**Operation** | Type of operation to apply (PUT / DELETE) | _#/definitions/UpdateUserMetaRequestUserMetaOp_ |   
 
 
 ### Body Example

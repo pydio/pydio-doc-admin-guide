@@ -13,17 +13,17 @@ Just save a user roles, without other datas
 
 Name | Description | Type | Required
 ---|---|---|---
-**Attributes** |  | _object_ |   
-**GroupLabel** |  | _string_ |   
-**GroupPath** |  | _string_ |   
-**IsGroup** | Group specific data | _boolean_ |   
-**Login** | User specific data | _string_ |   
-**OldPassword** |  | _string_ |   
-**Password** |  | _string_ |   
-**Policies** |  | _array_ |   
+**Attributes** | A free list of attributes | _object_ |   
+**GroupLabel** | Label of the group, field is empty for users | _string_ |   
+**GroupPath** | Path to the parent group | _string_ |   
+**IsGroup** | Whether this object is a group or a user | _boolean_ |   
+**Login** | User login is used to connect, field is empty for groups | _string_ |   
+**OldPassword** | OldPassword must be set when a user updates her own password | _string_ |   
+**Password** | Password can be passed to be updated (but never read back), field is empty for groups | _string_ |   
+**Policies** | Policies securing access to this user | _array_ |   
 **PoliciesContextEditable** |  | _boolean_ |   
-**Roles** |  | _array_ |   
-**Uuid** |  | _string_ |   
+**Roles** | List of roles applied to this user or group | _array_ |   
+**Uuid** | User unique identifier | _string_ |   
 
 
 ### Body Example

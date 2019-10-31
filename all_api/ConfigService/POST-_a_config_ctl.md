@@ -13,9 +13,9 @@
 
 Name | Description | Type | Required
 ---|---|---|---
-**Command** |  | _#/definitions/ctlServiceCommand_ |   
-**NodeName** |  | _string_ |   
-**ServiceName** |  | _string_ |   
+**Command** | Command to apply (START or STOP) | _#/definitions/ctlServiceCommand_ |   
+**NodeName** | Name of the node | _string_ |   
+**ServiceName** | Name of the service to stop | _string_ |   
 
 
 ### Body Example

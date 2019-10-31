@@ -13,8 +13,8 @@ Load metadata for a given node
 
 Name | Description | Type | Required
 ---|---|---|---
-**Namespace** |  | _array_ |   
-**NodePath** |  | _string_ |   
+**Namespace** | List of namespaces to load | _array_ |   
+**NodePath** | Path to the requested node | _string_ |   
 
 
 ### Body Example

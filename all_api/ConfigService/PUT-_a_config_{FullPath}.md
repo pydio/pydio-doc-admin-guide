@@ -13,8 +13,8 @@ Generic config Put, using a full path in the config tree
 
 Name | Description | Type | Required
 ---|---|---|---
-**Data** |  | _string_ |   
-**FullPath** |  | _string_ |   
+**Data** | JSON-encoded data to store | _string_ |   
+**FullPath** | Full slash-separated path to the config key | _string_ |   
 
 
 ### Body Example

@@ -13,25 +13,25 @@ Create or update a datasource
 
 Name | Description | Type | Required
 ---|---|---|---
-**ApiKey** |  | _string_ |   
-**ApiSecret** |  | _string_ |   
-**CreationDate** |  | _integer_ |   
-**Disabled** |  | _boolean_ |   
-**EncryptionKey** |  | _string_ |   
-**EncryptionMode** |  | _#/definitions/objectEncryptionMode_ |   
-**LastSynchronizationDate** |  | _integer_ |   
-**Name** |  | _string_ |   
-**ObjectsBaseFolder** |  | _string_ |   
-**ObjectsBucket** |  | _string_ |   
-**ObjectsHost** |  | _string_ |   
-**ObjectsPort** |  | _integer_ |   
-**ObjectsSecure** |  | _boolean_ |   
-**ObjectsServiceName** |  | _string_ |   
-**PeerAddress** |  | _string_ |   
-**StorageConfiguration** |  | _object_ |   
-**StorageType** |  | _#/definitions/objectStorageType_ |   
-**VersioningPolicyName** |  | _string_ |   
-**Watch** |  | _boolean_ |   
+**ApiKey** | Corresponding objects service api key | _string_ |   
+**ApiSecret** | Corresponding objects service api secret | _string_ |   
+**CreationDate** | Data Source creation date | _integer_ |   
+**Disabled** | Whether this data source is disabled or running | _boolean_ |   
+**EncryptionKey** | Encryption key used for encrypting data | _string_ |   
+**EncryptionMode** | Type of encryption applied before sending data to storage | _#/definitions/objectEncryptionMode_ |   
+**LastSynchronizationDate** | Data Source last synchronization date | _integer_ |   
+**Name** | Name of the data source (max length 34) | _string_ |   
+**ObjectsBaseFolder** | Corresponding objects service base folder inside the bucket | _string_ |   
+**ObjectsBucket** | Corresponding objects service bucket | _string_ |   
+**ObjectsHost** | Corresponding objects service host | _string_ |   
+**ObjectsPort** | Corresponding objects service port | _integer_ |   
+**ObjectsSecure** | Corresponding objects service connection type | _boolean_ |   
+**ObjectsServiceName** | Corresponding objects service name (underlying s3 service) | _string_ |   
+**PeerAddress** | Peer address of the data source | _string_ |   
+**StorageConfiguration** | List of key values describing storage configuration | _object_ |   
+**StorageType** | Type of underlying storage (LOCAL, S3, AZURE, GCS) | _#/definitions/objectStorageType_ |   
+**VersioningPolicyName** | Versioning policy describes how files are kept in the versioning queue | _string_ |   
+**Watch** | Not implemented, whether to watch for underlying changes on the FS | _boolean_ |   
 
 
 ### Body Example

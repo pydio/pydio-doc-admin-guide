@@ -13,13 +13,13 @@ Search Roles
 
 Name | Description | Type | Required
 ---|---|---|---
-**CountOnly** |  | _boolean_ |   
-**GroupBy** |  | _integer_ |   
-**Limit** |  | _string_ |   
-**Offset** |  | _string_ |   
-**Operation** |  | _#/definitions/serviceOperationType_ |   
-**Queries** |  | _array_ |   
-**ResourcePolicyQuery** |  | _#/definitions/restResourcePolicyQuery_ |   
+**CountOnly** | Return counts only, no actual results | _boolean_ |   
+**GroupBy** | Group results by | _integer_ |   
+**Limit** | Limit number of results | _string_ |   
+**Offset** | Start listing at a given position | _string_ |   
+**Operation** | Combine Single Queries with AND or OR | _#/definitions/serviceOperationType_ |   
+**Queries** | List of atomic queries that will be combined using the Operation type (AND / OR) | _array_ |   
+**ResourcePolicyQuery** | Policies query for specifying the search context | _#/definitions/restResourcePolicyQuery_ |   
 
 
 ### Body Example

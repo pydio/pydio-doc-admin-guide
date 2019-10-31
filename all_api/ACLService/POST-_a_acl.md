@@ -13,12 +13,12 @@ Search Acls
 
 Name | Description | Type | Required
 ---|---|---|---
-**CountOnly** |  | _boolean_ |   
-**GroupBy** |  | _integer_ |   
-**Limit** |  | _string_ |   
-**Offset** |  | _string_ |   
-**Operation** |  | _#/definitions/serviceOperationType_ |   
-**Queries** |  | _array_ |   
+**CountOnly** | Return counts only, no actual results | _boolean_ |   
+**GroupBy** | Group results | _integer_ |   
+**Limit** | Limit the number of results | _string_ |   
+**Offset** | Start listing at a given position | _string_ |   
+**Operation** | Single queries will be combined using this operation AND or OR logic | _#/definitions/serviceOperationType_ |   
+**Queries** | Atomic queries that will be combined using the OperationType (AND or OR) | _array_ |   
 
 
 ### Body Example

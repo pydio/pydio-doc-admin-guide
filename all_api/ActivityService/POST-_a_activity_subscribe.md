@@ -13,10 +13,10 @@ Manage subscriptions to other users/nodes feeds
 
 Name | Description | Type | Required
 ---|---|---|---
-**Events** |  | _array_ |   
-**ObjectId** |  | _string_ |   
-**ObjectType** |  | _#/definitions/activityOwnerType_ |   
-**UserId** |  | _string_ |   
+**Events** | List of events to listen to | _array_ |   
+**ObjectId** | If of the owner | _string_ |   
+**ObjectType** | Type of owner | _#/definitions/activityOwnerType_ |   
+**UserId** | Id of the user for this subscription | _string_ |   
 
 
 ### Body Example

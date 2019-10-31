@@ -13,8 +13,8 @@ Create a new master key
 
 Name | Description | Type | Required
 ---|---|---|---
-**KeyID** |  | _string_ |   
-**Label** |  | _string_ |   
+**KeyID** | Create a key with this ID | _string_ |   
+**Label** | Provide label for the newly created key | _string_ |   
 
 
 ### Body Example
