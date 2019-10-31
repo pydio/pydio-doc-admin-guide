@@ -57,21 +57,17 @@ And set the following fields:
 - **Application name:** name your application
 - **Authorized domains:** add your Pydio Cells instance domain
 - **Application Homepage link:** put your Pydio Cells base url `https://my-cells.com`
-
 - Hit **save**
 
 [:image-popup:3_identity_management/sso_with_oauth2/google/google_create_application_3.png]
-
+[:image-popup:3_identity_management/sso_with_oauth2/google/google_create_application_4.png]
 ### Step 2
 
 - Then go to **Credentials**
 
-[:image-popup:3_identity_management/sso_with_oauth2/google/google_create_application_4.png]
-
-- Click on **Create credentials**
-
 [:image-popup:3_identity_management/sso_with_oauth2/google/google_create_application_5.png]
 
+- Click on **Create credentials**
 - Select **OAuth client ID**
 
 [:image-popup:3_identity_management/sso_with_oauth2/google/google_create_application_6.png]
