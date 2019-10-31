@@ -10,7 +10,7 @@ Create a New OAuth Application on **Github**,
 
 - **Application name:** Name your application
 - **Homepage URL:** Your pydio Cells URL (main page)
-- **Authorization callback URL:** http(s)://your-pydio**/auth/dex/callback** (the endpoit is the fixed part)
+- **Authorization callback URL:** http(s)://your-pydio**/auth/dex/callback** (the endpoint is the immutable part)
 
 [:image-popup:3_identity_management/github/github_create_app_2.png]
 
@@ -26,9 +26,9 @@ In your Pydio Cells instance go to **Cells Console > Authentication > OAUTH2/OID
 
 Choose **GitHub**.
 
-- **Client ID:** the client ID of your Github application (see screenshot above)
-- **Client Secret:** the client Secret of your Github application (see screenshot above)
-- **Callback URL:** the same url defined during the creation of the GitHub application (see screnshot above)
+- **Client ID:** the client ID of your Github application (Fetched from github application, see step 1 )
+- **Client Secret:** the client Secret of your Github application (Fetched from github application, see step 1)
+- **Callback URL:** the same url defined during the creation of the GitHub application (Fetched from github application, see step 1)
 
 [:image-popup:3_identity_management/github/cells_create_github_oidc_3.png]
 
@@ -48,7 +48,7 @@ Visit [https://console.cloud.google.com/](https://console.cloud.google.com/),
 
 [:image-popup:3_identity_management/google/google_create_application_1.png]
 
-- First go to **OAuth consent screen**
+- Navigate to **OAuth consent screen**
 
 [:image-popup:3_identity_management/google/google_create_application_2.png]
 
@@ -56,7 +56,7 @@ And set the following fields:
 
 - **Application name:** name your application
 - **Authorized domains:** add your Pydio Cells instance domain
-- **Application Homepage link:** put your Pydio Cells base url (https://my-cells.com)
+- **Application Homepage link:** put your Pydio Cells base url `https://my-cells.com`
 
 - Hit **save**
 
@@ -81,16 +81,14 @@ And set the following fields:
 
 [:image-popup:3_identity_management/google/google_create_application_7.png]
 
-Last step, now name your app (make sure to save your **ID** and **Secret**) :
+Last step, name your app (make sure to remember your **ID** and **Secret**) :
 
 - **Authorised JavaScript origins:** Add your Pydio Cells url.
-- **Authorised redirect URIs**: add a redirect url such as `https://my-cells.com/auth/dex/callback`, the basically add at the end of your Pydio Cells URL **/auth/dex/callback** (this is the endpoint).
-- 
-
+- **Authorised redirect URIs**: add a redirect url such as `https://my-cells.com/auth/dex/callback`, add at the end of your Pydio Cells URL **/auth/dex/callback** (this is the endpoint).
+  
 [:image-popup:3_identity_management/google/google_create_application_8.png]
 
 [:image-popup:3_identity_management/google/google_create_application_9.png]
-
 
 ## Create a Google Connector in Cells
 
