@@ -5,7 +5,7 @@
 
 
 
-### [GET] /a/role/{Uuid}  
+ 
 Get a Role by ID  
 
 

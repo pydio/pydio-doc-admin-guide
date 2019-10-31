@@ -5,7 +5,7 @@
 
 
 
-### [DELETE] /a/workspace/{Slug}  
+ 
 Delete an existing workspace  
 
 

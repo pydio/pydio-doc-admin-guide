@@ -5,7 +5,7 @@
 
 
 
-### [POST] /a/auth/token/revoke  
+ 
 Revoke a JWT token  
 
 

@@ -5,7 +5,7 @@
 
 
 
-### [GET] /a/install/agreement  
+ 
 Load a textual agreement for using the software  
 
 

@@ -5,7 +5,7 @@
 
 
 
-### [POST] /a/activity/stream  
+ 
 Load the the feeds of the currently logged user  
 
 

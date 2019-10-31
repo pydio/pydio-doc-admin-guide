@@ -5,7 +5,7 @@
 
 
 
-### [PUT] /a/jobs/user/{JobName}  
+ 
 Create a predefined job to be run directly  
 
 

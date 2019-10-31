@@ -5,7 +5,7 @@
 
 
 
-### [POST] /a/config/encryption/list  
+ 
 List registered master keys  
 
 

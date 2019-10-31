@@ -5,7 +5,7 @@
 
 
 
-### [POST] /a/auth/reset-password  
+ 
 Finish up the reset password process by providing the unique token  
 
 

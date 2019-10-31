@@ -5,7 +5,7 @@
 
 
 
-### [DELETE] /a/share/link/{Uuid}  
+ 
 Delete Share Link  
 
 

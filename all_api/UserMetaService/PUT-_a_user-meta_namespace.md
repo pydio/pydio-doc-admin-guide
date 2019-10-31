@@ -5,7 +5,7 @@
 
 
 
-### [PUT] /a/user-meta/namespace  
+ 
 Admin: update namespaces  
 
 

@@ -5,7 +5,7 @@
 
 
 
-### [POST] /a/search/nodes  
+ 
 Search indexed nodes (files/folders) on various aspects  
 
 

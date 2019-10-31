@@ -5,7 +5,7 @@
 
 
 
-### [POST] /a/tree/restore  
+ 
 Handle nodes restoration from recycle bin  
 
 

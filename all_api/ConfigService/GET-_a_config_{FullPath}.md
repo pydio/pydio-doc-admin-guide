@@ -5,7 +5,7 @@
 
 
 
-### [GET] /a/config/{FullPath}  
+ 
 Generic config Get using a full path in the config tree  
 
 

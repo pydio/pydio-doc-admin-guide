@@ -5,7 +5,7 @@
 
 
 
-### [GET] /a/share/cell/{Uuid}  
+ 
 Load a share room  
 
 

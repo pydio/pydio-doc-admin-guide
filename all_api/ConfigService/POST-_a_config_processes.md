@@ -5,7 +5,7 @@
 
 
 
-### [POST] /a/config/processes  
+ 
 List running Processes, with option PeerId or ServiceName filter  
 
 

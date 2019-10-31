@@ -5,7 +5,7 @@
 
 
 
-### [POST] /a/acl/bulk/delete  
+ 
 Delete one or more ACLs  
 
 

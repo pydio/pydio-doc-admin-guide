@@ -5,7 +5,7 @@
 
 
 
-### [GET] /a/graph/state/{Segment}  
+ 
 Compute accessible workspaces for a given user  
 
 

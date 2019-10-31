@@ -5,7 +5,7 @@
 
 
 
-### [DELETE] /a/config/datasource/{Name}  
+ 
 Delete a datasource  
 
 

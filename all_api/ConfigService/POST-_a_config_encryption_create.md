@@ -5,7 +5,7 @@
 
 
 
-### [POST] /a/config/encryption/create  
+ 
 Create a new master key  
 
 

@@ -5,7 +5,7 @@
 
 
 
-### [DELETE] /a/share/cell/{Uuid}  
+ 
 Delete a share room  
 
 

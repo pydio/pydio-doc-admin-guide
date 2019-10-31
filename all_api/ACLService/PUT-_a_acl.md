@@ -5,7 +5,7 @@
 
 
 
-### [PUT] /a/acl  
+ 
 Store an ACL  
 
 

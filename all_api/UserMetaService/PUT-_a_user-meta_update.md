@@ -5,7 +5,7 @@
 
 
 
-### [PUT] /a/user-meta/update  
+ 
 Update/delete user meta  
 
 

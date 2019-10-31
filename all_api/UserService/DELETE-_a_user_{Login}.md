@@ -5,7 +5,7 @@
 
 
 
-### [DELETE] /a/user/{Login}  
+ 
 Delete a user  
 
 

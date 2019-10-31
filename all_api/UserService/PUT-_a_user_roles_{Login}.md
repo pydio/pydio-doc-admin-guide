@@ -5,7 +5,7 @@
 
 
 
-### [PUT] /a/user/roles/{Login}  
+ 
 Just save a user roles, without other datas  
 
 

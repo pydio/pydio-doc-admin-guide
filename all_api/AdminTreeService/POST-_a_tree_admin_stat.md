@@ -5,7 +5,7 @@
 
 
 
-### [POST] /a/tree/admin/stat  
+ 
 Read a node information inside the admin tree  
 
 

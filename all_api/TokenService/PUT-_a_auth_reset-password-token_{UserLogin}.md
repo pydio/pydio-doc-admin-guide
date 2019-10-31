@@ -5,7 +5,7 @@
 
 
 
-### [PUT] /a/auth/reset-password-token/{UserLogin}  
+ 
 Generate a unique token for the reset password process  
 
 

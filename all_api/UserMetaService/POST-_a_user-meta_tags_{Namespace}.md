@@ -5,7 +5,7 @@
 
 
 
-### [POST] /a/user-meta/tags/{Namespace}  
+ 
 Add a new value to Tags for a given namespace  
 
 

@@ -5,7 +5,7 @@
 
 
 
-### [GET] /a/config/versioning  
+ 
 List all defined versioning policies  
 
 

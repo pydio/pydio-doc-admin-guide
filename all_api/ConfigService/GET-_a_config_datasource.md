@@ -5,7 +5,7 @@
 
 
 
-### [GET] /a/config/datasource  
+ 
 List all defined datasources  
 
 

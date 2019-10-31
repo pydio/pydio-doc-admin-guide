@@ -5,7 +5,7 @@
 
 
 
-### [POST] /a/update  
+ 
 Check the remote server to see if there are available binaries  
 
 

@@ -5,7 +5,7 @@
 
 
 
-### [GET] /a/user/{Login}  
+ 
 Get a user by login  
 
 

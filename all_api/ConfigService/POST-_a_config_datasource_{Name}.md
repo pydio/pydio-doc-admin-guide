@@ -5,7 +5,7 @@
 
 
 
-### [POST] /a/config/datasource/{Name}  
+ 
 Create or update a datasource  
 
 

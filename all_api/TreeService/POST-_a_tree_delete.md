@@ -5,7 +5,7 @@
 
 
 
-### [POST] /a/tree/delete  
+ 
 Handle nodes deletion  
 
 

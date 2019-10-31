@@ -5,7 +5,7 @@
 
 
 
-### [POST] /a/mailer/send  
+ 
 Send an email to a user or any email address  
 
 

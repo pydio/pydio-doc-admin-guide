@@ -5,7 +5,7 @@
 
 
 
-### [PUT] /a/share/cell  
+ 
 Put or Create a share room  
 
 

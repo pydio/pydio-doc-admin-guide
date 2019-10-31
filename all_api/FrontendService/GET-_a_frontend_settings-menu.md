@@ -5,7 +5,7 @@
 
 
 
-### [GET] /a/frontend/settings-menu  
+ 
 Sends a tree of nodes to be used a menu in the Settings panel  
 
 

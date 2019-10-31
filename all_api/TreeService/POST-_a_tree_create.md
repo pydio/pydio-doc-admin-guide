@@ -5,7 +5,7 @@
 
 
 
-### [POST] /a/tree/create  
+ 
 Create dirs or empty files inside the tree  
 
 

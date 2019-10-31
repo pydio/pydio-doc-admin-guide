@@ -5,7 +5,7 @@
 
 
 
-### [GET] /a/config/discovery/openapi  
+ 
 Publish available REST APIs  
 
 

@@ -5,7 +5,7 @@
 
 
 
-### [GET] /a/config/discovery  
+ 
 Publish available endpoints  
 
 

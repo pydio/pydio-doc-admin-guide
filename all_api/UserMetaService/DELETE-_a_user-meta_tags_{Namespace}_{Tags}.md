@@ -5,7 +5,7 @@
 
 
 
-### [DELETE] /a/user-meta/tags/{Namespace}/{Tags}  
+ 
 Delete one or all tags for a given namespace (use * for all tags)  
 
 

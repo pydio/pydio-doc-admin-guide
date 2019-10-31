@@ -5,7 +5,7 @@
 
 
 
-### [POST] /a/meta/get/{NodePath}  
+ 
 Load metadata for a given node  
 
 

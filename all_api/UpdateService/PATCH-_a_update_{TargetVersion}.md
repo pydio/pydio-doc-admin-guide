@@ -5,7 +5,7 @@
 
 
 
-### [PATCH] /a/update/{TargetVersion}  
+ 
 Apply an update to a given version  
 
 

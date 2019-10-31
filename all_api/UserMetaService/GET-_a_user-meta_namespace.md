@@ -5,7 +5,7 @@
 
 
 
-### [GET] /a/user-meta/namespace  
+ 
 List defined meta namespaces  
 
 

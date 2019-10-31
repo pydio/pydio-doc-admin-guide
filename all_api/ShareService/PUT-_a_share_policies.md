@@ -5,7 +5,7 @@
 
 
 
-### [PUT] /a/share/policies  
+ 
 Updates policies associated to the underlying workspace for a Cell or a ShareLink  
 
 

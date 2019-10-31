@@ -5,7 +5,7 @@
 
 
 
-### [POST] /a/activity/subscribe  
+ 
 Manage subscriptions to other users/nodes feeds  
 
 

@@ -5,7 +5,7 @@
 
 
 
-### [GET] /a/config/versioning/{Uuid}  
+ 
 Load a given versioning policy  
 
 

@@ -5,7 +5,7 @@
 
 
 
-### [POST] /a/jobs/tasks/logs  
+ 
 Technical Logs, in Json or CSV format  
 
 

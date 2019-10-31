@@ -5,7 +5,7 @@
 
 
 
-### [PUT] /a/config/encryption/import  
+ 
 Import a previously exported master key, requires the password created at export time  
 
 

@@ -5,7 +5,7 @@
 
 
 
-### [POST] /a/jobs/user  
+ 
 List jobs associated with current user  
 
 

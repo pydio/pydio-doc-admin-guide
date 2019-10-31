@@ -5,7 +5,7 @@
 
 
 
-### [POST] /a/tree/admin/list  
+ 
 List files and folders starting at the root (first level lists the datasources)  
 
 

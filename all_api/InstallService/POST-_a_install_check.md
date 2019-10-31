@@ -5,7 +5,7 @@
 
 
 
-### [POST] /a/install/check  
+ 
 Perform a check during install (like a valid DB connection)  
 
 

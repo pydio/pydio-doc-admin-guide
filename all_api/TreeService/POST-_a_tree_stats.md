@@ -5,7 +5,7 @@
 
 
 
-### [POST] /a/tree/stats  
+ 
 List meta for a list of nodes, or a full directory using /path/* syntax  
 
 

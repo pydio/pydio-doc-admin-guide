@@ -5,7 +5,7 @@
 
 
 
-### [POST] /a/activity/subscriptions  
+ 
 Load subscriptions to other users/nodes feeds  
 
 

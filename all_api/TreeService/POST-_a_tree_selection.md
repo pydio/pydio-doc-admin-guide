@@ -5,7 +5,7 @@
 
 
 
-### [POST] /a/tree/selection  
+ 
 Create a temporary selection for further action (namely download)  
 
 

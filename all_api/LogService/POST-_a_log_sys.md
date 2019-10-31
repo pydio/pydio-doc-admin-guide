@@ -5,7 +5,7 @@
 
 
 
-### [POST] /a/log/sys  
+ 
 Technical Logs, in Json or CSV format  
 
 

@@ -5,7 +5,7 @@
 
 
 
-### [POST] /a/meta/set/{NodePath}  
+ 
 Update metadata for a given node  
 
 

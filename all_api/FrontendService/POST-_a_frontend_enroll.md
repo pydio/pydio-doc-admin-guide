@@ -5,7 +5,7 @@
 
 
 
-### [POST] /a/frontend/enroll  
+ 
 Generic endpoint that can be implemented by 2FA systems for enrollment  
 
 

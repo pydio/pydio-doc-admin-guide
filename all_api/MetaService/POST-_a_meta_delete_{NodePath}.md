@@ -5,7 +5,7 @@
 
 
 
-### [POST] /a/meta/delete/{NodePath}  
+ 
 Delete metadata of a given node  
 
 

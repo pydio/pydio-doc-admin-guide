@@ -5,7 +5,7 @@
 
 
 
-### [POST] /a/config/peers/{PeerAddress}  
+ 
 List folders on a peer, starting from root  
 
 

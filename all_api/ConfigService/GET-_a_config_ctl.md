@@ -5,7 +5,7 @@
 
 
 
-### [GET] /a/config/ctl  
+ 
 List all services and their status  
 
 

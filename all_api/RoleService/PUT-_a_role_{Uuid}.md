@@ -5,7 +5,7 @@
 
 
 
-### [PUT] /a/role/{Uuid}  
+ 
 Create or update a Role  
 
 

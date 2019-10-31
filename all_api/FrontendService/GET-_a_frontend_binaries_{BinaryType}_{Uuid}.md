@@ -5,7 +5,7 @@
 
 
 
-### [GET] /a/frontend/binaries/{BinaryType}/{Uuid}  
+ 
 Serve frontend binaries directly (avatars / logos / bg images)  
 
 

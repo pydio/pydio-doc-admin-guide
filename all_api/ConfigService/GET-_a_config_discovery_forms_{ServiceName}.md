@@ -5,7 +5,7 @@
 
 
 
-### [GET] /a/config/discovery/forms/{ServiceName}  
+ 
 Publish Forms definition for building screens in frontend  
 
 

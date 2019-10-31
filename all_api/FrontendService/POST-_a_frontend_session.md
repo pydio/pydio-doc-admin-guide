@@ -5,7 +5,7 @@
 
 
 
-### [POST] /a/frontend/session  
+ 
 Handle JWT  
 
 

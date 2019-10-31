@@ -5,7 +5,7 @@
 
 
 
-### [PUT] /a/share/link  
+ 
 Put or Create a share room  
 
 

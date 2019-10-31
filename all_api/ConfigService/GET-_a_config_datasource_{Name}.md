@@ -5,7 +5,7 @@
 
 
 
-### [GET] /a/config/datasource/{Name}  
+ 
 Load datasource information  
 
 

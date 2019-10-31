@@ -5,7 +5,7 @@
 
 
 
-### [GET] /a/frontend/bootconf  
+ 
 Add some data to the initial set of parameters loaded by the frontend  
 
 

@@ -5,7 +5,7 @@
 
 
 
-### [GET] /a/config/peers  
+ 
 List all detected peers (servers on which the app is running)  
 
 

@@ -5,7 +5,7 @@
 
 
 
-### [GET] /a/tree/stat/{Node}  
+ 
 Return node meta without the node content itself  
 
 

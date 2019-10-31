@@ -5,7 +5,7 @@
 
 
 
-### [PUT] /a/jobs/user  
+ 
 Send Control Commands to one or many jobs / tasks  
 
 

@@ -5,7 +5,7 @@
 
 
 
-### [PUT] /a/config/{FullPath}  
+ 
 Generic config Put, using a full path in the config tree  
 
 

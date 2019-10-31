@@ -5,7 +5,7 @@
 
 
 
-### [POST] /a/user-meta/bookmarks  
+ 
 Special API for Bookmarks, will load userMeta and the associated nodes, and return
 as a node list  
 

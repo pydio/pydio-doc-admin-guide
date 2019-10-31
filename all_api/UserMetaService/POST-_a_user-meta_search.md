@@ -5,7 +5,7 @@
 
 
 
-### [POST] /a/user-meta/search  
+ 
 Search a list of meta by node Id or by User id and by namespace  
 
 

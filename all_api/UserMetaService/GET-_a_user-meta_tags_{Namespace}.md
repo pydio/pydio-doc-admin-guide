@@ -5,7 +5,7 @@
 
 
 
-### [GET] /a/user-meta/tags/{Namespace}  
+ 
 List Tags for a given namespace  
 
 

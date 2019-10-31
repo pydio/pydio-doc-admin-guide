@@ -5,7 +5,7 @@
 
 
 
-### [POST] /a/share/resources  
+ 
 List Shared Resources for current user or all users  
 
 

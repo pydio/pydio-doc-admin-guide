@@ -5,7 +5,7 @@
 
 
 
-### [GET] /a/graph/relation/{UserId}  
+ 
 Compute relation of context user with another user  
 
 

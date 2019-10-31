@@ -5,7 +5,7 @@
 
 
 
-### [POST] /a/config/encryption/export  
+ 
 Export a master key for backup purpose, protected with a password  
 
 

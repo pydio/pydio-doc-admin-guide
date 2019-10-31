@@ -5,7 +5,7 @@
 
 
 
-### [GET] /a/share/link/{Uuid}  
+ 
 Load a share link with all infos  
 
 

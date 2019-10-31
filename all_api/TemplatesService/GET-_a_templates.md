@@ -5,7 +5,7 @@
 
 
 
-### [GET] /a/templates  
+ 
 List available templates  
 
 

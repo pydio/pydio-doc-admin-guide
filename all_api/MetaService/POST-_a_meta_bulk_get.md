@@ -5,7 +5,7 @@
 
 
 
-### [POST] /a/meta/bulk/get  
+ 
 List meta for a list of nodes, or a full directory using /path/* syntax  
 
 

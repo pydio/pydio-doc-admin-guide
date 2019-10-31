@@ -5,7 +5,7 @@
 
 
 
-### [POST] /a/policy  
+ 
 List all defined security policies  
 
 

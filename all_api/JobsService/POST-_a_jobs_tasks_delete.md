@@ -5,7 +5,7 @@
 
 
 
-### [POST] /a/jobs/tasks/delete  
+ 
 Send a control command to clean tasks on a given job  
 
 

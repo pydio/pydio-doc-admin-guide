@@ -5,7 +5,7 @@
 
 
 
-### [POST] /a/config/encryption/delete  
+ 
 Delete an existing master key  
 
 

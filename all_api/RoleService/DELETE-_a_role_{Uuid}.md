@@ -5,7 +5,7 @@
 
 
 
-### [DELETE] /a/role/{Uuid}  
+ 
 Delete a Role by ID  
 
 

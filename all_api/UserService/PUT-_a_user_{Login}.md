@@ -5,7 +5,7 @@
 
 
 
-### [PUT] /a/user/{Login}  
+ 
 Create or update a user  
 
 

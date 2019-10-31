@@ -5,7 +5,7 @@
 
 
 
-### [GET] /a/frontend/state  
+ 
 Send XML state registry  
 
 

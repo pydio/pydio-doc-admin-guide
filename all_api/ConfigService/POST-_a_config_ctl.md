@@ -5,7 +5,7 @@
 
 
 
-### [POST] /a/config/ctl  
+ 
 [Not Implemented]  Start/Stop a service  
 
 

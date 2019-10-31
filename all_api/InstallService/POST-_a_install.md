@@ -5,7 +5,7 @@
 
 
 
-### [POST] /a/install  
+ 
 Post values to be saved for install  
 
 

@@ -5,7 +5,7 @@
 
 
 
-### [GET] /a/install  
+ 
 Loads default values for install form  
 
 

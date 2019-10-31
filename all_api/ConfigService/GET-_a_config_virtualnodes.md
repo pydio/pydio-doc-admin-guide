@@ -5,7 +5,7 @@
 
 
 
-### [GET] /a/config/virtualnodes  
+ 
 List all defined virtual nodes  
 
 

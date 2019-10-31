@@ -5,7 +5,7 @@
 
 
 
-### [GET] /a/frontend/messages/{Lang}  
+ 
 Serve list of I18n messages  
 
 

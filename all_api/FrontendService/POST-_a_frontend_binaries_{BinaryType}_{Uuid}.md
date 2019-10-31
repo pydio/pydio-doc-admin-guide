@@ -5,7 +5,7 @@
 
 
 
-### [POST] /a/frontend/binaries/{BinaryType}/{Uuid}  
+ 
 Upload frontend binaries (avatars / logos / bg images)  
 
 

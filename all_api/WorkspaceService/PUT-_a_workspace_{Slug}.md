@@ -5,7 +5,7 @@
 
 
 
-### [PUT] /a/workspace/{Slug}  
+ 
 Create or update a workspace  
 
 

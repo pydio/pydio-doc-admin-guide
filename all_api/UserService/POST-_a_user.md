@@ -5,7 +5,7 @@
 
 
 
-### [POST] /a/user  
+ 
 List/Search users  
 
 
