@@ -57,9 +57,10 @@ And set the following fields:
 - **Application name:** name your application
 - **Authorized domains:** add your Pydio Cells instance domain
 - **Application Homepage link:** put your Pydio Cells base url `https://my-cells.com`
-- Hit **save**
+- Hit **Save**
 
 [:image-popup:3_identity_management/sso_with_oauth2/google/google_create_application_3.png]
+
 
 [:image-popup:3_identity_management/sso_with_oauth2/google/google_create_application_4.png]
 
