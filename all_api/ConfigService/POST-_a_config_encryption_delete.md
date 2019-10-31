@@ -13,7 +13,7 @@ Delete an existing master key
 
 Name | Description | Type | Required
 ---|---|---|---
-**KeyID** |  | _string_ |   
+**KeyID** | Id of the key to delete | _string_ |   
 
 
 ### Body Example

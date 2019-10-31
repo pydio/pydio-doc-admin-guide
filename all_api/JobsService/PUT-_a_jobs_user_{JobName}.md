@@ -13,8 +13,8 @@ Create a predefined job to be run directly
 
 Name | Description | Type | Required
 ---|---|---|---
-**JobName** |  | _string_ |   
-**JsonParameters** |  | _string_ |   
+**JobName** | Name of the job to create in the user space | _string_ |   
+**JsonParameters** | Json-encoded parameters for this job | _string_ |   
 
 
 ### Body Example

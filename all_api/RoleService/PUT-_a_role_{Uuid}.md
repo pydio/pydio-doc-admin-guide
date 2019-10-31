@@ -13,16 +13,16 @@ Create or update a Role
 
 Name | Description | Type | Required
 ---|---|---|---
-**AutoApplies** |  | _array_ |   
+**AutoApplies** | List of profiles (standard, shared, admin) on which the role will be automatically applied | _array_ |   
 **ForceOverride** |  | _boolean_ |   
-**GroupRole** |  | _boolean_ |   
-**IsTeam** |  | _boolean_ |   
-**Label** |  | _string_ |   
-**LastUpdated** |  | _integer_ |   
-**Policies** |  | _array_ |   
-**PoliciesContextEditable** |  | _boolean_ |   
-**UserRole** |  | _boolean_ |   
-**Uuid** |  | _string_ |   
+**GroupRole** | Whether this role is attached to a Group object | _boolean_ |   
+**IsTeam** | Whether this role represents a user team or not | _boolean_ |   
+**Label** | Label of this role | _string_ |   
+**LastUpdated** | Last modification date of the role | _integer_ |   
+**Policies** | List of policies for securing this role access | _array_ |   
+**PoliciesContextEditable** | Whether the policies resolve into an editable state | _boolean_ |   
+**UserRole** | Whether this role is attached to a User object | _boolean_ |   
+**Uuid** | Unique identifier of this role | _string_ |   
 
 
 ### Body Example

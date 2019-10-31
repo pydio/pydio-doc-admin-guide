@@ -13,12 +13,12 @@ List meta for a list of nodes, or a full directory using /path/* syntax
 
 Name | Description | Type | Required
 ---|---|---|---
-**AllMetaProviders** |  | _boolean_ |   
-**Limit** |  | _integer_ |   
-**NodePaths** |  | _array_ |   
-**NodeUuids** |  | _array_ |   
-**Offset** |  | _integer_ |   
-**Versions** |  | _boolean_ |   
+**AllMetaProviders** | Whether to query all services for the metadata they can contribute to enrich the node | _boolean_ |   
+**Limit** | Limit number of results | _integer_ |   
+**NodePaths** | List of node paths to query (use paths ending with /* to load the children) | _array_ |   
+**NodeUuids** | List of nodes based on their Uuids | _array_ |   
+**Offset** | Start listing at a given position | _integer_ |   
+**Versions** | Load Versions of the given node | _boolean_ |   
 
 
 ### Body Example

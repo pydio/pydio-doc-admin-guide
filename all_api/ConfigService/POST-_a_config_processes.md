@@ -13,8 +13,8 @@ List running Processes, with option PeerId or ServiceName filter
 
 Name | Description | Type | Required
 ---|---|---|---
-**PeerId** |  | _string_ |   
-**ServiceName** |  | _string_ |   
+**PeerId** | Id of the peer node | _string_ |   
+**ServiceName** | Look for a service name | _string_ |   
 
 
 ### Body Example

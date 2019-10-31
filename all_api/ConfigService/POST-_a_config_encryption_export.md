@@ -13,8 +13,8 @@ Export a master key for backup purpose, protected with a password
 
 Name | Description | Type | Required
 ---|---|---|---
-**KeyID** |  | _string_ |   
-**StrPassword** |  | _string_ |   
+**KeyID** | Id of the key to export | _string_ |   
+**StrPassword** | Associated password as string | _string_ |   
 
 
 ### Body Example

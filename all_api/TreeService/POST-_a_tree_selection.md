@@ -13,9 +13,9 @@ Create a temporary selection for further action (namely download)
 
 Name | Description | Type | Required
 ---|---|---|---
-**Nodes** |  | _array_ |   
-**Persist** |  | _boolean_ |   
-**TargetAction** |  | _string_ |   
+**Nodes** | Create a temporary selection out of this list of nodes | _array_ |   
+**Persist** | Whether to save the selection or just get a temporary Uuid in return | _boolean_ |   
+**TargetAction** | Associated target action for this selection | _string_ |   
 
 
 ### Body Example
@@ -23,39 +23,7 @@ Name | Description | Type | Required
 {
   "Nodes": [
     {
-      "AppearsIn": [
-        {
-          "Path": "string",
-          "WsLabel": "string",
-          "WsUuid": "string"
-        }
-      ],
-      "Commits": [
-        {
-          "Data": "string",
-          "Description": "string",
-          "Event": {
-            "Metadata": {},
-            "Optimistic": true,
-            "Silent": true,
-            "Source": "[Recursive structure]",
-            "Target": "[Recursive structure]",
-            "Type": "string"
-          },
-          "MTime": "string",
-          "OwnerUuid": "string",
-          "Size": "string",
-          "Uuid": "string"
-        }
-      ],
-      "Etag": "string",
-      "MTime": "string",
-      "MetaStore": {},
-      "Mode": 10,
-      "Path": "string",
-      "Size": "string",
-      "Type": "string",
-      "Uuid": "string"
+      "Path": "string"
     }
   ],
   "Persist": true,

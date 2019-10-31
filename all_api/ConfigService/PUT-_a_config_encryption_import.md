@@ -13,9 +13,9 @@ Import a previously exported master key, requires the password created at export
 
 Name | Description | Type | Required
 ---|---|---|---
-**Key** |  | _#/definitions/encryptionKey_ |   
-**Override** |  | _boolean_ |   
-**StrPassword** |  | _string_ |   
+**Key** | Imported key data | _#/definitions/encryptionKey_ |   
+**Override** | Whether to override if a key with same ID already exists | _boolean_ |   
+**StrPassword** | Key password | _string_ |   
 
 
 ### Body Example

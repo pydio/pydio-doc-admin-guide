@@ -13,9 +13,9 @@ Load subscriptions to other users/nodes feeds
 
 Name | Description | Type | Required
 ---|---|---|---
-**ObjectIds** |  | _array_ |   
-**ObjectTypes** |  | _array_ |   
-**UserIds** |  | _array_ |   
+**ObjectIds** | Filter by object Ids | _array_ |   
+**ObjectTypes** | Filter by type of objects | _array_ |   
+**UserIds** | List of UserIds for which we want to list | _array_ |   
 
 
 ### Body Example

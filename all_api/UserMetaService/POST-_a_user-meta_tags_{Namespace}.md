@@ -13,8 +13,8 @@ Add a new value to Tags for a given namespace
 
 Name | Description | Type | Required
 ---|---|---|---
-**Namespace** |  | _string_ |   
-**Tag** |  | _string_ |   
+**Namespace** | Add a tag value for this namespace | _string_ |   
+**Tag** | New tag value | _string_ |   
 
 
 ### Body Example

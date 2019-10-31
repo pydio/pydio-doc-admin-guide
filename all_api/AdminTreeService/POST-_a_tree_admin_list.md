@@ -13,14 +13,14 @@ List files and folders starting at the root (first level lists the datasources)
 
 Name | Description | Type | Required
 ---|---|---|---
-**Ancestors** |  | _boolean_ |   
-**FilterType** |  | _#/definitions/treeNodeType_ |   
-**Limit** |  | _string_ |   
-**Node** |  | _#/definitions/treeNode_ |   
-**Offset** |  | _string_ |   
-**Recursive** |  | _boolean_ |   
-**WithCommits** |  | _boolean_ |   
-**WithVersions** |  | _boolean_ |   
+**Ancestors** | Send back a list of parent nodes, until the root, including the original node | _boolean_ |   
+**FilterType** | Filter by node type (LEAF / COLLECTION) | _#/definitions/treeNodeType_ |   
+**Limit** | Limit the number of results | _string_ |   
+**Node** | Main node used as a parent | _#/definitions/treeNode_ |   
+**Offset** | Start listing at a given position | _string_ |   
+**Recursive** | Send back all children of the node | _boolean_ |   
+**WithCommits** | Sends the list of commits for a given node (not used) | _boolean_ |   
+**WithVersions** | Sends the list of versions for a given node | _boolean_ |   
 
 
 ### Body Example
@@ -30,39 +30,7 @@ Name | Description | Type | Required
   "FilterType": "string",
   "Limit": "string",
   "Node": {
-    "AppearsIn": [
-      {
-        "Path": "string",
-        "WsLabel": "string",
-        "WsUuid": "string"
-      }
-    ],
-    "Commits": [
-      {
-        "Data": "string",
-        "Description": "string",
-        "Event": {
-          "Metadata": {},
-          "Optimistic": true,
-          "Silent": true,
-          "Source": "[Recursive structure]",
-          "Target": "[Recursive structure]",
-          "Type": "string"
-        },
-        "MTime": "string",
-        "OwnerUuid": "string",
-        "Size": "string",
-        "Uuid": "string"
-      }
-    ],
-    "Etag": "string",
-    "MTime": "string",
-    "MetaStore": {},
-    "Mode": 10,
-    "Path": "string",
-    "Size": "string",
-    "Type": "string",
-    "Uuid": "string"
+    "Path": "string"
   },
   "Offset": "string",
   "Recursive": true,
