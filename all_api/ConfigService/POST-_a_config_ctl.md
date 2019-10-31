@@ -1,0 +1,57 @@
+
+
+
+
+
+
+
+### [POST] /a/config/ctl  
+[Not Implemented]  Start/Stop a service  
+
+
+### Body Parameters
+
+Name | Description | Type | Required
+---|---|---|---
+**Command** |  | _#/definitions/ctlServiceCommand_ |   
+**NodeName** |  | _string_ |   
+**ServiceName** |  | _string_ |   
+
+
+### Body Example
+```
+{
+  "Command": "string",
+  "NodeName": "string",
+  "ServiceName": "string"
+}
+```
+
+
+
+
+
+
+### Response Example (200)
+Response Type /definitions/ctlService
+
+```
+{
+  "Controllable": true,
+  "Description": "string",
+  "Name": "string",
+  "RunningPeers": [
+    {
+      "Address": "string",
+      "Id": "string",
+      "Metadata": {},
+      "Port": 10
+    }
+  ],
+  "Status": "string",
+  "Tag": "string",
+  "Version": "string"
+}
+```
+
+
