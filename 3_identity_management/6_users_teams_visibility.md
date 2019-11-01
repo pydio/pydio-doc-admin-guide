@@ -1,5 +1,3 @@
-# TODO
-
 ### Resources policies
 
 Pydio Cells provides an additional layer of collaboration for the end-users: resources like teams, users, but also links and cells, are protected with flexible security rules defining ownership, read and write accesses.
