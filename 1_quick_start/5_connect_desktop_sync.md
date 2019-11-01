@@ -1,6 +1,6 @@
-# Connect Cells Sync dekstop client
+_This Guide will provide you with the basic steps to install, connect your Cells Sync client and synchronize your data_
 
-## Download Cells
+## Download Cells Sync
 
 ## TODO update links for final release
 
