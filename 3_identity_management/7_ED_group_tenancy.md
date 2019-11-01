@@ -1,5 +1,3 @@
-# TODO
-
 Pydio Cells provides an additional layer for visibility management: you can reduce the visibility scope at the _group_ level, meaning that you can choose for instance if users of a group (A) can interact (e.g. see, assign, share with, etc.) with the users of group (B).
 
 ### What is group tenancy
@@ -10,9 +8,14 @@ In the context of Pydio Cells, group tenancy means that users of a group (A) can
 
 [:image-popup:3_identity_management/group_tenancy_root_group_level.png]
 
-- You have enabled this option by going to the admin console in `left menu >> Advanced Settings >> Users Visibility` (Make sure that you have enabled advanced parameters to be shown in the menu list by toggling the `Show advanced parameters button`in the top right corner of the Admin console) and switching on the **Users visible only to their group** toggle - see screenshot below:
+- To enable this option go to the admin console, **Cells Console > Advanced Settings > Users Visibility** ` (Make sure that you have enabled advanced parameters to be shown in the menu list by toggling the `Show advanced parameters button`in the top right corner of the Admin console) and switching on the toggle - see screenshot below:
 
-[:image-popup:3_identity_management/group_tenancy.png]
+You have 2 settings:
+
+[:image-popup:3_identity_management/group_tenancy_menu.png]
+
+- **Users visible only to their group:** will isolate groups.
+- **Hide groups from sharing dialogs:** will add an additional layer by also removing any mention of groups from the sharing fields by toggling.
 
 
 ### For the record
