@@ -1,8 +1,20 @@
 # Connect Cells Sync dekstop client
 
-## TODO
+## Download Cells
 
-Explain how to download / install
+## TODO update links for final release
+
+- [**Windows**](https://download.pydio.com/pub/cells-sync/release/0.9.0/windows-amd64/)
+- [**MacOS**](https://download.pydio.com/pub/cells-sync/release/0.9.0/darwin-amd64/)
+- [**Linux**](https://download.pydio.com/pub/cells-sync/release/0.9.0/linux-amd64/)
+
+> Linux distributions might require additional packages.
+
+## Install
+
+- **Windows** you have an **msi** installer that will guide you.
+- **MacOS** drag and drop the **CellsSync.app** to your **applications** folder.
+- **Linux**
 
 ## Add a Pydio Cells Account
 
@@ -32,4 +44,15 @@ Now that your account is set, let's create a task to synchronize your **personal
 
 - Make sure that the corresponding workspace in your Cells server has **Allow Desktop Sync** enabled.
 - If your server is behind a reverse proxy, refer to the reverse proxy documentation.
-- MacOS users might require additional permissions; **System Preferences > Security & Privacy > Files and Folders or Full Disk Access** and allow access.
+- MacOS users might require additional permissions; **System Preferences > Security & Privacy > Files and Folders** and allow access.
+- Linux Desktop users might require an additional package to display the webview.
+
+## Use cases
+
+## TODO add links to knowledge base
+
+There is a lot of applicable use cases that will be explain in our knowledge base:
+
+- Synchronize - Datasource <-> Datasource
+- Synchronize - Datasource <-> S3 storage
+- Synchronize - Datasource (my-cells.com) <-> Datasource (my-other-cells.com)
