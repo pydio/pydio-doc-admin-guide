@@ -47,12 +47,12 @@ Now that your account is set, let's create a task to synchronize your **personal
 - MacOS users might require additional permissions; **System Preferences > Security & Privacy > Files and Folders** and allow access.
 - Linux Desktop users might require an additional package to display the webview.
 
-## Use cases
+## More Use cases
 
 ## TODO add links to knowledge base
 
-There is a lot of applicable use cases that will be explain in our knowledge base:
+There is a lot of applicable use cases that will be explained in our knowledge base:
 
-- Synchronize - Datasource <-> Datasource
-- Synchronize - Datasource <-> S3 storage
-- Synchronize - Datasource (my-cells.com) <-> Datasource (my-other-cells.com)
+- Synchronize: **Datasource <-> Datasource**
+- Synchronize: **Datasource <-> S3 storage**
+- Synchronize: **Datasource (my-cells.com) <-> Datasource (my-other-cells.com)**
