@@ -19,7 +19,7 @@ When you configure Cells with external connectors, please keep in mind that you 
 
 Both of OIDC and SAML are rely on PKI to encrypt, certify exchanged data. If you are working in test environment without well-known-authority signed certificates, you may prepare a local Certificate Authority Server.
 
-## Exchange of security information 
+## Exchange of security information between cells and other entities
 
 [:image-popup:3_identity_management/connectors/cellsvsidps.png]
 
@@ -36,20 +36,31 @@ A new connector can be added into Cells via admin console or directly in pydio.j
 - The redirect URL - the endpoint which Cells open for request from Identity Server. Usually is "https://cellssaml.pyd.io/auth/dex/callback"
 - Auxiliary infos such as CA file, user attribute names ...
   
-
-# Azure ADFS (OpenID Connect)
-## Register cells application in Azure
+# Examples
+- Pydio Cells with Azure ADFS
+- Pydio Cells with ADFS on-premise server
+- Pydio Cells with SimpleSAMLphp server
+  
+## Azure ADFS (via OpenID Connect)
+### Register cells application in Azure
 Please visit [this article](https://docs.microsoft.com/en-us/graph/auth-register-app-v2) to register new application on azure.
-- The redirect URI (or reply URL) for cells application is usually in format: https://server.cells.domain/auth/dex/callback
+- The redirect URI (or reply URL) for cells application is always in format: https://server.cells.domain/auth/dex/callback
 - You should create a new "client secret" in "Certificates and secrets" of new registed application
-  [image](https://)
+  [:image-popup:3_identity_management/connectors/connector_azure_08.png]
 
 When finished, takes a note on following information:
 - Directory (tenent) ID
 - Client Secret
-- The OpenID Connect metadata document link: "https://login.microsoftonline.com/tenentId/v2.0"
+- The OpenID Connect metadata document ([document link](https://login.microsoftonline.com/tenentId/v2.0)). 
+  
+  In Cells, the metadata url is automatically added ".well-known/openid-confuguration" at the end. It looks like: https://login.micosoftonline.com/[tenant_id]/v2.0
+   [:image-popup:3_identity_management/connectors/connector_azure_07.png]  
 
 ## Add new connector in Cells
+When you finished the registration new app in Azure, go to the admin console of Cells to add a new connector: type "Microsoft"
+  [:image-popup:3_identity_management/connectors/connector_azure_01.png]
+
+  [:image-popup:3_identity_management/connectors/connector_azure_01.png]
 
 # On-premise ADFS (SAML)
 ## Install and configure ADFS service on windows server 2012
@@ -60,16 +71,31 @@ This [link](https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/opera
 
 Registered cells application in Relaying Party Trusts
 
-![image](https://localhost/img.png)
+[:image-popup:3_identity_management/connectors/connector_onpremiseadfs3.png]
 
 Set endpoints of Cells application in Relaying Party Trusts
 
-![image](https://localhost/img.png))
+[:image-popup:3_identity_management/connectors/connector_onpremiseadfs4.png]
 
 ## Add new connector in Cells
 
+[:image-popup:3_identity_management/connectors/connector_onpremiseadfs1.png]
+
+1. *pydio-saml-onpremise-adfs* is connector identity. It's unique string in the list of connector in Cells.
+2. *On-Premise ADFS SAML* the string on login page of Cells to allow user to select connector to authenticate
+3. *https://win.pyd.io/adfs/ls/* the url of adfs server that handle the authentication.
+4. The path to certificate file which is used by ADFS server to sign saml response
+5. The callback url in Cells is always in this format: "https://domain.com/auth/dex/callback
+6. The name of attribute in adfs saml response is longer than normal. They are usually:
+   1. http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname
+   2. http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress
+7. 
+
+[:image-popup:3_identity_management/connectors/connector_onpremiseadfs2.png]
+
+
 # SimpleSAMLphp (idp)
-This is an example of connecting Pydio Cells with an open-source saml server. SimpleSAMLphp is written in native PHP that deals with authentication. The project is led by UNINETT, has a large user base, a helpful user community.
+This is an example of connecting Pydio Cells with an open-source saml server. SimpleSAMLphp is written in native PHP that deals with authentication. For more information, please visit [this link](https://simplesamlphp.org/)
 
 ## Install and configure SimpleSAMLphp server
 
@@ -136,12 +162,5 @@ $metadata['https://cells.lab.py/auth/dex/callback'] = [
 
 ## Add new connector in Cells
 You've done the configuration of a saml server and registered cells with id "https://cells.lab.py/auth/dex/callback". The saml server are able to accept the request comming from you Cells and return back the result of authentication to callback url.
-### 1 The URL of saml server
-The configuration of connectors in Cells is found in Settings >> Authentication.
-Click on "+ CONNECTOR" to add a new connector saml.
 
-[:image-popup:3_identity_management/connectors/simplesaml_connector_01.png]
-
-Parameters:
-*ID*: an unique string to identify the connector in connector list of Cells. It's usually 
-*Name*: 
+[:image-popup:3_identity_management/connectors/connector_simplesaml_01.png]
