@@ -52,7 +52,13 @@ You will be prompted with the basic networking information for Cells to start it
 
 If you are on a desktop machine, installer can open a simple web page where you will feed the database connection information and default administrator user login and passwords. 
 
+GIF AS IMAGE
+
 [:image:1_quick_start/installation/web-installer.gif]
+
+GIF AS IMAGE-POPUP
+
+[:image-popup:1_quick_start/installation/web-installer.gif]
 
 Once it is finished, the server will restart automatically and your good to go.
 
@@ -60,7 +66,7 @@ Once it is finished, the server will restart automatically and your good to go.
 
 If you are working on a remote server, Cells cannot open a local browser and you can simply perform the same steps using command line prompts/answers :
 
-[:image:1_quick_start/installation/demo-install.gif]
+[:image-popup:1_quick_start/installation/demo-install.gif]
 
 One it is finished, you have to relaunch the server using 
 
