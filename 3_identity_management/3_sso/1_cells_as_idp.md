@@ -22,3 +22,7 @@ TODO
 ## Configuring an OIDC Client 
 
 TODO
+
+## Examples
+
+See the API docs
