@@ -1,3 +1,3 @@
-Collaborate on Documents using one of the following software:
+Collaborate on Documents using one of the following software
 
 [:summary]
