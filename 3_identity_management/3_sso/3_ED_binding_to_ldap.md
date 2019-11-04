@@ -1,12 +1,6 @@
 # TODO
 
-_LDAP authentication plugin is one of the most important plugin of the Enterprise Distribution. It enables Cells to be well integrated with existing systems such as a SSO solution._
-
-In Cells, a LDAP server is seen as an external authentication source.  
-You can extract a subset of users from your directory to be imported in Cells, using flexible parameters and configuration options.  
-
-For long-time Pydio users, the mechanism used is quite similar to the one used in legacy Pydio 8 and older.  
-We have yet added an interresting advanced feature: the LDAP module can now be bound to more than one directory server with as many LDAP domains as you want.
+In Cells, a LDAP server is seen as an external authentication source. You can extract a subset of users from your directory to be imported in Cells, using flexible parameters and configuration options. Cells can be bound to more than one directory server with as many LDAP domains as you want.
 
 ## Overview
 

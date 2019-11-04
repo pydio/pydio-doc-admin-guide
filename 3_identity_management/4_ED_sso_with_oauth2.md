@@ -1,6 +1,0 @@
-# TODO
-
-## Text about what it is etc...
-
-
-[LINK TO KNOWLEDGE BASE]() To add, google, github, azure etc... 
