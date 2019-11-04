@@ -11,7 +11,7 @@ Before going into this how-to, it's important to understand the following concep
 
 # Overview
 
-When you configure Cells with external connectors, please keep in mind that you are working in an environment where serveral entities known each other and exchange security information via public network. You must know the role of each entity and the protocol that define the process of exchanging information in a specific order. Although OIDC and SAML are different frameworks, but they are the games of following parties:
+When you configure Cells with external connectors, please keep in mind that you are working in an environment where serveral entities known each other and exchange security information via public network. You must know the role of each entity and the protocol that define the process of exchanging information in a specific order. Although OIDC and SAML are different frameworks, they have following common parties:
 - Users: the owner of data (resource) located at Cells, but the identifing information is located at Identity Provider Server. Before accessing to their resources in Cells, users must identify at Identity Provider Server then authorize Cells to access to resource on behaft.
 - User Agent: the client application/device which users use to connect to Cells. It's can be web browser, sync client application or mobile application.
 - Cells (Resource Server in OIDC, or relaying party in SAML)
