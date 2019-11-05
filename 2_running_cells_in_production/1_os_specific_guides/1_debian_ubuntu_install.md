@@ -84,7 +84,8 @@ FLUSH PRIVILEGES;
 ## Installation and configuration
 
 ```sh
-wget https://download.pydio.com/pub/cells/release/1.6.1/linux-amd64/cells
+# Use this url as is, will be redirected to latest version automatically
+wget https://download.pydio.com/latest/cells/release/{latest}/linux-amd64/cells
 sudo chmod u+x cells
 ```
 

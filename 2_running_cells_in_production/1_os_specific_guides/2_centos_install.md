@@ -83,7 +83,8 @@ su - pydio
 
 ```sh
 # As pydio user
-wget https://download.pydio.com/pub/cells/release/1.6.1/linux-amd64/cells
+# Use this url, will be redirected to latest version automatically
+wget https://download.pydio.com/latest/cells/release/{latest}/linux-amd64/cells
 chmod u+x cells
 ```
 

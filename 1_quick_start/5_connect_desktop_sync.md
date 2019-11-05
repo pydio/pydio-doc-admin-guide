@@ -17,17 +17,17 @@ For Cells Enterprise, Sync is enabled by administrator on a per-workspace basis.
 
 ### Windows
 
-Download the [**CellsSync MSI (TODO)**](https://download.pydio.com/pub/cells-sync/release/0.9.0/windows-amd64/) and execute it on the computer. It will install CellsSync in the application, at the moment it is not launched automatically.
+Download the [CellsSync MSI](https://download.pydio.com/latest/cells-sync/release/{latest}/windows-amd64/CellsSync-{latest}.msi) and execute it on the computer. It will install CellsSync in the application, at the moment it is not launched automatically.
 
 ### MacOSX
 
-Download the [**CellsSync DMG (TODO)]() and execute it. Drag and drop CellsSync in the Applications folder, then launch it. The very first launch will alert about the file coming from the internet, in some cases you may have to launch it again after approving this alert.
+Download the [CellsSync DMG](https://download.pydio.com/latest/cells-sync/release/{latest}/darwin-amd64/CellsSync-{latest}.dmg) and execute it. Drag and drop CellsSync in the Applications folder, then launch it. The very first launch will alert about the file coming from the internet, in some cases you may have to launch it again after approving this alert.
 
 Depending on your security config, MacOS might require additional permissions; **System Preferences > Security & Privacy > Files and Folders** and allow access.
 
 ### Linux
 
-There is currently no installer for Linux, just download the [**CellsSync Binary (TODO)**]() and run it with `./cells-sync start` command.
+There is currently no installer for Linux, just download the [CellsSync Binary](https://download.pydio.com/latest/cells-sync/release/{latest}/linux-amd64/cells-sync) and run it with `./cells-sync start` command.
 
 Depending on distributions, the UX components might require additional packages (TODO).
 

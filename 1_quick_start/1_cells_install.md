@@ -21,9 +21,11 @@ You must have an available MySQL database, along with a privileged user (e.g. `p
 
 Download the cells binary corresponding to your architecture using one of the following links: 
 
-- [Linux Amd64](https://download.pydio.com/pub/cells/release/2.0.0/linux-amd64/)
-- [Mac OSX](https://download.pydio.com/pub/cells/release/2.0.0/darwin-amd64/)
-- [Windows (64bits)](https://download.pydio.com/pub/cells/release/2.0.0/windows-amd64/)
+- [Linux Amd64](https://download.pydio.com/latest/cells/release/{latest}/linux-amd64/cells)
+- [Mac OSX](https://download.pydio.com/latest/cells/release/{latest}/darwin-amd64/cells)
+- [Windows (64bits)](https://download.pydio.com/latest/cells/release/{latest}/windows-amd64/cells.exe)
+
+For cells enterprise, use these links : [Linux Amd64](https://download.pydio.com/latest/cells-enterprise/release/{latest}/linux-amd64/cells-enterprise), [Mac OSX](https://download.pydio.com/latest/cells-enterprise/release/{latest}/darwin-amd64/cells-enterprise), [Windows (64bits)](https://download.pydio.com/latest/cells-enterprise/release/{latest}/windows-amd64/cells-enterprise.exe), and replace `cells` by `cells-enterprise` in all the following commands.
 
 On Linux/MacOSX, make sure to make the binary executable using `chmod +x cells`. Create a dedicated user on the server for the installing and running cells. On Linux, if you wish to start server on ports 80 (http) or 443 (https), you have to grant a proper permission : 
 ```

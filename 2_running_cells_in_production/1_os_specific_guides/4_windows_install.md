@@ -9,7 +9,7 @@ _This guide describes the steps required to have Pydio Cells running on Windows_
 
 ### Install Cells
 
-Download the Pydio Cells executable [Download Server](https://download.pydio.com/pub/cells/release/2.0.0-rc1/windows-amd64/).
+Download the Pydio Cells executable [Download Server](https://download.pydio.com/latest/cells/release/{latest}/windows-amd64/cells.exe).
 
 Open your terminal (powershell by default on windows) then proceed to install with the following command :
 
