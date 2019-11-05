@@ -1,4 +1,4 @@
-## Disclaimers
+**[Disclaimers]**
 
 Providing CellsSync to your users can be an efficient way to help them keep their files offline on their desktop computer. 
 

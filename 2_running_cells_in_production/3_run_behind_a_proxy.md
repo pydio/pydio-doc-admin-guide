@@ -1,19 +1,23 @@
-### Run Pydio Cells behind a reverse proxy
-
 Proxies are one of the most common way to secure your webservers: it hides the IP of your App server, it can provides TLS encryption for the client/server communication (https) and much more.
+
+For basic usage (Web UX, REST API's, Mobile Applications), a simple HTTP proxy should be fairly easy to set up. However, care must be taken on the Cells `External URL` configuration which will probably differ (your outside world access) from the `Bind URL` configuration (the IP where the Cells server listens to).
+
+If you are using CellsSync, a specific gRPC API is exposed which is relying on HTTP/2 protocol. Your proxy will have to support this protocol (see section below).
+
+### Tutorials
 
 In our knowledge base we have a growing number of comprehensive guides to setup various proxies with Cells:
 
-- [reverse proxy with **Apache2**](/en/docs/kb/devops/running-cells-behind-apache-reverse-proxy)
-- [reverse proxy with **Caddy**](/en/docs/kb/devops/running-cells-behind-caddy-reverse-proxy)
-- [reverse proxy with **Nginx**](/en/docs/kb/devops/running-cells-behind-nginx-reverse-proxy)
-
-### Docker 
-- [reverse proxy a **Docker** instance](/en/docs/kb/devops/running-your-cells-docker-container-behind-reverse-proxy)
-- [**Traefik**](/en/docs/kb/devops/running-your-cells-docker-behind-traefik-reverse-proxy)
+- [Running Cells behind **Apache2** proxy](/en/docs/kb/devops/running-cells-behind-apache-reverse-proxy)
+- [Reverse proxy with **Caddy**](/en/docs/kb/devops/running-cells-behind-caddy-reverse-proxy)
+- [Reverse proxy with **Nginx**](/en/docs/kb/devops/running-cells-behind-nginx-reverse-proxy)
 
 
-### gRPC gateway requirements
+- [Reverse proxy with a **Docker** instance](/en/docs/kb/devops/running-your-cells-docker-container-behind-reverse-proxy)
+- [Docker and **Traefik**](/en/docs/kb/devops/running-your-cells-docker-behind-traefik-reverse-proxy)
+
+
+### Note: gRPC gateway requirements
 
 For best performances and real-time events, **CellsSync** communicates with the server using a gRPC connection. gRPC is an **HTTP/2** protocol, which implies that **HTTP/2 must be enabled on the bind address facing the outside world**.
 

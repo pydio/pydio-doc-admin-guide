@@ -1,4 +1,6 @@
-## Web UI
+Cells binary is self-contained and can be easily updated / upgraded using either the in-app tool, the command-line, or by simply downloading a new binary and replacing the existing one. All necessary migrations will be performed on version-change detection. Downgrading is not possible though, as downward migrations are generally not implemented.
+
+## In-App Tool
 
 ### Update Pydio Cells to the latest version
 
@@ -28,7 +30,7 @@ Click on **Upgrade to Cells Enterprise**:
   setcap 'cap_net_bind_service=+ep' cells
 ```
 
-## Command line interface
+## Command Line
 
 ### Update Pydio Cells to the latest version
 

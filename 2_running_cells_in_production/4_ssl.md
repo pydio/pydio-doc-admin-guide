@@ -1,25 +1,53 @@
-The Pydio Cells installer has an automated way of adding a valid SSL certificate making use of the embeded webserver [**Caddy**](https://caddyserver.com) which has an implementation with [**Let's Encrypt**](https://letsencrypt.org/).
+Cells embeded web server provides multiple ways for enabling TLS support. This is highly recommanded to make sure all communications are encrypted between the client applications and the server (HTTPS).
 
-## Adding SSL pre Installation
+TLS configuration can be performed at installation time, and you can easily change it later by using the `cells config proxy tls` command.
 
-- **Choose SSL Activation mode**:
-  - **Provide paths to certificate/key files**: if you already have a certificate/key, you can use them.
-  - **Use Let's Encrypt**: this option is based on the built-in caddy feature to create and manage certificate using the [Let's Encrypt CA](https://letsencrypt.org/). Beware that if you use this option:
-    - your DNS must be correctly configured and the your domain name should point to the correct IP.
-    - the user that owns the `cells` process (and thus the underlying caddy server) must have sufficient permission on the `.caddy/` configuration folder.
-    _Warning: if you launch the app with an invalid configuration, you might have your DNS temporary black listed on Let's encrypt due to failing multiple retries to get your certificate_.  
-  - **Generate a self signed certificate**: will generate a self signed certificate using the [mkcert](https://github.com/FiloSottile/mkcert) tool, the certificate is stored under `~/.config/pydio/cells/certs`.
+```
+$ ./cells config proxy tls
+Use the arrow keys to navigate: ↓ ↑ → ← 
+? Choose TLS activation mode. Please note that you should enable SSL even behind a reverse proxy, as HTTP2 'TLS => Clear' is generally not supported: 
+  ▸ Provide paths to certificate/key files
+    Use Let's Encrypt to automagically generate certificate during installation process
+    Generate your own locally trusted certificate (for staging env or if you are behind a reverse proxy)
+    Disable TLS (staging environments only, never recommended!)
+```
 
-## Adding SSL post Installation
+## Supported Modes
 
-## Change certificate with the Cells binary
+### Custom certificate
 
-[:image-popup:2_running_cells_in_production/cells_cli_ssl_mod.png]
+You can provide a path on the server pointing to your existing Certificate/Key files (PEM format).
 
-You can change at any time your SSL mod with the Cells binary, run the following command:
+**Adding CAs**   
+If your certificate relies on a third-party Certificate Authority, you have to manually append the CA PEM content to your certificate PEM file.
 
-- Make sure that your Cells is stopped (meaning service too)
-- `./cells config ssl mode`
+### Lets Encrypt
 
-Once it's done restart your cells Instance.
-  
+Let's Encrypt is an open initiative to make the web safer. It provides free and secure certificates for any domains in an automated way. When switching to this mode, you will have to provide an email address and accept the Let's Encrypt EULA. 
+
+**Important notes**
+
+ - Your DNS must be correctly configured and the your domain name should point to the correct IP.
+ - The user that owns the `cells` process (and thus the underlying caddy server) must have sufficient permission on the `$USER_HOME/.caddy/` folder.
+ - If you launch the app with an invalid configuration, you might have your DNS temporary black listed on Let's encrypt due to failing multiple retries to get your certificate.  
+
+### Generating a Self-Signed certificate
+
+Using this mode, you can easily let Cells generate a cert/key pair and use it to secure connections. This certificate is not recognized by a third-party authority, so it will be displayed as untrusted in a web-browser. 
+
+However, it is a very good solution if you are behind a reverse-proxy to still enable TLS between the proxy and the server. This is in fact recommanded if you want to use CellsSync with a Proxy as most proxy will only forward TLS-secured connections to TLS-secured upstream servers.
+
+**About the RootCA**
+
+When enabling self-signed mode, Cells will create (or use) a local RootCA and store it in `${CELLS_WORKING_DIR}/certs`. This CA can possibly be installed on a reverse-proxy machine to validate connection.
+
+Also, for development, if you want your browser to "turn green" (see the certificate as a valid one), you may install this rootCA in your system trust store. Do that easily: 
+ 
+ - Install [mkcert](https://github.com/FiloSottile/mkcert) tool
+ - Export the CAROOT environment variable with value `CAROOT={$CELLS_HOME_USER_DIR}/.config/pydio/cells/certs`
+ - Run `mkcert -install`
+ - Relaunch your browser .
+ 
+ ### Disabling TLS
+ 
+ You can finally fully disable TLS and let Cells serve connections over HTTP. This is not recommended but is good enough for testing or development. In that case, just beware that the gRPC gateway (required for CellsSync) will be exposed on a separate port that must be opened in the firewall, if any.
