@@ -8,7 +8,7 @@ Click on **Enable Public Links** to enable them.
 
 You should now see these new fields:
 
-[:image-popup:2_getting_started/public_link.png]
+[:image:1_quick_start/sharing_features/public_link.png]
 
 - **Link Label**: the label of your link; you have a menu displaying all your public links. It is easier recognize them with a label)
 - **Link Description**: It is automatically filled with the creation date. You can also add a short description.
@@ -29,16 +29,16 @@ End-users can create their own, flexible Cells : combining files and folders fro
 
 When using the "Create Cell" button from the left-hand panel, the following menu is displayed:
 
-[:image-popup:2_getting_started/create_cell_1.png]
+[:image:1_quick_start/sharing_features/create_cell_1.png]
 
 - **Title**: the name for the cell.
 - **Description**: add a short description of your cell to inform users about the topic.
 
-[:image-popup:2_getting_started/create_cell_2.png]
+[:image:1_quick_start/sharing_features/create_cell_2.png]
 
 - **Users/groups**: Pick a single or multiple groups/users that will have access to this cell. You can also choose how they can interact within it.
 
-[:image-popup:2_getting_started/create_cell_3.png]
+[:image:1_quick_start/sharing_features/create_cell_3.png]
 
 - **Add an existing Folder**: Pick an existing folder from any of your current workspaces, to feed the Cell with data. You can also leave the cell empty and a dedicated folder will be created on the underlying storage.
 
@@ -48,7 +48,7 @@ Click on **Create Cell Now!** to finish the process.
 
 When using the **Share** action (either in right-click menu or in the information column), one can directly add a folder or a file to an existing cell, or create a new cell with the current folder.
 
-[:image-popup:2_getting_started/create_cell_4.png]
+[:image:1_quick_start/sharing_features/create_cell_4.png]
 
 ### Creating Cells from Address Book
 
