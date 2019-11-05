@@ -1,6 +1,4 @@
-# TODO
-
-### Role is the central concept
+### Role as a central concept
 
 #### Roles
 
