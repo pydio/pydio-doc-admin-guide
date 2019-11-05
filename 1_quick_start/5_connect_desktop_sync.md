@@ -1,58 +1,47 @@
-_This Guide will provide you with the basic steps to install, connect your Cells Sync client and synchronize your data_
+## Disclaimers
 
-## Download Cells Sync
+Providing CellsSync to your users can be an efficient way to help them keep their files offline on their desktop computer. 
 
-## TODO update links for final release
+However, please be aware of the following:  
 
-- [**Windows**](https://download.pydio.com/pub/cells-sync/release/0.9.0/windows-amd64/)
-- [**MacOS**](https://download.pydio.com/pub/cells-sync/release/0.9.0/darwin-amd64/)
-- [**Linux**](https://download.pydio.com/pub/cells-sync/release/0.9.0/linux-amd64/)
+ - CellsSync is still in testing phase. We are getting a lot of positive feedbacks but it may not yet be 100% bullet-proof! Make sure to always backup your data on a regular basis.
+ - Whatever the sync client, having many users connected on the same folder can eventually lead to conflicts, that users may have to solve manually. We recommend allowing users to sync only their Personal workspace as a starting point.
+ 
+## Server Pre-requisites
 
-> Linux distributions might require additional packages.
+Please beware that many users syncing high amount of files can severy load the server, your installation must be prepared for that! Also, if you are behind a reverse proxy, you may check the dedicated section to learn more about gRPC handling through reverse proxies.
 
-## Install
+For Cells Enterprise, Sync is enabled by administrator on a per-workspace basis. By default, only `Personal` workspace is sync-enabled. If you wish to enable other workspaces, you have to switch the `Allow Desktop Sync` flag in each of them.
 
-- **Windows** you have an **msi** installer that will guide you.
-- **MacOS** drag and drop the **CellsSync.app** to your **applications** folder.
-- **Linux**
+## Installing CellsSync
 
-## Add a Pydio Cells Account
+### Windows
 
-In order to be able to synchronize data, you must configure the connection from your Cells Sync Client to your Cells server with a valid account.
+Download the [**CellsSync MSI (TODO)**](https://download.pydio.com/pub/cells-sync/release/0.9.0/windows-amd64/) and execute it on the computer. It will install CellsSync in the application, at the moment it is not launched automatically.
 
-- Start your Cells Sync go to **Accounts > Add Account**,
-- Type the URL of your Pydio Cells, for instance `https://cells.example.com`,
-- A new tab in your default browser (as defined in your OS) opens and invites you to connect to your Cells server,
-- Type your credentials and press **Enter**,
-- You are then redirected back to your **Cells Sync Client**.
+### MacOSX
 
-[:image-popup:1_quick_start/sync-account.gif]
+Download the [**CellsSync DMG (TODO)]() and execute it. Drag and drop CellsSync in the Applications folder, then launch it. The very first launch will alert about the file coming from the internet, in some cases you may have to launch it again after approving this alert.
 
-## Create a task to sync a Workspace with a local folder
+Depending on your security config, MacOS might require additional permissions; **System Preferences > Security & Privacy > Files and Folders** and allow access.
 
-Now that your account is set, let's create a task to synchronize your **personal-files** space on your server to a **local folder** of your choice.
+### Linux
+
+There is currently no installer for Linux, just download the [**CellsSync Binary (TODO)**]() and run it with `./cells-sync start` command.
+
+Depending on distributions, the UX components might require additional packages (TODO).
+
+## Configuring CellsSync
+
+In order to be able to synchronize data, you must configure the connection from your CellsSync Client to your Cells server with a valid account. Let's create a task to synchronize your **personal-files** space on your server to a **local folder** of your choice.
 
 - Go to the menu **Tasks > Create Task**.
-- In the **Cells Account** section click and choose the correct connection.
-- Then choose a path on the `path` field on its right.
-- In our current example, we choose **Personal Files** (blue checkmark on its left, when selected) and then click on **Select**.
-- In  **Your Computer** section, select the local path where you want the data to be stored.
+- Choose `new server` : type the URL of your Pydio Cells, for instance `https://cells.example.com`
+- A new tab in your default browser (as defined in your OS) will open and invite you to connect to your Cells server
+- Once logged it, you will be redirected back to your CellsSync Client. The server must now be available in the **Cells Account** selector. 
+- Select the server then choose a path on the `path` field on its right.
+- In our current example, we choose **Personal Files** and then click on **Select**.
+- In **Your Computer** section, select the local path where you want the data to be stored.
+- Click Save : the task should be created and start syncing.
 
-[:image-popup:1_quick_start/sync-create-task.gif]
-
-## Notes
-
-- Make sure that the corresponding workspace in your Cells server has **Allow Desktop Sync** enabled.
-- If your server is behind a reverse proxy, refer to the reverse proxy documentation.
-- MacOS users might require additional permissions; **System Preferences > Security & Privacy > Files and Folders** and allow access.
-- Linux Desktop users might require an additional package to display the webview.
-
-## More Use cases
-
-## TODO add links to knowledge base
-
-There is a lot of applicable use cases that will be explained in our knowledge base:
-
-- Synchronize: **Datasource <-> Datasource**
-- Synchronize: **Datasource <-> S3 storage**
-- Synchronize: **Datasource (my-cells.com) <-> Datasource (my-other-cells.com)**
+[:image:1_quick_start/sync-create-task.gif]
