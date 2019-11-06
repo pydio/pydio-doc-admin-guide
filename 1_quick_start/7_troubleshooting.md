@@ -52,6 +52,16 @@ sudo setcap 'cap_net_bind_service=+ep' cells
 
 If you wish to use the 0.0.0.0 address you must respect this rule, cells_bind has to be exactly like this `cells_bind=0.0.0.0:<port>` and `cells_external=<domain name,address>:<port>`, the *port* is mandatory in both otherwise you will have a grey screen stuck in the loading
 
+### Hydra Error after install
+
+On first start or just after the installation terminated, you get such an error:
+
+```sh
+ [0002] Could not ensure that signing keys for "hydra.openid.id-token" exists. This can happen if you forget to run "hydra migrate sql", set the wrong "secrets.system" or forget to set "secrets.system" entirely.  error="cipher: message authentication failed"
+```
+
+It usually means you have performed another install without correctly cleaning the DB.
+
 ### Unable to log in
 
 _After a re-install, when trying to login, you get a `could not load session store: securecookie: the value is not valid` error_.
