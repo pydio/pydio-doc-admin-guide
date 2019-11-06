@@ -8,7 +8,7 @@ With the Enterprise Edition there are 3 additional options that will allow you t
 * Change the Application Name
 * Change the Footer (Usually copyrights)
 
-[:image-popup:6_advanced/mailer_template_edition_example.png]
+[:image:6_advanced/mailer_template_edition_example.png]
 
 _Refer to the numbers on the screenshot for the list below_
 
