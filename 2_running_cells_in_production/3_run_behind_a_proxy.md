@@ -11,10 +11,9 @@ In our knowledge base we have a growing number of comprehensive guides to setup 
 - [Running Cells behind **Apache2** proxy](/en/docs/kb/devops/running-cells-behind-apache-reverse-proxy)
 - [Reverse proxy with **Caddy**](/en/docs/kb/devops/running-cells-behind-caddy-reverse-proxy)
 - [Reverse proxy with **Nginx**](/en/docs/kb/devops/running-cells-behind-nginx-reverse-proxy)
-
-
-- [Reverse proxy with a **Docker** instance](/en/docs/kb/devops/running-your-cells-docker-container-behind-reverse-proxy)
 - [Docker and **Traefik**](/en/docs/kb/devops/running-your-cells-docker-behind-traefik-reverse-proxy)
+- [Reverse proxy with a Apache your **Docker** instance](/en/docs/kb/devops/running-your-cells-docker-container-behind-reverse-proxy)
+
 
 
 ### Note: gRPC gateway requirements

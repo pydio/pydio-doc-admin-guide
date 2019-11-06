@@ -4,6 +4,7 @@ TLS configuration can be performed at installation time, and you can easily chan
 
 ```
 $ ./cells config proxy tls
+
 Use the arrow keys to navigate: ↓ ↑ → ← 
 ? Choose TLS activation mode. Please note that you should enable SSL even behind a reverse proxy, as HTTP2 'TLS => Clear' is generally not supported: 
   ▸ Provide paths to certificate/key files
