@@ -1,6 +1,6 @@
 _This guide describes the steps required to have Pydio Cells running on a CentOs/RHEL 7 server._
 
-[:image-popup:2_running_cells_in_production/logos-os/logo-centos.png]
+[:image:2_running_cells_in_production/logos-os/logo-centos.png]
 
 ## Prerequisites
 
@@ -83,7 +83,8 @@ su - pydio
 
 ```sh
 # As pydio user
-wget https://download.pydio.com/pub/cells/release/1.6.1/linux-amd64/cells
+# Use this url, will be redirected to latest version automatically
+wget https://download.pydio.com/latest/cells/release/{latest}/linux-amd64/cells
 chmod u+x cells
 ```
 

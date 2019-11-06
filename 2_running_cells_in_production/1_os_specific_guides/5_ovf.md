@@ -1,16 +1,12 @@
 _This guide describes the steps required to have the Pydio Cells running via an OVF disk image._
 
-[:image-popup:2_running_cells_in_production/logos-os/logo-ovf.png]
+[:image:2_running_cells_in_production/logos-os/logo-ovf.png]
 
 ## Download OVF Package
 
-The OVH image can be downloaded from:
+The latest OVF image can be [Downlaoded Here](https://download.pydio.com/latest/cells-enterprise/release/{latest}/ovf/Cells-Enterprise-OVF-{latest}.zip).
 
-```sh
-https://download.pydio.com/pub/cells-enterprise/release/VERSION/ovf/Cells-Enterprise-OVF-VERSION.zip
-```
-
-where "VERSION" is the release version of Pydio Cells. Get for example: [https://download.pydio.com/pub/cells-enterprise/release/1.6.1/ovf/Cells-Enterprise-OVF-1.6.1.zip](https://download.pydio.com/pub/cells-enterprise/release/1.6.1/ovf/Cells-Enterprise-OVF-1.6.1.zip). An md5 file is also available on the same location for integrity verification.
+An md5 file is also available on the same location for integrity verification.
 
 This Zip archive contains the OVF itself plus the following files:
 
@@ -49,10 +45,13 @@ At this step, you can login to Cells-Enterprise with credential you have entered
 
 If you ever need to log into the VM system, SSH accounts and technical accounts are created as follow:
 
-- Administrative user: *root* / *PydioVAPP* (ssh access)
-- User: *pydio* / *PydioVAPP* (ssh access)
-- MySQL username: *root* / No password
-- MySQL username: *pydio@localhost* / No password
+| user                | username        | password    |
+| ------------------- | --------------- | ----------- |
+| administrative user | root            | PydioVAPP   |
+| user                | pydio           | PydioVAPP   |
+| MySQL root user     | root            | no password |
+| MySQL user          | pydio@localhost | no password |
+
 
 The predefined database created in MySQL is *cells*
 

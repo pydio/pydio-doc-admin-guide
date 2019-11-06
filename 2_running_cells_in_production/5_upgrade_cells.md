@@ -1,4 +1,6 @@
-## Web UI
+Cells binary is self-contained and can be easily updated / upgraded using either the in-app tool, the command-line, or by simply downloading a new binary and replacing the existing one. All necessary migrations will be performed on version-change detection. Downgrading is not possible though, as downward migrations are generally not implemented.
+
+## In-App Tool
 
 ### Update Pydio Cells to the latest version
 
@@ -17,25 +19,25 @@
 
 Click on **Upgrade to Cells Enterprise**:
 
-- a menu will appear, proceed by clicking on **start**.
-- you must accept the terms of the license (check box at the bottom).
-- you are now invited to provide your License Key.
-- press **install now**.
-- make sure if you are using port 80 or 443 on linux to `setcap` your binary (command below)
+- A menu will appear, proceed by clicking on **start**.
+- You must accept the terms of the license (check box at the bottom).
+- You are now invited to provide your License Key.
+- Press **install now**.
+- Make sure if you are using port 80 or 443 on linux to `setcap` your binary (command below)
 
 
 ```sh
   setcap 'cap_net_bind_service=+ep' cells
 ```
 
-## Command line interface
+## Command Line
 
 ### Update Pydio Cells to the latest version
 
 - Run the command `./cells update`.
 - Identitfy the latest version number available (for instance 1.6.2).
-- to update run `./cells update --version=1.6.2`.
-- Make sure to run if you are under linux and are using port 80/443 `setcap 'cap_net_bind_service=+ep' cells`.
+- To update run `./cells update --version=1.6.2`.
+- Make sure if you are under linux and are using port 80/443 to set the capabilities with `setcap 'cap_net_bind_service=+ep' cells`.
 - Restart Cells.
 
 ### Upgrade Pydio Cells Home to Pydio Cells Enterprise
@@ -48,10 +50,10 @@ Click on **Upgrade to Cells Enterprise**:
 
 ## Notes
 
-After Updating always make sure to set the capabilities if you are running on a linux server
+After Updating always make sure to set the capabilities if you are running on a linux server.
 
 ```sh
   setcap 'cap_net_bind_service=+ep' cells
 ```
 
-After upgrading to Enterprise, make sure that you have the license file, located in `~/.config/pydio/cells/pydio-license`
+After upgrading to Enterprise, make sure that you have the license file, located in `~/.config/pydio/cells/pydio-license`.

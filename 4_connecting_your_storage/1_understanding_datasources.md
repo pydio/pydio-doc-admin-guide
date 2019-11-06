@@ -16,7 +16,7 @@ Each datasource is virtually composed 3 micro-services :
 - An **Index service**: Stores the data state. It stands as the only source of truth for request on data state. This uses a highly optimized SQL model for storing/retrieving hierarchical data information (using nested sets).
 - A **Synchronizer**: Receives events from the storage and maintains the index synchronized.
 
-[:image-popup:4_connecting_your_datasource/datasources.png]
+[:image-popup:4_connecting_your_storage/datasources.png]
 
 The unidirectional synchronizer is key here:  
 when a change is applied to the storage (e.g. a user uploads an image), the sync only receives an event _after this operation has finished_. It then updates the index accordingly. The same event is also forwarded to other services like the websocket service (for updating user interface), the scheduler (for computing image thumbnail), and so on.

@@ -4,7 +4,7 @@ This connector allows using a remote S3-compliant storage as datasource for Pydi
 
 Under the hood, an object service is started in Gateway mode using the Api KEY/SECRET that you will provide.
 
-[:image-popup:4_connecting_your_datasource/datasource_config/s3_ds_interface.png]
+[:image-popup:4_connecting_your_storage/datasource_config/s3_ds_interface.png]
 
 - **Bucket name**: the name of the bucket on the remote storage where the data will be stored.
 - **S3 Api Key**: the API key (can be seen as a login) that identifies you.
@@ -25,7 +25,7 @@ To connect your datasource to your S3 bucket you need to authenticate the S3 sto
   
 you can get them on your amazon aws account, here is a piece of documentation from the amazon doc that will point you to the right place, [https://aws.amazon.com/blogs/security/wheres-my-secret-access-key/](https://aws.amazon.com/blogs/security/wheres-my-secret-access-key/).
 
-[:image-popup:4_connecting_your_datasource/datasource_config/s3_credentials.png]
+[:image-popup:4_connecting_your_storage/datasource_config/s3_credentials.png]
 
 then once you have all of the informations and assuming that you have already created your bucket, these are the mandatory fields to get your datasource to work:
 
