@@ -1,11 +1,23 @@
-Single Sign On (SSO) is the most important part of a cloud-oriented application. By splitting the authentication from the logic of application and linking to a dedicated third-party service for identification, users can use unique credentials to access to many applications, without these application ever knowing about these credentials.  
+## Single Sign On (SSO)
 
-Cells has the ability to work as an Identity Provider for third party. Additionally, Cells Enterprise has the ability to work as both as an Identity Provider and a Service Provider consuming authentication from third-party services using the *OIDC* and *SAML2.0* protocols. Furthermore, Cells Enterprise provides a simple way to connect one or many external LDAP or Active Directory servers.
+### What is it ?
 
-Before going further, the following documents may be a good read to properly understand the underlying concepts:
+Single Sign-On is a service that allows a user to use one login session to access multiple applications.
 
-- OpenID Connect (https://openid.net/connect/)
-- OAuth 2.0 Authorization Framework (https://tools.ietf.org/html/rfc6749)
+### What it means in Pydio Cells ?
 
+Pydio Cells can be used as an [Identity Provider](./2_sso/1_cells_as_idp). In other words, any application can use the login session from Pydio Cells to validate access to a user and use its data.
+
+### What it means in Pydio Cells Enterprise ?
+
+On top of that, Pydio Cells Enterprise can integrate with multiple [External Identity Providers](./2_sso/2_ED_sso_with_idp). It automatically creates access for users from third-party services (commercial or on-premise) and understands multiple protocols (*OIDC*, *SAML2.0*, ...).
+
+Furthermore, Cells Enterprise provides a simple way to connect one or many external [LDAP or Active Directory](./2_sso/2_ED_binding_to_ldap) servers.
 
 [:summary]
+
+--------------------------------------------------------------------------------------------------------
+_See Also_
+
+- [OpenID Connect](https://openid.net/connect/)
+- [OAuth 2.0 Authorization Framework](https://tools.ietf.org/html/rfc6749)
