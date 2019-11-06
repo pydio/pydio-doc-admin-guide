@@ -1,8 +1,8 @@
 
 _This guide describes the steps required to have Pydio Cells running on Debian and Ubuntu_.
 
-[:image-popup:2_running_cells_in_production/logos-os/logo-debian.png]
-[:image-popup:2_running_cells_in_production/logos-os/logo-ubuntu.png]
+[:image:2_running_cells_in_production/logos-os/logo-debian.png]
+[:image:2_running_cells_in_production/logos-os/logo-ubuntu.png]
 
 ## Requirements
 

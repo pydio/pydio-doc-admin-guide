@@ -1,6 +1,6 @@
 _This guide describes the steps required to have Pydio Cells running on a CentOs/RHEL 7 server._
 
-[:image-popup:2_running_cells_in_production/logos-os/logo-centos.png]
+[:image:2_running_cells_in_production/logos-os/logo-centos.png]
 
 ## Prerequisites
 
