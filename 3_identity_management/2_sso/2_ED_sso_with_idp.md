@@ -32,6 +32,7 @@ Connectors can be added in Cells via the Cells Console > Authentication menu. Pa
 
 ------
 _See Also_
+
 - [OpenID Connect](https://openid.net/connect/)
 - [OAuth 2.0 Authorization Framework](https://tools.ietf.org/html/rfc6749)
 - [Security Assertion Markup Language (SAML)](http://docs.oasis-open.org/security/saml/Post2.0/sstc-saml-tech-overview-2.0-cd-02.html)
