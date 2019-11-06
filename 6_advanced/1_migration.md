@@ -1,5 +1,3 @@
-# How-to: Migrate Pydio 8 Enterprise to Cells Enterprise
-
 This HowTo describes the migration from Pydio8 to Pydio Cells ED step by step.
 
 ## Preparation
