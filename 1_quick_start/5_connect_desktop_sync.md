@@ -5,7 +5,7 @@ Providing CellsSync to your users can be an efficient way to help them keep thei
 However, please be aware of the following:  
 
  - CellsSync is still in testing phase. We are getting a lot of positive feedbacks but it may not yet be 100% bullet-proof! Make sure to always backup your data on a regular basis.
- - Whatever the sync client, having many users connected on the same folder can eventually lead to conflicts, that users may have to solve manually. We recommend allowing users to sync only their Personal workspace as a starting point.
+ - Whenever the sync client, has many users connected on the same folder this can eventually lead to conflicts, those users may have to solve the conflicts manually. We recommend allowing users to sync only their Personal workspace as a starting point.
  
 ## Server Pre-requisites
 
@@ -29,7 +29,7 @@ Depending on your security config, MacOS might require additional permissions; *
 
 There is currently no installer for Linux, just download the [CellsSync Binary](https://download.pydio.com/latest/cells-sync/release/{latest}/linux-amd64/cells-sync) and run it with `./cells-sync start` command.
 
-Depending on distributions, the UX components might require additional packages (TODO).
+Depending on distributions, the UX components might require additional packages, such as `sudo apt install libappindicator3-1`.
 
 ## Configuring CellsSync
 
