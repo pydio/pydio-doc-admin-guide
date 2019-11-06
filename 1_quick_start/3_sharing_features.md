@@ -52,7 +52,7 @@ When using the **Share** action (either in right-click menu or in the informatio
 
 ### Creating Cells from Address Book
 
-When browsing the Adress Book in the right-hand column, clicking on the vertical dots for a user opens providing the following options:
+When browsing the Address Book in the right-hand column, clicking on the vertical dots for a user opens providing the following options:
 
 - **Create a cell with this user**
 - **Add user to current Cell**: if you are currently inside a Cell

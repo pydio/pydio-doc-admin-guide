@@ -22,7 +22,7 @@ docker run -d -p 8080:8080 pydio/cells
 
 You can now access the Pydio Cells installer at [https://localhost:8080](https://localhost:8080). A complete example can be found in the docker-compose section of this guide.
 
-If you want to access your container from outside you must then change atleast the `CELLS_EXTERNAL` and also (it's recommended) to have persisting data you need to have a volume (you can sort it with multiple volumes if you wish, but for our example we are going to store everyting into a single folder).
+If you want to access your container from outside you must then change at least the `CELLS_EXTERNAL` and also (it's recommended) to have persisting data you need to have a volume (you can sort it with multiple volumes if you wish, but for our example we are going to store everything into a single folder).
 
 Here's an example of a command that runs a cells container with persistent data and external access:
 
