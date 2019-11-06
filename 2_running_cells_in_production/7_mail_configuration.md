@@ -6,10 +6,10 @@ In this chapter, we have a look at the mailing system integrated to Pydio Cells 
 
 To configure the mailer, go to **Application Parameters > Mailers**:
 
-| Field                      | Description                                                                                                                                                |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Default From Email address | put the email that you're going to use                                                                                                                     |
-| Mailer engine              | What type of engine you're going to use to send the mails you will have 3 choices we are going to explain all of them and show you a configuration sample. |
+| Field                               | Description                                                                                                                                                |
+| ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Default From Email address          | Put the email that you're going to use as sender address for notifications and as default (see below).                                                     |
+| From/Sender address and name to use | Select how the address and display name is choosen. This setting controls how the envelope from address and the from mail and sender mail headers are set. |
 
 Depending on the engine you have chosen, you see one of the following form:
 
