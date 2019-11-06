@@ -57,7 +57,6 @@ If you wish to use the 0.0.0.0 address you must respect this rule, cells_bind ha
 _After a re-install, when trying to login, you get a `could not load session store: securecookie: the value is not valid` error_.
 
 This is bound to the part of the session mechanism that resides in the browser, on client side.
-
 To solve the issue, get rid of all cookie for this site and refresh the page.
 
 ## Cells Sync
@@ -73,6 +72,15 @@ Make sure that your workspaces are syncable (enable settings in workspace menu)
 ### Unable to create or list folder on local system
 
 - Macos users might require permissions, **System Preferences > Security & Privacy > Files and Folders** and allow access.
+
+### Missing package (LINUX)
+
+- If you are getting this error (on Gnome):
+
+```sh
+./cells-sync: error while loading shared libraries: libappindicator3.so.1: cannot open shared object file: No such file or directory
+```
+- Then install `sudo apt install libappindicator3-1`
 
 ## Still stuck?
 
