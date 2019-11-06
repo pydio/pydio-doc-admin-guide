@@ -2,7 +2,7 @@ You can add external Identity Provider to Pydio Cells Enterprise. Users will cho
 
 ## Involved Parties
 
-When configuring Cells with external providers, please keep in mind that you are working in an environment where serveral entities must know each other and exchange security information via public network. You must know the role of each entity and the protocol required to exchange information in a specific order. Although OIDC and SAML are different frameworks, they have following common parties:
+When configuring Cells with external providers, please keep in mind that you are working in an environment where several entities must know each other and exchange security information via public network. You must know the role of each entity and the protocol required to exchange information in a specific order. Although OIDC and SAML are different frameworks, they have following common parties:
 
 - **Users**: the owner of the Cells data (_resource_), whose identification information is owned by the external Identity Provider. Before accessing their resources in Cells, users must identify with the Identity Provider then authorize Cells to access the resource on their behalf.
 - **User Agent**: the client application/device used by users to connect to Cells. It can be a web browser, sync client application or mobile application.

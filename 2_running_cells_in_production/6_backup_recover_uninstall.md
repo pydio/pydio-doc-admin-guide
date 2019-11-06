@@ -18,13 +18,13 @@ So create a backup of this folder, for instance:
 # If possible, it is always to stop Cells before doing the backup
 systemctl stop cells
 
-# Using rsync, first time will be longer and then we will only incrementaly add and/or remove new files
+# Using rsync, first time will be longer and then we will only incrementally add and/or remove new files
 rsync -avr --delete /home/pydio/.config/pydio/cells/ /home/pydio/backups/cells
 ```
 
 **WARNING**: proceed with extra care with rsync when using the `--delete` flag:  
 inverting source and target folders will wipe everything in the source folders...  
-So be carefull to really use: `rsync -avr --delete <source folder> <target folder>`
+So be careful to really use: `rsync -avr --delete <source folder> <target folder>`
 
 **Notes**:
 
@@ -45,7 +45,7 @@ All _file based_  datasources are defined by 4 things:
 
 You can find [more details about datasources here](https://pydio.com/en/docs/developer-guide/data).
 
-To backup such a datasource, we must at least backup configuration (see preceeding paragraph) and the files.
+To backup such a datasource, we must at least backup configuration (see preceding paragraph) and the files.
 The index and the content of the `.minio.sys` folder can be automatically restored after data restoration by running a resync from the admin interface.
 You can yet safely include this folder in your backups (and it is even better).
 
@@ -54,15 +54,15 @@ You can yet safely include this folder in your backups (and it is even better).
 This is the beauty and main advantage of using a S3 backend for your datasources: this system is fully decoupled from your Pydio Cells instance.
 You should be able to directly manage your backup policies via your S3 provider manager interface.
 
-The configuration of this datasource is stored in the main `cells` folder (see above) and is backuped and restored together with your main system.
+The configuration of this datasource is stored in the main `cells` folder (see above) and is backed up and restored together with your main system.
 
-Note the Enterprise distribution offers 2 more datasource types (Google Cloud and Azure Blob storage) that are to be backuped the same way.
+Note the Enterprise distribution offers 2 more datasource types (Google Cloud and Azure Blob storage) that are to be backed up the same way.
 
 ### Backup the database
 
 In a vanilla single node instance, you configure a database connection at install time, usually the `cells` db. In such case, you only need to backup (and restore) this single database.
 
-To perform a backup, you can use default mysql tool that is usually installed with your DB softaware.  
+To perform a backup, you can use default mysql tool that is usually installed with your DB software.  
 Typically on Linux:
 
 ```sh
@@ -72,7 +72,7 @@ mysqldump -u pydio -p cells > /home/pydio/backups/cells_sqldump_$(date -u +%Y-%m
 where:
 
 - `-u <user>`: defines the user to be used
-- `-p` prompts you for the mysql passowrd
+- `-p` prompts you for the mysql password
 - `cells`: your database name
 - `> /home/pydio/backups/cells_sqldump_$(date -u +%Y-%m-%d).sql`tells the tool where to store resulting data.
 
@@ -87,19 +87,19 @@ If you followed the above step, restoring the data is quite easy:
 - Restore the `cells` parent folder (under e.g. `/home/pydio/.config/pydio/cells` on Linux or `~/Library/Application\ Support/Pydio/cells` on MacOS)
 - Restore the database from your sql backup file: make sure to create an empty `cells` with correct owner and use the following command:
   `mysql -u pydio -p cells < /home/pydio/backups/cells_sqldump_<relevant_date>.sql`
-- Optionnaly restore the folders of any additional external filesystem datasources
+- Optionally restore the folders of any additional external filesystem datasources
 
 #### Post restoration and before launching the app
 
 If you recover on another server or if some of the configuration like database, URLs, IP addresses have changed, you must double check in the `pydio.json` configuration file that can be found at the root of the `cells` folder and adapt the values to the new one, typically:
 
 - if hostname as changed, change `.defaults.urlInternal` property, you might also want to check `.PeerAdress` property of the various DS
-- if public URL has changed, you have to change all occurences of it (currently 4 in v1.4 and newer)
+- if public URL has changed, you have to change all occurrences of it (currently 4 in v1.4 and newer)
 - if DB configuration has changed: adapt `.databases.dsn` property
 
 You can then retrieve the relevant Pydio Cells binary and simply relaunch the app.
 
-You should connect as an `admin` user after first restart and check that all datasources are correctly up and running, and optionnaly also rerun a sync if you where not able to correctly backup and restore the index and parent `.minio.sys` folder.
+You should connect as an `admin` user after first restart and check that all datasources are correctly up and running, and optionally also rerun a sync if you where not able to correctly backup and restore the index and parent `.minio.sys` folder.
 
 ## Clean uninstallation
 

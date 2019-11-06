@@ -33,7 +33,7 @@ For your convenience, we display (in the VM console you can access via virtual b
 
 > Note: A self-signed certificate is used, ignore the warning message on your web browser.
 
-You just follow steps in web interface to finalize the configuration. All parameters are set by default except admin's password.
+You just follow steps in web interface to finalize the configuration. All parameters are set by default except admins password.
 
 You see installation progress in your browser page. It takes several minute to reach the end.
 
@@ -60,7 +60,7 @@ The predefined database created in MySQL is *cells*
 ### Use of well known port
 
 In order for Cells to be able to use well known 80 & 443 port, you have to give specific permission to the binary files.
-The OVF you have downloaded is correctly configured and embedded cells binay these permission set. Yet if you ever need to update the binary file, typically that is what happens under the hood when you perform an update via the Admin settings page, you have to re-apply these permission on the new binary file:
+The OVF you have downloaded is correctly configured and embedded cells binary these permission set. Yet if you ever need to update the binary file, typically that is what happens under the hood when you perform an update via the Admin settings page, you have to re-apply these permission on the new binary file:
 
 ```sh
 # log as root via ssh into the machine

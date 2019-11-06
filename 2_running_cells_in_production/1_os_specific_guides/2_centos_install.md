@@ -120,7 +120,7 @@ Once the installation as finished, you might have to stop and restart the applic
 ./cells start
 ```
 
-Note that is not the prefered way to [run Pydio Cells in a production context](/en/docs/cells/v1/running-cells-production).
+Note that is not the preferred way to [run Pydio Cells in a production context](/en/docs/cells/v1/running-cells-production).
 
 ## Troubleshooting
 

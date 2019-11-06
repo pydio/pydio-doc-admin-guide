@@ -2,7 +2,7 @@ Metadata is a feature that enables the end-user to attach any kind of informatio
 
 Metadata namespaces are predefined by the Admin and their value can be freely added by the end-user. Typically, a good example of predefined metadata is the ability given by the admin to the end user to _rate_ a file or a folder. Another widely used example is the _comments_ feature.
 
-Metadata can be used to enrich files informations. They are visible in the right panel that appear when a file is selected. 
+Metadata can be used to enrich files information. They are visible in the right panel that appear when a file is selected. 
 
 [:image-popup:4_connecting_your_storage/file_list_right_panel.png]
 
@@ -12,12 +12,12 @@ In the admin left panel menu click the option metadata in the "Data management" 
 
 ### Basic Namespaces Parameters
 
-| Fields    | Descrption                                                                                     |
+| Fields    | Description                                                                                    |
 | --------- | ---------------------------------------------------------------------------------------------- |
-| **Name**  | The name of the metada with no space.                                                          |
+| **Name**  | The name of the metadata with no space.                                                        |
 | **Label** | The name of the metadata as it appears in the interface.                                       |
 | **Order** | The position number of the appearance                                                          |
-| **Type**  | **Text**, **Long text**, **Starts rate**, **Extensible tags**, **Selection**, **Color Lables** |
+| **Type**  | **Text**, **Long text**, **Starts rate**, **Extensible tags**, **Selection**, **Color Labels** |
 
 Metadata type are various here are some example of use case.
 
@@ -32,9 +32,9 @@ Metadata type are various here are some example of use case.
 
 ### Visibility Restrictions
 
-In addition of enriching file info, metadata are use in may others part of Cells like the search engine, the security policies, the tasks scheduling and many other features. When defining a metadata the admin can choose  whether or not it is visible or editable by other everyone. The options help adjusting metada restrictions:
+In addition of enriching file info, metadata are use in may others part of Cells like the search engine, the security policies, the tasks scheduling and many other features. When defining a metadata the admin can choose  whether or not it is visible or editable by other everyone. The options help adjusting metadata restrictions:
 
-| Fields                            | Descrption                                           |
+| Fields                            | Description                                          |
 | --------------------------------- | ---------------------------------------------------- |
 | **Index in search engine**        | When enabled adds set the metadata as search option. |
 | **Restrict visibility to admins** | When enabled only admins users are able to see it    |

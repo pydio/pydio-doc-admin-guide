@@ -41,9 +41,6 @@ _This was only an example on how you can run a Cells container, you can find bel
 
 Pydio Cells requires a MySQL or MariaDB database. It is recommended to use a separate database and a dedicated user with access to that database. A complete example can be found in the docker-compose section of this guide.
 
-_Be advised if you pull the latest mysql image it will be MySQL 8 which has a new authentication method and which is for the moment not compatible (it's on our roadmap)_.
-_We recommand that you pull MySQL version 5.7 for the time being_
-
 #### Persistent data
 
 All default configuration and data (`/root/.config` on the container) is saved in an unnamed volume.
@@ -67,7 +64,7 @@ Note: If you [add new datasources](https://pydio.com/fr/docs/cells/v1/managing-d
 Let's say:
 
 - You have a server with an internet facing IP and a corresponding DNS A entry that points toward `files.example.com`
-- You want to run the appliction in self signed mode on port 8080 (remember the default value of CELLS_NO_SSL=0)
+- You want to run the application in self signed mode on port 8080 (remember the default value of CELLS_NO_SSL=0)
 
 ### Example setup with docker compose
 

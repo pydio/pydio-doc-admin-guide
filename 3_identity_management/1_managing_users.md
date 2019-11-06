@@ -20,7 +20,7 @@ Once created, editing a user will provide you full control about a user informat
    * _shared_ : a restricted profile applied automatically to external users created by standard users
    * _admin_ : a super user with access to the Cells Console and most of the internal resources.
 - **Name** : a human-friendly label for this user (editable by the user)
-- **Email** : email adress to receive notifications and invitations (editable by the user)
+- **Email** : email address to receive notifications and invitations (editable by the user)
 - **Language** : default language for showing the interface (editable by the user)
 - **Maximum Shared Users** : an optional limit for the number of shared users this user is allowed to create.
 
@@ -29,7 +29,7 @@ This screens also gives you access to useful actions :
 [:image:3_identity_management/users-actions.png]
 
 - **Change Password** : manually reset the user password
-- **Lock out / Reactivate** : instantly disconnect the user from all clients, or reactivate its access if it has been automatically locked out after too many failed login attemps. This `unlock` operation can also be done using the command line.
+- **Lock out / Reactivate** : instantly disconnect the user from all clients, or reactivate its access if it has been automatically locked out after too many failed login attempts. This `unlock` operation can also be done using the command line.
 - **Force Password Change** : if switched on, at the next connection, the user will be presented with a password change dialog and cannot login until she updates her password.
 
 The other Tabs of the user editor are used to manage the users permissions (see the Access Controls chapter to learn more). Finally, the profile can be used to filter the users list, and _shared_ and _admin_ users are highlighted by a special icon in this list.

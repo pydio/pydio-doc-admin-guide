@@ -2,7 +2,7 @@
 
 Pydio Cells provides an additional layer of collaboration for the end-users: resources like teams, users, but also links and cells, are protected with flexible security rules defining ownership, read and write accesses.
 
-These policies are using the same approach as security policies, with a "Deny By Default" behaviour and a possible set of rules that can be applied to any resources, with users, roles or groups as "Subjects".
+These policies are using the same approach as security policies, with a "Deny By Default" behavior and a possible set of rules that can be applied to any resources, with users, roles or groups as "Subjects".
 
 Concretely, this means that when a user creates a shared user in her Address Book, she can defines how this new object will be "seen" by other people, and eventually let other people edit this object as well.
 
@@ -34,7 +34,7 @@ If User A wishes to share this user with all users of a team XX that she previou
 
 
 
-Again, this behaviour can be applied in a similar manner to Teams, Cells and Links. We may expand this to Roles and Groups in a near future.
+Again, this behavior can be applied in a similar manner to Teams, Cells and Links. We may expand this to Roles and Groups in a near future.
 
 ### User Interface
 

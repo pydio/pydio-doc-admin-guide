@@ -21,7 +21,7 @@ Each datasource is virtually composed 3 micro-services :
 The unidirectional synchronizer is key here:  
 when a change is applied to the storage (e.g. a user uploads an image), the sync only receives an event _after this operation has finished_. It then updates the index accordingly. The same event is also forwarded to other services like the websocket service (for updating user interface), the scheduler (for computing image thumbnail), and so on.
 
-One interresting point of design: when declaring a new data source with local file system storage type, e.g. on a folder **folder-name** on the server, the corresponding object service (a minio server) is started pointing to the **parent** folder. It exposes the folder **folder-name** as an S3 bucket.  
+One interesting point of design: when declaring a new data source with local file system storage type, e.g. on a folder **folder-name** on the server, the corresponding object service (a minio server) is started pointing to the **parent** folder. It exposes the folder **folder-name** as an S3 bucket.  
 For this reason, if more than one datasource point to sibling folders, a factorization mechanism starts only _one_ Object storage on the parent folder and exposes all the children as s3 buckets.  
 That's why we say that datasources are _virtually_ composed of 3 sub-services.
 

@@ -21,7 +21,7 @@ Then there are 3 different tabs:
 
 ## Sharing with Cells
 
-The Cells concept will be familiar to modern workers used to collaborating on _"channels"_ within popular group-chat applications. Cells can be shared internally or externally to the organisation, with users able to add new individuals and groups to the Cell. In-app, instant messaging within each Cell, provides a focused channel for group communication around the theme.
+The Cells concept will be familiar to modern workers used to collaborating on _"channels"_ within popular group-chat applications. Cells can be shared internally or externally to the organization, with users able to add new individuals and groups to the Cell. In-app, instant messaging within each Cell, provides a focused channel for group communication around the theme.
 
 End-users can create their own, flexible Cells : combining files and folders from any location, or picking users from their address book.
 

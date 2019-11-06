@@ -19,7 +19,7 @@ When talking of _resources_ in the context of _Security Policies_, it can be:
 To gain a deeper understanding of the model, the reader will find these links valuable:
 
 - [IAM Policies - AWS Identity and Access Management](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html): learn all about AWS Identity and Access Management (IAM) policies and how they work.
-- The Github [Ladon](https://github.com/ory/ladon) page: Ladon is the SDK for access control policies that is used uner the hood.
+- The Github [Ladon](https://github.com/ory/ladon) page: Ladon is the SDK for access control policies that is used under the hood.
 
 ## How do Security Policies work?
 
@@ -37,11 +37,11 @@ These policies are used to dynamically provide read/write access to workspaces o
 
 ### REST Resources
 
-These policies are protecting the REST APIs on a per-uri / per-method basis. They grant basic access to some specific APIs for public discovery, and a restriction access to many APIs to make sure they are accessed only by frontend application. You should generallynot touch these unless you know exactly what you do.
+These policies are protecting the REST APIs on a per-uri / per-method basis. They grant basic access to some specific APIs for public discovery, and a restriction access to many APIs to make sure they are accessed only by frontend application. You should generally not touch these unless you know exactly what you do.
 
 ### OpenId Connect Resources
 
-OpenId Connect Service is used for authentication of the user, before any access to the APIs. As such, you can totally disable the login operation for a set of users based on the requests context, e.g. disable loging from a given set of IP or at a given time.
+OpenId Connect Service is used for authentication of the user, before any access to the APIs. As such, you can totally disable the login operation for a set of users based on the requests context, e.g. disable logging from a given set of IP or at a given time.
 
 ## [ED] Defining a security policy
 
@@ -76,7 +76,7 @@ As already explained, Security Policies in Pydio Cells are built upon the [Ladon
 
 Ladon comes with a few built-in conditions that are well explained in their [main README page](https://github.com/ory/ladon#conditions).
 
-For instance one of the simplest condidion is the `StringMatchCondition` that simply returns `true` if the passed string matches a given pattern. For instance:
+For instance one of the simplest condition is the `StringMatchCondition` that simply returns `true` if the passed string matches a given pattern. For instance:
 
 ```json
 {

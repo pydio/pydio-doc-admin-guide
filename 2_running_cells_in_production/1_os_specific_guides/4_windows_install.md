@@ -33,7 +33,7 @@ There is also multiple ways to add SSL to your installation:
 - **LETS_ENCRYPT :** automagically generates a valid certificate for a domain ([see lets encrypt site](https://letsencrypt.org/))
 - **Provide your own certificate :** pass your already generated certificates.
 
-provide your database informations and you are good to go.
+provide your database information and you are good to go.
 
 Once the installation is done the folder containing your data and settings is located under %APPDATA%.
 

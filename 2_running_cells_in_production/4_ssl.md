@@ -1,4 +1,4 @@
-Cells embeded web server provides multiple ways for enabling TLS support. This is highly recommanded to make sure all communications are encrypted between the client applications and the server (HTTPS).
+Cells embedded web server provides multiple ways for enabling TLS support. This is highly recommended to make sure all communications are encrypted between the client applications and the server (HTTPS).
 
 TLS configuration can be performed at installation time, and you can easily change it later by using the `cells config proxy tls` command.
 
@@ -36,7 +36,7 @@ Let's Encrypt is an open initiative to make the web safer. It provides free and 
 
 Using this mode, you can easily let Cells generate a cert/key pair and use it to secure connections. This certificate is not recognized by a third-party authority, so it will be displayed as untrusted in a web-browser. 
 
-However, it is a very good solution if you are behind a reverse-proxy to still enable TLS between the proxy and the server. This is in fact recommanded if you want to use CellsSync with a Proxy as most proxy will only forward TLS-secured connections to TLS-secured upstream servers.
+However, it is a very good solution if you are behind a reverse-proxy to still enable TLS between the proxy and the server. This is in fact recommended if you want to use CellsSync with a Proxy as most proxy will only forward TLS-secured connections to TLS-secured upstream servers.
 
 **About the RootCA**
 

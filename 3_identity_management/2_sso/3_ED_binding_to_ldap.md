@@ -2,13 +2,13 @@ In Cells, a LDAP server is seen as an external authentication source. You can ex
 
 ## Overview
 
-Generally speaking, the integration is achieved using a Master/Slave model, where your LDAP is the master. Any modification done in your LDAP will overwrite the corresponding value in Cells during the next synchronisation.
+Generally speaking, the integration is achieved using a Master/Slave model, where your LDAP is the master. Any modification done in your LDAP will overwrite the corresponding value in Cells during the next synchronization.
 
 As a consequence, we strongly advise that you configure your user interface to prevent the end-user from manually modifying any attribute that is mapped to an existing LDAP attribute.  
 Typically you should remove the `My Account` button from the various menu for LDAP defined users.  
 See last paragraph of this section for more info on this.
 
-The synchronisation happens regularly (time and frequence are defined for each connection) and is in fact managed by the scheduler: the configuration seen below only creates a new job in the scheduler.  
+The synchronization happens regularly (time and frequency are defined for each connection) and is in fact managed by the scheduler: the configuration seen below only creates a new job in the scheduler.  
 It is then possible to get more info about the synchronisation and to trigger it manually:
 
 - Go to `Cells Console >> Backend >> Scheduler`
@@ -66,7 +66,7 @@ If you do not specify any port, default port `389` is used.
 
 #### 2) Connection Type
 
-With this option, you define the type of connection you use. It is not recommanded to use an unsecure connection if you are not in a secured private LAN.
+With this option, you define the type of connection you use. It is not recommended to use an unsecured connection if you are not in a secured private LAN.
 
 #### 3) Binding DN
 

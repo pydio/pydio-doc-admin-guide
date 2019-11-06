@@ -12,7 +12,7 @@ Roles can be created manually by an Administrator, and then applied to any users
 
 #### Groups
 
-Groups are a convenient way to organise users hierarchicaly. A group is defined by its path, for instance `/management/directors` and can be nested under another group. The unique identifier of a group is the last part of its path.
+Groups are a convenient way to organize users hierarchically. A group is defined by its path, for instance `/management/directors` and can be nested under another group. The unique identifier of a group is the last part of its path.
 
 When installing the application, a single default group is present: the `root` group that as a specific `/` path. The `root` group is the ancestor of all users and groups.
 
@@ -22,7 +22,7 @@ When installing the application, a single default group is present: the `root` g
 
 A user represent a single person or entity. The user provides the authentication within the system. 
 
-A user can only be part of one group and is characterised by her login and the path of her group: typically:  `/management/director/jane`
+A user can only be part of one group and is characterized by her login and the path of her group: typically:  `/management/director/jane`
 
 The main properties of a user are her `username` (the login she uses to connect to the system) and a technical Unique ID (that is a `String UUID`). A user can also be enriched with metadata, like various information (name, photo...), and the user Login is used in the activities and audit logs.
 
@@ -62,7 +62,7 @@ Access Control Lists allows the Administrator to actually apply the strategies d
 
 #### Static Accesses
 
-The basic operation to assign right goes throught the "Read" / "Write" / "Deny" checkboxes. The first two will grant corresponding privilege to the currently edited object. The "Deny" operation is used to override a right that would have been applied by a role higher in the chain.
+The basic operation to assign right goes through the "Read" / "Write" / "Deny" checkboxes. The first two will grant corresponding privilege to the currently edited object. The "Deny" operation is used to override a right that would have been applied by a role higher in the chain.
 
 When editing ACLs, we recommend sticking to the Workspace level of granularity, to make your security model more maintainable. In some cases, you may require to directly assign rights at a folder level. For that you can use the "+" button next to the workspace name to list the workspace children and assign rights accordingly.
 

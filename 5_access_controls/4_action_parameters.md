@@ -38,6 +38,6 @@ The choices are multiple and it is up to you to customize it.
 
 #### Parameters
 
-With **Parameters**, you can control the parameters affecting one workspace or many workspaces at once and overide them, for instance you can ovride the default quotas of the workspace and more.
+With **Parameters**, you can control the parameters affecting one workspace or many workspaces at once and override them, for instance you can override the default quotas of the workspace and more.
 
 There is lots of parameters and customization available you can put specific values or on the other hand enable/disable them.
