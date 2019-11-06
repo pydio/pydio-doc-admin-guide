@@ -52,3 +52,8 @@ Now:
 2. Put the focus on the **Test your Key** field and press once on your Yubikey.
 3. Click on test, to verify that the informations are correct.
 4. You can now save.
+   
+
+### Troubleshooting
+
+If a user has lost any access due to loosing the authenticator you can disable the setting by making an API call to the server.
