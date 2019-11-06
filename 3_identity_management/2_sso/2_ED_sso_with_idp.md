@@ -43,8 +43,8 @@ Connectors can be added in Cells via the Cells Console > Authentication menu. Pa
   
 In the Knowledge-base, you can find specific examples for the following Identity Providers :   
   
-- [Google LINK TODO]() (OIDC)
-- [Github LINK TODO]() (OIDC)
-- [Azure ADFS LINK TODO]() (OIDC)
-- [ADFS on-premise server LINK TODO]() (SAML)
-- [SimpleSAML LINK TODO]() PHP server (SAML)
+- [Google LINK TODO](/en/docs/kb/identity-management/using-google-identity-provider) (OIDC)
+- [Github LINK TODO](/en/docs/kb/identity-management/using-github-identity-provider) (OIDC)
+- [Azure ADFS LINK TODO](/en/docs/kb/identity-management/using-azure-adfs-identity-provider)
+- [ADFS on-premise server LINK TODO](/en/docs/kb/identity-management/using-premise-adfs-server-identity-provider)
+- [SimpleSAML LINK TODO](/en/docs/kb/identity-management/using-simplesaml-php-server-identity-provider) PHP server (SAML)
