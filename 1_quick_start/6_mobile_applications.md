@@ -1,9 +1,11 @@
-# TODO
+_*_This post provides you with the updated links to the Mobile Applications, the Cells mobile app allows you to browse and upload data to your Cells Instance._
 
-## Pydio IOS
+## Cells on IOS
 
-[:image-popup:1_quick_start/mobile_applications/ios/cells_ios_add_server_0.png]
+Download the Application on the [App Store](https://apps.apple.com/fr/app/pydio/id1109419882?l=en).
 
-[:image-popup:1_quick_start/mobile_applications/ios/cells_ios_add_server_1.png]
+## Cells on Android
 
-[:image-popup:1_quick_start/mobile_applications/ios/cells_ios_ui.png]
+Visit and download the application on the [Google Play store](https://play.google.com/store/apps/details?id=com.pydio.android.Client&hl=en).
+
+Once the application you can log to your Cells server with your credentials.
