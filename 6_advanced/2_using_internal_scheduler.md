@@ -7,11 +7,11 @@ For instance, you might want to configure a task to clear the recycle bin every 
 
 The main interface looks like this:
 
-[:image-popup:5_advanced/scheduler_interface.png]
+[:image-popup:6_advanced/scheduler_interface.png]
 
-Label | Owner | Trigger | Last Execution | Status
---- | --- | --- | --- | ---
-Human friendly name of the task (usually its goal) | Who launched the task ( for system jobs it's usually the system user) | Type of the trigger: manual, on-event or periodic | Last time it ran | Current status (in the figure above, all tasks were done)
+| Label                                              | Owner                                                                 | Trigger                                           | Last Execution   | Status                                                    |
+| -------------------------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------- | ---------------- | --------------------------------------------------------- |
+| Human friendly name of the task (usually its goal) | Who launched the task ( for system jobs it's usually the system user) | Type of the trigger: manual, on-event or periodic | Last time it ran | Current status (in the figure above, all tasks were done) |
 
 ### System jobs
 
@@ -20,7 +20,7 @@ They mainly make sure that your Pydio Cells instance is running healthily. You d
 
 As seen in this screenshot (we took the sync DataSource pydiods1 job) :
 
-[:image-popup:5_advanced/scheduler_example.png]
+[:image-popup:6_advanced/scheduler_example.png]
 
 You can:
 
