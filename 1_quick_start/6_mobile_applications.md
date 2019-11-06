@@ -1,4 +1,4 @@
-_*_This post provides you with the updated links to the Mobile Applications, the Cells mobile app allows you to browse and upload data to your Cells Instance._
+_This post provides you with the updated links to the Mobile Applications, the Cells mobile app allows you to browse and upload data to your Cells Instance._
 
 ## Cells on IOS
 
