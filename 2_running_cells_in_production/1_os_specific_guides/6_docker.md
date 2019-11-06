@@ -8,6 +8,12 @@ The [Pydio cells image](https://hub.docker.com/r/pydio/cells/) is designed to be
 
 In order to have a fully working Pydio Cells environment, you need to run a database (MySQL or MariaDB) on the same network. A basic setup is described on this page.
 
+| env variable   | value                   | example          |
+| -------------- | ----------------------- | ---------------- |
+| CELLS_BIND     | host:port               | localhost:80     |
+| CELLS_EXTERNAL | http(s)://url-to-access | http://localhost |
+| CELLS_NO_TLS   | 1 = noTLS, 0 = TLS      | 0 or 1           |
+
 #### Run the container
 
 ```sh
@@ -54,14 +60,14 @@ Note: If you [add new datasources](https://pydio.com/fr/docs/cells/v1/managing-d
 
 #### Environment variable
 
-- `CELLS_NO_SSL`: uses ssl or not (default to 0 => uses ssl)
+- `CELLS_NO_TLS`: uses ssl or not (default to 0 => uses ssl)
 - `CELLS_BIND` : address where the application http server is bound to. It MUST contain a server name and a port.
 - `CELLS_EXTERNAL` : url the end user will use to connect to the application.
 
-**If you wish to use the 0.0.0.0 address you must respect this rule, cells_bind must have this form `cells_bind=0.0.0.0:<port>` and `cells_external=<domain name,address>:<port>` the port is mandatory in both otherwise you will have a grey screen stuck in the loading**
+Let's say:
 
-Example:
-If you want your application to run on the localhost at port 8080 and use the url mycells.mypydio.com, then set CELLS_BIND to localhost:8080 and CELLS_EXTERNAL to mycells.mypydio.com
+- You have a server with an internet facing IP and a corresponding DNS A entry that points toward `files.example.com`
+- You want to run the appliction in self signed mode on port 8080 (remember the default value of CELLS_NO_SSL=0)
 
 ### Example setup with docker compose
 
@@ -69,16 +75,16 @@ If you want your application to run on the localhost at port 8080 and use the ur
 version: '3'
 services:
 
-    # Cells image with two named volumes for the static and for the data
     cells:
         image: pydio/cells:latest
         restart: always
-        volumes: ["static:/root/.config/pydio/cells/static/pydio", "data:/root/.config/pydio/cells/data"]
         ports: ["8080:8080"]
         environment:
-            - CELLS_BIND=localhost:8080
-            - CELLS_EXTERNAL=localhost:8080
-            - CELLS_NO_SSL=1
+            - CELLS_BIND=files.example.com:8080
+            - CELLS_EXTERNAL=https://files.example.com:8080
+       volumes: 
+            - "cellsdir:/var/cells"
+            - "data:/var/cells/data"
 
     # MySQL image with a default database cells and a dedicated user pydio
     mysql:
@@ -90,11 +96,13 @@ services:
              MYSQL_USER: pydio
              MYSQL_PASSWORD: P@ssw0rd
          command: [mysqld, --character-set-server=utf8mb4, --collation-server=utf8mb4_unicode_ci]
-         ports: ["3306:3306"]
+         volumes:
+             - "mysqldir:/var/lib/mysql"
 
 volumes:
-    static: {}
     data: {}
+    cellsdir: {}
+    mysqldir: {}
 ```
 
 ### Public access
