@@ -4,6 +4,8 @@ Now that your Cells is up-and-running, you are in control of your data! This sec
 
 Connect to Cells as admin and go to `Cells Console > People` menu. 
 
+[:image-popup:1_quick_start/yourdata/cells_menu.png]
+
 [:image-popup:1_quick_start/yourdata/01-people.png]
 
 Here you can create users and organize them into groups. By default, your data is organized in two Workspaces: "Personal" and "Common Files". The first one is a dedicated "home folder" that you can open to any users: each user will only see their own data inside the Personal workspace. The latter is a shared folder where every one can work on the same files.
