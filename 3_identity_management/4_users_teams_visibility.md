@@ -32,6 +32,8 @@ If User A wishes to share this user with all users of a team XX that she previou
 | -------- | ---------------- | ------ | ------ | ----------------------------------------------- |
 | User.B   | role:TeamXRoleId | read   | allow  | let users with role TeamXRoleId see this user B |
 
+
+
 Again, this behaviour can be applied in a similar manner to Teams, Cells and Links. We may expand this to Roles and Groups in a near future.
 
 ### User Interface
@@ -40,7 +42,7 @@ Of course, these rules are not "written" manually by end-users, but we provide a
 
 #### Users and Teams
 
-Visibility can be set up by end-users via their Address Book.
+Visibility can be set up by end-users via their **Address Book**.
 
 For users :
 
