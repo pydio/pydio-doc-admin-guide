@@ -44,4 +44,4 @@ In order to be able to synchronize data, you must configure the connection from 
 - In **Your Computer** section, select the local path where you want the data to be stored.
 - Click Save : the task should be created and start syncing.
 
-[:image:1_quick_start/cells_sync_basic.gif]
+[:image-popup:1_quick_start/cells_sync_basic.gif]
