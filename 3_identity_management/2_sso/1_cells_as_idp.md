@@ -17,7 +17,12 @@ When configuring Cells with external providers, please keep in mind that you are
 
 ## OIDC/OAuth2 Endpoints
 
-TODO 
+| Parameter     | value                                  |
+| ------------- | -------------------------------------- |
+| Callback URL  | https://my-cells.com/auth/dex/callback |
+| Client ID     |                                        |
+| Client Secret |                                        |
+| Scope         | openid email profile pydio offline     |
 
 ## Configuring an OIDC Client 
 
