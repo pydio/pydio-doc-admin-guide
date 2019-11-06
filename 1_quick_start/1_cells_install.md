@@ -6,9 +6,9 @@ _This section will try to get you up and running in no-time. If you encounter an
 
 For Pydio Cells to run smoothly, you should meet the following requirements:
 
-* **Server Capacity** : 4GB RAM, 2 CPU/Cores, 64bits processor. SSD is also recommended.
-* **Operating System**: Debian 8/9, Ubuntu VERSION, CentOS VERSION, MacOS VERSION, Windows VERSION
-* **Ulimit**: Make sure to set the number of allowed open files greater than **2048**. For production use, a minimum of 8192 is recommended (see `ulimit -n`).
+* **Server Capacity** : 4GB RAM, 2 Core CPU - 64bit, SSD is also recommended for storage.
+* **Operating System**: Debian 8/9, Ubuntu 18.04 LTS, CentOS 7, MacOS High Sierra, Windows 10
+* **Ulimit**: Make sure to set the number of allowed open files greater than **2048**. For production use, a minimum of **8192** is recommended (see `ulimit -n`).
 
 #### MySQL Database
 
@@ -25,7 +25,12 @@ Download the cells binary corresponding to your architecture using one of the fo
 - [Mac OSX](https://download.pydio.com/latest/cells/release/{latest}/darwin-amd64/cells)
 - [Windows (64bits)](https://download.pydio.com/latest/cells/release/{latest}/windows-amd64/cells.exe)
 
-For cells enterprise, use these links : [Linux Amd64](https://download.pydio.com/latest/cells-enterprise/release/{latest}/linux-amd64/cells-enterprise), [Mac OSX](https://download.pydio.com/latest/cells-enterprise/release/{latest}/darwin-amd64/cells-enterprise), [Windows (64bits)](https://download.pydio.com/latest/cells-enterprise/release/{latest}/windows-amd64/cells-enterprise.exe), and replace `cells` by `cells-enterprise` in all the following commands.
+For cells enterprise, use these links :
+ 
+- [Cells Enterprise Linux Amd64](https://download.pydio.com/latest/cells-enterprise/release/{latest}/linux-amd64/cells-enterprise),
+- [Cells Enterprise Mac OSX](https://download.pydio.com/latest/cells-enterprise/release/{latest}/darwin-amd64/cells-enterprise), 
+- [ Cells Enterprise Windows (64bits)](https://download.pydio.com/latest/cells-enterprise/release/{latest}/windows-amd64/cells-enterprise.exe) 
+- **Replace `cells` by `cells-enterprise` in all the following commands.**
 
 On Linux/MacOSX, make sure to make the binary executable using `chmod +x cells`. Create a dedicated user on the server for the installing and running cells. On Linux, if you wish to start server on ports 80 (http) or 443 (https), you have to grant a proper permission : 
 ```
