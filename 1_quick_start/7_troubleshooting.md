@@ -1,4 +1,4 @@
-You can find below a list of problems commonly encountered when installing and configuring Pydio Cells, together with strategies to diagnose and fix them.
+You can find below a list of problems commonly encountered when installing and configuring Pydio Cells and Pydio Cells Mobile Application, together with strategies to diagnose and fix them.
 
 You can find more use cases and solution in [our FAQ](https://pydio.com/en/docs/faq), [our Knowledge Base](https://pydio.com/en/docs/knowledge-base) and [our forum](https://forum.pydio.com/).
 

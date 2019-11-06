@@ -1,5 +1,3 @@
-# TODO
-
 In Cells, a LDAP server is seen as an external authentication source. You can extract a subset of users from your directory to be imported in Cells, using flexible parameters and configuration options. Cells can be bound to more than one directory server with as many LDAP domains as you want.
 
 ## Overview
