@@ -18,9 +18,9 @@ You need the 64-bit version of one of these Debian or Ubuntu versions:
 
 #### Dedicated User
 
-It's highly recommend to run Pydio Cells with a dedicated user.
+It's highly recommended to run Pydio Cells on a dedicated user.
 
-In this guide, we use **pydio** and its home directory **/home/pydio**.
+In this guide, we use a dedidcated user **pydio** and its home directory **/home/pydio**.
 
 In order to create a new user and its home directory execute this command:
 
@@ -30,7 +30,7 @@ sudo useradd -m pydio
 
 ### Database
 
-Pydio Cells can be installed with both MySQL Server (5.7 or higher) and MariaDB (10.3 or higher).
+Pydio Cells can be installed with both MySQL Server (5.7 or higher) or MariaDB (10.3 or higher).
 
 #### MySQL
 
@@ -107,7 +107,8 @@ Execute the command below and follow the instructions.
 
 ```sh
 INTERNAL_URL(other) : address where the application http server is bound to. It MUST contain a server name and a port, should be of this form <ip-or-domain>:<port>.
-EXTERNAL_URL : url the end user will use to connect to the application.
+
+EXTERNAL_URL : Is the entrypoint for the webui, should be modified only for specific cases such as a Reverse Proxy.
 
 Example:
 If you want your application to run on the localhost at port 8080 and use the url mycells.mypydio.com, then set INTERNAL_URL to localhost:8080 and EXTERNAL_URL to http://mycells.mypydio.com (or https)
@@ -121,7 +122,7 @@ After the install is successfully done, if you ever have to stop Pydio Cells and
 ./cells start
 ```
 
-**It is advised to add Cells as a service with systemd (or supervisor).**
+**It is advised to add Cells as a service with systemd (or supervisor) - See your Knowledge Base for the dedicated Guides.**
 
 ## Troubleshooting
 
@@ -131,7 +132,7 @@ Generally, you might want to have a look at the log file that is located in `~/.
 
 _After start, the web page is unreachable and you see a bunch of errors starting with: `ERROR   pydio.grpc.meta   Failed to init DB provider   {"error": "Error 1071: Specified key was too long; max key length is 767 bytes handling data_meta_0.1.sql"}`_.
 
-You might have an unsupported version of the mysql server: you should use MySQL server version 5.6 or higher or MariaDB version 10.2 or higher.
+You might have an unsupported version of the mysql server: you should use MySQL server version 5.7 or higher or MariaDB version 10.3 or higher.
 
 ### Various
 
