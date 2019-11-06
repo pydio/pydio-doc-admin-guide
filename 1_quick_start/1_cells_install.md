@@ -59,12 +59,6 @@ You will be prompted with the basic networking information for Cells to start it
 
 If you are on a desktop machine, installer can open a simple web page where you will feed the database connection information and default administrator user login and passwords. 
 
-GIF AS IMAGE
-
-[:image:1_quick_start/installation/web-installer.gif]
-
-GIF AS IMAGE-POPUP
-
 [:image-popup:1_quick_start/installation/web-installer.gif]
 
 Once it is finished, the server will restart automatically and your good to go.
