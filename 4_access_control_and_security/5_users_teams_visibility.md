@@ -1,5 +1,5 @@
-<div style="background-color: #fbe9b7;font-size: 16px;">
-<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<div style="background-color: #fbe9b7;font-size: 14px;">
+<span style="background-color: #fae4a6;padding: 10px;">WARNING</span>
 <span style="padding: 10px;display: inline-block;">This documentation is for Cells v1. Looking for <a href="https://pydio.com/en/docs/cells/v2/quick-start">Pydio Cells v2 docs?</a></span>
 </div>
 
@@ -15,27 +15,27 @@ Concretely, this means that when a user creates a shared user in her Address Boo
 
 Users resources are protected by these rules. For example, when the Administrator creates a user, the defaults rules are applied : 
 
-|Resource| Subject| Action | Effect | Comment |
-|-----|------------|----|---|---|
-|User.Uuid|profile:admin|write|allow| user is always editable by admins
-|User.Uuid|profile:standard|read|allow| user is visible in address books of other users
-|User.Uuid|user:User.Uuid|write|allow| user must be able to edit himself
+| Resource  | Subject          | Action | Effect | Comment                                         |
+| --------- | ---------------- | ------ | ------ | ----------------------------------------------- |
+| User.Uuid | profile:admin    | write  | allow  | user is always editable by admins               |
+| User.Uuid | profile:standard | read   | allow  | user is visible in address books of other users |
+| User.Uuid | user:User.Uuid   | write  | allow  | user must be able to edit himself               |
 
 Where as when a user A creates a shared user B, by default B is not visible to others, thus the rules would be 
 
-|Resource| Subject| Action | Effect | Comment |
-|-----|------------|----|---|---|
-|User.B|profile:admin|write|allow| user is always editable by admins
-|User.B|profile:admin|read|allow| user is always visible to admins
-|User.B|user:User.Uuid|read|allow| user must be able to read his own properties
-|User.B|user:User.Uuid|write|allow| user must be able to edit himself
-|User.B|user:User.A|read|allow| user B is only visible in user A address book
+| Resource | Subject        | Action | Effect | Comment                                       |
+| -------- | -------------- | ------ | ------ | --------------------------------------------- |
+| User.B   | profile:admin  | write  | allow  | user is always editable by admins             |
+| User.B   | profile:admin  | read   | allow  | user is always visible to admins              |
+| User.B   | user:User.Uuid | read   | allow  | user must be able to read his own properties  |
+| User.B   | user:User.Uuid | write  | allow  | user must be able to edit himself             |
+| User.B   | user:User.A    | read   | allow  | user B is only visible in user A address book |
 
 If User A wishes to share this user with all users of a team XX that she previously created, she could add the following rule to the list
 
-|Resource| Subject| Action | Effect | Comment |
-|-----|------------|----|---|---|
-|User.B|role:TeamXRoleId|read|allow| let users with role TeamXRoleId see this user B
+| Resource | Subject          | Action | Effect | Comment                                         |
+| -------- | ---------------- | ------ | ------ | ----------------------------------------------- |
+| User.B   | role:TeamXRoleId | read   | allow  | let users with role TeamXRoleId see this user B |
 
 Again, this behaviour can be applied in a similar manner to Teams, Cells and Links. We may expand this to Roles and Groups in a near future.
 

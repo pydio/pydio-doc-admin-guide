@@ -1,5 +1,5 @@
-<div style="background-color: #fbe9b7;font-size: 16px;">
-<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<div style="background-color: #fbe9b7;font-size: 14px;">
+<span style="background-color: #fae4a6;padding: 10px;">WARNING</span>
 <span style="padding: 10px;display: inline-block;">This documentation is for Cells v1. Looking for <a href="https://pydio.com/en/docs/cells/v2/quick-start">Pydio Cells v2 docs?</a></span>
 </div>
 
@@ -29,10 +29,10 @@ Put aside the additional CPU usage when using encryption, encrypted file size ar
 
 First in **DATA MANAGEMENT > Storage** section, the admin must generate at least one key that will serve to encrypt datasources. The key content is randomly generated all the information required is the id and the label. Here are the description of the form fields
 
-|Field| Description|
-|-----|------------|
-|**Identifier**|a unique string that identifies the key|
-|**Label**| The name of the key as it appears in the key list|
+| Field          | Description                                       |
+| -------------- | ------------------------------------------------- |
+| **Identifier** | a unique string that identifies the key           |
+| **Label**      | The name of the key as it appears in the key list |
 
 Once keys are generated encryption option can be enabled. in datasource create/edit form enabled to the encryption option at the bottom.
 

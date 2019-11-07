@@ -1,5 +1,5 @@
-<div style="background-color: #fbe9b7;font-size: 16px;">
-<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<div style="background-color: #fbe9b7;font-size: 14px;">
+<span style="background-color: #fae4a6;padding: 10px;">WARNING</span>
 <span style="padding: 10px;display: inline-block;">This documentation is for Cells v1. Looking for <a href="https://pydio.com/en/docs/cells/v2/quick-start">Pydio Cells v2 docs?</a></span>
 </div>
 
@@ -11,23 +11,23 @@ In this chapter, we have a look at the mailing system integrated to Pydio Cells 
 
 To configure the mailer, go to **Application Parameters > Mailers**:
 
-Field | Description
---- | ---
-Default FROM email address | Put the email that you're going to use as sender address for notifications and as default (see below).
-From/Sender address and name to use | Select how the address and display name is choosen. This setting controls how the envelope from address and the from mail and sender mail headers are set.
-Mailer engine  | What type of engine you're going to use to send the mails you will have 3 choices we are going to explain all of them and show you a configuration sample.
+| Field                               | Description                                                                                                                                                |
+| ----------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Default FROM email address          | Put the email that you're going to use as sender address for notifications and as default (see below).                                                     |
+| From/Sender address and name to use | Select how the address and display name is choosen. This setting controls how the envelope from address and the from mail and sender mail headers are set. |
+| Mailer engine                       | What type of engine you're going to use to send the mails you will have 3 choices we are going to explain all of them and show you a configuration sample. |
 
 Depending on the engine you have chosen, you see one of the following form:
 
 ### 1. SMTP Server
 
-Field | Description
---- | ---
-Server Hostname  | the SMTP server's hostname, *for example gmail's smtp is `smtp.gmail.com`*
-Server Port  |  The port of the SMTP server, *for example gmail's default port is `587`*
-Connection User  | The username of the address used to connect to this SMTP server, such as *john.doe@gmail.com, john.doe@pydio.com*
-Connection Password  | password of the user above
-Queue Type  |  Right now do not modify this field.
+| Field               | Description                                                                                                       |
+| ------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| Server Hostname     | the SMTP server's hostname, *for example gmail's smtp is `smtp.gmail.com`*                                        |
+| Server Port         | The port of the SMTP server, *for example gmail's default port is `587`*                                          |
+| Connection User     | The username of the address used to connect to this SMTP server, such as *john.doe@gmail.com, john.doe@pydio.com* |
+| Connection Password | password of the user above                                                                                        |
+| Queue Type          | Right now do not modify this field.                                                                               |
 
 ### 2. Sendmail
 

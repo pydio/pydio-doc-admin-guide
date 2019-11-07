@@ -1,5 +1,5 @@
-<div style="background-color: #fbe9b7;font-size: 16px;">
-<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<div style="background-color: #fbe9b7;font-size: 14px;">
+<span style="background-color: #fae4a6;padding: 10px;">WARNING</span>
 <span style="padding: 10px;display: inline-block;">This documentation is for Cells v1. Looking for <a href="https://pydio.com/en/docs/cells/v2/quick-start">Pydio Cells v2 docs?</a></span>
 </div>
 
@@ -14,9 +14,9 @@ The main interface looks like this:
 
 [:image-popup:5_advanced/scheduler_interface.png]
 
-Label | Owner | Trigger | Last Execution | Status
---- | --- | --- | --- | ---
-Human friendly name of the task (usually its goal) | Who launched the task ( for system jobs it's usually the system user) | Type of the trigger: manual, on-event or periodic | Last time it ran | Current status (in the figure above, all tasks were done)
+| Label                                              | Owner                                                                 | Trigger                                           | Last Execution   | Status                                                    |
+| -------------------------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------- | ---------------- | --------------------------------------------------------- |
+| Human friendly name of the task (usually its goal) | Who launched the task ( for system jobs it's usually the system user) | Type of the trigger: manual, on-event or periodic | Last time it ran | Current status (in the figure above, all tasks were done) |
 
 ### System jobs
 
