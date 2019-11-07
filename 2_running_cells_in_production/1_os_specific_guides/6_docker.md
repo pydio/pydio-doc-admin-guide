@@ -64,7 +64,7 @@ Note: If you [add new datasources](https://pydio.com/fr/docs/cells/v1/managing-d
 Let's say:
 
 - You have a server with an internet facing IP and a corresponding DNS A entry that points toward `files.example.com`
-- You want to run the application in self signed mode on port 8080 (remember the default value of CELLS_NO_SSL=0)
+- You want to run the application in self signed mode on port 8080 (remember the default value of CELLS_NO_TLS is disabled)
 
 ### Example setup with docker compose
 
