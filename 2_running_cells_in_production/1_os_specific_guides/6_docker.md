@@ -115,7 +115,7 @@ The [nginx-proxy](https://github.com/jwilder/nginx-proxy) and [docker-letsencryp
 
 The Cells Sync Desktop Application will require an additional port.
 
-- First read this [How-to](/en/docs/kb/client-applications/setup-cells-server-cellssync)
+- First read this, [Setup Cells Server for Cells Sync](/en/docs/kb/client-applications/setup-cells-server-cellssync)
 - Make sure to start a container with this env set `PYDIO_GRPC_EXTERNAL`
 - Expose the port that you previously set with `PYDIO_GRPC_EXTERNAL`
 
