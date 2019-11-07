@@ -8,4 +8,4 @@ Download the Application on the [App Store](https://apps.apple.com/fr/app/pydio/
 
 Visit and download the application on the [Google Play store](https://play.google.com/store/apps/details?id=com.pydio.android.Client&hl=en).
 
-Once the application you can log to your Cells server with your credentials.
+Once the application is downloaded and installed,run it and log to your Cells server with your credentials.
