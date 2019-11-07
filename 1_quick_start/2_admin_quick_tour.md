@@ -4,7 +4,7 @@ Now that your Cells is up-and-running, you are in control of your data! This sec
 
 Connect to Cells as admin and go to `Cells Console > People` menu. 
 
-[:image:1_quick_start/yourdata/cells_menu.png]
+[:image-popup:1_quick_start/yourdata/cells_menu.png]
 
 [:image:1_quick_start/yourdata/01-people.png]
 
