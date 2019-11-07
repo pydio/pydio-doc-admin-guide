@@ -40,5 +40,12 @@ Going back to home page, you should now be able to see the workspace and access 
 
 As you may now understand, you could also edit the "Common Files" workspace to point to this new datasource instead of the default one, or even add a second path to this workspace to aggregate data from various locations into one workspace. While Data Sources can be seen as mount points to actual folders on your file system, creating an internal tree of all data, Workspaces are virtual views that can show data from anywhere in that tree and that are used to grant permissions.
 
-A final note, you may have noticed that a data source can be created on the local file system, but also on other remote object storage. See [link to 4_connecting_your_storage/2_datasources]() to learn more about that.
+A final note, you may have noticed that a data source can be created on the local file system, but also on other remote object storage. 
+
+--------------
+_See Also_
+
+- [Understanding Datasources](en/docs/cells/v2/understanding-datasources)
+- [Managing Datasources](en/docs/cells/v2/managing-datasources) to learn more about that.
+
 
