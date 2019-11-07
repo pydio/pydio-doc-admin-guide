@@ -1,14 +1,14 @@
 By default the ip ban feature is enabled to protect the pydio cells instance from brute force attacks on passwords.
 It's also protecting users from having someone trying to guess their password.
 
-### Ip ban service
+### IP ban service
 
 All the current bans are displayed on this interface you can choose perform an action on the bans listed such as
 unbanning or blacklisting a banned ip, there will be further details about that below.
 
 [:image:3_identity_management/securing_user_access/ip_ban_interface.png]
 
-### White and Black list
+### Whitelist and Blacklist
 
 You can whitelist an ip meaning that this ip will have access to cells no matter what or you can blacklist an ip and then it will have no more access to the cells instance.
 
