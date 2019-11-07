@@ -29,7 +29,7 @@ During the installation process, if there is no progress bar but the console is 
 
 - The wizard is stucked at the end of the install
 
-After the install, if the page does not refresh automatically in ssl self-signed mode it is OK.  
+After the install, if the page does not refresh automatically in tls self-signed mode it is OK.  
 A manual refresh will load the login page.
 
 ### Unable to bind port 443
@@ -73,7 +73,7 @@ To solve the issue, get rid of all cookie for this site and refresh the page.
 
 ### Cannot list workspaces
 
-If you are getting an error when you attempt to list the workspaces then your server might be running behind a reverse proxy, in this case you must use **SSL** on **Cells** and on the **reverse proxy**, please refer to our dedicated documentation [link to reverse proxy how-to]().
+If you are getting an error when you attempt to list the workspaces then your server might be running behind a reverse proxy, in this case you must use **TLS** on **Cells** and on the **reverse proxy**, please refer to our dedicated documentation [Running Cells Behind a reverse Proxy](en/docs/cells/v2/run-cells-behind-proxy).
 
 ### I do see not my workspaces
 
