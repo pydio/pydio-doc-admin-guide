@@ -1,3 +1,8 @@
+<div style="background-color: #fbe9b7;font-size: 16px;">
+<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Cells v1. Looking for <a href="https://pydio.com/en/docs/cells/v2/quick-start">Pydio Cells v2 docs?</a></span>
+</div>
+
 Now that you have defined your datasources, you can merge and organise the various views over your data at a business level. That is the main goal of workspaces.
 
 Workspaces are top-level folders helping you organize your data. They may be accessed only by a given user or shared accross many people.

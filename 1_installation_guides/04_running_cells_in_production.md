@@ -1,3 +1,7 @@
+<div style="background-color: #fbe9b7;font-size: 16px;">
+<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Cells v1. Looking for <a href="https://pydio.com/en/docs/cells/v2/quick-start">Pydio Cells v2 docs?</a></span>
+</div>
 
 The best way to run Pydio Cells in a production environment is to start it as a service and put it behind a proxy.
 In this page, we gather pointers to various step by step guides from our knowledge base that explain how to achieve this.

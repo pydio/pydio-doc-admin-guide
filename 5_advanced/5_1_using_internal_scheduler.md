@@ -1,4 +1,9 @@
-In this section, we introduce the scheduler and show how you can optimize your workflow by scripting redudant tasks.
+<div style="background-color: #fbe9b7;font-size: 16px;">
+<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Cells v1. Looking for <a href="https://pydio.com/en/docs/cells/v2/quick-start">Pydio Cells v2 docs?</a></span>
+</div>
+
+In this section, we introduce the scheduler and show how you can optimize your workflow by scripting redundant tasks.
 
 ### Using The internal Scheduler
 

@@ -1,3 +1,8 @@
+<div style="background-color: #fbe9b7;font-size: 16px;">
+<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Cells v1. Looking for <a href="https://pydio.com/en/docs/cells/v2/quick-start">Pydio Cells v2 docs?</a></span>
+</div>
+
 Versioning is provided out-of-the-box by Pydio Cells. In a few words, when versioning is turned on, everytime a user modifies a file, it creates a new version of this file that is then considered as the reference for this file. The old version is then stored in a technical data repository and eventually discarded depending on the pruning policies (more on this in the corresponding paragraph below).
 
 Please, note that versionning has a cost in terms of the amount of data that is stored in your various data stores and have to be correctly configured and monitored in order to avoid exponential use of data space.

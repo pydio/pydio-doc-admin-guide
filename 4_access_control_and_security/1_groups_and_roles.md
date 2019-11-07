@@ -1,3 +1,8 @@
+<div style="background-color: #fbe9b7;font-size: 16px;">
+<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Cells v1. Looking for <a href="https://pydio.com/en/docs/cells/v2/quick-start">Pydio Cells v2 docs?</a></span>
+</div>
+
 _As described in the previous section, both Users and Groups are in fact attached with a canonical Role. As such, managing users, groups and roles are using very similar interfaces. Still these objects present some specificities._
 
 ### Users

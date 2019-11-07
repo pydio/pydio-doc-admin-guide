@@ -1,3 +1,7 @@
+<div style="background-color: #fbe9b7;font-size: 16px;">
+<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Cells v1. Looking for <a href="https://pydio.com/en/docs/cells/v2/quick-start">Pydio Cells v2 docs?</a></span>
+</div>
 
 _Note: This is an Enterprise Distribution feature_.
 
@@ -68,14 +72,14 @@ Location presets:
 
 #### Example:
 
-| Field Name  | Example setting  | Info about the field
-|---|---|---|
-| Label  | MyCustomButton  | This field is your button name that will be displayed on the interface |
-| Button Location | Left panel widget  | Where the button will be located, in our case it's right next to your username on the left panel |
-| Button Icon | [Font Awesome] desktop  | This will display your button as a specific icon (works only for some fields, otherwise the Label is displayed|
-| Button Link | empty | In this case this filed is empty |
-| Link Target| default setting | Also empty because we are not using the Button Link (this setting works with Button Link)|
-| Javascript Snippet| `alert("This will pop an alert on Cells");` | This is where the javascript must be written, here is a simple javascript snippet that will pop an alert when you press the button |
+| Field Name         | Example setting                             | Info about the field                                                                                                               |
+| ------------------ | ------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| Label              | MyCustomButton                              | This field is your button name that will be displayed on the interface                                                             |
+| Button Location    | Left panel widget                           | Where the button will be located, in our case it's right next to your username on the left panel                                   |
+| Button Icon        | [Font Awesome] desktop                      | This will display your button as a specific icon (works only for some fields, otherwise the Label is displayed                     |
+| Button Link        | empty                                       | In this case this filed is empty                                                                                                   |
+| Link Target        | default setting                             | Also empty because we are not using the Button Link (this setting works with Button Link)                                          |
+| Javascript Snippet | `alert("This will pop an alert on Cells");` | This is where the javascript must be written, here is a simple javascript snippet that will pop an alert when you press the button |
 
 For this example the button will be located here and it will look like this:
 

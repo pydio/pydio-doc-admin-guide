@@ -1,3 +1,8 @@
+<div style="background-color: #fbe9b7;font-size: 16px;">
+<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Cells v1. Looking for <a href="https://pydio.com/en/docs/cells/v2/quick-start">Pydio Cells v2 docs?</a></span>
+</div>
+
 In the **Enterprise Edition**, an audit log gathers all non-technical events to help focus on business logic when analysing logs for compliance or when tracing events after a security breach.
 
 Audit Logs are accessible under the section **Dashboard** inside the **Activity** tab.

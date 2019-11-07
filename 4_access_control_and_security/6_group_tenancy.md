@@ -1,3 +1,8 @@
+<div style="background-color: #fbe9b7;font-size: 16px;">
+<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Cells v1. Looking for <a href="https://pydio.com/en/docs/cells/v2/quick-start">Pydio Cells v2 docs?</a></span>
+</div>
+
 Pydio Cells provides an additional layer for visibility management: you can reduce the visibility scope at the _group_ level, meaning that you can choose for instance if users of a group (A) can interact (e.g. see, assign, share with, etc.) with the users of group (B).
 
 ### What is group tenancy

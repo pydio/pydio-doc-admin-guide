@@ -1,3 +1,8 @@
+<div style="background-color: #fbe9b7;font-size: 16px;">
+<span style="background-color: #fae4a6;padding: 10px;font-family: FuturaT-Demi;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Cells v1. Looking for <a href="https://pydio.com/en/docs/cells/v2/quick-start">Pydio Cells v2 docs?</a></span>
+</div>
+
 _In Pydio Cells, Workspaces provide the "basic unit" for assigning access rights to users. But unlike in previous versions, they are now fully decoupled from the actual data location, as this is handled via the "DataSources"._
 
 Datasources are internally exposed via a "tree" service that dynamically aggregates all datasources into one big virtual filesystem.
