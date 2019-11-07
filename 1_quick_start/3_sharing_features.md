@@ -1,4 +1,4 @@
-Pydio Cells delivers file sharing and collaboration, in a way that is more familiar, comfortable and intuitive for users of modern collaborative apps. It lets users decide how to share files and information, based on knowledge of their own teams, workflows and working patterns. This end-user freedom also takes the responsibility for creating effective workspaces away from overburdened administrators.
+Pydio Cells delivers file sharing and collaboration in a way that is familiar, comfortable and intuitive for users of modern collaborative apps. It lets users decide how to share files and information, based on knowledge of their own teams, workflows and working patterns. This end-user freedom also takes the responsibility of creating effective workspaces away from overburdened administrators.
 
 ## Sharing with Public links
 
@@ -6,14 +6,14 @@ You can share files or folders using a public link. To create a public link choo
 
 Click on **Enable Public Links** to enable them.
 
-You should now see these new fields:
+You now see these new fields:
 
 [:image:1_quick_start/sharing_features/public_link.png]
 
 - **Link Label**: the label of your link; you have a menu displaying all your public links. It is easier recognize them with a label)
-- **Link Description**: It is automatically filled with the creation date. You can also add a short description.
+- **Link Description**: filled by default with the creation date, this will be displayed in the various public layout seen by the end-user that clicks on the link. You can change it to provide a mode adequat description of the content.
 
-Then there are 3 different tabs:
+Then, there are 3 different tabs:
 
 1. **Link**: This is where you can get your link, you can also choose the permissions that users have on this share.
 1. **Access**: You can choose if you want to put a password an expiration date for the link, a limited number of downloads and the layout of the GUI when people follow the link.
@@ -23,7 +23,7 @@ Then there are 3 different tabs:
 
 The Cells concept will be familiar to modern workers used to collaborating on _"channels"_ within popular group-chat applications. Cells can be shared internally or externally to the organization, with users able to add new individuals and groups to the Cell. In-app, instant messaging within each Cell, provides a focused channel for group communication around the theme.
 
-End-users can create their own, flexible Cells : combining files and folders from any location, or picking users from their address book.
+End-users can create their own, flexible Cells: combining files and folders from any location, or picking users from their address book.
 
 ### Creating Cells from scratch
 
