@@ -110,6 +110,15 @@ We recommend you [run behind a proxy](https://pydio.com/en/docs/kb/devops) to en
 
 The [nginx-proxy](https://github.com/jwilder/nginx-proxy) and [docker-letsencrypt-nginx-proxy-companion](https://github.com/JrCs/docker-letsencrypt-nginx-proxy-companion) containers can also be used to setup your proxy.
 
+
+### Cells Sync
+
+The Cells Sync Desktop Application will require an additional port.
+
+- First read this [How-to](/en/docs/kb/client-applications/setup-cells-server-cellssync)
+- Make sure to start a container with this env set `PYDIO_GRPC_EXTERNAL`
+- Expose the port that you previously set with `PYDIO_GRPC_EXTERNAL`
+
 ### Troubleshooting 
 
 #### Check that after a server or container reboot that the address is the same
