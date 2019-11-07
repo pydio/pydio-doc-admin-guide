@@ -1,3 +1,8 @@
+<div style="background-color: #fbe9b7;font-size: 14px;">
+<span style="background-color: #fae4a6;padding: 10px;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 8 (PHP), EOL end 2019. Time to move to <a href="https://pydio.com/en/docs/cells/v2/quick-start">Pydio Cells</a>!</span>
+</div>
+
 Binding to an existing LDAP  directory or Microsoft Active Directory (AD)  allows you to reuse the user accounts that you already have in the directory, without having to create new accounts in Pydio. It is therefore  one of the most frequently wanted features  when deploying Pydio on top of an existing infrastructure., even more so if you have e.g. a Windows environment where access to files is managed with AD accounts, and you want to use those file servers as backend storage.
 
 However, correctly setting up the correct parameters can be tricky, as every LDAP deployment is different.

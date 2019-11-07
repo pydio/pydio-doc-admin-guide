@@ -1,3 +1,8 @@
+<div style="background-color: #fbe9b7;font-size: 14px;">
+<span style="background-color: #fae4a6;padding: 10px;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 8 (PHP), EOL end 2019. Time to move to <a href="https://pydio.com/en/docs/cells/v2/quick-start">Pydio Cells</a>!</span>
+</div>
+
 Since [Pydio 6.4.0](https://pydio.com/fr/node/1279), we added the "Mail digest" feature to avoid receiving tons of emails when watching for a file or folder modification.
 
 This page is here to help you configure the mail digest and the mail sender. The mail sender is required to send digest emails.

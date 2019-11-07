@@ -1,3 +1,8 @@
+<div style="background-color: #fbe9b7;font-size: 14px;">
+<span style="background-color: #fae4a6;padding: 10px;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 8 (PHP), EOL end 2019. Time to move to <a href="https://pydio.com/en/docs/cells/v2/quick-start">Pydio Cells</a>!</span>
+</div>
+
 ## What is File Gateway ? 
 
 File Gateway is a unique service proposed by Pydio to help you secure your installation. When you share a public link with an external person, it will "by design" send to the outside world the base URL of your Pydio installation, like https://yourdomain.tld/pydio/public/{unique_hash}. 

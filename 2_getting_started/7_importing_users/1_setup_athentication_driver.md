@@ -1,3 +1,8 @@
+<div style="background-color: #fbe9b7;font-size: 14px;">
+<span style="background-color: #fae4a6;padding: 10px;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 8 (PHP), EOL end 2019. Time to move to <a href="https://pydio.com/en/docs/cells/v2/quick-start">Pydio Cells</a>!</span>
+</div>
+
 ### Data concerned & available plugins
 As explained in the previous chapter, there are various types of data managed in Pydio: configurations vs. “business” data ( = your files ). All the configurations data are managed by the configuration backend, but the users directory is handled by another type of plugins, Authentication ones. Basically, these plugins are just able to tell whether a user exists or not, if he can be logged in with a given password, and if he is part of group.
 

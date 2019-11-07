@@ -1,3 +1,8 @@
+<div style="background-color: #fbe9b7;font-size: 14px;">
+<span style="background-color: #fae4a6;padding: 10px;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 8 (PHP), EOL end 2019. Time to move to <a href="https://pydio.com/en/docs/cells/v2/quick-start">Pydio Cells</a>!</span>
+</div>
+
 Since Pydio 6, the new PydioSync client is now based on a number of server features to make the desktop client lighter and more efficient. Please read go through the basic checks described here to make sure it will work ok.
 
 ### How the sync client works
