@@ -93,7 +93,7 @@ Turn this option ON if you are using a self-signed certificate **that you trust*
 
 #### 6 & 7) Root Certificate Path and Data
 
-This is only used for SSL and StartTLS connections.
+This is only used for TLS and StartTLS connections.
 You need to specify the absolute path to the certificate of the LDAP server (6) or the content of this certificate in base64 format (7).
 
 **Note:** You can retrieve the public part of your server's certificate using the following command:

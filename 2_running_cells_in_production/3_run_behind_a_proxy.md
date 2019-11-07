@@ -22,14 +22,14 @@ For best performances and real-time events, **CellsSync** communicates with the 
 
 If you are behind a proxy or inside a private network, you may have to check your proxy settings: 
 
-- **[SSL Enabled]**  Cert/Key couple, Let's Encrypt, Self-signed config (see note below)
+- **[TLS Enabled]**  Cert/Key couple, Let's Encrypt, Self-signed config (see note below)
   
   Cells will serve HTTP/1.1 and HTTP/2 on the same port, the one you define for external url (e.g; 443, or 8080 or anything you choose). You don't have to open any other port in your firewall.
   
-  - **[No Proxy]** Your Cells is directly facing the outside world with a proper SSL configuration, everything should be working out of the box
+  - **[No Proxy]** Your Cells is directly facing the outside world with a proper TLS configuration, everything should be working out of the box
   - **[Proxy]** Just make sure your proxy is HTTP/2 enabled. If Cells using self-signed configuration (see note below), you can either install the generated rootCA.pem on the proxy machine, or configure the proxy to SkipVerify (for example *insecure_skip_verify* on Caddy).
   
-- **[No SSL]** Cells will serve HTTP/1.1 and HTTP/2 on two different ports. By default, gRPC will pick a randomly available port and advertise it in the /a/config/discovery API. The CellsSync client will automagically query this API to connect. 
+- **[No TLS]** Cells will serve HTTP/1.1 and HTTP/2 on two different ports. By default, gRPC will pick a randomly available port and advertise it in the /a/config/discovery API. The CellsSync client will automagically query this API to connect. 
   
   - **[No firewall, No Proxy]** If you are on a local machine with all ports open, this should work out of the box.
   - **[Firewall and/or Proxy]** You will have to make proper configuration to open and forward the HTTP/2 on this port. To avoid using a random port at each restart, you can fix this port by using the **PYDIO_GRPC_EXTERNAL** environnement variable at startup. Your proxy will probably not be able to serve HTTPS but HTTP only. 
@@ -38,4 +38,4 @@ The various cases are summarized in the figure below.
 
 ![api_and_grpc_gateways](https://raw.githubusercontent.com/pydio/cells-dist/master/resources/v2.0.0-rc2/api_and_grpc_gateways.png)
 
-**[Note about self-signed]** : in Cells v1, we were using the embedded self-signed feature of Caddy (our main gateway), that was managed in-memory. Cells v2 has to share the self-signed certificate between the main gateway and the gRPC gateway, so we now generate a self-signed certificate and pass this one to both services. As such, **if you are upgrading from v1 and using self-signed mode**, please re-run the  `cells config ssl mode`  step to regenerate a working configuration.
+**[Note about self-signed]** : in Cells v1, we were using the embedded self-signed feature of Caddy (our main gateway), that was managed in-memory. Cells v2 has to share the self-signed certificate between the main gateway and the gRPC gateway, so we now generate a self-signed certificate and pass this one to both services. As such, **if you are upgrading from v1 and using self-signed mode**, please re-run the  `cells config proxy tls`  step to regenerate a working configuration.

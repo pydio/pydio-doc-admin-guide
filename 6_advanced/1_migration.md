@@ -109,9 +109,9 @@ Download the latest version of Pydio Cells from the website, for instance:
 wget https://download.pydio.com/pub/cells-enterprise/release/1.6.1/linux-amd64/cells-enterprise
 ```
 
-#### SSL
+#### TLS
 
-When Pydio 8 is running on simple HTTP (e.g. without SSL), you must also launch Cells without SSL. Otherwise, you will have problem of "mixed content" when the migration tool makes API calls.
+When Pydio 8 is running on simple HTTP (e.g. without TLS), you must also launch Cells without TLS. Otherwise, you will have problem of "mixed content" when the migration tool makes API calls.
 
 #### Data
 

@@ -13,7 +13,7 @@ On this page is a configuration example that meets the basic requirements for th
 
 You can install CODE on the same server as your Pydio or on another server, it's up to you.
 The process is quite simple and you can follow the [CODE documentation](https://www.collaboraoffice.com/code/linux-packages/).
-The commands will differ depending on your system but it should work at the end. Then you can use the instructions below to configure the plugin to match the location of your CODE instance (host, port, ssl).
+The commands will differ depending on your system but it should work at the end. Then you can use the instructions below to configure the plugin to match the location of your CODE instance (host, port, tls).
 
 ### CODE Docker image
 
@@ -21,9 +21,9 @@ The commands will differ depending on your system but it should work at the end.
 
 ```shell
 docker pull collabora/code
-docker run -t -d -p 9980:9980 -e "extra_params=-o:ssl.enable=false" collabora/code
+docker run -t -d -p 9980:9980 -e "extra_params=-o:tls.enable=false" collabora/code
 ```
-_for testing puposes ssl is disabled, but we advise you to always have it on_
+_for testing puposes tls is disabled, but we advise you to always have it on_
 
 You can find all of the information about the docker image, such as the env variables, etc... **[Docker CODE official documentation](https://www.collaboraoffice.com/code/docker/)**.
 
@@ -34,7 +34,7 @@ Go to `Cells Console > Application Parameters > All Plugins` and enable the Coll
 
 Change the plugin parameters to:
 
-- Libre office ssl: `true` if you want secured communication between collabora and pydio or `false`
+- Libre office tls: `true` if you want secured communication between collabora and pydio or `false`
 - Libre office Host: _`<host where CODE is running>`_
 - Libre office Port: _`<CODE instance port>`_ usually it is running on `9980`
 

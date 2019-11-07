@@ -57,7 +57,7 @@ Note: If you [add new datasources](https://pydio.com/fr/docs/cells/v1/managing-d
 
 #### Environment variable
 
-- `CELLS_NO_TLS`: uses ssl or not (default to 0 => uses ssl)
+- `CELLS_NO_TLS`: uses tls or not (default to 0 => uses tls)
 - `CELLS_BIND` : address where the application http server is bound to. It MUST contain a server name and a port.
 - `CELLS_EXTERNAL` : url the end user will use to connect to the application.
 

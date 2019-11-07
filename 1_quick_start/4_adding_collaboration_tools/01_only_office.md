@@ -15,7 +15,7 @@ You will find all the details and different features between all the editions, f
 
 To enable the plugin, go to `Application parameters > Available Plugins > Only Office`, then:
  
-- Only office ssl: `true` if you want to secure communication between OnlyOffice and pydio or `false`
+- Only office tls: `true` if you want to secure communication between OnlyOffice and pydio or `false`
 - Only office Host: _`<host where OnlyOffice is running>`_
 - Only office Port: _`<OnlyOffice instance port>`_ usually it is running on `9980`
 
@@ -27,7 +27,7 @@ To enable the plugin, go to `Application parameters > Available Plugins > Only O
 There is an [OnlyOffice docker image](https://hub.docker.com/r/onlyoffice/documentserver/),
 the image only offers the features of the *[community edition](https://www.onlyoffice.com/compare-editions.aspx)*.
 
-The container's default port is 80 so redirect it to another port - by default we use 9980 in the Pydio Cells config
+The container's default port is 80 so redirect it to another port - by default we use 9980 in the Pydio Cells config.
 
 ```shell
 docker run -i -t -d -p 9980:80 --restart=always onlyoffice/documentserver
