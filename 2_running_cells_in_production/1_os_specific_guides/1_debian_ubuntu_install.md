@@ -2,6 +2,8 @@
 _This guide describes the steps required to have Pydio Cells running on Debian and Ubuntu_.
 
 [:image:2_running_cells_in_production/logos-os/logo-debian.png]
+
+
 [:image:2_running_cells_in_production/logos-os/logo-ubuntu.png]
 
 ## Requirements
@@ -10,17 +12,17 @@ _This guide describes the steps required to have Pydio Cells running on Debian a
 
 You need the 64-bit version of one of these Debian or Ubuntu versions:
 
-- Debian 10 (buster) LTS 
+- Debian 10 (buster) LTS
 - Stretch 9 (stable) / Raspbian Stretch
 - Jessie 8 (LTS) / Raspbian Jessie
-- Ubuntu 18.04 (bionic beaver)
-- Ubuntu 16.04 (xenial xerus)
+- Ubuntu 18.04 (Bionic Beaver)
+- Ubuntu 16.04 (Xenial Xerus)
 
 #### Dedicated User
 
-It's highly recommended to run Pydio Cells on a dedicated user.
+It is highly recommended to run Pydio Cells with a dedicated user.
 
-In this guide, we use a dedidcated user **pydio** and its home directory **/home/pydio**.
+In this guide, we use a dedicated user **pydio** and its home directory **/home/pydio**.
 
 In order to create a new user and its home directory execute this command:
 
@@ -49,7 +51,7 @@ To access the correct repository :
 
 ##### Install
 
-```bash
+```sh
 sudo apt update
 sudo apt install mysql-server
 ```
@@ -84,7 +86,7 @@ FLUSH PRIVILEGES;
 ## Installation and configuration
 
 ```sh
-# Use this url as is, will be redirected to latest version automatically
+# Use this url as is, you will be redirected to latest version automatically
 wget https://download.pydio.com/latest/cells/release/{latest}/linux-amd64/cells
 sudo chmod u+x cells
 ```
@@ -103,18 +105,16 @@ su - pydio
 
 Execute the command below and follow the instructions.
 
-**Before you start installing here's two of the most important parameters that you need to understand:**
+**Before you start installing, here are two important parameters that you need to understand:**
 
-```sh
-INTERNAL_URL(other) : address where the application http server is bound to. It MUST contain a server name and a port, should be of this form <ip-or-domain>:<port>.
+- Internal URL: it defines the interface where the internal webserver of the application is bound. It MUST contain a server name and a port, should be of this form <ip-or-domain>:<port>.
 
-EXTERNAL_URL : Is the entrypoint for the webui, should be modified only for specific cases such as a Reverse Proxy.
+- External URL: This is the main entry point from the outside world, the address you will communicate to your endusers. It typically  differs from the internal URL when you are behind a reverse proxy or in a container.
 
-Example:
-If you want your application to run on the localhost at port 8080 and use the url mycells.mypydio.com, then set INTERNAL_URL to localhost:8080 and EXTERNAL_URL to http://mycells.mypydio.com (or https)
-```
+For instance, you application runs in a VM that has this IP: 10.0.0.2 in a private LAN behind a reverse proxy that has a public IP and a A DNS record for domain cells.example.com.
+Then set INTERNAL_URL to 10.0.0.2:8080 and EXTERNAL_URL to https://cells.example.com (or http).
 
-You can [refer to this page](/en/docs/cells/v1/install-pydio-cells) to get more details on the installation process.
+You can [refer to this page](en/docs/cells/v2/cells-installation) to get more details on the installation process.
 
 After the install is successfully done, if you ever have to stop Pydio Cells and want to run it again just run:
 

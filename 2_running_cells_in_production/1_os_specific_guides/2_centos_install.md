@@ -83,7 +83,7 @@ su - pydio
 
 ```sh
 # As pydio user
-# Use this url, will be redirected to latest version automatically
+# Use this url, you will be redirected to latest version automatically
 wget https://download.pydio.com/latest/cells/release/{latest}/linux-amd64/cells
 chmod u+x cells
 ```
@@ -95,16 +95,14 @@ If you want to use the standard HTTP (80) and/or HTTPS (443) ports, you have to 
 sudo setcap 'cap_net_bind_service=+ep' /home/pydio/cells
 ```
 
-**Before you start installing here's two of the most important parameters that you need to understand:**
+**Before you start installing, here are two important parameters that you need to understand:**
 
-```text
-INTERNAL_URL : address where the application http server is bound to. It MUST contain a server name and a port.
-EXTERNAL_URL : url that the end user will use to connect to the application.
+- Internal URL: it defines the interface where the internal webserver of the application is bound. It MUST contain a server name and a port, should be of this form <ip-or-domain>:<port>.
 
-Example:
-If you want your application to run on the localhost at port 8080 and use the url mycells.mypydio.com, then set INTERNAL_URL to localhost:8080 and EXTERNAL_URL to http://mycells.mypydio.com (or https)
-After the install is successfully done, if you ever have to stop Pydio Cells and want to run it again just run:
-```
+- External URL: This is the main entry point from the outside world, the address you will communicate to your endusers. It typically  differs from the internal URL when you are behind a reverse proxy or in a container.
+
+For instance, you application runs in a VM that has this IP: 10.0.0.2 in a private LAN behind a reverse proxy that has a public IP and a A DNS record for domain cells.example.com.
+Then set INTERNAL_URL to 10.0.0.2:8080 and EXTERNAL_URL to https://cells.example.com (or http).
 
 You can now run the installer:
 
@@ -113,20 +111,18 @@ You can now run the installer:
 ./cells install
 ```
 
-Follow the short set of instructions. You can also [refer to this page](/en/docs/cells/v1/install-pydio-cells) to get more details.  
-Once the installation as finished, you might have to stop and restart the application (typically if you have chosen the CLI installer).
+Follow the short set of instructions. You can also [refer to this page](en/docs/cells/v2/cells-installation) to get more details.  
+When the installation is done, you might have to stop and restart the application (typically if you have chosen the CLI installer).
 
 ```sh
 ./cells start
 ```
 
-Note that is not the preferred way to [run Pydio Cells in a production context](/en/docs/cells/v1/running-cells-production).
+Note that this is not the preferred way to run Pydio Cells in a production context, see [the following chapters of our documentation](en/docs/cells/v2/run-cells-service) to fine tune a production ready instance.
 
 ## Troubleshooting
 
-### Frontend
-
-#### SELinux is enforced
+### SELinux is enforced
 
 If, after a successful installation and when you try to navigate to the main application page with your browser, you land on a blank page with following message:
 

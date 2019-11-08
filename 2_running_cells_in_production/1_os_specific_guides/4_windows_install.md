@@ -24,8 +24,8 @@ The binary will ask you to choose a mean of installation :
 
 Then you have 2 important settings:
 
-- **INTERNAL_URL :** address where the application http server is bound to. It MUST contain a server name and a port.
-- **EXTERNAL_URL :** url the end user will use to connect to the application.
+- **INTERNAL_URL :** address where the application HTTP server is bound to. It MUST contain a server name and a port.
+- **EXTERNAL_URL :** URL the end user will use to connect to the application.
 
 There is also multiple ways to add TLS to your installation:
 
@@ -33,7 +33,7 @@ There is also multiple ways to add TLS to your installation:
 - **LETS_ENCRYPT :** automagically generates a valid certificate for a domain ([see lets encrypt site](https://letsencrypt.org/))
 - **Provide your own certificate :** pass your already generated certificates.
 
-provide your database information and you are good to go.
+Then, provide your database information and you are good to go.
 
 Once the installation is done the folder containing your data and settings is located under %APPDATA%.
 

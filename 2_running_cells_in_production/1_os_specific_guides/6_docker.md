@@ -17,25 +17,24 @@ In order to have a fully working Pydio Cells environment, you need to run a data
 #### Run the container
 
 ```sh
-docker run -d -p 8080:8080 pydio/cells
+docker run -d --network=host pydio/cell
 ```
 
-You can now access the Pydio Cells installer at [https://localhost:8080](https://localhost:8080). A complete example can be found in the docker-compose section of this guide.
+You can now access the Pydio Cells installer at [https://localhost](https://localhost). A complete example can be found in the docker-compose section of this guide.
 
-If you want to access your container from outside you must then change at least the `CELLS_EXTERNAL` and also (it's recommended) to have persisting data you need to have a volume (you can sort it with multiple volumes if you wish, but for our example we are going to store everything into a single folder).
+If you want to access your container from outside you must then change at least the `CELLS_EXTERNAL` and also (it is recommended) to have persisting data you need to have a volume (you can sort it with multiple volumes if you wish, but for our example we are going to store everything into a single folder).
 
 Here's an example of a command that runs a cells container with persistent data and external access:
 
 ```sh
-docker run -d -e CELLS_EXTERNAL=192.168.0.172:8080 -e CELLS_BIND=192.168.0.172:8080 -p 8080:8080 -v /home/cells/volume/:/root/.config/pydio/ pydio/cells
+docker run -d -e CELLS_EXTERNAL=192.168.0.172:8080 -e CELLS_BIND=192.168.0.172:8080 -p 8080:8080 -v /home/cells/volume/:/var/cells pydio/cells
 ```
 
 * **-e** *CELLS_EXTERNAL* is required to give it external access
 * **-e** *CELLS_BIND* can be, the server running the container address or localhost.
-* **-v** */home/cells/volume/:/root/.config/pydio/* basically i have a folder on my server located here `/home/cells/volume/` and i want the content to be the all of the cells configuration/datasource that are located inside the container in `root/.config/pydio/`.
+* **-v** */home/cells/volume/:/var/cells*, basically I have a folder on my server located here `/home/cells/volume/` and where I want to store the whole Cells working directory.
 
-_This was only an example on how you can run a Cells container, you can find below all of the envorinment variables, data configurations for cells, docker-compose examples and more_
-
+_This was only an example on how you can run a Cells container, you can find below all of the enivronment variables, data configurations for cells, docker-compose examples and more_.
 
 #### External database
 
@@ -43,28 +42,28 @@ Pydio Cells requires a MySQL or MariaDB database. It is recommended to use a sep
 
 #### Persistent data
 
-All default configuration and data (`/root/.config` on the container) is saved in an unnamed volume.
+All default configuration and data (`/var/cells` on the container) is saved in an unnamed volume.
 
 If you want to use named volumes, here is an overview of the important files :
 
-- `/root/.config/pydio/cells/pydio.json` : main configuration file
-- `/root/.config/pydio/cells/data` : data
-- `/root/.config/pydio/cells/logs` : logs
-- `/root/.config/pydio/cells/services` : services information
-- `/root/.config/pydio/cells/static` : static frontend files
+* `/var/cells/pydio.json`: main configuration file
+* `/var/cells/data`: data
+* `/var/cells/logs`: logs
+* `/var/cells/certs`: certificate management
+* `/var/cells/services`: services information
 
 Note: If you [add new datasources](https://pydio.com/fr/docs/cells/v1/managing-datasources) and want to persist the data, ensure that their location is also mounted in a volume.
 
 #### Environment variable
 
-- `CELLS_NO_TLS`: uses tls or not (default to 0 => uses tls)
-- `CELLS_BIND` : address where the application http server is bound to. It MUST contain a server name and a port.
-- `CELLS_EXTERNAL` : url the end user will use to connect to the application.
+* `CELLS_NO_TLS`: uses tls or not (default to 0 => uses tls)
+* `CELLS_BIND` : address where the application http server is bound to. It MUST contain a server name and a port.
+* `CELLS_EXTERNAL` : url the end user will use to connect to the application.
 
 Let's say:
 
-- You have a server with an internet facing IP and a corresponding DNS A entry that points toward `files.example.com`
-- You want to run the application in self signed mode on port 8080 (remember the default value of CELLS_NO_TLS is disabled)
+* You have a server with an internet facing IP and a corresponding DNS A entry that points toward `files.example.com`
+* You want to run the application in self signed mode on port 8080 (remember the default value of CELLS_NO_TLS is disabled)
 
 ### Example setup with docker compose
 
@@ -79,7 +78,7 @@ services:
         environment:
             - CELLS_BIND=files.example.com:8080
             - CELLS_EXTERNAL=https://files.example.com:8080
-       volumes: 
+       volumes:
             - "cellsdir:/var/cells"
             - "data:/var/cells/data"
 
@@ -110,16 +109,15 @@ We recommend you [run behind a proxy](https://pydio.com/en/docs/kb/devops) to en
 
 The [nginx-proxy](https://github.com/jwilder/nginx-proxy) and [docker-letsencrypt-nginx-proxy-companion](https://github.com/JrCs/docker-letsencrypt-nginx-proxy-companion) containers can also be used to setup your proxy.
 
-
 ### Cells Sync
 
 The Cells Sync Desktop Application will require an additional port.
 
-- First read this, [Setup Cells Server for Cells Sync](/en/docs/kb/client-applications/setup-cells-server-cellssync)
-- Make sure to start a container with this env set `PYDIO_GRPC_EXTERNAL`
-- Expose the port that you previously set with `PYDIO_GRPC_EXTERNAL`
+* First read this, [Setup Cells Server for Cells Sync](/en/docs/kb/client-applications/setup-cells-server-cellssync)
+* Make sure to start a container with this env set `PYDIO_GRPC_EXTERNAL`
+* Expose the port that you previously set with `PYDIO_GRPC_EXTERNAL`
 
-### Troubleshooting 
+### Troubleshooting
 
 #### Check that after a server or container reboot that the address is the same
 
