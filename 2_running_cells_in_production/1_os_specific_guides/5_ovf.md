@@ -4,7 +4,7 @@ _This guide describes the steps required to have the Pydio Cells running via an 
 
 ## Download OVF Package
 
-The latest OVF image can be [Downlaoded Here](https://download.pydio.com/latest/cells-enterprise/release/{latest}/ovf/Cells-Enterprise-OVF-{latest}.zip).
+The latest OVF image can be [Downloaded Here](https://download.pydio.com/latest/cells-enterprise/release/{latest}/ovf/Cells-Enterprise-OVF-{latest}.zip).
 
 An md5 file is also available on the same location for integrity verification.
 
@@ -21,7 +21,10 @@ Virtual Machine requirements
 
 ### Setup and config at the first time
 
-After importing the image into VirtualBox, you only have to select the correct virtual network interface before launching the machine, just go to:
+After importing the image into VirtualBox, you only have to select the correct virtual network interface before launching the machine.  
+Go to `Your Image >> Settings >> Network`: Adapter 1 is already bound to a bridged adapter, choose the correct name for the adapter you want to use and click `OK`.
+
+_Warning:_ even if the correct Name is already shown, click on it and validate, or you won't be able to start the VM (it is a known issue with the VirtualBox UI that is still there in 6.0.14).
 
 At first boot, a script is launched to verify network settings and start the installer. You can then interact with a specific Cells service via a web browser to setup and configure your instance.
 
@@ -55,7 +58,7 @@ The predefined database created in MySQL is *cells*
 By default, two root paths are used:
 
 - `/var/cells`: Pydio Cells working dir. It contains dynamic configuration (including certificates), data and logs.
-- `/opt/pydio/`: binaries and additional libraries required to run Cells.
+- `/opt/pydio`: binaries and additional libraries required to run Cells.
 
 ### Use of well-known ports
 
