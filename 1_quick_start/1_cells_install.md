@@ -62,11 +62,7 @@ You first have to provide the basic networking information so that Cells can sta
 
 If you are on a desktop machine, the installer opens a web page with a small form where you can provide the DB connection info and the login/password of the main administrator.
 
-GIF AS IMAGE
-
-[:image:1_quick_start/installation/web-installer.gif]
-
-GIF AS IMAGE-POPUP
+Click on the image below to see a screencast of the installation :
 
 [:image-popup:1_quick_start/installation/web-installer.gif]
 
@@ -74,7 +70,7 @@ After it completes, the server restarts automatically and you are good to go.
 
 #### [Mode 2] Command line Installer
 
-If you prefer working from your shell, you can perform the same steps quickly using command line prompts/answers:
+If you prefer working from your shell, you can perform the same steps quickly using command line prompts/answers. Click on the image below to see a screencast of the installation :
 
 [:image-popup:1_quick_start/installation/demo-install.gif]
 
