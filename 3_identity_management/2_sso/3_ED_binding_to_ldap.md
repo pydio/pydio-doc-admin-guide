@@ -8,11 +8,11 @@ As a consequence, we strongly advise that you configure your user interface to p
 Typically you should remove the `My Account` button from the various menu for LDAP defined users.  
 See last paragraph of this section for more info on this.
 
-The synchronization happens regularly (time and frequency are defined for each connection) and is in fact managed by the scheduler: the configuration seen below only creates a new job in the scheduler.  
-It is then possible to get more info about the synchronisation and to trigger it manually:
+The synchronization happens regularly (time and frequency are defined for each connection) and is managed by the scheduler: the configuration seen below only creates a new job in the scheduler.  
+It is then possible to get more info about the synchronisation status and to trigger a resync manually:
 
 - Go to `Cells Console >> Backend >> Scheduler`
-- Open editor for the synchronisation task by clicking on it on the list.  
+- Open editor for the synchronisation task by clicking on it in the list.  
   It is usually named: `<name of your LDAP connexion> > Synchronize external directories`
 
 ### Supported Servers
@@ -89,7 +89,7 @@ The password of the above user
 
 #### 5) Skip certificate verification
 
-Turn this option ON if you are using a self-signed certificate **that you trust**. Use this option with extra care at your own risk.
+Turn this option ON if you are using a self-signed certificate **that you trust**. Use this option with extra care and at your own risk.
 
 #### 6 & 7) Root Certificate Path and Data
 
@@ -161,16 +161,16 @@ For instance, this retrieves all members of the `staff` group including all memb
 
 You can map user attributes that are defined in your LDAP to user attributes in Pydio Cells. Each mapping is defined by a rule. A rule has three parts:
 
-- **Left Attribute:** the attribute name of user object in the LDAP server
-- **Right Attribute:** the attribute name of the user object in Cells.
-- **Rule String:** you might add a filter for the mapping process. This field can be blank, contain a list of value or a regular expression.
+- **Left Attribute**: the attribute name of user object in the LDAP server
+- **Right Attribute**: the attribute name of the user object in Cells.
+- **Rule String**: you might add a filter for the mapping process. This field can be blank, contain a list of value or a regular expression.
 
 _**Warning**: In Pydio Cells, user attribute names are **case sensitive**_.  
 _E.g: displayName, email, Roles_
 
 #### A basic example
 
-Let's say you have a `department` attribute on user objects in your LDAP model.  
+Let us say you have a `department` attribute on user objects in your LDAP model.  
 This attribute can have following values:
 
 - `finance`
@@ -207,15 +207,14 @@ The values of `memberOf` attribute can contain any group of the LDAP directory: 
 
 _The above screenshot shows an example of `memberOf` mapping, where:_
 
-1) this toggles this feature ON and OFF
+1) toggles this feature ON and OFF
 
 2) Mapping: defines the name of the attribute that is to be used *in your LDAP server*. This is useful to emulate the `memberOf` feature if it is not supported by your implementation.
 
 3) DN: is the DN of one or more organization unit in the LDAP directory in which the connector searches for groups. If memberOf values have some groups in other locations, they will be ignored.
 
 4) Group Filter: Like **User Filter**
-
-Example: `(objectClass=group)` or `(objectClass=groupOfNames)`
+  Example: `(objectClass=group)` or `(objectClass=groupOfNames)`
 
 5) ID Attribute: Pydio will take the value of this attribute of group object to use as **Role ID** in Cells.
 
@@ -225,7 +224,7 @@ If you turn off the `Native MemberOf support` toggle, Cells tries to calculate t
 - Fake `memberOf` Attribute: name of the attribute of group object which holds the member identity. In OpendLDAP, this value is usually `member` or `memberuid`.
 - Depending on the value of `Fake memberOf Attribute` and the schema of your LDAP, the corresponding format is usually `dn` or `uid`.
 
-Values of two options are usually:
+Values of these two options are usually:
 
 - **Fake memberOf Attribute:** `member`
 - **Fake memberOf Attribute Format:** `dn`
@@ -243,14 +242,14 @@ As explained in the introduction, and due to the Master/Slave model of the integ
 
 ### Remove My Account button
 
-The easiest way to prevent LDAP-defined users to change information that are defined in your external directory(ies), is to define a system wide rule that will disable the `My Account` button for the relevant users. This is achieve easily:
+The easiest way to prevent LDAP-defined users to change information that are defined in your external directory(ies), is to define a system wide rule that will disable the `My Account` button for the relevant users. This is achieved easily:
 
-- As an admin user, go to: `Cells Console >> Identity management >> People`
-- Open for edit the parent group of your LDAP users
-- Open the `Application Parameters` page
-- In the upper right corner, choose the `All Workspaces` option from the `Add for...` drop down list
-- Search for the `My Account` action of the `action.user` category by simply typing `my account` in the quick search field, and select it
+- As an admin user, go to: `Cells Console >> Identity management >> People`,
+- Open for edit the parent group of your LDAP users,
+- Open the `Application Parameters` page,
+- In the upper right corner, choose the `All Workspaces` option from the `Add for...` drop down list,
+- Search for the `My Account` action of the `action.user` category by simply typing `my account` in the quick search field, and select it,
+- Ensure the MyAccount toggle is turned off.
 
-ensure the MyAccount toggle is turned of and you are set: the button is then hidden for the corresponding users.
-
+You are then set: the `My Account` button is then hidden for all corresponding users.  
 Depending on your specific configuration, you might want to do this for various groups or define a specific role that can be applied to relevant groups and users.
