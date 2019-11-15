@@ -8,11 +8,11 @@ Cells provides OIDC endpoints, making it an Identity Provider for external appli
 
 ## Involved Parties
 
-When configuring Cells as an Identity provider, please keep in mind that you are working in an environment where several entities must know each other and exchange security information via public network. You must know the role of each entity and the protocol required to exchange information in a specific order. 
+When configuring Cells as an Identity provider, please keep in mind that you are working in an environment where several entities must know each other and exchange security information via public network. You must know the role of each entity and the protocol required to exchange information in a specific order.
 
 - **Resource Owner**: the owner of the data your application requires access to, (usually the user who is connecting)
 - **Authorization Server**: the server delivering tokens to the client. (Cells)
-- **Resource Server** : The application that holds the resource the client wants to access. (Cells - holds the user profile information and access to the user files)
+- **Resource Server**: The application that holds the resource the client wants to access. (Cells - holds the user profile information and access to the user files)
 - **Clients**: application that need access to resources on behalf of its owner. Must first be registered with the Authorization Server.
 
 ## OIDC/OAuth2 Endpoints
@@ -29,4 +29,4 @@ When configuring Cells as an Identity provider, please keep in mind that you are
 
 ## Examples
 
-See the API docs
+See the API docs.

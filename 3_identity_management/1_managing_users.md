@@ -1,38 +1,38 @@
-Pydio Cells provides advanced features for managing your users directory. In a simple setup, using the internal directory should be sufficient for most cases. 
+Pydio Cells provides advanced features for managing users. By implementing the authentication based on OAUTH2 standard, it can fully integrate in your Single-Sign-On (SSO) infrastructure and delegate authentication to your existing user directory. It can also bind to external identity providers like Github or Google, allowing your in-house collaborators to share files with external users.
 
-Using the SSO features, you can also bind to existing directories, allowing your in-house collaborators to share files with external users. This section will go through the management the internal directory.
+Yet, Cells provides a complete embedded solution with an internal directory that should be sufficient for most cases and that we present in the following section.
 
 Going to `Cells Console > People` section, you can easily create new users and organize them by groups. Groups allow you to organize users in folders like you would with files. In a similar way, one user can only belong to one group. 
 
 ## Users
 
-To create a user go, click on **+USER** located on the top right. The following menu will appear:
+To create a user go, click on the **+USER** button located in the top right corner. The following menu appears:
 
 [:image:3_identity_management/create_user.png]
 
 - **User Login**: this can **not** be changed afterwards.  
-- **User Password**: Put the password of the user, you will have to type it twice to ensure it's validity. Of course, make sure to always use strong passwords. Cells Enterprise provides a customizable complexity plugin for passwords.
+- **User Password**: put the password of the user, you have to type it twice to ensure its validity. Make sure to always use strong passwords. Note that the plugin that performs password strenght check is fully customisable in Cells ED.
 
-Once created, editing a user will provide you full control about a user information : 
+When editing an existing user, you have acces to following information:
 
-- **User Profile** : this global category provides high-level set of permissions to the user. It can be used in cunjonction with roles. Possible values are :
-   * _standard_ : the most common profile 
-   * _shared_ : a restricted profile applied automatically to external users created by standard users
-   * _admin_ : a super user with access to the Cells Console and most of the internal resources.
-- **Name** : a human-friendly label for this user (editable by the user)
-- **Email** : email address to receive notifications and invitations (editable by the user)
-- **Language** : default language for showing the interface (editable by the user)
-- **Maximum Shared Users** : an optional limit for the number of shared users this user is allowed to create.
+- **User Profile**: this global category provides high-level set of permissions to the user. It can be used in cunjonction with roles. Possible values are:
+  - _standard_: the most common profile
+  - _shared_: a restricted profile applied automatically to external users created by standard users
+  - _admin_: a super user with access to the Cells Console and most of the internal resources
+- **Name**: a human-friendly label for this user (editable by the user)
+- **Email**: e-mail address to receive notifications and invitations (editable by the user)
+- **Language**: default language for showing the interface (editable by the user)
+- **Maximum Shared Users**: an optional limit for the number of shared users this user is allowed to create.
 
-This screens also gives you access to useful actions : 
+This screens also gives access to useful actions:
 
 [:image:3_identity_management/users-actions.png]
 
-- **Change Password** : manually reset the user password
-- **Lock out / Reactivate** : instantly disconnect the user from all clients, or reactivate its access if it has been automatically locked out after too many failed login attempts. This `unlock` operation can also be done using the command line.
-- **Force Password Change** : if switched on, at the next connection, the user will be presented with a password change dialog and cannot login until she updates her password.
+- **Change Password**: manually reset the user password
+- **Lock out / Reactivate**: instantly disconnect the user from all clients, or reactivate its access if it has been automatically locked out after too many failed login attempts. This `unlock` operation can also be done using the command line.
+- **Force Password Change**: if switched on, at the next connection, the user is presented with a password change dialog and cannot login until she updates her password.
 
-The other Tabs of the user editor are used to manage the users permissions (see the Access Controls chapter to learn more). Finally, the profile can be used to filter the users list, and _shared_ and _admin_ users are highlighted by a special icon in this list.
+The other tabs of the user editor are used to manage the users permissions (see the Access Controls chapter to learn more). Finally, the profile can be used to filter the users list, and _shared_ and _admin_ users are highlighted by a special icon in this list.
 
 ## Groups
 
@@ -42,20 +42,19 @@ To create a group, click on **+GROUP** located on the top right. The following m
 
 [:image:3_identity_management/create_group.png]
 
-- **Group Identifier**: how the groups is identified in pydio's file system (useful for api etc...).
-- **Group Label**: human friendly name for this group.
+- **Group Identifier**: the ID for this group in Cells DB (useful for api etc...).
+- **Group Label**: a human friendly name.
 
-If you need to move a user from one group to another, simply drag'n'drop this user in the desired group in the tree.
-
+*Hint*: If you need to move a user from one group to another, you can simple use drag and drop in the user tree.
 
 ## Additional operations
 
-The search box at the top of the `People` screen allows you to quickly find users by their login or name. Once in search result mode, you can edit or delete a user, or move it to a group as required.
+The search box at the top of the `People` screen lets you to quickly find users using their login or name. When you are in _Search Results_ mode, you can edit or delete a user, or move it to a group as required.
 
 The BULK ACTIONS button allows you to select all users in page to delete them at once. When selecting the whole page, only users are selected, not groups.
 
 --------------
 _See Also_
 
- - [Using SSO features to bind to external directories](./single-sign-features)
- - [Managing permissions on Users, Groups and Roles](./users-roles-and-groups)
+- [Using SSO features to bind to external directories](./single-sign-features)
+- [Managing permissions on Users, Groups and Roles](./users-roles-and-groups)

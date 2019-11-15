@@ -4,11 +4,11 @@ Pydio Cells provides an additional layer of collaboration for the end-users: res
 
 These policies are using the same approach as security policies, with a "Deny By Default" behavior and a possible set of rules that can be applied to any resources, with users, roles or groups as "Subjects".
 
-Concretely, this means that when a user creates a shared user in her Address Book, she can defines how this new object will be "seen" by other people, and eventually let other people edit this object as well.
+Concretely, this means that when a user creates a shared user in her Address Book, she can defines how this new object will be "seen" by other people, and optionnaly let other people edit this object as well.
 
 ### Rules Examples
 
-Users resources are protected by these rules. For example, when the Administrator creates a user, the defaults rules are applied:
+Users resources are protected by these rules. For instance, when the Administrator creates a user, depending on the profile of the newly created user, one of these default rules is applied:
 
 | Resource  | Subject          | Action | Effect | Comment                                         |
 | --------- | ---------------- | ------ | ------ | ----------------------------------------------- |
@@ -16,7 +16,7 @@ Users resources are protected by these rules. For example, when the Administrato
 | User.Uuid | profile:standard | read   | allow  | user is visible in address books of other users |
 | User.Uuid | user:User.Uuid   | write  | allow  | user must be able to edit himself               |
 
-Whereas when a user A creates a shared user B, B is not visible to others by default, thus the rules would be:
+In comparison, when a _user A_ creates a _shared user B_, B is not visible to others by default, thus the rules would be:
 
 | Resource | Subject        | Action | Effect | Comment                                       |
 | -------- | -------------- | ------ | ------ | --------------------------------------------- |
@@ -26,7 +26,7 @@ Whereas when a user A creates a shared user B, B is not visible to others by def
 | User.B   | user:User.Uuid | write  | allow  | user must be able to edit himself             |
 | User.B   | user:User.A    | read   | allow  | user B is only visible in user A address book |
 
-If User A wishes to share this user with all users of a team XX that she previously created, she could add the following rule to the list
+If User A wishes to share this user with all users of a team XX that she has previously created, she could add the following rule to the list:
 
 | Resource | Subject          | Action | Effect | Comment                                         |
 | -------- | ---------------- | ------ | ------ | ----------------------------------------------- |
@@ -56,13 +56,13 @@ For teams:
 
 #### Links
 
-When a user has shared a file or folder, a "share" icon is displayed in the various lists where the file appears, but by default, _only for the user that have created the share_.
-The link visibility pannel allows the users to also display this icon for some other that have access to this file / folder.
+When a user has shared a file or folder, a "share" icon is displayed in the various lists where the file appears, but by default, _only for the user that have created the share_ can see this icon.
+The link visibility pannel allows the users to also display the icon for some chosen others that have access to this file / folder.
 
 [:image-popup:3_identity_management/visibility/shared_link_visibility.png]
 
 #### Cells
 
-As Cells are ways to share data with other users, you can notice that when you select users for sharing, then by default the Visibility rules will grant "Read" access to this Cell to these users. Warning, this "Read" access is just about being able to **read the "metadata" of this Cell**, and is not to be mixed up with the Read/Write **permissions** that define the actual content of the cell.
+Cells are ways to share data with other users. When you select users for sharing, you can notice that the default visibility rules grant "Read" access to this Cell for these users. Warning: this "Read" access is just about being able to **read the "metadata" of this Cell**, and is not to be mixed up with the Read/Write **permissions** that define the actual content of the cell.
 
 [:image-popup:3_identity_management/visibility/shared_cells_visibility.png]

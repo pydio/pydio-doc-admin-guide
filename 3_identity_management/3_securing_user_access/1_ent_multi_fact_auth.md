@@ -4,17 +4,17 @@
 | -------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
 | [:image:3_identity_management/securing_user_access/yubikey_logo.png] | [:image-popup:3_identity_management/securing_user_access/google_authenticator_logo.png] |
 
-With the enterprise version we offer a higher degree of security for users by enabling them to use authenticators such as the [Google Authenticator App](https://en.wikipedia.org/wiki/Google_Authenticator) or a [Yubikey](https://www.yubico.com/).
+With Cells Enterprise Distribution, we offer a higher degree of security for users by enabling them to use authenticators such as the [Google Authenticator App](https://en.wikipedia.org/wiki/Google_Authenticator) or a [Yubikey](https://www.yubico.com/).
 
-To enable this feature, on the left menu in the **Application Parameters** section go to **Authentication**.
+To enable this feature, go to `Cells Console >> Application Parameters >> Authentication`.
 
-*To display the **Authentication** menu you have to be on advanced mode, to do so enable the slider that is located on the top right as seen on this screenshot*
+_To display the **Authentication** button in the left menu, you have to be in advanced mode. to do so, enable the slider that is located on the top right corrner, as seen on this screenshot_.
 
 [:image:3_identity_management/securing_user_access/advanced_menu.png]
 
 [:image:3_identity_management/securing_user_access/enable_multi_auth_plugin.png]
 
-Now each user has to go on it's setting page that is located on the home page top left (the 3 dots).
+Now each user has to go on its setting page that is located on the home page top left (the 3 dots).
 
 [:image:3_identity_management/securing_user_access/user_settings.png]
 
@@ -42,17 +42,16 @@ To enable the google authenticator:
 To use your Yubikey you first need to retrieve the clientID and API Secret, to do so follow this link
 [https://upgrade.yubico.com/getapikey/](https://upgrade.yubico.com/getapikey/) put your email address and the Yubikey OTP that you will find in your package.
 
-*As they told on the Yubikey site wait up to 5 mins before starting to set your key up*
+*As they told on the Yubikey site wait up to 5 mins before starting to set your key up*.
 
-Plug your Yubikey to your computer install and follows the steps.(should be plug & play)
+Plug your Yubikey to your computer, install and follows the steps: depending on your OS, this is usually plug & play.
 
 Now:
 
-1. Pur your CliendID and API Secret.
-2. Put the focus on the **Test your Key** field and press once on your Yubikey.
-3. Click on test, to verify that the informations are correct.
-4. You can now save.
-   
+1. Pur your CliendID and API Secret
+1. Put the focus on the **Test your Key** field and press once on your Yubikey
+1. Click on test, to verify that the informations are correct
+1. Save
 
 ### Troubleshooting
 
