@@ -22,7 +22,7 @@ Once activated, you can find the logs in your admin dashboard under **Backend > 
 You can read them as the following:
 
 1. **Date**: the at time when the event happened  
-2. **I.P**: the ip if it happened elsewhere (could be a user etc...)  
+2. **IP**: the ip if it happened elsewhere (could be a user etc...)  
 3. **User** the username of whom it happened to  
 4. **Service**: the service that is handling it  
 5. **Message**: what happened with the service concerned (such as stopping, restarting, etc...)  

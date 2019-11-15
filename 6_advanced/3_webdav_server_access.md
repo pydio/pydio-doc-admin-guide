@@ -20,11 +20,11 @@ With domain names, it goes the same: if your pydio's domain name is `example.com
 
 - For the time being, webdav is incompatible with self-signed certificates.
 - Webdav is **not** a sync client. If you are off-line and therefore have no access to your server, you will not be able to interact with your files. Proceed with caution.
-- If you are running Cells behind a reverse proxy, you must forward webdav related headers along with the forwarded requests (using the _transparent_ directive usually does the trick). 
+- If you are running Cells behind a reverse proxy, you must forward webdav related headers along with the forwarded requests (using the _transparent_ directive usually does the trick).
 
 ### Compatible webdav clients
 
-Following clients have been tested and are known to work with a recent Pydio Cells (v1.5+): 
+Following clients have been tested and are known to work with a recent Pydio Cells (v1.5+):
 
 - MacOS finder
 - Windows explorer

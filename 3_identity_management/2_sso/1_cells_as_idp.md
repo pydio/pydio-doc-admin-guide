@@ -23,7 +23,7 @@ When configuring Cells as an Identity provider, please keep in mind that you are
 | Authorization      | http(s)://your-cells.com**/oidc/oauth2/auth**                      |
 | Token              | http(s)://your-cells.com**/oidc/oauth2/token**                     |
 
-## Registering an OIDC Client 
+## Registering an OIDC Client
 
 [:image:3_identity_management/2_sso/create_client.gif]
 

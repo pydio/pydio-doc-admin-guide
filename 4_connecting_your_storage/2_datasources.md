@@ -1,3 +1,8 @@
-In this chapter, we guide you through the process of creating a new datasource, either based on a file system or on a Amazon S3  Object repository, Google Cloud storage or Amazon blob for the **Enterprise Edition** of Pydio Cells.
+In this chapter, we guide you through the process of creating a new datasource, for each of the 4 already implemented DS type:
+
+- file system
+- Amazon S3 Object repository
+- Google Cloud storage (ED only)
+- Azure blob (ED only)
 
 [:summary]

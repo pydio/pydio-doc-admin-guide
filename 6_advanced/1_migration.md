@@ -43,7 +43,6 @@ There are some plugins/functionalities in Pydio 8 Community are not available in
 | Access driver Open Stack   | yes             | no         | it's possible to use static mount in Cells |
 | Personal workspaces        | yes             | yes        | map to default My Files workspace only     |
 
-
 **Optional**:
 
 - Empty the recycle bin of each workspace
@@ -115,7 +114,7 @@ When Pydio 8 is running on simple HTTP (e.g. without TLS), you must also launch 
 
 #### Data
 
-Install and start Pydio Cells as usual on the target machine. Please [visit our documentation for more information](https://pydio.com/en/docs/cells/v1/installation-guides).
+Install and start Pydio Cells as usual on the target machine. Please [visit our documentation for more information](en/docs/cells/v2/installation-guides).
 
 In Pydio 8, the data is located by default in a *data* folder (e.g.: /var/lib/pydio/(data/) or /var/www/html/data/). However, you may have other workspaces which point to other location such as /mnt/data.
 
@@ -157,7 +156,6 @@ After creation of new datasources in Cells, the indexation process will be launc
 
 If you have workspaces with personal path like `My Files` which uses `AJXP_USER` in the path, you are required to create a new Template Path for this workspace on the correct datasource in Pydio Cells.
 For example a new Template Path: `Path = DataSources.pydio8dss + "/personal/" + User.Name;`
-
 
 ## Migration
 
@@ -205,7 +203,6 @@ Matching is done by following these steps:
 
 In "Pydio 8 Workspace" panel, if you are matching a workspace and the color turns to RED, it means that the corresponding path does not yet exist in Cells. You must create it manually and it will turn to GREEN.
 
-
 [:image:6_advanced/migration/workspacemapping_error.png]
 
 ## Verification
@@ -222,4 +219,3 @@ You can quickly verify the migration by checking in Cells:
 - Set signed certificate
 - Prepare DNS for switching cells to production
 - Remove migration plugins in Pydio 8
-

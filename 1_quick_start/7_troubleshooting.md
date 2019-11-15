@@ -14,10 +14,10 @@ By default, application data is stored under the standard OS application dir:
 
 You can customize the various storage locations with the following ENV variables:
 
-- `CELLS_WORKING_DIR` : replace the whole standard application dir
-- `CELLS_DATA_DIR` : replace the location for storing default datasources (default `CELLS_WORKING_DIR/data`)
-- `CELLS_LOG_DIR` : replace the location for storing logs (default `CELLS_WORKING_DIR/logs`)
-- `CELLS_SERVICES_DIR` : replace location for services-specific data (default `CELLS_WORKING_DIR/services`)
+- `CELLS_WORKING_DIR`: replace the whole standard application dir
+- `CELLS_DATA_DIR`: replace the location for storing default datasources (default `CELLS_WORKING_DIR/data`)
+- `CELLS_LOG_DIR`: replace the location for storing logs (default `CELLS_WORKING_DIR/logs`)
+- `CELLS_SERVICES_DIR`: replace location for services-specific data (default `CELLS_WORKING_DIR/services`)
 
 ### Progress freezes during browser install
 
@@ -50,7 +50,13 @@ sudo setcap 'cap_net_bind_service=+ep' cells
 
 ### 0.0.0.0 address
 
-If you wish to use the 0.0.0.0 address you must respect this rule, cells_bind has to be exactly like this `cells_bind=0.0.0.0:<port>` and `cells_external=<domain name,address>:<port>`, the *port* is mandatory in both otherwise you will have a grey screen stuck in the loading
+If you are behind a reverse proxy and get `404: this page is not served on this interface` when trying to access the web UI, you can try to use the 0.0.0.0 generic IP address in your bind URL.
+
+This basically tells to the embedded web server that acts as the main internal gateway of the application to accept all requests on this port.
+
+In contrary, if you give a specific valid IP or a domain name in the bind URL, the embedded web server checks the "HOST" header of the incoming requests. If the header does not **exactly** matches with the DN or IP of the bind URL, the server throw a 404 file not found error.
+
+Remember, when the bind URL is `0.0.0.0:<port>` (the port is compulsory), and if you are not using a well-known port 80 or 443, you must also include the port in the external URL that must look like:  `<scheme>://<IP or DN>:<port>`, for instance `http://localhost:8080`, otherwise, you might stay stuck on a grey _loading_ page.
 
 ### Hydra Error after install
 
@@ -60,7 +66,7 @@ On first start or just after the installation terminated, you get such an error:
  [0002] Could not ensure that signing keys for "hydra.openid.id-token" exists. This can happen if you forget to run "hydra migrate sql", set the wrong "secrets.system" or forget to set "secrets.system" entirely.  error="cipher: message authentication failed"
 ```
 
-It usually means you have performed another install without correctly cleaning the DB.
+It usually means you have performed a new install on top of a former install without correctly cleaning (a.k.a dropping) the DB.
 
 ### Unable to log in
 
@@ -90,6 +96,7 @@ Make sure that your workspaces are syncable (enable settings in workspace menu)
 ```sh
 ./cells-sync: error while loading shared libraries: libappindicator3.so.1: cannot open shared object file: No such file or directory
 ```
+
 - Then install `sudo apt install libappindicator3-1`
 
 ## Still stuck?

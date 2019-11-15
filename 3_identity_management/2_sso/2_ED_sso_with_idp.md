@@ -16,7 +16,7 @@ Both OIDC and SAML are relying on PKI to encrypt and certify exchanged data. If 
 
 [:image:3_identity_management/cellsvsidps.png]
 
-1. User opens Cells in a web browser. 
+1. User opens Cells in a web browser.
 2. Cells renders login page to the user. If there are more than one Connectors, users are able to pick a connector to login. Cells basically ships an internal Connector providing a login dialog for cells internal users directory.
 3. If the connector is external, user is redirected to the login page of Identity Server. User may use their credential (username/password), 2FA, etc. to authenticate to this server. If authentication succeeds, the Identity Server sends user identity information ()such as user id, email, groups, ...) in JWT or XML format to Cells and redirects the page back to Cells. This JWT/XML message will be introspected by Cells to allow or deny access.
 4. If all this workflow succeeds, the user can access to their data (resource) inside Cells.
@@ -41,6 +41,3 @@ _See Also_
 - [Azure ADFS](/en/docs/kb/identity-management/using-azure-adfs-identity-provider)
 - [ADFS on-premise server](/en/docs/kb/identity-management/using-premise-adfs-server-identity-provider)
 - [SimpleSAML](/en/docs/kb/identity-management/using-simplesaml-php-server-identity-provider) PHP server (SAML)
-
-
-

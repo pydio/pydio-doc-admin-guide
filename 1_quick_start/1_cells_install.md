@@ -6,9 +6,9 @@ _This section will get you up and running in no-time. Should you encounter any i
 
 For Pydio Cells to run smoothly, you should meet the following requirements:
 
-* **Server Capacity** : 4GB RAM, 2 Core CPU - 64bit, SSD is also recommended for storage.
-* **Operating System**: Debian 8/9/10, Ubuntu 18.04 LTS, CentOS 7, MacOS High Sierra, Windows 10
-* **Ulimit**: Make sure to set the number of allowed open files greater than **2048**. For production use, a minimum of **8192** is recommended (see `ulimit -n`).
+- **Server Capacity** : 4GB RAM, 2 Core CPU - 64bit, SSD is also recommended for storage.
+- **Operating System**: Debian 8/9/10, Ubuntu 18.04 LTS, CentOS 7, MacOS High Sierra, Windows 10
+- **Ulimit**: Make sure to set the number of allowed open files greater than **2048**. For production use, a minimum of **8192** is recommended (see `ulimit -n`).
 
 #### MySQL Database
 
@@ -26,10 +26,10 @@ Download the Pydio Cells binary corresponding to your architecture using one of 
 - [Windows (64bits)](https://download.pydio.com/latest/cells/release/{latest}/windows-amd64/cells.exe)
 
 For the Enterprise Distribution, use these links :
- 
+
 - [Cells Enterprise Linux Amd64](https://download.pydio.com/latest/cells-enterprise/release/{latest}/linux-amd64/cells-enterprise),
-- [Cells Enterprise Mac OSX](https://download.pydio.com/latest/cells-enterprise/release/{latest}/darwin-amd64/cells-enterprise), 
-- [ Cells Enterprise Windows (64bits)](https://download.pydio.com/latest/cells-enterprise/release/{latest}/windows-amd64/cells-enterprise.exe) 
+- [Cells Enterprise Mac OSX](https://download.pydio.com/latest/cells-enterprise/release/{latest}/darwin-amd64/cells-enterprise),
+- [Cells Enterprise Windows (64bits)](https://download.pydio.com/latest/cells-enterprise/release/{latest}/windows-amd64/cells-enterprise.exe)
 - **Replace `cells` by `cells-enterprise` in all the following commands.**
 
 On Linux/MacOSX, make sure to make the binary executable using `chmod +x cells`. Create a dedicated user on the server to install and run Cells. On Linux, if you wish to start server on ports 80 (http) or 443 (https), you have to grant a proper permission:

@@ -2,13 +2,13 @@ Pydio Cells provides an additional layer for visibility management: you can redu
 
 ### What is group tenancy
 
-In the context of Pydio Cells, group tenancy means that users of a group (A) cannot see the users of another group (B) as long as you respect following rules: 
+In the context of Pydio Cells, group tenancy means that users of a group (A) cannot see the users of another group (B) as long as you respect following rules:
 
 - All groups must be located at the root level (see screenshot below). Group tenancy with nested groups is not implemented in Pydio Cells.
 
 [:image:3_identity_management/group_tenancy_root_group_level.png]
 
-- To enable this option go to the admin console, **Cells Console > Advanced Settings > Users Visibility** ` (Make sure that you have enabled advanced parameters to be shown in the menu list by toggling the `Show advanced parameters button`in the top right corner of the Admin console) and switching on the toggle - see screenshot below:
+- To enable this option go to the admin console, `Cells Console > Advanced Settings > Users Visibility` (Make sure that you have enabled advanced parameters to be shown in the menu list by toggling the `Show advanced parameters button` in the top right corner of the Admin console) and switching on the toggle - see screenshot below:
 
 You have 2 settings:
 
@@ -16,7 +16,6 @@ You have 2 settings:
 
 - **Users visible only to their group:** will isolate groups.
 - **Hide groups from sharing dialogs:** will add an additional layer by also removing any mention of groups from the sharing fields by toggling.
-
 
 ### For the record
 

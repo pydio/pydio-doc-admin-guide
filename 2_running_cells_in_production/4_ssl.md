@@ -2,11 +2,10 @@ Cells embedded web server provides multiple ways for enabling TLS support. This 
 
 TLS configuration can be performed at installation time, and you can easily change it later by using the `cells config proxy tls` command.
 
-```
+```sh
 $ ./cells config proxy tls
-
-Use the arrow keys to navigate: ↓ ↑ → ← 
-? Choose TLS activation mode. Please note that you should enable TLS even behind a reverse proxy, as HTTP2 'TLS => Clear' is generally not supported: 
+Use the arrow keys to navigate: ↓ ↑ → ←
+? Choose TLS activation mode. Please note that you should enable TLS even behind a reverse proxy, as HTTP2 'TLS => Clear' is generally not supported:
   ▸ Provide paths to certificate/key files
     Use Let's Encrypt to automagically generate certificate during installation process
     Generate your own locally trusted certificate (for staging env or if you are behind a reverse proxy)
@@ -19,18 +18,19 @@ Use the arrow keys to navigate: ↓ ↑ → ←
 
 You can provide a path on the server pointing to your existing Certificate/Key files (PEM format).
 
-**Adding CAs**   
+**Adding CAs**
+
 If your certificate relies on a third-party Certificate Authority, you have to manually append the CA PEM content to your certificate PEM file.
 
 ### Lets Encrypt
 
-Let's Encrypt is an open initiative to make the web safer. It provides free and secure certificates for any domains in an automated way. When switching to this mode, you will have to provide an email address and accept the Let's Encrypt EULA. 
+Let's Encrypt is an open initiative to make the web safer. It provides free and secure certificates for any domains in an automated way. When switching to this mode, you will have to provide an email address and accept the Let's Encrypt EULA.
 
 **Important notes**
 
- - Your DNS must be correctly configured and the your domain name should point to the correct IP.
- - The user that owns the `cells` process (and thus the underlying caddy server) must have sufficient permission on the `$USER_HOME/.caddy/` folder.
- - If you launch the app with an invalid configuration, you might have your DNS temporary black listed on Let's encrypt due to failing multiple retries to get your certificate.  
+- Your DNS must be correctly configured and the your domain name should point to the correct IP.
+- The user that owns the `cells` process (and thus the underlying caddy server) must have sufficient permission on the `$USER_HOME/.caddy/` folder.
+- If you launch the app with an invalid configuration, you might have your DNS temporary black listed on Let's encrypt due to failing multiple retries to get your certificate.  
 
 ### Generating a Self-Signed certificate
 
@@ -42,13 +42,13 @@ However, it is a very good solution if you are behind a reverse-proxy to still e
 
 When enabling self-signed mode, Cells will create (or use) a local RootCA and store it in `${CELLS_WORKING_DIR}/certs`. This CA can possibly be installed on a reverse-proxy machine to validate connection.
 
-Also, for development, if you want your browser to "turn green" (see the certificate as a valid one), you may install this rootCA in your system trust store. Do that easily: 
- 
- - Install [mkcert](https://github.com/FiloSottile/mkcert) tool
- - Export the CAROOT environment variable with value `CAROOT={$CELLS_HOME_USER_DIR}/.config/pydio/cells/certs`
- - Run `mkcert -install`
- - Relaunch your browser .
- 
- ### Disabling TLS
- 
- You can finally fully disable TLS and let Cells serve connections over HTTP. This is not recommended but is good enough for testing or development. In that case, just beware that the gRPC gateway (required for CellsSync) will be exposed on a separate port that must be opened in the firewall, if any.
+Also, for development, if you want your browser to "turn green" (see the certificate as a valid one), you may install this rootCA in your system trust store. Do that easily:
+
+- Install [mkcert](https://github.com/FiloSottile/mkcert) tool
+- Export the CAROOT environment variable with value `CAROOT={$CELLS_HOME_USER_DIR}/.config/pydio/cells/certs`
+- Run `mkcert -install`
+- Relaunch your browser .
+
+### Disabling TLS
+
+You can finally fully disable TLS and let Cells serve connections over HTTP. This is not recommended but is good enough for testing or development. In that case, just beware that the gRPC gateway (required for CellsSync) will be exposed on a separate port that must be opened in the firewall, if any.

@@ -47,4 +47,3 @@ _See Also_
 
 - [Understanding Datasources](en/docs/cells/v2/understanding-datasources)
 - [Managing Datasources](en/docs/cells/v2/managing-datasources) to learn more about that.
-

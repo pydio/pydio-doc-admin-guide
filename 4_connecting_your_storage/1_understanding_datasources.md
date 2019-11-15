@@ -42,7 +42,6 @@ pydio 85243   0,7  0,3 0:01.26 ./cells start --fork pydio.grpc.data.sync.persona
 pydio 85242   0,7  0,3 0:01.33 ./cells start --fork pydio.grpc.data.sync.pydiods1
 pydio 85248   0,6  0,3 0:00.81 ./cells start --fork pydio.grpc.data.index.newdatasource
 pydio 85247   0,6  0,3 0:00.85 ./cells start --fork pydio.grpc.data.index.personal
-
 ```
 
 As you can see here, there are 2 objects services launched (local1, local2) and 4 datasources defined.
@@ -53,7 +52,7 @@ Datasource can be seen as a driver to access your data. It can currently be conn
 
 - **Local FileSystem**: folder located on the same server as where the service is running
 - **Object Storage**: S3-compatible remote storage (can be a proper S3 or anything implementing the API).
-- **Google Cloud Storage**: compatible with google's cloud storage solution.
-- **Azure Blob Storage**: compatible with azure's blob storage solution.
+- **Google Cloud Storage**: compatible with Google's cloud storage solution [ED only].
+- **Azure Blob Storage**: compatible with Azure's blob storage solution [ED only].
 
-You will see next how to create and manage datasources via the admin interface.
+[In next chapter](en/docs/cells/v2/managing-datasources), we show you how to create and manage datasources via the admin interface.

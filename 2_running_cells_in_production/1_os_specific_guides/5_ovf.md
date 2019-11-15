@@ -28,7 +28,7 @@ _Warning:_ even if the correct Name is already shown, click on it and validate, 
 
 At first boot, a script is launched to verify network settings and start the installer. You can then interact with a specific Cells service via a web browser to setup and configure your instance.
 
-For your convenience, we display (in the VM console accessed from your VirtualBox GUI) the full correct URL you have to use to access this post installation configuration service - formatted as https://ipaddress/.
+For your convenience, we display (in the VM console accessed from your VirtualBox GUI) the full correct URL you have to use to access this post installation configuration service - formatted as `https://<DN or IP>/`.
 
 > Note: A self-signed certificate is used by default, ignore the warning message on your web browser.
 
