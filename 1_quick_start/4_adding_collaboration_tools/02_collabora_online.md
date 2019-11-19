@@ -21,12 +21,16 @@ The commands will differ depending on your system but it should work at the end.
 
 ```shell
 docker pull collabora/code
-docker run -t -d -p 9980:9980 -e "extra_params=-o:tls.enable=false" collabora/code
+docker run -t -d -p 9980:9980 -e "extra_params=-o:tls.enable=false" -e "domain=<your-dot-escaped-domain>" collabora/code
 ```
 _for testing puposes tls is disabled, but we advise you to always have it on_
 
-You can find all of the information about the docker image, such as the env variables, etc... **[Docker CODE official documentation](https://www.collaboraoffice.com/code/docker/)**.
+| env variable | example value     |
+| ------------ | ----------------- |
+| domain       | `my\.cells\.com`  |
+| tls.enable   | `true` or `false` |
 
+You can find all of the information about the docker image, such as the env variables, etc... **[Docker CODE official documentation](https://www.collaboraoffice.com/code/docker/)**.
 
 ### Configure Pydio Plugin to connect to CODE
 
