@@ -6,7 +6,7 @@ _This section will get you up and running in no-time. Should you encounter any i
 
 For Pydio Cells to run smoothly, you should meet the following requirements:
 
-- **Server Capacity** : 4GB RAM, 2 Core CPU - 64bit, SSD is also recommended for storage.
+- **Server Capacity** : 2 Core CPU - 64bit, 4GB RAM, SSD is also recommended for storage.
 - **Operating System**: Debian 8/9/10, Ubuntu 18.04 LTS, CentOS 7, MacOS High Sierra, Windows 10
 - **Ulimit**: Make sure to set the number of allowed open files greater than **2048**. For production use, a minimum of **8192** is recommended (see `ulimit -n`).
 
