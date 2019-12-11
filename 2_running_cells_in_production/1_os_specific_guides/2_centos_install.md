@@ -1,4 +1,4 @@
-_This guide describes the steps required to have Pydio Cells running on a CentOs/RHEL 7 server._
+_This guide describes the steps required to have Pydio Cells running on a CentOS/RHEL 7 or 8 server._
 
 [:image:2_running_cells_in_production/logos-os/logo-centos.png]
 
@@ -6,11 +6,11 @@ _This guide describes the steps required to have Pydio Cells running on a CentOs
 
 ### Database
 
-The only hard requirement is a running MySQL DB server. We recommend a recent version of MariaDB or the MySQL community server.
+The only hard requirement is a running MySQL database server. We recommend using MariaDB, version 10.4.
 
 #### MariaDB
 
-We currently use MariaDB 10.3, here is the [official installation guide on the MariaDB website](https://downloads.mariadb.org/mariadb/repositories/#distro=CentOS&version=10.3&distro_release=centos7-amd64--centos7).
+We currently use MariaDB 10.4, here is the [official installation guide on the MariaDB website](https://downloads.mariadb.org/mariadb/repositories/#distro=CentOS&version=10.4&distro_release=centos8-amd64--centos8).
 
 Double check that the system specifications are OK and follow the detailed instructions.
 
@@ -23,7 +23,7 @@ sudo systemctl start mariadb
 
 #### MySQL
 
-Install MySQL 5.6 official community release repository.
+Install MySQL official community release repository.
 
 ```bash
 sudo rpm -i http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm
@@ -41,7 +41,7 @@ sudo systemctl start mysqld
 
 #### Post install configuration
 
-By default, a new database will be created by the system during the installation process. You only need a user with database management permissions.
+By default, a new database is created by the system during the installation process. You only need a user with database management permissions.
 
 If you would rather do it manually, you may create a dedicated user and an empty database by executing the following SQL queries :
 
@@ -82,26 +82,24 @@ su - pydio
 ## Install Pydio Cells
 
 ```sh
-# As pydio user
-# Use this url, you will be redirected to latest version automatically
+# As pydio user, downlaod the latest version
 wget https://download.pydio.com/latest/cells/release/{latest}/linux-amd64/cells
 chmod u+x cells
 ```
 
-If you want to use the standard HTTP (80) and/or HTTPS (443) ports, you have to give corresponding permissions to the binary file:
+If you want to directly bind Cells to the standard HTTP (80) and/or HTTPS (443) ports, you have to give corresponding permissions to the binary file:
 
 ```sh
-# As your admin  user
 sudo setcap 'cap_net_bind_service=+ep' /home/pydio/cells
 ```
 
-**Before you start installing, here are two important parameters that you need to understand:**
+**Before you start installing, there are two important parameters that you need to understand:**
 
-- Internal URL: it defines the interface where the internal webserver of the application is bound. It MUST contain a server name and a port, should be of this form <ip-or-domain>:<port>.
+- **Internal URL**: it defines the interface where the internal webserver of the application is bound. It MUST contain a server name and a port and must be formatted this way: `<ip-or-domain>:<port>`.
 
-- External URL: This is the main entry point from the outside world, the address you will communicate to your endusers. It typically  differs from the internal URL when you are behind a reverse proxy or in a container.
+- **External URL**: This is the main entry point from the outside world; the address you will communicate to your end-users. It typically  differs from the internal URL when you are behind a reverse proxy or in a container.
 
-For instance, you application runs in a VM that has this IP: 10.0.0.2 in a private LAN behind a reverse proxy that has a public IP and a A DNS record for domain cells.example.com.
+For instance, your application runs in a VM that has this IP: 10.0.0.2 in a private LAN behind a reverse proxy that has a public IP and a A DNS record for domain cells.example.com.
 Then set INTERNAL_URL to 10.0.0.2:8080 and EXTERNAL_URL to https://cells.example.com (or http).
 
 You can now run the installer:

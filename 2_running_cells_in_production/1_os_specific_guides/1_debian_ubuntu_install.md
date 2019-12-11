@@ -58,17 +58,11 @@ sudo apt install mysql-server
 
 #### MariaDB
 
-##### Repositories
+We advise to use MariaDB 10.4.  
+Please refer to the well maintained [official installation guide on the MariaDB website](https://downloads.mariadb.org/mariadb/repositories/#distro=Debian&version=10.4).
 
-_If you are using Debian 10 or Ubuntu 18.04 you can skip this step, MariaDB 10.3 is in the default packages_
-
-We currently use MariaDB 10.4, here is the [official installation guide on the MariaDB website](https://downloads.mariadb.org/mariadb/repositories/#distro=Debian&version=10.4).
-
-Simply enter there your system specifications and follow the detailed instructions.
-
-In production system, you probably want to secure your installation by executing:
-
-`mysql_secure_installation`
+> If you plan going live, you probably want to execute this convenient script to reduce your attack surface:  
+> `mysql_secure_installation`
 
 #### Post install configuration
 
