@@ -52,7 +52,7 @@ If you want to use named volumes, here is an overview of the important files :
 * `/var/cells/certs`: certificate management
 * `/var/cells/services`: services information
 
-Note: If you [add new datasources](en/docs/cells/v2/managing-datasources) and want to persist the data, ensure that their location is also mounted in a volume.
+Note: If you [add new datasources](./managing-datasources) and want to persist the data, ensure that their location is also mounted in a volume.
 
 #### Environment variable
 

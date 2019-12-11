@@ -114,7 +114,7 @@ Execute the command below and follow the instructions.
 For instance, you application runs in a VM that has this IP: 10.0.0.2 in a private LAN behind a reverse proxy that has a public IP and a A DNS record for domain cells.example.com.
 Then set INTERNAL_URL to 10.0.0.2:8080 and EXTERNAL_URL to https://cells.example.com (or http).
 
-You can [refer to this page](en/docs/cells/v2/cells-installation) to get more details on the installation process.
+You can [refer to this page](./cells-installation) to get more details on the installation process.
 
 After the install is successfully done, if you ever have to stop Pydio Cells and want to run it again just run:
 

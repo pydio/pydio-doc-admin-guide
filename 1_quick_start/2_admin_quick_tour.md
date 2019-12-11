@@ -45,5 +45,5 @@ A final note: as seen above, a datasource can expose a part of your local file s
 --------------
 _See Also_
 
-- [Understanding Datasources](en/docs/cells/v2/understanding-datasources)
-- [Managing Datasources](en/docs/cells/v2/managing-datasources) to learn more about that.
+- [Understanding Datasources](./understanding-datasources)
+- [Managing Datasources](./managing-datasources) to learn more about that.

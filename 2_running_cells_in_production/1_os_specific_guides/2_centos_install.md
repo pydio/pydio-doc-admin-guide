@@ -111,14 +111,14 @@ You can now run the installer:
 ./cells install
 ```
 
-Follow the short set of instructions. You can also [refer to this page](en/docs/cells/v2/cells-installation) to get more details.  
+Follow the short set of instructions. You can also [refer to this page](./cells-installation) to get more details.  
 When the installation is done, you might have to stop and restart the application (typically if you have chosen the CLI installer).
 
 ```sh
 ./cells start
 ```
 
-Note that this is not the preferred way to run Pydio Cells in a production context, see [the following chapters of our documentation](en/docs/cells/v2/run-cells-service) to fine tune a production ready instance.
+Note that this is not the preferred way to run Pydio Cells in a production context, see [the following chapters of our documentation](./run-cells-service) to fine tune a production ready instance.
 
 ## Troubleshooting
 
