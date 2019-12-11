@@ -55,4 +55,4 @@ Datasource can be seen as a driver to access your data. It can currently be conn
 - **Google Cloud Storage**: compatible with Google's cloud storage solution [ED only].
 - **Azure Blob Storage**: compatible with Azure's blob storage solution [ED only].
 
-[In next chapter](en/docs/cells/v2/managing-datasources), we show you how to create and manage datasources via the admin interface.
+[In next chapter](./managing-datasources), we show you how to create and manage datasources via the admin interface.
