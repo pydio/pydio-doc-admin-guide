@@ -1,91 +1,141 @@
-_This section will get you up and running in no-time. Should you encounter any issue, please refer to the more detailed installation guides provided in the following chapter._
+_This guide describes the steps required to have the Pydio Cells Docker container running._
 
-## Pre-requisites
+[:image:2_running_cells_in_production/logos-os/logo-docker.png]
 
-#### Hardware/OS
+### How to use the Pydio Cells docker image
 
-For Pydio Cells to run smoothly, you should meet the following requirements:
+The [Pydio cells image](https://hub.docker.com/r/pydio/cells/) is designed to be used in a micro-service environment. It only contains what is strictly necessary to run the Pydio Cells binary and nothing more.
 
-- **Server Capacity** : 2 Core CPU - 64bit, 4GB RAM, SSD is also recommended for storage.
-- **Operating System**: Debian 8/9/10, Ubuntu 18.04 LTS, CentOS 7, MacOS High Sierra, Windows 10
-- **Ulimit**: Make sure to set the number of allowed open files greater than **2048**. For production use, a minimum of **8192** is recommended (see `ulimit -n`).
+In order to have a fully working Pydio Cells environment, you need to run a database (MySQL or MariaDB) on the same network. A basic setup is described on this page.
 
-#### MySQL Database
+| env variable   | value                   | example          |
+| -------------- | ----------------------- | ---------------- |
+| CELLS_BIND     | host:port               | localhost:80     |
+| CELLS_EXTERNAL | http(s)://url-to-access | http://localhost |
+| CELLS_NO_TLS   | 1 = noTLS, 0 = TLS      | 0 or 1           |
 
-You must have an available MySQL database, along with a privileged user (e.g. `pydio`) to access this DB. Use one of the following link to install the DB:
-
-- [MariaDB version 10.3 and above](https://downloads.mariadb.org/mariadb/repositories)
-- [MySQL version 5.7 and above](https://dev.mysql.com/doc/refman/8.0/en/installing.html)
-
-#### Cells binary
-
-Download the Pydio Cells binary corresponding to your architecture using one of the following links:
-
-- [Linux Amd64](https://download.pydio.com/latest/cells/release/{latest}/linux-amd64/cells)
-- [Mac OSX](https://download.pydio.com/latest/cells/release/{latest}/darwin-amd64/cells)
-- [Windows (64bits)](https://download.pydio.com/latest/cells/release/{latest}/windows-amd64/cells.exe)
-
-For the Enterprise Distribution, use these links :
-
-- [Cells Enterprise Linux Amd64](https://download.pydio.com/latest/cells-enterprise/release/{latest}/linux-amd64/cells-enterprise),
-- [Cells Enterprise Mac OSX](https://download.pydio.com/latest/cells-enterprise/release/{latest}/darwin-amd64/cells-enterprise),
-- [Cells Enterprise Windows (64bits)](https://download.pydio.com/latest/cells-enterprise/release/{latest}/windows-amd64/cells-enterprise.exe)
-- **Replace `cells` by `cells-enterprise` in all the following commands.**
-
-On Linux/MacOSX, make sure to make the binary executable using `chmod +x cells`. Create a dedicated user on the server to install and run Cells. On Linux, if you wish to start server on ports 80 (http) or 443 (https), you have to grant a proper permission:
+#### Run the container
 
 ```sh
-setcap 'cap_net_bind_service=+ep' cells
+docker run -d --network=host pydio/cell
 ```
 
-## Cells Installation
+You can now access the Pydio Cells installer at [https://localhost](https://localhost). A complete example can be found in the docker-compose section of this guide.
 
-Start Cells in installation mode:
+If you want to access your container from outside you must then change at least the `CELLS_EXTERNAL` and also (it is recommended) to have persisting data you need to have a volume (you can sort it with multiple volumes if you wish, but for our example we are going to store everything into a single folder).
+
+Here's an example of a command that runs a cells container with persistent data and external access:
 
 ```sh
-$> ./cells install
+docker run -d -e CELLS_EXTERNAL=192.168.0.172:8080 -e CELLS_BIND=192.168.0.172:8080 -p 8080:8080 -v /home/cells/volume/:/var/cells pydio/cells
 ```
 
-or on Windows
+* **-e** *CELLS_EXTERNAL* is required to give it external access
+* **-e** *CELLS_BIND* can be, the server running the container address or localhost.
+* **-v** */home/cells/volume/:/var/cells*, basically I have a folder on my server located here `/home/cells/volume/` and where I want to store the whole Cells working directory.
 
-```sh
-$> .\cells.exe install
+_This was only an example on how you can run a Cells container, you can find below all of the enivronment variables, data configurations for cells, docker-compose examples and more_.
+
+#### External database
+
+Pydio Cells requires a MySQL or MariaDB database. It is recommended to use a separate database and a dedicated user with access to that database. A complete example can be found in the docker-compose section of this guide.
+
+#### Persistent data
+
+All default configuration and data (`/var/cells` on the container) is saved in an unnamed volume.
+
+If you want to use named volumes, here is an overview of the important files :
+
+* `/var/cells/pydio.json`: main configuration file
+* `/var/cells/data`: data
+* `/var/cells/logs`: logs
+* `/var/cells/certs`: certificate management
+* `/var/cells/services`: services information
+
+Note: If you [add new datasources](./managing-datasources) and want to persist the data, ensure that their location is also mounted in a volume.
+
+#### Environment variable
+
+* `CELLS_NO_TLS`: uses tls or not (default to 0 => uses tls)
+* `CELLS_BIND` : address where the application http server is bound to. It MUST contain a server name and a port.
+* `CELLS_EXTERNAL` : url the end user will use to connect to the application.
+
+Let's say:
+
+* You have a server with an internet facing IP and a corresponding DNS A entry that points toward `files.example.com`
+* You want to run the application in self signed mode on port 8080 (remember the default value of CELLS_NO_TLS is disabled)
+
+### Example setup with docker compose
+
+```yaml
+version: '3'
+services:
+
+    cells:
+        image: pydio/cells:latest
+        restart: always
+        ports: ["8080:8080"]
+        environment:
+            - CELLS_BIND=files.example.com:8080
+            - CELLS_EXTERNAL=https://files.example.com:8080
+       volumes:
+            - "cellsdir:/var/cells"
+            - "data:/var/cells/data"
+
+    # MySQL image with a default database cells and a dedicated user pydio
+    mysql:
+         image: mysql:5.7
+         restart: always
+         environment:
+             MYSQL_ROOT_PASSWORD: P@ssw0rd
+             MYSQL_DATABASE: cells
+             MYSQL_USER: pydio
+             MYSQL_PASSWORD: P@ssw0rd
+         command: [mysqld, --character-set-server=utf8mb4, --collation-server=utf8mb4_unicode_ci]
+         volumes:
+             - "mysqldir:/var/lib/mysql"
+
+volumes:
+    data: {}
+    cellsdir: {}
+    mysqldir: {}
 ```
 
-You first have to provide the basic networking information so that Cells can start its internal webserver:
+### Public access
 
-- the `Bind URL` (IP address/domain name and port),
-- the `TLS configuration` (to enable HTTPS protocol, strongly recommended!),
-- if you are behind a reverse proxy, you can also customize the `External URL` (a.k.a. the address that you will communicate to your end users) so that it differs from the technical bind URL.
+#### HTTPS
 
-#### [Mode 1] Web Installer
+We recommend you [run behind a proxy](https://pydio.com/en/docs/kb/devops) to encrypt the content you want to publish over the internet.
 
-If you are on a desktop machine, the installer opens a web page with a small form where you can provide the DB connection info and the login/password of the main administrator.
+The [nginx-proxy](https://github.com/jwilder/nginx-proxy) and [docker-letsencrypt-nginx-proxy-companion](https://github.com/JrCs/docker-letsencrypt-nginx-proxy-companion) containers can also be used to setup your proxy.
 
-Click on the image below to see a screencast of the installation :
+### Cells Sync
 
-[:image:1_quick_start/installation/web-installer.gif]
+The Cells Sync Desktop Application will require an additional port.
 
-After it completes, the server restarts automatically and you are good to go.
+* First read this, [Setup Cells Server for Cells Sync](/en/docs/kb/client-applications/setup-cells-server-cellssync)
+* Make sure to start a container with this env set `PYDIO_GRPC_EXTERNAL`
+* Expose the port that you previously set with `PYDIO_GRPC_EXTERNAL`
 
-#### [Mode 2] Command line Installer
+Example: 
 
-If you prefer working from your shell, you can perform the same steps quickly using command line prompts/answers. Click on the image below to see a screencast of the installation :
+Assuming that port **33060** is the port chosen for gRPC, the command should have those two additional parameters,
 
-[:image:1_quick_start/installation/cli-installer.gif]
+- `-e PYDIO_GRPC_EXTERNAL=33060` (sets the env variable)
+- `-p 33060:33060` (exposes the port)
 
-After it completes, restart the server with:
+The entire command should look like this:
 
-```sh
-$> ./cells start
+```
+docker run -d -e CELLS_EXTERNAL=192.168.0.172:8080 -e CELLS_BIND=192.168.0.172:8080 -e PYDIO_GRPC_EXTERNAL=33060 -p 33060:33060 -p 8080:8080 pydio/cells
 ```
 
-or on Windows
+### Troubleshooting
 
-```sh
-$> .\cells.exe start
-```
+#### Check that after a server or container reboot that the address is the same
 
-## Login to Cells
+If you ever restart your server and or your containers docker might attribute you another address for your containers.
 
-Once the restart is finished, you are good to go! You should be able to open your browser at your `External URL` address and see the login page. Use the credentials you have just specified to login!
+For instance docker usually has containers addresses looking like this `172.17.0.5` and therefore in Cells the default datasources or the ones that you will be creating on the filesystem will all be using this peer address by default.
+
+You might stumble upon this issue, if that's the case you need to access the `pydio.json` file and change the old occurrences of the address with the newest one.
