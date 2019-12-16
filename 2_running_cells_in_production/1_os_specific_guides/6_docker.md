@@ -107,7 +107,7 @@ volumes:
 
 For users of the Sync desktop client you must configure and expose the gRPC port.
 
-- Set this environment variable upon when starting your container with a port of your choosing, `PYDIO_GRPC_EXTERNAL=<port>`.
+- Set this environment variable when starting your container with a port of your choosing, `PYDIO_GRPC_EXTERNAL=<port>`.
 - then make sure to expose the port.
 
 Example: 
