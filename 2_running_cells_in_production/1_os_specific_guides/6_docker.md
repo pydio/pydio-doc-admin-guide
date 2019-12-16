@@ -8,11 +8,13 @@ The [Pydio cells image](https://hub.docker.com/r/pydio/cells/) is designed to be
 
 In order to have a fully working Pydio Cells environment, you need to run a database (MySQL or MariaDB) on the same network. A basic setup is described on this page.
 
-| env variable   | value                   | example          |
-| -------------- | ----------------------- | ---------------- |
-| CELLS_BIND     | host:port               | localhost:80     |
-| CELLS_EXTERNAL | http(s)://url-to-access | http://localhost |
-| CELLS_NO_TLS   | 1 = noTLS, 0 = TLS      | 0 or 1           |
+| env variable        | value                                | example                       |
+| ------------------- | ------------------------------------ | ----------------------------- |
+| CELLS_BIND          | host:port                            | localhost:80                  |
+| CELLS_EXTERNAL      | http(s)://url-to-access              | http://localhost              |
+| CELLS_NO_TLS        | 1 = noTLS, 0 = TLS                   | 0 or 1                        |
+| PYDIO_GRPC_EXTERNAL | any port (must also expose the port) | this env variable is optional |
+
 
 #### Run the container
 
@@ -99,6 +101,26 @@ volumes:
     data: {}
     cellsdir: {}
     mysqldir: {}
+```
+
+### Sync desktop client
+
+For users of the Sync desktop client you must configure and expose the gRPC port.
+
+- Set this environment variable upon when starting your container with a port of your choosing, `PYDIO_GRPC_EXTERNAL=<port>`.
+- then make sure to expose the port.
+
+Example: 
+
+Assuming that port **33060** is the port chosen for gRPC, the command should have those two additional parameters,
+
+- `-e PYDIO_GRPC_EXTERNAL=33060` (sets the env variable)
+- `-p 33060:33060` (exposes the port)
+
+The entire command should look like this:
+
+```
+docker run -d -e CELLS_EXTERNAL=192.168.0.172:8080 -e CELLS_BIND=192.168.0.172:8080 -e PYDIO_GRPC_EXTERNAL=33060 -p 33060:33060 -p 8080:8080 pydio/cells
 ```
 
 ### Public access
