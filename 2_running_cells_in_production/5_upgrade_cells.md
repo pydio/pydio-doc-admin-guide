@@ -49,6 +49,9 @@ Click on **Upgrade to Cells Enterprise**:
 
 ## Notes
 
+Our in-app tool uses a public key to verify the signatures of the binaries that are being downloaded from our server.
+In detail it means that we sign our binaries with a private key and on the server(in app update tool) you have a public key to ensure the binaries are signed by the same entity (us).
+
 After Updating always make sure to set the capabilities if you are running on a linux server.
 
 ```sh
