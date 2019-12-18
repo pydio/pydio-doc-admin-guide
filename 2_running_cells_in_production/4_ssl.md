@@ -52,3 +52,19 @@ Also, for development, if you want your browser to "turn green" (see the certifi
 ### Disabling TLS
 
 You can finally fully disable TLS and let Cells serve connections over HTTP. This is not recommended but is good enough for testing or development. In that case, just beware that the gRPC gateway (required for CellsSync) will be exposed on a separate port that must be opened in the firewall, if any.
+
+## Notes
+
+### Intermediate certificates
+
+If your Certificate Authority(CA) is not recognized by your browser, it might require from you to concatenate the Document Intermediate Certificates with your certificates, Apache2 user might be used to this directive `SSLCertificateChainFile`.
+
+On Cells we use a different webserver ([Caddy](https://caddyserver.com/)). 
+You must concatenate both the certificate and the intermediate certificate in the same file, in the following example the new cert file will be named **fullcert.crt**:
+
+```
+cat <the certificate> > fullcert.crt
+cat <the intermerdiate_cert> > fullcert.crt
+```
+
+and then proceed to install your Cells with custom certificates by providing the new **fullcert.crt** and the **key**.
