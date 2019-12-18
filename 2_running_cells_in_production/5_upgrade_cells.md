@@ -35,7 +35,7 @@ Click on **Upgrade to Cells Enterprise**:
 ### Update Pydio Cells to the latest version
 
 - Run the command `./cells update`.
-- Identitfy the latest version number available (for instance 1.6.2).
+- Identify the latest version number available (for instance 1.6.2).
 - To update run `./cells update --version=1.6.2`.
 - Make sure if you are under linux and are using port 80/443 to set the capabilities with `setcap 'cap_net_bind_service=+ep' cells`.
 - Restart Cells.
