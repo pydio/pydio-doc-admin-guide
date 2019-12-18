@@ -49,13 +49,18 @@ Click on **Upgrade to Cells Enterprise**:
 
 ## Notes
 
-Our in-app tool uses a public key to verify the signatures of the binaries that are being downloaded from our server.
-In detail it means that we sign our binaries with a private key and on the server(in app update tool) you have a public key to ensure the binaries are signed by the same entity (us).
+### Security
+
+To provide an additional security layer and to avoid MITM attack, all binaries downloaded from the official update server are signed with our private key. Before applying upgrade, your Cells server will always check the validity of the package it just downloaded.
+
+### Do not forget setcap!
 
 After Updating always make sure to set the capabilities if you are running on a linux server.
 
 ```sh
   setcap 'cap_net_bind_service=+ep' cells
 ```
+
+### Upgrading from Cells to Cells Enterprise
 
 After upgrading to Enterprise, make sure that you have the license file, located in `~/.config/pydio/cells/pydio-license`.

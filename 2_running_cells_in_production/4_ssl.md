@@ -57,14 +57,13 @@ You can finally fully disable TLS and let Cells serve connections over HTTP. Thi
 
 ### Intermediate certificates
 
-If your Certificate Authority(CA) is not recognized by your browser, it might require from you to concatenate the Document Intermediate Certificates with your certificates, Apache2 user might be used to this directive `SSLCertificateChainFile`.
+If your Certificate Authority(CA) is not recognized by your browser, it might require from you to publish the Intermediate Certificates along with your certificates (Apache2 user might be used to the `SSLCertificateChainFile` directive).
 
-On Cells we use a different webserver ([Caddy](https://caddyserver.com/)). 
-You must concatenate both the certificate and the intermediate certificate in the same file, in the following example the new cert file will be named **fullcert.crt**:
+To achieve this on Pydio Cells, you must **concatenate both the certificate and the intermediate certificate** inside the same file. Below is an example of appending the intermediate certificate to your certificate: 
 
 ```
-cat <the certificate> > fullcert.crt
-cat <the intermerdiate_cert> > fullcert.crt
+cat the_certificate.crt > fullcert.crt
+cat intermerdiate_cert.crt >> fullcert.crt
 ```
 
-and then proceed to install your Cells with custom certificates by providing the new **fullcert.crt** and the **key**.
+You can then proceed to installation, by using the custom certificates option and by providing the new **fullcert.crt** and the **key**.
