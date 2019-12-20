@@ -35,7 +35,7 @@ Click on **Upgrade to Cells Enterprise**:
 ### Update Pydio Cells to the latest version
 
 - Run the command `./cells update`.
-- Identitfy the latest version number available (for instance 1.6.2).
+- Identify the latest version number available (for instance 1.6.2).
 - To update run `./cells update --version=1.6.2`.
 - Make sure if you are under linux and are using port 80/443 to set the capabilities with `setcap 'cap_net_bind_service=+ep' cells`.
 - Restart Cells.
@@ -49,10 +49,18 @@ Click on **Upgrade to Cells Enterprise**:
 
 ## Notes
 
+### Security
+
+To provide an additional security layer and to avoid MITM attack, all binaries downloaded from the official update server are signed with our private key. Before applying upgrade, your Cells server will always check the validity of the package it just downloaded.
+
+### Do not forget setcap!
+
 After Updating always make sure to set the capabilities if you are running on a linux server.
 
 ```sh
   setcap 'cap_net_bind_service=+ep' cells
 ```
+
+### Upgrading from Cells to Cells Enterprise
 
 After upgrading to Enterprise, make sure that you have the license file, located in `~/.config/pydio/cells/pydio-license`.

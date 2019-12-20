@@ -52,3 +52,18 @@ Also, for development, if you want your browser to "turn green" (see the certifi
 ### Disabling TLS
 
 You can finally fully disable TLS and let Cells serve connections over HTTP. This is not recommended but is good enough for testing or development. In that case, just beware that the gRPC gateway (required for CellsSync) will be exposed on a separate port that must be opened in the firewall, if any.
+
+## Notes
+
+### Intermediate certificates
+
+If your Certificate Authority(CA) is not recognized by your browser, it might require from you to publish the Intermediate Certificates along with your certificates (Apache2 user might be used to the `SSLCertificateChainFile` directive).
+
+To achieve this on Pydio Cells, you must **concatenate both the certificate and the intermediate certificate** inside the same file. Below is an example of appending the intermediate certificate to your certificate: 
+
+```
+cat the_certificate.crt > fullcert.crt
+cat intermerdiate_cert.crt >> fullcert.crt
+```
+
+You can then proceed to installation, by using the custom certificates option and by providing the new **fullcert.crt** and the **key**.

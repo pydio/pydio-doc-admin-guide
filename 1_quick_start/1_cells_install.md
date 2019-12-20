@@ -72,7 +72,7 @@ After it completes, the server restarts automatically and you are good to go.
 
 If you prefer working from your shell, you can perform the same steps quickly using command line prompts/answers. Click on the image below to see a screencast of the installation :
 
-[:image:1_quick_start/installation/demo-install.gif]
+[:image:1_quick_start/installation/cli-installer.gif]
 
 After it completes, restart the server with:
 
