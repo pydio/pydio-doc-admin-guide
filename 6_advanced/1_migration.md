@@ -1,12 +1,12 @@
-This HowTo describes the migration from Pydio8 to Pydio Cells ED step by step.
+This how-to describes the migration from Pydio 8 to Pydio Cells Enterprise Distribution step by step.
 
 ## Preparation
 
 ### Forewords
 
 - The process is quite tested and robust, yet you **should perform a full backup of your system before starting**.
-- The migration can only be achieved from Pydio 8 to Pydio Cells, thus if you are running an older version, you must first migrate up to Pydio 8.2.3 (or the latest version at time of writing)
-- We advise that you install Pydio Cells on another new machine to ease the process and be able to abort the migration and be able to be back online with the Pydio8 server in no time. In such case, perform a copy (via rsync) of the business data from your old server to your new server before starting. (In Cells, when you add an existed folder as a new datasource to Cells, it will write some additional information in .minio.sys or .pydio file. That means that you are at risk of a modification on data of production. It's highly recommended to install Cells on a separated machine during migration).
+- The migration can only be achieved from Pydio 8 to Pydio Cells, thus if you are running an older version, you must first migrate up to Pydio 8.2.4 (the latest version at time of writing)
+- We advise that you install Pydio Cells on another new machine to ease the process and be able to abort the migration and be able to be back online with the Pydio 8 server in no time. In such case, perform a copy (via rsync) of the business data from your old server to your new server before starting. (In Cells, when you add an existed folder as a new datasource to Cells, it will write some additional information in .minio.sys or .pydio file. That means that you are at risk of a modification on data of production. It's highly recommended to install Cells on a separated machine during migration).
 
 ### Clean before start
 
@@ -88,24 +88,16 @@ If you install the new server on the **same** machine, we strongly advise that y
 
 Do not forget to insure files and folder have correct permissions for the user that runs the app (usually `pydio`).
 
-##### Clean Versioning from Pydio8
+##### Clean Versioning from Pydio 8
 
-If the versioning plugin was enabled in P8, we should clean all `.git` data.
-TODO: add more details on this.
-
-For instance:
-
-```sh
-# extremely dangerous command think twice before executing
-find /home/pydio/data -name .git -exec rm -rf {} \;
-```
+If the versioning plugin was enabled in Pydio 8, we should clean all `.git` data.
 
 #### Download
 
 Download the latest version of Pydio Cells from the website, for instance:
 
 ```sh
-wget https://download.pydio.com/pub/cells-enterprise/release/1.6.1/linux-amd64/cells-enterprise
+wget https://download.pydio.com/pub/cells-enterprise/release/{latest}/linux-amd64/cells-enterprise
 ```
 
 #### TLS
@@ -152,7 +144,7 @@ For instance:
 
 After creation of new datasources in Cells, the indexation process will be launched automatically and you **must** wait until this task finishes. Depending on the size of data, it may take several hours or even a day.
 
-#### Personal workspaces [ED only]
+#### Personal workspaces [Enterprise Distribution only]
 
 If you have workspaces with personal path like `My Files` which uses `AJXP_USER` in the path, you are required to create a new Template Path for this workspace on the correct datasource in Pydio Cells.
 For example a new Template Path: `Path = DataSources.pydio8dss + "/personal/" + User.Name;`
@@ -166,9 +158,9 @@ The migration is divided into three options and should be run one by one.
 
 > Attention: You can select all task at one time and click Next, but it should work one by one. (1) and (2) can be done many times because that synchronises. However we should trigger (3) task just one time.
 
-### Copying LDAP config (ED only)
+### Copying LDAP config [Enterprise Distribution only]
 
-This option allows us to copy the LDAP config from Pydio8. You might ignore this option if your legacy server does not rely on a LDAP server. This task can be easily manually verified in Cells to make sure all params are migrated correctly.
+This option allows us to copy the LDAP config from Pydio 8. You might ignore this option if your legacy server does not rely on a LDAP server. This task can be easily manually verified in Cells to make sure all params are migrated correctly.
 
 At this point you can launch the synchronization of the users with new ldap configuration. The set of users from LDAP via this configuration and the set of user ldap via API of Pydio 8 are identical in Cells (they have the same AuthSource). However, it is recommended to do the first synchronization of users in following step.
 
