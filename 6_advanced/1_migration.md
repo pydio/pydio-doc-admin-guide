@@ -97,7 +97,7 @@ If the versioning plugin was enabled in Pydio 8, we should clean all `.git` data
 Download the latest version of Pydio Cells from the website, for instance:
 
 ```sh
-wget https://download.pydio.com/pub/cells-enterprise/release/2.0.1/linux-amd64/cells-enterprise
+wget https://download.pydio.com/pub/cells-enterprise/release/{latest}/linux-amd64/cells-enterprise
 ```
 
 #### TLS
