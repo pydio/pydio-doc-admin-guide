@@ -35,7 +35,7 @@ Under the hood, instead of pointing to a defined location in the DataSource tree
 Path = DataSources.personal + "/" + User.Name;
 ```
 
-In _Cells Enterprise_, you can create your own Template Paths, which can be very useful to e.g. map data from various sources to a unique path. Assuming you have three servers A, B, and C on which users data is evenly distributed (e.g. by their login first letters), you can easily write a script to resolve to the correct data source. Assuming Server A contains users data from [a to h], Server B from [i to p], etc... and you mounted them as separate datasources, script could look like : 
+In _Cells Enterprise Distribution_, you can create your own Template Paths, which can be very useful to e.g. map data from various sources to a unique path. Assuming you have three servers A, B, and C on which users data is evenly distributed (e.g. by their login first letters), you can easily write a script to resolve to the correct data source. Assuming Server A contains users data from [a to h], Server B from [i to p], etc... and you mounted them as separate datasources, script could look like : 
 
 ```javascript
 // Test first letter of user login

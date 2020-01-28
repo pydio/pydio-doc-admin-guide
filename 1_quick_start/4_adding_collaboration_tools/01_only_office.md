@@ -1,4 +1,4 @@
-# Only Office plugin for Cells - Enterprise Distribution
+# Only Office plugin for Cells Enterprise Distribution
 
 ONLYOFFICE is a multifunctional portal for business collaboration, document and project management. It allows you to organize business tasks and milestones, store and share your corporate or personal documents, use social networking tools such as blogs and forums, as well as communicate with your team members via corporate IM.
 

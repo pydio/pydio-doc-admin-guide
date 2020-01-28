@@ -56,7 +56,7 @@ You should be able to directly manage your backup policies via your S3 provider 
 
 The configuration of this datasource is fully stored in the main `pydio.json` file and is backed up and restored together with your main system.
 
-Note that the Enterprise distribution offers two more datasource types (namely Google Cloud and Azure Blob storage) that are to be backed up the same way.
+Note that the Enterprise Distribution offers two more datasource types (namely Google Cloud and Azure Blob storage) that are to be backed up the same way.
 
 ### Backup the database
 

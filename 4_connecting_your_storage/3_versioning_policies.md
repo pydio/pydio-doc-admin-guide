@@ -17,9 +17,9 @@ Pydio Cells comes bundled with a default set of Versioning Policies, as describe
 
 ### [ED] Defining a Versioning Policy
 
-_Note: The Home Edition comes with the default set of Versioning Policies and they cannot be edited._
+_Note: The Home Distribution comes with the default set of Versioning Policies and they cannot be edited._
 
-In **Pydio Cells Enterprise Edition**, we have brought versioning one step further by giving you the option to define custom pruning policies that will fit to __your__ business specific needs and requirement.
+In **Pydio Cells Enterprise Distribution**, we have brought versioning one step further by giving you the option to define custom pruning policies that will fit to __your__ business specific needs and requirement.
 
 Go to your `Settings Page` then under **DataManagement > Storage use the "+ VERSIONING POLICY"** to create your own policy.
 
