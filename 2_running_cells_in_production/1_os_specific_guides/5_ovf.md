@@ -36,7 +36,7 @@ You just follow steps in web interface to finalize the configuration. All parame
 
 You see installation progress in your browser page. It can take up to a minute to reach the end.
 
-At this step, you can login to Cells-Enterprise with the credentials you have entered during the setup and verify everything is up and running.
+At this step, you can login to cells-enterprise with the credentials you have entered during the setup and verify everything is up and running.
 
 This done, you should restart the virtual machine, another script will finalise the configuration, typically installing and starting Cells as a systemd service.
 

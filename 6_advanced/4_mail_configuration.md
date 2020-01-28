@@ -1,8 +1,8 @@
 In this chapter, we have a look at the mailing system integrated to Pydio Cells and guide you through template customization.
 
-## [Enterprise Edition] Custom templates for mailer
+## [Enterprise Distribution] Custom templates for mailer
 
-With the Enterprise Edition there are 3 additional options that will allow you to change the mailer template:
+With the Enterprise Distribution there are 3 additional options that will allow you to change the mailer template:
 
 * Change the Logo
 * Change the Application Name

@@ -1,4 +1,4 @@
-In the **Enterprise Edition**, an audit log gathers all non-technical events to help focus on business logic when analysing logs for compliance or when tracing events after a security breach.
+In the **Enterprise Distribution**, an audit log gathers all non-technical events to help focus on business logic when analysing logs for compliance or when tracing events after a security breach.
 
 Audit Logs are accessible under the section **Dashboard** inside the **Activity** tab.
 

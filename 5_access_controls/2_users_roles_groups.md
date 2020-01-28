@@ -58,7 +58,7 @@ This model provides great flexibility to assign permissions on the Administrator
 
 ### Access Control Lists
 
-Access Control Lists allows the Administrator to actually apply the strategies described above. In the various users/roles/groups editors, one can grant permissions on Workspaces or on workspaces subfolders in two ways: statically using simple Read/Write values, or dynamically using Security Policies (Enterprise Edition).
+Access Control Lists allows the Administrator to actually apply the strategies described above. In the various users/roles/groups editors, one can grant permissions on Workspaces or on workspaces subfolders in two ways: statically using simple Read/Write values, or dynamically using Security Policies (Enterprise Distribution).
 
 #### Static Accesses
 

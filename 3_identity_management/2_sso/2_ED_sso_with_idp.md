@@ -1,4 +1,4 @@
-You can add external Identity Providers to Pydio Cells Enterprise. Users will choose between a list of external Identity Providers you have configured (eg: Login in with Google, Facebook, Github...) instead of the traditional login page. Users that log in from an external Identity Provider are automatically created in a separate group in Cells internal user repository.
+You can add external Identity Providers to Pydio Cells Enterprise Distribution. Users will choose between a list of external Identity Providers you have configured (eg: Login in with Google, Facebook, Github...) instead of the traditional login page. Users that log in from an external Identity Provider are automatically created in a separate group in Cells internal user repository.
 
 ## Involved Parties
 

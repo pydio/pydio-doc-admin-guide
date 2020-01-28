@@ -1,4 +1,4 @@
-Pydio cells enterprise is compatible with google cloud object storage, therefore you can have datasources that are connected to your google cloud storage buckets.
+Pydio cells-enterprise is compatible with google cloud object storage, therefore you can have datasources that are connected to your google cloud storage buckets.
 
 ### Google Cloud Storage datasource
 

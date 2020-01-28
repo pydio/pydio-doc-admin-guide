@@ -11,7 +11,7 @@ However, please be aware of the following:
 
 Please beware that many users syncing high amount of files can severely load the server, your installation must be prepared for that! Also, if you are behind a reverse proxy, you may check the dedicated section to learn more about gRPC handling through reverse proxies.
 
-For Cells Enterprise, Sync is enabled by an administrator on a per-workspace basis. By default, only `Personal` workspace is sync-enabled. If you wish to enable other workspaces, you have to switch the `Allow Desktop Sync` flag in each of them.
+For Cells Enterprise Distribution, Sync is enabled by an administrator on a per-workspace basis. By default, only `Personal` workspace is sync-enabled. If you wish to enable other workspaces, you have to switch the `Allow Desktop Sync` flag in each of them.
 
 ## Installing CellsSync
 

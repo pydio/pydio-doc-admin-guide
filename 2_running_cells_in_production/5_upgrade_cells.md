@@ -14,7 +14,7 @@ Cells binary is self-contained and can be easily updated / upgraded using either
   setcap 'cap_net_bind_service=+ep' cells
 ```
 
-### Upgrade Pydio Cells Home to Pydio Cells Enterprise
+### Upgrade Pydio Cells Home Distribution to Pydio Cells Enterprise Distribution
 
 [:image-popup:2_running_cells_in_production/upgrade_cells_to_ent_webui.png]
 
@@ -40,10 +40,10 @@ Click on **Upgrade to Cells Enterprise**:
 - Make sure if you are under linux and are using port 80/443 to set the capabilities with `setcap 'cap_net_bind_service=+ep' cells`.
 - Restart Cells.
 
-### Upgrade Pydio Cells Home to Pydio Cells Enterprise
+### Upgrade Pydio Cells Home Distribution to Pydio Cells Enterprise Distribution
 
 - Stop your Cells
-- Download the latest Cells-enterprise binary and replace replace the current one (if you are using systemd either rename the binary to cells or update your cells.service target)
+- Download the latest cells-enterprise binary and replace replace the current one (if you are using systemd either rename the binary to cells or update your cells.service target)
 - Add the license (logged as the user running Cells), create this file `~/.config/pydio/cells/pydio-license` and put your License Key.
 - Restart Cells.
 
@@ -63,4 +63,4 @@ After Updating always make sure to set the capabilities if you are running on a 
 
 ### Upgrading from Cells to Cells Enterprise
 
-After upgrading to Enterprise, make sure that you have the license file, located in `~/.config/pydio/cells/pydio-license`.
+After upgrading to Enterprise Distribution, make sure that you have the license file, located in `~/.config/pydio/cells/pydio-license`.

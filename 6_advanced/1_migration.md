@@ -21,27 +21,27 @@ You should also perform following cleanups so that the migration runs smoothly:
 
 **Incompatibilities**:
 
-There are some plugins/functionalities in Pydio 8 Community are not available in Cells Home version. Please take a look in this list to make sure before doing.
+There are some plugins/functionalities in Pydio 8 Community are not available in Cells Home Distribution. Please take a look in this list to make sure before doing.
 
-| Functionalities/Plugins    | Pydio Community | Cells Home | Notes                                      |
-| -------------------------- | --------------- | ---------- | ------------------------------------------ |
-| Ldap auth plugin           | yes             | no         | available in Cells Enterprise only         |
-| Custom DB auth plugin      | yes             | no         |                                            |
-| SMB auth plugin            | yes             | no         |                                            |
-| FTP auth plugin            | yes             | no         |                                            |
-| RADIUS auth plugin         | yes             | no         |                                            |
-| Remote auth plugin         | yes             | no         |                                            |
-| OTP auth-frontend          | yes             | no         |                                            |
-| CAS auth-frontend          | yes             | no         | use SAML instead                           |
-| Dual-form auth-frontend    | yes             | no         |                                            |
-| Access driver samba        | yes             | no         | it's possible to use static mount in Cells |
-| Access driver mailbox      | yes             | no         |                                            |
-| Access driver FTP over SSH | yes             | no         | it's possible to use static mount in Cells |
-| Access driver FTP Server   | yes             | no         | it's possible to use static mount in Cells |
-| Access driver WebDav       | yes             | no         | it's possible to use static mount in Cells |
-| Access driver Dropbox      | yes             | no         | it's possible to use static mount in Cells |
-| Access driver Open Stack   | yes             | no         | it's possible to use static mount in Cells |
-| Personal workspaces        | yes             | yes        | map to default My Files workspace only     |
+| Functionalities/Plugins    | Pydio Community | Cells Home Distribution | Notes                                            |
+| -------------------------- | --------------- | ----------------------- | ------------------------------------------------ |
+| Ldap auth plugin           | yes             | no                      | available in Cells Enterprise Distribution only  |
+| Custom DB auth plugin      | yes             | no                      |                                                  |
+| SMB auth plugin            | yes             | no                      |                                                  |
+| FTP auth plugin            | yes             | no                      |                                                  |
+| RADIUS auth plugin         | yes             | no                      |                                                  |
+| Remote auth plugin         | yes             | no                      |                                                  |
+| OTP auth-frontend          | yes             | no                      |                                                  |
+| CAS auth-frontend          | yes             | no                      | use SAML instead                                 |
+| Dual-form auth-frontend    | yes             | no                      |                                                  |
+| Access driver samba        | yes             | no                      | it's possible to use static mount in Cells       |
+| Access driver mailbox      | yes             | no                      |                                                  |
+| Access driver FTP over SSH | yes             | no                      | it's possible to use static mount in Cells       |
+| Access driver FTP Server   | yes             | no                      | it's possible to use static mount in Cells       |
+| Access driver WebDav       | yes             | no                      | it's possible to use static mount in Cells       |
+| Access driver Dropbox      | yes             | no                      | it's possible to use static mount in Cells       |
+| Access driver Open Stack   | yes             | no                      | it's possible to use static mount in Cells       |
+| Personal workspaces        | yes             | yes                     | map to default My Files workspace only           |
 
 **Optional**:
 
