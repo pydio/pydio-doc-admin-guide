@@ -25,7 +25,7 @@ then once you have all of the informations and assuming that you have already cr
 
 _You can notice that we used a regex to select only the buckets starting with cells_
 
-[:image-popup:4_connecting_your_storage/datasource_config/datasource_amazon_s3.png]
+[:image:4_connecting_your_storage/datasource_config/datasource_amazon_s3.png]
 
 ### Connect with Minio Storage
 
@@ -39,4 +39,4 @@ Then you will need to fill the fields as the following:
 - **S3 Api Region**: you can leave this empty
 - **Buckets**: Once you have provided valid parameters for the previous fields you will see appear a list of buckets that you have access to and can select them with by clicking or with a regular expression.
 
-[:image-popup:4_connecting_your_storage/datasource_config/datasource_remote_s3.png]
+[:image:4_connecting_your_storage/datasource_config/datasource_remote_s3.png]
