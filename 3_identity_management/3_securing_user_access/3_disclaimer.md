@@ -1,7 +1,7 @@
 Disclaimer features provides a way to force your users to accept your Terms of Use before being allowed to use the platform.
 This is typically suited to fit compliance rules from your company or GDPR european laws.
 
-### Activate and configure disclaimer
+### Enable disclaimer
 
 You must first enable the plugin, located on the left menu under the **Authentication** setting.
 [:image:3_identity_management/securing_user_access/enable_disclaimer_plugin.png]
