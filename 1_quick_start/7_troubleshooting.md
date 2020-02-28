@@ -8,9 +8,9 @@ You can find more use cases and solution in [our FAQ](https://pydio.com/en/docs/
 
 By default, application data is stored under the standard OS application dir:
 
-- Linux: ${USER_HOME}/.config/pydio/cells
-- Darwin: ${USER_HOME}/Library/Application Support/Pydio/cells
-- Windows: ${USER_HOME}/ApplicationData/Roaming/Pydio/cells
+- **Linux:** `${USER_HOME}/.config/pydio/cells`
+- **Darwin:** `${USER_HOME}/Library/Application Support/Pydio/cells`
+- **Windows:** `${USER_HOME}/ApplicationData/Roaming/Pydio/cells`
 
 You can customize the various storage locations with the following ENV variables:
 
@@ -27,7 +27,7 @@ During the installation process, if there is no progress bar but the console is 
 
 [:image-popup:1_quick_start/troubleshooting_install_no_progress.png]
 
-- The wizard is stucked at the end of the install
+- The wizard is stuck at the end of the install
 
 After the install, if the page does not refresh automatically in tls self-signed mode it is OK.  
 A manual refresh will load the login page.
