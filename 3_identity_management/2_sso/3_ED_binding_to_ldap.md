@@ -142,7 +142,7 @@ Additionally, you have to specify at least on simple condition that must be met 
 
 If you are not very familiar with LDAP, you might find [this article on Microsoft website](https://social.technet.microsoft.com/wiki/contents/articles/5392.active-directory-ldap-syntax-filters.aspx) useful to get more information about LDAP syntax and get further examples.
 
-When using Active Directory, it is highly recommanded to create a specific security group to ease filtering. Typically creating a `staff` security group in the `company` organisation and adding users and groups to it.
+When using Active Directory, it is highly recommended to create a specific security group to ease filtering. Typically creating a `staff` security group in the `company` organisation and adding users and groups to it.
 
 In Cells, the filter will look like this :
 

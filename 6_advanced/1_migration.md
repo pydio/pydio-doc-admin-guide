@@ -10,7 +10,7 @@ This how-to describes the migration from Pydio 8 to Pydio Cells Enterprise Distr
 
 ### Clean before start
 
-- The migration is quite time and resource consuming, so it is a good idea to perform a clean up of the files before starting and thus reduce the amount of data that are to be migrated.
+- The migration is quite long and resource consuming, so it is a good idea to perform a clean up of the files before starting and thus reduce the amount of data that are to be migrated.
 
 You should also perform following cleanups so that the migration runs smoothly:
 

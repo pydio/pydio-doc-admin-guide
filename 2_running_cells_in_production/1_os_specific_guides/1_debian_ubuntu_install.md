@@ -116,7 +116,7 @@ After the install is successfully done, if you ever have to stop Pydio Cells and
 ./cells start
 ```
 
-**It is advised to add Cells as a service with systemd (or supervisor) - See your Knowledge Base for the dedicated Guides.**
+**It is advised to add Cells as a service with systemd (or supervisor) - See our Knowledge Base for the dedicated Guides.**
 
 ## Troubleshooting
 

@@ -16,4 +16,4 @@ In our knowledge base we have a growing number of comprehensive guides to setup 
 
 ### More details
 
-- See your detailed article in the [Knowledge Base](en/docs/kb/client-applications/setup-cells-server-cellssync).
+- See our detailed article in the [Knowledge Base](en/docs/kb/client-applications/setup-cells-server-cellssync).
