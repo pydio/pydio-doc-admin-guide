@@ -2,8 +2,8 @@ Pydio cells enterprise is compatible with google cloud object storage, therefore
 
 ### Google Cloud Storage datasource
 
-First you need to generate credentials if you dont have any of them,
-open the menu on your GCS dashboard (the top left burger) and then go to the following section **APIs & Services > Credentials**.
+Start by generating credentials if you do not have them,
+for that, open the menu on your GCS dashboard (the top left burger) and then go to the following section **APIs & Services > Credentials**.
 
 [:image-popup:4_connecting_your_storage/datasource_config/gcs_create_credentials.png]
 
@@ -20,4 +20,4 @@ Assuming that you already have created your bucket, here's how you connect a GCS
 
 * Bucket Name : put your bucket name.
 * GCS JSON Credentials: put the content of the file that we generated above with your gcs account.
-* Interal path : you can make the datasource point to a specific folder inside the bucket.
+* Internal path : you can make the datasource point to a specific folder inside the bucket.

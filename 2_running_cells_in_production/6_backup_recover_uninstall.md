@@ -101,7 +101,7 @@ You can then retrieve the relevant Pydio Cells binary and simply relaunch the ap
 
 You should connect as an `admin` user after first restart and check that all datasources are correctly up and running, and optionally also rerun a sync if you where not able to correctly backup and restore the index **and** parent `.minio.sys` folder.
 
-## Clean uninstallation
+## Clean uninstall
 
 In vanilla single node setups, Pydio Cells does not put resources in multiple folders: everything is centralized in the `CELLS_WORKING_DIR` folder and in the database.
 So, to remove Pydio Cells, you mainly need to remove these 2 items and the Cells binary.

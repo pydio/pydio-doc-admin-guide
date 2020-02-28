@@ -11,11 +11,11 @@ To create a user go, click on the **+USER** button located in the top right corn
 [:image:3_identity_management/create_user.png]
 
 - **User Login**: this can **not** be changed afterwards.  
-- **User Password**: put the password of the user, you have to type it twice to ensure its validity. Make sure to always use strong passwords. Note that the plugin that performs password strenght check is fully customisable in Cells ED.
+- **User Password**: put the password of the user, you have to type it twice to ensure its validity. Make sure to always use strong passwords. Note that the plugin that performs password strength check is fully customizable in Cells ED.
 
-When editing an existing user, you have acces to following information:
+When editing an existing user, you have access to following information:
 
-- **User Profile**: this global category provides high-level set of permissions to the user. It can be used in cunjonction with roles. Possible values are:
+- **User Profile**: this global category provides high-level set of permissions to the user. It can be used in conjunction with roles. Possible values are:
   - _standard_: the most common profile
   - _shared_: a restricted profile applied automatically to external users created by standard users
   - _admin_: a super user with access to the Cells Console and most of the internal resources

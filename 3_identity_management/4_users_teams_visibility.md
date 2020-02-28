@@ -57,7 +57,7 @@ For teams:
 #### Links
 
 When a user has shared a file or folder, a "share" icon is displayed in the various lists where the file appears, but by default, _only for the user that have created the share_ can see this icon.
-The link visibility pannel allows the users to also display the icon for some chosen others that have access to this file / folder.
+The link visibility panel allows the users to also display the icon for some chosen others that have access to this file / folder.
 
 [:image-popup:3_identity_management/visibility/shared_link_visibility.png]
 

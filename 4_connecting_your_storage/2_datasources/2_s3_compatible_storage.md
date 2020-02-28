@@ -17,11 +17,11 @@ you can get them on your amazon aws account, here is a piece of documentation fr
 
 [:image-popup:4_connecting_your_storage/datasource_config/s3_credentials.png]
 
-then once you have all of the informations and assuming that you have already created your bucket, these are the mandatory fields to get your datasource to work:
+then once you have all of the information and assuming that you have already created your bucket, these are the mandatory fields to get your datasource to work:
 
 - **S3 Api key**: the `access key id` that you retrieve as explained above
 - **S3 Api secret**: the `secret access key` that you retrieve as explained above
-- **Buckets**: Once you have provided a Valid Key and Secret you will see appear a list of the buckets that you have access to and can select them with by clicking or with a regular expression.
+- **Buckets**: Once you have provided a Valid Key and Secret you will see appear a list of the buckets that you have access to and can select them by clicking or with a regular expression.
 
 _You can notice that we used a regex to select only the buckets starting with cells_
 
@@ -37,6 +37,6 @@ Then you will need to fill the fields as the following:
 - **S3 Api Secret**: the `secretKey` that you retrieved as explained above.
 - **Custom Endpoint**: is the address where your Minio server is running, usually `<address>:9000`, for instance `http://192.168.0.116:9000`.
 - **S3 Api Region**: you can leave this empty
-- **Buckets**: Once you have provided valid parameters for the previous fields you will see appear a list of buckets that you have access to and can select them with by clicking or with a regular expression.
+- **Buckets**: Once you have provided valid parameters for the previous fields you will see appear a list of buckets that you have access to and can select them by clicking or with a regular expression.
 
 [:image:4_connecting_your_storage/datasource_config/datasource_remote_s3.png]

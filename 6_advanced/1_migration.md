@@ -156,7 +156,7 @@ The migration is divided into three options and should be run one by one.
 (2) Migrate users, roles, groups
 (3) Migrate workspaces and metadata, sharing information
 
-> Attention: You can select all task at one time and click Next, but it should work one by one. (1) and (2) can be done many times because that synchronises. However we should trigger (3) task just one time.
+> Attention: You can select all task at one time and click Next, but it should work one by one. (1) and (2) can be done many times because that synchronizes. However we should trigger (3) task just one time.
 
 ### Copying LDAP config [Enterprise Distribution only]
 

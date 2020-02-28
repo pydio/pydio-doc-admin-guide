@@ -50,7 +50,7 @@ Now:
 
 1. Pur your CliendID and API Secret
 1. Put the focus on the **Test your Key** field and press once on your Yubikey
-1. Click on test, to verify that the informations are correct
+1. Click on test, to verify that the information are correct
 1. Save
 
 ### Troubleshooting

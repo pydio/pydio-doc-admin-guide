@@ -28,7 +28,7 @@ To define a workspace, one must point to at least one location in the DataSource
 
 #### Template Paths
 
-One specific workspace is the **Personal** workspace: while defined once and applied globally to all users, this workspace will dynamically create a folder for each users. In other words, each user will always only see her own files while using this workpsace. Unless disable, this does not prevent users from sharing data from their Personal workspaces with other people, using Cells or Public Links.
+One specific workspace is the **Personal** workspace: while defined once and applied globally to all users, this workspace will dynamically create a folder for each users. In other words, each user will always only see her own files while using this workspace. Unless disable, this does not prevent users from sharing data from their Personal workspaces with other people, using Cells or Public Links.
 
 Under the hood, instead of pointing to a defined location in the DataSource tree, this workspace is using a Template Path that is resolved dynamically when accessed. The `my-files` template path is defined by a javascript snippet as follows:   
 ```

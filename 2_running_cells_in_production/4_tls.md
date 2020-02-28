@@ -63,7 +63,7 @@ To achieve this on Pydio Cells, you must **concatenate both the certificate and 
 
 ```
 cat the_certificate.crt > fullcert.crt
-cat intermerdiate_cert.crt >> fullcert.crt
+cat intermediate_cert.crt >> fullcert.crt
 ```
 
 You can then proceed to installation, by using the custom certificates option and by providing the new **fullcert.crt** and the **key**.
