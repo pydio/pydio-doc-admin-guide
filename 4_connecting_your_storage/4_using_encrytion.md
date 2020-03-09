@@ -22,12 +22,14 @@ Put aside the additional CPU usage when using encryption, encrypted file size ar
 
 ## Enabling the encryption on a datasource
 
-First in **DATA MANAGEMENT > Storage** section, the admin must generate at least one key that will serve to encrypt datasources. The key content is randomly generated all the information required is the id and the label. Here are the description of the form fields
+First in **DATA MANAGEMENT > Storage** section, the admin must generate at least one key that will serve to encrypt datasources. The key content is randomly generated all the information required is the id and the label. Here are the description of the form fields.
 
-|Field| Description|
-|-----|------------|
-|**Identifier**|a unique string that identifies the key|
-|**Label**| The name of the key as it appears in the key list|
+| Field          | Description                                       |
+| -------------- | ------------------------------------------------- |
+| **Identifier** | a unique string that identifies the key           |
+| **Label**      | The name of the key as it appears in the key list |
+
+> **We do not encrypt the current data on your datasource, make sure to have an empty datasource before enabling encryption**
 
 Once keys are generated encryption option can be enabled. in datasource create/edit form enabled to the encryption option at the bottom.
 
