@@ -18,8 +18,8 @@ Both application use aggressive caching techniques to minimize network traffic. 
 Yet, everything is configurable.
 
 Here are the links to download each application:
-
-- [Android application](https://play.google.com/store/apps/details?id=com.pydio.android.cells&hl=en)
+                        
+- [Android application](https://play.google.com/store/apps/details?id=com.pydio.android.Client&hl=en)
 - [iOS application](https://itunes.apple.com/fr/app/pydio-pro/id1109419882?mt=8)
 
 ### Connect to a running Pydio server.
@@ -31,3 +31,4 @@ Start the application and fill in the requested fields:
 When you see this pagen; congratulations, you are now connected!
 
 [:image-popup:2_getting_started/good_to_go.jpg]
+
