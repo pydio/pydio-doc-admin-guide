@@ -8,10 +8,10 @@ Click on **Enable Public Links** to enable them.
 
 You now see these new fields:
 
-[:image:1_quick_start/sharing_features/public_link.png]
+[:image:1_quick_start/sharing_features/public_link_1.png]
 
 - **Link Label**: the label of your link; you have a menu displaying all your public links. It is easier recognize them with a label)
-- **Link Description**: filled by default with the creation date, this will be displayed in the various public layout seen by the end-user that clicks on the link. You can change it to provide a mode adequat description of the content.
+- **Link Description**: filled by default with the creation date, this will be displayed in the various public layout seen by the end-user that clicks on the link. You can change it to provide a mode adequate description of the content.
 
 Then, there are 3 different tabs:
 

@@ -6,7 +6,7 @@ In the context of Pydio Cells, group tenancy means that users of a group (A) can
 
 - All groups must be located at the root level (see screenshot below). Group tenancy with nested groups is not implemented in Pydio Cells.
 
-[:image:3_identity_management/group_tenancy_root_group_level.png]
+[:image:3_identity_management/group_tenancy/group_tenancy_root_group_level.png]
 
 - To enable this option go to the admin console, **Cells Console > Advanced Settings > Users Visibility**.  
 
@@ -14,7 +14,7 @@ _Note: Users Visibility is an advanced feature. So if you cannot find it where i
 
 You have 2 settings:
 
-[:image:3_identity_management/group_tenancy_menu.png]
+[:image:3_identity_management/group_tenancy/group_tenancy_menu.png]
 
 - **Users visible only to their group:** isolate the various groups.
 - **Hide groups from sharing dialogs:** add an additional layer by also removing any mention of groups from the sharing fields.
@@ -25,7 +25,7 @@ You have 2 settings:
 - keep in mind that all users always see the users that have been defined at the root (`/`) level, even if the users that have been defined in 2 distinct non-root groups cannot see each other.
 - after switching this option from **Off** to **On** (or the other way round), the changes are applied in background by an asynchronous job: you must wait for the job to finish for the new rules to be effective as it recomputes all user policies. See below a screenshot of the job that computes the policies being processed.
 
-[:image:3_identity_management/group_tenancy_job.png]
+[:image:3_identity_management/group_tenancy/group_tenancy_job.png]
 
 ### Examples
 
