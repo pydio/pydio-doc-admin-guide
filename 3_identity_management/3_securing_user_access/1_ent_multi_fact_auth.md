@@ -8,10 +8,6 @@ With Cells Enterprise Distribution, we offer a higher degree of security for use
 
 To enable this feature, go to `Cells Console >> Application Parameters >> Authentication`.
 
-_To display the **Authentication** button in the left menu, you have to be in advanced mode. to do so, enable the slider that is located on the top right corrner, as seen on this screenshot_.
-
-[:image:3_identity_management/securing_user_access/advanced_settings.png]
-
 [:image:3_identity_management/securing_user_access/multi_auth/enable_multi_auth_plugin.png]
 
 Now each user has to go on its setting page that is located on the home page top left (the 3 dots).
@@ -27,7 +23,7 @@ Choose the preferred mean of authentication and follow the instructions below fo
 To enable the google authenticator:
 
 1. Scan the QRCode with your app
-2. Put the generated code in the **Enroll.Google.TestCode.Field**
+2. Put the generated code in the **Google Authenticator Code** field.
 3. Click on test, to verify that it's functioning.
 4. Save.
 
