@@ -26,7 +26,7 @@ When editing an existing user, you have access to following information:
 
 This screens also gives access to useful actions:
 
-[:image:3_identity_management/users-actions.png]
+[:image:3_identity_management/users_actions.png]
 
 - **Change Password**: manually reset the user password
 - **Lock out / Reactivate**: instantly disconnect the user from all clients, or reactivate its access if it has been automatically locked out after too many failed login attempts. This `unlock` operation can also be done using the command line.

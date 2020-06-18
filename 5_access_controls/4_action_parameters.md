@@ -8,15 +8,11 @@ To do so go and edit your `user / group / role` and then proceed:
 
 - for example let's choose `application parameters`, and click on the **+** on the top right.
 
-[:image-popup:5_access_controls/actions_parameters/action_parameters_menu.png]
+[:image:5_access_controls/actions_parameters/action_parameters_1.png]
 
-[:image-popup:5_access_controls/actions_parameters/action_parameters_add_1.png]
+[:image:5_access_controls/actions_parameters/action_parameters_2.png]
 
-[:image-popup:5_access_controls/actions_parameters/action_parameters_add_2.png]
-
-This menu pops up:
-
-[:image-popup:5_access_controls/actions_parameters/action_parameters_interface.png]
+[:image:5_access_controls/actions_parameters/action_parameters_3.png]
 
 This is a list of every actions and parameters that you can configure.
 
@@ -26,7 +22,9 @@ With actions, you can either restrict particular actions or if it was already re
 
 As seen in this screen capture:
 
-[:image-popup:5_access_controls/actions_parameters/action_parameters_example.png]
+[:image:5_access_controls/actions_parameters/action_parameters_example_1.png]
+
+[:image:5_access_controls/actions_parameters/action_parameters_example_2.png]
 
 For instance in this screenshot, the action "create new Cells" was disabled for everyone, therefore I wished to have a user (in this case Admin) to have the action available and be able to create Cells.
 
