@@ -8,13 +8,13 @@ For instance, you deleted a user and you want to retrieve all the shared resourc
 Now let's see how we can use this feature,
 first generate the audits using this button:
 
-* [:image-popup:5_access_controls/audit_log/generate_audit_log.png]
+* [:image-popup:5_access_controls/audit_log/generate_audit.png]
 
 > a progress bar will appear allowing you to keep track of the progression.
 
 Once the logs are generated, filter them and retrieve the information that you are looking for, you can filter them by:
 
-[:image-popup:5_access_controls/audit_log/audit_log_interface.png]
+[:image-popup:5_access_controls/audit_log/audit_report.png]
 
 > You can refer to the numbers on the screenshot for each section below.
 
@@ -24,14 +24,6 @@ Once the logs are generated, filter them and retrieve the information that you a
    - for a simple case inside a public workspace `<datasource>/<resource>`
    - for a the personal files cases `<datasource>/<username>/<resource>`
    - you can use a wildcard at the end as said for instance `<datasource>/*` or `<datasource>/<folder>/*` and so on.
-
-> the following screenshots are of examples that will illustrate the path filter field.
-
-[:image-popup:5_access_controls/audit_log/filtering_example1.png]
-
-[:image-popup:5_access_controls/audit_log/filtering_example2.png]
-
-[:image-popup:5_access_controls/audit_log/filtering_example3.png]
 
 3. Type of resource: Workspace, Cells or Public links.
 
@@ -52,7 +44,7 @@ You can retrieve the workspace activity by clicking this button:
 
 it will display the following menu:
 
-[:image-popup:5_access_controls/audit_log/workspace_activity.png]
+[:image-popup:5_access_controls/audit_log/workspace_audit.png]
 
 * **node**: the node name (datasource in this case).
 * **read access**: the number of users who have read access on the workspace.
@@ -66,7 +58,7 @@ You can retrieve the cells activity the same way you did for the workspaces (by 
 
 [:image-popup:5_access_controls/audit_log/cells_audit_options.png]
 
-[:image-popup:5_access_controls/audit_log/cells_activity.png]
+[:image-popup:5_access_controls/audit_log/cells_audit.png]
 
 * **node**: the node name (the path to the cell in this case)
 * **owner**: the user that created the cell
@@ -81,7 +73,7 @@ You can retrieve all the activity that happened around a public link the same wa
 (By clicking the graph button on the right of the green icon and name of the owner)
 it will display a recap of who accessed the public link and such.
 
-[:image-popup:5_access_controls/audit_log/public_link_activity.png]
+[:image-popup:5_access_controls/audit_log/public_link_audit.png]
 
 * **node**: path to the shared resource in this case.
 * **owner**: who created the shared link.

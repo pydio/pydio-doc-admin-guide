@@ -10,7 +10,7 @@ When using Supervisorctl (or systemd) service, audit logs are also available in 
 
 Access the audit log section from here,
 
-[:image-popup:5_access_controls/audit_log/audit_activity.png]
+[:image:5_access_controls/audit_log/audit_activity.png]
 
 For an easier analysis, audit logs can be exported in XLSX or CSV format.  
 To do so, you can use the button in the top-right of the audit logs screen. Please note that you must first filter the logs (either by searching or by restricting to a given period) to avoid exporting the whole base of logs at once.
