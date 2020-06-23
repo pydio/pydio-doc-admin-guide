@@ -195,7 +195,7 @@ Matching is done by following these steps:
 
 In "Pydio 8 Workspace" panel, if you are matching a workspace and the color turns to RED, it means that the corresponding path does not yet exist in Cells. You must create it manually and it will turn to GREEN.
 
-[:image:7_miscellaneous/migration/workspacemapping_error.png]
+[:image-popup:7_miscellaneous/migration/workspacemapping.png]
 
 ## Verification
 

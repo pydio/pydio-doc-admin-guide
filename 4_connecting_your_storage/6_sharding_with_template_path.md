@@ -44,6 +44,6 @@ A popup will appear and ask you to name your template once you have named it hit
 
 [:image:4_connecting_your_storage/template_path/template_path_edit.png]
 
-Now you can edit your template with the integrated text editor which also has an suggestion feature (macOS: **ctrl + space**).
+Now you can edit your template with the integrated text editor which also has a suggestion feature (macOS: **ctrl + space**).
 
 Once you have finished to edit do not forget to save.
