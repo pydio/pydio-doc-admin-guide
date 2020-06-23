@@ -18,3 +18,10 @@ The most standard driver you can use is actually the File System datasource: it 
   - The leaf folder is exposed as an Amazon S3 bucket, **it must comply with the Bucket naming rules**, which are the same as the DNS sub-domains naming rules: technical names that must be lower case and without spaces.
   - The path must be at least two levels deep (defining e.g. `/tmp` as a datasource does not work).
   - The user owning the process that starts the app (usually the `pydio` user) must have read and write permissions on this folder **and on the parent folder**.
+
+
+You can now create folder from the datasource menu, this feature will greatly enhance your productivity, previously you had to first create your folder tree on the filesystem and then create a datasource that points to it, with the new workflow you can directly create your datasource and its tree.
+
+You can notice the new button that allows you to use this feature.
+
+[:image:4_connecting_your_storage/datasource_config/file_system_create_folder.png]
