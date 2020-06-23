@@ -37,12 +37,12 @@ To contextualize the following examples, we have a s3 bucket dedicated to the ma
 
 Head to **Data Management >> Template Paths** and hit the **+ Template** button.
 
-[:image:4_securing_your_storage/template_path/template_path_new.png]
+[:image:4_connecting_your_storage/template_path/template_path_new.png]
 
 A popup will appear and ask you to name your template once you have named it hit **create**.
 
 
-[:image:4_securing_your_storage/template_path/template_path_edit.png]
+[:image:4_connecting_your_storage/template_path/template_path_edit.png]
 
 Now you can edit your template with the integrated text editor which also has an suggestion feature (macOS: **ctrl + space**).
 
