@@ -1,6 +1,6 @@
 In this article we are pushing the branding to have a custom made Cells instance that suits every aspect of your company branding. You can change the logos, favicon, desktop background and much more.
 
-## Advanced Settings
+Browse to **Application Parameters >> Advanced Settings**.
 
 [:image:6_customize_interface/advanced_settings/advanced_settings.png]
 

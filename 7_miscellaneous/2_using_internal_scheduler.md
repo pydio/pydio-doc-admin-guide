@@ -2,13 +2,17 @@ In this section, we introduce the scheduler and show how you can optimize your w
 
 ### Using The internal Scheduler
 
+First you need to display the advanced parameters by enabling the following button.
+
+[:image-popup:enable_advanced_parameters.png]
+
+
 The scheduler in Pydio Cells let you define task that are to be done and program when they are to be executed, directly via the web interface.
 For instance, you might want to configure a task to clear the recycle bin every first day of the month, instead of launching a script or else to clear it.
 
-The main interface looks like this:
+You can find the scheduler under **Backend >> Scheduler**, the main interface looks like this:
 
-//TODO 
-[:image-popup:7_miscellaneous/scheduler_interface.png]
+[:image-popup:7_miscellaneous/scheduler/scheduler_interface.png]
 
 
 | Label                                              | Owner                                                                 | Trigger                                           | Last Execution   | Status                                                    |
@@ -22,8 +26,7 @@ They mainly make sure that your Pydio Cells instance is running healthily. You d
 
 As seen in this screenshot (we took the sync DataSource pydiods1 job) :
 
-//TODO 
-[:image-popup:7_miscellaneous/scheduler_example.png]
+[:image-popup:7_miscellaneous/scheduler/scheduler_example.png]
 
 
 You can:
