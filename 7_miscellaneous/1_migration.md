@@ -168,7 +168,7 @@ At this point you can launch the synchronization of the users with new ldap conf
 
 There is no specific configuration in this step, so you can just click on "Next" to foward and wait for result.
 
-[:image:6_advanced/migration/migrateuser.png]
+[:image:7_miscellaneous/migration/migrateuser.png]
 
 #### Migrate workspaces, sharing data and metadata
 
@@ -180,7 +180,7 @@ We usually select all children options of "Workspace"
 - Files Metadata
 - Shares <= Running the `shares` migration more than once will trigger the creation of duplicated Cells. if you have to re-run this, please insure you have removed all cells via the "Audit" page of the console before proceeding.
 
-[:image:6_advanced/migration/migrateworkspace.png]
+[:image:7_miscellaneous/migration/migrateworkspace.png]
 
 After clicking on "Next", you will see the interface where you can match the workspace in P8 to their counterpart in Cells.
 
@@ -195,7 +195,7 @@ Matching is done by following these steps:
 
 In "Pydio 8 Workspace" panel, if you are matching a workspace and the color turns to RED, it means that the corresponding path does not yet exist in Cells. You must create it manually and it will turn to GREEN.
 
-[:image:6_advanced/migration/workspacemapping_error.png]
+[:image:7_miscellaneous/migration/workspacemapping_error.png]
 
 ## Verification
 

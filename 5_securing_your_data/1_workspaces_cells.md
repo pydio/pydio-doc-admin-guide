@@ -10,7 +10,7 @@ Workspaces provide a very flexible way to organize your data, depending on who w
 
 In a typical company setup workspaces will often be organized by business units : 
 
-[:image:5_access_controls/workspaces-layouts.png]
+[:image:5_securing_your_data/workspaces-layouts.png]
 
 Other will define a per-region organization
 

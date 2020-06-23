@@ -8,7 +8,7 @@ Going to `Cells Console > People` section, you can easily create new users and o
 
 To create a user go, click on the **+USER** button located in the top right corner. The following menu appears:
 
-[:image:3_identity_management/create_user.png]
+[:image:3_connecting_your_users/create_user.png]
 
 - **User Login**: this can **not** be changed afterwards.  
 - **User Password**: put the password of the user, you have to type it twice to ensure its validity. Make sure to always use strong passwords. Note that the plugin that performs password strength check is fully customizable in Cells ED.
@@ -26,7 +26,7 @@ When editing an existing user, you have access to following information:
 
 This screens also gives access to useful actions:
 
-[:image:3_identity_management/users_actions.png]
+[:image:3_connecting_your_users/users_actions.png]
 
 - **Change Password**: manually reset the user password
 - **Lock out / Reactivate**: instantly disconnect the user from all clients, or reactivate its access if it has been automatically locked out after too many failed login attempts. This `unlock` operation can also be done using the command line.
@@ -40,7 +40,7 @@ Groups allow you to manage the rights, parameters and actions of many users at o
 
 To create a group, click on **+GROUP** located on the top right. The following menu appears:
 
-[:image:3_identity_management/create_group.png]
+[:image:3_connecting_your_users/create_group.png]
 
 - **Group Identifier**: the ID for this group in Cells DB (useful for api etc...).
 - **Group Label**: a human friendly name.

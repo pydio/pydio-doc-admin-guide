@@ -44,25 +44,25 @@ Visibility can be set up by end-users via their **Address Book**.
 
 For users:
 
-[:image-popup:3_identity_management/visibility/edit_visibility_user.png]  
+[:image-popup:3_connecting_your_users/visibility/edit_visibility_user.png]  
 
-[:image-popup:3_identity_management/visibility/edit_visibility_popup_user.png]
+[:image-popup:3_connecting_your_users/visibility/edit_visibility_popup_user.png]
 
 For teams:
 
-[:image-popup:3_identity_management/visibility/edit_visibility_team.png]  
+[:image-popup:3_connecting_your_users/visibility/edit_visibility_team.png]  
 
-[:image-popup:3_identity_management/visibility/edit_visibility_popup_team.png]
+[:image-popup:3_connecting_your_users/visibility/edit_visibility_popup_team.png]
 
 #### Links
 
 When a user has shared a file or folder, a "share" icon is displayed in the various lists where the file appears, but by default, _only for the user that have created the share_ can see this icon.
 The link visibility panel allows the users to also display the icon for some chosen others that have access to this file / folder.
 
-[:image-popup:3_identity_management/visibility/shared_link_visibility.png]
+[:image-popup:3_connecting_your_users/visibility/shared_link_visibility.png]
 
 #### Cells
 
 Cells are ways to share data with other users. When you select users for sharing, you can notice that the default visibility rules grant "Read" access to this Cell for these users. Warning: this "Read" access is just about being able to **read the "metadata" of this Cell**, and is not to be mixed up with the Read/Write **permissions** that define the actual content of the cell.
 
-[:image-popup:3_identity_management/visibility/shared_cells_visibility.png]
+[:image-popup:3_connecting_your_users/visibility/shared_cells_visibility.png]

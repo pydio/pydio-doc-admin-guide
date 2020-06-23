@@ -7,7 +7,9 @@ For instance, you might want to configure a task to clear the recycle bin every 
 
 The main interface looks like this:
 
-[:image-popup:6_advanced/scheduler_interface.png]
+//TODO 
+[:image-popup:7_miscellaneous/scheduler_interface.png]
+
 
 | Label                                              | Owner                                                                 | Trigger                                           | Last Execution   | Status                                                    |
 | -------------------------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------- | ---------------- | --------------------------------------------------------- |
@@ -20,7 +22,9 @@ They mainly make sure that your Pydio Cells instance is running healthily. You d
 
 As seen in this screenshot (we took the sync DataSource pydiods1 job) :
 
-[:image-popup:6_advanced/scheduler_example.png]
+//TODO 
+[:image-popup:7_miscellaneous/scheduler_example.png]
+
 
 You can:
 

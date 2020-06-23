@@ -14,7 +14,7 @@ Both OIDC and SAML are relying on PKI to encrypt and certify exchanged data. If 
 
 ## Data exchange workflow
 
-[:image:3_identity_management/cellsvsidps.png]
+[:image:3_connecting_your_users/cellsvsidps.png]
 
 1. User opens Cells in a web browser
 1. Cells renders login page to the user. If there are more than one connector, users have to pick a connector to login. Pydio Cells ships an internal Connector providing a simple login dialog for Cells internal users directory.

@@ -25,7 +25,7 @@ When configuring Cells as an Identity provider, please keep in mind that you are
 
 ## Registering an OIDC Client
 
-[:image:3_identity_management/2_sso/create_client.gif]
+[:image:3_connecting_your_users/2_sso/create_client.gif]
 
 ## Examples
 

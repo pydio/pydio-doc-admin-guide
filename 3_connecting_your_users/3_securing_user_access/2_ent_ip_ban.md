@@ -8,7 +8,7 @@ _The following features are only available on our Enterprise Edition_
 All the current bans are displayed on this interface you can choose perform an action on the bans listed such as
 unbanning or blacklisting a banned ip, there will be further details about that below.
 
-[:image:3_identity_management/securing_user_access/ip_ban_service/ip_ban_service_interface.png]
+[:image:3_connecting_your_users/securing_user_access/ip_ban_service/ip_ban_service_interface.png]
 
 ### Whitelist and Blacklist
 
@@ -20,4 +20,4 @@ The default behavior is a ban will occur on the ip that is trying to connect mor
 
 You can change those values by going to **All PLugins > IPBan Service**.
 
-[:image:3_identity_management/securing_user_access/ip_ban_service/ip_ban_settings.png]
+[:image:3_connecting_your_users/securing_user_access/ip_ban_service/ip_ban_settings.png]

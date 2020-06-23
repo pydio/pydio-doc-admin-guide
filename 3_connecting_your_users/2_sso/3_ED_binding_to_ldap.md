@@ -36,19 +36,19 @@ Then, click on:
 - `+ DIRECTORY` to register a new directory,
 - an existing LDAP configuration to modify it.
 
-[:image-popup:3_identity_management/ldap/ldap_0.png]
+[:image-popup:3_connecting_your_users/ldap/ldap_0.png]
 
 ## Configuration
 
 ### General Option
 
-[:image-popup:3_identity_management/ldap/ldap_1.png]
+[:image-popup:3_connecting_your_users/ldap/ldap_1.png]
 
 Fields are here explicit. It is usually good practice to name this connection using the corresponding domain name.
 
 ### Server Connection
 
-[:image-popup:3_identity_management/ldap/ldap_2.png]
+[:image-popup:3_connecting_your_users/ldap/ldap_2.png]
 
 _Use the numbers inside the above screenshot to refer to the settings_.
 
@@ -81,7 +81,7 @@ cn=pydio-admin,ou=company,dc=example,dc=com
 **Note:** in Active Directory, it is highly recommended to use a dedicated LDAP user with delegated read privileges on the corresponding users. This can be done via the `Read all user information` task. You can visit [this link for further information](https://www.msptechs.com/safely-delegate-control-active-directory/).  
 In Active Directory, you can get the dn of the chosen user user via the properties popup:
 
-[:image-popup:3_identity_management/ldap/Selection_874.png]
+[:image-popup:3_connecting_your_users/ldap/Selection_874.png]
 
 #### 4) Binding Password
 
@@ -114,7 +114,7 @@ For the record, default page size is 500 in OpenLDAP and 1000 in Active Director
 You have to define **at least one** user filter to define which users are to be imported from your external directory to Pydio Cells. You might only import a subset of your existing user base, depending on the filter you define.  
 The tab looks like this:
 
-[:image-popup:3_identity_management/ldap/ldap_3.png]
+[:image-popup:3_connecting_your_users/ldap/ldap_3.png]
 
 _Use the numbers inside the above screenshot to refer to the settings_.
 
@@ -203,7 +203,7 @@ This is a specific case of mapping, in order for a user to be assigned one or mo
 
 The values of `memberOf` attribute can contain any group of the LDAP directory: you might want to narrow down the list of the groups that are to be mapped in Cells by using group filtering.
 
-[:image-popup:3_identity_management/ldap/ldap_4.png]
+[:image-popup:3_connecting_your_users/ldap/ldap_4.png]
 
 _The above screenshot shows an example of `memberOf` mapping, where:_
 
