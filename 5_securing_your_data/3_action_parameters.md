@@ -4,9 +4,9 @@ In this section, we show how actions and parameters can help you micro manage ev
 
 Basically actions and parameters if chosen correctly can save you lot's of time and give you the custom experience that you wanted. You can control everything from for instance the buttons displaying and the action that users/groups are allowed to use, to even using the plugins such as the mailer, actions like compressing a file and more.
 
-To do so go and edit your `user / group / role` and then proceed:
+To do so go and edit your `user / group / role` and go **Application Parameters** section:
 
-- for example let's choose `application parameters`, and click on the **+** on the top right.
+- For instance let's select `All Workspaces`:
 
 [:image:5_securing_your_data/actions_parameters/action_parameters_1.png]
 
