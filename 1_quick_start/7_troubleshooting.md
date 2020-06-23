@@ -75,6 +75,15 @@ _After a re-install, when trying to login, you get a `could not load session sto
 This is bound to the part of the session mechanism that resides in the browser, on client side.
 To solve the issue, get rid of all cookie for this site and refresh the page.
 
+### I locked my user
+
+You can unlock the admin or any user with the CLI (assuming that you have access on the server), run the following command `./cells user unlock -u <username>`.
+
+
+### I forgot the password of a user
+
+Once again with the CLI (assuming that you have access on the server), you can run `./cells user set-pwd -u <username> -p <new password>`
+
 ## Cells Sync
 
 ### Cannot list workspaces
@@ -83,11 +92,11 @@ If you are getting an error when you attempt to list the workspaces then your se
 
 ### I do see not my workspaces
 
-Make sure that your workspaces are syncable (enable settings in workspace menu)
+Make sure that your workspaces can be synchronized (enable settings in workspace menu)
 
 ### Unable to create or list folder on local system
 
-- Macos users might require permissions, **System Preferences > Security & Privacy > Files and Folders** and allow access.
+- macOS users might require permissions, **System Preferences > Security & Privacy > Files and Folders** and allow access.
 
 ### Missing package (LINUX)
 
