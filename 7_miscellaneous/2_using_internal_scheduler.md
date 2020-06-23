@@ -12,7 +12,7 @@ For instance, you might want to configure a task to clear the recycle bin every 
 
 You can find the scheduler under **Backend >> Scheduler**, the main interface looks like this:
 
-[:image-popup:7_miscellaneous/scheduler/scheduler_interface.png]
+[:image:7_miscellaneous/scheduler/scheduler_interface.png]
 
 
 | Label                                              | Owner                                                                 | Trigger                                           | Last Execution   | Status                                                    |
@@ -26,7 +26,7 @@ They mainly make sure that your Pydio Cells instance is running healthily. You d
 
 As seen in this screenshot (we took the sync DataSource pydiods1 job) :
 
-[:image-popup:7_miscellaneous/scheduler/scheduler_example.png]
+[:image:7_miscellaneous/scheduler/scheduler_example.png]
 
 
 You can:
