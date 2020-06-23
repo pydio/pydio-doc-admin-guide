@@ -1,9 +1,9 @@
-You can define quotas to limit the amount of storage that can be used on a workspace basis, this tool will help you keep control of the size of your storage therefore allowing you to be cost effective.
+You can define quotas to limit the amount of storage that can be used on a workspace basis, this tool will grand you control over the size of your storages therefore allowing you to be cost effective.
 
 
 ### Define quotas on a workspace
 
-Defining a quota on a workspace will limit the amount of data that you can put, this rule applies globally to everyone that has access to this workspace.
+Defining a quota on a workspace will restrict the amount of data that you can add, this rule applies globally to everyone that has access to this workspace.
 
 To illustrate the feature, assuming that you have set a quota limit of 200MB. You now have 20 users each uploading a 10MB file which will add up to 200MB and therefore reach the limit. Now if any of those users attempts to upload a new file he will not be allowed because the quota was reached.
 

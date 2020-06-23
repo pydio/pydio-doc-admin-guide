@@ -5,7 +5,7 @@ The vanitizer branding tool, will help you customize your Cells instance allowin
 To enable the vanitizer branding tool, you must first have the advanced parameters enabled (see screenshot below)
 
 
-[:image:6_customize_interface/enable_advanced_parameters.png]
+[:image:enable_advanced_parameters.png]
 
 Once it is done, go to **Available Plugins >> and search for Vanitizer**.
 
