@@ -15,11 +15,11 @@ once the files/folders are added in the index they are ready to be used.
 
 ### The importance of an update to date index
 
-If you add/delete data directly on the storage (object storage, s3, filesystem) you will also have to manually resync (meaning, to update the [index](./services-involved)) to have it appear and be usable.
+If you add/delete data directly on the storage (object storage, s3, filesystem) you will also have to manually trigger the resync (meaning, updating the [index](./services-involved)) to have it appear and be usable. This operation can be done with the a REST api call or with the CLI.
 
-As long as you interact with the data through the Cells gateway with the following means:
+If you are using the regular means to interact with the data you do not need to handle that for the following clients:
 
-- WebUI
+- Application (WebUI) 
 - [Cells-client CLI](https://github.com/pydio/cells-client)
 
 data will then be automatically indexed and ready to be used.
