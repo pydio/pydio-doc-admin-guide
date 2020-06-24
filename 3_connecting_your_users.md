@@ -1,3 +1,3 @@
-Connecting your users
+-
 
 [:summary]
