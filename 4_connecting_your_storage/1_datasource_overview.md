@@ -22,7 +22,7 @@ As long as you interact with the data through the Cells gateway with the followi
 - WebUI
 - [Cells-client CLI](https://github.com/pydio/cells-client)
 
-data will then be automatically indexed and ready to be useed.
+data will then be automatically indexed and ready to be used.
 
 ### Supported Storages
 
