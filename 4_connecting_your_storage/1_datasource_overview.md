@@ -10,8 +10,8 @@ Each **datasource** provides access to data internally and maintains its own con
 
 ### How it works
 
-When you upload data through the web-ui there is a specific task that is triggered, it will write the information about the newly uploaded node to the index **(_see: [services involved](./services-involved)_)**,
-once the file/folder are written in the index they are available on the Cells WebUI.
+When you upload data through the web-ui there is a specific task that is triggered, it will notify the **index** about the newly uploaded node, which will update its database(where he keeps track of every node) **(_see: [services involved](./services-involved)_)**,
+once the files/folders are added in the index they are ready to be used.
 
 ### The importance of an update to date index
 
