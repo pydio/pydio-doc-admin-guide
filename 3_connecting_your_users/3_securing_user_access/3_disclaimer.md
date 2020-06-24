@@ -3,18 +3,17 @@ This is typically suited to fit compliance rules from your company or GDPR europ
 
 ### Enable disclaimer
 
-You must first enable the plugin, located on the left menu under the **Authentication** setting.
+You first need to enable the plugin, to do that browse to the following menu **Cells Console >> Identity Management >> Authentication**.
+You are now presented with the plugin, you need to enabled it and then you can edit it to add your custom message.
 
 [:image:3_connecting_your_users/securing_user_access/disclaimer/disclaimer_enable.png]
 
-You can now also enable the disclaimer for public links.
+You now also have an option to display a disclaimer for the public links.
 
-[:image:3_connecting_your_users/securing_user_access/disclaimer/disclaimer_plugin.png]
-
-[:image:3_connecting_your_users/securing_user_access/disclaimer/disclaimer_plugin_settings.png]
+[:image:3_connecting_your_users/securing_user_access/disclaimer/disclaimer_settings.png]
 
 ### User login
 
-When a user first connects he will have the following :
+When a user authenticate for the first time he will be greeted with the following:
 
 [:image:3_connecting_your_users/securing_user_access/disclaimer/disclaimer_user_login.png]
