@@ -1,7 +1,7 @@
 Disclaimer features provides a way to force your users to accept your Terms of Use before being allowed to use the platform.
 This is typically suited to fit compliance rules from your company or GDPR european laws.
 
-### Enable disclaimer
+### Enable the disclaimer
 
 You first need to enable the plugin, to do that browse to the following menu **Cells Console >> Identity Management >> Authentication**.
 
@@ -13,7 +13,7 @@ You now also have an option to display a disclaimer for the public links.
 
 [:image:3_connecting_your_users/securing_user_access/disclaimer/disclaimer_settings.png]
 
-### User login
+### User authentication
 
 When a user authenticates for the first time he will be greeted with the following message and will have to agree and validate before being able to access the application.
 
