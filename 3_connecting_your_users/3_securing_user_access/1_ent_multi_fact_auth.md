@@ -36,16 +36,16 @@ To enable the google authenticator:
 To use your Yubikey you first need to retrieve the clientID and API Secret, to do so follow this link
 [https://upgrade.yubico.com/getapikey/](https://upgrade.yubico.com/getapikey/) put your email address and the Yubikey OTP that you will find in your package.
 
-*As they told on the Yubikey site wait up to 5 mins before starting to set your key up*.
+*As told on the Yubikey site wait up to 5 mins before starting to set your key up*.
 
 Plug your Yubikey to your computer, install and follows the steps: depending on your OS, this is usually plug & play.
 
 Now:
 
 1. Pur your CliendID and API Secret
-1. Put the focus on the **Test your Key** field and press once on your Yubikey
-1. Click on test, to verify that the information are correct
-1. Save
+2. Put the focus on the **Test your Key** field and press once on your Yubikey
+3. Click on test, to verify that the information are correct
+4. Save
 
 ### Troubleshooting
 

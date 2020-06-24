@@ -1,5 +1,6 @@
-This article will introduce some of the advanced configuration that you can modify on Cells.
+This article will introduce you to some of the advanced configurations that you can apply on your Cells instance.
 
+> Beware, those settings are to be handled with care.
 
 First and foremost make sure to enable the **Advanced Parameters** (see the following screenshot).
 
@@ -19,7 +20,7 @@ If you are wondering why some plugins cannot be edited, it is because those are 
 
 ### Number of items per page and archive format
 
-For instance you can change the number of items displayed by page on your workspaces or the type of archive that is created when you download a multiple files at once.
+For instance you can change the number of items displayed by page on your workspaces or the type of archive that is created when you download multiple files at once.
 
 Search for **"Gateway"** plugin and hit the edit button.
 
@@ -28,7 +29,7 @@ Search for **"Gateway"** plugin and hit the edit button.
 
 ### Enterprise Edition: Password policy
 
-Users of the Enterprise Edition have more refined settings enabling them to add more complexity on the allowed password length, type of char etc...
+Users of the Enterprise Edition have more refined settings enabling them to add more complexity on the allowed password length, type of characters etc...
 
 Search for **"Password Policy"** and hit the edit button.
 
