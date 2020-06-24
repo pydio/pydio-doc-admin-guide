@@ -28,3 +28,4 @@ Once you have enabled the **Display Branding Tool** refresh your browser tab, to
 The vanitizer among other things also allows you to have your **custom CSS**.
 
 Add **custom buttons** that you can map to any functionality you wish to, it could be related to Cells or unrelated for instance you can have a button to redirect to your company portal, redirect you to your mailbox and many more.
+

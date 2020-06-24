@@ -1,4 +1,4 @@
-In this article we are pushing the branding to have a custom made Cells instance that suits every aspect of your company branding. You can change the logos, favicon, desktop background and much more.
+In this article we are pushing the branding to have a custom made Cells instance that suits every aspect of your company branding. You can change the logos, favicon, background images and much more.
 
 ### Main logo and Background image
 
@@ -14,16 +14,17 @@ and below are the location of each of the setting:
 
 [:image:6_customize_interface/advanced_settings/logo_and_background/logo_example_1.png]
 
-You can also notice that the backgrounds are mentioned, while in the same **Cells Console >> Application Parameters >> Appearance** scroll down and you will see this menu.
+You can also notice that the backgrounds are mentioned, while in the same menu **Cells Console >> Application Parameters >> Appearance** scroll down and you will see the following settings.
 
 [:image:6_customize_interface/advanced_settings/logo_and_background/background_settings.png]
 
-First you can notice 2 distinct sections for both you have a set of 1 to 6 different backgrounds that are selected randomly.
+First you can notice 2 distinct sections.
+The following rule applies for both, you can have a set of 1 to 6 different background images that are selected on a random basis.
 
-- **Pydio Background Images**: which are all the backgrounds displayed on the application
-- **Minisite**: those backgrounds are related to the public links for instance, (public links make use of the minisite).
+- **Pydio Background Images**: which are all the background images displayed while login or browsing on the application (see screenshots above for the locations).
+- **Minisite**: those images are  for instance used on the public links, (public links make use of the **minisite** settings, such as the role).
 
-> For users that would like to have the same background everywhere and do not want the random selection, make sure to put the same image on all of the different **custom background (n)** setting.
+**Word of advice: For users that wish to have the same and unique background image, make sure to put the same image on all of the different **custom background (n)** setting.**
 
 ### Change the favicon
 
