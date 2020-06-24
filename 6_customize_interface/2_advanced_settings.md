@@ -24,7 +24,7 @@ The following rule applies for both, you can have a set of 1 to 6 different back
 - **Pydio Background Images**: which are all the background images displayed while login or browsing on the application (see screenshots above for the locations).
 - **Minisite**: those images are  for instance used on the public links, (public links make use of the **minisite** settings, such as the role).
 
-**Word of advice: For users that wish to have the same and unique background image, make sure to put the same image on all of the different **custom background (n)** setting.**
+**For users that do wish to have the same and unique background image, you have to make sure to put the same image on all of the different `custom background(n)` settings.**
 
 ### Change the favicon
 
