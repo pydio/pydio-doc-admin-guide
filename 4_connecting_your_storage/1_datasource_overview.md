@@ -18,8 +18,9 @@ once the file/folder are written in the index they are available on the Cells We
 If you add/delete data directly on the storage (object storage, s3, filesystem) you will also have to manually resync (meaning, to update the [index](./services-involved)) to have it appear and be usable.
 
 As long as you interact with the data through the Cells gateway with the following means:
+
 - WebUI
-- [Cells-client CLI]()
+- [Cells-client CLI](https://github.com/pydio/cells-client)
 
 data will then be automatically indexed and ready to be useed.
 
