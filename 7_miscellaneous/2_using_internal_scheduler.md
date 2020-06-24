@@ -15,9 +15,9 @@ You can find the scheduler under **Backend >> Scheduler**, the main interface lo
 [:image:7_miscellaneous/scheduler/scheduler_interface.png]
 
 
-| Label                                              | Owner                                                                 | Trigger                                           | Last Execution   | Status                                                    |
-| -------------------------------------------------- | --------------------------------------------------------------------- | ------------------------------------------------- | ---------------- | --------------------------------------------------------- |
-| Human friendly name of the task (usually its goal) | Who launched the task ( for system jobs it's usually the system user) | Type of the trigger: manual, on-event or periodic | Last time it ran | Current status (in the figure above, all tasks were done) |
+| Trigger                                           | Label                                              | Owner                                                                 | Last Execution   | Status                                                    |
+| ------------------------------------------------- | -------------------------------------------------- | --------------------------------------------------------------------- | ---------------- | --------------------------------------------------------- |
+| Type of the trigger: manual, on-event or periodic | Human friendly name of the task (usually its goal) | Who launched the task ( for system jobs it's usually the system user) | Last time it ran | Current status (in the figure above, all tasks were done) |
 
 ### System jobs
 
