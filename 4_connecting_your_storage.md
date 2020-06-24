@@ -1,3 +1,1 @@
-Connecting your Storage
-
 [:summary]

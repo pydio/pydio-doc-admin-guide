@@ -1,3 +1,1 @@
-Securing your data
-
 [:summary]
