@@ -20,7 +20,7 @@ The most standard driver you can use is actually the File System datasource: it 
   - The user owning the process that starts the app (usually the `pydio` user) must have read and write permissions on this folder **and on the parent folder**.
 
 
-You can now create folder from the datasource menu, this feature will greatly enhance your productivity, previously you had to first create your folder tree on the filesystem and then create a datasource that points to it, with the new workflow you can directly create your datasource and its tree.
+You can now create folders from the datasource menu, this feature will greatly enhance your productivity. Previously you had to first create your folder tree on the filesystem and then create a datasource that points to it, with the new workflow you can directly create your datasource and its tree.
 
 You can notice the new button that allows you to use this feature.
 
