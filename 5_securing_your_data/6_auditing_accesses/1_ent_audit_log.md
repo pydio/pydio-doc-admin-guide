@@ -3,7 +3,7 @@ Logs are grouped using a unique Request-Id as they may be produced by a unique a
 
 When using Supervisorctl (or systemd) service, audit logs are also available in the `~/.config/pydio/cells/logs/audit.log` file (rotated every day).
 
-This is the main menu of the audit logs that can be found in **Cells Console >> Audits**, you will be presented with the following page:
+This is the main menu of the audit logs that can be found in **Cells Console >> Audits >> Activity**, you will be presented with the following page:
 
 [:image:5_securing_your_data/auditing_accesses/audit_options.png]
 
@@ -14,13 +14,13 @@ To do so, you can use the button in the top-right of the audit logs screen. Plea
 
 ## Filtering
 
-The audit log also allows you to filter the logs and their content, you can also combine filters to trim even more the result.
+The audit log also allows you to filter the logs and their content, you can combine filters to trim even more the result.
 
-To display the advanced filtering you need to click on the inverted triangle and select the filter needed, here is a quick description of option and its purpose:
+To display the **advanced filtering** you need to click on the inverted triangle and click on the filter, here is a quick description of the options and their purpose:
 
 - **Filter logs**: This is the main search bar, you can write any word related to Cells.
 - **Pick a day**: Choose which day the logs happened.
-- **Level**: This is the level of logs for Cells, you have INFO, ERROR or DEBUG, by default INFO and ERROR are displayed and if you only want to 1 of them, then select it in the filter.
-- **Service**: Allows you to filter the logs per service, as Cells is ran with multiple micro services.
-- **User Login**: This is the user login that triggered the log, meaning that each action is ran by a user therefore applying this filter will only show actions for that said user.
-- **IP**: It allows you to select logs that happened from a specific connection IP.
+- **Level**: This is the level of logs for Cells, you have INFO, ERROR or DEBUG, by default INFO and ERROR are displayed and if you only want to one of them displayed, select it in the filter.
+- **Service**: Allows you to display logs for any specific service, as Cells is ran with multiple micro services.
+- **User Login**: This is the user login that triggered the log, therefore applying this filter will only display actions for the provided user.
+- **IP**: It allows you to display only logs that happened from a specific connection IP.
