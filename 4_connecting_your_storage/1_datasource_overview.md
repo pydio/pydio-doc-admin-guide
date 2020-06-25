@@ -10,7 +10,7 @@ Each **datasource** provides access to data internally and maintains its own con
 
 ### How it works
 
-When you upload data through the web-ui there is a specific task that is triggered, it will notify the **index** about the newly uploaded node, which will update its database(where he keeps track of every node) **(_see: [services involved](./services-involved)_)**,
+When you upload data through the web-ui there is a specific task that is triggered, it will notify the **index** about the newly uploaded node, who will update its database (where he keeps track of every node) **(_see: [services involved](./services-involved)_)**,
 once the files/folders are added in the index they are ready to be used.
 
 ### The importance of an update to date index
@@ -22,7 +22,7 @@ If you are using the regular means to interact with the data you do not need to 
 - Application (WebUI) 
 - [Cells-client CLI](https://github.com/pydio/cells-client)
 
-All data manipulated with those clients, will be automatically indexed and ready to be used.
+All data manipulated by those clients will be automatically indexed and ready to be used.
 
 ### Supported Storages
 
@@ -32,8 +32,5 @@ Datasource can be seen as a driver to access your data. It can currently be conn
 - **Object Storage**: S3-compatible remote storage (can be a proper S3 or anything implementing the API).
 - **Google Cloud Storage**: compatible with Google's cloud storage solution [ED only].
 - **Azure Blob Storage**: compatible with Azure's blob storage solution [ED only].
-
-
-[In next chapter](./creating-datasources), we show you how to create and manage datasources via the admin interface.
 
 [Detailed structure of a datasource](./services-involved), in this article a detailed view of how each service on datasource interacts.

@@ -18,5 +18,5 @@ Then found the bucket name, which are called `blob` in azure, you can find them 
 
 - **Bucket name**: the name of the blob/bucket on the remote azure storage.
 - **Azure Account Name**: your azure storage account name.
-- **Azure Secret Key**: the secret key, is your storage access key/
+- **Azure Secret Key**: the secret key, is your storage access key.
 - **Internal Path**: Additional Path appended to the bucket name when querying the remote storage.
