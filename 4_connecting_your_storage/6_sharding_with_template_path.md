@@ -41,7 +41,7 @@ Head to **Data Management >> Template Paths** and hit the **+ Template Path** bu
 
 [:image:4_connecting_your_storage/template_path/template_path_new.png]
 
-A popup will appear and ask you to name your template once you have named it hit **create**.
+A popup will appear asking you to name your template once it is done hit the **create** button.
 
 [:image:4_connecting_your_storage/template_path/template_path_edit.png]
 
