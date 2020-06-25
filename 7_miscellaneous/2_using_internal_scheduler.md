@@ -4,7 +4,7 @@ In this section, we introduce the scheduler and show how you can optimize your w
 
 First you need to display the advanced parameters by enabling the following button.
 
-[:image-popup:enable_advanced_parameters.png]
+[:image:enable_advanced_parameters.png]
 
 
 The scheduler in Pydio Cells let you define task that are to be done and program when they are to be executed, directly via the web interface.
