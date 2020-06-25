@@ -13,7 +13,7 @@ Each **datasource** provides access to data internally and maintains its own con
 When you upload data through the web-ui there is a specific task that is triggered, it will notify the **index** about the newly uploaded node, who will update its database (where he keeps track of every node) **(_see: [services involved](./services-involved)_)**,
 once the files/folders are added in the index they are ready to be used.
 
-### The importance of an update to date index
+### The importance of an up to date index
 
 If you add/delete data directly on the storage (object storage, s3, filesystem) you will also have to manually trigger the resync (meaning, updating the [index](./services-involved)) to have it appear and be usable. This operation can be done with the a REST api call or with the CLI.
 
