@@ -1,4 +1,4 @@
-Template paths will give provide you with more sharding over your workspace, you can have a custom and automated tree creation.
+Template paths will provide you with more sharding over your storages, you can have a custom and dynamic tree creation.
 
 ### What is a template path
 

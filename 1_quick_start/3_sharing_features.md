@@ -36,7 +36,7 @@ When using the "Create Cell" button from the left-hand panel, the following menu
 
 [:image:1_quick_start/sharing_features/create_cell_2.png]
 
-- **Users/groups**: Pick a single or multiple groups/users that will have access to this cell. You can also choose how they can interact within it.
+- **Choose who you will share data with**: Pick a single or multiple groups/users that will have access to this cell. You can also choose how they can interact within it.
 
 [:image:1_quick_start/sharing_features/create_cell_3.png]
 
