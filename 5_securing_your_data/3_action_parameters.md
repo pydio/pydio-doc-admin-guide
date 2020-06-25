@@ -6,7 +6,7 @@ Basically actions and parameters if chosen correctly can save you lot's of time 
 
 To do so go and edit your `user / group / role` and go to **Application Parameters** section:
 
-- For instance let's select `All Workspaces`:
+- For instance let's click on **Add for** and select  `All Workspaces`:
 
 [:image:5_securing_your_data/actions_parameters/action_parameters_1.png]
 

@@ -37,7 +37,7 @@ if (['a','b','c','d','e','f','g','h'].indexOf(User.Name[0]) !== -1) {
 }
 ```
 
-The template path is also applied for your personal Cells (the ones that you create without a root).
+There is also template path for your personal Cells (the ones that you create without a root).
 
 Now that you understand the concepts, lets create our own template path.
 
