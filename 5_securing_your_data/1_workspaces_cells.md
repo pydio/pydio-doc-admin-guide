@@ -60,5 +60,5 @@ Difference is subtle but important. Workspaces are created by administrators, th
 _See Also_
 
 - [Creating a simple workspace in the Quick Admin Tour](./quick-admin-tour)
-- [Understanding Data Sources](./understanding-datasources)
+- [Datasources overview](./datasources-overview)
 - [Assigning workspaces accesses via Users, Groups and Roles](./users-groups-roles)

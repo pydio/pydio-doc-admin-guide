@@ -35,12 +35,11 @@ To create a template path, you must first enable the advanced parameters (see sc
 
 To contextualize the following examples, we have a s3 bucket dedicated to the marketing department and we have 4 branches therefore we would like to split the bucket to isolate each branch.
 
-Head to **Data Management >> Template Paths** and hit the **+ Template** button.
+Head to **Data Management >> Template Paths** and hit the **+ Template Path** button.
 
 [:image:4_connecting_your_storage/template_path/template_path_new.png]
 
 A popup will appear and ask you to name your template once you have named it hit **create**.
-
 
 [:image:4_connecting_your_storage/template_path/template_path_edit.png]
 

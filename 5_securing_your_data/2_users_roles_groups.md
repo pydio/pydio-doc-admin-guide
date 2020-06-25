@@ -70,9 +70,9 @@ When editing ACLs, we recommend sticking to the Workspace level of granularity, 
 
 Policies are a powerful feature of Pydio Cells used to dynamically assign ACLs depending on the context (logged in user, day and time of the week, client IP address...) and a set of rules that can be scripted and combined together.
 
-Once a Policy template has been defined via the `Admin Settings >> Security Policies` page, you can apply it instead of using static "READ / WRITE / DENY".
+Once a Policy template has been defined via the `Cells Console >> Security Policies` page, you can apply it instead of using static "READ / WRITE / DENY".
 
-For instance when editing a group via `Admin Settings >> People >> (Pick up a group for edit) >> Workspaces Accesses`, you can click on the `more` icon that is on the left of the check box of one of the workspace and choose a custom policy. See the [Security Policies](./security-policies) section.
+For instance when editing a group via `Cells Console >> People >> (Pick up a group for edit) >> Workspaces Accesses`, you can click on the `more` icon that is on the left of the check box of one of the workspace and choose a custom policy. See the [Security Policies](./security-policies) section.
 
 #### ACLs Merging Rules
 
