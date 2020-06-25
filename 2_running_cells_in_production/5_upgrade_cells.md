@@ -4,7 +4,7 @@ Cells binary is self-contained and can be easily updated / upgraded using either
 
 ### Update Pydio Cells to the latest version
 
-[:image-popup:2_running_cells_in_production/update_cells_webui.png]
+[:image:2_running_cells_in_production/update_cells_webui.png]
 
 - You can check if there are new updates available by pressing the **Check** button,
 - if that is the case select the version and proceed to install once it's finished you will be invited to restart your Cells instance.
@@ -16,7 +16,7 @@ Cells binary is self-contained and can be easily updated / upgraded using either
 
 ### Upgrade Pydio Cells Home to Pydio Cells Enterprise
 
-[:image-popup:2_running_cells_in_production/upgrade_cells_to_ent_webui.png]
+[:image:2_running_cells_in_production/upgrade_cells_to_ent_webui.png]
 
 Click on **Upgrade to Cells Enterprise**:
 

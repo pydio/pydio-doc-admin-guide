@@ -19,8 +19,7 @@ To enable the plugin, go to `Application parameters > Available Plugins > Only O
 - Only office Host: _`<host where OnlyOffice is running>`_
 - Only office Port: _`<OnlyOffice instance port>`_ usually it is running on `9980`
 
-<!-- [:image-popup:1_quick_start/office_online/only_office_plugin.png] -->
-[:image-popup:1_quick_start/office_online/ent_only_office_plugin.png]
+[:image:1_quick_start/office_online/ent_only_office_plugin.png]
 
 #### OnlyOffice docker image
 

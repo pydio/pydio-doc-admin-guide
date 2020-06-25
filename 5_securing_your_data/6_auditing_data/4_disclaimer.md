@@ -11,7 +11,7 @@ You are now presented with the following settings window, you need to enabled it
 
 You now also have an option to display a disclaimer for the public links.
 
-[:image:5_securing_your_data/securing_user_access/disclaimer/disclaimer_settings.png]
+[:image:5_securing_your_data/auditing_accesses/disclaimer/disclaimer_settings.png]
 
 ### User authentication
 
