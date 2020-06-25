@@ -1,10 +1,9 @@
 In the **Enterprise Edition**, an audit log gathers all non-technical events to help focus on business logic when analyzing logs for compliance or when tracing events after a security breach.
-
-Audit Logs are accessible under the section **Dashboard** inside the **Activity** tab.
-
 Logs are grouped using a unique Request-Id as they may be produced by a unique action going through various micro-services.
 
 When using Supervisorctl (or systemd) service, audit logs are also available in the `~/.config/pydio/cells/logs/audit.log` file (rotated every day).
+
+This is the main menu of the audit logs that can be found in **Cells Console >> Audits**, you will be presented with the following page:
 
 [:image:5_securing_your_data/auditing_accesses/audit_options.png]
 
