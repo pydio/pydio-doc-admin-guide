@@ -5,6 +5,7 @@ Template paths will provide you with more sharding over your storages, you can h
 The template path feature is used for the creation of the `personal-files` of each user.
 It is defined as the following:
 
+- `my-files`
 ```
 Path = DataSources.personal + "/" + User.Name;
 ```
@@ -13,7 +14,7 @@ Path = DataSources.personal + "/" + User.Name;
 - `User.Name` this value is dynamic and will match each user that has a personal-files access.
 
 Which translates into `personal/johndoe` (this is the personal file of the user **John Doe**). 
-If you look directly in your storage it will look like this
+If you take a closer look in your storage it will end up like this:
 
 ```
 pydio@cells-server:/mnt/data$ tree
@@ -25,7 +26,8 @@ pydio@cells-server:/mnt/data$ tree
 (the full path being `/mnt/data/personal/johndoe`)
 
 The template path is also applied for your personal Cells (the ones that you create without a root).
-Now that you understand
+
+Now that you understand the concepts, lets create our own template path.
 
 ### Create a template path
 
