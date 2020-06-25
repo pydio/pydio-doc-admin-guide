@@ -25,12 +25,3 @@ For instance you can change the number of items displayed by page on your worksp
 Search for **"Gateway"** plugin and hit the edit button.
 
 [:image:7_miscellaneous/advanced_configurations/gateway_plugin.png]
-
-
-### Enterprise Edition: Password policy
-
-Users of the Enterprise Edition have more refined settings enabling them to add more complexity on the allowed password length, type of characters etc...
-
-Search for **"Password Policy"** and hit the edit button.
-
-[:image:7_miscellaneous/advanced_configurations/enterprise_password_plugin.png]

@@ -7,14 +7,14 @@ You first need to enable the plugin, to do that browse to the following menu **C
 
 You are now presented with the following settings window, you need to enabled it and then you can edit it to add your custom message.
 
-[:image:3_connecting_your_users/securing_user_access/disclaimer/disclaimer_enable.png]
+[:image:5_securing_your_data/securing_user_access/disclaimer/disclaimer_enable.png]
 
 You now also have an option to display a disclaimer for the public links.
 
-[:image:3_connecting_your_users/securing_user_access/disclaimer/disclaimer_settings.png]
+[:image:5_securing_your_data/securing_user_access/disclaimer/disclaimer_settings.png]
 
 ### User authentication
 
 When a user authenticates for the first time he will be greeted with the following message and will have to agree and validate before being able to access the application.
 
-[:image:3_connecting_your_users/securing_user_access/disclaimer/disclaimer_user_login.png]
+[:image:5_securing_your_data/securing_user_access/disclaimer/disclaimer_user_login.png]

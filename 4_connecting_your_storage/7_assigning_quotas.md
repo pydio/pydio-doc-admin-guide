@@ -9,6 +9,6 @@ To illustrate the feature, assuming that you have set a quota limit of 200MB and
 
 To access the menu go to, **Data Management >> Workspaces >> Edit a workspace**, the following menu will be displayed:
 
-[:image:5_securing_your_data/assigning_quotas/quotas_workspace.png]
+[:image:4_connecting_your_storage/assigning_quotas/quotas_workspace.png]
 
 Once you have selected the unit (gigabyte, megabyte and so on) and added the number make sure to hit the save button on your workspace, now the rule will be applied to everyone that has an access to the workspace.
