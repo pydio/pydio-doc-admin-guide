@@ -26,28 +26,6 @@ Up to you.
 
 To define a workspace, one must point to at least one location in the DataSources tree. It is interesting to note that you can also compose a workspace from multiple locations. You can that way aggregate various data from various datasources into one unique workspace.
 
-#### Template Paths
-
-One specific workspace is the **Personal** workspace: while defined once and applied globally to all users, this workspace will dynamically create a folder for each users. In other words, each user will always only see her own files while using this workspace. Unless disable, this does not prevent users from sharing data from their Personal workspaces with other people, using Cells or Public Links.
-
-Under the hood, instead of pointing to a defined location in the DataSource tree, this workspace is using a Template Path that is resolved dynamically when accessed. The `my-files` template path is defined by a javascript snippet as follows:   
-```
-Path = DataSources.personal + "/" + User.Name;
-```
-
-In _Cells Enterprise_, you can create your own Template Paths, which can be very useful to e.g. map data from various sources to a unique path. Assuming you have three servers A, B, and C on which users data is evenly distributed (e.g. by their login first letters), you can easily write a script to resolve to the correct data source. Assuming Server A contains users data from [a to h], Server B from [i to p], etc... and you mounted them as separate datasources, script could look like : 
-
-```javascript
-// Test first letter of user login
-if (['a','b','c','d','e','f','g','h'].indexOf(User.Name[0]) !== -1) {
-    Path = DataSources.ServerA + "/" + UserName.Name;
-} else if (['i','j','k','l','m','n','o','p'].indexOf(User.Name[0]) !== -1){
-    Path = DataSources.ServerB + "/" + UserName.Name;
-} else {
-    Path = DataSources.ServerC + "/" + UserName.Name;
-}
-```
-
 ### Cells : sandboxed workspaces for the users
 
 As described in the [Sharing Features](./sharing-features) section, Cells are a simple way for users to share data with other users, either by opening them partial access to their personal data, or by creating cells from scratch to start collaborating in a fresh folder. 
