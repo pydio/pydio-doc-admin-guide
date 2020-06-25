@@ -10,8 +10,10 @@ Each **datasource** provides access to data internally and maintains its own con
 
 ### How it works
 
-When you upload data through the web-ui there is a specific task that is triggered, it will notify the **index** about the newly uploaded node, who will update its database (where he keeps track of every node) **(_see: [services involved](./services-involved)_)**,
+When you upload data through the application there is a specific task that is triggered on a micro-service, which will consequently notify the **index** about the newly uploaded node, who will update its database (where he keeps track of every node) **(_see: [services involved](./services-involved)_)**,
 once the files/folders are added in the index they are ready to be used.
+
+The index is the only source of truth on a datasource, which means for instance that if you have a node on your filesystem that it is not registered in the index, you will then not be able to see it on the application.
 
 ### The importance of an up to date index
 
