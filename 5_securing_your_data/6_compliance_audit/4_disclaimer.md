@@ -5,7 +5,9 @@ This is typically suited to fit compliance rules from your company or GDPR europ
 
 You first need to enable the plugin, to do that browse to the following menu **Cells Console >> Identity Management >> Authentication**.
 
-You are now presented with the following settings window, you need to enabled it and then you can edit it to add your custom message, html elements can also be used in the disclaimer as you can see on the screenshot below (see last screenshot for the end result)
+You are now presented with the following settings window, you need to enabled it and then you can edit it to add your custom message.
+
+**Html** elements are also working in the disclaimer text field as you can notice on the screenshot below (*see the user authentication screenshot for the end result*).
 
 [:image:5_securing_your_data/auditing_accesses/disclaimer/disclaimer_enable.png]
 
