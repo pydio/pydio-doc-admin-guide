@@ -7,9 +7,9 @@ You first need to enable the plugin, to do that browse to the following menu **C
 
 You are now presented with the following settings window, you need to enabled it and then you can edit it to add your custom message.
 
-**Html** elements are also working in the disclaimer text field as you can notice on the screenshot below (*see the user authentication screenshot for the end result*).
-
 [:image:5_securing_your_data/auditing_accesses/disclaimer/disclaimer_enable.png]
+
+**HTML** elements are also working in the disclaimer text field as you can notice on the screenshot below (*see the user authentication screenshot for the end result*).
 
 You now also have an option to display a disclaimer for the public links.
 
