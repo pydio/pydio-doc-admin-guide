@@ -19,7 +19,7 @@ To load the storage repartition for `cellsdata`, click on the `cellsdata` part, 
 
 [:image:5_securing_your_data/auditing_accesses/storage_usage/storage_detail_cellsdata.png]
 
-and then you can still go a level deeper, to analyse the usage for a specific user, here for instance we are going to look at the user `admin` usage.
+and then you can still go a level deeper, to analyse the usage for a specific user, here for instance we are going to look at the user `admin` _cell_ storage usage.
 
 [:image:5_securing_your_data/auditing_accesses/storage_usage/storage_detail_cellsdata_admin.png]
 
