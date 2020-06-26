@@ -24,6 +24,6 @@ and then you can still go a level deeper, to analyse the usage for a specific us
 [:image:5_securing_your_data/auditing_accesses/storage_usage/storage_detail_cellsdata_admin.png]
 
 
-Or we could analyse the `personal-files` of your current users and see who and what is taking so much space as seen on the screenshot below.
+We could also analyse the `personal` workspaces of your current users and see who and what is taking so much space as seen on the screenshot below.
 
 [:image:5_securing_your_data/auditing_accesses/storage_usage/storage_detail_personal.png]
