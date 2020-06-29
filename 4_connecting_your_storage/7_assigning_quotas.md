@@ -13,6 +13,6 @@ To access the menu go to, **Data Management >> Workspaces >> Edit a workspace**,
 
 Once you have selected the unit (gigabyte, megabyte and so on) and added the number make sure to hit the save button on your workspace, now the rule will be applied to everyone that has an access to the workspace.
 
-Here is a quick look at what a user will get if they are uploading data higher than the quota.
+Here is a quick look at what a user will get if they attempt to upload data when the quota limit has been reached.
 
 [:image:4_connecting_your_storage/assigning_quotas/quotas_example.png]
