@@ -1,9 +1,9 @@
-Image and video annotations is a another feature that will enhance the collaborative aspect, you can now share and point to any specific part of a video/image.
+Image and video annotations are important features that enhance the collaborative aspect of the file sharing platform.  They provides ability to comment out any specific area of an image or a specific timecode inside a video.
 
 
 ## Enabling annotations
 
-By default on the latest release (2.1.0) of Cells, image annotations are enabled by default and video annotations will require you to enable them.
+By default on the latest release (2.1.0) of Cells, image annotations are enabled but video annotations require manual enabling.
 
 ### Image annotations
 

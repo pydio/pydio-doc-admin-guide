@@ -1,4 +1,3 @@
-
 Webdav protocol is integrated out of the box in Pydio Cells.
 
 You can access your server with a webdav client and valid credentials at the following address:   

@@ -17,6 +17,8 @@ You must have an available MySQL database, along with a privileged user (e.g. `p
 - [MariaDB version 10.3 and above](https://downloads.mariadb.org/mariadb/repositories)
 - [MySQL version 5.7 and above](https://dev.mysql.com/doc/refman/8.0/en/installing.html)
 
+As recommended by databases documentations, make sure not to leave the `max_connections` to its default value (151) while going live in production.
+
 #### Cells binary
 
 Download the Pydio Cells binary corresponding to your architecture using one of the following links:

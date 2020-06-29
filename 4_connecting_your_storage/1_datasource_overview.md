@@ -1,38 +1,33 @@
 ### Concepts
 
-In previous versions of Pydio, Workspaces were used to both define a way to access datasources and a way to manage ACLs on the data. Pydio Cells now provides a strong decoupling between technical storages and business logic:
+Pydio Cells provides a strong decoupling between technical storages and business logic:
 
-- the **datasources** define the actual storage where the data lies
-- the **workspaces** point to any point in the tree of any datasource and defines ACLs by adding or removing permissions and policies.
-- the **cells** are then virtual workspaces that point to _many_ points in the various datasource trees and add share features and metadata.
+- **Datasources** define the actual storage where the data lies. They can be seen as "mount points" for external storages. Each datasource provides access to data internally and maintains its own consistent index in the database. Indexes from the various datasources are aggregated into a global tree that is exposed to other services. That way, datasources can be distributed across as many nodes as needed.
 
-Each **datasource** provides access to data internally and maintains its own consistent index by continuously listening to and storing changes. Indexes from the various datasources are then aggregated by the `pydio.grpc.tree` service into a global tree that is exposed to and used by other services. That way, datasources can be distributed across as many nodes as needed.
+- **Workspaces** are defined by administrators and to open accesses to one or many node in the global tree of files inside datasources, by adding or removing permissions and policies on these nodes.
+
+- **Cells** are sandboxed workspaces created by users to share data between themselves. Users easily manage accesses while still inheriting the restrictions set by administors.
+
 
 ### How it works
 
-When you upload data through the application there is a specific task that is triggered on a micro-service, which will consequently notify the **index** about the newly uploaded node, who will update its database (where he keeps track of every node) **(_see: [services involved](./services-involved)_)**,
-once the files/folders are added in the index they are ready to be used.
+When you upload data through the application there is a specific task that is triggered on a micro-service, which will consequently notify the **index** about the newly uploaded node, who will update its database (where he keeps track of every node) **(_see: [services involved](./services-involved)_)**. Once the files/folders are added in the index they are ready to be used.
 
 The index is the only source of truth on a datasource, which means for instance that if you have a node on your filesystem that it is not registered in the index, you will then not be able to see it on the application.
 
-### The importance of an up to date index
+### The importance of an up-to-date index
 
 If you add/delete data directly on the storage (object storage, s3, filesystem) you will also have to manually trigger the resync (meaning, updating the [index](./services-involved)) to have it appear and be usable. This operation can be done with a REST api call or with the CLI.
 
-If you are using the regular means to interact with the data you do not need to handle that for the following clients:
-
-- Application (WebUI) 
-- [Cells-client CLI](https://github.com/pydio/cells-client)
-
-All data manipulated by those clients will be automatically indexed and ready to be used.
+Interacting with the data via the standard clients (Cells Web interface, [Cells-client CLI](https://github.com/pydio/cells-client) or CellsSync) you should not need to care about re-indexation.
 
 ### Supported Storages
 
-Datasource can be seen as a driver to access your data. It can currently be connected to two types of storages:
+Datasource can be seen as a driver to access your data. It can currently be connected to the following storage types:
 
 - **Local FileSystem**: folder located on the same server as where the service is running
 - **Object Storage**: S3-compatible remote storage (can be a proper S3 or anything implementing the API).
 - **Google Cloud Storage**: compatible with Google's cloud storage solution [ED only].
 - **Azure Blob Storage**: compatible with Azure's blob storage solution [ED only].
 
-[Detailed structure of a datasource](./services-involved), in this article a detailed view of how each service on datasource interacts.
+In the article [Detailed structure of a datasource](./services-involved), a detailed view of how each service on datasource interacts.

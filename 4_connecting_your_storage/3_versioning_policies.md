@@ -2,7 +2,7 @@ Versioning is provided out-of-the-box by Pydio Cells. In a few words, when versi
 
 Please, note that versioning has a cost in terms of the amount of data that is stored in your various data stores and have to be correctly configured and monitored in order to avoid exponential use of data space.
 
-When defining a datasource, you can pick on of the available Versioning Policies to apply them to this datasource.
+When defining a datasource, you can pick an available Versioning Policies to apply it to this datasource.
 
 ### Default Versioning Policies
 

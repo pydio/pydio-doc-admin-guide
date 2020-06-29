@@ -1,4 +1,4 @@
-The storage usage plugin is a tool that will enable you to visualize and understand where most of your storage is being used and what type of resource is using most of it.
+The Storage Usage tool allows you to visualize and understand where most of your storage is being used, and what type of resource is using most of it.
 
 
 ## Storage Usage

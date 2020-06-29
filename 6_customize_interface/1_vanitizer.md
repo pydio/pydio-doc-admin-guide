@@ -1,4 +1,4 @@
-The vanitizer branding tool, will help you customize your Cells instance allowing you to match the color of your other services, you can add custom buttons to add more functionality and custom css.
+The vanitizer branding tool helps you customize Pydio Cells to match the color of your other services. You can even add custom buttons to add more functionality as well as custom CSS for advanced styling purpose.
 
 ### Enable the vanitizer
 

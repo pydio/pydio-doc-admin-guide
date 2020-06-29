@@ -19,11 +19,18 @@ Then, there are 3 different tabs:
 1. **Access**: You can choose if you want to put a password an expiration date for the link, a limited number of downloads and the layout of the GUI when people follow the link.
 1. **Visibility**: You can choose to whom this link is visible on the shares menu.
 
-## Sharing with Cells
+## Sharing with other users using Cells
 
 The Cells concept will be familiar to modern workers used to collaborating on _"channels"_ within popular group-chat applications. Cells can be shared internally or externally to the organization, with users able to add new individuals and groups to the Cell. In-app, instant messaging within each Cell, provides a focused channel for group communication around the theme.
 
 End-users can create their own, flexible Cells: combining files and folders from any location, or picking users from their address book.
+
+### Creating Cells from folders/files
+
+When using the **Share** action (either in right-click menu or in the information column), one can directly add a folder or a file to an existing cell, or create a new cell with the current folder.
+
+[:image:1_quick_start/sharing_features/create_cell_4.png]
+
 
 ### Creating Cells from scratch
 
@@ -43,12 +50,6 @@ When using the "Create Cell" button from the left-hand panel, the following menu
 - **Add an existing Folder**: Pick an existing folder from any of your current workspaces, to feed the Cell with data. You can also leave the cell empty and a dedicated folder will be created on the underlying storage.
 
 Click on **Create Cell Now!** to finish the process.
-
-### Creating Cells from folders/files
-
-When using the **Share** action (either in right-click menu or in the information column), one can directly add a folder or a file to an existing cell, or create a new cell with the current folder.
-
-[:image:1_quick_start/sharing_features/create_cell_4.png]
 
 ### Creating Cells from Address Book
 

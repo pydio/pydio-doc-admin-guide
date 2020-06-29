@@ -1,4 +1,4 @@
-With pydio cells we provide you with a way to keep track of every shared resources, therefore giving you more visibility and control.
+Pydio Cells provides you with a way to keep track of every shared resources, therefore giving you more visibility and control about who accesses what at any time.
 
 ## Audits
 
