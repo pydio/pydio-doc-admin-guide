@@ -17,7 +17,7 @@ The index is the only source of truth on a datasource, which means for instance 
 
 ### The importance of an up to date index
 
-If you add/delete data directly on the storage (object storage, s3, filesystem) you will also have to manually trigger the resync (meaning, updating the [index](./services-involved)) to have it appear and be usable. This operation can be done with the a REST api call or with the CLI.
+If you add/delete data directly on the storage (object storage, s3, filesystem) you will also have to manually trigger the resync (meaning, updating the [index](./services-involved)) to have it appear and be usable. This operation can be done with a REST api call or with the CLI.
 
 If you are using the regular means to interact with the data you do not need to handle that for the following clients:
 
