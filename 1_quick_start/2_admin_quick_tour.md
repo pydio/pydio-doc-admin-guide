@@ -8,7 +8,7 @@ Connect to Cells as an administrator and go to `Cells Console > People` menu.
 
 [:image:1_quick_start/yourdata/01-people.png]
 
-Here, you can create users and organize them into groups. By default, your data is organized in two Workspaces: **"Personal"** and **"Common Files"**. The former is a dedicated "home folder": each user will only see their own data inside this Personal workspace. The latter is a shared folder where every one can work on the same files.
+Here, you can create users and organize them into groups. By default, your data is organized in two Workspaces: **"Personal"** and **"Common Files"**. The former is a dedicated "home folder": each user will only see their own data inside this Personal workspace. The latter is a shared folder where everyone can work on the same files.
 
 Workspaces can be seen as top folders used as basic unit for managing **"who can access what"**. To have a better understanding, open for instance your own admin user: in the workspace tab, you see that you have Read/Write permissions on the two default workspaces.
 
@@ -16,7 +16,7 @@ Workspaces can be seen as top folders used as basic unit for managing **"who can
 
 If you remove the access to Common Files and go back to the home page, you directly see that you now only have the **"Personal"** workspace in the left-hand column.
 
-You can manage these access at a fine-grained level (user per user), or a higher level (per group or per role). Actual accesses are computed for each user depending on their roles, groups and personal ACLs.
+You can manage these accesses at a fine-grained level (user per user), or a higher level (per group or per role). Actual accesses are computed for each user depending on their roles, groups and personal ACLs.
 
 ## Workspaces and Data Source
 
