@@ -2,7 +2,7 @@ Pydio Cells delivers file sharing and collaboration in a way that is familiar, c
 
 ## Sharing with Public links
 
-You can share files or folders using a public link. To create a public link choose the folder/file that you want to share and right click on it a menu will appear click on **Share** then you will have a menu popping:
+You can share files or folders using a public link. To create a public link, choose the folder/file that you want to share and right click on it: a menu appears. Click on **Share**, it opens a configuration popup:
 
 Click on **Enable Public Links** to enable them.
 
@@ -10,8 +10,8 @@ You now see these new fields:
 
 [:image:1_quick_start/sharing_features/public_link_1.png]
 
-- **Link Label**: the label of your link; you have a menu displaying all your public links. It is easier recognize them with a label)
-- **Link Description**: filled by default with the creation date, this will be displayed in the various public layout seen by the end-user that clicks on the link. You can change it to provide a mode adequate description of the content.
+- **Link Label**: the label of your link; you have a menu displaying all your public links. It is easier to recognize them with a label)
+- **Link Description**: filled by default with the creation date, this is displayed in the various public layouts seen by the end-user that clicks on the link. You can change this to provide a more adequate description of the content.
 
 Then, there are 3 different tabs:
 
@@ -30,7 +30,6 @@ End-users can create their own, flexible Cells: combining files and folders from
 When using the **Share** action (either in right-click menu or in the information column), one can directly add a folder or a file to an existing cell, or create a new cell with the current folder.
 
 [:image:1_quick_start/sharing_features/create_cell_4.png]
-
 
 ### Creating Cells from scratch
 
@@ -53,7 +52,7 @@ Click on **Create Cell Now!** to finish the process.
 
 ### Creating Cells from Address Book
 
-When browsing the Address Book in the right-hand column, clicking on the vertical dots for a user opens providing the following options:
+When browsing the Address Book in the right-hand column, clicking on the vertical dots for a user opens, providing following options:
 
 - **Create a cell with this user**
 - **Add user to current Cell**: if you are currently inside a Cell
