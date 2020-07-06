@@ -20,14 +20,22 @@ Virtual Machine requirements
 
 ### Setup and config at the first time
 
-After importing the image into ESXi, you only have to select the correct virtual network interface before launching the machine.  
-Go to `Your Image >> Settings >> Network`: Adapter 1 is already bound to a bridged adapter, choose the correct name for the adapter you want to use and click `OK`.
+To create a new VM from the image:
 
-_Warning:_ even if the correct Name is already shown, click on it and validate, or you won't be able to start the VM (it is a known issue with the VirtualBox UI that is still there in 6.0.14).
+- Log in your web interface
+- Go to the `Virtual Machines` section
+- Click on Create/Register VM
+
+A creation wizard pops up.
+
+- In `Select creation type`, choose `Deploy a virtual machine from an OVF or OVA file`
+- In second page, choose a name and upload **both** the `*.ovf` and the  `*-disk1.vmdk` files
+- Choose correct network and disk provisioning
+- Click on `Finish` and wait until creation is complete
 
 At first boot, a script is launched to verify network settings and start the installer. You can then interact with a specific Cells service via a web browser to setup and configure your instance.
 
-For your convenience, we display (in the VM console accessed from your VirtualBox GUI) the full correct URL you have to use to access this post installation configuration service - formatted as `https://<DN or IP>/`.
+For your convenience, we display (in the VM console accessed from your ESXi GUI) the full correct URL you have to use to access this post installation configuration service - formatted as `https://<DN or IP>/`.
 
 > Note: A self-signed certificate is used by default, ignore the warning message on your web browser.
 
@@ -36,8 +44,6 @@ You just follow steps in web interface to finalize the configuration. All parame
 You see installation progress in your browser page. It can take up to a minute to reach the end.
 
 At this step, you can login to Cells-Enterprise with the credentials you have entered during the setup and verify everything is up and running.
-
-This done, you should restart the virtual machine, another script will finalise the configuration, typically installing and starting Cells as a systemd service.
 
 ### Predefined accounts
 
@@ -62,11 +68,13 @@ By default, two root paths are used:
 ### Use of well-known ports
 
 In order for Cells to be able to use well known 80 & 443 port, you have to give specific permissions to the binary file.
-The OVF you have downloaded is correctly configured and the embedded `cells-enterprise` binary has already these permission set. Yet, if you ever need to update the binary file - typically when you perform an in-app update - you have to re-apply these permission on the new binary file:
+The OVF you have downloaded is correctly configured and the embedded `cells-enterprise` binary has already these permission set. Upon upgrade, the binary changes and the permission are re-applied by systemd upon restart.
+
+Yet, if you ever need to manually apply these permission on the binary file:
 
 ```sh
 # log as pydio via ssh into the machine
-sudo setcap 'cap_net_bind_service=+ep' /opt/pydio/cells-enterprise
+sudo setcap 'cap_net_bind_service=+ep' /opt/pydio/cells
 ```
 
 ### Systemd service
@@ -80,7 +88,7 @@ To manually restart Cells:
 sudo systemctl restart cells
 ```
 
-You can consult the output of **cells-enterprise** service by using command:
+You can consult the output of **cells** service by using command:
 
 ```sh
 sudo journalctl -f
