@@ -6,24 +6,24 @@ We expose below the specificities of the AMI custom setup. For further details, 
 
 If you want to give a first quick glance at Cells with no hassle, just launch the AMI on a `t2-medium` EC2 instance, with no user data, no extra mounted volume and setting security groups so that, the instance:
 
-- can reach the internet (to download binairies and updates)
-- can be reached on port 443
-- can be reached via SSH
-- **is on a private network with a private IP address**
+- Can reach the internet (to download updates)
+- Can be reached on port 443
+- Can be reached via SSH
+- **Is on a private network with a private IP address**
 
 You will have a ready to install instance at `https://<ec2-public-ip>` after a couple of minutes.
 
 You can quickly finalise the installation by:
 
-- accepting EULA
-- pasting your licence key
-- use embedded local db with:
-  - host: localhost
-  - port: 3306
-  - db: cells
-  - user: pydio
-  - password: cells
-- define an admin and leave advanced parameters untouched.
+- Accepting EULA
+- Pasting your licence key
+- Use embedded local db with:
+  - Host: localhost
+  - Port: 3306
+  - DB: cells
+  - User: pydio
+  - Password: cells
+- Define an admin and leave advanced parameters untouched.
 
 ## Users
 
@@ -46,21 +46,21 @@ They are 2 main paths that are used by Cells:
   - `/opt/pydio/bin`: Pydio Cells binary
   - `/opt/pydio/conf`: Installation configuration files
 - `/var/cells`: The application working directory with: runtime configuration, logs, technical persistence and, by default, your data.  
-  If you provide an additional EBS volume when you launch the AMI (see installation instructions), it is automatically mounted at this location before install.
+
+If you provide an additional EBS volume when you launch the AMI (see installation instructions), it is automatically mounted at this location before install.
 
 ## Database
 
-A MySQL DB is the only hard requirement to run a Pydio Cells instance.
-
-As a convenience, the Pydio Cells AMI embbed an installed and configured MariaDB 10.2 server that is provided by the Amazon Linux 2 Lamp topic.  
+A MySQL DB is the only hard requirement to run a Pydio Cells instance.  
+As a convenience, the Pydio Cells AMI embbed an installed and configured MariaDB 10.2 server that is provided by the Amazon Linux 2 LAMP topic.  
 
 There are 2 users `root` and `pydio`, all other configurations follow the `mysql_secure_installation` best practices.  
 There is one default `cells` DB, on which the `pydio` user has all privileges.
 
 You might use this database during your test phase. Before going live, it is recommanded to either:
 
-- rather use an RDS instance
-- change the passwords for both users
+- Rather use an RDS instance
+- Change the passwords for both users
 
 _Hint: default mysql password for pydio user is `cells`, root user has no password_
 
