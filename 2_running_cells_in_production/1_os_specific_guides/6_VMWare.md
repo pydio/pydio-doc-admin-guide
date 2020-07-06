@@ -11,7 +11,7 @@ An md5 file is also available on the same location for integrity verification.
 
 In this guide, we use the simple standalone ESXi web interface to launch a new virtual machine.
 
-Virtual Machine requirements
+**Virtual Machine requirements:**
 
 - RAM : 4G
 - CPU : 2 vCores
@@ -33,21 +33,19 @@ A creation wizard pops up.
 - Choose correct network and disk provisioning
 - Click on `Finish` and wait until creation is complete
 
-At first boot, a script is launched to verify network settings and start the installer. You can then interact with a specific Cells service via a web browser to setup and configure your instance.
+At first boot, a script is launched to verify network settings and start the installer. You can then access the installation wizard with a web browser to configure your instance.
 
-For your convenience, we display (in the VM console accessed from your ESXi GUI) the full correct URL you have to use to access this post installation configuration service - formatted as `https://<DN or IP>/`.
+For your convenience, we display (in the VM console accessed from your ESXi GUI) the full correct URL you have to use to access this post installation configuration wizard - formatted as `https://<DN or IP>/`.
 
-> Note: A self-signed certificate is used by default, ignore the warning message on your web browser.
+*Note: A self-signed certificate is used by default, ignore the warning message on your web browser*.
 
-You just follow steps in web interface to finalize the configuration. All parameters are set by default except the main administrator password.
+Just follow the steps of the wizard to finalize your setup. All parameters are set by default except the main administrator password. Upon termination, the installer saves everything, starts the `cells` service and exits. It can take up to a minute to reach the end.
 
-You see installation progress in your browser page. It can take up to a minute to reach the end.
-
-At this step, you can login to Cells-Enterprise with the credentials you have entered during the setup and verify everything is up and running.
+At this step, you can log in the app with the credentials you have just entered and verify everything is up and running.
 
 ### Predefined accounts
 
-If you ever need to log into the VM system, SSH accounts and technical accounts are created as follow:
+If you ever need to log into the VM via terminal, users are created as follow:
 
 | user                | username        | password    |
 | ------------------- | --------------- | ----------- |
@@ -68,9 +66,9 @@ By default, two root paths are used:
 ### Use of well-known ports
 
 In order for Cells to be able to use well known 80 & 443 port, you have to give specific permissions to the binary file.
-The OVF you have downloaded is correctly configured and the embedded `cells-enterprise` binary has already these permission set. Upon upgrade, the binary changes and the permission are re-applied by systemd upon restart.
+The OVF you have downloaded is correctly configured and the embedded binary has already these permission set. When upgrading, the binary changes, but the permissions are automatically re-applied by systemd upon restart.
 
-Yet, if you ever need to manually apply these permission on the binary file:
+Yet, if you ever need to manually apply these permissions on the binary file:
 
 ```sh
 # log as pydio via ssh into the machine
@@ -79,7 +77,7 @@ sudo setcap 'cap_net_bind_service=+ep' /opt/pydio/cells
 
 ### Systemd service
 
-**cells-enterprise** service is running under **pydio** user. The service is **enabled** (a.k.a will automatically restart at reboot).
+**cells** service is running under **pydio** user. The service is **enabled** (a.k.a will automatically restart at reboot).
 
 To manually restart Cells:
 
