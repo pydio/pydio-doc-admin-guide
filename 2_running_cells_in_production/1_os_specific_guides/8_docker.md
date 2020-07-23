@@ -1,4 +1,4 @@
-_This guide describes the steps required to have the Pydio Cells Docker container running._
+_This guide describes the steps required to have the Pydio Cells Docker container running_.
 
 [:image:2_running_cells_in_production/logos-os/logo-docker.png]
 
@@ -30,9 +30,9 @@ Here's an example of a command that runs a cells container with persistent data 
 docker run -d -e CELLS_EXTERNAL=192.168.0.172:8080 -e CELLS_BIND=192.168.0.172:8080 -p 8080:8080 -v /home/cells/volume/:/var/cells pydio/cells
 ```
 
-* **-e** *CELLS_EXTERNAL* is required to give it external access
-* **-e** *CELLS_BIND* can be, the server running the container address or localhost.
-* **-v** */home/cells/volume/:/var/cells*, basically I have a folder on my server located here `/home/cells/volume/` and where I want to store the whole Cells working directory.
+- **-e** *CELLS_EXTERNAL* is required to give it external access
+- **-e** *CELLS_BIND* can be, the server running the container address or localhost.
+- **-v** */home/cells/volume/:/var/cells*, basically I have a folder on my server located here `/home/cells/volume/` and where I want to store the whole Cells working directory.
 
 _This was only an example on how you can run a Cells container, you can find below all of the enivronment variables, data configurations for cells, docker-compose examples and more_.
 
@@ -46,24 +46,24 @@ All default configuration and data (`/var/cells` on the container) is saved in a
 
 If you want to use named volumes, here is an overview of the important files :
 
-* `/var/cells/pydio.json`: main configuration file
-* `/var/cells/data`: data
-* `/var/cells/logs`: logs
-* `/var/cells/certs`: certificate management
-* `/var/cells/services`: services information
+- `/var/cells/pydio.json`: main configuration file
+- `/var/cells/data`: data
+- `/var/cells/logs`: logs
+- `/var/cells/certs`: certificate management
+- `/var/cells/services`: services information
 
 Note: If you [add new datasources](./managing-datasources) and want to persist the data, ensure that their location is also mounted in a volume.
 
 #### Environment variable
 
-* `CELLS_NO_TLS`: uses tls or not (default to 0 => uses tls)
-* `CELLS_BIND` : address where the application http server is bound to. It MUST contain a server name and a port.
-* `CELLS_EXTERNAL` : url the end user will use to connect to the application.
+- `CELLS_NO_TLS`: uses tls or not (default to 0 => uses tls)
+- `CELLS_BIND` : address where the application http server is bound to. It MUST contain a server name and a port.
+- `CELLS_EXTERNAL` : url the end user will use to connect to the application.
 
 Let's say:
 
-* You have a server with an internet facing IP and a corresponding DNS A entry that points toward `files.example.com`
-* You want to run the application in self signed mode on port 8080 (remember the default value of CELLS_NO_TLS is disabled)
+- You have a server with an internet facing IP and a corresponding DNS A entry that points toward `files.example.com`
+- You want to run the application in self signed mode on port 8080 (remember the default value of CELLS_NO_TLS is disabled)
 
 ### Example setup with docker compose
 
@@ -113,11 +113,11 @@ The [nginx-proxy](https://github.com/jwilder/nginx-proxy) and [docker-letsencryp
 
 The Cells Sync Desktop Application will require an additional port.
 
-* First read this, [Setup Cells Server for Cells Sync](/en/docs/kb/client-applications/setup-cells-server-cellssync)
-* Make sure to start a container with this env set `PYDIO_GRPC_EXTERNAL`
-* Expose the port that you previously set with `PYDIO_GRPC_EXTERNAL`
+- First read this, [Setup Cells Server for Cells Sync](/en/docs/kb/client-applications/setup-cells-server-cellssync)
+- Make sure to start a container with this env set `PYDIO_GRPC_EXTERNAL`
+- Expose the port that you previously set with `PYDIO_GRPC_EXTERNAL`
 
-Example: 
+Example:
 
 Assuming that port **33060** is the port chosen for gRPC, the command should have those two additional parameters,
 
@@ -126,7 +126,7 @@ Assuming that port **33060** is the port chosen for gRPC, the command should hav
 
 The entire command should look like this:
 
-```
+```sh
 docker run -d -e CELLS_EXTERNAL=192.168.0.172:8080 -e CELLS_BIND=192.168.0.172:8080 -e PYDIO_GRPC_EXTERNAL=33060 -p 33060:33060 -p 8080:8080 pydio/cells
 ```
 
