@@ -3,7 +3,6 @@ _This guide describes the steps required to have Pydio Cells running on Debian a
 
 [:image:2_running_cells_in_production/logos-os/logo-debian.png]
 
-
 [:image:2_running_cells_in_production/logos-os/logo-ubuntu.png]
 
 ## Requirements
@@ -12,9 +11,10 @@ _This guide describes the steps required to have Pydio Cells running on Debian a
 
 You need the 64-bit version of one of these Debian or Ubuntu versions:
 
-- Debian 10 (buster) LTS
-- Stretch 9 (stable) / Raspbian Stretch
-- Jessie 8 (LTS) / Raspbian Jessie
+- Debian 10 (Buster) LTS
+- Debian 9 (Stretch) / Raspbian Stretch
+- Debian 8 (Jessie) / Raspbian Jessie
+- Ubuntu 20.04 (Focal Fossa)
 - Ubuntu 18.04 (Bionic Beaver)
 - Ubuntu 16.04 (Xenial Xerus)
 
@@ -28,6 +28,47 @@ In order to create a new user and its home directory execute this command:
 
 ```sh
 sudo useradd -m pydio
+```
+
+#### Installation location
+
+By default, Cells is installed in a subdirectory in the `home` folder of the user that performs the installation. For instance, using the `pydio` user, it is `/home/pydio/.config/pydio/cells`.
+
+This is not recommanded for production use: we rather recommand installing Cells in `/var/cells`.
+
+To do so, you should follow the below steps:
+
+- Define a `CELLS_WORKING_DIR` environment variable
+- Put your binary in a dedicated location, we recommand `/opt/pydio/bin/`
+- Create a symbolic link from a location that is in your `PATH` that points toward the downloaded binary
+
+Typically:
+
+```sh
+# as root user
+
+# Create correct locations
+mkdir -p /opt/pydio/bin /var/cells/certs
+
+# Define a system wide environment variable
+tee -a /etc/profile.d/cells-env.sh << EOF
+#Defines the path to Cells' working dir.
+export CELLS_WORKING_DIR=/var/cells
+EOF
+
+# Retrieve the binary
+downloadUrl=https://download.pydio.com/latest/cells/release/{latest}/linux-amd64/cells
+# Or for the Enterprise Distribution
+downloadUrl=https://download.pydio.com/latest/cells-enterprise/release/{latest}/linux-amd64/cells-enterprise
+wget --output-document=/opt/pydio/bin/cells $downloadUrl
+
+# Put a sym link in the path
+ln -s /opt/pydio/bin/cells /usr/local/bin/cells
+
+# Insure permissions are correctly set
+chown -R pydio:pydio /var/cells /opt/pydio
+chmod 0755 /etc/profile.d/cells-env.sh
+chmod 0755 /opt/pydio/bin/cells
 ```
 
 ### Database
@@ -79,6 +120,8 @@ FLUSH PRIVILEGES;
 
 ## Installation and configuration
 
+If you have followed the instruction from the **Installation location** section above, you should already have the Cells binary in your path, to double check, simply run: `cells version`, otherwise, download the binary and make it executable:
+
 ```sh
 # Use this url as is, you will be redirected to latest version automatically
 wget https://download.pydio.com/latest/cells/release/{latest}/linux-amd64/cells
@@ -88,7 +131,7 @@ sudo chmod u+x cells
 If you need to use the standard http (80) or https (443) port, please execute this command:
 
 ```sh
-setcap 'cap_net_bind_service=+ep' cells
+setcap 'cap_net_bind_service=+ep' <path-to-your-binary>
 ```
 
 Switch to the **pydio** user to run the installation and start the app:
@@ -101,26 +144,26 @@ Execute the command below and follow the instructions.
 
 **Before you start installing, here are two important parameters that you need to understand:**
 
-- Internal URL: it defines the interface where the internal webserver of the application is bound. It MUST contain a server name and a port, should be of this form <ip-or-domain>:<port>.
+- Internal URL: it defines the interface where the internal webserver of the application is bound. It MUST contain a server name and a port, should be of this form `<ip-or-domain>:<port>`.
 
-- External URL: This is the main entry point from the outside world, the address you will communicate to your endusers. It typically  differs from the internal URL when you are behind a reverse proxy or in a container.
+- External URL: This is the main entry point from the outside world, the address you will communicate to your endusers. It typically differs from the internal URL when you are behind a reverse proxy or in a container.
 
-For instance, you application runs in a VM that has this IP: 10.0.0.2 in a private LAN behind a reverse proxy that has a public IP and a A DNS record for domain cells.example.com.
-Then set INTERNAL_URL to 10.0.0.2:8080 and EXTERNAL_URL to https://cells.example.com (or http).
+For instance, your application runs in a VM that has this IP: `10.0.0.2` in a private LAN behind a reverse proxy that has a public IP and a A DNS record for domain `cells.example.com`.
+Then set INTERNAL_URL to `10.0.0.2:8080` and EXTERNAL_URL to `https://cells.example.com` (or http).
 
 You can [refer to this page](./cells-installation) to get more details on the installation process.
 
 After the install is successfully done, if you ever have to stop Pydio Cells and want to run it again just run:
 
 ```sh
-./cells start
+cells start
 ```
 
 **It is advised to add Cells as a service with systemd (or supervisor) - See our Knowledge Base for the dedicated Guides.**
 
 ## Troubleshooting
 
-Generally, you might want to have a look at the log file that is located in `~/.config/pydio/cells/logs`.
+Generally, you might want to have a look at the log file that is located in `$CELLS_WORKING_DIR/logs`.
 
 ### Database server issue
 
