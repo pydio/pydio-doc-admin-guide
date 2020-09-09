@@ -88,7 +88,7 @@ Once again with the CLI (assuming that you have access on the server), you can r
 
 ### Cannot list workspaces
 
-If you are getting an error when you attempt to list the workspaces then your server might be running behind a reverse proxy, in this case you must use **TLS** on **Cells** and on the **reverse proxy**, please refer to our dedicated documentation [Running Cells Behind a reverse Proxy](./run-cells-behind-proxy).
+If you are getting an error when you attempt to list the workspaces then your server might be running behind a reverse proxy, in this case you must use **TLS** on **Cells** and on the **reverse proxy**, please refer to our dedicated documentation [Running Cells Behind a reverse Proxy](./running-cells-behind-proxy).
 
 ### I do see not my workspaces
 
