@@ -12,8 +12,8 @@ _This guide describes the steps required to have Pydio Cells running on Debian a
 You need the 64-bit version of one of these Debian or Ubuntu versions:
 
 - Debian 10 (Buster) LTS
-- Debian 9 (Stretch) / Raspbian Stretch
-- Debian 8 (Jessie) / Raspbian Jessie
+- Debian 9 (Stretch) LTS / Raspbian Stretch
+- Debian 8 (Jessie) LTS / Raspbian Jessie
 - Ubuntu 20.04 (Focal Fossa)
 - Ubuntu 18.04 (Bionic Beaver)
 - Ubuntu 16.04 (Xenial Xerus)
@@ -48,7 +48,7 @@ Typically:
 # as root user
 
 # Create correct locations
-mkdir -p /opt/pydio/bin /var/cells/certs
+mkdir -p /opt/pydio/bin /var/cells
 
 # Define a system wide environment variable
 tee -a /etc/profile.d/cells-env.sh << EOF
