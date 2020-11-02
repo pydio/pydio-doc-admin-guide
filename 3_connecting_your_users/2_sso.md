@@ -6,7 +6,7 @@ Single Sign-On is a service that allows a user to use one login session to acces
 
 ### What does it mean in Pydio Cells?
 
-Pydio Cells can be used as an [Identity Provider](./2_sso/1_cells_as_idp). In other words, any application can use the login session from Pydio Cells to validate access to a user and use its data.
+Pydio Cells can be used as an [Identity Provider](./1_cells_as_idp). In other words, any application can use the login session from Pydio Cells to validate access to a user and use its data.
 
 ### What does it mean in Pydio Cells Enterprise Distribution?
 
