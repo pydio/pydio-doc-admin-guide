@@ -93,27 +93,23 @@ If you want to directly bind Cells to the standard HTTP (80) and/or HTTPS (443) 
 sudo setcap 'cap_net_bind_service=+ep' /home/pydio/cells
 ```
 
-**Before you start installing, there are two important parameters that you need to understand:**
-
-- **Internal URL**: it defines the interface where the internal webserver of the application is bound. It MUST contain a server name and a port and must be formatted this way: `<ip-or-domain>:<port>`.
-
-- **External URL**: This is the main entry point from the outside world; the address you will communicate to your end-users. It typically  differs from the internal URL when you are behind a reverse proxy or in a container.
-
-For instance, your application runs in a VM that has this IP: 10.0.0.2 in a private LAN behind a reverse proxy that has a public IP and a A DNS record for domain cells.example.com.
-Then set INTERNAL_URL to 10.0.0.2:8080 and EXTERNAL_URL to https://cells.example.com (or http).
-
 You can now run the installer:
 
 ```sh
 # As pydio user
-./cells install
+cells install
 ```
 
-Follow the short set of instructions. You can also [refer to this page](./cells-installation) to get more details.  
-When the installation is done, you might have to stop and restart the application (typically if you have chosen the CLI installer).
-
 ```sh
-./cells start
+cells start
+```
+
+You can now access your Cells instance on port 8080 with `HTTPS` (self-signed), for instance `https://localhost:8080` or `https://<server ip or domain>:8080`.
+
+To select a different interface and port for cells, use the following command answer yes and start to configure.
+
+```
+cells config sites
 ```
 
 Note that this is not the preferred way to run Pydio Cells in a production context, see [the following chapters of our documentation](./running-cells-service) to fine tune a production ready instance.

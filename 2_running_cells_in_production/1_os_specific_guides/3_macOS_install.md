@@ -59,26 +59,27 @@ First, give execution rights to the binary. For instance, you can use `sudo chmo
 
 Then, to launch the installer, type:
 
-```sh
-./cells install
+```
+cells install
 ```
 
-**Before you start installing here's two of the most important parameters that you need to understand:**
+Select your install type:
 
-```conf
-INTERNAL_URL : address where the application http server is bound to. It MUST contain a server name and a port.
+- web: open a browser to `https://localhost:8080` and configure on web ui.
+- cli: configure on the terminal.
 
-EXTERNAL_URL : url the end user will use to connect to the application.
-
-Example:
-
-If you want your application to run on the localhost at port 8080 and use the url mycells.mypydio.com, then set INTERNAL_URL to localhost:8080 and EXTERNAL_URL to http://mycells.mypydio.com (or https).
-```
-
-After the install is successfully done, if you ever have to stop Pydio Cells and want to run it again, just run:
 
 ```sh
-./cells start
+# If Cells is installed with the CLI option, you need to start cells
+cells start
+```
+
+You can now access your Cells instance on port 8080 with `HTTPS` (self-signed), for instance `https://localhost:8080` or `https://<server ip or domain>:8080`.
+
+To select a different interface and port for cells, use the following command answer yes and start to configure.
+
+```
+cells config sites
 ```
 
 ## Troubleshooting

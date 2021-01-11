@@ -1,16 +1,15 @@
 Cells embedded web server provides multiple ways for enabling TLS support. This is highly recommended to make sure all communications are encrypted between the client applications and the server (HTTPS).
 
-TLS configuration can be performed at installation time, and you can easily change it later by using the `cells config proxy tls` command.
+TLS configuration can be changed by using the `cells config sites` command.
 
 ```sh
-$ ./cells config proxy tls
-Use the arrow keys to navigate: ↓ ↑ → ←
-? Choose TLS activation mode. Please note that you should enable TLS even behind a reverse proxy, as HTTP2 'TLS => Clear' is generally not supported:
-  ▸ Provide paths to certificate/key files
-    Use Let's Encrypt to automagically generate certificate during installation process
-    Generate your own locally trusted certificate (for staging env or if you are behind a reverse proxy)
-    Disable TLS (staging environments only, never recommended!)
+./cells config sites
 ```
+
+- Select `Edit current/existing site`
+- `Leave as`
+- Choose how you want to manage TLS (selfsigned, lets encrypts,...) 
+
 
 ## Supported Modes
 

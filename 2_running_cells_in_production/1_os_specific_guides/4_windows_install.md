@@ -22,16 +22,7 @@ The binary will ask you to choose a mean of installation :
 - **browser based**: will open a browser tab with an intuitive installer.
 - **command line interface**: for advanced users, pretty straight forward.
 
-Then you have 2 important settings:
-
-- **INTERNAL_URL :** address where the application HTTP server is bound to. It MUST contain a server name and a port.
-- **EXTERNAL_URL :** URL the end user will use to connect to the application.
-
 There is also multiple ways to add TLS to your installation:
-
-- **SELF_SIGNED :** creates a self_signed certificate.
-- **LETS_ENCRYPT :** automagically generates a valid certificate for a domain ([see lets encrypt site](https://letsencrypt.org/))
-- **Provide your own certificate :** pass your already generated certificates.
 
 Then, provide your database information and you are good to go.
 
@@ -40,3 +31,5 @@ Once the installation is done the folder containing your data and settings is lo
 > To display the folder, this might require enabling the setting, display **hidden files/folders**
 
 **Data Location** : `C:\Users\pydio\AppData\Roaming\Pydio\cells`
+
+You can now start Cells and access it through `https://localhost:8080` or `https://<server ip or domain>:8080`

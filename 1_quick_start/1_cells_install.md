@@ -48,18 +48,6 @@ Start Cells in installation mode:
 $> ./cells install
 ```
 
-or on Windows
-
-```sh
-$> .\cells.exe install
-```
-
-You first have to provide the basic networking information so that Cells can start its internal webserver:
-
-- the `Bind URL` (IP address/domain name and port),
-- the `TLS configuration` (to enable HTTPS protocol, strongly recommended!),
-- if you are behind a reverse proxy, you can also customize the `External URL` (a.k.a. the address that you will communicate to your end users) so that it differs from the technical bind URL.
-
 #### [Mode 1] Web Installer
 
 If you are on a desktop machine, the installer opens a web page with a wizard for you to provide various configuration parameters, including DB connection info and the login/password of the main administrator.
@@ -82,12 +70,8 @@ After it completes, restart the server with:
 $> ./cells start
 ```
 
-or on Windows
-
-```sh
-$> .\cells.exe start
-```
+_By default Cells is bound on port `8080`_
 
 ## Login to Cells
 
-Once the restart is finished, you are good to go! You should be able to open your browser at your `External URL` address and see the login page. Use the credentials you have just specified to login!
+Once the restart is finished, you are good to go! You should be able to open your browser on `https://localhost:8080` or (`https://<server ip or domain>:8080`) to see the login page. Use the credentials you have just specified to login!
