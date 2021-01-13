@@ -5,8 +5,8 @@ This how-to describes the migration from Pydio 8 to Pydio Cells Enterprise Distr
 ### Forewords
 
 - The process is quite tested and robust, yet you **should perform a full backup of your system before starting**.
-- The migration can only be achieved from Pydio 8 to Pydio Cells, thus if you are running an older version, you must first migrate up to Pydio 8.2.4 (the latest version at time of writing)
-- We advise that you install Pydio Cells on another new machine to ease the process and be able to abort the migration and be able to be back online with the Pydio 8 server in no time. In such case, perform a copy (via rsync) of the business data from your old server to your new server before starting. (In Cells, when you add an existed folder as a new datasource to Cells, it will write some additional information in .minio.sys or .pydio file. That means that you are at risk of a modification on data of production. It's highly recommended to install Cells on a separated machine during migration).
+- The migration can only be achieved from Pydio 8 to Pydio Cells, thus if you are running an older version, you must first migrate up to Pydio 8.2.5 (the latest version at time of writing)
+- We advise that you install Pydio Cells on another new machine to ease the process and be able to abort the migration and be able to be back online with the Pydio 8 server in no time. In such case, perform a copy (via rsync) of the business data from your old server to your new server before starting. (In Cells, when you add an existed folder as a new datasource to Cells, it will write some additional information in .minio.sys or .pydio file. That means that you are at risk of a modification on data of production. It is thus highly recommended to install Cells on a separated machine during migration).
 
 ### Clean before start
 
@@ -21,32 +21,32 @@ You should also perform following cleanups so that the migration runs smoothly:
 
 **Incompatibilities**:
 
-There are some plugins/functionalities in Pydio 8 Community are not available in Cells Home version. Please take a look in this list to make sure before doing.
+There are some plugins/functionalities in Pydio 8 Community that are not available in Cells Home distribution. Please take a look in this list to make sure before proceding.
 
-| Functionalities/Plugins    | Pydio Community | Cells Home | Notes                                      |
-| -------------------------- | --------------- | ---------- | ------------------------------------------ |
-| Ldap auth plugin           | yes             | no         | available in Cells Enterprise only         |
-| Custom DB auth plugin      | yes             | no         |                                            |
-| SMB auth plugin            | yes             | no         |                                            |
-| FTP auth plugin            | yes             | no         |                                            |
-| RADIUS auth plugin         | yes             | no         |                                            |
-| Remote auth plugin         | yes             | no         |                                            |
-| OTP auth-frontend          | yes             | no         |                                            |
-| CAS auth-frontend          | yes             | no         | use SAML instead                           |
-| Dual-form auth-frontend    | yes             | no         |                                            |
-| Access driver samba        | yes             | no         | it's possible to use static mount in Cells |
-| Access driver mailbox      | yes             | no         |                                            |
-| Access driver FTP over SSH | yes             | no         | it's possible to use static mount in Cells |
-| Access driver FTP Server   | yes             | no         | it's possible to use static mount in Cells |
-| Access driver WebDav       | yes             | no         | it's possible to use static mount in Cells |
-| Access driver Dropbox      | yes             | no         | it's possible to use static mount in Cells |
-| Access driver Open Stack   | yes             | no         | it's possible to use static mount in Cells |
-| Personal workspaces        | yes             | yes        | map to default My Files workspace only     |
+| Functionalities/Plugins    | Pydio Community | Cells Home | Notes                                       |
+| -------------------------- | --------------- | ---------- | ------------------------------------------- |
+| LDAP auth plugin           | yes             | no         | available in Cells Enterprise only          |
+| Custom DB auth plugin      | yes             | no         |                                             |
+| SMB auth plugin            | yes             | no         |                                             |
+| FTP auth plugin            | yes             | no         |                                             |
+| RADIUS auth plugin         | yes             | no         |                                             |
+| Remote auth plugin         | yes             | no         |                                             |
+| OTP auth-frontend          | yes             | no         |                                             |
+| CAS auth-frontend          | yes             | no         | use SAML instead                            |
+| Dual-form auth-frontend    | yes             | no         |                                             |
+| Access driver samba        | yes             | no         | it is possible to use static mount in Cells |
+| Access driver mailbox      | yes             | no         |                                             |
+| Access driver FTP over SSH | yes             | no         | it is possible to use static mount in Cells |
+| Access driver FTP Server   | yes             | no         | it is possible to use static mount in Cells |
+| Access driver WebDav       | yes             | no         | it is possible to use static mount in Cells |
+| Access driver Dropbox      | yes             | no         | it is possible to use static mount in Cells |
+| Access driver Open Stack   | yes             | no         | it is possible to use static mount in Cells |
+| Personal workspaces        | yes             | yes        | map to default My Files workspace only      |
 
 **Optional**:
 
 - Empty the recycle bin of each workspace
-- Ask the various users to empty their recycle bin in MyFiles
+- Ask your users to empty their recycle bin in MyFiles
 
 ### Pydio 8 machine
 
@@ -108,7 +108,7 @@ When Pydio 8 is running on simple HTTP (e.g. without TLS), you must also launch 
 
 Install and start Pydio Cells as usual on the target machine. Please [visit our documentation for more information](./installation-guides).
 
-In Pydio 8, the data is located by default in a *data* folder (e.g.: /var/lib/pydio/(data/) or /var/www/html/data/). However, you may have other workspaces which point to other location such as /mnt/data.
+In Pydio 8, the data is located by default in a *data* folder (e.g.: /var/lib/pydio/data/) or /var/www/html/data/). However, you may have other workspaces which point to other location such as /mnt/data.
 
 - If all data is stored on a local disk on Pydio server, it should be copied to the target server in **a folder** which will be a single datasource in Cells.
   
@@ -151,8 +151,8 @@ For example a new Template Path: `Path = DataSources.pydio8dss + "/personal/" + 
 
 ## Migration
 
-The migration is divided into three options and should be run one by one.
-(1) Ldap config
+The migration is divided into three options and should be run one after another.
+(1) LDAP config
 (2) Migrate users, roles, groups
 (3) Migrate workspaces and metadata, sharing information
 
@@ -209,5 +209,5 @@ You can quickly verify the migration by checking in Cells:
 ## Final step
 
 - Set signed certificate
-- Prepare DNS for switching cells to production
+- Prepare DNS for switching Cells to production
 - Remove migration plugins in Pydio 8
