@@ -15,7 +15,7 @@ For Pydio Cells to run smoothly, you should meet the following requirements:
 You must have an available MySQL database, along with a privileged user (e.g. `pydio`) to access this DB. Use one of the following link to install the DB:
 
 - [MariaDB version 10.3 and above](https://downloads.mariadb.org/mariadb/repositories)
-- [MySQL version 5.7 and above](https://dev.mysql.com/doc/refman/8.0/en/installing.html)
+- [MySQL version 5.7 and above](https://dev.mysql.com/doc/refman/8.0/en/installing.html) (_**except 8.0.22** that has a bug preventing cells to run correctly_).
 
 As recommended by databases documentations, make sure not to leave the `max_connections` to its default value (151) while going live in production.
 
@@ -40,12 +40,12 @@ On Linux/MacOSX, make sure to make the binary executable using `chmod +x cells`.
 setcap 'cap_net_bind_service=+ep' cells
 ```
 
-## Cells Installation
+## Configuration
 
-Start Cells in installation mode:
+Use the following command to be guided through the basic steps Cells configuration.
 
 ```sh
-$> ./cells install
+> ./cells configure
 ```
 
 #### [Mode 1] Web Installer
@@ -60,18 +60,33 @@ After it completes, the server restarts automatically and you are good to go.
 
 #### [Mode 2] Command line Installer
 
-If you prefer working from your shell, you can perform the same steps using command line prompts/answers. Click on the image below to see a screencast of the installation :
+If you are more a shell person, you can perform the same steps using command-line (cli) prompts/answers. 
+The image below shows a screencast of the CLI installation :
 
 [:image-popup:1_quick_start/installation/cli-installer.gif]
 
-After it completes, restart the server with:
+After configuration is done, start the server with:
 
 ```sh
-$> ./cells start
+> ./cells start
 ```
-
-_By default Cells is bound on port `8080`_
 
 ## Login to Cells
 
-Once the restart is finished, you are good to go! You should be able to open your browser on `https://localhost:8080` or (`https://<server ip or domain>:8080`) to see the login page. Use the credentials you have just specified to login!
+Once the start is finished, you are good to go! You should be able to open your browser on `https://localhost:8080` 
+or (`https://<server ip or domain>:8080`) to see the login page. Accept the browser warning about the certificate and use 
+the credentials you have just defined to sign in.
+
+## Connection URL 
+
+Cells web server is starting by default on `0.0.0.0:8080`, which means it will listen to all IPs/domains available 
+on the machine network interfaces, on port 8080. If the port is busy (already used by another process), it will try other 
+options at install time.
+
+A self-signed certificate is also automatically generated for supporting TLS connection out of the box (https).
+
+You can easily change these parameters (pick your own port, use your own TLS certifcate, use Let's Encrypt, etc.) :
+
+ - Either at installation time by providing specific flags (`--bind`, `tls_xxx`): see the [man page of the configure command TODO](LINK TO DOC). 
+ - Or after first installation by using the dedicated tool `./cells configure sites`:  
+see this [dedicated page for more information about the "sites" (TODO)](LINK TO PAGE).
