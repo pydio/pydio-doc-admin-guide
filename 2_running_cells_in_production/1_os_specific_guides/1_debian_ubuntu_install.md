@@ -160,6 +160,17 @@ cells config sites
 
 **It is advised to add Cells as a service with systemd or supervisor - See our Knowledge Base for the dedicated Guides.**
 
+# TODO
+
+Running Cells as a service is a good way to ensure that you have your server running if an event such as a power failure or else happens.
+
+Refer to our knowledge base for a comprehensive guide on how to setup your Cells instance as a service.
+
+- [run cells as a service with **systemd**](/en/docs/kb/deployment/running-cells-service-systemd)
+- [run cells as a service with **supervisor**](/en/docs/kb/deployment/running-cells-service-supervisor)
+
+
+
 ## Troubleshooting
 
 Generally, you might want to have a look at the log file that is located in `$CELLS_WORKING_DIR/logs`.
