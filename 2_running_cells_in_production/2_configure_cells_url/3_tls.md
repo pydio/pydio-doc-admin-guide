@@ -1,15 +1,10 @@
 Cells embedded web server provides multiple ways for enabling TLS support. This is highly recommended to make sure all communications are encrypted between the client applications and the server (HTTPS).
 
-TLS configuration can be changed by using the `cells config sites` command.
+TLS configuration can be changed by using the `cells configure sites` command.
 
 ```sh
-./cells config sites
+./cells configure sites
 ```
-
-- Select `Edit current/existing site`
-- `Leave as`
-- Choose how you want to manage TLS (selfsigned, lets encrypts,...) 
-
 
 ## Supported Modes
 
