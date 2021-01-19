@@ -63,7 +63,7 @@ After it completes, the server restarts automatically and you are good to go.
 If you are more a shell person, you can perform the same steps using command-line (cli) prompts/answers. 
 The image below shows a screencast of the CLI installation :
 
-[:image-popup:1_quick_start/installation/cli-installer.gif]
+[:image:1_quick_start/installation/cli-installer.gif]
 
 After configuration is done, start the server with:
 
