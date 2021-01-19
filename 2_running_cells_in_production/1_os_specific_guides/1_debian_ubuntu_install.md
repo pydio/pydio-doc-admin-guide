@@ -125,10 +125,10 @@ wget https://download.pydio.com/latest/cells/release/{latest}/linux-amd64/cells
 chmod u+x cells
 ```
 
-If you want to directly bind Cells to the standard HTTP (80) and/or HTTPS (443) ports, you have to give corresponding permissions to the binary file:
+If you want to directly bind Cells to the standard HTTP (80) and/or HTTPS (443) ports, you have to give corresponding capabilities to the binary file:
 
 ```sh
-sudo setcap 'cap_net_bind_service=+ep' /home/pydio/cells
+sudo setcap 'cap_net_bind_service=+ep' cells
 ```
 
 You can now run the installer:
@@ -153,17 +153,12 @@ To configure a different interface and port for cells, run the following command
 cells configure sites
 ```
 
-
-**It is advised to add Cells as a service with systemd or supervisor - See our Knowledge Base for the dedicated Guides.**
-
-# TODO
-
-Running Cells as a service is a good way to ensure that you have your server running if an event such as a power failure or else happens.
+**Running Cells as a service is a good way to ensure that you have your server running if an event such as a power failure or else happens.**
 
 Refer to our knowledge base for a comprehensive guide on how to setup your Cells instance as a service.
 
-- [run cells as a service with **systemd**](/en/docs/kb/deployment/running-cells-service-systemd)
-- [run cells as a service with **supervisor**](/en/docs/kb/deployment/running-cells-service-supervisor)
+- [Run cells as a service with **systemd**](/en/docs/kb/deployment/running-cells-service-systemd)
+- [Run cells as a service with **supervisor**](/en/docs/kb/deployment/running-cells-service-supervisor)
 
 
 
