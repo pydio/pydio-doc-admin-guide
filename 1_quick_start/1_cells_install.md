@@ -73,7 +73,8 @@ After configuration is done, start the server with:
 
 ## Login to Cells
 
-Once the start is finished, you are good to go! You should be able to open your browser on `https://localhost:8080` 
+Once the start is finished, you are good to go!
+You should be able to open your browser on `https://localhost:8080` 
 or (`https://<server ip or domain>:8080`) to see the login page. Accept the browser warning about the certificate and use 
 the credentials you have just defined to sign in.
 
@@ -85,7 +86,7 @@ options at install time.
 
 A self-signed certificate is also automatically generated for supporting TLS connection out of the box (https).
 
-You can easily change these parameters (pick your own port, use your own TLS certifcate, use Let's Encrypt, etc.) :
+You can easily change these parameters (pick your own port, use your own TLS certifcate, use Let's Encrypt, etc.):
 
  - Either at installation time by providing specific flags (`--bind`, `tls_xxx`): see the [man page of the configure command TODO](LINK TO DOC). 
  - Or after first installation by using the dedicated tool `./cells configure sites`:  
