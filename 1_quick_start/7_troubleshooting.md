@@ -77,12 +77,12 @@ To solve the issue, get rid of all cookie for this site and refresh the page.
 
 ### I locked my user
 
-You can unlock the admin or any user with the CLI (assuming that you have access on the server), run the following command `./cells user unlock -u <username>`.
+You can unlock the admin or any user with the CLI (assuming that you have access on the server), run the following command `./cells admin user unlock -u <username>`.
 
 
 ### I forgot the password of a user
 
-Once again with the CLI (assuming that you have access on the server), you can run `./cells user set-pwd -u <username> -p <new password>`
+Once again with the CLI (assuming that you have access on the server), you can run `./cells admin user set-pwd -u <username> -p <new password>`
 
 ## Cells Sync
 
