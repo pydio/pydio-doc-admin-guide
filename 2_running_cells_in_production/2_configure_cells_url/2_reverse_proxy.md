@@ -5,7 +5,7 @@ For basic usage (Web UX, REST API's, Mobile Applications), a simple HTTP proxy i
 To do so run the following command, select the used internal bind and add the proxy URL to it,
 
 ```
-cells config sites
+./cells configure sites
 ```
 
 Select your used configuration and add your the URL that is going to be used to access through the proxy as the external URL.
