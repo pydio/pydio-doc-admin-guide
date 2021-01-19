@@ -96,17 +96,20 @@ sudo setcap 'cap_net_bind_service=+ep' /home/pydio/cells
 You can now run the installer:
 
 ```sh
-# As pydio user
-cells install
+cells configure
 ```
 
-```sh
-cells start
+
+Once you have finished the configuration, you can start Cells with:
+
+```
+./cells start
 ```
 
-You can now access your Cells instance on port 8080 with `HTTPS` (self-signed), for instance `https://localhost:8080` or `https://<server ip or domain>:8080`.
+and access the web ui through your domain or address under the port **8080** (for instance `https://domain.com:8080`).
 
-To select a different interface and port for cells, use the following command answer yes and start to configure.
+
+To configure a different interface and port for cells, run the following command.
 
 ```
 cells config sites

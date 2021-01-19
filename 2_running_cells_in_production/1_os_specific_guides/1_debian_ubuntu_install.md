@@ -117,46 +117,42 @@ CREATE DATABASE cells;
 GRANT ALL PRIVILEGES ON cells.* to 'pydio'@'localhost';
 FLUSH PRIVILEGES;
 ```
-
-## Installation and configuration
-
-If you have followed the instruction from the **Installation location** section above, you should already have the Cells binary in your path, to double check, simply run: `cells version`, otherwise, download the binary and make it executable:
+## Install Pydio Cells
 
 ```sh
-# Use this url as is, you will be redirected to latest version automatically
+# As pydio user, downlaod the latest version
 wget https://download.pydio.com/latest/cells/release/{latest}/linux-amd64/cells
-sudo chmod u+x cells
+chmod u+x cells
 ```
 
-If you need to use the standard http (80) or https (443) port, please execute this command:
+If you want to directly bind Cells to the standard HTTP (80) and/or HTTPS (443) ports, you have to give corresponding permissions to the binary file:
 
 ```sh
-setcap 'cap_net_bind_service=+ep' <path-to-your-binary>
+sudo setcap 'cap_net_bind_service=+ep' /home/pydio/cells
 ```
 
-Switch to the **pydio** user to run the installation and start the app:
+You can now run the installer:
 
 ```sh
-su - pydio
+cells configure
 ```
 
-Execute the command below and follow the instructions.
+
+Once you have finished the configuration, you can start Cells with:
 
 ```
-cells install
-```
-
-```sh
 cells start
 ```
 
-You can now access your Cells instance on port 8080 with `HTTPS` (self-signed), for instance `https://localhost:8080` or `https://<server ip or domain>:8080`.
+By default, to access the webui use your domain or address under the port **8080** (for instance `https://domain:8080`).
 
-To select a different interface and port for cells, use the following command answer yes and start to configure.
+
+To configure a different interface and port for cells, run the following command.
 
 ```
-cells config sites
+cells configure sites
 ```
+
 
 **It is advised to add Cells as a service with systemd or supervisor - See our Knowledge Base for the dedicated Guides.**
 

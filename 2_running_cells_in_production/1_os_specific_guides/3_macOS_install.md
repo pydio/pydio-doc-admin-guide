@@ -57,29 +57,26 @@ FLUSH PRIVILEGES;
 
 First, give execution rights to the binary. For instance, you can use `sudo chmod u+x <binary>`.
 
-Then, to launch the installer, type:
-
-```
-cells install
-```
-
-Select your install type:
-
-- web: open a browser to `https://localhost:8080` and configure on web ui.
-- cli: configure on the terminal.
-
+Then run the installer with the following command:
 
 ```sh
-# If Cells is installed with the CLI option, you need to start cells
+cells configure
+```
+
+
+Once you have finished the configuration, you can start Cells with:
+
+```
 cells start
 ```
 
-You can now access your Cells instance on port 8080 with `HTTPS` (self-signed), for instance `https://localhost:8080` or `https://<server ip or domain>:8080`.
+By default, to access the webui use your domain or address under the port **8080** (for instance `https://domain:8080`).
 
-To select a different interface and port for cells, use the following command answer yes and start to configure.
+
+To configure a different interface and port for cells, run the following command.
 
 ```
-cells config sites
+cells configure sites
 ```
 
 ## Troubleshooting
