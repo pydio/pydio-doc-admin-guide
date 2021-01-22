@@ -45,5 +45,4 @@ A final note: as seen above, a datasource can expose a part of your local file s
 --------------
 _See Also_
 
-- [Understanding Datasources](./understanding-datasources)
-- [Managing Datasources](./managing-datasources) to learn more about that.
+- [Datasources Overview](./datasources-overview) to learn more about Datasources.
