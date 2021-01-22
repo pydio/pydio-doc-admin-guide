@@ -90,7 +90,7 @@ To access the correct repository :
 - Select the correct option (`mysql-5.7` or `mysql-8`) and press `Enter`
 - Back on the first list, select `Ok` and press `Enter`
 
-##### Install
+##### Installation
 
 ```sh
 sudo apt update
