@@ -1,3 +1,3 @@
-Configure Cells sites with TLS. 
+Cells sites configuration. 
 
 [:summary]
