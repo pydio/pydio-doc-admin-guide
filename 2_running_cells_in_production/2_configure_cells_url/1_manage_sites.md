@@ -3,14 +3,14 @@ Manage how Cells is binding to the local host's network interfaces addresses and
   
   Each site has following parameters:
   
-1. <Bind Addresse(s)>: one or more <ip/hostname:port> to bind Cells to local host's network interfaces addresses. 
+1. **Bind Addresse(s)**: one or more `<ip/hostname:port>` to bind Cells to local host's network interfaces addresses. 
 
-2. <TLS Settings>: TLS configuration for HTTPS support.
+2. **TLS Settings**: TLS configuration for HTTPS support.
 
-3. <External URL>: Accept traffic coming from this url and redirect to one of the bind address.
+3. **External URL**: Accept traffic coming from this url and redirect to one of the bind address.
     Typically if the app is behind a reverse-proxy or inside a container with ports mapping.
 
-4. <Maintenance Mode> [On|Off]: expose a maintenance page on this endpoint, although Cells is running.
+4. **Maintenance Mode [On|Off]**: expose a maintenance page on this endpoint, although Cells is running.
 
 EXAMPLES 
 
