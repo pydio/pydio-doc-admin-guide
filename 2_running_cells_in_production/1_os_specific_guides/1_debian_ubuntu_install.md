@@ -131,14 +131,13 @@ If you want to directly bind Cells to the standard HTTP (80) and/or HTTPS (443) 
 sudo setcap 'cap_net_bind_service=+ep' cells
 ```
 
-You can now run the installer:
+You can now run the configuration :
 
 ```sh
 cells configure
 ```
 
-
-Once you have finished the configuration, you can start Cells with:
+Once you have finished the configuration, start Cells with:
 
 ```
 cells start
