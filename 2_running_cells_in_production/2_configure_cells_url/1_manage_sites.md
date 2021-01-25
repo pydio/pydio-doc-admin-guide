@@ -10,27 +10,29 @@ Manage how Cells is binding to the local host's network interfaces addresses and
 
 EXAMPLES 
 
-  1. Default value (used when no sites is configured)
+Here is a few working samples that you can use for your own setup.
+
+  - Default value (used when no sites is configured)
     - Bind Address: 0.0.0.0:8080
     - TLS : SelfSigned
     - External URL: [left empty]
   
-  2. Provided certificate
+  - Provided certificate
     - Bind Address: 0.0.0.0:8080
     - TLS : Your own key/cert pair
     - External URL: https://share.mydomain.tld
   
-  3. Auto-ssl using Let's Encrypt 
+  - Auto-ssl using Let's Encrypt 
     - Bind Address: share.mydomain.tld:443
     - TLS : LetsEncrypt
     - External URL: https://share.mydomain.tld
   
-  4. Self Signed
+  - Self Signed
     - Bind Address: IP:1515         # internal port
     - TLS : SelfSigned
     - External URL: https://IP:8080   # external port mapped by docker
   
-  5. HTTP only
+  - HTTP only
     - Bind Address: localhost:8080
     - TLS : Disabled
     - External URL: http://localhost:8080  # Non-secured local installation
