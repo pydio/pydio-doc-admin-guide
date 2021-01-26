@@ -1,4 +1,4 @@
-_Get started on any server using Cells static binaries. See below for OS-specific tutorials or cloud images._
+Get up and running in no time using Cells static binaries. You can also refer to [OS-specific tutorials](./kb/deployment), [Docker deployment](./docker) or ready to use [Cloud Images](./cloud-images) (for Cells Enterprise only).
 
 <ol class="install-steps">
 <li><p><strong>Get your database access ready</strong> and login to your server as a dedicated user (see <a href="./requirements">Requirements</a>)</p></li>
@@ -78,22 +78,6 @@ The image below shows a screencast of the CLI installation :
 
 [:image:1_quick_start/installation/cli-installer.gif]
 
-
-## Step-by-step Installation Guides
-
-Below is a list of step-by-step tutorials for installing Cells on a clean environment on specific operating systems: 
-
-- Debian / Ubuntu systems
-- RHEL / Fedora systems
-- Mac OSX
-- Windows
-
-Also, you can easily start Cells using ready-to-use images in the following environments: 
-
-- Docker
-- OVF (Cells Enterprise)
-- VMWare (Cells Enteprise)
-- Amazon AWS (Cells Enterprise)
 
 ## Troubleshooting
 
