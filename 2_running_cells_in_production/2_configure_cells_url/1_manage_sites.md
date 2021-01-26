@@ -3,7 +3,7 @@ Manage how Cells is binding to the local host's network interfaces addresses and
   
   Each site has following parameters:
   
-1. **Bind Addresse(s)**: one or more `<ip/hostname:port>` to bind Cells to local host's network interfaces addresses. 
+1. **Bind Address(s)**: one or more `<ip/hostname:port>` to bind Cells to local host's network interfaces addresses. 
 
 2. **TLS Settings**: TLS configuration for HTTPS support.
 
