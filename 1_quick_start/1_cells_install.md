@@ -3,13 +3,10 @@ Get started with Cells static binaries
 <ol class="install-steps">
 <li><p><strong>Get your database access ready</strong> and login to your server as a dedicated user (see <a href="./requirements'">Requirements</a>)</p></li>
 <li><p><strong>Download the binary</strong> for your server architecture from the <a href="/en/download">Download Page</a>. 
-    <br>On Linux/Mac, <strong>make binary executable </strong> with::<br> <code>$&gt; chmod +x cells</code></p></li>
-<li><p><strong>Go through Cells configuration</strong> steps using either a browser or the command line:<br>
-    <code>$&gt; ./cells configure</code></p></li>
-<li><p><strong>Start Cells</strong> : web installer mode will restart automatically after configuration, otherwise use:
-    <code>$&gt; ./cells start</code></p></li>
-<li><p><strong>Open your web browser</strong> at <a href="https://localhost:8080">https://localhost:8080</a>
-    <br> (or https://[server ip or domain]:8080).</p></li>
+    <br>On Linux/Mac, <strong>make binary executable </strong> with::<br> <code>$ chmod +x cells</code></p></li>
+<li><p><strong>Go through Cells configuration</strong> steps using either a browser or the command line:<br> <code>$ ./cells configure</code></p></li>
+<li><p><strong>Start Cells</strong> : web installer mode will restart automatically after configuration, otherwise use: <code>$ ./cells start</code></p></li>
+<li><p><strong>Open your web browser</strong> at <a href="https://localhost:8080">https://localhost:8080</a> <br> (or https://[server ip or domain]:8080).</p></li>
 </ol>
 
 <style type="text/css">
