@@ -89,16 +89,3 @@ The image below shows a screencast of the CLI installation :
 
 #### TODO MOVE :  Connection URL 
 
-The Cells gateway starts by default on `0.0.0.0:8080`.
-
-By using 0.0.0.0, the gateway will allow incoming traffic to any IPv4/domain of the machine network interfaces.
-
-If the port 8080 is busy (already used by another process), it will try other options.
-
-A self-signed certificate is also automatically generated for supporting TLS connection out of the box (https).
-
-For production use, or for a remotely accessed Cells, you can make the gateway listen to multiple ports on multiple IP addresses,
-each with its own set of rules attached (TLS, Let's Encrypt, External URL)
-
- - At installation time using specific flags (`--bind`, `tls_xxx`): see the [man page of the configure command TODO](LINK TO DOC). 
- - With the dedicated tool `./cells configure sites`: see this [dedicated page for more information about the "sites" (TODO)](LINK TO PAGE).
