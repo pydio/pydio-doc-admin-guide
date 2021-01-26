@@ -53,6 +53,10 @@ ol.install-steps li code {
     margin-top: 6px !important;
 }
 
+ol span.geshifilter {
+    display: inherit;
+}
+
 </style>
 
 ## Installation modes
