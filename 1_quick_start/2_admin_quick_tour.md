@@ -26,7 +26,7 @@ Now that you understand how to manage access to the data, you may wish to create
 
 This is referring to a "Data Source" named _pydiods1_. Now go to `Cells Console > Storage`, where you will find this datasource and its real path on the file system.
 
-If you wish to mount an existing folder, e.g. `/var/data/mydata`, create a new data source and pick the desired location (for the moment use the `Peer Address` corresponding to your server IP).
+If you wish to mount an existing folder, e.g. `/var/data/mydata`, create a new data source and pick the desired location.
 
 [:image:1_quick_start/yourdata/04-datasource.png]
 
