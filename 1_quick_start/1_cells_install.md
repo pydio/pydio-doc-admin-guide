@@ -1,6 +1,5 @@
-Get up and running in no time using Cells static binaries. You can also use [Docker container](./docker) or
-[Cloud Images](./cloud-images) (for Cells Enterprise only), or refer to [OS-specific tutorials](/en/docs/kb/deployment) 
-for step-by-step tutorials.
+_Get started quickly with Cells static binaries. You can also use [Docker container](./docker) or
+[Cloud Images](./cloud-images) (AMI/VMWare/OVF, Cells Enterprise only) or refer to dedicated [OS-specific step-by-step tutorials](/en/docs/kb/deployment)._
 
 <ol class="install-steps">
 <li><p><strong>Get your database access ready</strong> and login to your server (see <a href="./requirements">Requirements</a>).</p></li>
