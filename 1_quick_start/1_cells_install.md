@@ -1,12 +1,12 @@
-Get started with Cells static binaries
+_Get started on any server using Cells static binaries. See below for OS-specific tutorials or cloud images._
 
 <ol class="install-steps">
-<li><p><strong>Get your database access ready</strong> and login to your server as a dedicated user (see <a href="./requirements'">Requirements</a>)</p></li>
-<li><p><strong>Download the binary</strong> for your server architecture from the <a href="/en/download">Download Page</a>. 
+<li><p><strong>Get your database access ready</strong> and login to your server as a dedicated user (see <a href="./requirements">Requirements</a>)</p></li>
+<li><p><strong>Download the binary</strong> for your server architecture from the <a href="/en/download" target="_blank">Download Page</a>. 
     <br>On Linux/Mac, <strong>make binary executable </strong> with::<br> <code>$ chmod +x cells</code></p></li>
 <li><p><strong>Go through Cells configuration</strong> steps using either a browser or the command line:<br> <code>$ ./cells configure</code></p></li>
 <li><p><strong>Start Cells</strong> : web installer mode will restart automatically after configuration, otherwise use: <code>$ ./cells start</code></p></li>
-<li><p><strong>Open your web browser</strong> at <a href="https://localhost:8080">https://localhost:8080</a> <br> (or https://[server ip or domain]:8080).</p></li>
+<li><p><strong>Open your web browser</strong> at <a href="https://localhost:8080" target="_blank">https://localhost:8080</a> <br> (or https://[server ip or domain]:8080).</p></li>
 </ol>
 
 <style type="text/css">
@@ -79,10 +79,30 @@ The image below shows a screencast of the CLI installation :
 [:image:1_quick_start/installation/cli-installer.gif]
 
 
+## Step-by-step Installation Guides
+
+Below is a list of step-by-step tutorials for installing Cells on a clean environment on specific operating systems: 
+
+- Debian / Ubuntu systems
+- RHEL / Fedora systems
+- Mac OSX
+- Windows
+
+Also, you can easily start Cells using ready-to-use images in the following environments: 
+
+- Docker
+- OVF (Cells Enterprise)
+- VMWare (Cells Enteprise)
+- Amazon AWS (Cells Enterprise)
 
 ## Troubleshooting
 
-#### Connection URL 
+
+
+
+------ 
+
+#### TODO MOVE :  Connection URL 
 
 The Cells gateway starts by default on `0.0.0.0:8080`.
 
