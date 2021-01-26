@@ -11,6 +11,4 @@ Download the Application on the [App Store](https://apps.apple.com/fr/app/pydio/
 
 Our app is now available on Google Play.
 
-[:image-popup:1_quick_start/android_app.png]
-
 <a href='https://play.google.com/store/apps/details?id=com.pydio.android.Client&hl=en&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'><img alt='Get it on Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png' style="width:300px"/></a>
