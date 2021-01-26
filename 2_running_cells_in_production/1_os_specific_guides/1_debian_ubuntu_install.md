@@ -124,20 +124,13 @@ FLUSH PRIVILEGES;
 wget https://download.pydio.com/latest/cells/release/{latest}/linux-amd64/cells
 chmod u+x cells
 ```
-
-If you want to directly bind Cells to the standard HTTP (80) and/or HTTPS (443) ports, you have to give corresponding capabilities to the binary file:
-
-```sh
-sudo setcap 'cap_net_bind_service=+ep' cells
-```
-
-You can now run the configuration :
+Run the configuration :
 
 ```sh
 cells configure
 ```
 
-Once you have finished the configuration, start Cells with:
+Once the configuration is finished , start Cells with:
 
 ```
 cells start
@@ -146,7 +139,7 @@ cells start
 By default, to access the webui use your domain or address under the port **8080** (for instance `https://domain:8080`).
 
 
-To configure a different interface and port for cells, run the following command.
+To configure a different interface and port for cells, run:
 
 ```
 cells configure sites
