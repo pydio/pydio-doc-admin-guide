@@ -50,7 +50,7 @@ Use the following command to be guided through the basic steps Cells configurati
 
 #### [Mode 1] Web Installer
 
-If you are on a desktop machine, the installer opens a web page with a wizard for you to provide various configuration parameters, including DB connection info and the login/password of the main administrator.
+If you are on a desktop machine, the installer opens a web page with a wizard asking you to fill in various configuration parameters, including DB connection info and the login/password of the main administrator.
 
 Click on the image below to see a screencast of the installation:
 
@@ -80,14 +80,16 @@ the credentials you have just defined to sign in.
 
 ## Connection URL 
 
-Cells web server is starting by default on `0.0.0.0:8080`, which means it will listen to all IPs/domains available 
-on the machine network interfaces, on port 8080. If the port is busy (already used by another process), it will try other 
-options at install time.
+The Cells gateway starts by default on `0.0.0.0:8080`.
+
+By using 0.0.0.0, the gateway will allow incoming traffic to any IPv4/domain of the machine network interfaces.
+
+If the port 8080 is busy (already used by another process), it will try other options.
 
 A self-signed certificate is also automatically generated for supporting TLS connection out of the box (https).
 
-You can easily change these parameters (pick your own port, use your own TLS certifcate, use Let's Encrypt, etc.):
+For production use, or for a remotely accessed Cells, you can make the gateway listen to multiple ports on multiple IP addresses,
+each with its own set of rules attached (TLS, Let's Encrypt, External URL)
 
- - Either at installation time by providing specific flags (`--bind`, `tls_xxx`): see the [man page of the configure command TODO](LINK TO DOC). 
- - Or after first installation by using the dedicated tool `./cells configure sites`:  
-see this [dedicated page for more information about the "sites" (TODO)](LINK TO PAGE).
+ - At installation time using specific flags (`--bind`, `tls_xxx`): see the [man page of the configure command TODO](LINK TO DOC). 
+ - With the dedicated tool `./cells configure sites`: see this [dedicated page for more information about the "sites" (TODO)](LINK TO PAGE).
