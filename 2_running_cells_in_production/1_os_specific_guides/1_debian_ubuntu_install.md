@@ -7,7 +7,7 @@ _This guide describes the steps required to have Pydio Cells running on Debian a
 
 ## Requirements
 
-### OS requirements
+### OS requirements (TODO - requirements)
 
 You need the 64-bit version of one of these Debian or Ubuntu versions:
 
@@ -18,7 +18,7 @@ You need the 64-bit version of one of these Debian or Ubuntu versions:
 - Ubuntu 18.04 (Bionic Beaver)
 - Ubuntu 16.04 (Xenial Xerus)
 
-#### Dedicated User
+#### Dedicated User (TODO - Best practice)
 
 It is highly recommended to run Pydio Cells with a dedicated user.
 
@@ -30,7 +30,7 @@ In order to create a new user and its home directory execute this command:
 sudo useradd -m pydio
 ```
 
-#### Installation location
+#### Installation location (TODO - Best practice)
 
 By default, Cells is installed in a subdirectory in the `home` folder of the user that performs the installation. For instance, using the `pydio` user, it is `/home/pydio/.config/pydio/cells`.
 
@@ -75,7 +75,7 @@ chmod 0755 /opt/pydio/bin/cells
 
 Pydio Cells can be installed with both MySQL Server (5.7 or higher) or MariaDB (10.3 or higher).
 
-#### MySQL
+#### MySQL [TODO DELETE]
 
 ##### Repository
 
@@ -97,7 +97,7 @@ sudo apt update
 sudo apt install mysql-server
 ```
 
-#### MariaDB
+#### MariaDB [TODO - DELETE]
 
 We advise to use MariaDB 10.4.  
 Please refer to the well maintained [official installation guide on the MariaDB website](https://downloads.mariadb.org/mariadb/repositories/#distro=Debian&version=10.4).
@@ -105,7 +105,7 @@ Please refer to the well maintained [official installation guide on the MariaDB 
 > If you plan going live, you probably want to execute this convenient script to reduce your attack surface:  
 > `mysql_secure_installation`
 
-#### Post install configuration
+#### Post install configuration [TODO - BEST PRACTICE, Create a dedicated mysql user]
 
 By default, a new database will be created by the system during the installation process. You only need a user with database management permissions.
 
@@ -117,7 +117,8 @@ CREATE DATABASE cells;
 GRANT ALL PRIVILEGES ON cells.* to 'pydio'@'localhost';
 FLUSH PRIVILEGES;
 ```
-## Install Pydio Cells
+
+## Install Pydio Cells [TODO - QUICKSTART - Static binaries]
 
 ```sh
 # As pydio user, downlaod the latest version
@@ -130,7 +131,7 @@ Run the configuration :
 cells configure
 ```
 
-Once the configuration is finished , start Cells with:
+Once you have finished the configuration, start Cells with:
 
 ```
 cells start
@@ -154,17 +155,17 @@ Refer to our knowledge base for a comprehensive guide on how to setup your Cells
 
 
 
-## Troubleshooting
+## Troubleshooting  [TODO - Troubleshooting]
 
 Generally, you might want to have a look at the log file that is located in `$CELLS_WORKING_DIR/logs`.
 
-### Database server issue
+### Database server issue  [TODO - Troubleshooting]
 
 _After start, the web page is unreachable and you see a bunch of errors starting with: `ERROR   pydio.grpc.meta   Failed to init DB provider   {"error": "Error 1071: Specified key was too long; max key length is 767 bytes handling data_meta_0.1.sql"}`_.
 
 You might have an unsupported version of the mysql server: you should use MySQL server version 5.7 or higher or MariaDB version 10.3 or higher.
 
-### Various
+### Various  [TODO - Quickstart - Static binaries - Troubleshooting]
 
 _You see this error: `/lib/x86_64-linux-gnu/libc.so.6: version 'GLIBC_2.14' not found`_
 
