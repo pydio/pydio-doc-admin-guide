@@ -87,20 +87,14 @@ wget https://download.pydio.com/latest/cells/release/{latest}/linux-amd64/cells
 chmod u+x cells
 ```
 
-If you want to directly bind Cells to the standard HTTP (80) and/or HTTPS (443) ports, you have to give corresponding permissions to the binary file:
-
-```sh
-sudo setcap 'cap_net_bind_service=+ep' /home/pydio/cells
-```
-
-You can now run the installer:
+Run the installer:
 
 ```sh
 cells configure
 ```
 
 
-Once you have finished the configuration, you can start Cells with:
+Once finished, start Cells with:
 
 ```
 ./cells start
