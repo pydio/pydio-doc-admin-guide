@@ -11,4 +11,4 @@ Download the application on the [App Store](https://apps.apple.com/fr/app/pydio/
 
 Our app is now available on Google Play.
 
-<img href='https://play.google.com/store/apps/details?id=com.pydio.android.Client'><img alt='Get it on Google Play' src='https://raw.githubusercontent.com/pydio/pydio-doc-admin-guide/cells-v2.2/images/1_quick_start/google-play-badge.png' style="width:300px" style="border:0"/></a>
+<a href='https://play.google.com/store/apps/details?id=com.pydio.android.Client'><img alt='Get it on Google Play' src='https://raw.githubusercontent.com/pydio/pydio-doc-admin-guide/cells-v2.2/images/1_quick_start/google-play-badge.png' style="width:300px" style="border:0"/></a>
