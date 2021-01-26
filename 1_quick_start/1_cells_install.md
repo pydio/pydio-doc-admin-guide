@@ -1,26 +1,63 @@
 Get started with Cells static binaries
 
-1. **Get your database access ready** and login to your server as a dedicated user (see [Requirements](./requirements'))
-   
+<ol class="install-steps">
+<li><p><strong>Get your database access ready</strong> and login to your server as a dedicated user (see <a href="./requirements'">Requirements</a>)</p></li>
+<li><p><strong>Download the binary</strong> for your server architecture from the <a href="/en/download">Download Page</a>. 
+    <br>On Linux/Mac, <strong>make binary executable </strong> with::<br> <code>$&gt; chmod +x cells</code></p></li>
+<li><p><strong>Go through Cells configuration</strong> steps using either a browser or the command line:<br>
+    <code>$&gt; ./cells configure</code></p></li>
+<li><p><strong>Start Cells</strong> : web installer mode will restart automatically after configuration, otherwise use:
+    <code>$&gt; ./cells start</code></p></li>
+<li><p><strong>Open your web browser</strong> at <a href="https://localhost:8080">https://localhost:8080</a>
+    <br> (or https://[server ip or domain]:8080).</p></li>
+</ol>
 
-2. **Download the binary** corresponding to your Cells edition and server architecture from the [Download Page](/en/download).
-   
-   On Linux/MacOSX, make sure to make the binary executable using `chmod +x cells`. 
-   
+<style type="text/css">
+ol.install-steps {
+  padding-left: 0 !important;
+  list-style: none;
+  counter-reset: my-awesome-counter;
+  padding: 0;
+  margin:0;
+}
+ol.install-steps li {
+  counter-increment: my-awesome-counter;
+  border-left: 2px solid #08cc99;
+  display:flex;
+  align-items: baseline;
+  background-color: #ecf8f6;
+  padding: 16px 20px;
+  margin: 20px 0 !important;
+}
 
-3. **Go through Cells configuration** steps using either a browser or the command line (see below):
-   
-   `./cells configure`
+ol.install-steps li::before {
+  content: counter(my-awesome-counter) ". ";
+  color: #44d2ab;
+  font-weight: bold;
+  margin-right: 10px;
+  font-size: 22px;
+}
 
 
-4. **Start Cells** : web installer mode will restart automatically after configuration, otherwise use:
-    
-   `./cells start`
-   
+ol.install-steps li p {
+  display: inline;
+  margin: 0 !important;
+  font-size: 18px !important;
+}
 
-5. **Open your web browser** at https://localhost:8080 (or https://[server ip or domain]:8080).
+ol.install-steps li code {
+    font-size: 16px !important;
+    display: block;
+    margin: 0px 0 !important;
+    padding: 6px !important;
+    background-color: rgb(42 42 53 / 95%) !important;
+    color: white !important;
+    width: 270px;
+    margin-top: 6px !important;
+}
 
------
+</style>
+
 ## Installation modes
 
 ### Web Installer
@@ -40,7 +77,7 @@ The image below shows a screencast of the CLI installation :
 
 [:image:1_quick_start/installation/cli-installer.gif]
 
------
+
 
 ## Troubleshooting
 
