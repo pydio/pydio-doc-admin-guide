@@ -1,23 +1,23 @@
 _Get started quickly with Cells static binaries. See also [Docker deployment](./docker), Cloud Images ([OVF](./open-virtual-format), [VMWare](./vmware), [AMI](./amazon-ami)) and dedicated OS-specific [step-by-step tutorials](/en/docs/kb/deployment)._
 
 <div class="install-logos">
-<a class="logo">
+<a class="logo" href="./install-static-binaries">
     <div class="logo-img"><img src="https://github.com/pydio/pydio-doc-admin-guide/blob/cells-v2.2/images/logos-os/binaries.png?raw=true"/></div>
     <div class="logo-title">Binaries</div>
 </a>
-<a class="logo">
+<a class="logo" href="./docker">
     <div class="logo-img"><img src="https://github.com/pydio/pydio-doc-admin-guide/blob/cells-v2.2/images/logos-os/docker.png?raw=true"/></div>
     <div class="logo-title">Docker</div>
 </a>
-<a class="logo">
+<a class="logo" href="./open-virtual-format">
     <div class="logo-img"><img src="https://github.com/pydio/pydio-doc-admin-guide/blob/cells-v2.2/images/logos-os/ovf.png?raw=true"/></div>
     <div class="logo-title">OVF</div>
 </a>
-<a class="logo">
+<a class="logo" href="./vmware">
     <div class="logo-img"><img src="https://github.com/pydio/pydio-doc-admin-guide/blob/cells-v2.2/images/logos-os/vmware.png?raw=true"/></div>
     <div class="logo-title">VMWare</div>
 </a>
-<a class="logo">
+<a class="logo" href="./amazon">
     <div class="logo-img"><img src="https://github.com/pydio/pydio-doc-admin-guide/blob/cells-v2.2/images/logos-os/amazon.png?raw=true"/></div>
     <div class="logo-title">Amazon AMI</div>
 </a>
@@ -117,10 +117,15 @@ ol span.geshifilter {
     padding: 5px;
     background-color: #ecf8f6;
     width: 110px;
+    cursor: pointer;
 }
 
 .install-logos img {
     border: none !important;
+}
+
+.install-logos .logo-title {
+    padding-top: 5px;
 }
 
 </style>
