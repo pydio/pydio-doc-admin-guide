@@ -1,4 +1,5 @@
-A site is a configuration item that indicates to the Cells Gateway how you have setup your network, making it accessible from multiple contexts.
+A site is a configuration item that indicates to the Cells Gateway how you have setup your network. It enforces the ways to access
+your Cells.
 
 The default configuration will get Cells up and running quickly on a server or on a local machine. You can extend that access
 to wider area network with Sites.
@@ -30,9 +31,9 @@ A self-signed certificate is automatically generated for supporting TLS connecti
 
 [:image-popup:2_running_cells_in_production/01-network-local-machine.png]
 
-## Add a site
+## Add a Site
 
-All examples can be used separately or in conjunction with one another.
+All examples below can be used separately or in conjunction with one another.
 
 ### Local network example
 
@@ -40,6 +41,7 @@ Let's imagine you want to make your Cells accessible for everybody in your local
 and port fowarding ready so that the incoming traffic redirects to the Cells server on port 8080. You've also generated a certificate, locally trusted.
 
 We indicate all this to Cells using the command with the following parameters:
+
   - Bind Address: IP:8080
   - TLS: Your own key/cert pair
   - External URL: https://mypydio.local
@@ -52,11 +54,12 @@ Let's imagine you want to make your Cells accessible via the world wide web. You
 Cells server on port 8081. You can use the self-signed TLS parameter here as the only traffic we need to secure is between the reverse proxy and Cells.
 
 We indicate all this to Cells using the command with the following parameters:
+
   - Bind Address: IP:8081
   - TLS: Self-Signed
   - External URL: https://mypydio.com
 
-[:image-popup:2_running_cells_in_production/03-network-www.png]
+[:image-popup:2_running_cells_in_production/03-network-public-access.png]
 
 ## Advanced Usage [ED]
 
@@ -66,9 +69,13 @@ Configure some Cells functionalities to behave differently depending on the cont
 Display different ways of authenticating on different URLs.
 
 ### Security Policies [TODO - link]
-Add the URL in the context of the security policies to for example : 
+Add the URL in the context of the security policies to for example:
+
   - restrict access to the intranet to office hours exclusively.
   - allow access to the www to specifc IPs.
+
+
+
 
 
 # [TODO - REMOVE]
