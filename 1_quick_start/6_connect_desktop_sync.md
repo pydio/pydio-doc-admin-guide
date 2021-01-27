@@ -1,11 +1,7 @@
-**[Disclaimers]**
+Providing CellsSync to your users can be an efficient way to help them keep their files offline on their desktop computer.  However, please be aware of the following:  
 
-Providing CellsSync to your users can be an efficient way to help them keep their files offline on their desktop computer.
-
-However, please be aware of the following:  
-
-- CellsSync is still in testing phase. We are getting a lot of positive feedback but it may not yet be 100% bullet-proof! Make sure to always backup your data on a regular basis.
 - When the sync client has many users connected to the same folder, some conflicts might arise. The users may then have to solve the conflicts manually. We recommend allowing users to sync only their `Personal` workspace as a starting point.
+- CellsSync is still in testing phase. We are getting a lot of positive feedback but it may not yet be 100% bullet-proof! Make sure to always backup your data on a regular basis.
 
 ## Server Pre-requisites
 
