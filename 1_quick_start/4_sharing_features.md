@@ -19,6 +19,8 @@ Then, there are 3 different tabs:
 1. **Access**: You can choose if you want to put a password an expiration date for the link, a limited number of downloads and the layout of the GUI when people follow the link.
 1. **Visibility**: You can choose to whom this link is visible on the shares menu.
 
+**Note**: The generated link URL is computed from your current web access. If you are using multiple URLs to access to Cells, you can force Cells to use only one of them for all public links. Go to Cells Console > Main Settings panel and also refer to [Configure Cells URL](./configure-cells-url) in this documentation.
+ 
 ## Sharing with other users using Cells
 
 The Cells concept will be familiar to modern workers used to collaborating on _"channels"_ within popular group-chat applications. Cells can be shared internally or externally to the organization, with users able to add new individuals and groups to the Cell. In-app, instant messaging within each Cell, provides a focused channel for group communication around the theme.
