@@ -4,8 +4,8 @@ _Get started quickly with Cells static binaries. You can also use [Docker contai
 <ol class="install-steps">
 <li><p><strong>Get your database access information</strong> (see <a href="./requirements">Requirements</a>). Login as non-root user.</p></li>
 <li><p><a href="/en/download" target="_blank"><strong>Download the binary</strong></a> for your server architecture. Make it executable:<br> <code>$ chmod +x ./cells</code></p></li>
-<li><p><strong>Configure Cells</strong> (see Installation Modes below):<br> <code>$ ./cells configure</code></p></li>
-<li><p><strong>Start Cells</strong> : web installer mode will restart automatically after configuration, otherwise use: <code>$ ./cells start</code></p></li>
+<li><p><strong>Configure Cells</strong> using web or command line installer (see below):<br> <code>$ ./cells configure</code></p></li>
+<li><p><strong>Start Cells</strong>. Web installer restarts automatically, otherwise use: <code>$ ./cells start</code></p></li>
 <li><p><strong>Open your web browser</strong> at <a href="https://localhost:8080" target="_blank">https://localhost:8080</a> <br> (or https://[server ip or domain]:8080).</p></li>
 </ol>
 
@@ -63,8 +63,8 @@ ol span.geshifilter {
 
 ### Web Installer
 
-If your machine is local or web accessible, a temporary web server will start on TCP port [:8080], providing a nice wizard
-for setting basic configurations.
+If your machine is local or web accessible, a temporary web server will start on TCP port [:8080], providing a wizard
+for configuring basic settings.
 
 [:image:1_quick_start/installation/web-installer.gif]
 
@@ -72,22 +72,32 @@ After it completes, the server restarts automatically and you are good to go.
 
 ### Command line Installer
 
-If you are more a shell person, you can perform the same steps using command-line (cli) prompts/answers. 
+If you would rather use a shell, you can perform the same steps using command-line (cli) prompts. 
 
 [:image:1_quick_start/installation/cli-installer.gif]
 
 
 ## Installation Troubleshooting
 
-Generally, you might want to have a look at the log file that is located in `$CELLS_WORKING_DIR/logs`. [TODO - link to working dir best practices]
+### Cannot access to web interface
 
-### Database server issue [All OS]
+Make sure the Cells binding port is properly open for TCP connections in your firewall or equivalent (e.g. Security Group in Amazon AWS). 
+Default port is 8080 (or another available http-alt port like 8008, 8081, ...). 
 
-_After start, the web page is unreachable and you see a bunch of errors starting with: `ERROR   pydio.grpc.meta   Failed to init DB provider   {"error": "Error 1071: Specified key was too long; max key length is 767 bytes handling data_meta_0.1.sql"}`_.
+Check the logs to verify which port to open:
+
+```
+2021-01-27T11:17:00.248+0100	INFO	Activating privacy features... done.
+2021-01-27T11:17:00.278+0100	INFO	https://0.0.0.0:8080
+```
+
+### SQL Errors
+
+_After start, you see a bunch of errors starting with: `ERROR   pydio.grpc.meta   Failed to init DB provider   {"error": "Error 1071: Specified key was too long; max key length is 767 bytes handling data_meta_0.1.sql"}`_.
 
 You might have an unsupported version of the mysql server: you should use MySQL server version 5.7 or higher or MariaDB version 10.3 or higher.
 
-### glibc [Linux]
+### GLIBC [Linux]
 
 _You see this error: `/lib/x86_64-linux-gnu/libc.so.6: version 'GLIBC_2.14' not found`_
 
@@ -100,26 +110,8 @@ sudo apt-get install libc6
 
 ### SELinux [CentOS]
 
-If, after a successful installation and when you try to navigate to the main application page with your browser, you land on a blank page with following message:
+_The main application page in your browser displays the following error: `Access denied.` _
 
-> Access denied.
-
-ensure you have modified SELinux to be disabled or running in permissive mode.
-
-To temporary disable SELinux: `sudo setenforce 0`.
+Ensure you have modified SELinux to be disabled or running in permissive mode. To temporary disable SELinux: `sudo setenforce 0`.
 
 You can also permanently disable SELinux in `/etc/selinux/config`.
-
-### Port 80 & 443 [MacOS]
-
-You can only use these ports if you are connected as an Admin User or root.
-
-By default, Apache is running on macOS, so you need to ensure that it - or no other webservers - is bound to these ports.
-
-To stop the default Apache, you can use:
-
-```sudo apachectl stop```
-
-To prevent Apache from starting during launch, you may use:
-
-```sudo launchctl unload -w /System/Library/LaunchDaemons/org.apache.httpd.plist```
