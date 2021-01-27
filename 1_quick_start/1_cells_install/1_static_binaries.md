@@ -57,3 +57,60 @@ ol span.geshifilter {
 }
 
 </style>
+
+## Installation modes
+
+### Web Installer
+
+If your machine is local or web accessible, a temporary web server will start on TCP port [:8080], providing a wizard
+for configuring basic settings.
+
+[:image:1_quick_start/installation/web-installer.gif]
+
+After it completes, the server restarts automatically and you are good to go.
+
+### Command line Installer
+
+If you would rather use a shell, you can perform the same steps using command-line (cli) prompts.
+
+[:image:1_quick_start/installation/cli-installer.gif]
+
+
+## Installation Troubleshooting
+
+### Cannot access to web interface
+
+Make sure the Cells binding port is properly open for TCP connections in your firewall or equivalent (e.g. Security Group in Amazon AWS).
+Default port is 8080 (or another available http-alt port like 8008, 8081, ...).
+
+Check the logs to verify which port to open:
+
+```
+2021-01-27T11:17:00.248+0100	INFO	Activating privacy features... done.
+2021-01-27T11:17:00.278+0100	INFO	https://0.0.0.0:8080
+```
+
+### SQL Errors
+
+_After start, you see a bunch of errors starting with: `ERROR   pydio.grpc.meta   Failed to init DB provider   {"error": "Error 1071: Specified key was too long; max key length is 767 bytes handling data_meta_0.1.sql"}`_.
+
+You might have an unsupported version of the mysql server: you should use MySQL server version 5.7 or higher or MariaDB version 10.3 or higher.
+
+### GLIBC [Linux]
+
+_You see this error: `/lib/x86_64-linux-gnu/libc.so.6: version 'GLIBC_2.14' not found`_
+
+The version of libc6 is outdated. Run these commands to upgrade it.
+
+```sh
+sudo apt-get update
+sudo apt-get install libc6
+```
+
+### SELinux [CentOS]
+
+_The main application page in your browser displays the following error: `Access denied.`_
+
+Ensure you have modified SELinux to be disabled or running in permissive mode. To temporary disable SELinux: `sudo setenforce 0`.
+
+You can also permanently disable SELinux in `/etc/selinux/config`.
