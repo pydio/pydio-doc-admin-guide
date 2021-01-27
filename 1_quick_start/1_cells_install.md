@@ -1,54 +1,68 @@
-_This section will get you up and running in no-time. Should you encounter any issue, please refer to the more detailed installation guides provided in the following chapter._
+_Get started quickly with Cells static binaries. You can also use [Docker container](./docker) or
+[Cloud Images](./cloud-images) (AMI/VMWare/OVF, Cells Enterprise only) or refer to dedicated [OS-specific step-by-step tutorials](/en/docs/kb/deployment)._
 
-## Pre-requisites
+<ol class="install-steps">
+<li><p><strong>Get your database access ready</strong> and login to your server (see <a href="./requirements">Requirements</a>).</p></li>
+<li><p><strong>Download the binary</strong> for your server architecture from the <a href="/en/download" target="_blank">Download Page</a>. 
+    <br>On Linux/Mac, <strong>make binary executable </strong> with:<br> <code>$ chmod +x cells</code></p></li>
+<li><p><strong>Go through Cells configuration</strong> steps using either a browser or the command line:<br> <code>$ ./cells configure</code></p></li>
+<li><p><strong>Start Cells</strong> : web installer mode will restart automatically after configuration, otherwise use: <code>$ ./cells start</code></p></li>
+<li><p><strong>Open your web browser</strong> at <a href="https://localhost:8080" target="_blank">https://localhost:8080</a> <br> (or https://[server ip or domain]:8080).</p></li>
+</ol>
 
-#### Hardware/OS
+<style type="text/css">
+ol.install-steps {
+  padding-left: 0 !important;
+  list-style: none;
+  counter-reset: my-awesome-counter;
+  padding: 0;
+  margin:0;
+}
+ol.install-steps li {
+  counter-increment: my-awesome-counter;
+  border-left: 2px solid #08cc99;
+  display:flex;
+  align-items: baseline;
+  background-color: #ecf8f6;
+  padding: 16px 20px;
+  margin: 20px 0 !important;
+}
 
-For Pydio Cells to run smoothly, you should meet the following requirements:
+ol.install-steps li::before {
+  content: counter(my-awesome-counter) ". ";
+  color: #44d2ab;
+  font-weight: bold;
+  margin-right: 10px;
+  font-size: 22px;
+}
 
-- **Server Capacity** : 2 Core CPU - 64bit, 4GB RAM, SSD is also recommended for storage.
-- **Operating System**: Debian 8/9/10, Ubuntu 18.04 LTS, CentOS 7, MacOS 10.13/11.1, Windows 10
-- **Ulimit**: Make sure to set the number of allowed open files greater than **2048**. For production use, a minimum of **8192** is recommended (see `ulimit -n`).
 
-#### MySQL Database
+ol.install-steps li p {
+  display: inline;
+  margin: 0 !important;
+  font-size: 18px !important;
+}
 
-You must have an available MySQL database, along with a privileged user (e.g. `pydio`) to access this DB. Use one of the following link to install the DB:
+ol.install-steps li code {
+    font-size: 16px !important;
+    display: block;
+    margin: 0px 0 !important;
+    padding: 6px !important;
+    background-color: rgb(42 42 53 / 95%) !important;
+    color: white !important;
+    width: 270px;
+    margin-top: 6px !important;
+}
 
-- [MariaDB version 10.3 and above](https://downloads.mariadb.org/mariadb/repositories)
-- [MySQL version 5.7 and above](https://dev.mysql.com/doc/refman/8.0/en/installing.html) (_**except 8.0.22** that has a bug preventing cells to run correctly_).
+ol span.geshifilter {
+    display: inherit;
+}
 
-As recommended by databases documentations, make sure not to leave the `max_connections` to its default value (151) while going live in production.
+</style>
 
-#### Cells binary
+## Installation modes
 
-Download the Pydio Cells binary corresponding to your architecture using one of the following links:
-
-- [Linux Amd64](https://download.pydio.com/latest/cells/release/{latest}/linux-amd64/cells)
-- [Mac OSX](https://download.pydio.com/latest/cells/release/{latest}/darwin-amd64/cells)
-- [Windows (64bits)](https://download.pydio.com/latest/cells/release/{latest}/windows-amd64/cells.exe)
-
-For the Enterprise Distribution, use these links :
-
-- [Cells Enterprise Linux Amd64](https://download.pydio.com/latest/cells-enterprise/release/{latest}/linux-amd64/cells-enterprise),
-- [Cells Enterprise Mac OSX](https://download.pydio.com/latest/cells-enterprise/release/{latest}/darwin-amd64/cells-enterprise),
-- [Cells Enterprise Windows (64bits)](https://download.pydio.com/latest/cells-enterprise/release/{latest}/windows-amd64/cells-enterprise.exe)
-- **Replace `cells` by `cells-enterprise` in all the following commands.**
-
-On Linux/MacOSX, make sure to make the binary executable using `chmod +x cells`. Create a dedicated user on the server to install and run Cells. On Linux, if you wish to start server on ports 80 (http) or 443 (https), you have to grant a proper permission:
-
-```sh
-setcap 'cap_net_bind_service=+ep' cells
-```
-
-## Configuration
-
-Use the following command to be guided through the basic steps Cells configuration.
-
-```sh
-> ./cells configure
-```
-
-#### [Mode 1] Web Installer
+### Web Installer
 
 If you are on a desktop machine, the installer opens a web page with a wizard asking you to fill in various configuration parameters, including DB connection info and the login/password of the main administrator.
 
@@ -58,38 +72,20 @@ Click on the image below to see a screencast of the installation:
 
 After it completes, the server restarts automatically and you are good to go.
 
-#### [Mode 2] Command line Installer
+### Command line Installer
 
 If you are more a shell person, you can perform the same steps using command-line (cli) prompts/answers. 
 The image below shows a screencast of the CLI installation :
 
 [:image:1_quick_start/installation/cli-installer.gif]
 
-After configuration is done, start the server with:
 
-```sh
-> ./cells start
-```
+## Troubleshooting
 
-## Login to Cells
 
-Once the start is finished, you are good to go!
-You should be able to open your browser on `https://localhost:8080` 
-or (`https://<server ip or domain>:8080`) to see the login page. Accept the browser warning about the certificate and use 
-the credentials you have just defined to sign in.
 
-## Connection URL 
 
-The Cells gateway starts by default on `0.0.0.0:8080`.
+------ 
 
-By using 0.0.0.0, the gateway will allow incoming traffic to any IPv4/domain of the machine network interfaces.
+#### TODO MOVE :  Connection URL 
 
-If the port 8080 is busy (already used by another process), it will try other options.
-
-A self-signed certificate is also automatically generated for supporting TLS connection out of the box (https).
-
-For production use, or for a remotely accessed Cells, you can make the gateway listen to multiple ports on multiple IP addresses,
-each with its own set of rules attached (TLS, Let's Encrypt, External URL)
-
- - At installation time using specific flags (`--bind`, `tls_xxx`): see the [man page of the configure command TODO](LINK TO DOC). 
- - With the dedicated tool `./cells configure sites`: see this [dedicated page for more information about the "sites" (TODO)](LINK TO PAGE).
