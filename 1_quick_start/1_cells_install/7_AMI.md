@@ -1,8 +1,8 @@
-We expose below the specificities of the AMI custom setup. For further details, please refer to the other sections of this [administration guide](https://pydio.com/en/docs/administration-guides).  
+We expose below the specificities of the AMI custom setup. For further details, please refer to the other sections of this [administration guide](https://pydio.com/en/docs/administration-guides).
 
 ## Cells ED AMI on AWS Marketplace
 
-You can find a ready-to-use Amazon Machine Image (AMI) on the Amazon Web Services Marketplace following this link: 
+You can find a ready-to-use Amazon Machine Image (AMI) on the Amazon Web Services Marketplace following this link:
 
 [https://aws.amazon.com/marketplace/pp/B08CNGR8ZP](https://aws.amazon.com/marketplace/pp/B08CNGR8ZP)
 
@@ -23,12 +23,7 @@ You can quickly finalise the installation by:
 
 - Accepting EULA
 - Pasting your licence key
-- Use embedded local db with:
-  - Host: localhost
-  - Port: 3306
-  - DB: cells
-  - User: pydio
-  - Password: cells
+- Use embedded local db that is already configured
 - Define an admin and leave advanced parameters untouched.
 
 ## Users
@@ -85,5 +80,5 @@ If you are in testing mode and want to reset your vanilla install, you only need
 - Stop cells service
 - Drop and recreate the DB
 - Empty `/var/cells` working directory
-- Run `cells install` **as user `pydio`**
+- Run `cells configure` **as user `pydio`**
 - Restart the Cells service by running `sudo systemctl restart cells`  
