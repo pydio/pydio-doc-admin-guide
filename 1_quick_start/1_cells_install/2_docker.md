@@ -1,11 +1,11 @@
 
-The [Pydio Cells image](https://hub.docker.com/r/pydio/cells/) for Docker is designed to be used in a micro-service environment. It only contains what is strictly necessary to run your server.
+The [Pydio Cells image](https://hub.docker.com/r/pydio/cells/) is a container designed to be used in Docker environment. It only contains what is strictly necessary to run your server.
 
 ## Run as stand-alone container
 
-Pydio Cells only needs a MySQL/MariaDB Database [with the corresponding admin user](./v2/requirements).
+Pydio Cells only needs a MySQL/MariaDB Database [with the corresponding admin user](./requirements).
 
-Lunch a test instance with:
+Lanch a test instance with:
 
 ```sh
 docker run -d --network=host pydio/cells
@@ -108,80 +108,19 @@ Below is an extract of relevant ENV variables that you can pass to the container
 | CELLS_WORKING_DIR   | path in the container | /var/cells           |
 | CELLS_LOG_LEVEL   | a valid log level | info           |
 
+### More examples
 
-### TRASH
-
-#### Persistent data
-
-All default configuration and data (`/var/cells` on the container) is saved in an unnamed volume.
-
-
-Note: If you [add new datasources](./managing-datasources) and want to persist the data, ensure that their location is also mounted in a volume.
-
-#### Environment variable
-
-- `CELLS_NO_TLS`: uses tls or not (default to 0 => uses tls)
-- `CELLS_BIND` : address where the application http server is bound to. It MUST contain a server name and a port.
-- `CELLS_EXTERNAL` : url the end user will use to connect to the application.
-
-Let's say:
-
-- You have a server with an internet facing IP and a corresponding DNS A entry that points toward `files.example.com`
-- You want to run the application in self signed mode on port 8080 (remember the default value of CELLS_NO_TLS is disabled)
-
-### Example setup with docker compose
-
-```yaml
-version: '3'
-services:
-
-    cells:
-        image: pydio/cells:latest
-        restart: always
-        ports: ["8080:8080"]
-        environment:
-            - CELLS_BIND=files.example.com:8080
-            - CELLS_EXTERNAL=https://files.example.com:8080
-       volumes:
-            - "cellsdir:/var/cells"
-            - "data:/var/cells/data"
-
-    # MySQL image with a default database cells and a dedicated user pydio
-    mysql:
-         image: mysql:5.7
-         restart: always
-         environment:
-             MYSQL_ROOT_PASSWORD: P@ssw0rd
-             MYSQL_DATABASE: cells
-             MYSQL_USER: pydio
-             MYSQL_PASSWORD: P@ssw0rd
-         command: [mysqld, --character-set-server=utf8mb4, --collation-server=utf8mb4_unicode_ci]
-         volumes:
-             - "mysqldir:/var/lib/mysql"
-
-volumes:
-    data: {}
-    cellsdir: {}
-    mysqldir: {}
-```
-
-### Public access
-
-#### HTTPS
-
-We recommend you [run behind a proxy](https://pydio.com/en/docs/kb/devops) to encrypt the content you want to publish over the internet.
-
-The [nginx-proxy](https://github.com/jwilder/nginx-proxy) and [docker-letsencrypt-nginx-proxy-companion](https://github.com/JrCs/docker-letsencrypt-nginx-proxy-companion) containers can also be used to setup your proxy.
+We gather some [relevant sample configuration](https://github.com/pydio/cells/tree/master/tools/docker/compose) in our main code base. You might find the example there interesting to fine tune your setup.
 
 ### Cells Sync
 
-The Cells Sync Desktop Application will require an additional port.
+The Cells Sync Desktop Application might require an additional port, typically if you run behind a reverse proxy that performs TLS termination. In such case:
 
 - First read this, [Setup Cells Server for Cells Sync](/en/docs/kb/client-applications/setup-cells-server-cellssync)
 - Make sure to start a container with this env set `PYDIO_GRPC_EXTERNAL`
 - Expose the port that you previously set with `PYDIO_GRPC_EXTERNAL`
 
-Example:
+#### Example
 
 Assuming that port **33060** is the port chosen for gRPC, the command should have those two additional parameters,
 
@@ -193,13 +132,3 @@ The entire command should look like this:
 ```sh
 docker run -d -e CELLS_EXTERNAL=192.168.0.172:8080 -e CELLS_BIND=192.168.0.172:8080 -e PYDIO_GRPC_EXTERNAL=33060 -p 33060:33060 -p 8080:8080 pydio/cells
 ```
-
-### Troubleshooting
-
-#### Check that after a server or container reboot that the address is the same
-
-If you ever restart your server and or your containers docker might attribute you another address for your containers.
-
-For instance docker usually has containers addresses looking like this `172.17.0.5` and therefore in Cells the default datasources or the ones that you will be creating on the filesystem will all be using this peer address by default.
-
-You might stumble upon this issue, if that's the case you need to access the `pydio.json` file and change the old occurrences of the address with the newest one.
