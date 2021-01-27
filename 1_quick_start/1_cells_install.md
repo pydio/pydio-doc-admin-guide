@@ -3,19 +3,11 @@ _Get started quickly with Cells static binaries. See also [Docker deployment](./
 <div class="install-logos">
 <a class="logo">
     <div class="logo-img"><img src="https://github.com/pydio/pydio-doc-admin-guide/blob/cells-v2.2/images/logos-os/binaries.png?raw=true"/></div>
-    <div class="logo-title">Static Binaries</div>
+    <div class="logo-title">Binaries</div>
 </a>
 <a class="logo">
     <div class="logo-img"><img src="https://github.com/pydio/pydio-doc-admin-guide/blob/cells-v2.2/images/logos-os/docker.png?raw=true"/></div>
     <div class="logo-title">Docker</div>
-</a>
-<a class="logo">
-    <div class="logo-img"><img src="https://github.com/pydio/pydio-doc-admin-guide/blob/cells-v2.2/images/logos-os/centos.png?raw=true"/></div>
-    <div class="logo-title">RHEL/CentOS</div>
-</a>
-<a class="logo">
-    <div class="logo-img"><img src="https://github.com/pydio/pydio-doc-admin-guide/blob/cells-v2.2/images/logos-os/debian.png?raw=true"/></div>
-    <div class="logo-title">Debian/Ubuntu</div>
 </a>
 <a class="logo">
     <div class="logo-img"><img src="https://github.com/pydio/pydio-doc-admin-guide/blob/cells-v2.2/images/logos-os/ovf.png?raw=true"/></div>
@@ -29,11 +21,25 @@ _Get started quickly with Cells static binaries. See also [Docker deployment](./
     <div class="logo-img"><img src="https://github.com/pydio/pydio-doc-admin-guide/blob/cells-v2.2/images/logos-os/amazon.png?raw=true"/></div>
     <div class="logo-title">Amazon AMI</div>
 </a>
+</div>
+
+### Advanced step-by-step guides
+
+<div class="install-logos">
+<a class="logo">
+    <div class="logo-img"><img src="https://github.com/pydio/pydio-doc-admin-guide/blob/cells-v2.2/images/logos-os/centos.png?raw=true"/></div>
+    <div class="logo-title">RHEL/CentOS</div>
+</a>
+<a class="logo">
+    <div class="logo-img"><img src="https://github.com/pydio/pydio-doc-admin-guide/blob/cells-v2.2/images/logos-os/debian.png?raw=true"/></div>
+    <div class="logo-title">Debian/Ubuntu</div>
+</a>
 <a class="logo">
     <div class="logo-img"><img src="https://github.com/pydio/pydio-doc-admin-guide/blob/cells-v2.2/images/logos-os/windows.png?raw=true"/></div>
     <div class="logo-title">Windows</div>
 </a>
 </div>
+
 
 <ol class="install-steps">
 <li><p><strong>Get your database access information</strong> (see <a href="./requirements">Requirements</a>). Login as non-root user.</p></li>
@@ -93,7 +99,11 @@ ol span.geshifilter {
 
 .install-logos {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.install-logos .logo-img {
+    height: 80px;
 }
 
 .install-logos a.logo {
@@ -106,6 +116,7 @@ ol span.geshifilter {
     border-radius: 4px;
     padding: 5px;
     background-color: #ecf8f6;
+    width: 110px;
 }
 
 .install-logos img {
