@@ -1,57 +1,52 @@
-_This guide describes the steps required to have the Pydio Cells Enterprise running via an OVF disk image._
 
-[:image:logos-os/logo-ovf.png]
+We provide a packaged Cells Enterprise Appliance that follows the OVF standard.
 
-## Download OVF Package
+It is an up-to-date CentOS 7 image that contains a preconfigured MariaDB 10.4 and the Cells Enterprise distribution binary, ready to use out of the box.  
 
-The latest OVF image can be [Downloaded Here](https://download.pydio.com/latest/cells-enterprise/release/{latest}/ovf/Cells-Enterprise-OVF-{latest}.zip).
+Download the [latest OVF image](https://download.pydio.com/latest/cells-enterprise/release/{latest}/ovf/Cells-Enterprise-OVF-{latest}.zip). An md5 file is also available on the same location for integrity verification.
 
-An md5 file is also available on the same location for integrity verification.
-
-## Launching a VM
-
-In this guide, we will use Oracle VirtualBox to launch the virtual machine.
-
-Virtual Machine requirements
+## Requirements
 
 - RAM : 4G
 - CPU : 2 vCores
 - CPU support: VT-x/AMD-V
 - NICs: bridged adaptor
 
-### Setup and config at the first time
+## Setup in Oracle VirtualBox
 
-After importing the image into VirtualBox, you only have to select the correct virtual network interface before launching the machine.  
-Go to `Your Image >> Settings >> Network`: Adapter 1 is already bound to a bridged adapter, choose the correct name for the adapter you want to use and click `OK`.
+In this paragraph, we detail the steps to launch the Pydio Cells appliance with Oracle VirtualBox. The process with other hypervisors is very similar.
+
+- Import the image into VirtualBox
+- Configure the virtual network interface:
+  - Go to `Your Image >> Settings >> Network`, adapter 1 is already bound to a bridged adapter
+  - Choose the correct name for the adapter you want to use
+  - Click `OK`.
+- Start the virtual machine
 
 _Warning:_ even if the correct Name is already shown, click on it and validate, or you won't be able to start the VM (it is a known issue with the VirtualBox UI that is still there in 6.0.14).
 
-At first boot, a script is launched to verify network settings and start the installer. You can then interact with a specific Cells service via a web browser to setup and configure your instance.
+## Configuration
 
-For your convenience, we display (in the VM console accessed from your VirtualBox GUI) the full correct URL you have to use to access this post installation configuration service - formatted as `https://<DN or IP>/`.
+Upon boot a service is launched that:
 
-> Note: A self-signed certificate is used by default, ignore the warning message on your web browser.
+- Verifies the network setting
+- Starts the installer
 
-You just follow steps in web interface to finalize the configuration. All parameters are set by default except the main administrator password.
+You can finalise the configuration from your web browser. We display in the VM console accessed from your VirtualBox GUI the full correct URL you can use - formatted as `https://<YOUR_VM_IP>`.
 
-You see installation progress in your browser page. It can take up to a minute to reach the end.
+> Note: A self-signed certificate is used by default, you have to explicitelly accept it in your browser.
+
+Follow the steps:
+
+- Accept EULA
+- Enter your license key
+- Accept default DB configuration (except if you do not want to use the embedded DB)
+- Choose a password for the admin user
+- Launch installation. It can take up to a minute to reach the end.
+
+The installer service is disabled when the configuration terminates successfully.
 
 At this step, you can login to Cells-Enterprise with the credentials you have entered during the setup and verify everything is up and running.
-
-This done, you should restart the virtual machine, another script will finalise the configuration, typically installing and starting Cells as a systemd service.
-
-### Predefined accounts
-
-If you ever need to log into the VM system, SSH accounts and technical accounts are created as follow:
-
-| user                | username        | password    |
-| ------------------- | --------------- | ----------- |
-| administrative user | root            | cells       |
-| user                | pydio           | cells       |
-| MySQL root user     | root            | no password |
-| MySQL user          | pydio@localhost | no password |
-
-The predefined database created in MySQL is *cells*
 
 ## Notes on configuration
 
@@ -60,38 +55,35 @@ By default, two root paths are used:
 - `/var/cells`: Pydio Cells working dir. It contains dynamic configuration (including certificates), data and logs.
 - `/opt/pydio`: binaries and additional libraries required to run Cells.
 
-### Use of well-known ports
+### Predefined accounts
 
-In order for Cells to be able to use well known 80 & 443 port, you have to give specific permissions to the binary file.
-The OVF you have downloaded is correctly configured and the embedded `cells-enterprise` binary has already these permission set. Yet, if you ever need to update the binary file - typically when you perform an in-app update - you have to re-apply these permission on the new binary file:
+If you ever need to log into the VM system, SSH accounts and technical accounts are created as follow:
 
-```sh
-# log as pydio via ssh into the machine
-sudo setcap 'cap_net_bind_service=+ep' /opt/pydio/cells-enterprise
-```
+| System users        | Password    | Comments   |
+| ------------------- | ----------- | ----------- |
+| root                | cells       | -        |
+| sysadmin            | cells       | Has sudo rights without password |
+| pydio               | cells       | Limited user that runs the app |
+
+| MySQL users        | password    |
+| ------------------- | --------------- |
+| root                | cells       |
+| pydio@localhost     | cells       |
+
+The predefined database created in MySQL is *cells*
 
 ### Systemd service
 
-**cells-enterprise** service is running under **pydio** user. The service is **enabled** (a.k.a will automatically restart at reboot).
+**cells** service is running under **pydio** user. The service is **enabled** (a.k.a will automatically restart upon reboot).
 
-To manually restart Cells:
+Useful `systemd` commands, as `sysadmin` user:
 
 ```sh
-# As pydio user
+# Manually restart the service
 sudo systemctl restart cells
-```
-
-You can consult the output of **cells-enterprise** service by using command:
-
-```sh
-sudo journalctl -f
-# or to see only cells related log:
-sudo journalctl -f -u cells
-```
-
-To start/stop the database (MariaDB):
-
-```sh
+# See Pydio Cells logs
+sudo journalctl -f -u cells -S -1h
+# start/stop the database (MariaDB)
 sudo systemctl start mariadb
 ```
 
@@ -106,3 +98,15 @@ Firewalld service is active and opens three ports:
 ### SELinux
 
 SELinux is running in *permissive* mode.
+
+### Use of standard HTTP ports
+
+The Cells binary needs specific permission to be allowed to use the standard HTTP ports.
+
+443 (and (=You To In order for Cells to be able to use well known 80 & 443 port, you have to give specific permissions to the binary file.
+The OVF you have downloaded is correctly configured and the embedded `cells-enterprise` binary has already these permission set. Yet, if you ever need to update the binary file - typically when you perform an in-app update - you have to re-apply these permission on the new binary file:
+
+```sh
+# log as pydio via ssh into the machine
+sudo setcap 'cap_net_bind_service=+ep' /opt/pydio/bin/cells-enterprise
+```
