@@ -18,7 +18,7 @@ This on-file database can be found under `$CELLS_SERVICE_DIR/pydio.grpc.log/sysl
 
 When the size of the DB reaches its maximum size, it is replicated for backup, thus in the folder you may see the following listing. DB folder with **the greatest index is always most recent**.
 
- ```SH
+```SH
  $> ls $CELLS_SERVICE_DIR/pydio.grpc.log
  syslog.bleve
  syslog.bleve.001
@@ -26,12 +26,13 @@ When the size of the DB reaches its maximum size, it is replicated for backup, t
  syslog.bleve.003
  syslog.bleve.004
 ....
- ```
+```
 
 **Cleaning DB folders manually**
 
 You can safely remove oldest folders. Restarting Cells will automatically rename remaining folders
-consistently. For example: 
+consistently. For example:
+
 ```SH
 # Delete oldest foldesr
 $> cd $CELLS_SERVICE_DIR/pydio.grpc.log
@@ -62,13 +63,16 @@ In Cells Enterprise, Audit Logs are handled in the same way as system logs. You 
 section, just replacing the `pydio.grpc.log` service by `pydio.grpc.audit`. 
 
 For example:
- ```SH
+
+```SH
  $> ls $CELLS_SERVICE_DIR/pydio.grpc.audit
  auditlog.bleve
  auditlog.bleve.001
  auditlog.bleve.002
- ```
+```
+
 Or
+
 ```SH
 # Truncate at 100MB
 $> ./cells admin resync --service pydio.grpc.audit --path=truncate/104857600
