@@ -1,5 +1,12 @@
 _Get started quickly with Cells static binaries. See also [Docker deployment](./docker), Cloud Images ([OVF](./open-virtual-format), [VMWare](./vmware), [AMI](./amazon-ami)) and dedicated OS-specific [step-by-step tutorials](/en/docs/kb/deployment)._
 
+<div class="install-logos">
+<a class="logo">
+    <div class="logo-img"><img src=""/></div>
+    <div class="logo-title"></div>
+</a>
+</div>
+
 <ol class="install-steps">
 <li><p><strong>Get your database access information</strong> (see <a href="./requirements">Requirements</a>). Login as non-root user.</p></li>
 <li><p><a href="/en/download" target="_blank"><strong>Download the binary</strong></a> for your server architecture. Make it executable:<br> <code>$ chmod +x ./cells</code></p></li>
