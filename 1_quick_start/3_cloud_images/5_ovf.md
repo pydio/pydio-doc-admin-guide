@@ -1,4 +1,4 @@
-_This guide describes the steps required to have the Pydio Cells running via an OVF disk image._
+_This guide describes the steps required to have the Pydio Cells Enterprise running via an OVF disk image._
 
 [:image:2_running_cells_in_production/logos-os/logo-ovf.png]
 

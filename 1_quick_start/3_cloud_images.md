@@ -1,3 +1,3 @@
-We provide a wide range cloud images.
+We provide ready-to-use images for Cells Enterprise, to ease deployments in various cloud/virtual environment. 
 
 [:summary]
