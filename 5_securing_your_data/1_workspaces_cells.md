@@ -39,4 +39,4 @@ _See Also_
 
 - [Creating a simple workspace in the Quick Admin Tour](./quick-admin-tour)
 - [Datasources overview](./datasources-overview)
-- [Assigning workspaces accesses via Users, Groups and Roles](./users-groups-roles)
+- [Assigning workspaces accesses via Users, Groups and Roles](./users-roles-and-groups)

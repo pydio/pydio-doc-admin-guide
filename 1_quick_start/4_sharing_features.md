@@ -19,7 +19,7 @@ Then, there are 3 different tabs:
 1. **Access**: You can choose if you want to put a password an expiration date for the link, a limited number of downloads and the layout of the GUI when people follow the link.
 1. **Visibility**: You can choose to whom this link is visible on the shares menu.
 
-**Note**: The generated link URL is computed from your current web access. If you are using multiple URLs to access to Cells, you can force Cells to use only one of them for all public links. Go to Cells Console > Main Settings panel and also refer to [Configure Cells URL](./configure-cells-url) in this documentation.
+**Note**: The generated link URL is computed from your current web access. If you are using multiple URLs to access to Cells, you can force Cells to use only one of them for all public links. Go to Cells Console > Main Settings panel and also refer to [Configure Cells URL](./configure-cells-urls) in this documentation.
  
 ## Sharing with other users using Cells
 

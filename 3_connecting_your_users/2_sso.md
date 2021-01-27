@@ -6,13 +6,13 @@ Single Sign-On is a service that allows a user to use one login session to acces
 
 ### What does it mean in Pydio Cells?
 
-Pydio Cells can be used as an [Identity Provider](./1_cells_as_idp). In other words, any application can use the login session from Pydio Cells to validate access to a user and use its data.
+Pydio Cells can be used as an [Identity Provider](./cells-identity-provider). In other words, any application can use the login session from Pydio Cells to validate access to a user and use its data.
 
 ### What does it mean in Pydio Cells Enterprise Distribution?
 
-On top of that, Cells ED can integrate with multiple [External Identity Providers](./2_sso/2_ED_sso_with_idp). It automatically creates access for users from third-party services (commercial or on-premise) and understands multiple protocols (*OIDC*, *SAML2.0*, ...).
+On top of that, Cells ED can integrate with multiple [External Identity Providers](./ed-using-sso-external-identity-provider). It automatically creates access for users from third-party services (commercial or on-premise) and understands multiple protocols (*OIDC*, *SAML2.0*, ...).
 
-Furthermore, Cells ED provides a simple way to connect one or many external [LDAP or Active Directory](./2_sso/2_ED_binding_to_ldap) servers.
+Furthermore, Cells ED provides a simple way to connect one or many external [LDAP or Active Directory](./ed-binding-ldap) servers.
 
 [:summary]
 
