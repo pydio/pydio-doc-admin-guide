@@ -110,7 +110,7 @@ sudo apt-get install libc6
 
 ### SELinux [CentOS]
 
-_The main application page in your browser displays the following error: `Access denied.` _
+_The main application page in your browser displays the following error: `Access denied.`_
 
 Ensure you have modified SELinux to be disabled or running in permissive mode. To temporary disable SELinux: `sudo setenforce 0`.
 
