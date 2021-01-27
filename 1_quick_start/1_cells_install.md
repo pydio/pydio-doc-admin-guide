@@ -1,5 +1,4 @@
-_Get started quickly with Cells static binaries. See also [Docker deployment](./docker) and
-Cloud Images ([AMI](./amazon-ami)/[VMWare](./vmware)/[OVF](./open-virtual-format), Cells Enterprise only) or refer to dedicated [OS-specific step-by-step tutorials](/en/docs/kb/deployment)._
+_Get started quickly with Cells static binaries. See also [Docker deployment](./docker), Cloud Images ([OVF](./open-virtual-format), [VMWare](./vmware), [AMI](./amazon-ami)) and dedicated OS-specific [step-by-step tutorials](/en/docs/kb/deployment)._
 
 <ol class="install-steps">
 <li><p><strong>Get your database access information</strong> (see <a href="./requirements">Requirements</a>). Login as non-root user.</p></li>
