@@ -2,7 +2,7 @@ _Get started quickly with Cells static binaries. You can also use [Docker contai
 [Cloud Images](./cloud-images) (AMI/VMWare/OVF, Cells Enterprise only) or refer to dedicated [OS-specific step-by-step tutorials](/en/docs/kb/deployment)._
 
 <ol class="install-steps">
-<li><p><strong>Login on your server as non-root user</strong> and get your database access information (see <a href="./requirements">Requirements</a>).</p></li>
+<li><p>Login on your server as non-root user and <strong>get your database access information</strong> (see <a href="./requirements">Requirements</a>).</p></li>
 <li><p><a href="/en/download" target="_blank"><strong>Download the binary</strong></a> for your server architecture. Make it executable:<br> <code>$ chmod +x ./cells</code></p></li>
 <li><p><strong>Configure Cells</strong> (see Installation Modes below):<br> <code>$ ./cells configure</code></p></li>
 <li><p><strong>Start Cells</strong> : web installer mode will restart automatically after configuration, otherwise use: <code>$ ./cells start</code></p></li>
