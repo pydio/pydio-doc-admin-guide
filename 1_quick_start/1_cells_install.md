@@ -82,3 +82,47 @@ The image below shows a screencast of the CLI installation :
 
 ## Installation Troubleshooting
 
+Generally, you might want to have a look at the log file that is located in `$CELLS_WORKING_DIR/logs`. [TODO - link to working dir best practices]
+
+### Database server issue [All OS]
+
+_After start, the web page is unreachable and you see a bunch of errors starting with: `ERROR   pydio.grpc.meta   Failed to init DB provider   {"error": "Error 1071: Specified key was too long; max key length is 767 bytes handling data_meta_0.1.sql"}`_.
+
+You might have an unsupported version of the mysql server: you should use MySQL server version 5.7 or higher or MariaDB version 10.3 or higher.
+
+### glibc [Linux]
+
+_You see this error: `/lib/x86_64-linux-gnu/libc.so.6: version 'GLIBC_2.14' not found`_
+
+The version of libc6 is outdated. Run these commands to upgrade it.
+
+```sh
+sudo apt-get update
+sudo apt-get install libc6
+```
+
+### SELinux [CentOS]
+
+If, after a successful installation and when you try to navigate to the main application page with your browser, you land on a blank page with following message:
+
+> Access denied.
+
+ensure you have modified SELinux to be disabled or running in permissive mode.
+
+To temporary disable SELinux: `sudo setenforce 0`.
+
+You can also permanently disable SELinux in `/etc/selinux/config`.
+
+### Port 80 & 443 [MacOS]
+
+You can only use these ports if you are connected as an Admin User or root.
+
+By default, Apache is running on macOS, so you need to ensure that it - or no other webservers - is bound to these ports.
+
+To stop the default Apache, you can use:
+
+```sudo apachectl stop```
+
+To prevent Apache from starting during launch, you may use:
+
+```sudo launchctl unload -w /System/Library/LaunchDaemons/org.apache.httpd.plist```
