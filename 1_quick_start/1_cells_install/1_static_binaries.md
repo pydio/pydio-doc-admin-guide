@@ -1,4 +1,4 @@
-_Get started quickly with Cells static binaries._
+_These instructions will get you started quickly with Cells binaries. Apply commands similary on either `cells` of `cells-enterprise` binary._
 
 <ol class="install-steps">
 <li><p><strong>Get your database access information</strong> (see <a href="./requirements">Requirements</a>). Login as non-root user.</p></li>
