@@ -2,8 +2,36 @@ _Get started quickly with Cells static binaries. See also [Docker deployment](./
 
 <div class="install-logos">
 <a class="logo">
-    <div class="logo-img"><img src=""/></div>
-    <div class="logo-title"></div>
+    <div class="logo-img"><img src="https://github.com/pydio/pydio-doc-admin-guide/blob/cells-v2.2/images/logos-os/binaries.png?raw=true"/></div>
+    <div class="logo-title">Static Binaries</div>
+</a>
+<a class="logo">
+    <div class="logo-img"><img src="https://github.com/pydio/pydio-doc-admin-guide/blob/cells-v2.2/images/logos-os/docker.png?raw=true"/></div>
+    <div class="logo-title">Docker</div>
+</a>
+<a class="logo">
+    <div class="logo-img"><img src="https://github.com/pydio/pydio-doc-admin-guide/blob/cells-v2.2/images/logos-os/centos.png?raw=true"/></div>
+    <div class="logo-title">RHEL/CentOS</div>
+</a>
+<a class="logo">
+    <div class="logo-img"><img src="https://github.com/pydio/pydio-doc-admin-guide/blob/cells-v2.2/images/logos-os/debian.png?raw=true"/></div>
+    <div class="logo-title">Debian/Ubuntu</div>
+</a>
+<a class="logo">
+    <div class="logo-img"><img src="https://github.com/pydio/pydio-doc-admin-guide/blob/cells-v2.2/images/logos-os/ovf.png?raw=true"/></div>
+    <div class="logo-title">OVF</div>
+</a>
+<a class="logo">
+    <div class="logo-img"><img src="https://github.com/pydio/pydio-doc-admin-guide/blob/cells-v2.2/images/logos-os/vmware.png?raw=true"/></div>
+    <div class="logo-title">VMWare</div>
+</a>
+<a class="logo">
+    <div class="logo-img"><img src="https://github.com/pydio/pydio-doc-admin-guide/blob/cells-v2.2/images/logos-os/amazon.png?raw=true"/></div>
+    <div class="logo-title">Amazon AMI</div>
+</a>
+<a class="logo">
+    <div class="logo-img"><img src="https://github.com/pydio/pydio-doc-admin-guide/blob/cells-v2.2/images/logos-os/windows.png?raw=true"/></div>
+    <div class="logo-title">Windows</div>
 </a>
 </div>
 
@@ -61,6 +89,27 @@ ol.install-steps li code {
 
 ol span.geshifilter {
     display: inherit;
+}
+
+.install-logos {
+    display: flex;
+    justify-content: center;
+}
+
+.install-logos a.logo {
+    color: inherit;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 5px;
+    border: 2px solid #97E6D1;
+    border-radius: 4px;
+    padding: 5px;
+    background-color: #ecf8f6;
+}
+
+.install-logos img {
+    border: none !important;
 }
 
 </style>
