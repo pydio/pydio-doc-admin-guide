@@ -19,7 +19,7 @@ Get started quickly with Cells static binaries, or pick an image for your cloud 
     <div class="logo-img"><img src="https://github.com/pydio/pydio-doc-admin-guide/blob/cells-v2.2/images/logos-os/vmware.png?raw=true"/></div>
     <div class="logo-title">VMWare</div>
 </a>
-<a class="logo" href="./amazon">
+<a class="logo" href="./amazon-ami">
     <div class="logo-img"><img src="https://github.com/pydio/pydio-doc-admin-guide/blob/cells-v2.2/images/logos-os/amazon.png?raw=true"/></div>
     <div class="logo-title">Amazon AMI</div>
 </a>
