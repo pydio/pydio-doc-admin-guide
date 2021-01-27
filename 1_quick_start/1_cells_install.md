@@ -4,8 +4,8 @@ _Get started quickly with Cells static binaries. You can also use [Docker contai
 <ol class="install-steps">
 <li><p><strong>Get your database access ready</strong> and login to your server (see <a href="./requirements">Requirements</a>).</p></li>
 <li><p><strong>Download the binary</strong> for your server architecture from the <a href="/en/download" target="_blank">Download Page</a>. 
-    <br>On Linux/Mac, <strong>make binary executable </strong> with:<br> <code>$ chmod +x cells</code></p></li>
-<li><p><strong>Go through Cells configuration</strong> steps using either a browser or the command line:<br> <code>$ ./cells configure</code></p></li>
+    <br>On Linux/Mac, <strong>make binary executable </strong> with:<br> <code>$ chmod +x ./cells</code></p></li>
+<li><p><strong>Go through Cells configuration</strong> steps (see Installation Modes below):<br> <code>$ ./cells configure</code></p></li>
 <li><p><strong>Start Cells</strong> : web installer mode will restart automatically after configuration, otherwise use: <code>$ ./cells start</code></p></li>
 <li><p><strong>Open your web browser</strong> at <a href="https://localhost:8080" target="_blank">https://localhost:8080</a> <br> (or https://[server ip or domain]:8080).</p></li>
 </ol>
@@ -64,9 +64,8 @@ ol span.geshifilter {
 
 ### Web Installer
 
-If you are on a desktop machine, the installer opens a web page with a wizard asking you to fill in various configuration parameters, including DB connection info and the login/password of the main administrator.
-
-Click on the image below to see a screencast of the installation:
+If your machine is local or web accessible, a temporary web server will start on TCP port [:8080], providing a nice wizard
+for setting basic configurations.
 
 [:image:1_quick_start/installation/web-installer.gif]
 
@@ -75,10 +74,5 @@ After it completes, the server restarts automatically and you are good to go.
 ### Command line Installer
 
 If you are more a shell person, you can perform the same steps using command-line (cli) prompts/answers. 
-The image below shows a screencast of the CLI installation :
 
 [:image:1_quick_start/installation/cli-installer.gif]
-
-
-## Installation Troubleshooting
-
