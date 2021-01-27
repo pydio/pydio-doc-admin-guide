@@ -1,23 +1,21 @@
-[:image:logos-os/logo-docker.png]
 
-The [Pydio Cells image for Docker](https://hub.docker.com/r/pydio/cells/) is designed to be used in a micro-service environment. It only contains what is strictly necessary to run your server.
+The [Pydio Cells image](https://hub.docker.com/r/pydio/cells/) for Docker is designed to be used in a micro-service environment. It only contains what is strictly necessary to run your server.
 
 ## Run as stand-alone container
 
-Pydio Cells only needs a [MySQL / MariaDB Database with the corresponding admin user](./v2/requirements).
+Pydio Cells only needs a MySQL/MariaDB Database [with the corresponding admin user](./v2/requirements).
 
-You can launch a test instance with:
+Lunch a test instance with:
 
 ```sh
 docker run -d --network=host pydio/cells
 ```
 
-Finalise the configuration at [https://localhost:8080](https://localhost:8080) with your MySQL/MariaDB credentials and you are good to go.
+Finalise the configuration at [https://localhost:8080](https://localhost:8080) with your DB credentials and you are good to go.
 
-If your server has a public IP address and has no restriction on this port (firewall...), your instance is also directly exposed at [https://<YOUR-SERVER-IP-ADDRESS>:8080](.).
+If your server has a public IP address and no restriction on the chosen port (firewall...), your instance is also directly exposed at `https://<YOUR-SERVER-IP-ADDRESS>:8080`.
 
-Before you go live, you probably want to configure persistent data in a docker volume.  
-Assuming you also have a registered domain name (FQDN) for your server, you could go with:
+Before you go live, you probably want to configure persistent data in a docker volume. Assuming you also have a registered domain name (FQDN) for your server, you could go with:
 
 ```sh
 FQDN=<Put Your FQDN here>
@@ -74,8 +72,8 @@ volumes:
 
 When you `run` the image without command, it executes:
 
-- `cells configure`, if no installation is found
-- `cells start`, otherwise
+- `cells configure` if no installation is found
+- `cells start` otherwise
 
 If you add a command, it is executed instead, e.g:
 
@@ -98,7 +96,7 @@ If you want to use named volumes, here is an overview of the important files :
 
 ### Environment variables
 
-As previously seen, when launching the image, the `start` (or `configure`, on 1st launch) command is called: it means that all flags are settable with their associated ENV var, using upper case and CELLS_ prefix.
+As previously seen, when launching the image, the `start` (or `configure` on 1st launch) command is called: it means that all flags are settable with their associated ENV var, using upper case and CELLS_ prefix.
 
 Below is an extract of relevant ENV variables that you can pass to the container.
 
