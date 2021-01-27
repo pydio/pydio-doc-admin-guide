@@ -80,12 +80,5 @@ The image below shows a screencast of the CLI installation :
 [:image:1_quick_start/installation/cli-installer.gif]
 
 
-## Troubleshooting
-
-
-
-
------- 
-
-#### TODO MOVE :  Connection URL 
+## Installation Troubleshooting
 
