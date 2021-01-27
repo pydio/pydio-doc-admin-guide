@@ -42,7 +42,7 @@ These tutorials are advanced step-by-step guides for bare installation on your O
     <div class="logo-img"><img src="https://github.com/pydio/pydio-doc-admin-guide/blob/cells-v2.2/images/logos-os/macos.png?raw=true"/></div>
     <div class="logo-title">Mac OSX</div>
 </a>
-<a class="logo" href="/kb/deployment/install-cells-windows">
+<a class="logo" href="/en/docs/kb/deployment/install-cells-windows">
     <div class="logo-img"><img src="https://github.com/pydio/pydio-doc-admin-guide/blob/cells-v2.2/images/logos-os/windows.png?raw=true"/></div>
     <div class="logo-title">Windows</div>
 </a>
