@@ -1,56 +1,122 @@
-_This guide describes the steps required to have the Pydio Cells Docker container running_.
-
 [:image:logos-os/logo-docker.png]
 
-### How to use the Pydio Cells docker image
+The [Pydio Cells image for Docker](https://hub.docker.com/r/pydio/cells/) is designed to be used in a micro-service environment. It only contains what is strictly necessary to run your server.
 
-The [Pydio cells image](https://hub.docker.com/r/pydio/cells/) is designed to be used in a micro-service environment. It only contains what is strictly necessary to run the Pydio Cells binary and nothing more.
+## Run as stand-alone container
 
-In order to have a fully working Pydio Cells environment, you need to run a database (MySQL or MariaDB) on the same network. A basic setup is described on this page.
+Pydio Cells only needs a [MySQL / MariaDB Database with the corresponding admin user](./v2/requirements).
 
-| env variable   | value                   | example          |
-| -------------- | ----------------------- | ---------------- |
-| CELLS_BIND     | host:port               | localhost:80     |
-| CELLS_EXTERNAL | http(s)://url-to-access | http://localhost |
-| CELLS_NO_TLS   | 1 = noTLS, 0 = TLS      | 0 or 1           |
-
-#### Run the container
+You can launch a test instance with:
 
 ```sh
-docker run -d --network=host pydio/cell
+docker run -d --network=host pydio/cells
 ```
 
-You can now access the Pydio Cells installer at [https://localhost](https://localhost). A complete example can be found in the docker-compose section of this guide.
+Finalise the configuration at [https://localhost:8080](https://localhost:8080) with your MySQL/MariaDB credentials and you are good to go.
 
-If you want to access your container from outside you must then change at least the `CELLS_EXTERNAL` and also (it is recommended) to have persisting data you need to have a volume (you can sort it with multiple volumes if you wish, but for our example we are going to store everything into a single folder).
+If your server has a public IP address and has no restriction on this port (firewall...), your instance is also directly exposed at [https://<YOUR-SERVER-IP-ADDRESS>:8080](.).
 
-Here's an example of a command that runs a cells container with persistent data and external access:
+Before you go live, you probably want to configure persistent data in a docker volume.  
+Assuming you also have a registered domain name (FQDN) for your server, you could go with:
 
 ```sh
-docker run -d -e CELLS_EXTERNAL=192.168.0.172:8080 -e CELLS_BIND=192.168.0.172:8080 -p 8080:8080 -v /home/cells/volume/:/var/cells pydio/cells
+FQDN=<Put Your FQDN here>
+docker run -d  -v /home/user/cells_dir:/var/cells -e CELLS_BIND=:443 -e CELLS_EXTERNAL=https://$FQDN:8080 --network=host pydio/cells
 ```
 
-- **-e** *CELLS_EXTERNAL* is required to give it external access
-- **-e** *CELLS_BIND* can be, the server running the container address or localhost.
-- **-v** */home/cells/volume/:/var/cells*, basically I have a folder on my server located here `/home/cells/volume/` and where I want to store the whole Cells working directory.
+Where:
 
-_This was only an example on how you can run a Cells container, you can find below all of the enivronment variables, data configurations for cells, docker-compose examples and more_.
+- `-d`: run in the background
+- `-v /home/user/cells_dir:/var/cells`: mount a local folder as Cells working directory
+- `-e CELLS_BIND=:443`: use standard reserved port for HTTPS (must be unused, typically by a webserver)
+- `-e CELLS_EXTERNAL=https://$FQDN`: (optional) explicitely declare your domain
+- `--network=host`: directly use the host network, to easily connect to the DB
 
-#### External database
+## Run with docker-compose
 
-Pydio Cells requires a MySQL or MariaDB database. It is recommended to use a separate database and a dedicated user with access to that database. A complete example can be found in the docker-compose section of this guide.
+Below is a vanilla configuration to run Pydio Cells with `docker-compose`:
 
-#### Persistent data
+```yaml
+version: '3.7'
+services:
 
-All default configuration and data (`/var/cells` on the container) is saved in an unnamed volume.
+  cells:
+    image: pydio/cells:latest
+    restart: unless-stopped
+    ports: ["8080:8080"]
+    environment:
+      - CELLS_LOG_LEVEL=production
+    volumes:
+      - data:/var/cells/data
+      - cellsdir:/var/cells
+
+  mysql:
+    image: mysql:5.7
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: P@ssw0rd
+      MYSQL_DATABASE: cells
+      MYSQL_USER: pydio
+      MYSQL_PASSWORD: P@ssw0rd
+    command: [mysqld, --character-set-server=utf8mb4, --collation-server=utf8mb4_unicode_ci]
+    volumes:
+      - mysqldir:/var/lib/mysql
+
+volumes:
+    data: {}
+    cellsdir: {}
+    mysqldir: {}
+```
+
+## Go further
+
+### Commands
+
+When you `run` the image without command, it executes:
+
+- `cells configure`, if no installation is found
+- `cells start`, otherwise
+
+If you add a command, it is executed instead, e.g:
+
+```sh
+docker run pydio/cells cells version
+# or to log in a running container with id 5fe... 
+docker exec 5fe /bin/sh
+```
+
+### Data layout
 
 If you want to use named volumes, here is an overview of the important files :
 
+- `/var/cells`: main working dir
 - `/var/cells/pydio.json`: main configuration file
 - `/var/cells/data`: data
 - `/var/cells/logs`: logs
 - `/var/cells/certs`: certificate management
 - `/var/cells/services`: services information
+
+### Environment variables
+
+As previously seen, when launching the image, the `start` (or `configure`, on 1st launch) command is called: it means that all flags are settable with their associated ENV var, using upper case and CELLS_ prefix.
+
+Below is an extract of relevant ENV variables that you can pass to the container.
+
+| Name           | Value                   | Default          |
+| -------------- | ----------------------- |  ---------------- |
+| CELLS_BIND     | host:port               |  0.0.0.0:8080     |
+| CELLS_EXTERNAL | http(s)://url-to-access  | (none) |
+| CELLS_NO_TLS   | 1 = noTLS, 0 = TLS      | 0           |
+| CELLS_WORKING_DIR   | path in the container | /var/cells           |
+| CELLS_LOG_LEVEL   | a valid log level | info           |
+
+
+### TRASH
+
+#### Persistent data
+
+All default configuration and data (`/var/cells` on the container) is saved in an unnamed volume.
+
 
 Note: If you [add new datasources](./managing-datasources) and want to persist the data, ensure that their location is also mounted in a volume.
 
