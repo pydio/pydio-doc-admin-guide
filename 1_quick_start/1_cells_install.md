@@ -2,10 +2,9 @@ _Get started quickly with Cells static binaries. You can also use [Docker contai
 [Cloud Images](./cloud-images) (AMI/VMWare/OVF, Cells Enterprise only) or refer to dedicated [OS-specific step-by-step tutorials](/en/docs/kb/deployment)._
 
 <ol class="install-steps">
-<li><p><strong>Get your database access ready</strong> and login to your server (see <a href="./requirements">Requirements</a>).</p></li>
-<li><p><strong>Download the binary</strong> for your server architecture from the <a href="/en/download" target="_blank">Download Page</a>. 
-    <br>On Linux/Mac, <strong>make binary executable </strong> with:<br> <code>$ chmod +x ./cells</code></p></li>
-<li><p><strong>Go through Cells configuration</strong> steps (see Installation Modes below):<br> <code>$ ./cells configure</code></p></li>
+<li><p><strong>Login on your server as non-root user</strong> and get your database access information (see <a href="./requirements">Requirements</a>).</p></li>
+<li><p><a href="/en/download" target="_blank"><strong>Download the binary</strong></a> for your server architecture. Make it executable:<br> <code>$ chmod +x ./cells</code></p></li>
+<li><p><strong>Configure Cells</strong> (see Installation Modes below):<br> <code>$ ./cells configure</code></p></li>
 <li><p><strong>Start Cells</strong> : web installer mode will restart automatically after configuration, otherwise use: <code>$ ./cells start</code></p></li>
 <li><p><strong>Open your web browser</strong> at <a href="https://localhost:8080" target="_blank">https://localhost:8080</a> <br> (or https://[server ip or domain]:8080).</p></li>
 </ol>

@@ -2,12 +2,12 @@ Cells ships as a set of precompiled static binaries, one for each operating syst
 
 ## Hardware/OS
 
-- **CPU**: 64bit architecture only, AMD/ARM, 2 Core or more are recommended 
+- **CPU**: AMD 64bit architecture only, 2 core or more are recommended. 
 - **RAM**: 4GB RAM 
 - **Disk**: SSD is highly recommended for storage.
 - **Supported OS**: 
   + _Debian Like_: Debian 10 (Buster) LTS, Debian 9 (Stretch) LTS / Raspbian Stretch, Debian 8 (Jessie) LTS / Raspbian Jessie, Ubuntu 20.04 (Focal Fossa), Ubuntu 18.04 (Bionic Beaver), Ubuntu 16.04 (Xenial Xerus)
-  + _RHEL_: RHEL6/CentOS 6 
+  + _RHEL_: RHEL7, CentOS7,  RHEL6, CentOS 6 
   + _MacOSX_: 10.13/11.1 
   + _Windows_: 10 (Cells Home only)
     
