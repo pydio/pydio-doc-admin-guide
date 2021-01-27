@@ -20,13 +20,24 @@ Cells ships as a set of precompiled static binaries, one for each operating syst
 
 ## MySQL/Maria DB versions
 
-An MySQL database, along with a privileged user (e.g. `pydio`) to access it. 
+Supported server versions:
 
  + [MariaDB version 10.3 and above](https://downloads.mariadb.org/mariadb/repositories)
  + [MySQL version 5.7 and above](https://dev.mysql.com/doc/refman/8.0/en/installing.html) (_**except 8.0.22** that has a bug preventing cells to run correctly_)
 
+**Creating a database and a privileged user**
+
+```SQL
+CREATE USER 'pydio'@'localhost' IDENTIFIED BY '<your-password-here>';
+CREATE DATABASE cells;
+GRANT ALL PRIVILEGES ON cells.* to 'pydio'@'localhost';
+FLUSH PRIVILEGES;
+```
+
+
 **Important Settings** 
-   + Make sure not to leave the `max_connections` to its default value (151) while going live in production.
+
+Make sure not to leave the `max_connections` to its default value (151) while going live in production.
 
 
 ## Embedded webserver
