@@ -4,22 +4,9 @@ You can find more use cases and solution in [our FAQ](https://pydio.com/en/docs/
 
 ## Cells Server
 
-### Progress freezes during browser install
-
-- No progress appears during install
-
-During the installation process, if there is no progress bar but the console is still showing some activities; it is OK. A manual refresh at the end of the install will load the login page.
-
-[:image-popup:1_quick_start/troubleshooting_install_no_progress.png]
-
-- The wizard is stuck at the end of the install
-
-After the install, if the page does not refresh automatically in tls self-signed mode it is OK.  
-A manual refresh will load the login page.
-
 ### Unable to bind port 443
 
-_You have configured the bind URL with port 443 and enable redirection of port 80. You get an error page "Unable to connect" when you try to connect_.
+_You have configured the [Binding Address](./glossary) with port 443 and enable redirection of port 80. You get an error page "Unable to connect" when you try to connect_.
 
 Check the error log, if you sse such an error:
 
@@ -35,13 +22,13 @@ sudo setcap 'cap_net_bind_service=+ep' cells
 
 ### 0.0.0.0 address
 
-If you are behind a reverse proxy and get `404: this page is not served on this interface` when trying to access the web UI, you can try to use the 0.0.0.0 generic IP address in your bind URL.
+If you are behind a reverse proxy and get `404: this page is not served on this interface` when trying to access the web UI, you can try to use the 0.0.0.0 generic IP address in your [Binding Address](./glossary).
 
-This basically tells to the embedded web server that acts as the main internal gateway of the application to accept all requests on this port.
+This basically tells to the [Cells Gateway](./glossary) of the application to accept all requests on this port.
 
-In contrary, if you give a specific valid IP or a domain name in the bind URL, the embedded web server checks the "HOST" header of the incoming requests. If the header does not **exactly** matches with the DN or IP of the bind URL, the server throw a 404 file not found error.
+In contrary, if you give a specific valid IP or a domain name in the Binding Address, the Cells Gateway checks the "HOST" header of the incoming requests. If the header does not **exactly** matches with the DN or IP of the Binding Address, the server throw a 404 file not found error.
 
-Remember, when the bind URL is `0.0.0.0:<port>` (the port is compulsory), and if you are not using a well-known port 80 or 443, you must also include the port in the external URL that must look like:  `<scheme>://<IP or DN>:<port>`, for instance `http://localhost:8080`, otherwise, you might stay stuck on a grey _loading_ page.
+Remember, when the Binding Address is `0.0.0.0:<port>` (the port is compulsory), and if you are not using a well-known port 80 or 443, you must also include the port in the external URL that must look like:  `<scheme>://<IP or DN>:<port>`, for instance `http://localhost:8080`, otherwise, you might stay stuck on a grey _loading_ page.
 
 ### Hydra Error after install
 
@@ -81,7 +68,7 @@ Make sure that your workspaces can be synchronized (enable settings in workspace
 
 ### Unable to create or list folder on local system
 
-- macOS users might require permissions, **System Preferences > Security & Privacy > Files and Folders** and allow access.
+- MacOSX users might require permissions, **System Preferences > Security & Privacy > Files and Folders** and allow access.
 
 ### Missing package (LINUX)
 

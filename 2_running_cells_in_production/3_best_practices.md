@@ -1,3 +1,3 @@
-Cells best practices on production deployments. 
+This section provides a set of best practices for production deployments. 
 
 [:summary]

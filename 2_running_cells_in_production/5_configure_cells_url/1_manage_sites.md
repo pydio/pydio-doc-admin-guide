@@ -1,4 +1,4 @@
-A site is a configuration item that indicates to the Cells Gateway how you have setup your network. It enforces the ways to access
+A site is a configuration item that indicates to the [Cells Gateway](./glossary) how you have setup your network. It enforces the ways to access
 your Cells.
 
 The default configuration will get Cells up and running quickly on a server or on a local machine. You can extend that access
