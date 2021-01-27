@@ -35,6 +35,10 @@ _Get started quickly with Cells static binaries. See also [Docker deployment](./
     <div class="logo-title">Debian/Ubuntu</div>
 </a>
 <a class="logo">
+    <div class="logo-img"><img src="https://github.com/pydio/pydio-doc-admin-guide/blob/cells-v2.2/images/logos-os/macos.png?raw=true"/></div>
+    <div class="logo-title">Mac OSX</div>
+</a>
+<a class="logo">
     <div class="logo-img"><img src="https://github.com/pydio/pydio-doc-admin-guide/blob/cells-v2.2/images/logos-os/windows.png?raw=true"/></div>
     <div class="logo-title">Windows</div>
 </a>
