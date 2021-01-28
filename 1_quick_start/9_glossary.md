@@ -12,6 +12,7 @@ This section provides definitions for commonly used terms of this documentation.
 |Site | | |
 |Binding Address  | [ip:port] declared by a Site to bind to a network interface, as would a classical http server do.|   |
 |External URL | Fully qualified URL http[s]://<ip|domain>[:port] |   |
+|FQDN|||
 |Datasource |   |   |
 |Workspace |   |   |
 |Role |   |   |
