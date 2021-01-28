@@ -8,8 +8,8 @@ This section provides definitions for commonly used terms of this documentation.
 |cells-sync| **Desktop** synchronization client. `cells-sync` communicates with a running Cells server. | |
 |cells-client| Command line client that provide tools to communicate with a running Cells server via its REST API. | |
 |Service | A service, or micro-service, is an independant brick that exposes a set of internal APIs inside Cells. For example, there are services for managing users, maganing workspaces, managing logs, etc.   | [Cells Internals](./pydio-cells-internals)  |
-|Gateway |   |   |
-|Site | | |
+|Gateway | Receives all incoming HTTP/TCP connections to Cells and acts as a load balancer / proxy / routing service to the multiple microservices of the Cells environment |   |
+|Site | Configuration item describing an entrypoint to the Gateway | |
 |Binding Address  | [ip:port] declared by a Site to bind to a network interface, as would a classical http server do.|   |
 |External URL | Fully qualified URL http[s]://<ip|domain>[:port] |   |
 |FQDN|||
