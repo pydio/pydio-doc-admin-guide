@@ -11,7 +11,7 @@ This section provides definitions for commonly used terms of this documentation.
 |Gateway | Receives all incoming HTTP/TCP connections to Cells and acts as a load balancer / proxy / routing service to the multiple microservices of the Cells environment |   |
 |Site | Configuration item describing an entrypoint to the Gateway | |
 |Binding Address  | [ip:port] declared by a Site to bind to a network interface, as would a classical http server do.|   |
-|External URL | Fully qualified URL http[s]://<ip|domain>[:port] |   |
+|External URL | Full URL http[s]://&lt;ip&#124;domain&gt;[:port] |   |
 |FQDN|||
 |Datasource |   |   |
 |Workspace |   |   |
