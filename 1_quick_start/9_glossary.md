@@ -1,6 +1,5 @@
 This section provides definitions for commonly used terms of this documentation.
 
-
 | Term  | Definition  |
 |---|---|
 |cells| Static binary, compiled for each platform. `cells` contains **all microservices** necessary to launch the server platform, as well as a couple of command-line tools to communicate with a running Cells instance. |
@@ -17,8 +16,8 @@ This section provides definitions for commonly used terms of this documentation.
 |Workspace | Virtual access to any file/folder indexed in any datasource. Workspaces are managed by Administrators. |
 |Cell | Virtual access granted by users to others on the files they are allowed to see. Cells inherit their parent Workspace security rules, and can be seen as "sandboxed" user-managed workspaces. |
 |Role-Based ACL | Permissions inheritance system based on roles and groups  |
-|Rule-Based ACL | Permissions inheritance system based on Security Policies  | 
-|Role | Set of permissions that can be applied to any user.  | 
-|Group | Group of users, coming with their own set of permissions. Users can only belong to one group and inherit their parent groups permissions. |   
+|Rule-Based ACL | Permissions inheritance system based on Security Policies  |
+|Role | Set of permissions that can be applied to any user.  |
+|Group | Group of users, coming with their own set of permissions. Users can only belong to one group and inherit their parent groups permissions. |
 |Security Policy | Condition-based rules dynamically computed to filter listings and accesses. Matched against the user/query/metadata context. |  
-|Versioning Policy | Admin-defined rules for keeping/removing/pruning files versions in each datasource.  | 
+|Versioning Policy | Admin-defined rules for keeping/removing/pruning files versions in each datasource.  |
