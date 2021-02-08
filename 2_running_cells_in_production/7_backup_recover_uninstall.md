@@ -103,20 +103,10 @@ You should connect as an `admin` user after first restart and check that all dat
 
 ## Clean uninstall
 
-In vanilla single node setups, Pydio Cells does not put resources in multiple folders: everything is centralized in the `CELLS_WORKING_DIR` folder and in the database.
-So, to remove Pydio Cells, you mainly need to remove these 2 items and the Cells binary.
+If you want to uninstall Cells, you need to :
 
-To remove the folder on _linux_ distributions you can make use of rm such as :
-`rm -r ~/.config/pydio/cells`.
+- Stop cells service
+- Drop the database cells
+- Empty the [Working Directories](./working-directories)
 
-To remove the cells folder on _MacOS_ this :
-`rm -r ~/Library/Application\ Support/Pydio/cells`.
-
-_**WARNING**: if you are using the default path, do not make the mistake to remove the parent 'pydio' folder, other applications, typically the Cells Sync Client, have their working default directory as siblings of the `cells` folder and store configuration and data inside it_.
-
-For any additional datasource that you will not use anymore, you can clear the parent folder.
-
-Then clean the database with this command after you have logged in mysql :
-`DROP DATABASE cells;` (or any other name if you named it).
-
-You are then good to go: there is nothing else remaining of the previous install or of Pydio Cells in general.
+_**WARNING**: be careful not to remove the parent 'pydio' folder, other applications, typically the Cells Sync Client, have their working default directory as siblings of the `cells` folder and store configuration and data inside it_.

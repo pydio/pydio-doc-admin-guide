@@ -72,13 +72,3 @@ By default, the application is installed using the "self-signed certificate" mod
 It is recommended to run the Cells server behind a reverse proxy that exposes a valid TLS certificate when in production.
 
 If you do not provide a valid registered FQDN via "user data" upon launch, it is then configured using the Amazon automatically provided public IP address and the frontend is publicly available at `https://<your-instance-public-ip-address>`.
-
-## Cells Clean Re-install
-
-If you are in testing mode and want to reset your vanilla install, you only need to:
-
-- Stop cells service
-- Drop and recreate the DB
-- Empty `/var/cells` working directory
-- Run `cells configure` **as user `pydio`**
-- Restart the Cells service by running `sudo systemctl restart cells`  
