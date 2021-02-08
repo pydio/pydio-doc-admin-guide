@@ -22,6 +22,7 @@ In the "services" section, add a JSON section for `pydio.gateway.sftp`
   "services": {
     [...]
     "pydio.gateway.sftp": {
+      "enabled": true,        
       "hostKeyFile": "/path/to/id_rsa",
       "port": 2022,
       "tmpDir": "/path/to/custom/temp/directory",
@@ -35,6 +36,7 @@ Configuration values are described below.
 
 |Name|Type|Mandatory|Default|Description|
 |---|---|---|---|---|
+|enabled|boolean|true| false |Start sFTP Gateway|
 |hostKeyFile|string|true| |Full path to the generated private key|
 |port|integer|false|2022|Port used to expose the SFTP Gateway|
 |tmpDir|string|false|os.TempDir()|Temporary directory used to store uploaded files (see Limitations below)|
