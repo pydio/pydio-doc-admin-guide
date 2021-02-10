@@ -13,7 +13,8 @@ These files are automatically rotated based on their size (10MB max per file) an
 
 ### Internal DB
 
-In order to be able to easily display them and search them in the user interface, logs are **also** collected by an internal service and stored inside an internal DB (Bleve). 
+In order to be able to easily display them and search them in the user interface, logs are **also** collected by an internal service and stored inside an internal DB (Bleve).
+
 This on-file database can be found under `$CELLS_SERVICE_DIR/pydio.grpc.log/syslog.bleve`. This one is automatically rotated based on its size (200MB per DB), but it is not truncated automatically.
 
 When the size of the DB reaches its maximum size, it is replicated for backup, thus in the folder you may see the following listing. DB folder with **the greatest index is always most recent**.
@@ -77,5 +78,5 @@ Or
 # Truncate at 100MB
 $> ./cells admin resync --service pydio.grpc.audit --path=truncate/104857600
 ```
-Beware that you should export your audit log before truncating them, as they contain sensitive information!
 
+Beware that you should export your audit log before truncating them, as they contain sensitive information!
