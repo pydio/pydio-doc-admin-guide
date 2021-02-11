@@ -85,7 +85,7 @@ docker exec 5fe /bin/sh
 
 ### Data layout
 
-If you want to use named volumes, here is an overview of the important files :
+If you want to use named volumes, here is an overview of the important files:
 
 - `/var/cells`: main working dir
 - `/var/cells/pydio.json`: main configuration file
@@ -117,18 +117,18 @@ We gather some [relevant sample configuration](https://github.com/pydio/cells/tr
 The Cells Sync Desktop Application might require an additional port, typically if you run behind a reverse proxy that performs TLS termination. In such case:
 
 - First read this, [Setup Cells Server for Cells Sync](/en/docs/kb/client-applications/setup-cells-server-cellssync)
-- Make sure to start a container with this env set `PYDIO_GRPC_EXTERNAL`
-- Expose the port that you previously set with `PYDIO_GRPC_EXTERNAL`
+- Make sure to start a container with this env set `CELLS_GRPC_EXTERNAL`
+- Expose the port that you previously set with `CELLS_GRPC_EXTERNAL`
 
 #### Example
 
 Assuming that port **33060** is the port chosen for gRPC, the command should have those two additional parameters,
 
-- `-e PYDIO_GRPC_EXTERNAL=33060` (sets the env variable)
+- `-e CELLS_GRPC_EXTERNAL=33060` (sets the env variable)
 - `-p 33060:33060` (exposes the port)
 
 The entire command should look like this:
 
 ```sh
-docker run -d -e CELLS_EXTERNAL=192.168.0.172:8080 -e CELLS_BIND=192.168.0.172:8080 -e PYDIO_GRPC_EXTERNAL=33060 -p 33060:33060 -p 8080:8080 pydio/cells
+docker run -d -e CELLS_EXTERNAL=192.168.0.172:8080 -e CELLS_BIND=192.168.0.172:8080 -e CELLS_GRPC_EXTERNAL=33060 -p 33060:33060 -p 8080:8080 pydio/cells
 ```
