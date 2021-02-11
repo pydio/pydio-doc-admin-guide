@@ -6,7 +6,7 @@ You can find a ready-to-use Amazon Machine Image (AMI) on the Amazon Web Service
 
 [https://aws.amazon.com/marketplace/pp/B08CNGR8ZP](https://aws.amazon.com/marketplace/pp/B08CNGR8ZP)
 
-This Cells Enterprise package is based on **Amazon Linux 2** AMI and has been enriched with necessary third parties and configuration to provide an easy to run instance of the Cells server out of the box.
+This Cells Enterprise package is based on (Amazon Linux 2)[https://aws.amazon.com/amazon-linux-2] AMI and has been enriched with necessary third parties and configuration to provide an easy to run instance of the Cells server out of the box.
 
 ## Quick Start
 
