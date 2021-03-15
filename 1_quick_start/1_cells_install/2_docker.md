@@ -19,7 +19,7 @@ Before you go live, you probably want to configure persistent data in a docker v
 
 ```sh
 FQDN=<Put Your FQDN here>
-docker run -d  -v /home/user/cells_dir:/var/cells -e CELLS_BIND=:443 -e CELLS_EXTERNAL=https://$FQDN:8080 --network=host pydio/cells
+docker run -d  -v /home/user/cells_dir:/var/cells -e CELLS_BIND=:443 -e CELLS_EXTERNAL=https://$FQDN --network=host pydio/cells
 ```
 
 Where:
