@@ -43,7 +43,7 @@ All _file based_  datasources are defined by 4 things:
 1. a related index that is stored as tables in the configured DB
 1. _for file system based DS_: a `.minio.sys` folder that is located in the parent of the DS root folder (this contains s3/minio meta data for the files)
 
-You can find [more details about datasources here](../../developer/data).
+You can find [more details about datasources here](../../developer-guide/data).
 
 To backup such a datasource, we must at least backup configuration (see preceding paragraph) and the files.
 The index and the content of the `.minio.sys` folder can be automatically restored after data restoration by running a resync from the admin interface.
