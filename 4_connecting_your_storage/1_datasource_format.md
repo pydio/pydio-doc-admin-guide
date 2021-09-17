@@ -39,13 +39,13 @@ For admins, it can be a bit scary to have a look at their storage and see just a
 
 To backup the index of "ds1" inside a "snapshot.db" file, run:
 ```
-cells admin resync --datasource=ds1 --path=write/snapshot.db 
+cells admin datasource snapshot --datasource=ds1 --operation=dump --basename=snapshot.db 
 ```
-Then you can restore this index with the opposite command
+Then you can restore this index with the opposite command:
 ```
-cells admin resync --datasource=ds1 --path=read/snapshot.db 
+cells admin datasource snapshot --datasource=ds1 --operation=load --basename=snapshot.db 
 ```
-or create a new datasource and specify "snapshot.db" in the Advanced options.
+Beware that the "load" operation will override the current index data! You can also create a new datasource and specify "snapshot.db" in the Advanced options.
 
 In case of totally uninstalling Cells, the datasource format migration tool (see below) allows the admin to transform a flat-storage to a structured one.
 
