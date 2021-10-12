@@ -2,7 +2,7 @@ Cells Enterprise Distribution provides a higher degree of security for users by 
 
 | Yubikey                                                                        | Google Authenticator (or any TOTP compatible app)                                                 |  Duo Security Push                            |
 | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------- |-----|
-| [:image:5_securing_your_data/securing_user_access/multi_auth/yubikey_logo.png] | [:image-popup:5_securing_your_data/securing_user_access/multi_auth/google_authenticator_logo.png] | [:image-popup:5_securing_your_data/securing_user_access/multi_auth/duo-security-logo.png]| 
+| [:image:5_securing_your_data/securing_user_access/multi_auth/yubikey_logo.png] | [:image-popup:5_securing_your_data/securing_user_access/multi_auth/google_authenticator_logo.png] | [:image-popup:5_securing_your_data/securing_user_access/multi_auth/duo-logo.png]| 
 
 
 To enable Yubikey or TOTP, go to `Cells Console >> Application Parameters >> Authentication`.
