@@ -1,6 +1,7 @@
 In this chapter, we have a look at the mailing system integrated to Pydio Cells and guide you through some sample configurations.
 
-**Please Note**: this configuration requires a **restart of the server** to be properly taken into account.
+**Please note:** when changing these configurations, the assiociated `pydio.grpc.mailer` service will be automatically restarted, so the changes may not be impacted until after 10 to 20 seconds.
+At restart time, service tries to dial a network connection to the specific mailing service, and if something goes wrong, the application will be aware that there is no valid mailer configured.
 
 ## Configure Mails
 
@@ -13,7 +14,19 @@ To configure the mailer, go to **Application Parameters > Mailers**:
 
 Depending on the engine you have chosen, you see one of the following form:
 
-### 1. SMTP Server
+### 1. Disable Mailer
+
+The default value, no mailer is configured. Application will never try to send emails.
+
+### 2. No-Op Mailer
+
+By selecting this mailer, emails will be created by the application but they will just be collected without further processing.
+This can be handy typically for **staging servers** where you want to act as if a mailer is enabled, but make sure that your users
+never receive actual emails. 
+
+This mailer "honeypot" can either fully discard emails, or write them as text to a file for debugging purpose.
+
+### 3. SMTP Server
 
 | Field               | Description                                                                                                       |
 | ------------------- | ----------------------------------------------------------------------------------------------------------------- |
@@ -23,28 +36,32 @@ Depending on the engine you have chosen, you see one of the following form:
 | Connection Password | password of the user above                                                                                        |
 | Queue Type          | Right now do not modify this field.                                                                               |
 
-### 2. Sendmail
+### 4. Sendmail
 
 In order to use sendmail:
 
-- Make sure that you have installed and configured it on your server
-- (Depending on which version you are using), make also sure that the `/usr/bin/sendmail` path is correct.
-- For more security and to protect the field from getting exposed or used with paths that should not be accessible, you can configure the path for the mailer inside the Pydio.json file located in `~/.config/pydio/cells/<here>`, look for this part and put the where your mailer is:
+ - Make sure that you have installed and configured it on your server
+ - The sendmail executable is set by default to `/usr/bin/sendmail`. Depending on your system and its version, you may have to adapt this executable. For security reasons, this **cannot be done directly from the interface** but must be manually edited inside the main configuration file. To achieve that, open `CELLS_WORKING_DIR/pydio.json` and look for the "pydio.grpc.mailer" section. 
 
 ```json
-    "pydio.grpc.mailer": {
-      "queue": {
-        "@value": "boltdb"
-      },
-      "sender": {
-        "@value": "sendmail",
-        "executable": "<your value>"
-      }
+ "services": {
+  //...
+  "pydio.grpc.mailer": {
+    "queue": {
+      "@value": "boltdb"
+    },
+    "sender": {
+      "@value": "sendmail",
+      "executable": "/path/to/custom/sendmail"  // Add this key directly in the file
+    }
+  },
+  //...
+}   
 ```
 
-### 3. Sendgrid
+### 5. Sendgrid
 
-To use sendgrid, you only have to:
+To use SendGrid API Service, you only have to:
 
 - Retrieve your specific **API key**
 - Put it in the corresponding field.
