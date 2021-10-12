@@ -1,24 +1,27 @@
 Following the standard 12-factor architecture pattern for micro-services, all logs are redirected by default to the standard output. They are also output in rotating log files under `CELLS_WORKING_DIR/logs/pydio.log`.
 
-### Production mode
+### Configuration
 
-By default, logs are formatted in an Apache-like format. To enable logs collection by external systems like ELK (Elastic Search, Logstash, Kibana), you have to switch to the "production" mode: log messages are then output in JSON format. When enabled, an embedded log collector will start storing and parsing them for easier search in the logs.
+By default, logs are formatted in an Apache-like format. An embedded log collector parses and stores them in a local index to enable easy search and analyse via the admin console. To enable logs collection by external systems like ELK (Elastic Search, Logstash, Kibana), you can switch to the "JSON" mode: log messages are then output in JSON format. 
 
-Switching to 'production' mode can be done by two ways:
+You can use the following flags (or they ENV variable equivalent):
 
-- Passing the `--log=production` parameter to the Pydio Cells `start` command.
-- Setting the **CELLS_LOGS_LEVEL** environment variable to "production":  you can use `export CELLS_LOGS_LEVEL=production` in the Command Line before starting Pydio Cells.
+- `log` (or `CELLS_LOG`): Sets the log level (debug, info, warn or error)
+- `log_json` (or `CELLS_LOG_JSON`): Sets the log output format to JSON instead of text
+- `log_to_file` (or `CELLS_LOG_TO_FILE`): Write logs on-file in CELLS_LOG_DIR
+
+Default is `--log info --log_json=false --log_to_file=true`: logs are outputted in console format at the Info level and appended to a CELLS_LOG_DIR/pydio.log file. 
 
 ### Browsing the logs
 
-Once production mode is activated, the logging service starts collecting and parsing logs and you can browse them in your admin dashboard under **Backend > Logs**:
+The logging service collects and parses logs. You can browse them in your admin dashboard under **Backend > Logs**:
 
 [:image-popup:2_running_cells_in_production/server_logs.png]
 
 You can read them as the following:
 
 1. **Date**: the at time when the event happened  
-2. **IP**: the ip if it happened elsewhere (could be a user etc...)  
+2. **IP**: the IP if it happened elsewhere (could be a user etc...)  
 3. **User** the username of whom it happened to  
 4. **Service**: the service that is handling it  
 5. **Message**: what happened with the service concerned (such as stopping, restarting, etc...)  
