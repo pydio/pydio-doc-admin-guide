@@ -43,11 +43,12 @@ All _file based_  datasources are defined by 4 things:
 1. a related index that is stored as tables in the configured DB
 1. _for file system based DS_: a `.minio.sys` folder that is located in the parent of the DS root folder (this contains s3/minio meta data for the files)
 
-You can find [more details about datasources here](../../developer-guide/data).
+To backup datasources, we must backup configuration, files and indexes. The index and the content of the `.minio.sys` folder can be automatically restored after data restoration by running a resync from the admin interface. But including this folder in your backups will gain quite some time on restoration.
 
-To backup such a datasource, we must at least backup configuration (see preceding paragraph) and the files.
-The index and the content of the `.minio.sys` folder can be automatically restored after data restoration by running a resync from the admin interface.
-You can yet safely include this folder in your backups: you will gain quite some time on restoration if you do not have to re-compute the index.
+For "structured storage" datasource, indexes can be rebuilt automatically. But indexes are really important for "flat storage" datasources, as files are stored as blob inside the storage, and if loosing indexes does not loose any actual data, it will loose the files and folders names and structure! Specific tools are provided to dump DB index directly into your storage (inside a specific file) to secure your backup/recovery processes.
+
+You can find [more details about datasources here](/docs/cells/v3/datasource-format). It is a good read to understand how data is actually stored inside the storage.
+
 
 #### S3 datasource
 
