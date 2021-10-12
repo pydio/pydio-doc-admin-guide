@@ -1,4 +1,5 @@
 In this section, we introduce the scheduler and show how you can optimize your workflow by scripting redundant tasks.
+The scheduler is available in all Cells edition: unleash its powers with our [Cells Flows](https://pydio.com/en/pydio-cells/cells-flows) module! 
 
 ### Using The internal Scheduler
 

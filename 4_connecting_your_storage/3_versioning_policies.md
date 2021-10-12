@@ -26,7 +26,11 @@ Go to your `Cells Console` then under **DataManagement > Storage use the "+ VERS
 [:image-popup:4_connecting_your_storage/versioning_add_policies.png]
 
 - **Storage**: Will define where the versions will be stored. The default values will use the default datasource (pydiods1 defined at install) under a specific "versions" bucket.
-- **Size Limits** Allows you to define a couple of limitations on a per-file basis or on a per-bucket basis to prune versions automatically when a given amount of storage space is reached.
-- **Retention Periods** Define how versions will be pruned on a timely basis. Each retention period is composed of two parameters:
+- **Size Limits**: Allows you to define a couple of limitations on a per-file basis or on a per-bucket basis to prune versions automatically when a given amount of storage space is reached.
+- **Retention Periods**: Define how versions will be pruned on a timely basis. Each retention period is composed of two parameters:
   - _Period Start_ : time elapsed since a version was created
   - _Max number of versions_: number of versions to keep during this period. Special numbers are -1 to keep all versions, or 0 to remove all versions.
+- **After original file deletion**: Define what to do with versions after a file is totally removed from a datasource.
+  - _Backup all existing versions_: will move all existing versions (inside the version datasource) to a dedicated folder
+  - _Backup most recent version_: will only keep the very last version (should correspond to the deleted file)
+  - _Delete all existing versions_: will remove versions
