@@ -20,7 +20,7 @@ The logging service collects and parses logs. You can browse them in your admin 
 
 You can read them as the following:
 
-1. **Date**: the at time when the event happened  
+1. **Date**: the time when the event happened  
 2. **IP**: the IP if it happened elsewhere (could be a user etc...)  
 3. **User** the username of whom it happened to  
 4. **Service**: the service that is handling it  

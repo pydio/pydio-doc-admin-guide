@@ -1,4 +1,4 @@
-As time goes by, running Cells in production may end up generating an important amount of log files and other non-business data.
+With time, running Cells in production may end up generating an important amount of log files and other non-business data.
 This page describes the locations you may have to watch for storage usage on your server, and eventually how you can automate cleaning/truncation of such data.
 
 ## System Logs
@@ -7,7 +7,7 @@ Assuming you are running in `--log=production` mode, all application logs will b
 
 ### Files
 
-Rotating files under `${CELLS_WORKING_DIR}/logs/`: these are outputed in JSON to be easily collected by external tools like Elastic/Logstash/Kibana stacks or equivalent.
+Rotating files under `${CELLS_WORKING_DIR}/logs/`: these are outputted in JSON for easy collection by external tools (Elastic/Logstash/Kibana stacks or equivalent).
   
 These files are automatically rotated based on their size (10MB max per file) and copies are removed after 28 days.
 
