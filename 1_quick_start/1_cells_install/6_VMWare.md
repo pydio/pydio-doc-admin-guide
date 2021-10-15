@@ -1,7 +1,7 @@
 The Pydio Cells image for VMWare is based on CentOS 7. It has been enriched with necessary third party software and pre-configured to provide an easy to run instance of the Cells server out of the box.  
-It is known to run in VSphere echosystems and in standalone ESXi hosts.
+It is known to run in VSphere ecosystems and in standalone ESXi hosts.
 
-Download the [latest VMWare image](https://download.pydio.com/latest/cells-enterprise/release/{latest}/vmware/Cells-Enterprise-VMWare-{latest}.zip). An md5 file is also available on the same location for integrity verification.
+Download the [latest VMWare image](https://download.pydio.com/latest/cells-enterprise/release/{latest}/vmware/Cells-Enterprise-VMWare-{latest}.zip). An MD5 file is also available at the same location for integrity verification.
 
 ## VM Requirements
 
@@ -28,13 +28,13 @@ A creation wizard pops up.
 
 ## Configure
 
-We display the URL address of the installer when you start your VM. Check in the console that is accessed from your VirtualBox GUI.
+We display the URL address of the installer when you start your VM. Check the console in the VirtualBox GUI.
 
 A self-signed certificate is used by default, you have to explicitelly accept it in your browser.
 
-Follow the steps of the wizard to finalize your setup. All parameters are set by default except the main administrator password. Upon termination, the installer saves everything, starts the `cells` service and exits. It can take up to a minute to reach the end.
+Follow the steps of the wizard to finalize your setup. All parameters are set by default except the main administrator password. When it's done, the installer saves everything, starts the `cells` service and exits. It can take up to a minute.
 
-At this step, you can log in the app with the credentials you have just defined and verify everything is up and running.
+At this step, you can log in the app with the credentials you have just defined and check everything is up and running.
 
 
 ## Configuration Details

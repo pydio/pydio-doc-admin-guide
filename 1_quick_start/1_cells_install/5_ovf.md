@@ -1,5 +1,5 @@
 
-We provide a Cells Enterprise Appliance package that follows the OVF standard.
+The Cells Enterprise Appliance package follows the OVF standard.
 
 It is an up-to-date, ready to use out of the box CentOS 7 image preconfigured with MariaDB 10.4 and Cells Enterprise distribution.  
 
