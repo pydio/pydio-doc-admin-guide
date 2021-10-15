@@ -8,19 +8,21 @@ Connect to Cells as an administrator and go to `Cells Console > People` menu.
 
 [:image:1_quick_start/yourdata/01-people.png]
 
-Here, you can create users and organize them into groups. By default, your data is organized in two Workspaces: **"Personal"** and **"Common Files"**. The former is a dedicated "home folder": each user will only see their own data inside this Personal workspace. The latter is a shared folder where everyone can work on the same files.
+Here, you can create users and organize them into groups. By default, your data is organized in two Workspaces: 
+- **"Personal"** is a dedicated "home folder": each user will only see their own data inside this Personal workspace.
+- **"Common Files"** is a shared folder where everyone can work on the same files.
 
-Workspaces can be seen as top folders used as basic unit for managing **"who can access what"**. To have a better understanding, open for instance your own admin user: in the workspace tab, you see that you have Read/Write permissions on the two default workspaces.
+Workspaces can be seen as top folders used as basic unit for managing **"who can access what"**. To have a better understanding, load your own admin user accesses: in the workspace tab, you see that you have Read/Write permissions on the two default workspaces.
 
 [:image:1_quick_start/yourdata/02-admin.png]
 
-If you remove the access to Common Files and go back to the home page, you directly see that you now only have the **"Personal"** workspace in the left-hand column.
+If you remove the access to Common Files and go back to the home page, you see straight away that you only have the **"Personal"** workspace in the left-hand column.
 
 You can manage these accesses at a fine-grained level (user per user), or a higher level (per group or per role). Actual accesses are computed for each user depending on their roles, groups and personal ACLs.
 
 ## Workspaces and Data Source
 
-Now that you understand how to manage access to the data, you may wish to create your own workspace, e.g. to mount an existing folder on your machine, to browse inside Cells. If you go to `Cells Console > Workspaces` and edit the Common Files workspace, you can see that the Data Access section points to an internal path `pydiods1/`.
+Now that you understand how to manage access to the data, you may wish to create your own workspace, e.g. mount an existing folder on your machine to browse inside Cells. If you go to `Cells Console > Workspaces` and edit the Common Files workspace, you can see that the Data Access section points to an internal path `pydiods1/`.
 
 [:image:1_quick_start/yourdata/03-commonfiles.png]
 
@@ -30,11 +32,11 @@ If you wish to mount an existing folder, e.g. `/var/data/mydata`, create a new d
 
 [:image:1_quick_start/yourdata/04-datasource.png]
 
-After you save the datasource, corresponding services start in background, including an indexation of your already existing data. This done, go back to the `Cells Console > Workspaces` menu and create a "My Data" workspace pointing toward this new datasource root. Set default permissions for this workspace (Read and Write for instance), which is equivalent to assigning the Read/Write ACL to all users and save.
+After you save the datasource, corresponding services start in background, including an indexation of your already existing data. Go back to the `Cells Console > Workspaces` menu and create a "My Data" workspace pointing toward this new datasource root. Set default permissions for this workspace (Read and Write for instance), which is equivalent to assigning the Read/Write ACL to all users and save.
 
 [:image:1_quick_start/yourdata/05-newws.png]
 
-Going back to the home page, you can now see the workspace and browse the data it contains!
+Go back to the home page. You can now see the workspace and browse the data it contains!
 
 [:image:1_quick_start/yourdata/06-mydata.png]
 
