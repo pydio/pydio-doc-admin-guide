@@ -1,17 +1,17 @@
 
-The [Pydio Cells image](https://hub.docker.com/r/pydio/cells/) is a container designed to be used in Docker environment. It only contains what is strictly necessary to run your server.
+The [Pydio Cells image](https://hub.docker.com/r/pydio/cells/) is a container designed to be used in a Docker environment. It only contains what is strictly necessary to run your server.
 
 ## Run as stand-alone container
 
-Pydio Cells only needs a MySQL/MariaDB Database [with the corresponding admin user](./requirements).
+Pydio Cells needs a MySQL/MariaDB Database [with a privileged user](./requirements).
 
-Lanch a test instance with:
+Launch a test instance with:
 
 ```sh
 docker run -d --network=host pydio/cells
 ```
 
-Finalise the configuration at [https://localhost:8080](https://localhost:8080) with your DB credentials and you are good to go.
+Enter your database credentials to finalise the configuration at [https://localhost:8080](https://localhost:8080) and you are good to go.
 
 If your server has a public IP address and no restriction on the chosen port (firewall...), your instance is also directly exposed at `https://<YOUR-SERVER-IP-ADDRESS>:8080`.
 
@@ -70,12 +70,12 @@ volumes:
 
 ### Commands
 
-When you `run` the image without command, it executes:
+The default commands when `running` the image are:
 
 - `cells configure` if no installation is found
 - `cells start` otherwise
 
-If you add a command, it is executed instead, e.g:
+If you specify a command, it willd be executed instead, e.g:
 
 ```sh
 docker run pydio/cells cells version
@@ -85,7 +85,7 @@ docker exec 5fe /bin/sh
 
 ### Data layout
 
-If you want to use named volumes, here is an overview of the important files:
+Below is a list of important files and data present in the volume:
 
 - `/var/cells`: main working dir
 - `/var/cells/pydio.json`: main configuration file
@@ -110,11 +110,11 @@ Below is an extract of relevant ENV variables that you can pass to the container
 
 ### More examples
 
-We gather some [relevant sample configuration](https://github.com/pydio/cells/tree/master/tools/docker/compose) in our main code base. You might find the example there interesting to fine tune your setup.
+We gather some [relevant sample configuration](https://github.com/pydio/cells/tree/master/tools/docker/compose) in our main code base. Find the example that suits you and fine tune your setup.
 
 ### Cells Sync
 
-The Cells Sync Desktop Application might require an additional port, typically if you run behind a reverse proxy that performs TLS termination. In such case:
+The Cells Sync Desktop Application might require an additional port, for example if you run behind a reverse proxy that performs TLS termination. In such case:
 
 - First read this, [Setup Cells Server for Cells Sync](/en/docs/kb/client-applications/setup-cells-server-cellssync)
 - Make sure to start a container with this env set `CELLS_GRPC_EXTERNAL`
