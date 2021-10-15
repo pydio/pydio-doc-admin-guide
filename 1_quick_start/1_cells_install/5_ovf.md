@@ -1,7 +1,7 @@
 
-We provide a packaged Cells Enterprise Appliance that follows the OVF standard.
+We provide a Cells Enterprise Appliance package that follows the OVF standard.
 
-It is an up-to-date CentOS 7 image that contains a preconfigured MariaDB 10.4 and the Cells Enterprise distribution binary, ready to use out of the box.  
+It is an up-to-date, ready to use out of the box CentOS 7 image preconfigured with MariaDB 10.4 and Cells Enterprise distribution.  
 
 Download the [latest OVF image](https://download.pydio.com/latest/cells-enterprise/release/{latest}/ovf/Cells-Enterprise-OVF-{latest}.zip). An md5 file is also available on the same location for integrity verification.
 
@@ -14,7 +14,7 @@ Download the [latest OVF image](https://download.pydio.com/latest/cells-enterpri
 
 ## Setup in Oracle VirtualBox
 
-We detail here the steps to launch the Pydio Cells appliance with Oracle VirtualBox. The process with other hypervisors is very similar.
+We detail here the steps to launch the Pydio Cells appliance with Oracle VirtualBox. The process is very similar to other hypervisors.
 
 - Import the image into VirtualBox
 - Configure the virtual network interface:
@@ -27,11 +27,11 @@ _Warning:_ even if the correct Name is already shown, click on it and validate, 
 
 ## Configure
 
-We display the URL address of the installer when you start your VM. Check in the console that is accessed from your VirtualBox GUI.
+We display the URL address of the installer when you start your VM. Check the console in the VirtualBox GUI.
 
-A self-signed certificate is used by default, you have to explicitelly accept it in your browser.
+A self-signed certificate is used by default, you have to explicitly accept it in your browser.
 
-Follow the steps:
+Follow the steps below:
 
 - Accept EULA
 - Enter your license key
@@ -39,9 +39,9 @@ Follow the steps:
 - Choose a password for the admin user
 - Launch installation. It can take up to a minute to reach the end.
 
-The installer service is disabled when the configuration terminates successfully.
+The installer service is disabled once the configuration terminates successfully.
 
-At this step, you can login with the credentials you have defined and verify everything is up and running.
+At this step, you can login with the credentials you have defined and check everything is up and running.
 
 ## Configuration Details
 
