@@ -8,7 +8,7 @@ Assuming you are running in `--log=production` mode, all application logs will b
 ### Files
 
 Rotating files under `${CELLS_WORKING_DIR}/logs/`: these are outputted in JSON for easy collection by external tools (Elastic/Logstash/Kibana stacks or equivalent).
-  
+
 These files are automatically rotated based on their size (10MB max per file) and copies are removed after 28 days.
 
 ### Internal DB
@@ -50,7 +50,7 @@ syslog.bleve.001
 
 **Cleaning DB folders with "Resync" command**
 
-You can also clean these databases by sending a "resync" instruction to the log service, with a special path value 
+You can also clean these databases by sending a "resync" instruction to the log service, with a special path value
 of `truncate/BYTESIZE` where BYTESIZE is the size you want to keep.
 
 ```SH
@@ -61,7 +61,7 @@ $> ./cells admin resync --service pydio.grpc.log --path=truncate/104857600
 ## [ED] Audit Logs
 
 In Cells Enterprise, Audit Logs are handled in the same way as system logs. You can use methods described in the previous
-section, just replacing the `pydio.grpc.log` service by `pydio.grpc.audit`. 
+section, just replacing the `pydio.grpc.log` service by `pydio.grpc.audit`.
 
 For example:
 
