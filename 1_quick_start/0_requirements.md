@@ -43,3 +43,24 @@ As such, unlike old versions of Pydio, you **do not** need Apache or equivalent.
 
 Providing web access to the platform, this Gateway will need to "bind" itself to an available TCP port like a standard
 web server (typically 80/443, or any other port).
+
+## Network requirements
+
+# Gateway
+Cells provides its own webserver as a unified Gateway to public-facing services. As such, unlike old versions of Pydio, you **do not** need Apache or equivalent.
+
+The Gateway will "bind" to a TCP Port like a standard web server. The port number used is defined in the ./cells configure sites command, or directly as a parameter of the start command in the command line interface.
+
+_This is the port that need to be opened in your firewall to make Cells accessible outside the server._
+
+| Port    | Default   | CLI Flag |
+| ------- | --------- | -------- |
+| Gateway | 8080      | --bind
+
+# Services
+Cells uses TCP/IP connections to communicate between services. Most of the services use random available ports. The following are using pre-defined ports, that can be overridden in all commands that refer to services in the command line interface (eg start, admin, ...)
+
+| Port     | Default | CLI Flag        |
+| -------- | ------- | --------------- |
+| Registry | 8000    | --port_registry |
+| Broker   | 8003    | --port_broker   |
