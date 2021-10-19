@@ -15,7 +15,7 @@ This is a specific case of mapping, in order for a user to be assigned one or mo
 
 The values of `memberOf` attribute can contain any group of the LDAP directory: you might want to narrow down the list of the groups that are to be mapped in Cells by using group filtering.
 
-[:image-popup:3_connecting_your_users/ldap/ldap_4.png]
+[:image:3_connecting_your_users/ldap/ldap_4.png]
 
 _The above screenshot shows an example of `memberOf` mapping, where:_
 
