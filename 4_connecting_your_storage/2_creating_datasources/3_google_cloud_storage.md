@@ -16,7 +16,7 @@ then click on **Create**, it will generate and download automatically a JSON fil
 
 Assuming that you already have created your bucket, here's how you connect a GCS bucket to a Cells datasource:
 
-[:image-popup:4_connecting_your_storage/datasource_config/gcs_ds_interface.png]
+[:image:4_connecting_your_storage/datasource_config/gcs_ds_interface.png]
 
 * Bucket Name : put your bucket name.
 * GCS JSON Credentials: put the content of the file that we generated above with your gcs account.
