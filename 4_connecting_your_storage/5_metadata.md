@@ -36,7 +36,7 @@ Metadata type are various here are some example of use case.
 
 Below is a preview of how these various types appear in the metadata edition form.
 
-[:image:4_connecting_your_storage/metadata-sample.png]
+[:image:4_connecting_your_storage/metadata-samples.png]
 
 ### Visibility Restrictions
 
