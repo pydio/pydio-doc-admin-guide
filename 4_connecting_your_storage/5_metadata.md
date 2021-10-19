@@ -34,6 +34,10 @@ Metadata type are various here are some example of use case.
 | **Color Labels**    | Preset list of colored tags (legacy, use Selection instead)              |
 | **JSON**            | Arbitrary JSON. This type is used by specific plugins to attach data to files.   |
 
+Below is a preview of how these various types appear in the metadata edition form.
+
+[:image:4_connecting_your_storage/metadata-sample.png]
+
 ### Visibility Restrictions
 
 In addition of enriching file info, metadata are use in may others part of Cells like the search engine, the security policies, the tasks scheduling and many other features. When defining a metadata the admin can choose  whether or not it is visible or editable by other everyone. The options help adjusting metadata restrictions:
