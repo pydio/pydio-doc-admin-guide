@@ -69,6 +69,10 @@ You can also edit the cell change it's content and parameters (the same interfac
 
 ### Public link
 
+When looking at Public Links, a red flag indicates that a link has no protection set (no password, no expiration date). This can be handy to quickly review "fully public" links and alert their owner to check if this is a normal situation.
+
+[:image:5_securing_your_data/auditing_accesses/unprotected-public-link.png]
+
 You can retrieve all the activity that happened around a public link the same way.
 (By clicking the graph button on the right of the green icon and name of the owner)
 it will display a recap of who accessed the public link and such.
