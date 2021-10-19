@@ -78,7 +78,7 @@ pydio-admin@example.com
 cn=pydio-admin,ou=company,dc=example,dc=com
 ```
 
-**Note:** in Active Directory, it is highly recommended to use a dedicated LDAP user with delegated read privileges on the corresponding users. This can be done via the `Read all user information` task. You can visit [this link for further information](https://www.msptechs.com/safely-delegate-control-active-directory/).  
+**Note:** in Active Directory, it is highly recommended to use a dedicated LDAP user with delegated read privileges on the corresponding users. This can be done via the `Read all user information` task. You can visit [this link for further information](https://stealthbits.com/blog/delegated-permissions-in-active-directory/).  
 In Active Directory, you can get the dn of the chosen user user via the properties popup:
 
 [:image-popup:3_connecting_your_users/ldap/Selection_874.png]
@@ -91,12 +91,16 @@ The password of the above user
 
 Turn this option ON if you are using a self-signed certificate **that you trust**. Use this option with extra care and at your own risk.
 
-#### 6 & 7) Root Certificate Path and Data
+#### 6) Root Certificate Path
 
 This is only used for TLS and StartTLS connections.
-You need to specify the absolute path to the certificate of the LDAP server (6) or the content of this certificate in base64 format (7).
+You need to specify the absolute path to the certificate of the LDAP server
 
-**Note:** You can retrieve the public part of your server's certificate using the following command:
+#### 7) Root Certificate Data
+
+This option allow you directly use a base64 format certificate to config the secured ldap connection. This is a base 64 non-linebreak string.
+
+**Note:** You can retrieve the public part of your server's certificate using the following command. This command also allow you test the 
 
 ```sh
 openssl s_client -showcerts -connect ldapserver.com:389 </dev/null 2>/dev/null|openssl x509 -outform PEM >mycertfile.pem
@@ -140,7 +144,7 @@ Additionally, you have to specify at least on simple condition that must be met 
 - Only import users whose *department* attribute value is *staff*:
   - `(&(objectClass=user)(department=staff))`
 
-If you are not very familiar with LDAP, you might find [this article on Microsoft website](https://social.technet.microsoft.com/wiki/contents/articles/5392.active-directory-ldap-syntax-filters.aspx) useful to get more information about LDAP syntax and get further examples.
+If you are not very familiar with LDAP filter, you might find [this article on Microsoft website](https://social.technet.microsoft.com/wiki/contents/articles/5392.active-directory-ldap-syntax-filters.aspx) useful to get more information about LDAP syntax and get further examples.
 
 When using Active Directory, it is highly recommended to create a specific security group to ease filtering. Typically creating a `staff` security group in the `company` organisation and adding users and groups to it.
 
@@ -193,61 +197,4 @@ If you need to only map values starting by `it_`, you can use the _preg_ format.
 - **Rule String:** `preg:^it_`
 - **Right Attribute:** `Roles`
 
-### MemberOf mapping
 
-This is a specific case of mapping, in order for a user to be assigned one or more roles in Pydio Cells depending on the `memberOf` user attribute that is defined in your external directory. `memberOf` is a multiple value attribute of user object which itself contains a list of groups where this user is a member. You should define a rule.
-
-- **Left Attribute:** `memberOf`
-- **Rule String:**
-- **Right Attribute:** `Roles`
-
-The values of `memberOf` attribute can contain any group of the LDAP directory: you might want to narrow down the list of the groups that are to be mapped in Cells by using group filtering.
-
-[:image-popup:3_connecting_your_users/ldap/ldap_4.png]
-
-_The above screenshot shows an example of `memberOf` mapping, where:_
-
-1) toggles this feature ON and OFF
-
-2) Mapping: defines the name of the attribute that is to be used *in your LDAP server*. This is useful to emulate the `memberOf` feature if it is not supported by your implementation.
-
-3) DN: is the DN of one or more organization unit in the LDAP directory in which the connector searches for groups. If memberOf values have some groups in other locations, they will be ignored.
-
-4) Group Filter: Like **User Filter**
-  Example: `(objectClass=group)` or `(objectClass=groupOfNames)`
-
-5) ID Attribute: Pydio will take the value of this attribute of group object to use as **Role ID** in Cells.
-
-Some LDAP directories do not support `memberOf` attribute by default.  
-If you turn off the `Native MemberOf support` toggle, Cells tries to calculate this attribute from the `Fake memberof Attribute` value and its format.
-
-- Fake `memberOf` Attribute: name of the attribute of group object which holds the member identity. In OpendLDAP, this value is usually `member` or `memberuid`.
-- Depending on the value of `Fake memberOf Attribute` and the schema of your LDAP, the corresponding format is usually `dn` or `uid`.
-
-Values of these two options are usually:
-
-- **Fake memberOf Attribute:** `member`
-- **Fake memberOf Attribute Format:** `dn`
-
-or
-
-- **Fake memberOf Attribute:** `memberuid`
-- **Fake memberOf Attribute Format:** `uid`
-
-## Policy fine tuning
-
-As explained in the introduction, and due to the Master/Slave model of the integration, we strongly advise you to perform following fine tuning of your instance.
-
-### Remove My Account button
-
-The easiest way to prevent LDAP-defined users to change information that are defined in your external directory(ies), is to define a system wide rule that will disable the `My Account` button for the relevant users. This is achieved easily:
-
-- As an admin user, go to: `Cells Console >> Identity management >> People`,
-- Open for edit the parent group of your LDAP users,
-- Open the `Application Parameters` page,
-- In the upper right corner, choose the `All Workspaces` option from the `Add for...` drop down list,
-- Search for the `My Account` action of the `action.user` category by simply typing `my account` in the quick search field, and select it,
-- Ensure the MyAccount toggle is turned off.
-
-You are then set: the `My Account` button is then hidden for all corresponding users.  
-Depending on your specific configuration, you might want to do this for various groups or define a specific role that can be applied to relevant groups and users.

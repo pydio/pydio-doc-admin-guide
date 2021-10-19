@@ -14,9 +14,7 @@ This "format" is decoupled from the storage technology : any datasource (Local F
 
 In structured format, the files and folders you see in Cells are exactly the same as the storage contents. Any modification, even going through the Cells interface is always applied on the storage, and then reported to the index throught the real-time synchronization. 
 
-| Write | Storage | Sync | Index  | Read |
-|---|---|---|---|---|
-| Upload <br/> Mkdir... <br/> &nbsp; ==> | - Folder A<br/> &nbsp;&nbsp; + File A1<br/>- Folder B<br/> &nbsp;&nbsp; + file B1<br/>- file C<br/> |  &nbsp; ==>   |  - Folder A<br/> &nbsp;&nbsp; + file A1<br/>- Folder B<br/> &nbsp;&nbsp; + file B1<br/>- file C<br/>     | ==> List |
+[:image:4_connecting_your_storage/datasource-format-struct.png]
 
 In this configuration, modifying the storage content directly and triggering a manual re-synchronization makes sure that the index is always up-to-date.
 
@@ -37,9 +35,7 @@ For structured storage, backup/restore is just a matter of copying the data to/f
 In flat storage, files are stored as basic data blobs named with their internal UUIDs. Folders are not physically present inside the storage. The index service maintains the whole tree of folders and files and will just query the storage when an actual data modification (upload/download) is necessary.
 As a result, tree modifications like "moves" are performed directly inside the index, at best speed. 
 
-| Write / Read | Index | Storage  |
-|---|---|---|
-| Upload <br/> Mkdir... <br/> &nbsp; ==> <br/> <== <br/> List | - Folder A<br/> &nbsp;&nbsp; + File A1<br/>- folder B<br/> &nbsp;&nbsp; + file B1<br/>- file C<br/> | + uuid-of-A1<br/>+ uuid-of-B1<br/>+ uuid-of-C1<br/>  |
+[:image:4_connecting_your_storage/datasource-format-flat.png]
 
 This is exactly what object storage technologies are designed for : serving objects by keys, allowing infinite horizontal scaling possibility.
 
