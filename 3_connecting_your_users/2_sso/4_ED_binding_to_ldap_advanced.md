@@ -1,13 +1,13 @@
-One of the most powerful feature of LDAP Binding is dynamic mapping ldap groups to roles in Pydio. With this feature, the administrator focus his attention only on the management of users, groups in ldap server and get rid of coping the setting to pydio Cells. This article describes the underlying idea as well as the best practice of configuration of mapping.
+Dynamic mapping of LDAP groups to Pydio roles is a powerful feature allowing administrors to keep users management on the LDAP-side, while Cells will automatically map these groups to roles. Setting Cells access lists on the roles is done once, and the synchronization will update users and their permissions as it runs.
 
-If your LDAP server supports the `memberof-overlay` in ldap filters, each user object in LDAP response may have "memberOf" attribute. The list of group may contain system groups that we don't want to import to. In general, we are looking for only a small set of group. We provide a configuration interface with some simple parameters, but very flexible that help you refine the groups to be imported to Cells.
+If your LDAP server supports the `memberof-overlay` in LDAP filters, each user object in LDAP response may have a "memberOf" attribute. Generally, this list of groups may contain system groups that we don't want to import and we are looking for only a small set of groups. Cells provides a configuration interface with simple but yet flexible parameters to help you refine the groups imported inside Cells.
 
 * Microsoft Activie Directory supports natively `mamberof-overlay`
-* If your ldap does not support `memberof-overlay`, we provide you magic parameters to force your ldap to list off the `memberof` value that, in turn, provides the input for the mapping.
+* If your LDAP does not support `memberof-overlay`, we provide a magic parameter to force your ldap to list off the `memberof` value that, in turn, provides the input for the mapping.
   
 ## MemberOf mapping
 
-This is a specific case of mapping, in order for a user to be assigned one or more roles in Pydio Cells depending on the `memberOf` user attribute that is defined in your external directory. `memberOf` is a multiple value attribute of user object which itself contains a list of groups where this user is a member. You should define a rule.
+This is a specific case of mapping, in order for a user to be assigned one or more roles in Pydio Cells, depending on the `memberOf` attribute defined in your external directory. `memberOf` is a multiple value attribute of user object which itself contains a list of groups where this user is a member. You should define a rule.
 
 - **Left Attribute:** `memberOf`
 - **Rule String:**
@@ -46,18 +46,18 @@ or
 - **Fake memberOf Attribute:** `memberuid`
 - **Fake memberOf Attribute Format:** `uid`
 
-## Policy fine-tuning
+## Fine-tuning
 
-As explained in the introduction, and due to the Master/Slave model of the integration, we strongly advise you to perform following fine tuning of your instance.
+As explained in the introduction, and due to the Master/Slave model of the integration, we strongly advise you to perform following fine-tuning on your instance.
 
 ### Remove My Account button
 
-The easiest way to prevent LDAP-defined users to change information that are defined in your external directory(ies), is to define a system wide rule that will disable the `My Account` button for the relevant users. This is achieved easily:
+The easiest way to prevent LDAP-defined users to change information that are defined in your external directory(ies), is to define a system-wide rule that will disable the `My Account` button for the relevant users. This is achieved easily:
 
 - As an admin user, go to: `Cells Console >> Identity management >> People`,
 - Open for edit the parent group of your LDAP users,
 - Open the `Application Parameters` page,
-- In the upper right corner, choose the `All Workspaces` option from the `Add for...` drop down list,
+- In the upper-right corner, choose the `All Workspaces` option from the `Add for...` drop down list,
 - Search for the `My Account` action of the `action.user` category by simply typing `my account` in the quick search field, and select it,
 - Ensure the MyAccount toggle is turned off.
 
