@@ -24,30 +24,32 @@ For Expiration Model, select one of the 2 modes.
 
 ## [Home] Generating PAT with the command line
 
-Available on **Cells Home** (and Cells ED as well), you can generate a personal access token by using the `./cells admin user token` command.
+Available on **Cells Home** (and Cells ED as well), you can generate a personal access token by using the `./cells admin user token` command. 
+
+Below is the command usage description, you can find the "--expire" and "--auto" flags corresponding to the Hard Limit and Auto Refresh expiration models described above.
 
 ```
-    TOKEN USAGE
-    
-      These token can be used in replacement of an OAuth2-based access token : they can replace the "Bearer" access
-      token when calling any REST API. They can also be used as the password (in conjunction with username) for all
-      basic-auth based APIs (e.g. webDAV).
-    
-    TOKEN SCOPE
-    
-      By default, generated tokens grant the same level of access as a standard login operation. To improve security,
-      it is possible to restrict these accesses to a specific file or folder (given it is accessible by the user in
-      first place) with a "scope" in the format "node:NODE_UUID:PERMISSION" where PERMISSION string contains either "r"
-      (read) or "w" (write) or both.
-    
-    Usage:
-      ./cells admin user token [flags]
-    
-    Flags:
-      -a, --auto string     Auto-refresh (number of seconds, see help)
-      -e, --expire string   Expire after duration, format is 20u where u is a unit: s (second), (minute), h (hour), d(day).
-      -h, --help            help for token
-      -q, --quiet           Only return the newly created token value (typically useful in automation scripts with a short expiry time)
-      -s, --scope strings   Optional scopes
-      -u, --user string     User login (mandatory)
+TOKEN USAGE
+
+  These token can be used in replacement of an OAuth2-based access token : they can replace the "Bearer" access
+  token when calling any REST API. They can also be used as the password (in conjunction with username) for all
+  basic-auth based APIs (e.g. webDAV).
+
+TOKEN SCOPE
+
+  By default, generated tokens grant the same level of access as a standard login operation. To improve security,
+  it is possible to restrict these accesses to a specific file or folder (given it is accessible by the user in
+  first place) with a "scope" in the format "node:NODE_UUID:PERMISSION" where PERMISSION string contains either "r"
+  (read) or "w" (write) or both.
+
+Usage:
+  ./cells admin user token [flags]
+
+Flags:
+  -a, --auto string     Auto-refresh (number of seconds, see help)
+  -e, --expire string   Expire after duration, format is 20u where u is a unit: s (second), (minute), h (hour), d(day).
+  -h, --help            help for token
+  -q, --quiet           Only return the newly created token value (typically useful in automation scripts with a short expiry time)
+  -s, --scope strings   Optional scopes
+  -u, --user string     User login (mandatory)
 ```
