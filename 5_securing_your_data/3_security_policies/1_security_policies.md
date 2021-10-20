@@ -37,13 +37,13 @@ These policies are protecting the REST APIs on a per-uri/per-method basis. They 
 
 OpenId Connect Service is used for authentication of the user, before any access to the APIs. As such, you can totally disable the login operation for a set of users based on the requests context, e.g. disable logging from a given set of IP or at a given time.	
 
-### [ED] Context-Based ACLs
+### Context-Based ACLs
 
 These policies are used to dynamically provide read/write access to workspaces or files and folders. They are meant to be used in the Roles/Users workspace access panel in replacement to manual "Read/Write" assignements. 
 
 The rest of this documentation is focused on Context-Based ACLs, as they are a powerful way to provide dynamic access to workspaces or to filter any files that users are allowed to see or modify inside a workspace.
 
-## [ED] Using context-based ACLS for workspaces accesses	
+## Using context-based ACLS for workspaces accesses	
 
 Pydio Cells comes out-of-box with a carefully chosen set of pre-defined policies. In order to fully understand the concept, we strongly encourage you to check these pre-defined policies and their underlying rules.	
 
