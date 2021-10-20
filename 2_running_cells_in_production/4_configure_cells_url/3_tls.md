@@ -1,4 +1,4 @@
-[Cells Gateway](./glossary) provides multiple ways for enabling TLS support. This is highly recommended to make sure all communications are encrypted between the client applications and the server (HTTPS).
+[Cells Gateway](./glossary) provides multiple ways for enabling TLS support. It is highly recommended to make sure all communications are encrypted between the client applications and the server (HTTPS).
 
 TLS configuration can be changed by using the `cells configure sites` command.
 

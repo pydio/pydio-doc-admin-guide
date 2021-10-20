@@ -36,6 +36,7 @@ FLUSH PRIVILEGES;
 
 Make sure not to leave the `max_connections` to its default value (151) while going live in production.
 
+
 ## Network requirements
 
 ### Gateway

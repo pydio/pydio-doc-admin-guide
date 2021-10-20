@@ -1,7 +1,6 @@
-A site is a configuration item to indicate your network setup to the [Cells Gateway](./glossary). It enforces the ways to access
-your Cells and secure them.
+A site is a secure access route configuration in the [Cells Gateway](./glossary).
 
-The default configuration will get Cells up and running quickly on a server or on a local machine. You can extend to wider network 
+The default configuration will get Cells up and running quickly with a direct access on a server or on a local machine. You can extend to wider network 
 and/or secure that access with Sites.
 
 ## Command line interface

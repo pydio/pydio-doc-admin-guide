@@ -1,14 +1,14 @@
-Reverse proxies are one of the most common way to secure your web servers, they can hide the IP of your App server, be the main gateway to your private (virtual) network, serve as TLS Termination point and expose your public certificates, etc.
+Reverse proxies are one of the most common way to secure web servers. You can make them hide the IP of your App server, serve as the main gateway to your private (virtual) network, or as TLS Termination point and expose your public certificates, etc.
 
-For basic usage (Web UX, REST API's, Mobile Applications), a simple HTTPS reverse-proxy is fairly easy to set up. However, you must also add the URL on the authorized list on Cells (which corresponds to the [External URL](./glossary) setting).
+A simple HTTPS reverse-proxy is fairly easy to set up for basic usage (Web UX, REST API's, Mobile Applications). You just need to make sure that the URL is known to Cells so that it can allow incoming traffic from this address.
 
-Run the following command, select the used active bind and add the reverse-proxy URL in the [External URL](./glossary) field:
+Run the following command, 
 
 ```
 ./cells configure sites
 ```
 
-Select your used configuration and add the URL that is going to be used to access through the reverse-proxy as the external URL.
+Select an active site or add a new [site](./manage-sites) and set the reverse-proxy URL in the [External URL](./glossary) field.
 
 _**Warning**: if you intend to use CellsSync client together with your server instance, you cannot use TLS Offloading on your reverse proxy. The communication between the sync client and the server is done via gRPC on HTTP/2 and this will not work if you drop from HTTPS to HTTP between your reverse proxy and your Cells instance. Furthermore, note that your proxy has to support this protocol._
 
