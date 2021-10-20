@@ -1,22 +1,23 @@
-@TODO
+When deployed inside an infrastructure providing monitoring dashboard and tools, Cells provides some specific entry points for grabbing statistics and healtcheck information. 
 
-## Grafana
+## Healthcheck Endpoint
+
+Cells provides an optional HTTP endpoint that lists all micro-services and their statuses (in JSON format). If all services are up and running, endpoint returns with a 200 status code, and a 500 if one service is down.
+
+To enable this endpoint, pass a port number via the `CELLS_HEALTHCHECK=6565` environment variable (or via the --healthcheck command flag). Once set, healthcheck endpoint is available with a `GET http://your-cells:6565/healthcheck/` request. Please **beware that this endpoint is not protected**: it is your responsibility to correctly setup your firewall to restrict its access.
+
+## Prometheus / OpenMetrics
+
+Cells code is instrumented with [Prometheus](https://prometheus.io/) gauges for providing metrics about its internals (Golang Goroutines number, memory used per service, etc.). It is best coupled with a Grafana monitoring dashboard.
 
 [:image:2_running_cells_in_production/monitoring_tools/grafana_dashboard.png]
 
-Grafana enables you to monitor your Cells instance.
-You can monitor its resources consumption and also Cells internals like microservices.
+Prerequisites to collect the metrics are the following:
 
-The prerequisites to collect the metrics are the following:
-
-- Enable metrics on Cells.
 - [Prometheus](https://prometheus.io/)
 - [Node Exporter](https://github.com/prometheus/node_exporter)
 
-To enable metrics on Cells, collect them and then expose them with prometheus please refer to the knowledge base.
+You can enable metrics on Cells by providing the `CELLS_ENABLE_METRICS=true` environment variable.
 
-- [article + url knowledge base prometheus + grafana]()
+Please refer to the knowledge base for [more information about the Prometheus/Grafana]() configuration.
 
-Once you have all the prerequisites you can import the dashboard to your Grafana instance.
-
-- [URL to grafana dashboard]()
