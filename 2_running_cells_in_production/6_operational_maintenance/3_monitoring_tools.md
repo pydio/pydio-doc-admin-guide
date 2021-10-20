@@ -6,7 +6,7 @@
 
 Grafana enables you to monitor your Cells instance, you can monitor its resources such as CPU, RAM, storage but also Cells internals like microservices.
 
-Thr prerequisites to collect the metrics are the following:
+The prerequisites to collect the metrics are the following:
 
 - Enable metrics on Cells.
 - Prometheus.
