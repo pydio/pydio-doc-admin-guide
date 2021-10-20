@@ -49,6 +49,10 @@ Click on **Upgrade to Cells Enterprise**:
 
 ## Notes
 
+### Disabling automatic checks
+
+In some situation, your server is not able to allowed the internet. You can disable automatic updates checks to avoid seeing connection errors in the Cells Console dashboard.
+
 ### Security
 
 To provide an additional security layer and to avoid MITM attack, all binaries downloaded from the official update server are signed with our private key. Before applying upgrade, your Cells server will always check the validity of the package it just downloaded.

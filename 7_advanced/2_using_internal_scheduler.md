@@ -47,5 +47,4 @@ You can interact with user jobs in a similar manner as you do with system jobs, 
 
 ### Create your own jobs
 
-With Pydio you can define, configure and schedule (and therefore auto-run) the task of your choice.  
-This feature is not yet enabled but it's on our road map and you can expect it to be released soon.
+With the [Cells Flows](https://pydio.com/en/pydio-cells/cells-flows) extension you can define, configure and schedule (and therefore auto-run) the task of your choice.
