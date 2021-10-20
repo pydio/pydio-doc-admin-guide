@@ -2,7 +2,7 @@ Pydio Cells is compatible with Azure Blob Storage, you can connect your pydio da
 
 ### Azure Blob Storage datasource
 
-[:image-popup:4_connecting_your_storage/datasource_config/azure_ds_interface.png]
+[:image:4_connecting_your_storage/datasource_config/azure_ds_interface.png]
 
 To connect your datasource to the azure blob storage you need prerequisites listed below.
 
