@@ -21,12 +21,13 @@ When evaluated, each rule of a security policy answers the following question: `
 ### Deny by default vs. explicit deny
 
 Composed of many rules, a security policy is always "Deny by Default". Given the Context, each rule will compute its "ABLE" value to "allow" or "deny". 
+
  - If no rules provide an "allow" value, policy is evaluated as denied. 
  - On the other hand, any rule evaluating as "deny" will supersede other rules and instantly set the policy to "deny".
 
 ## Cells Security Policies 
 
-In Pydio Cells, _Resources_ can be of three types : a file or a folder (and by extension a workspace) via ACLs, a REST API endpoint or an OpenId Connect operation. 
+In Pydio Cells, _Resources_ can be of three types : a REST API endpoint, an OpenId Connect operation or a file or a folder (and by extension a workspace). 
 
 ### REST Resources	
 
@@ -38,9 +39,9 @@ OpenId Connect Service is used for authentication of the user, before any access
 
 ### [ED] Context-Based ACLs
 
-These policies are used to dynamically provide read/write access to workspaces or files and folders specifics. They are meant to be used in the Roles/Users workspace access panel in replacement to manual "Read/Write" assignements. 
+These policies are used to dynamically provide read/write access to workspaces or files and folders. They are meant to be used in the Roles/Users workspace access panel in replacement to manual "Read/Write" assignements. 
 
-The following of this documentation is focused on Context-Based ACLs as they are a powerful way to provide dynamic access to workspaces or to filter the kind of files users are able to see when accessing a workspace.
+The rest of this documentation is focused on Context-Based ACLs, as they are a powerful way to provide dynamic access to workspaces or to filter any files that users are allowed to see or modify inside a workspace.
 
 ## [ED] Using context-based ACLS for workspaces accesses	
 
@@ -49,12 +50,13 @@ Pydio Cells comes out-of-box with a carefully chosen set of pre-defined policies
 ### How Security Policies apply to ALCs
 
 If we refer to the `WHO is ABLE to perform WHAT on SOMETHING in a given CONTEXT` that each rule evaluates, in the context of ACLs, it usually refers to the following :
+
  - _WHO:_ a list of identities defined by their username, profile or role
  - _SOMETHING:_ a path to a specific workspace or node that user tries to access
  - _CONTEXT:_ request or file/folder metadata.
  - _WHAT:_ Read or Write access. Specific actions "Delete, Download, Upload, Sync" can also be used but only in with a "Deny" effect.
 
-Once defined, these policies are available in the "Workspaces Accesses" page for a role or user to replace the manual "Read/Write" assignment. Assigning a policy to a given workspace means that it will be evaluated for all requests (_CONTEXT_) performed by a user with this role (_WHO_) on all nodes that are inside this workspace (_SOMETHING_). 
+Once defined, these policies are available in the "Workspaces Accesses" panel (for each role, user or group) to replace the manual "Read/Write" assignments. Assigning a policy to a given workspace means that it will be evaluated for all requests (_CONTEXT_) performed by a user with this role (_WHO_) on all nodes that are inside this workspace (_SOMETHING_). 
 
 As such a basic policy that has one rule with "Allow" effect on "Read", "Write" actions is purely equivalent to a Read/Write manual permission assignment. 
 
@@ -74,9 +76,11 @@ Pre-defined policies provide some Conditions examples:
 
 Policies 2 and 3 remind us that **effect is always "Deny By Default"**: if we do not set at least one rule that can be evaluated to `Allow`, accesses will never be opened to the workspace!
 
+See [Next Chapter](./rules-conditions) to learn more about Conditions. 
+
 ### Create / Edit Policies
 
-To create a new policy template click on the "**+NEW POLICY**" at the top-right.  	
+To create a new policy template click on the "**+NEW POLICY**" at the top-right panel of the `Cells Console > Security Policies` dashobard.  	
 
 | Field | Description |
 |---|---|
