@@ -8,19 +8,19 @@
 
 Browse to **Cells Console >> People >> (edit a user) >> Personal Access Tokens**.
 
-[:image:3_connecting_your_users/path/list_personal_access_token.png]
+[:image:3_connecting_your_users/pat/list_personal_access_token.png]
 
 ### Manage the Personal Access Tokens
 
 You can view the status or/and remove a personal access token from this interface.
 
-[:image:3_connecting_your_users/path/manage_personal_access_token.png]
+[:image:3_connecting_your_users/pat/manage_personal_access_token.png]
 
 ### Create a Personal Access Token
 
 Hit the **+** and start creating a personal access token.
 
-[:image:3_connecting_your_users/path/create_personal_access_token.png]
+[:image:3_connecting_your_users/pat/create_personal_access_token.png]
 
 You will be presented with this interface, each field stands for:
 
