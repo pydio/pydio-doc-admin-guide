@@ -10,10 +10,9 @@ To enable this endpoint, pass a port number via the `CELLS_HEALTHCHECK=6565` env
 
 Cells code is instrumented with [Prometheus](https://prometheus.io/) gauges for providing metrics about its internals (Golang Goroutines number, memory used per service, etc.). It is best coupled with a Grafana monitoring dashboard.
 
-[:image:2_running_cells_in_production/monitoring_tools/grafana_dashboard.png]
-
 Prerequisites to collect the metrics are the following:
 
+- Enable the metrics endpoint on Cells by providing the `CELLS_ENABLE_METRICS=true` environment variable or by adding the flag `--enable_metrics` to cells' start command.
 - [Prometheus](https://prometheus.io/)
   
 and for the `prometheus.yml` configuration append this instruction.
@@ -27,6 +26,6 @@ and for the `prometheus.yml` configuration append this instruction.
 
 > Make sure to replace **$CELLS_WORKING_DIR** by your actual working directory.
 
-You can enable metrics on Cells by providing the `CELLS_ENABLE_METRICS=true` environment variable or by adding this flag `--enable_metrics` to the cells' start command.
+[:image:2_running_cells_in_production/monitoring_tools/grafana_dashboard.png]
 
 Please refer to the knowledge base for [more information about the Prometheus/Grafana](./kb/deployment/monitoring-cells-prometheus-grafana) configuration.
