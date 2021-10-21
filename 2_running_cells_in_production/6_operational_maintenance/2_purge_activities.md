@@ -5,14 +5,21 @@ In Pydio Cells, activities are designed as a generic concept following social ne
 
 In Cells it is applied in different contexts:  
 
-- Users "inboxes" represent the notifications received when watching a file or folder for modifications.
-- Nodes (files/folders) "outboxes' registers all activities of a given node and all its children.
+**Users "inboxes"** represent the notifications received when watching a file or folder for modifications.
+
+[:image:2_running_cells_in_production/users-notifications.png]
+
+**Nodes (files/folders) "outboxes"** registers all activities of a given node and all its children.
+
+[:image:2_running_cells_in_production/folders-activities.png]
 
 These activities are stored in the Activity Stream 2.0 format inside a onfile database. By default, these activities are kept forever, leading the on-file Bolt Database to grow, and eventually consume a lot of RAM. These activites are **not** used for Audit logs, and thus can be safely purged after a while.
 
 ## [ED] Purging Users Notifications with Scheduler/Cells Flows
 
 Starting with Cells v3, a default job is inserted at startup for purging activities based on specific parameters. It is disabled by default, you can enable it and either run manually or setup a scheduler for automated run.
+
+[:image:2_running_cells_in_production/housekeeping-jobs.png]
 
 "Purge Users Notifications" job has the following parameters:
 
