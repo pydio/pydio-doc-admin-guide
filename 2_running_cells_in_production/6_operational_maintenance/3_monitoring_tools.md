@@ -15,7 +15,18 @@ Cells code is instrumented with [Prometheus](https://prometheus.io/) gauges for 
 Prerequisites to collect the metrics are the following:
 
 - [Prometheus](https://prometheus.io/)
+  
+and for the `prometheus.yml` configuration append this instruction.
 
-You can enable metrics on Cells by providing the `CELLS_ENABLE_METRICS=true` environment variable or also by adding this flag `--enable_metrics ` to the start command (see `cells start --help`).
+```yaml
+- job_name: "cells"
+    file_sd_configs:
+      - files:
+          - ${CELLS_WORKING_DIR}/services/pydio.gateway.metrics/prom_clients.json
+```
+
+> Make sure to replace **$CELLS_WORKING_DIR** by your actual working directory.
+
+You can enable metrics on Cells by providing the `CELLS_ENABLE_METRICS=true` environment variable or by adding this flag `--enable_metrics` to the cells' start command.
 
 Please refer to the knowledge base for [more information about the Prometheus/Grafana](./kb/deployment/monitoring-cells-prometheus-grafana) configuration.
