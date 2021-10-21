@@ -1,4 +1,4 @@
-We explain here how to backup and restore your instance of Pydio Cells, so that you do not loose data nor configuration in case of a disaster such as hard-drive failure, power loss, bad upgrade process, etc.
+Always plan for the worst. Take steps to limit time loss and avoid headaches by doing regular backups of your Pydio Cells instance and data. You'll be all set for a speedy recovery in case of a data or configuration loss (that can happen if you're hit by a disaster such as hard-drive failure, power loss, bad upgrade process, etc.)
 
 This procedure is adapted for simple mono-node installation. If you have made multi-node installation, be aware that you must backup both storage and datasource for each one of your nodes.
 
