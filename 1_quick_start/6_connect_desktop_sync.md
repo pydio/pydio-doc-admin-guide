@@ -47,5 +47,5 @@ In order to be able to synchronize data, you must configure the connection from 
 
 If you encounter errors such as:
 
-- `/oidc/.well-known 404` this error points to a bad Cells configuration (proxy_url is not set) `./cells configure sites`.
-- `transport is closing`, `server closed the stream without sending trailers`: It might be related to the reverse proxy grpc configuration. [see knowledge base](https://pydio.com/en/docs/kb/deployment)
+- `/oidc/.well-known 404` this error might indicate that the `EXTERNAL_URL` on Cells was not set, please refer to the following [article](./configure-cells-reverse-proxy) on how to configure this paremeter.
+- `transport is closing` or `server closed the stream without sending trailers`: This might be related to the reverse-proxy **grpc** configuration. [see knowledge base](https://pydio.com/en/docs/kb/deployment)
