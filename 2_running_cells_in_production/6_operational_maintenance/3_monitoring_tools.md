@@ -12,7 +12,7 @@ Cells code is instrumented with [Prometheus](https://prometheus.io/) gauges for 
 
 Prerequisites to collect the metrics are the following:
 
-- Enable the metrics endpoint on Cells by providing the `CELLS_ENABLE_METRICS=true` environment variable or by adding the flag `--enable_metrics` to cells' start command.
+- Enable the metrics endpoints on Cells by providing the `CELLS_ENABLE_METRICS=true` environment variable or by adding the flag `--enable_metrics` to cells' start command.
 - [Prometheus](https://prometheus.io/)
   
 and for the `prometheus.yml` configuration append this instruction.
