@@ -1,4 +1,4 @@
-Cells binary is self-contained and can be easily updated / upgraded using either the in-app tool, the command-line, or by simply downloading a new binary and replacing the existing one. All necessary migrations will be performed on version-change detection. Downgrading is not possible though, as downward migrations are generally not implemented.
+Cells binary is self-contained and can be easily updated / upgraded. Use the in-app tool, the command-line, or simply replace the existing binary by the [latest binary](/en/download). All necessary migrations will be performed on version-change detection. Downgrading is not possible though, as downward migrations are generally not implemented.
 
 ## In-App Tool
 
@@ -6,9 +6,9 @@ Cells binary is self-contained and can be easily updated / upgraded using either
 
 [:image:2_running_cells_in_production/update_cells_webui.png]
 
-- You can check if there are new updates available by pressing the **Check** button,
-- if that is the case select the version and proceed to install once it's finished you will be invited to restart your Cells instance.
-- on Linux **make sure** if you are bound to ports (80 or 443) to set the capabilities with :
+- Check new updates available with the **Check** button,
+- Select the version and install. Once it's finished you will be invited to restart your Cells instance.
+- On Linux if you are bound to privileged ports (80 or 443) **make sure**  to set the capabilities with :
 
 ```sh
   setcap 'cap_net_bind_service=+ep' cells
