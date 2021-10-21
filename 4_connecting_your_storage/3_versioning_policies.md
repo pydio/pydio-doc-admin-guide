@@ -33,7 +33,7 @@ In **Pydio Cells Enterprise Edition**, we have brought versioning one step furth
 
 Go to your `Cells Console` then under **DataManagement > Storage use the "+ VERSIONING POLICY"** to create your own policy.
 
-[:image-popup:4_connecting_your_storage/versioning_add_policies.png]
+[:image:4_connecting_your_storage/versioning_add_policies.png]
 
 ### Retention Rules
 
