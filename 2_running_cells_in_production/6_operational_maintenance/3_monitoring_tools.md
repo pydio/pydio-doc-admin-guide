@@ -15,9 +15,7 @@ Cells code is instrumented with [Prometheus](https://prometheus.io/) gauges for 
 Prerequisites to collect the metrics are the following:
 
 - [Prometheus](https://prometheus.io/)
-- [Node Exporter](https://github.com/prometheus/node_exporter)
 
-You can enable metrics on Cells by providing the `CELLS_ENABLE_METRICS=true` environment variable.
+You can enable metrics on Cells by providing the `CELLS_ENABLE_METRICS=true` environment variable or also by adding this flag `--enable_metrics ` to the start command (see `cells start --help`).
 
-Please refer to the knowledge base for [more information about the Prometheus/Grafana]() configuration.
-
+Please refer to the knowledge base for [more information about the Prometheus/Grafana](./kb/deployment/monitoring-cells-prometheus-grafana) configuration.
