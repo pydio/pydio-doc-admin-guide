@@ -3,7 +3,7 @@ This page describes the locations you may have to watch for storage usage on you
 
 ## System Logs
 
-Assuming you are running in `--log=production` mode, all application logs will be stored both on file and inside an internal database.
+All application logs will be stored both on file and inside an internal database.
 
 ### Files
 
