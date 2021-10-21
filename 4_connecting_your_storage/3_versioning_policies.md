@@ -8,14 +8,14 @@ When defining a datasource, you can pick an available Versioning Policies to app
 
 Pydio Cells comes bundled with a default set of Versioning Policies, as described below:
 
-| Policy Name | Description |
-|---|---|
-|Keep All |Always keep all versions of all files|
-|Max 30 days| Keep all versions before 15 days, then only 10 versions, then delete all versions older that 30 days.|
-|Regular Pruning|Will keep 10 versions in the last 10 minutes, in the last 3 hours, in the last day, in the last 10 days, and finally delete all after 30 days.|
+| Policy Name     | Description                                                                                                                                    |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| Keep All        | Always keep all versions of all files                                                                                                          |
+| Max 30 days     | Keep all versions before 15 days, then only 10 versions, then delete all versions older that 30 days.                                          |
+| Regular Pruning | Will keep 10 versions in the last 10 minutes, in the last 3 hours, in the last day, in the last 10 days, and finally delete all after 30 days. |
 
-@TODO SCREENSHOT OUT OF DATE
-[:image-popup:4_connecting_your_storage/versioning_policies_interface.png]
+
+[:image:4_connecting_your_storage/versioning_policies_interface.png]
 
 ## Listing and reverting to a version
 
@@ -23,7 +23,7 @@ As a user, if a file is versioned, it is possible to list a document revisions b
 
 With this interface, it is easy to either download a specific file revision, or revert to this revision.
 
-@TODO SCREENSHOT (USER-SIDE UX)
+[:image:4_connecting_your_storage/versioning_user_interface.png]
 
 ## [ED] Defining a Versioning Policy
 
@@ -39,11 +39,11 @@ Go to your `Cells Console` then under **DataManagement > Storage use the "+ VERS
 
 A couple of parameter give you great flexibility to keep storage footprint under control when it comes to retaining various revisions of your business files.
 
-| Parameter | Description|
-|---|---|
-|Size Limits| Define a couple of limitations on a per-file basis or on a per-bucket basis to prune versions automatically when a given amount of storage space is reached.|
-|Retention Periods|Define how versions will be pruned on a timely basis. Each retention period is composed of two parameters: <br/> - _Period Start_ is the time elapsed since a version was created <br/> - _Max number of versions_ is number of versions to keep during this period. Special numbers are -1 to keep all versions, or 0 to remove all versions.|
-|After original file deletion|Define what to do with versions after a file is totally removed from a datasource (see below).|
+| Parameter                    | Description                                                                                                                                                                                                                                                                                                                                    |
+| ---------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Size Limits                  | Define a couple of limitations on a per-file basis or on a per-bucket basis to prune versions automatically when a given amount of storage space is reached.                                                                                                                                                                                   |
+| Retention Periods            | Define how versions will be pruned on a timely basis. Each retention period is composed of two parameters: <br/> - _Period Start_ is the time elapsed since a version was created <br/> - _Max number of versions_ is number of versions to keep during this period. Special numbers are -1 to keep all versions, or 0 to remove all versions. |
+| After original file deletion | Define what to do with versions after a file is totally removed from a datasource (see below).                                                                                                                                                                                                                                                 |
 
 ### Storage location
 
