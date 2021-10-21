@@ -1,3 +1,12 @@
+
+<div style="background-color: #fbe9b7;font-size: 14px;">
+<span style="background-color: #fae4a6;padding: 10px;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Cells v2. Looking for <a href="https://pydio.com/en/docs/cells/v3/quick-start">Pydio Cells v3 docs?</a></span>
+</div>
+
+
+
+
 You can add external Identity Providers to Pydio Cells Enterprise. Users will choose between a list of external Identity Providers you have configured (eg: Login in with Google, Facebook, Github...) instead of the traditional login page. Users that log in from an external Identity Provider are automatically created in a separate group in Cells internal user repository.
 
 ## Involved Parties

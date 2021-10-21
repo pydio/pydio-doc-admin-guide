@@ -1,3 +1,12 @@
+
+<div style="background-color: #fbe9b7;font-size: 14px;">
+<span style="background-color: #fae4a6;padding: 10px;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Cells v2. Looking for <a href="https://pydio.com/en/docs/cells/v3/quick-start">Pydio Cells v3 docs?</a></span>
+</div>
+
+
+
+
 Metadata is a feature that enables the end-user to attach any kind of information to a file or a folder.
 
 Metadata namespaces are predefined by the Admin and their value can be freely added by the end-user. Typically, a good example of predefined metadata is the ability given by the admin to the end user to _rate_ a file or a folder. Another widely used example is the _comments_ feature.

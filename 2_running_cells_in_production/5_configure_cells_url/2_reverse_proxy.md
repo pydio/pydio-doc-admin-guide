@@ -1,3 +1,12 @@
+
+<div style="background-color: #fbe9b7;font-size: 14px;">
+<span style="background-color: #fae4a6;padding: 10px;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Cells v2. Looking for <a href="https://pydio.com/en/docs/cells/v3/quick-start">Pydio Cells v3 docs?</a></span>
+</div>
+
+
+
+
 Reverse proxies are one of the most common way to secure your web servers, they can hide the IP of your App server, be the main gateway to your private (virtual) network, serve as TLS Termination point and expose your public certificates, etc.
 
 For basic usage (Web UX, REST API's, Mobile Applications), a simple HTTPS reverse-proxy is fairly easy to set up. However, you must also add the URL on the authorized list on Cells (which corresponds to the [External URL](./glossary) setting).
