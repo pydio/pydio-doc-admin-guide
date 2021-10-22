@@ -1,24 +1,40 @@
 @TODO
 
 
-[:image:4_connecting_your_storage/datasource_common_options/0_create_datasource.png]
+## Create datasource
 
-- Flat Storage: The data becomes completely flat without a tree structure.
-- Importing Existing Data: This allows you to keep the data structure on your file system.
-- Cells Internals: This is used for specific data only related to Cells.
+DataSources are mount points allowing you to attach actual storage to the application. First select the way data is organized inside storage.
 
-[:image:4_connecting_your_storage/datasource_common_options/1_identifier.png]
+- Flat Storage: The data becomes completely flat without a tree structure, on your file system all the files are named with UUIDs.
+- Importing Existing Data: This allows you to keep an existing data structure on your file system.
+- Cells Internals: This is used for specific data only related to Cells (such as Thumbnails and versions).
 
-- Identifier: pick an identifier for your storage, only **alphanumeric** characters are allowed.
+### 1) Identifier
 
-[:image:4_connecting_your_storage/datasource_common_options/2_storage_type.png]
+How your storage will be identified on Cells, only **alphanumeric** s3 DNS compliant characters are allowed.
 
-- Storage Type: Select the type of storage, for detailed information please refer to the [administration guide](./create-datasources).
+//TODO that is because internally Cells will add a s3 layer between Cells and the data.
 
-[:image:4_connecting_your_storage/datasource_common_options/3_data_lifecycle.png]
+### 2) Storage Type
 
-- Data Lifecycle: Configure how the data lifecycle is managed and its encryption.
+Select the type of storage, for detailed information please refer to the [administration guide](./create-datasources).
 
-[:image:4_connecting_your_storage/datasource_common_options/4_advanced_options.png]
+### 3) Data Lifecycle
 
-- Advanced Options: Those are advanced options and should only be used for specific cases.
+Setting up a versioning policy enables you to configure how Cells act with file versioning, how many versions are kept, how long we keep the old versions and many other options.
+
+You can create your own [versioning policies](./versioning-policies) and configure how you want to handle your versions.
+
+> File versions are stored inside the **Internal DataSource** named `versions`
+
+[Encryption](./encryption) at rest can be used to make sure files are never stored in clear format inside the storage, files will be encrypted with a key and only be readable when decrypted with the same key.
+
+**DISCLAIMER: Keys are stored in the default database and if they ever get lost the encrypted data could not be recovered.**
+
+### 4) Advanced Options
+
+Advanced options should only be used for specific cases.
+
+//TODO
+
+
