@@ -1,6 +1,6 @@
 DataSources can be seen as "mount points" to attach actual storage to the application. Cells datasource can connect to various storage types. Each of them have specific options that are described in the following pages:
 
- - [File System](./file-system)
+ - [File System](./file-system-storage)
  - [S3-Compatible Object Storage](./s3-compatible-storage)
  - [Google Cloud Storage](./google-cloud-storage)
  - [Azure Blob Storage](./azure-blob-storage)
@@ -14,6 +14,8 @@ Appart from this connector type, all datasources share common options regarding 
 #### Format
 
 When you create a datasource, you must first select the way Cells organizes data inside the storage. Please refer to [Datasource Format](./datasource-format) to have a good understanding of this feature. Quickly put, Flat Storage is better for performances, while Structured Storage is required if you wish to keep files and folders visible at the storage layer (internal datasources are specifically used for storing Thumbnails and Versions, and should not be used for your actual business data).
+
+[:image:4_connecting_your_storage:datasource_common_options/0_create_datasource.png]
 
 #### Identifier
 
@@ -48,3 +50,5 @@ To achieve best performances and files reconciliation, Cells heavily relies on f
 **Use Native ETags** option will trust the storage-provided ETag value, even if it's not in the MD5 format and use it as is. As a drawback this will prevent the use of Cells Desktop Sync client as it relies on MD5 internally.
 
 **Local Checksum** option will store re-computed checksums locally instead of attaching them as metadata in the storage, avoiding any modification of the original objects.
+
+[:image:4_connecting_your_storage:datasource_common_options/4_advanced_options.png]
