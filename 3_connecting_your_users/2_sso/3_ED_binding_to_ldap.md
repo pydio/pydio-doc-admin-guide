@@ -14,7 +14,7 @@ The synchronization runs on a regular basis (time and frequency are defined for 
 
 ### Supported Servers
 
-The LDAP connector embedded in Cells  is compliant with LDAP standards. Thus, it can be used with servers that are implementing this protocol. We use the following servers for development and testing purposes. As such, they are known to integrate smoothly with Cells:
+The LDAP connector embedded in Cells Ent is compliant with LDAP standards. Thus, it can be used with servers that are implementing this protocol. We use the following servers for development and testing purposes. As such, they are known to integrate smoothly with Cells:
 
 - [OpenLDAP](https://openldap.org): a free, open source implementation of the Lightweight Directory Access Protocol developed by the OpenLDAP Project.
 - [Active Directory](https://en.wikipedia.org/wiki/Active_Directory): a directory service of Microsoft that supports LDAP versions 2 and 3.

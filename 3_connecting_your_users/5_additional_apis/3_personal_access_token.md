@@ -24,7 +24,7 @@ For Expiration Model, select one of the 2 modes.
 
 ## [Home] Generating PAT with the command line
 
-Available on **Cells Home** (and Cells  as well), you can generate a personal access token by using the `./cells admin user token` command. 
+Available on **Cells Home** (and Cells Ent as well), you can generate a personal access token by using the `./cells admin user token` command. 
 
 Below is the command usage description, you can find the "--expire" and "--auto" flags corresponding to the Hard Limit and Auto Refresh expiration models described above.
 

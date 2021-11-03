@@ -11,7 +11,7 @@ To create a user go, click on the **+USER** button located in the top right corn
 [:image:3_connecting_your_users/create_user.png]
 
 - **User Login**: this can **not** be changed afterwards.  
-- **User Password**: put the password of the user, you have to type it twice to ensure its validity. Make sure to always use strong passwords. Note that the plugin that performs password strength check is fully customizable in Cells .
+- **User Password**: put the password of the user, you have to type it twice to ensure its validity. Make sure to always use strong passwords. Note that the plugin that performs password strength check is fully customizable in Cells Ent.
 
 When editing an existing user, you have access to following information:
 

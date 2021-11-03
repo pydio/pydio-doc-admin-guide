@@ -6,7 +6,7 @@ Pydio Cells provides a strong decoupling between technical storages and business
 
 - **Workspaces** are defined by administrators. Admins open accesses to one or many node in the global tree of files inside datasources by adding or removing permissions and policies on these nodes.
 
-- **Cells** are sandboxed workspaces created by users to share data between themselves. Users easily manage accesses while still inheriting the restrictions set by administors.
+- **Cells** are sandboxed workspaces created by users to share data between themselves. Users easily manage accesses while still inheriting the restrictions set by administrators.
 
 ### Supported Storages
 
@@ -14,8 +14,8 @@ Datasource can be seen as a driver to access your data. It can currently be conn
 
 - **Local FileSystem**: folder located on the same server as where the service is running
 - **Object Storage**: S3-compatible remote storage (can be a proper S3 or anything implementing the API).
-- **Google Cloud Storage**: compatible with Google's cloud storage solution [ only].
-- **Azure Blob Storage**: compatible with Azure's blob storage solution [ only].
+- **Google Cloud Storage**: compatible with Google's cloud storage solution [Ent only].
+- **Azure Blob Storage**: compatible with Azure's blob storage solution [Ent only].
 
 In the article [Detailed structure of a datasource](./services-involved), a detailed view of how each service on datasource interacts.
 
