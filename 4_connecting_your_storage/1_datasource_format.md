@@ -53,6 +53,8 @@ cells admin datasource snapshot --datasource=ds1 --operation=load --basename=sna
 ```
 Beware that the "load" operation will override the current index data! You can also create a new datasource and specify "snapshot.db" in the Advanced options.
 
+_[Note]_ Performing regular backup of your SQL Database is enough to make sure that you are able to recover your files hierarchy. This optional on-file snapshot of the index table is a second layer of security, in case you loose your DB!
+
 ### Generating snapshots with Scheduler/CellsFlows
 
 As an addition to the command-line, the "dump" operation can be manually triggered from the scheduler. For Enterprise Distribution, an additional job is programmed 
