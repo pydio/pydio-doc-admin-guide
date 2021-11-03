@@ -53,7 +53,7 @@ The basic operation to assign right goes through the "Read" / "Write" / "Deny" c
 
 When editing ACLs, we recommend sticking to the Workspace level of granularity, to make your security model more maintainable. In some cases, you may require to directly assign rights at a folder level. For that you can use the "+" button next to the workspace name to list the workspace children and assign rights accordingly.
 
-### [ED] Dynamic ACLs with Policies
+### [Ent] Dynamic ACLs with Policies
 
 Policies are a powerful feature of Pydio Cells used to dynamically assign ACLs depending on the context (logged in user, day and time of the week, client IP address...) and a set of rules that can be scripted and combined together. See the [Security Policies](./ed-dynamic-access-control) section to learn more.
 

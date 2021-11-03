@@ -25,7 +25,7 @@ With this interface, it is easy to either download a specific file revision, or 
 
 [:image:4_connecting_your_storage/versioning_user_interface.png]
 
-## [ED] Defining a Versioning Policy
+## [Ent] Defining a Versioning Policy
 
 _Note: The Home Edition comes with the default set of Versioning Policies and they cannot be edited._
 

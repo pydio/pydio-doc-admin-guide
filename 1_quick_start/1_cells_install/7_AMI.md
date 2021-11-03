@@ -1,6 +1,6 @@
 We expose below the specificities of the AMI custom setup. For further details, please refer to the other sections of this [administration guide](https://pydio.com/en/docs/administration-guides).
 
-## Cells ED AMI on AWS Marketplace
+## Cells  AMI on AWS Marketplace
 
 You can find a ready-to-use Amazon Machine Image (AMI) on the Amazon Web Services Marketplace following this link:
 
@@ -36,7 +36,7 @@ The Pydio Cells AMI comes with 3 default users:
 
 ## Services
 
-- **install-cells.service**: launched at boot, when your instantiate a new Cells ED AMI, it launches the installation process. After successful installation, it starts and enables the cells service, and disables itself before exiting.
+- **install-cells.service**: launched at boot, when your instantiate a new Cells  AMI, it launches the installation process. After successful installation, it starts and enables the cells service, and disables itself before exiting.
 - **cells.service**: runs the cells server as a systemd daemon. The `install-cells.service` enables and starts this service when finalising the install.
 
 ## Tree structure

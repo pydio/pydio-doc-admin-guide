@@ -14,8 +14,8 @@ Datasource can be seen as a driver to access your data. It can currently be conn
 
 - **Local FileSystem**: folder located on the same server as where the service is running
 - **Object Storage**: S3-compatible remote storage (can be a proper S3 or anything implementing the API).
-- **Google Cloud Storage**: compatible with Google's cloud storage solution [ED only].
-- **Azure Blob Storage**: compatible with Azure's blob storage solution [ED only].
+- **Google Cloud Storage**: compatible with Google's cloud storage solution [ only].
+- **Azure Blob Storage**: compatible with Azure's blob storage solution [ only].
 
 In the article [Detailed structure of a datasource](./services-involved), a detailed view of how each service on datasource interacts.
 

@@ -29,7 +29,7 @@ When the size of the DB reaches its maximum size, it is replicated for backup, t
 ....
 ```
 
-**[ED] Cleaning DB folders with Scheduler/Cells Flows**
+**[Ent] Cleaning DB folders with Scheduler/Cells Flows**
 
 As of Cells Enterprise v3, a ready-to-use job is inserted in the Scheduler (or Cells Flows if you have a license for it) that triggers automatically the removal of older DB folders. Job is disabled by default, but you can enable it and either run it manually or program a schedule for automated runs.
 
@@ -69,7 +69,7 @@ syslog.bleve.001
 ```
 
 
-## [ED] Audit Logs
+## [Ent] Audit Logs
 
 In Cells Enterprise, Audit Logs are handled in the same way as system logs. You can use methods described in the previous section, just replacing the `pydio.grpc.log` service by `pydio.grpc.audit`.
 

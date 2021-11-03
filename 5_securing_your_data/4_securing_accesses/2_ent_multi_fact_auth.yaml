@@ -1,5 +1,5 @@
-title: "[ED] Multi factor authentication"
+title: "[Ent] Multi factor authentication"
 language: und
-menu: "[ED] MFA (OTP, Yubikey, DUO)"
+menu: "[Ent] MFA (OTP, Yubikey, DUO)"
 weight: 2
 menu_name: menu-administration-guide

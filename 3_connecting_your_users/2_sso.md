@@ -10,9 +10,9 @@ Pydio Cells can be used as an [Identity Provider](./cells-identity-provider). In
 
 ### What does it mean in Pydio Cells Enterprise Distribution?
 
-On top of that, Cells ED can integrate with multiple [External Identity Providers](./ed-using-sso-external-identity-provider). It automatically creates access for users from third-party services (commercial or on-premise) and understands multiple protocols (*OIDC*, *SAML2.0*, ...).
+On top of that, Cells  can integrate with multiple [External Identity Providers](./ed-using-sso-external-identity-provider). It automatically creates access for users from third-party services (commercial or on-premise) and understands multiple protocols (*OIDC*, *SAML2.0*, ...).
 
-Furthermore, Cells ED provides a simple way to connect one or many external [LDAP or Active Directory](./ed-binding-ldap) servers.
+Furthermore, Cells  provides a simple way to connect one or many external [LDAP or Active Directory](./ed-binding-ldap) servers.
 
 [:summary]
 

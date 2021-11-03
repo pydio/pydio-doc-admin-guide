@@ -60,7 +60,7 @@ We indicate all this to Cells using the command and the following parameters:
 
 [:image-popup:2_running_cells_in_production/03-network-public-access.png]
 
-## Advanced Usage [ED]
+## Advanced Usage [Ent]
 
 Configure some Cells functionalities to behave differently depending on the site accessed.
 

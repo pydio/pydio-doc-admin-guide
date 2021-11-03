@@ -15,7 +15,7 @@ In Cells it is applied in different contexts:
 
 These activities are stored in the Activity Stream 2.0 format inside a onfile database. By default, these activities are kept forever, leading the on-file Bolt Database to grow, and eventually consume a lot of RAM. These activites are **not** used for Audit logs, and thus can be safely purged after a while.
 
-## [ED] Purging Users Notifications with Scheduler/Cells Flows
+## [Ent] Purging Users Notifications with Scheduler/Cells Flows
 
 Starting with Cells v3, a default job is inserted at startup for purging activities based on specific parameters. It is disabled by default, you can enable it and either run manually or setup a scheduler for automated run.
 
@@ -23,16 +23,16 @@ Starting with Cells v3, a default job is inserted at startup for purging activit
 
 "Purge Users Notifications" job has the following parameters:
 
-| Parameters | Description  | Default |
-|---|---|---|
-| KeepAtLeast  | Minimum number of activities to keep for each file or folder, starting from the most recent ones.  | 1 |
-| KeepLast  | Maximum number of activities to keep for each file or folder (removing the oldest ones  | 10 |
-| UpdatedDays  | Purge activities recorder before a specific date (today minus the number of days. | 30days |
+| Parameters  | Description                                                                                       | Default |
+| ----------- | ------------------------------------------------------------------------------------------------- | ------- |
+| KeepAtLeast | Minimum number of activities to keep for each file or folder, starting from the most recent ones. | 1       |
+| KeepLast    | Maximum number of activities to keep for each file or folder (removing the oldest ones            | 10      |
+| UpdatedDays | Purge activities recorder before a specific date (today minus the number of days.                 | 30days  |
 
 As explained above, this job applies to the "users' inboxes". After a purge, the activity database is entirely cloned and re-indexed for a better defragmentation.
 
 
-### [ED] Purging Files/Folders Activities using Scheduler/Cells Flows
+### [Ent] Purging Files/Folders Activities using Scheduler/Cells Flows
 
 Similarly to the "Purge Users Notifications", a "Purge Files Activities" job is available for automated run, with the same parameters. It is applied to the "nodes' outboxes". 
 

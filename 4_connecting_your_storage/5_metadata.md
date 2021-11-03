@@ -48,6 +48,6 @@ In addition of enriching file info, metadata are use in may others part of Cells
 | **Index in search engine**        | Indexes values to make them searchable                                            |
 | **Restrict visibility to admins** | Only admins users are able to see it                                              |
 | **Restrict edition to admins**    | Only admins users are able to edit it                                             |
-| **[ED] Custom Policies**          | Manually edit the restriction rules based on profiles, roles or users identifiers |
+| **[Ent] Custom Policies**         | Manually edit the restriction rules based on profiles, roles or users identifiers |
 
 Typically, an admin could define a "Confidential" metadata and let only people with "Admin" status have the right to edit this data. Then the value of this metadata could be used in a security policy to decide whether a document is accessible to the outside network, or outside of office hours, etc.
