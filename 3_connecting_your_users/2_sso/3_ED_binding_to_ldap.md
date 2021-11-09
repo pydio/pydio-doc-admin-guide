@@ -35,7 +35,9 @@ Click on `+ DIRECTORY` to register a new directory or select an existing LDAP co
 
 [:image:3_connecting_your_users/ldap/ldap_1.png]
 
-Fields are here explicit. It is usually a good practice to name this connection using the corresponding domain name.
+It is usually a good practice to name this connection using the corresponding domain name. Connecting a directory will synchronize LDAP users with internal directory, and enable authentication by binding users to the external directory. 
+
+As of Cells Enterprise 3.0.1, it is possible to only synchronize users internally, without binding the authentication part to the external directory. In that case, a random password is created for each users, and they must go through the "Reset Password" workflow to create their own password inside Cells. Subsequent synchronizations will not override this customized password for existing users.
 
 ### Server Connection
 
@@ -59,7 +61,9 @@ If you do not specify any port, default port `389` is used.
 
 Define the type of connection you use. It is not recommended using an insecure connection if you are not in a private LAN.
 
-#### 3) Binding DN
+#### 3) Administrative User for connection
+
+**3.1 Binding DN**
 
 The Distinguished Name of a power user in your directory, who has sufficient privileges to list other users and groups.  
 This field accepts user ID, Distinguished Name or Email. Choose the relevant format depending on your LDAP software. 
@@ -76,20 +80,26 @@ In Active Directory, find the DN of the chosen user via the properties popup:
 
 [:image:3_connecting_your_users/ldap/Selection_874.png]
 
-#### 4) Binding Password
+**3.2 - Binding Password**
 
 Password of the above user
 
-#### 5) Skip certificate verification
+**3.3 - Anonymous Bind**
+
+In some rare cases, you may wich to anonymously connect to the directory (assuming it is accessed on a private network). Toggle "Bind Anonymous" for that.
+
+#### 4) Certificate Management 
+
+**4.1 Skip certificate verification**
 
 Turn this option ON if you are using a self-signed certificate **that you trust**. Use this option with extra care and at your own risk.
 
-#### 6) Root Certificate Path
+**4.2 Root Certificate Path**
 
 This is only used for TLS and StartTLS connections.  
 Specify the absolute path (on Cells server) to the certificate of the LDAP server.
 
-#### 7) Root Certificate Data
+**4.3 Root Certificate Data**
 
 This option allows you to directly use a base64 format certificate for securing the LDAP connection. This is a base64 non-linebreak string.
 
@@ -98,7 +108,7 @@ This option allows you to directly use a base64 format certificate for securing 
 openssl s_client -showcerts -connect ldapserver.com:389 </dev/null 2>/dev/null|openssl x509 -outform PEM >mycertfile.pem
 ```
 
-#### 8) Page size
+#### 5) Page size
 
 This defines the maximum number of objects that are returned at each call.
 
