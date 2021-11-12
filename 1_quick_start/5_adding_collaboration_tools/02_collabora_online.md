@@ -32,7 +32,7 @@ The commands will differ depending on your system but it should work at the end.
 docker pull collabora/code
 docker run -t -d -p 9980:9980 -e "extra_params=-o:tls.enable=false" -e "domain=<your-dot-escaped-domain>" collabora/code
 ```
-_for testing puposes tls is disabled, but we advise you to always have it on_
+_for testing purposes tls is disabled, but we advise you to always have it on_
 
 | env variable | example value     |
 | ------------ | ----------------- |
