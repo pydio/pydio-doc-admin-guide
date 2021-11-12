@@ -37,7 +37,7 @@ All examples below can be used separately or in conjunction with one another.
 ### Local network example
 
 Let's imagine you want to make your Cells accessible for everybody in your local network via the mypydio.local address. You already have your local DNS
-and port fowarding ready so that the incoming traffic redirects to the Cells server on port 8080. You've also generated a certificate, locally trusted.
+and port forwarding ready so that the incoming traffic redirects to the Cells server on port 8080. You've also generated a certificate, locally trusted.
 
 We indicate all this to Cells using the command and the following parameters:
 
@@ -73,4 +73,4 @@ Display different ways of authenticating on different URLs.
 Add the URL in the context of the security policies to for example:
 
   - restrict access to the intranet site to office hours only.
-  - allow access to the www site to specifc IPs.
+  - allow access to the www site to specific IPs.
