@@ -125,7 +125,6 @@ We gather some [relevant sample configuration](https://github.com/pydio/cells/tr
 
 The Cells Sync Desktop Application might require an additional port, typically if you run behind a reverse proxy that performs TLS termination. In such case:
 
-- First read this, [Setup Cells Server for Cells Sync](/en/docs/kb/client-applications/setup-cells-server-cellssync)
 - Make sure to start a container with this env set `CELLS_GRPC_EXTERNAL`
 - Expose the port that you previously set with `CELLS_GRPC_EXTERNAL`
 
