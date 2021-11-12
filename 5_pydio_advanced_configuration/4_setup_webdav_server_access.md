@@ -1,11 +1,9 @@
 <div style="background-color: #fbe9b7;font-size: 14px;">
 <span style="background-color: #fae4a6;padding: 10px;">WARNING</span>
-<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 8 (PHP), EOL end 2019. Time to move to <a href="https://pydio.com/en/docs/cells/v2/quick-start">Pydio Cells</a>!</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 8 (PHP). Time to move to <a href="https://pydio.com/en/docs/administration-guides">Pydio Cells</a>!</span>
 </div>
 
 Pydio comes with a bundled webDAV **server** which allows you to expose your files to a variety of clients applications for easy access. All you need to do is to "Allow webDAV Access" through Pydio's web interface.
-
-**_Note : Please beware that this document intends to setup Pydio as a webdav SERVER, not a client. If what you are looking for is to access a set of documents stored on a remote webDAV server through Pydio, see the [access.webdav](https://pydio.com/en/docs/references/plugins/access/webdav) plugin._**
 
 ### WebDAV feature requirements & activation
 If you managed to properly configure the Pydio rewrite rule everything should work smoothly.
@@ -46,5 +44,3 @@ In both case, the WebDAV activation (and password configuration) is under the us
 + **Authorization mechanism** may fail in the Apache + PHP as CGI case, and some more lines need to be added to the .htaccess file to ensure correct headers redirection. See the .htaccess file for more info, simply uncomment the lines.
 
 + There are plenty of documentation about WebDAV, both client and server on the web, one very useful website is the wiki of the **SabreDAV** project. It is the library we use, and most well-kown webDAV clients are carefully documented. See for example http://sabre.io/dav/ for the previous problem.
-
-See **[HERE](https://pydio.com/en/docs/kb/system/troubleshooting-webdav-server)** for more informations about troubleshooting.

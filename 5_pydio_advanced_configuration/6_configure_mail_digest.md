@@ -1,9 +1,9 @@
 <div style="background-color: #fbe9b7;font-size: 14px;">
 <span style="background-color: #fae4a6;padding: 10px;">WARNING</span>
-<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 8 (PHP), EOL end 2019. Time to move to <a href="https://pydio.com/en/docs/cells/v2/quick-start">Pydio Cells</a>!</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 8 (PHP). Time to move to <a href="https://pydio.com/en/docs/administration-guides">Pydio Cells</a>!</span>
 </div>
 
-Since [Pydio 6.4.0](https://pydio.com/fr/node/1279), we added the "Mail digest" feature to avoid receiving tons of emails when watching for a file or folder modification.
+Since Pydio 6.4.0, we added the "Mail digest" feature to avoid receiving tons of emails when watching for a file or folder modification.
 
 This page is here to help you configure the mail digest and the mail sender. The mail sender is required to send digest emails.
 
@@ -59,12 +59,6 @@ Subject Prepend : Before the subject of Pydio, you can add a prefix so the mail 
 + Body Layout : The body of the mail send by Pydio, you can add HTML to change the template ( DO NOT DELETE AJXP_MAIL_BODY )   
 
 + Layout Folder : The folder where are the layout   
-
-###**For the community Edition**
-
-If you're going to use the mailer you will need to set some things up you can find links to guides that will help you facilitate this task **[here](https://pydio.com/en/docs/kb/plugins/setting-emailers)**.
-
-Then when you will configure it you can use the example above you will have some differences but the principle is the same.
 
 ##Configure the digest in My Profile
 

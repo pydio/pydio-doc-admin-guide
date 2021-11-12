@@ -1,6 +1,6 @@
 <div style="background-color: #fbe9b7;font-size: 14px;">
 <span style="background-color: #fae4a6;padding: 10px;">WARNING</span>
-<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 8 (PHP), EOL end 2019. Time to move to <a href="https://pydio.com/en/docs/cells/v2/quick-start">Pydio Cells</a>!</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 8 (PHP). Time to move to <a href="https://pydio.com/en/docs/administration-guides">Pydio Cells</a>!</span>
 </div>
 
 Deploy Pydio in a couple of steps :
@@ -20,7 +20,7 @@ While **“Warnings”** can be generally ignored without preventing the applica
 **“Error”** failing tests must be fixed before going further, otherwise the application will very surely crash.
 
 
-Once you think you have correctly fixed the issue, simply reload the page to see if the test now correctly passes. See the **[Troubleshooting](https://pydio.com/en/docs/v8/troubleshooting)** section for an exhaustive list of tests and solutions.
+Once you think you have correctly fixed the issue, simply reload the page to see if the test now correctly passes. See the **Troubleshooting** section for an exhaustive list of tests and solutions.
 
 ### Pydio Installation Wizard
 

@@ -1,6 +1,6 @@
 <div style="background-color: #fbe9b7;font-size: 14px;">
 <span style="background-color: #fae4a6;padding: 10px;">WARNING</span>
-<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 8 (PHP), EOL end 2019. Time to move to <a href="https://pydio.com/en/docs/cells/v2/quick-start">Pydio Cells</a>!</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 8 (PHP). Time to move to <a href="https://pydio.com/en/docs/administration-guides">Pydio Cells</a>!</span>
 </div>
 
 With Pydio, it is possible to share your folders and files publicly, privately and from version _6.4_, also remotely.
@@ -75,7 +75,7 @@ For people who know their way round the sharing world, a few advanced perks have
 
 * **Description** - You can write a descritpion if you want to.
 
-* **Notification** - If enabled, this will trigger [Alerts](https://pydio.com/en/docs/v6-enterprise/watches-and-notifications) whenever the content has been accessed or modified.
+* **Notification** - If enabled, this will trigger Alerts whenever the content has been accessed or modified.
 
 * **Share Visibility** - Enable users wioth whom you share the workspace to view and edit the sharing options you have set up (by default it's private).
 

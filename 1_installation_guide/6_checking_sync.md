@@ -1,6 +1,6 @@
 <div style="background-color: #fbe9b7;font-size: 14px;">
 <span style="background-color: #fae4a6;padding: 10px;">WARNING</span>
-<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 8 (PHP), EOL end 2019. Time to move to <a href="https://pydio.com/en/docs/cells/v2/quick-start">Pydio Cells</a>!</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 8 (PHP). Time to move to <a href="https://pydio.com/en/docs/administration-guides">Pydio Cells</a>!</span>
 </div>
 
 Since Pydio 6, the new PydioSync client is now based on a number of server features to make the desktop client lighter and more efficient. Please read go through the basic checks described here to make sure it will work ok.
@@ -17,7 +17,7 @@ Last but not least, it’s important to understand that the PydioSync client is 
 
 ### Rest Api
 
-The first important thing to check is that the REST API is correctly working. If you went through the previous chapter of this Administrator Guide, you probably already made sure that the RewriteRules are correctly activated and translated by the server. Otherwise, please [go back to this page now](https://pydio.com/en/docs/v8/checking-apis)! Only once it’s sure you can get further.
+The first important thing to check is that the REST API is correctly working. If you went through the previous chapter of this Administrator Guide, you probably already made sure that the RewriteRules are correctly activated and translated by the server. Only once it’s sure you can get further.
 
 Testing URL (on pydio default workspace)
 
@@ -107,8 +107,3 @@ You should receive a json listing all changes since creation of workspace.
 To help you in that task, we’ve setup a script that will try to use the API to create a file inside a workspace, and check if it can find back the “change” afterward. For that, uncomment the die() line of the /runTests.php file and call the following url in your browser : https://yourserver.tld/runTests.php?api=true.
 
 **Please note**: If your server is not located at the document root (e.g. https://yourserver.tld/pydio/), there is a small issue in the current version of this script. Please grab the latest version from github and replace the script before testing (https://raw.githubusercontent.com/pydio/pydio-core/develop/core/src/runTests.php).
-
-### Install and Use the SYNC Desktop Client
-
-You can read **[this how-to](https://pydio.com/en/docs/kb/miscellaneous/use-pydio-sync-client#content)** that will explain how install and use the sync client,
-the desktop client is easy to install and use.

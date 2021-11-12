@@ -1,6 +1,6 @@
 <div style="background-color: #fbe9b7;font-size: 14px;">
 <span style="background-color: #fae4a6;padding: 10px;">WARNING</span>
-<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 8 (PHP), EOL end 2019. Time to move to <a href="https://pydio.com/en/docs/cells/v2/quick-start">Pydio Cells</a>!</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 8 (PHP). Time to move to <a href="https://pydio.com/en/docs/administration-guides">Pydio Cells</a>!</span>
 </div>
 
 Some other drivers nicely demonstrate how Pydio can be used as a generic data-browsing framework.
@@ -31,7 +31,7 @@ Associated with the Email Viewer (editor.eml), a workspace created with the driv
 
 This can be handy to transfer a huge attachment directly from an email to another Pydio workspace, without having to download it to your desktop and re-upload it afterward.
 
-A good usecase would probably to create a workspace template and let user add their own email-workspace, providing their own credentials for connexion. Please see the [plugin documentation](https://pydio.com/docs/references/plugins/access/imap/) to get standard configurations for Gmail, Yahoo, etc.
+A good usecase would probably to create a workspace template and let user add their own email-workspace, providing their own credentials for connexion. 
 
 [:image-popup:4_setup_workspaces_and_users/create_workspace_imap.png]
 

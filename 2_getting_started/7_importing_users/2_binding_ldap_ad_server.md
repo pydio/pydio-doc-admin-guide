@@ -1,6 +1,6 @@
 <div style="background-color: #fbe9b7;font-size: 14px;">
 <span style="background-color: #fae4a6;padding: 10px;">WARNING</span>
-<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 8 (PHP), EOL end 2019. Time to move to <a href="https://pydio.com/en/docs/cells/v2/quick-start">Pydio Cells</a>!</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 8 (PHP). Time to move to <a href="https://pydio.com/en/docs/administration-guides">Pydio Cells</a>!</span>
 </div>
 
 Binding to an existing LDAP  directory or Microsoft Active Directory (AD)  allows you to reuse the user accounts that you already have in the directory, without having to create new accounts in Pydio. It is therefore  one of the most frequently wanted features  when deploying Pydio on top of an existing infrastructure., even more so if you have e.g. a Windows environment where access to files is managed with AD accounts, and you want to use those file servers as backend storage.
@@ -83,7 +83,7 @@ So, you can map the LDAP “email” attribute or AD “Mail” attribute to the
 
 ##### Using LDAP/AD Groups
 
-When you’re using an LDAP directory that supports the « memberOf » attribute (i.e. you have Microsoft Active Directory, or an LDAP server with the « memberOf » overlay set up), you can use the attribute mapping mechanism to integrate your Active Directory groups in Pydio. This is explained in more detail in the How-To section : [Groups and Roles with LDAP/AD integration](https://pydio.com/en/docs/kb/authentication/advanced-authentication-ldapad)
+When you’re using an LDAP directory that supports the « memberOf » attribute (i.e. you have Microsoft Active Directory, or an LDAP server with the « memberOf » overlay set up), you can use the attribute mapping mechanism to integrate your Active Directory groups in Pydio. This is explained in more detail in the How-To section.
 
 You will also need a good understanding of Pydio’s Groups and Roles to make good use of this feature.
 
@@ -91,7 +91,3 @@ You will also need a good understanding of Pydio’s Groups and Roles to make go
 
 ### Setting up a secondary auth driver
 Most generally, LDAP accesses are readonly, thus preventing Pydio users to create new users for sharing. For this reason, you have to configure a secondary instance to keep a parallel user base that is fully manageable by Pydio. Choose either SQL or Serial files, depending on the Configuration storage you already use (SQL or Serial), and depending on the user load you expect. Set the “Mode” in “Master / Slave”, as LDAP will be the master reference. See previous page (Authentication) for more details.
-
-
-### Advanced Mapping
-For a more advanced usage of the LDAP/AD feature you can check our how-to right **[HERE](https://pydio.com/en/docs/kb/authentication/advanced-authentication-ldapad)**.

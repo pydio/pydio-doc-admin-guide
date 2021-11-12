@@ -1,6 +1,6 @@
 <div style="background-color: #fbe9b7;font-size: 14px;">
 <span style="background-color: #fae4a6;padding: 10px;">WARNING</span>
-<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 8 (PHP), EOL end 2019. Time to move to <a href="https://pydio.com/en/docs/cells/v2/quick-start">Pydio Cells</a>!</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 8 (PHP). Time to move to <a href="https://pydio.com/en/docs/administration-guides">Pydio Cells</a>!</span>
 </div>
 
 ## Install Software Collection, EPEL and Pydio repositories
@@ -114,8 +114,4 @@ All sql script is store in /usr/share/doc/pydio/sql, you can execute following c
 
     mysql -u username -p databasename < /usr/share/doc/pydio/sql/pydio.mysql
 
-> Note: you can also get sql script in this [link](https://github.com/pydio/pydio-core/blob/develop/dist/php/7.0.0.mysql)
-
-
-[Quick Start](http://pydio.com/en/docs/v7-enterprise/quick-start)
 

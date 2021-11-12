@@ -1,6 +1,6 @@
 <div style="background-color: #fbe9b7;font-size: 14px;">
 <span style="background-color: #fae4a6;padding: 10px;">WARNING</span>
-<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 8 (PHP), EOL end 2019. Time to move to <a href="https://pydio.com/en/docs/cells/v2/quick-start">Pydio Cells</a>!</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 8 (PHP). Time to move to <a href="https://pydio.com/en/docs/administration-guides">Pydio Cells</a>!</span>
 </div>
 
 ## Create an account to grab your API Credentials
@@ -205,10 +205,4 @@ Execute following commands to create database for pydio
     create user 'pydio'@'localhost' identified by 'password';
     grant all privileges on pydio.* to 'pydio'@'localhost';
     flush privileges;
-
-#### Configure SELinux for Pydio Booster
-
-Please visit [SELinux](https://pydio.com/en/docs/kb/security/pydio-security-enhanced-linux-selinux)
-
-[Quick Start](http://pydio.com/en/docs/v7-enterprise/quick-start)
 

@@ -1,6 +1,6 @@
 <div style="background-color: #fbe9b7;font-size: 14px;">
 <span style="background-color: #fae4a6;padding: 10px;">WARNING</span>
-<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 8 (PHP), EOL end 2019. Time to move to <a href="https://pydio.com/en/docs/cells/v2/quick-start">Pydio Cells</a>!</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 8 (PHP). Time to move to <a href="https://pydio.com/en/docs/administration-guides">Pydio Cells</a>!</span>
 </div>
 
 As explained in the Introduction to Workspaces, workspace is defined by two things : the "driver" used to access the data (local filesystem, remote ftp server, database, etc...), and the configuration of this driver (the local path to the files, the database credentials, etc). You can even develop your own access driver by following the plugin api. The full list of available drivers for accessing the data is in the "Plugins" part of this documentation, above the "access" category : **https://pydio.com/docs/references/plugins/access/**

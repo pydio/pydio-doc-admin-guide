@@ -1,6 +1,6 @@
 <div style="background-color: #fbe9b7;font-size: 14px;">
 <span style="background-color: #fae4a6;padding: 10px;">WARNING</span>
-<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 8 (PHP), EOL end 2019. Time to move to <a href="https://pydio.com/en/docs/cells/v2/quick-start">Pydio Cells</a>!</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 8 (PHP). Time to move to <a href="https://pydio.com/en/docs/administration-guides">Pydio Cells</a>!</span>
 </div>
 
 Pydio requires a RewriteRule to redirect all request to */index.php*.  
@@ -58,10 +58,7 @@ If when testing the API access, you have an infinite authorization loop, try unc
 
 ### Other servers: IIS and Nginx
 
-The content of the .htaccess file is only understood by Apache ModRewrite. If you are using another webserver, please refer to the dedicated How-To’s in our knowledge base:
-
-- [Installing Pydio on Windows + IIS](https://pyd.io/configure-applicationpool-for-pydio-in-windows2012-iis8/)
-- [Installing Pydio on Nginx](https://pydio.com/en/docs/kb/system/installing-linux-distribution-nginx-0#content)
+The content of the .htaccess file is only understood by Apache ModRewrite. If you are using another webserver, please refer to the dedicated How-To’s in our knowledge base.
 
 ### _Testing rewrite is working_
 

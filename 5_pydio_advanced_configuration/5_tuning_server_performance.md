@@ -1,6 +1,6 @@
 <div style="background-color: #fbe9b7;font-size: 14px;">
 <span style="background-color: #fae4a6;padding: 10px;">WARNING</span>
-<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 8 (PHP), EOL end 2019. Time to move to <a href="https://pydio.com/en/docs/cells/v2/quick-start">Pydio Cells</a>!</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 8 (PHP). Time to move to <a href="https://pydio.com/en/docs/administration-guides">Pydio Cells</a>!</span>
 </div>
 
 As many PHP frameworks, Pydio ends up loading quite a lot of PHP files at runtime, which can result in poor performances if the server is not correctly configured. Furthermore, managing files, and particularly big files, can also lead PHP to high CPU load for some operations. We present here the basic strategies that can be implemented to enhance performance, from easy (and really recommanded) to more complex setups.
@@ -39,5 +39,3 @@ You can enable this feature by going to **All Plugins > Available Plugins > Acti
  Along with the PHP Accelerator (**PHP APC**) pydio provides **memcache**, **memcached**, **redis**, **xcache** options by default to configure cache server.. The **NOSQL keyvalue** stores like memcache, memcached and Redis runs a server on a local port to provide the caching service.
 
 [:image-popup:6_pydio_advanced_configuration/cache_service_configuration_update.png]
-
-You can look at [this how-to](https://pydio.com/en/docs/kb/miscellaneous/optimizing-pydio-performances)that will help you use a caching mechanism.

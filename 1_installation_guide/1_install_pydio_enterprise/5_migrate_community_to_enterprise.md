@@ -1,6 +1,6 @@
 <div style="background-color: #fbe9b7;font-size: 14px;">
 <span style="background-color: #fae4a6;padding: 10px;">WARNING</span>
-<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 8 (PHP), EOL end 2019. Time to move to <a href="https://pydio.com/en/docs/cells/v2/quick-start">Pydio Cells</a>!</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 8 (PHP). Time to move to <a href="https://pydio.com/en/docs/administration-guides">Pydio Cells</a>!</span>
 </div>
 
 Pydio in-app upgrade tool allows you to directly migrate from an existing Community Edition installation to Pydio Enterprise Distribution. The steps are described below.
@@ -9,7 +9,7 @@ Pydio in-app upgrade tool allows you to directly migrate from an existing Commun
 
 There are some differences for running Pydio Enterprise Distribution (ED) compared to our core community package. Based on an End User License Agreement, some files of the ED are encrypted and require a license key to be used. 
 
-- **IonCube Loaders:** Install on your server the php IonCube Loaders provided by IonCube [on their server](https://ioncube.com/loaders.php). Pick the right binary for your architecture. Beware that it depends on the OS, the architecture (32/64bits) and the PHP version. Their wizard provides you an easy way to install the loaders.
+- **IonCube Loaders:** Install on your server the php IonCube Loaders provided by IonCube on their server and the PHP version. Their wizard provides you an easy way to install the loaders.
 - **License Key:** Once installed, the ED will require a license name/license key pair that is available in your Pydio.com account once you have bought them to our sales services.
 - **API Keys:** In order to connect to our protect packages repositories, you will need the API Keys provided in your pydio.com. These are NOT the same as the license name/license key pair.
 

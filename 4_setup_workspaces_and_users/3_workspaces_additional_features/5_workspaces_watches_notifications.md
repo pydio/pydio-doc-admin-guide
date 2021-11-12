@@ -1,6 +1,6 @@
 <div style="background-color: #fbe9b7;font-size: 14px;">
 <span style="background-color: #fae4a6;padding: 10px;">WARNING</span>
-<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 8 (PHP), EOL end 2019. Time to move to <a href="https://pydio.com/en/docs/cells/v2/quick-start">Pydio Cells</a>!</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 8 (PHP). Time to move to <a href="https://pydio.com/en/docs/administration-guides">Pydio Cells</a>!</span>
 </div>
 
 ### Introduction
@@ -18,23 +18,20 @@ Activating notifications used to be quite cumbersome, but the procedure was grea
 + Activate the "User events and alerts" in the Notification Center (**Application Parameters > Notifications**). There is only one plugin available, so it's selected by default (Events SQL). Click on the Install SQL Tables button to make sure ajxp_feed table is created.
 + **_This will already be enough to enable the Events Feeds.  But you will also want to let the user watch for a given folder to receive alerts :_**
 + Add a **"Watch Metadata"** feature to each workspace
-+ Make sure the emailer is correctly setup by checking the various parameters of the **Application Parameters > Mailers** panel. Warning, either through the administrator Email, or via the "Sender Email" field of this panel, you must make sure that an email is configured to fill the "From" value of the emails, otherwise they won't be sent correctly. Also, this is your mission to correctly configure your PHP to send emails you can go **[HERE](https://pydio.com/en/docs/kb/plugins/setting-emailers)** to have clues about it.
++ Make sure the emailer is correctly setup by checking the various parameters of the **Application Parameters > Mailers** panel. Warning, either through the administrator Email, or via the "Sender Email" field of this panel, you must make sure that an email is configured to fill the "From" value of the emails, otherwise they won't be sent correctly. 
 
 Once all this is active, switch to any workspace, you should see the "Notifications" button appear in the top toolbar. If you right-click on a file or folder, you should as well see the "Watch... " menu allowing you to flag the selected item as watched.
 
 ### Optimizing performances
 #### _Disable output buffering!_
 
-Make sure that output buffering is **[disable](https://pydio.com/en/docs/v8/troubleshooting)** for your PHP configuration. This allows Pydio to register some actions to be performed AFTER the pages are render to the client browser. Events feeds can be time consuming, as every action on the data must be logged and analysed to see if it must trigger an alert. When the system is correctly configured, this is done at the very end of the scripts, after rendering results of the queries for the clients.
+Make sure that output buffering is disabled for your PHP configuration. This allows Pydio to register some actions to be performed AFTER the pages are render to the client browser. Events feeds can be time consuming, as every action on the data must be logged and analysed to see if it must trigger an alert. When the system is correctly configured, this is done at the very end of the scripts, after rendering results of the queries for the clients.
 
 This is not recommended only for this feature, many features implying metadata update or indexation are also using this system to avoid lowering your system response celerity.
 
 #### _Messages Queuing_
 
 For system under high load (high number of users basically), you should consider switching on the "Messages Queuing" mechanism. This will allow the events to be treated asynchronously : all events are stored in a queue, and you will have to setup a CRON job to consume the queue on a regular basis.
-
-**[Here's a how-to use a task job with CRON](https://pydio.com/en/docs/kb/plugins/using-tasks-scheduler).**
-
 
 You can also do you it through the console. You will have enable the CLI version of the framework, and then launch the following command, for example every 5 minutes:
 

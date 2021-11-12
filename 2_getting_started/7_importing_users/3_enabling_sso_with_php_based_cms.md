@@ -1,6 +1,6 @@
 <div style="background-color: #fbe9b7;font-size: 14px;">
 <span style="background-color: #fae4a6;padding: 10px;">WARNING</span>
-<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 8 (PHP), EOL end 2019. Time to move to <a href="https://pydio.com/en/docs/cells/v2/quick-start">Pydio Cells</a>!</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 8 (PHP). Time to move to <a href="https://pydio.com/en/docs/administration-guides">Pydio Cells</a>!</span>
 </div>
 
 Pydio provides a set of “CMS Bridges” to allow you to use your existing CMS as a users directory. The principle of the bridge is that Pydio becomes a “Slave” of the CMS, in that when a user logs in the CMS, she is automatically logged in Pydio also. If not logged and accessing to Pydio, she is automatically redirected to the CMS login page.
@@ -12,7 +12,7 @@ Then, you can go in "All plugins" > Available Plugins > Authentification Backend
 Supported CMS are currently PHP-based : WordPress, Joomla! and Drupal. There is also a “blank” implementation that should allow you to plug to your own CMS. For the first three, you will have to install a dedicated “plugin” or “module” (depending on the CMS) to make the connexion effective. See the dedicated page Extensions > Bridges for more info about versions supported and download links.
 
 ### Install the dedicated plugin in the CMS
-Download the Pydio-CMS-Bridges package from the [dedicated page](https://pydio.com/en/get-pydio/downloads/cms-bridges), and unzip it on your local computer. Locate the correct plugin from the content of the folder
+Download the Pydio-CMS-Bridges package from the dedicated page, and unzip it on your local computer. Locate the correct plugin from the content of the folder
 
 + **WordPress**: all WordPress version
 + **Joomla!**
@@ -43,5 +43,3 @@ The Authentication must work in two ways : when successfully logging in from the
 Remote Authentication Parameters
 
 [:image-popup:2_getting_started/cms_server_connection.png]
-
-**[Here's a how-to with example to enable your remote authenticaton with a cms](https://pydio.com/en/docs/kb/authentication/authentication-your-cms)**

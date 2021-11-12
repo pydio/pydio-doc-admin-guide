@@ -1,6 +1,6 @@
 <div style="background-color: #fbe9b7;font-size: 14px;">
 <span style="background-color: #fae4a6;padding: 10px;">WARNING</span>
-<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 8 (PHP), EOL end 2019. Time to move to <a href="https://pydio.com/en/docs/cells/v2/quick-start">Pydio Cells</a>!</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 8 (PHP). Time to move to <a href="https://pydio.com/en/docs/administration-guides">Pydio Cells</a>!</span>
 </div>
 
 ### Data concerned & available plugins
@@ -11,7 +11,7 @@ Although configuration backends are few (basically serialized files or DB), auth
 + auth.serial, auth.sql: “Internal“ implementations, that keep all data inside Pydio, and that are very close to their “conf” counter part.
 + auth.ldap, auth.cas: SSO like implementations that can query an LDAP/AD directory or a CAS server.
 + auth.ftp, auth.smb: specific implementations that are linked to a workspace for performing authentication “dynamically”.
-+ auth.remote, auth.cmsms, auth.phpbb: bridges allowing to use an external PHP CMS as a user directory. Currently there are WordPress, Joomla and Drupal counterparts, as well as detailed **[how-to](https://pydio.com/en/docs/kb/authentication/authentication-your-cms)** to log to any existing system.
++ auth.remote, auth.cmsms, auth.phpbb: bridges allowing to use an external PHP CMS as a user directory. Currently there are WordPress, Joomla and Drupal counterparts, as well as detailed **how-to** to log to any existing system.
 
 The following articles will go through the most used implementations. Use the **Application Parameters > Authentication** to switch the backend.
 

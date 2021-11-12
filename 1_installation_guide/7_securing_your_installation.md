@@ -1,6 +1,6 @@
 <div style="background-color: #fbe9b7;font-size: 14px;">
 <span style="background-color: #fae4a6;padding: 10px;">WARNING</span>
-<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 8 (PHP), EOL end 2019. Time to move to <a href="https://pydio.com/en/docs/cells/v2/quick-start">Pydio Cells</a>!</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Pydio 8 (PHP). Time to move to <a href="https://pydio.com/en/docs/administration-guides">Pydio Cells</a>!</span>
 </div>
 
 Pydio code is continuously audited by security experts, and should be resistant to the most common web attacks. But at some point, Pydio cannot fix holes created by a wrong server configuration. Here are some basic recommendations for securing your Pydio installation.
@@ -15,8 +15,6 @@ Under the main Pydio installation folder, the following folders contents must be
 **Note:**  concerning the .htaccess files under Apache, be sure to AllowOverride of the Limit directives on your web server (contact your Webmaster).
 
 If you can, do not use the default “files” folder placed inside the distribution, but create a repository pointing to a folder outside your web “document root”.
-
-[Read more](https://pydio.com/en/docs/kb/security/permission-pydio%E2%80%99s-filesfolders)
 
 ### Basic security rules
 
