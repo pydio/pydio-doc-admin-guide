@@ -1,3 +1,12 @@
+
+<div style="background-color: #fbe9b7;font-size: 14px;">
+<span style="background-color: #fae4a6;padding: 10px;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Cells v2. Looking for <a href="https://pydio.com/en/docs/cells/v3/quick-start">Pydio Cells v3 docs?</a></span>
+</div>
+
+
+
+
 Cells binary is self-contained and can be easily updated / upgraded using either the in-app tool, the command-line, or by simply downloading a new binary and replacing the existing one. All necessary migrations will be performed on version-change detection. Downgrading is not possible though, as downward migrations are generally not implemented.
 
 ## In-App Tool
