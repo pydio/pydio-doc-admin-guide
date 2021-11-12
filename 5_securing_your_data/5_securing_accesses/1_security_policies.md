@@ -5,12 +5,6 @@
 </div>
 
 
-
-
-Visit the knowledge base for examples of application for the security policies.	
-
-- [ACL use cases](en/docs/kb/access-control/acl-use-cases)	
-
 Security policies allow admin to restrict access to resources and can be created based on lots of criteria:	
 
 - Request source IP	
