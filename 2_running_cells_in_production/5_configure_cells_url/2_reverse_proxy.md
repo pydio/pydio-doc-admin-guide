@@ -21,7 +21,3 @@ In our knowledge base we have a growing number of comprehensive guides to setup 
 - [Reverse proxy with **Nginx**](/en/docs/kb/deployment/running-cells-behind-nginx-reverse-proxy)
 - [Docker and **Traefik**](/en/docs/kb/deployment/running-your-cells-docker-behind-traefik-reverse-proxy)
 - [Reverse proxy with a Apache your **Docker** instance](/en/docs/kb/deployment/running-your-cells-docker-container-behind-reverse-proxy)
-
-### More details
-
-- See our detailed article in the [Knowledge Base](en/docs/kb/client-applications/setup-cells-server-cellssync).

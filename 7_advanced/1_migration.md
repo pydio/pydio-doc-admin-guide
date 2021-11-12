@@ -106,7 +106,7 @@ When Pydio 8 is running on simple HTTP (e.g. without TLS), you must also launch 
 
 #### Data
 
-Install and start Pydio Cells as usual on the target machine. Please [visit our documentation for more information](./installation-guides).
+Install and start Pydio Cells as usual on the target machine.
 
 In Pydio 8, the data is located by default in a *data* folder (e.g.: /var/lib/pydio/data/) or /var/www/html/data/). However, you may have other workspaces which point to other location such as /mnt/data.
 
