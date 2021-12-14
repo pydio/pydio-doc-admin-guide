@@ -1,4 +1,4 @@
-In this article we are pushing the branding to have a custom made Cells instance that suits every aspect of your company branding. You can change the logos, favicon, background images and much more.
+This article quickly introduces the options you have to fine tune some aspects of the web GUI to comply with you company specific branding. To begin with, let's change the main Logo of the application, the favicons and the background images.
 
 ### Main logo and Background image
 
