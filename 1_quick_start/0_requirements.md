@@ -36,7 +36,7 @@ FLUSH PRIVILEGES;
 
 Always ensure that the database is created with character set and collation set to UTF8.
 
-Make sure not to leave the `max_connections` to its default value (151) while going live in production, for a better understanding [see MySQL manual](https://dev.mysql.com/doc/refman/8.0/en/too-many-connections.html).
+Make sure not to leave the `max_connections` to its default value (151) for production we advise at least `500`, for a better understanding [see MySQL manual](https://dev.mysql.com/doc/refman/8.0/en/too-many-connections.html).
 
 
 ## Network requirements
