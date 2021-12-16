@@ -27,14 +27,16 @@ Supported server versions:
 
 ```SQL
 CREATE USER 'pydio'@'localhost' IDENTIFIED BY '<your-password-here>';
-CREATE DATABASE cells;
+CREATE DATABASE cells DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
 GRANT ALL PRIVILEGES ON cells.* to 'pydio'@'localhost';
 FLUSH PRIVILEGES;
 ```
 
 **Important Settings** 
 
-Make sure not to leave the `max_connections` to its default value (151) while going live in production.
+Always ensure that the database is created with character set and collation set to UTF8.
+
+Make sure not to leave the `max_connections` to its default value (151) while going live in production, for a better understanding [see MySQL manual](https://dev.mysql.com/doc/refman/8.0/en/too-many-connections.html).
 
 
 ## Network requirements
