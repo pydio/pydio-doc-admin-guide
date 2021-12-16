@@ -1,5 +1,6 @@
-title: "Migrate Pydio 8 to Cells"
+title: Migrate Pydio 8 to Cells
+abstract: Providing guidance to migrate from an existing old P8 server to Pydio Cells. If you are a customer, rather get in touch with the support.
+menu: Migrate Pydio 8 to Cells
 language: und
-menu: "Migrate Pydio 8 to Cells"
 weight: 1
 menu_name: menu-administration-guide

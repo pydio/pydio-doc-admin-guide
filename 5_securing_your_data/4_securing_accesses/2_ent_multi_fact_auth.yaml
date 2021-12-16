@@ -1,5 +1,6 @@
-title: "[Ent] Multi factor authentication"
+title: '[Ent] Multi factor authentication'
+abstract: Enabling multi factor authentication in Pydio Cells.
+menu: '[Ent] MFA (OTP, Yubikey, DUO)'
 language: und
-menu: "[Ent] MFA (OTP, Yubikey, DUO)"
 weight: 2
 menu_name: menu-administration-guide

@@ -1,5 +1,6 @@
-title: "Install Static Binaries"
+title: Install Static Binaries
+abstract: Installing Pydio Cells on your server using our pre-compiled binaries.
+menu: Static Binaries
 language: und
-menu: "Static Binaries"
 weight: 1
 menu_name: menu-administration-guide

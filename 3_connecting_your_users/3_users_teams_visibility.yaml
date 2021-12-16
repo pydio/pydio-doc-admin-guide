@@ -1,5 +1,6 @@
-title: "Users / Teams Visibility"
+title: Users / Teams Visibility
+abstract: 'Explaining security policies that can be applied on non-file ressources, like other user, teams or shared content.   '
+menu: Users / Teams Visibility
 language: und
-menu: "Users / Teams Visibility"
 weight: 3
 menu_name: menu-administration-guide

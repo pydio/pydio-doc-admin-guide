@@ -1,5 +1,6 @@
-title: "[Ent] Adding Terms of Service"
+title: '[Ent] Adding Terms of Service'
+abstract: Adding a custom disclaimer and/or EULA that must be accepted by the user before she can access the system for the first time.
+menu: '[Ent] Adding Terms of Service'
 language: und
-menu: "[Ent] Adding Terms of Service"
 weight: 4
 menu_name: menu-administration-guide

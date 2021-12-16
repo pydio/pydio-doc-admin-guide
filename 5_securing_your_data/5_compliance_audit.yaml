@@ -1,5 +1,6 @@
-title: "[Ent] Audits & Compliance"
+title: '[Ent] Audits & Compliance'
+abstract: Presenting the compliance oriented features that comes out of the box with the Enterprise Distribution of your Pydio Cells server
+menu: '[Ent] Audits & Compliance'
 language: und
-menu: "[Ent] Audits & Compliance"
 weight: 5
 menu_name: menu-administration-guide

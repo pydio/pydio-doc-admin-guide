@@ -1,5 +1,6 @@
-title: "Docker"
+title: Docker
+abstract: Quickly deploying Pydio Cells on Docker.
+menu: Docker
 language: und
-menu: "Docker"
 weight: 2
 menu_name: menu-administration-guide

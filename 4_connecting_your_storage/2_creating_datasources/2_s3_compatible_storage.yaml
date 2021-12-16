@@ -1,5 +1,6 @@
-title: "S3 Compatible Storage"
+title: S3 Compatible Storage
+abstract: Connecting Pydio Cells to Amazon S3 storage or a S3 compatible storage.
+menu: S3 Compatible Storage
 language: und
-menu: "S3 Compatible Storage"
 weight: 2
 menu_name: menu-administration-guide

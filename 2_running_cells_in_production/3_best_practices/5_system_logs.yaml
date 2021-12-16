@@ -1,5 +1,6 @@
-title: "System Logs"
+title: System Logs
+abstract: Following the standard 12-factor architecture pattern for micro-services, Pydio Cells logs are redirected by default to the standard output.
+menu: System Logs
 language: und
-menu: "System Logs"
 weight: 5
 menu_name: menu-administration-guide

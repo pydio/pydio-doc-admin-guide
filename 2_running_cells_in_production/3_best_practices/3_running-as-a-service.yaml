@@ -1,5 +1,6 @@
-title: "Linux Service"
+title: Linux Service
+abstract: Running Cells as a service is a good way to ensure that you always have your server running after an event such as a server restart.
+menu: Linux Service
 language: und
-menu: "Linux Service"
 weight: 3
 menu_name: menu-administration-guide

@@ -1,5 +1,6 @@
-title: "[Ent] Assign quotas"
+title: '[Ent] Assign quotas'
+abstract: Defining quotas to limit the amount of storage that can be used on a workspace.
+menu: '[Ent] Assign quotas'
 language: und
-menu: "[Ent] Assign quotas"
 weight: 7
 menu_name: menu-administration-guide

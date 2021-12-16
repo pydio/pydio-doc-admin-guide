@@ -1,5 +1,6 @@
-title: "[Ent] Hardening Security"
+title: '[Ent] Hardening Security'
+abstract: Hardening the security of your Pydio Cells instance.
+menu: '[Ent] Hardening Security'
 language: und
-menu: "[Ent] Hardening Security"
 weight: 4
 menu_name: menu-administration-guide

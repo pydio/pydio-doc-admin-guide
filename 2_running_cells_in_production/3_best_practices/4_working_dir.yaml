@@ -1,5 +1,6 @@
-title: "Working Directories"
+title: Working Directories
+abstract: 'A quick overview of the most important locations in your server file system that are used by Cells and how to customise them. '
+menu: Working Directories
 language: und
-menu: "Working Directories"
 weight: 4
 menu_name: menu-administration-guide

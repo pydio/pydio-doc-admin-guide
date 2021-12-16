@@ -1,5 +1,6 @@
-title: "Backup / Recover"
+title: Backup / Recover
+abstract: Take a short overview on how to secure your Pydio Cells instance against data loss or failure.
+menu: Backup / Recover
 language: und
-menu: "Backup / Recover"
 weight: 5
 menu_name: menu-administration-guide

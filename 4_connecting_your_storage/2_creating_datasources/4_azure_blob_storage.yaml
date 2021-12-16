@@ -1,5 +1,6 @@
-title: "[Ent] Azure Blob Storage"
+title: '[Ent] Azure Blob Storage'
+abstract: Connecting Pydio Cells to Azure Blob Storage.
+menu: '[Ent] Azure Blob Storage'
 language: und
-menu: "[Ent] Azure Blob Storage"
 weight: 4
 menu_name: menu-administration-guide

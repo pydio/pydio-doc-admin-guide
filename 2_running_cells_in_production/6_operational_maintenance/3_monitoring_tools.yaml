@@ -1,5 +1,6 @@
-title: "Monitoring Tools"
+title: Monitoring Tools
+abstract: Pydio Cells provides some specific entry points for grabbing statistics and healtcheck information.
+menu: Monitoring Tools
 language: und
-menu: "Monitoring Tools"
 weight: 3
 menu_name: menu-administration-guide

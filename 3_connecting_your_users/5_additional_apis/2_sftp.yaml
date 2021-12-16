@@ -1,5 +1,6 @@
-title: "[Ent] SFTP Access"
+title: '[Ent] SFTP Access'
+abstract: Enabling and configuring  the Pydio Cells internal gateway to use the SFTP protocol to communicate with your Pydio Cells server.
+menu: '[Ent] SFTP Access'
 language: und
-menu: "[Ent] SFTP Access"
 weight: 2
 menu_name: menu-administration-guide

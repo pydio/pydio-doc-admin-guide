@@ -1,5 +1,6 @@
-title: "[Ent] LDAP / AD (Advanced)"
+title: '[Ent] LDAP / AD (Advanced)'
+abstract: 'Digging further in advanced options that can be used to further customize the integration of your external LDAP to your Pydio Cells instance. '
+menu: '[Ent] LDAP / AD (Advanced)'
 language: und
-menu: "[Ent] LDAP / AD (Advanced)"
 weight: 4
 menu_name: menu-administration-guide

@@ -1,5 +1,6 @@
-title: "Pydio Cells Internals"
+title: Pydio Cells Internals
+abstract: Introducing the basics of the Pydio Cells architecture, it helps among other for a better understanding of the Logs
+menu: Pydio Cells Internals
 language: und
-menu: "Pydio Cells Internals"
 weight: 6
 menu_name: menu-administration-guide

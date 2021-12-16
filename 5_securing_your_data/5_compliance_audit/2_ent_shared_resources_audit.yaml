@@ -1,5 +1,6 @@
-title: "[Ent] Visualize Shared Resources"
+title: '[Ent] Visualize Shared Resources'
+abstract: Observing sharing activities with the "Shared Resources Audit" tool of Pydio Cells.
+menu: '[Ent] Visualize Shared Resources'
 language: und
-menu: "[Ent] Visualize Shared Resources"
 weight: 2
 menu_name: menu-administration-guide

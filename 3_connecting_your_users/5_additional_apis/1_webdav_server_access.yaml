@@ -1,5 +1,6 @@
-title: "Webdav Server Access"
+title: Webdav Server Access
+abstract: Accessing Pydio Cells with webdav clients.
+menu: Webdav Server Access
 language: und
-menu: "Webdav Server Access"
 weight: 1
 menu_name: menu-administration-guide

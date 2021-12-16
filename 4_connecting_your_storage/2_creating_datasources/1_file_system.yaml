@@ -1,5 +1,6 @@
-title: "File System Storage"
+title: File System Storage
+abstract: Connecting Pydio Cells to a file system for storage.
+menu: File System
 language: und
-menu: "File System"
 weight: 1
 menu_name: menu-administration-guide

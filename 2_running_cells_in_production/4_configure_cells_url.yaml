@@ -1,5 +1,6 @@
-title: "Configuring Cells URLs"
+title: Configuring Cells URLs
+abstract: This section provides information about managing multiple "sites" and additional information to configure Pydio Cells network configuration.
+menu: Configuring URLs
 language: und
-menu: "Configuring URLs"
 weight: 4
 menu_name: menu-administration-guide

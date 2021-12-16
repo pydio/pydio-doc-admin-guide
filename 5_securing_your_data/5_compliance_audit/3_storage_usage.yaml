@@ -1,5 +1,6 @@
-title: "[Ent] Explore Storage Usage"
+title: '[Ent] Explore Storage Usage'
+abstract: Visualizing usage and exploring the underlying storage from your Pydio Cells Admin Console.
+menu: '[Ent] Explore Storage Usage'
 language: und
-menu: "[Ent] Explore Storage Usage"
 weight: 3
 menu_name: menu-administration-guide

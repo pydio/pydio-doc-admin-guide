@@ -16,3 +16,5 @@ You can customize the various storage locations with the following ENV variables
 | `$CELLS_SERVICES_DIR`| replace location for services-specific data |`$CELLS_WORKING_DIR/services`|
 
 When running in production mode, we generally advise to setup at least `$CELLS_WORKING_DIR` to a standard Linux layout folder, typically `/var/cells`.
+
+More environment variables can be found inside the [API documentation.](./developer-guide/cells-start).

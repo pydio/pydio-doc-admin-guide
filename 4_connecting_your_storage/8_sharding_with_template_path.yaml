@@ -1,5 +1,6 @@
-title: "[Ent] Shard with template path"
+title: '[Ent] Shard with template path'
+abstract: Using template to shard data over multiple datasources and dispatch them on multiple underlying storages.
+menu: '[Ent] Shard with template path'
 language: und
-menu: "[Ent] Shard with template path"
 weight: 8
 menu_name: menu-administration-guide

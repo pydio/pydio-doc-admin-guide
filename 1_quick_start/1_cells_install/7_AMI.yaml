@@ -1,5 +1,6 @@
-title: "Amazon AMI"
+title: Amazon AMI
+abstract: Deploying Pydio Cells Enterprise using the AMI on AWS.
+menu: '[Ent] Amazon AMI'
 language: und
-menu: "[Ent] Amazon AMI"
 weight: 5
 menu_name: menu-administration-guide

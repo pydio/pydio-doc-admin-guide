@@ -1,5 +1,6 @@
-title: "Open Virtual Format"
+title: Open Virtual Format
+abstract: Using our Enterprise OVF appliance to quickly deploy an already configured CentOS machine with Pydio Cells.
+menu: '[Ent] OVF'
 language: und
-menu: "[Ent] OVF"
 weight: 3
 menu_name: menu-administration-guide
