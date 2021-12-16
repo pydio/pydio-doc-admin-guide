@@ -1,5 +1,6 @@
-title: "Additional APIs"
+title: Additional APIs
+abstract: Pydio Cells provides additional APIs to let users connect to their workspaces using other protocols.
+menu: Additional APIs
 language: und
-menu: "Additional APIs"
 weight: 5
 menu_name: menu-administration-guide

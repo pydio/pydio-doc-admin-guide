@@ -1,5 +1,6 @@
-title: "Truncate Logs / Audits"
+title: Truncate Logs / Audits
+abstract: Describing file locations to watch on the host of your Pydio Cells Server and how to perform house cleaning .
+menu: Truncate Logs / Audits
 language: und
-menu: "Truncate Logs / Audits"
 weight: 1
 menu_name: menu-administration-guide

@@ -1,5 +1,6 @@
-title: "Datasources overview"
+title: Datasources overview
+abstract: 'Explaining the decoupling between technical storage (datasource: where the system gets the data) and business logic (workspace: where the user finds it)'
+menu: Datasources overview
 language: und
-menu: "Datasources overview"
 weight: 0
 menu_name: menu-administration-guide

@@ -1,5 +1,6 @@
-title: "Glossary"
+title: Glossary
+abstract: Define the vocabulary that we use throughout our documentation, either specific to Pydio or general technical terms.
+menu: Glossary
 language: und
-menu: "Glossary"
 weight: 10
 menu_name: menu-administration-guide

@@ -1,5 +1,6 @@
-title: "Configure Cells with a reverse-proxy"
+title: Configure Cells with a reverse-proxy
+abstract: List of tested and working reverse proxies with Pydio Cells.
+menu: Reverse-Proxy Setup
 language: und
-menu: "Reverse-Proxy Setup"
 weight: 2
 menu_name: menu-administration-guide

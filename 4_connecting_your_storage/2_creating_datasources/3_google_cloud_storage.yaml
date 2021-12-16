@@ -1,5 +1,6 @@
-title: "[Ent] Google Cloud Storage"
+title: '[Ent] Google Cloud Storage'
+abstract: Connecting Pydio Cells to Google Cloud Storage.
+menu: '[Ent] Google Cloud Storage'
 language: und
-menu: "[Ent] Google Cloud Storage"
 weight: 3
 menu_name: menu-administration-guide

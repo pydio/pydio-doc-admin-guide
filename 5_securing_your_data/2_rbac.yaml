@@ -1,5 +1,6 @@
-title: "Role-based Access Control"
+title: Role-based Access Control
+abstract: 'Introducing roles and access control lists (ACLs), the corner stone to permission management in Pydio Cells. '
+menu: Role-based Access Control
 language: und
-menu: "Role-based Access Control"
 weight: 2
 menu_name: menu-administration-guide

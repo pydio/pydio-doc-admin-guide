@@ -1,6 +1,6 @@
-title: "Cells Installation"
+title: Cells Installation
+abstract: Getting started with Pydio Cells using pre-compiled binaries or cloud images.
+menu: Cells Installation
 language: und
-menu: "Cells Installation"
 weight: 1
 menu_name: menu-administration-guide
-abstract: How to quickly get started with Pydio Cells from binary or cloud image

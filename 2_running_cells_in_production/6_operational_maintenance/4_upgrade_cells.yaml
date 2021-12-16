@@ -1,5 +1,6 @@
-title: "Software Upgrades"
+title: Software Upgrades
+abstract: Managing software upgrade in Pydio Cells.
+menu: Software Upgrades
 language: und
-menu: "Software Upgrades"
 weight: 4
 menu_name: menu-administration-guide

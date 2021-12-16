@@ -1,5 +1,6 @@
-title: "[Ent] Group Tenancy"
+title: '[Ent] Group Tenancy'
+abstract: Managing group visibility scope in Pydio Cells.
+menu: '[Ent] Group Tenancy'
 language: und
-menu: "[Ent] Group Tenancy"
 weight: 4
 menu_name: menu-administration-guide

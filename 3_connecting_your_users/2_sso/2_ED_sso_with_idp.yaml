@@ -1,5 +1,6 @@
-title: "[Ent] Using SSO with an External Identity Provider"
+title: '[Ent] Using SSO with an External Identity Provider'
+abstract: Integrating your Pydio Cells Server with additionnal external identity providers like Github, Google, Facebook, or other IDPaaS.
+menu: '[Ent] SSO with External IdP'
 language: und
-menu: "[Ent] SSO with External IdP"
 weight: 2
 menu_name: menu-administration-guide

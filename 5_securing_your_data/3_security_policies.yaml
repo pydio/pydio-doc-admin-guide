@@ -1,5 +1,6 @@
-title: "[Ent] Dynamic Access Control"
+title: '[Ent] Dynamic Access Control'
+abstract: Customise your Pydio Cells server permission management layer with security policies.
+menu: '[Ent] Dynamic Access Control'
 language: und
-menu: "[Ent] Dynamic Access Control"
 weight: 3
 menu_name: menu-administration-guide

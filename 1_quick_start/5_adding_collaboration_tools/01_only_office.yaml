@@ -1,5 +1,6 @@
-title: "[Ent] Only Office"
+title: '[Ent] Only Office'
+abstract: Setting up Only Office on Pydio Cells.
+menu: '[Ent] Only Office'
 language: und
-menu: "[Ent] Only Office"
 weight: 2
 menu_name: menu-administration-guide

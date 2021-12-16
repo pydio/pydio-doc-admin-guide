@@ -1,5 +1,6 @@
-title: "Versioning Policies"
+title: Versioning Policies
+abstract: 'Explaining the versionning system that comes embedded in Pydio Cells and your configuration options '
+menu: Versioning Policies
 language: und
-menu: "Versioning Policies"
 weight: 3
 menu_name: menu-administration-guide

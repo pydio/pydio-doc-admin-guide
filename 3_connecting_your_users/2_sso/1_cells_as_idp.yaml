@@ -1,5 +1,6 @@
-title: "Cells as Identity Provider"
+title: Cells as Identity Provider
+abstract: Leveraging Pydio Cells as an identity provider.
+menu: Cells as Identity Provider
 language: und
-menu: "Cells as Identity Provider"
 weight: 1
 menu_name: menu-administration-guide

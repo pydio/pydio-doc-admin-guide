@@ -1,5 +1,6 @@
-title: "Best practices"
+title: Best practices
+abstract: This section provides a set of best practices for production deployments for Pydio Cells.
+menu: Best practices
 language: und
-menu: "Best practices"
 weight: 3
 menu_name: menu-administration-guide

@@ -1,5 +1,6 @@
-title: "Advanced configurations"
+title: Advanced configurations
+abstract: A few hints to further configure your Pydio Cells server instance.
+menu: Advanced configurations
 language: und
-menu: "Advanced configurations"
 weight: 7
 menu_name: menu-administration-guide

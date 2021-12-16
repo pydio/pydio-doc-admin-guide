@@ -1,5 +1,6 @@
-title: "Scheduler / Cells Flows"
+title: Scheduler / Cells Flows
+abstract: Quickly explaining how to use the embedded workflow engine to script redundant tasks.
+menu: Scheduler / Cells Flows
 language: und
-menu: "Scheduler / Cells Flows"
 weight: 2
 menu_name: menu-administration-guide

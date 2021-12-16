@@ -1,5 +1,6 @@
-title: "[Ent] Enable image and video annotations"
+title: '[Ent] Enable image and video annotations'
+abstract: Introducing the annotation feature to add custom meta data to your image or video files.
+menu: '[Ent] Image / Video annotations'
 language: und
-menu: "[Ent] Image / Video annotations"
 weight: 6
 menu_name: menu-administration-guide

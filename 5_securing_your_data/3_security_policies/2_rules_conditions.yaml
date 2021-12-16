@@ -1,5 +1,6 @@
-title: "Rules Conditions"
+title: Rules Conditions
+abstract: Building your custom rules when defining business specific security policies in Pydio Cells.
+menu: Rules Conditions
 language: und
-menu: "Rules Conditions"
 weight: 2
 menu_name: menu-administration-guide

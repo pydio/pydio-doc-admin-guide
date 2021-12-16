@@ -1,5 +1,6 @@
-title: "[Ent] Viewing and Exporting Audit Logs"
+title: '[Ent] Viewing and Exporting Audit Logs'
+abstract: Introducing the audit log to track business events in your Pydio Cells server.
+menu: '[Ent] Viewing & Exporting Audit Logs'
 language: und
-menu: "[Ent] Viewing & Exporting Audit Logs"
 weight: 1
 menu_name: menu-administration-guide

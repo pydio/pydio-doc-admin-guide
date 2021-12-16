@@ -1,5 +1,6 @@
-title: "Single-Sign-On Features"
+title: Single-Sign-On Features
+abstract: Exploring the features of Pydio Cells to address authentication related problematics in your organisation larger infrastructure.
+menu: Single-Sign-On Features
 language: und
-menu: "Single-Sign-On Features"
 weight: 2
 menu_name: menu-administration-guide

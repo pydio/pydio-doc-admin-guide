@@ -1,5 +1,6 @@
-title: "[Ent] IP Ban"
+title: '[Ent] IP Ban'
+abstract: Understanding the IP Ban feature in Pydio Cells.
+menu: '[Ent] IP Ban'
 language: und
-menu: "[Ent] IP Ban"
 weight: 3
 menu_name: menu-administration-guide

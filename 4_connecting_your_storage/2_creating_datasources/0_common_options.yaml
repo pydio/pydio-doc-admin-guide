@@ -1,5 +1,6 @@
-title: "Common Options"
+title: Common Options
+abstract: Describing the settings that are commons to all type of underlying storage when creating a datasource in Pydio Cells.
+menu: Common Options
 language: und
-menu: "Common Options"
 weight: 0
 menu_name: menu-administration-guide

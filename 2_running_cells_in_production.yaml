@@ -1,5 +1,6 @@
-title: "Run Cells in Production"
+title: Run Cells in Production
+abstract: Deploying a Production ready instance of Pydio Cells.
+menu: Run Cells in Production
 language: und
-menu: "Run Cells in Production"
 weight: 2
 menu_name: menu-administration-guide

@@ -1,5 +1,6 @@
-title: "Encryption"
+title: Encryption
+abstract: Using Pydio Cells provided encryption mechanism to store your data encrypted, typically when using a storage provided by a third party.
+menu: Encryption
 language: und
-menu: "Encryption"
 weight: 4
 menu_name: menu-administration-guide

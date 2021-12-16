@@ -1,5 +1,6 @@
-title: "Purge Activities / Notifications"
+title: Purge Activities / Notifications
+abstract: 'Describing underlying locations used on your host server for tracking user activities in Pydio Cells and how to perform house cleaning.  '
+menu: Purge Activities / Notifications
 language: und
-menu: "Purge Activities / Notifications"
 weight: 2
 menu_name: menu-administration-guide

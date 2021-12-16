@@ -1,5 +1,6 @@
-title: "[Ent] Email Templates"
+title: '[Ent] Email Templates'
+abstract: 'Explaining how to customise the E-Mail that are directly send by the Pydio Cells application to your end users. '
+menu: '[Ent] Email Templates'
 language: und
-menu: "[Ent] Email Templates"
 weight: 3
 menu_name: menu-administration-guide

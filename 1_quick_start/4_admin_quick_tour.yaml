@@ -1,5 +1,6 @@
-title: "Quick Admin Tour"
+title: Quick Admin Tour
+abstract: Take a short overview of Pydio Cells administrative features for managing users, workspaces and permissions.
+menu: Quick Admin Tour
 language: und
-menu: "Quick Admin Tour"
 weight: 4
 menu_name: menu-administration-guide

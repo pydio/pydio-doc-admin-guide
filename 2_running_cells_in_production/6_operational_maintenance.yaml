@@ -1,5 +1,6 @@
-title: "Operational Maintenance"
+title: Operational Maintenance
+abstract: Pydio Cells provides a handset of tools to monitor your installation on a day-to-day basis, and making sure to keep its storage footprint under control.
+menu: Operational Maintenance
 language: und
-menu: "Operational Maintenance"
 weight: 6
 menu_name: menu-administration-guide

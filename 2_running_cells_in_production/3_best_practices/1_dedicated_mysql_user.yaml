@@ -1,5 +1,6 @@
-title: "Create a Dedicated MySQL User"
+title: Create a Dedicated MySQL User
+abstract: Setting up a dedicated MySQL user for a Pydio Cells instance.
+menu: Dedicated MySQL User
 language: und
-menu: "Dedicated MySQL User"
 weight: 1
 menu_name: menu-administration-guide

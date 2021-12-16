@@ -1,5 +1,6 @@
-title: "VMWare"
+title: VMWare
+abstract: Deploying Pydio Cells Enterprise Image with VMWare.
+menu: '[Ent] VMWare'
 language: und
-menu: "[Ent] VMWare"
 weight: 4
 menu_name: menu-administration-guide

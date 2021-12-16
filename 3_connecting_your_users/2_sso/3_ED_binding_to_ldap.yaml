@@ -1,5 +1,6 @@
-title: "[Ent] LDAP / AD"
+title: '[Ent] LDAP / AD'
+abstract: Using one or more external LDAP as external authentication source for your Pydio Cells server
+menu: '[Ent] LDAP / AD'
 language: und
-menu: "[Ent] LDAP / AD"
 weight: 3
 menu_name: menu-administration-guide

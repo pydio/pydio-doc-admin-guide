@@ -1,5 +1,6 @@
-title: "Create a Service User"
+title: Create a Service User
+abstract: Setting up a dedicated user to manage a Pydio Cells installation.
+menu: Service User
 language: und
-menu: "Service User"
 weight: 2
 menu_name: menu-administration-guide

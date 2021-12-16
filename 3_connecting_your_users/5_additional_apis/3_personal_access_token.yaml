@@ -1,5 +1,6 @@
-title: "Personal Access Tokens"
+title: Personal Access Tokens
+abstract: Simplifying authentication with the Personal Acess Token in Pydio Cells.
+menu: Personal Access Tokens
 language: und
-menu: "Personal Access Tokens"
 weight: 3
 menu_name: menu-administration-guide
