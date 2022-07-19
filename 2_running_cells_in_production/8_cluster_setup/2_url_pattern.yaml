@@ -1,0 +1,6 @@
+title: Configuring with URLs
+abstract: Cells internal drivers are registered and invoked using an URL Pattern.
+menu: Configuring with URLs
+language: und
+weight: 2
+menu_name: menu-admin-guide-v7-enterprise
