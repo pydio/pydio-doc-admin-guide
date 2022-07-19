@@ -42,9 +42,9 @@ Make sure not to leave the `max_connections` to its default value (151) for prod
 
 Depending on your target deployment size, you may switch directly from the default on-file storage used by specific services (search engine, activity feeds, logs, amongst others) to a Mongo DB document store. 
 
-This is a good idea if 
- - You foresee a high load on the platform:  number of users and/or a high number of files managed every day. 
- - You plan to deploy Cells in a distributed environment (cluster) to provide high availability or horizontal scaling.
+This is a good idea if  
+ - You foresee a high load on the platform:  number of users and/or a high number of files managed every day.   
+ - You plan to deploy Cells in a distributed environment (cluster) to provide high availability or horizontal scaling.  
 
 If you do not have a Mongo DB available yet, **you can add it later** as Cells provides the tools to migrate from on-file storage to Mongo. Otherwise, prepare Mongo connection information such as : 
 
