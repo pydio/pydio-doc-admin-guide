@@ -56,6 +56,8 @@ If you do not have a Mongo DB available yet, **you can add it later** as Cells p
 | Database Name                | Name of the mongo database                                                           | cells                     |
 | Connection String Parameters | Additional connection parameters passed via Mongo connection string query parameters | maxPoolSize=20&w=majority |
 
+Learn more about the [reasons to provide a MongoDB here](/configuring-mongo-storage).
+
 ## Network requirements
 
 ### Gateway

@@ -1,35 +1,37 @@
 ## Why Mongo?
 
-Historically we've been using BoltDB and BleveSearch and we like it. They are pure GO key/value stores and indexers and it allows Cells to provide full indexing functionality without external dependencies. By default, the search engine, activity stream or logs use these JSON document shops to provide rich, out-of-the-box functionality. But these stores are disk and memory intensive, and while they are suitable for small and medium-sized deployments, they create bottlenecks for large deployments.
+Historically Cells has been using BoltDB and BleveSearch and we like it. They are pure GO key/value stores and indexers and it allows **Cells to provide full indexing functionality without external dependencies**. By default, the search engine, activity stream or logs use these JSON document shops to provide rich, out-of-the-box functionality. 
 
-We therefore looked at alternatives for implementing new 'drivers' for the data abstraction layer of each of these services, and chose MongoDB as a feature-rich, scalable and indexed JSON document store. All services using BoltDB/Bleve as storage now offer an alternative MongoDB implementation, a migration path from one another, and the ability to scale horizontally drastically.
+But these stores are disk and memory intensive, and while they are suitable for small and medium-sized deployments, they create bottlenecks for large deployments. **MongoDB provides a feature-rich, scalable and indexed JSON document store**, perfectly suited to store the same kind of data and to scale horizontally.
 
-File-based storage is still a very good option for small/medium instances, avoiding the need to manage another dependency, but the Cells installation steps will now offer to configure a MongoDB connection to avoid the need to migrate data in the long term. Note that Mongo does not replace MySQL storages, that DB is still required for Cells.
+A couple of notes: 
+
+- **File-based storage is still a very good option for small/medium instances**, avoiding the need to manage another dependency.
+- **You can migrate from one to another afterward** (see below).
+- **Mongo does not replace MySQL storage**, a MySQL/Maria DB is always required to run Cells.
 
 ## When to use?
 
-Depending on your target deployment size, you may switch from the default on-file storage used by specific services (search engine, activity feeds, logs, amongst others) to a Mongo DB document store.
-
-This is a good idea if:
+Depending on your target deployment size, you may switch from the default on-file storage used by specific services (search engine, activity feeds, logs, amongst others) to a Mongo DB document store.  So this is a good idea if:
 
 - You foresee a high load on the platform:  number of users and/or a high number of files managed every day.
 - You plan to deploy Cells in a distributed environment (cluster) to provide high availability or horizontal scaling.
 
-The following services can be configured to either use on-file storage (BoltDB or BleveSearch) or Mongo storage : 
+The following services can either use on-file storage (BoltDB or BleveSearch) or a Mongo storage: 
 
-- pydio.grpc.versions
-- pydio.grpc.jobs
-- pydio.grpc.jobs
-- pydio.grpc.chat
-- pydio.grpc.docstore
-- pydio.grpc.log
-- pydio.grpc.mailer
-- pydio.grpc.search
-- pydio.grpc.activity
-- [Ent] pydio.grpc.audit
-- [Ent] pydio.grpc.reports
-- [Ent] pydio.grpc.ipban
-
+|Service Name| Description                                    |
+|------------|------------------------------------------------|
+|pydio.grpc.versions| documents revisions informations               |
+|pydio.grpc.jobs| scheduler flows definitions, statuses and logs |
+|pydio.grpc.chat| chat rooms and chat messages                   |
+|pydio.grpc.docstore| generic structured document store (JSON)       |
+|pydio.grpc.log| application logs                               |
+|pydio.grpc.mailer| sent and pending emails                        |
+|pydio.grpc.search| search engine                                  |
+|pydio.grpc.activity| all activity feeds                             |
+|[Ent] pydio.grpc.audit| audit logs                                     |
+|[Ent] pydio.grpc.reports| audit reports|                                  
+|[Ent] pydio.grpc.ipban| ipban definitions and caches|                   
 
 ## Mongo Connection
 
