@@ -3,4 +3,4 @@ abstract: Hardening the security of your Pydio Cells instance.
 menu: '[Ent] Hardening Security'
 language: und
 weight: 4
-menu_name: menu-administration-guide
+menu_name: menu-admin-guide-v7-enterprise

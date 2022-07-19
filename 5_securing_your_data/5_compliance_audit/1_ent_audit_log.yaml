@@ -3,4 +3,4 @@ abstract: Introducing the audit log to track business events in your Pydio Cells
 menu: '[Ent] Viewing & Exporting Audit Logs'
 language: und
 weight: 1
-menu_name: menu-administration-guide
+menu_name: menu-admin-guide-v7-enterprise

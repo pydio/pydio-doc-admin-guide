@@ -3,4 +3,4 @@ abstract: Customise your Pydio Cells server permission management layer with sec
 menu: '[Ent] Dynamic Access Control'
 language: und
 weight: 3
-menu_name: menu-administration-guide
+menu_name: menu-admin-guide-v7-enterprise

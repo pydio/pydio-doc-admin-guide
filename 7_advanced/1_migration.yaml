@@ -3,4 +3,4 @@ abstract: Providing guidance to migrate from an existing old P8 server to Pydio 
 menu: Migrate Pydio 8 to Cells
 language: und
 weight: 1
-menu_name: menu-administration-guide
+menu_name: menu-admin-guide-v7-enterprise

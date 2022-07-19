@@ -3,4 +3,4 @@ abstract: Visualizing usage and exploring the underlying storage from your Pydio
 menu: '[Ent] Explore Storage Usage'
 language: und
 weight: 3
-menu_name: menu-administration-guide
+menu_name: menu-admin-guide-v7-enterprise

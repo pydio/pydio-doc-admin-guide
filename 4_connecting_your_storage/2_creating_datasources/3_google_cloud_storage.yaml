@@ -3,4 +3,4 @@ abstract: Connecting Pydio Cells to Google Cloud Storage.
 menu: '[Ent] Google Cloud Storage'
 language: und
 weight: 3
-menu_name: menu-administration-guide
+menu_name: menu-admin-guide-v7-enterprise

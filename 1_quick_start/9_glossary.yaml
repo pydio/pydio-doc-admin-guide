@@ -3,4 +3,4 @@ abstract: Define the vocabulary that we use throughout our documentation, either
 menu: Glossary
 language: und
 weight: 10
-menu_name: menu-administration-guide
+menu_name: menu-admin-guide-v7-enterprise

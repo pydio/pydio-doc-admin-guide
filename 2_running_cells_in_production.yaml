@@ -3,4 +3,4 @@ abstract: Deploying a Production ready instance of Pydio Cells.
 menu: Run Cells in Production
 language: und
 weight: 2
-menu_name: menu-administration-guide
+menu_name: menu-admin-guide-v7-enterprise

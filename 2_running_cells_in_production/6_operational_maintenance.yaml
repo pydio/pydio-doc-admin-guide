@@ -3,4 +3,4 @@ abstract: Pydio Cells provides a handset of tools to monitor your installation o
 menu: Operational Maintenance
 language: und
 weight: 6
-menu_name: menu-administration-guide
+menu_name: menu-admin-guide-v7-enterprise

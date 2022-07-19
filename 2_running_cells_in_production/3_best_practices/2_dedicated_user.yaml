@@ -3,4 +3,4 @@ abstract: Setting up a dedicated user to manage a Pydio Cells installation.
 menu: Service User
 language: und
 weight: 2
-menu_name: menu-administration-guide
+menu_name: menu-admin-guide-v7-enterprise

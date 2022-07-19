@@ -3,4 +3,4 @@ abstract: Pydio Cells provides additional APIs to let users connect to their wor
 menu: Additional APIs
 language: und
 weight: 5
-menu_name: menu-administration-guide
+menu_name: menu-admin-guide-v7-enterprise

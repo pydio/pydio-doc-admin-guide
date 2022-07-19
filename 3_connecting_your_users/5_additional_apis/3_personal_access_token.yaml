@@ -3,4 +3,4 @@ abstract: Simplifying authentication with the Personal Acess Token in Pydio Cell
 menu: Personal Access Tokens
 language: und
 weight: 3
-menu_name: menu-administration-guide
+menu_name: menu-admin-guide-v7-enterprise

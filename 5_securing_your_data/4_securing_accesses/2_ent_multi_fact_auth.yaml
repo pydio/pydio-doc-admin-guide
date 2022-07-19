@@ -3,4 +3,4 @@ abstract: Enabling multi factor authentication in Pydio Cells.
 menu: '[Ent] MFA (OTP, Yubikey, DUO)'
 language: und
 weight: 2
-menu_name: menu-administration-guide
+menu_name: menu-admin-guide-v7-enterprise

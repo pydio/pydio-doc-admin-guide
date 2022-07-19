@@ -3,4 +3,4 @@ abstract: 'Describing underlying locations used on your host server for tracking
 menu: Purge Activities / Notifications
 language: und
 weight: 2
-menu_name: menu-administration-guide
+menu_name: menu-admin-guide-v7-enterprise

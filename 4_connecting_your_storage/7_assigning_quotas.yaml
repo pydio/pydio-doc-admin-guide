@@ -3,4 +3,4 @@ abstract: Defining quotas to limit the amount of storage that can be used on a w
 menu: '[Ent] Assign quotas'
 language: und
 weight: 7
-menu_name: menu-administration-guide
+menu_name: menu-admin-guide-v7-enterprise

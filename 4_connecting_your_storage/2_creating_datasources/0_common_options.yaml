@@ -3,4 +3,4 @@ abstract: Describing the settings that are commons to all type of underlying sto
 menu: Common Options
 language: und
 weight: 0
-menu_name: menu-administration-guide
+menu_name: menu-admin-guide-v7-enterprise
