@@ -38,6 +38,22 @@ Always ensure that the database is created with character set and collation set 
 
 Make sure not to leave the `max_connections` to its default value (151) for production we advise at least `500`, for a better understanding [see MySQL manual](https://dev.mysql.com/doc/refman/8.0/en/too-many-connections.html).
 
+## [Optional] Mongo DB
+
+Depending on your target deployment size, you may switch directly from the default on-file storage used by specific services (search engine, activity feeds, logs, amongst others) to a Mongo DB document store. 
+
+This is a good idea if 
+ - You foresee a high load on the platform:  number of users and/or a high number of files managed every day. 
+ - You plan to deploy Cells in a distributed environment (cluster) to provide high availability or horizontal scaling.
+
+If you do not have a Mongo DB available yet, **you can add it later** as Cells provides the tools to migrate from on-file storage to Mongo. Otherwise, prepare Mongo connection information such as : 
+
+| Parameter                    | Description                                                                          | Defaults                  |
+|------------------------------|--------------------------------------------------------------------------------------|---------------------------|
+| Host/Port                    | Address of the server hosting the Mongo DB                                           | localhost:27317           |
+| Credentials                  | Optional credentials to connect, along with an authentication DB name                | [none]                    |
+| Database Name                | Name of the mongo database                                                           | cells                     |
+| Connection String Parameters | Additional connection parameters passed via Mongo connection string query parameters | maxPoolSize=20&w=majority |
 
 ## Network requirements
 
@@ -53,9 +69,9 @@ _This is the port that need to be opened in your firewall to make Cells accessib
 | Gateway | 8080      | --bind
 
 ### Services
-Cells uses TCP/IP connections to communicate between services. Most of the services use random available ports. The following are using pre-defined ports, that can be overridden in all commands that refer to services in the command line interface (eg start, admin, ...)
+Cells uses TCP/IP connections to communicate between services. The following are using pre-defined ports, that can be overridden in all commands that refer to services in the command line interface (eg start, admin, ...)
 
-| Port     | Default | CLI Flag        |
-| -------- | ------- | --------------- |
-| Registry | 8000    | --port_registry |
-| Broker   | 8003    | --port_broker   |
+| Port               | Default | CLI Flag        |
+|--------------------|---------|-----------------|
+| gRPC Server Port   | 8001    | --grpc_port     |
+| Discovery Services | 8002    | --grpc_discovery_port |
