@@ -4,22 +4,50 @@ Pydio Cells delivers file sharing and collaboration in a way that is familiar, c
 
 You can share files or folders using a public link. To create a public link, choose the folder/file that you want to share and right click on it: a menu appears. Click on **Share**, it opens a configuration popup:
 
-Click on **Enable Public Links** to enable them.
+[:image:1_quick_start/sharing_features/public_link_0.png]
 
-You now see these new fields:
+Click on **Enable Public Links** to generate a unique URL providing public access to this resource.
 
 [:image:1_quick_start/sharing_features/public_link_1.png]
 
+**Note**: The generated link URL is computed from your current web access. If you are using multiple URLs to access to Cells, you can force Cells to use only one of them for all public links. Go to Cells Console > Main Settings panel and also refer to [Configure Cells URL](./configure-cells-urls) in this documentation.
+
+Once a link is enabled, you can fine-tuned and restrict its accesses with various configurations described below
+
+### Permissions
+
+[:image:1_quick_start/sharing_features/public_link_permissions.png]
+
+Set up basic read/write/preview permissions for this link. Options here may depend on the shared resource type (file or folder) and the additional restrictions set. 
+
+- **For a folder**, you can pick from "preview" (show files previews), "read" (open/download files) and "upload" (let people upload additional contents to the folder. Worth noting, you can share a folder with only the "upload" option set, providing a blind dropping box to collect files from external users.
+- **For a file**, you can pick from "preview" (show preview), "read" (open/download file) or "edit" if the file type provides a supported editor inside Pydio Cells interface.
+
+### Labels and Display Options
+
+[:image:1_quick_start/sharing_features/public_link_labels.png]
+
 - **Link Label**: the label of your link; you have a menu displaying all your public links. It is easier to recognize them with a label)
 - **Link Description**: filled by default with the creation date, this is displayed in the various public layouts seen by the end-user that clicks on the link. You can change this to provide a more adequate description of the content.
+- **Layout**: customize data presentation with specific templates. For example, if you are sharing a folder filled with images, use the Gallery template to directly display images as a mosaic. 
 
-Then, there are 3 different tabs:
+### Access restrictions
 
-1. **Link**: This is where you can get your link, you can also choose the permissions that users have on this share.
-1. **Access**: You can choose if you want to put a password an expiration date for the link, a limited number of downloads and the layout of the GUI when people follow the link.
-1. **Visibility**: You can choose to whom this link is visible on the shares menu.
+[:image:1_quick_start/sharing_features/public_link_access.png]
 
-**Note**: The generated link URL is computed from your current web access. If you are using multiple URLs to access to Cells, you can force Cells to use only one of them for all public links. Go to Cells Console > Main Settings panel and also refer to [Configure Cells URL](./configure-cells-urls) in this documentation.
+This section provides additional restrictions capabilities for accessing this link : 
+
+- **Password** will prompt user for a password before accessing the link
+- **Expiration Date** will automatically disable the link after a certain period of time
+- **Maximum Downloads** (only for files with "download" permission) will automatically disable the link after the file has been downloaded a given number of times.
+
+### Advanced Visibility
+
+[:image:1_quick_start/sharing_features/public_link_advanced.png]
+
+This advanced feature is less used but can be handy: by default, a link created on a file or folder is "owned" by the current user. Other users who access the same workspace cannot see this link, nor edit its characteristics. This settings allows you to "hand over" the link management to another user, or for example to let a whole group of people use this link and edit its properties. 
+
+Beware of not confusing the link permissions/accesses (what can a public user see at this link) and the visilibity (which internal user is allowed to edit this link properties). This "visibility" concept can be found elsewhere in the application, regarding shared users managements, Cells management, etc.
  
 ## Sharing with other users using Cells
 
