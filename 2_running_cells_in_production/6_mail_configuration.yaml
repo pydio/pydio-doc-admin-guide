@@ -2,5 +2,5 @@ title: Configuring Email Delivery
 abstract: In this chapter we take a look at the mailing system integrated to Pydio Cells and guide you through some sample configurations.
 menu: Configuring Email Delivery
 language: und
-weight: 5
+weight: 6
 menu_name: menu-admin-guide-v7-enterprise

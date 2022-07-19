@@ -1,0 +1,6 @@
+title: Configuring Mongo Storage
+abstract: Adding a Mongo DB storage to replace on-file keyvalue store is a good idea for scalability.
+menu: Configuring Mongo Storage
+language: und
+weight: 5
+menu_name: menu-admin-guide-v7-enterprise
