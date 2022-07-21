@@ -106,8 +106,10 @@ You are also able to enable authentication negotiation (spnego) for web browsers
 
 ##### Google Chrome: 
 *Document*: https://docs.keeper.io/enterprise-guide/deploying-keeper-to-end-users/keeper-fill/group-policy-deployment-chrome#:~:text=your%20Chrome%20Policy-,1.,and%20create%20a%20New%20Policy.
+
 *Chrome gpo template*: https://chromeenterprise.google/browser/download/#manage-policies-tab
 
 ##### Firefox 
 *Document*: https://specopssoft.com/blog/using-firefox-enterprise-gpos-enable-windows-integrated-authentication-specops-websites/
+
 *Firefox gpo template*: https://github.com/mozilla/policy-templates/releases
