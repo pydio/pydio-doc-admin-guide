@@ -1,0 +1,6 @@
+title: '[Ent] AD + Kerberos Support'
+abstract: 'Enable full single-sign-on using Kerberos authentication token.'
+menu: '[Ent] AD + Kerberos Support'
+language: und
+weight: 5
+menu_name: menu-admin-guide-v7-enterprise
