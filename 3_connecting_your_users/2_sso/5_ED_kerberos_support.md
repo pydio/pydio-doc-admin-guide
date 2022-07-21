@@ -15,12 +15,12 @@ Make sure that this user can’t change the password as well as the password nev
 [:image:3_connecting_your_users/2_sso/image7.png]
 
 Two other option are required to be checked is 
-Kerberos AES 235 bits
-Do not require Kerberos preauthentication
+- Kerberos AES 235 bits
+- Do not require Kerberos preauthentication
 
 [:image:3_connecting_your_users/2_sso/image8.png]
 
-Generate the keytab
+### Generate the keytab
 Open PowerShell and execute following command to convert the “cellssrv” to service account
 
 The command should be written in one line.
@@ -43,7 +43,7 @@ Then copy the "cellssrv.keytab" to Cells’ server e.g: `/var/cells/cellssrv.key
 
 
 [:image:3_connecting_your_users/2_sso/image4.png]
-DNS record
+### DNS record
 Make sure that your dns server has a A record for cellssrv machine. Otherwise, crease a new Host record.
 [:image:3_connecting_your_users/2_sso/image5.png]
 
@@ -51,8 +51,8 @@ Make sure that your dns server has a A record for cellssrv machine. Otherwise, c
 
 ## Cells Server
 ### Key tab
-Copy the generated keytab (cellssrv.keytab) to the Cells server. Change the permission so that “pydio” user can read. For example “/var/cells/cellssrv.keytab”
-Env variables
+Copy the generated keytab (cellssrv.keytab) to Cells server. Change the permission so that “pydio” user can read. For example “/var/cells/cellssrv.keytab”
+### Env variables
 Add following lines to systemd file config (/etc/systemd/system/cells.service)
 
 ```
