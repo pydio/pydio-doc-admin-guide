@@ -87,6 +87,10 @@ Environment=CELLS_SPNEGO_KEYTAB="/var/cells/cellssrv.keytab"
 
 >Attention: Don’t forget to **systemctl daemon-reload** then **systemctl restart cells**
 
+User can authorize by clicking on a new button in login page
+
+[:image:3_connecting_your_users/2_sso/image9.png]
+
 ### Users' PC & Web browser
 At this step, you can see the “Kerberos SSO” button on the login page of Cells. But it does not work because the authentication negotiation has not been activated.
 #### Enable spnego 
