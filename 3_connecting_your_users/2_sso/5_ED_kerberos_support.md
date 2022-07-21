@@ -9,7 +9,7 @@ We will work on three servers/machines.
 ###Create a service account
 Create a new user “cellssrv” in Users organizational unit.
 
-[:image:3_connecting_your_users/2_sso/image1.png]
+[:image:3_connecting_your_users/2_sso/image6.png]
 
 Make sure that this user can’t change the password as well as the password never expires.
 [:image:3_connecting_your_users/2_sso/image7.png]
