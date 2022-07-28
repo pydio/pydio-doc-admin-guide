@@ -1,0 +1,6 @@
+title: Migrating from Single Node
+abstract: How to migrate an existing single-node installation to a cluster.
+menu: Migrating from Single Node
+language: und
+weight: 5
+menu_name: menu-admin-guide-v7-enterprise

@@ -22,6 +22,14 @@ If we go deep into the structure of Cells-generated data, we can find many types
 - Pub/sub events (in-memory process and grpc communication with forks), 
 - Etc... 
 
+[:image-popup:2_running_cells_in_production/cluster/cells-statefull.png]
+
 ## A Cells stateless deployment
 
 As you can see, going stateless here will consist of deploying the necessary third-party tools to **unload this data from Cells internal to shared stores** that provide their own clustering mechanism for redundancy and failover.  The image below shows the technologies involved to tackle the issue.
+
+[:image-popup:2_running_cells_in_production/cluster/cells-stateless-1.png]
+
+In a more concise view, we now have : 
+
+[:image-popup:2_running_cells_in_production/cluster/cells-stateless-2.png]
