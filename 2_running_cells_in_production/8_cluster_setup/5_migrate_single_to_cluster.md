@@ -4,10 +4,11 @@ If you are already running a Cells instance on a mono-node server, you may want 
 
 You must first make sure to upgrade Cells to at least version 4. 
 
-We also assume that you have read the previous sections of this chapter: 
- - [Going Stateless](./going-stateless) provides an overview of our clustering concepts,
- - [Configuring with URLS](./configuring-urls) explains how to point Cells configuration toward the correct underlying services, 
- - [Preparing Dependencies](./preparing-dependencies) explains how to set up all required cluster third-party services that will allow easy replication of the Cells image.
+We also assume that you have read the previous sections of this chapter:  
+
+ - [Going Stateless](./going-stateless) provides an overview of our clustering concepts,  
+ - [Configuring with URLS](./configuring-urls) explains how to point Cells configuration toward the correct underlying services,   
+ - [Preparing Dependencies](./preparing-dependencies) explains how to set up all required cluster third-party services that will allow easy replication of the Cells image.  
 
 ## Migrating on-file services data from Bolt/BleveDB to MongoDB
 
