@@ -15,9 +15,9 @@ Flags:
       --shortcache string            Short cache (default "pm://")
 
 Global Flags:
-      --certs_store string   Certificates Store URL. Can be switched to vault://host:port/secretPath (default "file:///Users/charles/Library/Application Support/Pydio/cells/certs")
-      --config string        Configuration storage URL. Supported schemes: etcd|file|grpc|mem|vault|vaults (default "file:///Users/charles/Library/Application Support/Pydio/cells/pydio.json")
-      --keyring string       Keyring URL. Can be switched to vault://host:port/secretPath?key=storeKey (default "file:///Users/charles/Library/Application Support/Pydio/cells/cells-vault-key?keyring=true")
+      --certs_store string   Certificates Store URL. Can be switched to vault://host:port/secretPath (default "file://${CELLS_WORKING_DIR}/certs")
+      --config string        Configuration storage URL. Supported schemes: etcd|file|grpc|mem|vault|vaults (default "file://${CELLS_WORKING_DIR}/pydio.json")
+      --keyring string       Keyring URL. Can be switched to vault://host:port/secretPath?key=storeKey (default "file:///${CELLS_WORKING_DIR}/cells-vault-key?keyring=true")
       --vault string         Vault location, automatically detected from config url, unless an URL is provided (same schemes as config) (default "detect")
 
 ```
