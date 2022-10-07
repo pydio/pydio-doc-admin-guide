@@ -6,6 +6,8 @@ You can build any form you need from questionnaires to consent forms to project 
 
 Smart Form also allows you to collect documents from users as part of their form submissions, as well as provides you access to the submission metadata for full tracking and tracing.
 
+[:image:6_customize_interface/smartforms/03-smart-forms-display.png]
+
 ## Creating a SmartForm
 
 ### One SmartForm = One Folder
@@ -18,15 +20,21 @@ To start using SmartForm, you must first enable the plugin in the Cells Console 
 
 A key feature of Cells SmartForm is the ability to create an expected list of documents specifying each doc's name, format and maximum size. Any file can be dropped by users on the displayed list items and if their format matches, the file is automatically renamed to the expected name and this item is considered as completed. 
 
+[:image:6_customize_interface/smartforms/01-smart-forms-doc.png]
+
 ### Simple Form Fields
 
 Along with specific documents, it is often necessary to collect some specific structured data from users. The form build allows you to create many fields with various supported types. This can also be used independently of the documents feature.
+
+[:image:6_customize_interface/smartforms/02-smart-forms-fields.png]
 
 ## Processing SmartForm output
 
 ### Submission behavior
 
 On a user perspective, you can configure what happens once all forms fields are filled and all expected documents are uploaded: either automatically trigger a submission or show a button to let users submit the form by theirselves. 
+
+[:image:6_customize_interface/smartforms/04-smart-forms-submission.png]
 
 Submission here is simply attaching a metadata you define to the folder where the SmartForm is running. That gives you all flexibility to observe this metadata change with Cells Flows and act on the folder in consequence.
 
@@ -39,3 +47,5 @@ Similarly, upload documents are just normal documents stored inside the SmartFor
 ## SmartForm Templates
 
 The SmartForm Editor provides a sleek "Templates" features for easily re-using prepared SmartForms. This also provides useful tools for automatisation: Cells Flows can find a SmartForm template by its UUID and automatically apply it to any newly created folder.
+
+[:image:6_customize_interface/smartforms/05-smart-forms-templates.png]
