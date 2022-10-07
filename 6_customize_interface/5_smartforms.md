@@ -20,7 +20,7 @@ To start using SmartForm, you must first enable the plugin in the Cells Console 
 
 A key feature of Cells SmartForm is the ability to create an expected list of documents specifying each doc's name, format and maximum size. Any file can be dropped by users on the displayed list items and if their format matches, the file is automatically renamed to the expected name and this item is considered as completed. 
 
-[:image:6_customize_interface/smartforms/01-smart-forms-doc.png]
+[:image:6_customize_interface/smartforms/01-smart-forms-docs.png]
 
 ### Simple Form Fields
 
