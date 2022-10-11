@@ -60,17 +60,9 @@ We indicate all this to Cells using the command and the following parameters:
 
 [:image-popup:2_running_cells_in_production/03-network-public-access.png]
 
-## Advanced Usage [Ent]
+## [Ent] Advanced Usage
 
-Configure some Cells functionalities to behave differently depending on the site accessed.
+When using multiple sites, you can use the Sites URL to make Cells behave differently depending on the site accessed. See for example:
 
-### [Authentication Connectors](./ed-using-sso-external-identity-provider)
-
-Display different ways of authenticating on different URLs.
-
-### [Security Policies](./ed-security-policies)
-
-Add the URL in the context of the security policies to for example:
-
-  - restrict access to the intranet site to office hours only.
-  - allow access to the www site to specific IPs.
+ - [Authentication Connectors](./ent-using-sso-external-identity-provider): display different ways of authenticating on different URLs.  
+ - [Security Policies](./ent-security-policies): use the URL in the context of the security policies to restrict access to the www site to specific IPs.

@@ -1,0 +1,6 @@
+title: Providing HA in Kubernetes
+abstract: Deployment example inside a Kubernetes cluster
+menu: Example w/ Kubernetes
+language: und
+weight: 7
+menu_name: menu-admin-guide-v7-enterprise

@@ -1,0 +1,1 @@
+This section shows how to run Cells in a multi-node setup using out-of-the-box docker compose file.

@@ -1,8 +1,8 @@
 ## Why Mongo?
 
-Historically Cells has been using BoltDB and BleveSearch and we like it. They are pure GO key/value stores and indexers and it allows **Cells to provide full indexing functionality without external dependencies**. By default, the search engine, activity stream or logs use these JSON document shops to provide rich, out-of-the-box functionality. 
+For simple setups, Cells uses BoltDB and BleveSearch, pure GO key/value stores and indexers allowing **Cells to provide full indexing functionality without external dependencies**. By default, the search engine, activity stream or logs use these JSON document shops to provide rich, out-of-the-box functionality. 
 
-But these stores are disk and memory intensive, and while they are suitable for small and medium-sized deployments, they create bottlenecks for large deployments. **MongoDB provides a feature-rich, scalable and indexed JSON document store**, perfectly suited to store the same kind of data and to scale horizontally.
+But these stores are disk and memory intensive, and while they are suitable for small and medium-sized deployments, they can create bottlenecks for large deployments. **MongoDB provides a feature-rich, scalable and indexed JSON document store**, perfectly suited to store the same kind of data and to scale horizontally.
 
 A couple of notes: 
 
@@ -19,19 +19,19 @@ Depending on your target deployment size, you may switch from the default on-fil
 
 The following services can either use on-file storage (BoltDB or BleveSearch) or a Mongo storage: 
 
-|Service Name| Description                                    |
-|------------|------------------------------------------------|
-|pydio.grpc.versions| documents revisions informations               |
-|pydio.grpc.jobs| scheduler flows definitions, statuses and logs |
-|pydio.grpc.chat| chat rooms and chat messages                   |
-|pydio.grpc.docstore| generic structured document store (JSON)       |
-|pydio.grpc.log| application logs                               |
-|pydio.grpc.mailer| sent and pending emails                        |
-|pydio.grpc.search| search engine                                  |
-|pydio.grpc.activity| all activity feeds                             |
-|[Ent] pydio.grpc.audit| audit logs                                     |
-|[Ent] pydio.grpc.reports| audit reports|                                  
-|[Ent] pydio.grpc.ipban| ipban definitions and caches|                   
+| Service Name             | Description                                    |
+|--------------------------|------------------------------------------------|
+| pydio.grpc.versions      | documents revisions informations               |
+| pydio.grpc.jobs          | scheduler flows definitions, statuses and logs |
+| pydio.grpc.chat          | chat rooms and chat messages                   |
+| pydio.grpc.docstore      | generic structured document store (JSON)       |
+| pydio.grpc.log           | application logs                               |
+| pydio.grpc.mailer        | sent and pending emails                        |
+| pydio.grpc.search        | search engine                                  |
+| pydio.grpc.activity      | all activity feeds                             |
+| [Ent] pydio.grpc.audit   | audit logs                                     |
+| [Ent] pydio.grpc.reports | audit reports                                  |                                  
+| [Ent] pydio.grpc.ipban   | ipban definitions and caches                   |                   
 
 ## Mongo Connection
 

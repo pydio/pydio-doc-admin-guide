@@ -8,7 +8,7 @@ At restart time, service tries to dial a network connection to the specific mail
 To configure the mailer, go to **Application Parameters > Mailers**:
 
 | Field                               | Description                                                                                                                                               |
-| ----------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|-------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Default From Email address          | Put the email that you're going to use as sender address for notifications and as default (see below).                                                    |
 | From/Sender address and name to use | Select how the address and display name is chosen. This setting controls how the envelope from address and the from mail and sender mail headers are set. |
 
@@ -29,7 +29,7 @@ This mailer "honeypot" can either fully discard emails, or write them as text to
 ### 3. SMTP Server
 
 | Field               | Description                                                                                                       |
-| ------------------- | ----------------------------------------------------------------------------------------------------------------- |
+|---------------------|-------------------------------------------------------------------------------------------------------------------|
 | Server Hostname     | the SMTP server's hostname, *for example gmail's smtp is `smtp.gmail.com`*                                        |
 | Server Port         | The port of the SMTP server, *for example gmail's default port is `587`*                                          |
 | Connection User     | The username of the address used to connect to this SMTP server, such as *john.doe@gmail.com, john.doe@pydio.com* |

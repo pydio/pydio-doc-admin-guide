@@ -19,15 +19,15 @@ Before you go live, you probably want to configure persistent data in a docker v
 
 ```sh
 FQDN=<Put Your FQDN here>
-docker run -d  -v /home/user/cells_dir:/var/cells -e CELLS_BIND=:443 -e CELLS_EXTERNAL=https://$FQDN --network=host pydio/cells
+docker run -d  -v /home/user/cells_dir:/var/cells -e CELLS_SITE_BIND=:443 -e CELLS_SITE_EXTERNAL=https://$FQDN --network=host pydio/cells
 ```
 
 Where:
 
 - `-d`: run in the background
 - `-v /home/user/cells_dir:/var/cells`: mount a local folder as Cells working directory
-- `-e CELLS_BIND=:443`: use standard reserved port for HTTPS (must be unused, typically by a webserver)
-- `-e CELLS_EXTERNAL=https://$FQDN`: (optional) explicitely declare your domain
+- `-e CELLS_SITE_BIND=:443`: use standard reserved port for HTTPS (must be unused, typically by a webserver)
+- `-e CELLS_SITE_EXTERNAL=https://$FQDN`: (optional) explicitely declare your domain
 - `--network=host`: directly use the host network, to easily connect to the DB
 
 ## Run with docker-compose
@@ -100,13 +100,13 @@ As previously seen, when launching the image, the `start` (or `configure` on 1st
 
 Below is an extract of relevant ENV variables that you can pass to the container.
 
-| Name           | Value                   | Default          |
-| -------------- | ----------------------- |  ---------------- |
-| CELLS_BIND     | host:port               |  0.0.0.0:8080     |
-| CELLS_EXTERNAL | http(s)://url-to-access  | (none) |
-| CELLS_NO_TLS   | 1 = noTLS, 0 = TLS      | 0           |
-| CELLS_WORKING_DIR   | path in the container | /var/cells           |
-| CELLS_LOG_LEVEL   | a valid log level | info           |
+| Name                | Value                   | Default      |
+|---------------------|-------------------------|--------------|
+| CELLS_SITE_BIND     | host:port               | 0.0.0.0:8080 |
+| CELLS_SITE_EXTERNAL | http(s)://url-to-access | (none)       |
+| CELLS_SITE_NO_TLS   | 1 = noTLS, 0 = TLS      | 0            |
+| CELLS_WORKING_DIR   | path in the container   | /var/cells   |
+| CELLS_LOG_LEVEL     | a valid log level       | info         |
 
 ### More examples
 
@@ -130,5 +130,5 @@ Assuming that port **33060** is the port chosen for gRPC, the command should hav
 The entire command should look like this:
 
 ```sh
-docker run -d -e CELLS_EXTERNAL=192.168.0.172:8080 -e CELLS_BIND=192.168.0.172:8080 -e CELLS_GRPC_EXTERNAL=33060 -p 33060:33060 -p 8080:8080 pydio/cells
+docker run -d -e CELLS_SITE_EXTERNAL=192.168.0.172:8080 -e CELLS_SITE_BIND=192.168.0.172:8080 -e CELLS_GRPC_EXTERNAL=33060 -p 33060:33060 -p 8080:8080 pydio/cells
 ```
