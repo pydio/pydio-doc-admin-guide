@@ -8,7 +8,7 @@ We also assume that you have read the previous sections of this chapter:
 
  - [Going Stateless](./going-stateless) provides an overview of our clustering concepts,  
  - [Configuring with URLS](./configuring-urls) explains how to point Cells configuration toward the correct underlying services,   
- - [Preparing Dependencies](./preparing-dependencies) explains how to set up all required cluster third-party services that will allow easy replication of the Cells image.  
+ - [External Services](./external-services) explains how to set up all required cluster third-party services that will allow easy replication of the Cells image.  
 
 ## Migrating on-file services data from Bolt/BleveDB to MongoDB
 
@@ -80,7 +80,7 @@ Once all configurations are live in ETCD and Vault, you can now set up Cells run
 $> export CELLS_CONFIG=etcd://:2379/config
 $> export CELLS_VAULT=etcd://:2379/vault
 $> export CELLS_KEYRING=vault://:8200/kv
-$> export CELLS_CERTS_STORE=vault://:8200/certs
+$> export CELLS_CERTS_STORE=vault://:8200/caddycerts
 $> export CELLS_CACHE=redis://:6379/cells
 $> export CELLS_BROKER=nats://:4222/cells
 
