@@ -50,7 +50,7 @@ The ${VAULT_ROOT_TOKEN} should be a safe token that is injected in your image in
 
 ### C. Note about MongoDB
 
-Mongo DB support is not enabled via a start flag, but it is configured at first deployment. An existing Cells instance can also be migrated to support Mongo as [described in the dedicated page TODO]().
+Mongo DB support is not enabled via a start flag, but it is configured at first deployment. An existing Cells instance can also be migrated to support Mongo as [described in the dedicated page](./configuring-mongo-storage).
 
 ## First Run / Installation
 
