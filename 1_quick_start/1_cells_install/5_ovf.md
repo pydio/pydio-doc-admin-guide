@@ -1,11 +1,11 @@
 
 The Cells Enterprise Appliance package follows the OVF standard.
 
-It is an up-to-date, ready to use out of the box CentOS 7 image preconfigured with MariaDB 10.4 and Cells Enterprise distribution.  
+It is an up-to-date, ready to use out of the box, Rocky Linux 8 image preconfigured with MariaDB and Cells Enterprise distribution.  
 
 Download the [latest OVF image](https://download.pydio.com/latest/cells-enterprise/release/{latest}/ovf/Cells-Enterprise-OVF-{latest}.zip). An md5 file is also available on the same location for integrity verification.
 
-## VM Requirements
+## Minimal VM Requirements
 
 - RAM : 4G
 - CPU : 2 vCores

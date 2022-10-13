@@ -1,9 +1,9 @@
-The Pydio Cells image for VMWare is based on CentOS 7. It has been enriched with necessary third party software and pre-configured to provide an easy to run instance of the Cells server out of the box.  
+The Pydio Cells image for VMWare is based on Rocky Linux 9. It has been enriched with necessary third party software and pre-configured to provide an easy to run instance of the Cells server out of the box.  
 It is known to run in VSphere ecosystems and in standalone ESXi hosts.
 
 Download the [latest VMWare image](https://download.pydio.com/latest/cells-enterprise/release/{latest}/vmware/Cells-Enterprise-VMWare-{latest}.zip). An MD5 file is also available at the same location for integrity verification.
 
-## VM Requirements
+## Minimal VM Requirements
 
 - RAM : 4G
 - CPU : 2 vCores
@@ -78,8 +78,4 @@ sudo systemctl start mariadb
 
 ### Firewalld service
 
-Firewalld service is active and opens three ports:
-
-- 80: **cells-enterprise**
-- 443: **cells-enterprise**
-- 22: **ssh**
+We recommand to use the provided appliance in your private network, behind enterprise grade firewall and reverse proxy. Thus, the firewall service in Cells appliance is disabled and stopped by default.
