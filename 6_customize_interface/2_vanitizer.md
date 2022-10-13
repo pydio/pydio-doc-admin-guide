@@ -1,3 +1,9 @@
+
+<div style="background-color: #fbe9b7;font-size: 14px;">
+<span style="background-color: #fae4a6;padding: 10px;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Cells v3. Looking for <a href="https://pydio.com/en/docs/cells/v4/quick-start">Pydio Cells v4 docs?</a></span>
+</div>
+
 The branding tool helps you customize Pydio Cells to match the color of your other services. You can even add custom buttons to add more functionality as well as custom CSS for advanced styling purpose.
 
 ### Enable the Branding Tool

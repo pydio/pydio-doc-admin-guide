@@ -1,3 +1,9 @@
+
+<div style="background-color: #fbe9b7;font-size: 14px;">
+<span style="background-color: #fae4a6;padding: 10px;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Cells v3. Looking for <a href="https://pydio.com/en/docs/cells/v4/quick-start">Pydio Cells v4 docs?</a></span>
+</div>
+
 This article quickly introduces the options you have to fine tune some aspects of the web GUI to comply with you company specific branding. To begin with, let's change the main Logo of the application, the favicons and the background images.
 
 ### Main logo and Background image

@@ -1,3 +1,10 @@
+
+<div style="background-color: #fbe9b7;font-size: 14px;">
+<span style="background-color: #fae4a6;padding: 10px;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Cells v3. Looking for <a href="https://pydio.com/en/docs/cells/v4/quick-start">Pydio Cells v4 docs?</a></span>
+</div>
+
+
 Providing CellsSync to your users can be an efficient way to help them keep their files offline on their desktop computer.  However, please be aware of the following:  
 
 - When the sync client has many users connected to the same folder, some conflicts might arise. The users may then have to solve the conflicts manually. We recommend allowing users to sync only their `Personal` workspace as a starting point.

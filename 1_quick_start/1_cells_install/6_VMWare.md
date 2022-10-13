@@ -1,3 +1,10 @@
+
+<div style="background-color: #fbe9b7;font-size: 14px;">
+<span style="background-color: #fae4a6;padding: 10px;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Cells v3. Looking for <a href="https://pydio.com/en/docs/cells/v4/quick-start">Pydio Cells v4 docs?</a></span>
+</div>
+
+
 The Pydio Cells image for VMWare is based on CentOS 7. It has been enriched with necessary third party software and pre-configured to provide an easy to run instance of the Cells server out of the box.  
 It is known to run in VSphere ecosystems and in standalone ESXi hosts.
 

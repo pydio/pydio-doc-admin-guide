@@ -1,3 +1,9 @@
+
+<div style="background-color: #fbe9b7;font-size: 14px;">
+<span style="background-color: #fae4a6;padding: 10px;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Cells v3. Looking for <a href="https://pydio.com/en/docs/cells/v4/quick-start">Pydio Cells v4 docs?</a></span>
+</div>
+
 Cells Enterprise Distribution provides a higher degree of security for users by enabling them to use Multi-Factor Authentication tools such as any TOTP compatible apps (like [Google Authenticator App](https://en.wikipedia.org/wiki/Google_Authenticator)), [Yubikey](https://www.yubico.com/) physical devices or [DUO Security](https://duo.com) application features.
 
 | Yubikey Physical Device                                     | Google Auth / TOTP-compatible apps                                    |  Duo Security Push                            |

@@ -1,3 +1,9 @@
+
+<div style="background-color: #fbe9b7;font-size: 14px;">
+<span style="background-color: #fae4a6;padding: 10px;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Cells v3. Looking for <a href="https://pydio.com/en/docs/cells/v4/quick-start">Pydio Cells v4 docs?</a></span>
+</div>
+
 Dynamic mapping of LDAP groups to Pydio roles is a powerful feature allowing administrors to keep users management on the LDAP-side, while Cells will automatically map these groups to roles. Setting Cells access lists on the roles is done once, and the synchronization will update users and their permissions as it runs.
 
 If your LDAP server supports the `memberof-overlay` in LDAP filters, each user object in LDAP response may have a "memberOf" attribute. Generally, this list of groups may contain system groups that we don't want to import and we are looking for only a small set of groups. Cells provides a configuration interface with simple but yet flexible parameters to help you refine the groups imported inside Cells.

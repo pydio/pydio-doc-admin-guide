@@ -1,3 +1,10 @@
+
+<div style="background-color: #fbe9b7;font-size: 14px;">
+<span style="background-color: #fae4a6;padding: 10px;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Cells v3. Looking for <a href="https://pydio.com/en/docs/cells/v4/quick-start">Pydio Cells v4 docs?</a></span>
+</div>
+
+
 [Cells Gateway](./glossary) provides multiple ways for enabling TLS support. It is highly recommended to make sure all communications are encrypted between the client applications and the server (HTTPS).
 
 TLS configuration can be changed by using the `cells configure sites` command.

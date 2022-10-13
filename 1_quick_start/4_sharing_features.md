@@ -1,3 +1,10 @@
+
+<div style="background-color: #fbe9b7;font-size: 14px;">
+<span style="background-color: #fae4a6;padding: 10px;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Cells v3. Looking for <a href="https://pydio.com/en/docs/cells/v4/quick-start">Pydio Cells v4 docs?</a></span>
+</div>
+
+
 Pydio Cells delivers file sharing and collaboration in a way that is familiar, comfortable and intuitive for users of modern collaborative apps. It lets users decide how to share files and information, based on knowledge of their own teams, workflows and working patterns. This end-user freedom also takes the responsibility of creating effective workspaces away from overburdened administrators.
 
 ## Sharing with Public links

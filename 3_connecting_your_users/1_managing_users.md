@@ -1,3 +1,9 @@
+
+<div style="background-color: #fbe9b7;font-size: 14px;">
+<span style="background-color: #fae4a6;padding: 10px;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Cells v3. Looking for <a href="https://pydio.com/en/docs/cells/v4/quick-start">Pydio Cells v4 docs?</a></span>
+</div>
+
 Pydio Cells provides advanced features for managing users. By implementing the authentication based on OAUTH2 standard, it can fully integrate in your Single-Sign-On (SSO) infrastructure and delegate authentication to your existing user directory. It can also bind to external identity providers like Github or Google, allowing your in-house collaborators to share files with external users.
 
 Yet, Cells provides a complete embedded solution with an internal directory that should be sufficient for most cases and that we present in the following section.

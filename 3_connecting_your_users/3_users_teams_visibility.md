@@ -1,3 +1,9 @@
+
+<div style="background-color: #fbe9b7;font-size: 14px;">
+<span style="background-color: #fae4a6;padding: 10px;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Cells v3. Looking for <a href="https://pydio.com/en/docs/cells/v4/quick-start">Pydio Cells v4 docs?</a></span>
+</div>
+
 ### Resources policies
 
 Pydio Cells provides an additional layer of collaboration for the end-users: resources like teams, users, but also links and cells, are protected with flexible security rules defining ownership, read and write accesses.

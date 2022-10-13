@@ -1,3 +1,10 @@
+
+<div style="background-color: #fbe9b7;font-size: 14px;">
+<span style="background-color: #fae4a6;padding: 10px;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Cells v3. Looking for <a href="https://pydio.com/en/docs/cells/v4/quick-start">Pydio Cells v4 docs?</a></span>
+</div>
+
+
 Always plan for the worst. Take steps to limit time loss and avoid headaches by doing regular backups of your Pydio Cells instance and data. You'll be all set for a speedy recovery in case of a data or configuration loss (that can happen if you're hit by a disaster such as hard-drive failure, power loss, bad upgrade process, etc.)
 
 This procedure is adapted for simple mono-node installation. If you have made multi-node installation, be aware that you must backup both storage and datasource for each one of your nodes.

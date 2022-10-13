@@ -1,3 +1,10 @@
+
+<div style="background-color: #fbe9b7;font-size: 14px;">
+<span style="background-color: #fae4a6;padding: 10px;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Cells v3. Looking for <a href="https://pydio.com/en/docs/cells/v4/quick-start">Pydio Cells v4 docs?</a></span>
+</div>
+
+
 You can find below a list of problems commonly encountered when installing and configuring Pydio Cells Server or Sync Client, together with strategies to diagnose and fix them.
 
 You can find more use cases and solution in [our FAQ](https://pydio.com/en/docs/faq), [our Knowledge Base](https://pydio.com/en/docs/knowledge-base) and [our forum](https://forum.pydio.com/).

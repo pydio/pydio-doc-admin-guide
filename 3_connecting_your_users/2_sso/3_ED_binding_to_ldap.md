@@ -1,3 +1,9 @@
+
+<div style="background-color: #fbe9b7;font-size: 14px;">
+<span style="background-color: #fae4a6;padding: 10px;">WARNING</span>
+<span style="padding: 10px;display: inline-block;">This documentation is for Cells v3. Looking for <a href="https://pydio.com/en/docs/cells/v4/quick-start">Pydio Cells v4 docs?</a></span>
+</div>
+
 In Cells, a LDAP server is seen as an external authentication source. You can extract a subset of users from your directory to be imported in Cells, using flexible parameters and configuration options. Cells supports binding to multiple directories using multiple LDAP domains.
 
 ## Overview
