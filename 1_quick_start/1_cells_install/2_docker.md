@@ -3,7 +3,7 @@ The [Pydio Cells image](https://hub.docker.com/r/pydio/cells/) is a container de
 
 ## Run as stand-alone container
 
-Pydio Cells needs a MySQL/MariaDB Database [with a privileged user](./requirements).
+Pydio Cells needs a MySQL/MariaDB Database [with a privileged user](https://pydio.com/en/docs/cells/v4/requirements).
 
 Launch a test instance with:
 
@@ -42,14 +42,12 @@ services:
     image: pydio/cells:latest
     restart: unless-stopped
     ports: ["8080:8080"]
-    environment:
-      - CELLS_LOG_LEVEL=production
     volumes:
-      - data:/var/cells/data
       - cellsdir:/var/cells
+      - data:/var/cells/data
 
   mysql:
-    image: mysql:5.7
+    image: mysql:8
     restart: unless-stopped
     environment:
       MYSQL_ROOT_PASSWORD: P@ssw0rd
@@ -106,17 +104,17 @@ Below is an extract of relevant ENV variables that you can pass to the container
 | CELLS_SITE_EXTERNAL | http(s)://url-to-access | (none)       |
 | CELLS_SITE_NO_TLS   | 1 = noTLS, 0 = TLS      | 0            |
 | CELLS_WORKING_DIR   | path in the container   | /var/cells   |
-| CELLS_LOG_LEVEL     | a valid log level       | info         |
+| CELLS_LOG           | a valid log level       | info         |
 
 ### More examples
 
-We gather some [relevant sample configuration](https://github.com/pydio/cells/tree/master/tools/docker/compose) in our main code base. Find the example that suits you and fine tune your setup.
+We gather some [relevant sample configuration](https://github.com/pydio/cells/tree/main/tools/docker/compose) in our main code base. Find the example that suits you and fine tune your setup.
 
 ### Cells Sync
 
 The Cells Sync Desktop Application might require an additional port, for example if you run behind a reverse proxy that performs TLS termination. In such case:
 
-- First read this, [Setup Cells Server for Cells Sync](/en/docs/kb/client-applications/setup-cells-server-cellssync)
+- First read this, [Setup Cells Server for Cells Sync](https://pydio.com/en/docs/kb/client-applications/setup-cells-server-cellssync)
 - Make sure to start a container with this env set `CELLS_GRPC_EXTERNAL`
 - Expose the port that you previously set with `CELLS_GRPC_EXTERNAL`
 
