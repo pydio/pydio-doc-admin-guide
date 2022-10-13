@@ -20,11 +20,16 @@ If your certificate relies on a third-party Certificate Authority, you have to m
 
 Let's Encrypt is an open initiative to make the web safer. It provides free and secure certificates for any domains in an automated way. When switching to this mode, you will have to provide an email address and accept the Let's Encrypt EULA.
 
-**Important notes**
+**Important warning:**
 
-- Your DNS must be correctly configured and the your domain name should point to the correct IP.
-- The user that owns the `cells` process (and thus the underlying caddy server) must have sufficient permission on the `$USER_HOME/.caddy/` folder.
-- If you launch the app with an invalid configuration, you might have your DNS temporary black listed on Let's encrypt due to failing multiple retries to get your certificate.  
+If you launch the app with an invalid configuration or if your domain name is not correctly registered and propagated by your DNS, the certicate generation will fail, possibly more than once, due to multiple retries and errors.
+You might then quickly reach Let's encrypt rate limits: this can lead to having your FQDN black listed, at least temporarily.
+
+Thus, **we strongly advise to first use the staging entry point** when configuring your network setup, by positively answering this question:
+
+```
+✔ Do you want to use Let's Encrypt staging entrypoint? [y/N] : y
+```
 
 ### Generating a Self-Signed certificate
 
