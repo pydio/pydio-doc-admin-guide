@@ -1,5 +1,4 @@
-As explained in the previous sections, Cells needs to externalize all storage and services layers to more easily provide
-a stateless, replicable image. Each of these external services are open source and can themselves be deployed in a highly-available setup. 
+As explained in the previous sections, Cells needs to externalize all storage and services layers to more easily provide a stateless, replicable image. Each of these external services are open source and can themselves be deployed in a highly-available setup. 
 
 This page gathers information about each service and links to the documentation for their installation (that will depend on your cloud). Being a core requirement of Cells, MySQL/MariaDB is not handled here.
 

@@ -9,7 +9,7 @@ Below is a list of ENVIRONMENT variables that will redefine internal defaults to
 
     - CELLS_CONFIG=etcd://{ETCD_HOST}:{ETCD_PORT}/config
     - CELLS_VAULT=etcd://{ETCD_HOST}:{ETCD_PORT}/vault
-    - CELLS_REGISTRY=etcd://{ETCD_HOST}:{ETCD_PORT}
+    - CELLS_REGISTRY=etcd://{ETCD_HOST}:{ETCD_PORT}/registry
     - CELLS_BROKER=nats://{NATS_HOST}:{NATS_PORT}
     - CELLS_KEYRING=vault://{VAULT_HOST}:{VAULT_PORT}/secret?key=master
     - CELLS_CERTS_STORE=vault://{VAULT_HOST}:{VAULT_PORT}/caddycerts
@@ -20,7 +20,7 @@ Assuming that you have an internal DNS resolving services by their names and tha
 
     - CELLS_CONFIG=etcd://etcd:2379/config
     - CELLS_VAULT=etcd://etcd:2379/vault
-    - CELLS_REGISTRY=etcd://etcd:2379
+    - CELLS_REGISTRY=etcd://etcd:2379/registry
     - CELLS_BROKER=nats://nats:4222
     - CELLS_KEYRING=vault://vault:8200/secret?key=master
     - CELLS_CERTS_STORE=vault://vault:8200/caddycerts
