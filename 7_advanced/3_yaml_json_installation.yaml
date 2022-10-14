@@ -1,0 +1,6 @@
+title: YAML/JSON Installation
+abstract: Automate Cells installation by passing a YAML/JSON file for the configure command.
+menu: YAML/JSON Installation
+language: und
+weight: 3
+menu_name: menu-admin-guide-v7-enterprise
