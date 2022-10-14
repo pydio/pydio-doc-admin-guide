@@ -53,7 +53,7 @@ If you provide an additional EBS volume when you launch the AMI (see installatio
 ## Database
 
 A MySQL DB is the only hard requirement to run a Pydio Cells instance.  
-As a convenience, the Pydio Cells AMI embbed an installed and configured MariaDB 10.2 server that is provided by the Amazon Linux 2 LAMP topic.  
+As a convenience, the Pydio Cells AMI embbed an installed and configured MariaDB 10.5 server that is provided by the Amazon Linux 2 `mariadb10.5` _extra_ topic.
 
 There are 2 users `root` and `pydio`, all other configurations follow the `mysql_secure_installation` best practices.  
 There is one default `cells` DB, on which the `pydio` user has all privileges.
