@@ -68,8 +68,11 @@ FrontendRepeatPassword   string         `protobuf:"bytes,27,opt,name=frontendRep
 FrontendApplicationTitle string         `protobuf:"bytes,28,opt,name=frontendApplicationTitle,proto3" json:"frontendApplicationTitle,omitempty"`
 FrontendDefaultLanguage  string         `protobuf:"bytes,33,opt,name=frontendDefaultLanguage,proto3" json:"frontendDefaultLanguage,omitempty"`
 
-// Additional proxy config (optional)
-ProxyConfig *ProxyConfig `protobuf:"bytes,34,opt,name=ProxyConfig,proto3" json:"ProxyConfig,omitempty"`
+// Sites configuration
+ProxyConfigs            []*ProxyConfig `yaml:"proxyconfigs",json:"proxyConfigs,omitempty"`
+
+// Additional arbitrary configs, where key is config path and value can be any type
+CustomConfigs           map[string]interface{} `yaml:"customconfigs",json:"customConfigs,omitempty"`
 ```
 ### ProxyConfig proto
 
@@ -119,7 +122,7 @@ dbtcpuser: pydio
 dbtcppassword: cells
 ```
 
-### YAML Multi Site
+### YAML Multi Site, custom configurations
 
 ```
 # Pre-configure multi sites 
