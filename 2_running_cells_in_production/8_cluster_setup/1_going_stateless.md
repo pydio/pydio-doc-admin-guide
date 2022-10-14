@@ -12,21 +12,32 @@ To achieve such flexibility, DevOps generally use pre-packaged software "images"
 
 ## Cells default setup limitation 
 
-For example, a standard Cells setup inside a VM generates logs, search indexes, audits, etc. directly on-file (BoltDB). An approach can be to share a mounted filessystem accross various VMs, but that quickly leads to locking issues and is poorly reliable. Porting these storages instead to external, network-accessed dependencies, makes the data accessible by all images and tackle this issue: that specific BoltDB can be replaced with a MongoDB connection.
+A standard standalone Cells setup uses multiple ways of storing data :
+- Configuration, Vault configuration (JSON files)
+- Logs, search indexes, activities, ... (BoltDB/BleveSearch files)
+- Data tree, Permissions, Identity, ... (SQL)
+- Cache, Service Registry, Pub / Sub events (in-memory)
+- Data (files, S3)
 
-If we go deep into the structure of Cells-generated data, we can find many types of them, associated to many storages: 
+To have multiple Cells cooperate in multiple VMs in a network, we need to ensure that the same data is available simultaneously by each node without the possibility of it being corrupted.
+We can directly rule out a shared filesystem as it would not be reliable enough and would quickly lead to locking issues.
 
-- Configuration (pydio.json)
-- Logs, search indexes, etc.. (BoltDB/BleveSearch indexes)
-- Services Registry (in-memory process and grpc communication with forks)
-- Pub/sub events (in-memory process and grpc communication with forks), 
-- Etc... 
 
 [:image-popup:2_running_cells_in_production/cluster/cells-statefull.png]
 
 ## A Cells stateless deployment
 
-As you can see, going stateless here will consist of deploying the necessary third-party tools to **unload this data from Cells internal to shared stores** that provide their own clustering mechanism for redundancy and failover.  The image below shows the technologies involved to tackle the issue.
+By plugging in new external storage drivers, we give Cells the **flexibility** to be accessible by all images **safely and concurrently**.
+
+We chose external storage that can also be clustered so that each piece of the puzzle can achieve **high availability** and **horizontal scalability** individually :
+
+- Configuration (JSON files, **ETCD**)
+- Vault Configuration (JSON files, **Hashicorp Vault**)
+- Logs, search indexes, activities, ... (BoltDB/BleveSearch files, **MongoDB**)
+- Data tree, Permissions, Identity, ... (SQL)
+- Cache (in-memory, **Redis**)
+- Pub / Sub events (in-memory, **Nats.io**)
+- Data (files, S3)
 
 [:image-popup:2_running_cells_in_production/cluster/cells-stateless-1.png]
 
