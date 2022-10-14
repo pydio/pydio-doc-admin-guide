@@ -6,7 +6,7 @@ Kubernetes is an open-source system for automating deployment, scaling, and mana
 
 ### Install a Kubernetes cluster
 
-You can manually [create your own kubernetes cluster](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/) on your own servers by using kubernetes tools.
+You can manually [create your own kubernetes cluster](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/) on your servers by using kubernetes tools.
 
 Alternatively, there are many operators that offer the possibility of installing a Kubernetes cluster easily. You can find a few below :
 
@@ -20,6 +20,7 @@ For testing, you can use [minikube](https://kubernetes.io/docs/tutorials/kuberne
 ## What is HELM ?
 
 Helm is essentially a package manager for kubernetes applications. Helm Charts can be defined to easily preconfigure the deployment of an application with its dependencies.
+
 Parameters can be changed by setting them during install or upgrade. (e.g. ```helm install my-cells cells/cells --set image.tag=latest```)
 
 ## Kubectl
@@ -29,7 +30,7 @@ Helm commands will automatically use the kubeconfig configuration.
 
 ## Install using Helm
 
-The cells helm charts can be used to deploy a ReplicaSet of Cells stateless servers. Using helm3 tou can add the Cells Helm repo as follows :
+The cells helm charts can be used to deploy a ReplicaSet of Cells stateless servers. Using helm3 you can add the Cells Helm repo as follows :
 
 ```
 helm repo add cells https://download.pydio.com/pub/charts/helm
@@ -40,9 +41,10 @@ helm install --namespace <namespace> --create-namespace my-cells cells/cells
 
 ## Dependencies
 
-Cells Chart declares the following dependencies :
+Cells Chart declares the following dependencies: 
 
-Repo bitnami (https://charts.bitnami.com/bitnami)
+Repo bitnami (https://charts.bitnami.com/bitnami) :
+
 - [mariadb](https://github.com/bitnami/charts/tree/master/bitnami/mariadb)
 - [redis](https://github.com/bitnami/charts/tree/master/bitnami/mariadb)
 - [nats](https://github.com/bitnami/charts/tree/master/bitnami/mariadb)
@@ -50,6 +52,7 @@ Repo bitnami (https://charts.bitnami.com/bitnami)
 - [minio](https://github.com/bitnami/charts/tree/master/bitnami/mariadb)
 
 Repo Hashicorp (https://helm.releases.hashicorp.com)
+
 - [vault](https://www.vaultproject.io/docs/platform/k8s/helm/configuration)
 
 Each dependency parameter can be configured directly from the command line by adding the name of the dependency as prefix :
