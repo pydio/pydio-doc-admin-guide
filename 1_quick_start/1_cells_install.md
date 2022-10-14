@@ -31,11 +31,11 @@ These tutorials provide advanced step-by-step guides for bare installation on yo
 
 <div class="install-logos">
 <a class="logo" href="/en/docs/kb/deployment/raspberry-pi">
-    <div class="logo-img"><img style="height: 70px;margin-top: 5px" src="https://github.com/pydio/pydio-doc-admin-guide/blob/cells-v4/images/logos-os/logo-raspberrypi.png?raw=true"/></div>
+    <div class="logo-img"><img style="height: 70px" src="https://github.com/pydio/pydio-doc-admin-guide/blob/cells-v4/images/logos-os/logo-raspberrypi.png?raw=true"/></div>
     <div class="logo-title">Raspberry Pi</div>
 </a>
 <a class="logo" href="/en/docs/kb/deployment/install-cells-centosrhel">
-    <div class="logo-img"><img style="height: 70px;margin-top: 5px" src="https://github.com/pydio/pydio-doc-admin-guide/blob/cells-v4/images/logos-os/logo-rhel.png?raw=true"/></div>
+    <div class="logo-img"><img style="height: 70px" src="https://github.com/pydio/pydio-doc-admin-guide/blob/cells-v4/images/logos-os/logo-rhel.png?raw=true"/></div>
     <div class="logo-title">RHEL Distros</div>
 </a>
 <a class="logo" href="/en/docs/kb/deployment/install-cells-debianubuntu">
@@ -51,7 +51,7 @@ These tutorials provide advanced step-by-step guides for bare installation on yo
     <div class="logo-title">Windows</div>
 </a>
 <a class="logo" href="./providing-ha-kubernetes">
-    <div class="logo-img"><img style="height: 70px;margin-top: 5px" src="https://github.com/pydio/pydio-doc-admin-guide/blob/cells-v4/images/logos-os/logo-kubernetes.png?raw=true"/></div>
+    <div class="logo-img"><img style="height: 70px" src="https://github.com/pydio/pydio-doc-admin-guide/blob/cells-v4/images/logos-os/logo-kubernetes.png?raw=true"/></div>
     <div class="logo-title">Kubernetes</div>
 </a>
 </div>
@@ -65,6 +65,9 @@ These tutorials provide advanced step-by-step guides for bare installation on yo
 
 .install-logos .logo-img {
     height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .install-logos a.logo {
