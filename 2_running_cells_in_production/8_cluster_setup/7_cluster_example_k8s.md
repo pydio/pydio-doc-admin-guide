@@ -71,21 +71,24 @@ helm install my-cells cells/cells --set mariadb.enabled=false
 ### Number of replicas
 
 | Parameter    | Description                                           | Default      |
-| replicaCount | Number of replicas used be default by the application | 1            |
+| --- | --- | --- |
+| `replicaCount` | Number of replicas used be default by the application | 1            |
 
 ### Server image
 
 | Parameter        | Description  | Default      |
-| image.repository |              | pydio/cells  |
-| image.pullPolicy |              | IfNotPresent |
-| image.tag        |              | unstable     |
+| --- | --- | --- |
+| `image.repository` |              | pydio/cells  |
+| `image.pullPolicy` |              | IfNotPresent |
+| `image.tag`        |              | unstable     |
 
 ### Service
 
 | Parameter        | Description  | Default      |
-| service.type     |              | NodePort     |
-| service.port     |              | 8080         |
-| service.discoveryPort |         | 8002         |
+| --- | --- | --- |
+| `service.type`     |              | NodePort     |
+| `service.port`     |              | 8080         |
+| `service.discoveryPort` |         | 8002         |
 
 ## Resources
 
@@ -133,8 +136,9 @@ extraEnvVars:
 In order to access your application remotely, you can set an ingress API object that will provide load balancing, SSL termination and name-based virtual hosting :
 
 | Parameter           | Description                | Default      |
-| ingress.enabled     |	Enables Ingress	           | false |
-| ingress.labels	  | Ingress labels	           | {} |
-| ingress.annotations | Ingress annotations	       | {} | 
-| ingress.hosts	      | Ingress accepted hostnames | [] |
-| ingress.tls	      | Ingress TLS configuration  | [] |
+| --- | --- | --- |
+| `ingress.enabled`    |	Enables Ingress	           | false |
+| `ingress.labels`	  | Ingress labels	           | {} |
+| `ingress.annotations` | Ingress annotations	       | {} | 
+| `ingress.hosts`	      | Ingress accepted hostnames | [] |
+| `ingress.tls`	      | Ingress TLS configuration  | [] |
