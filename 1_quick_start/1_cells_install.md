@@ -30,7 +30,7 @@ Get started quickly with Cells static binaries, or pick an image for your cloud 
 These tutorials provide advanced step-by-step guides for bare installation on your OS/Cloud of choice, from RaspberryPi to Kubernetes Cluster!
 
 <div class="install-logos">
-<a class="logo" href="/en/docs/kb/deployment/raspberry-pi">
+<a class="logo" href="/en/docs/kb/deployment/install-cells-raspberry">
     <div class="logo-img"><img style="height: 70px" src="https://github.com/pydio/pydio-doc-admin-guide/blob/cells-v4/images/logos-os/logo-raspberrypi.png?raw=true"/></div>
     <div class="logo-title">Raspberry Pi</div>
 </a>
