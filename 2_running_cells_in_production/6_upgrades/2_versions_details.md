@@ -6,6 +6,9 @@ Major codebase changes for embracing Go Modules, upgrading dependencies, and sim
 
 Upgrade is done by In-App Tool, but there are a couple of important notes:
 
+ - As any major version, make sure to have a good backup of your MySQL database as well as your CELLS_WORKING_DIR content, except for the actual data but including the `.minio.sys` folder if possible. 
+
+
  - Hydra JWKs will be regenerated in the DB, with the effect of invalidating all existing authentication tokens. As a result, **you will be logged out after upgrade**, and if you are using Personal Access Tokens, you will have to regenerate new ones.  
  
 
