@@ -2,5 +2,5 @@ title: Deploying Cells in a Distributed Environment
 abstract: This chapter provides detailed information to install Cells in a distributed setup.
 menu: Distributed Cluster
 language: und
-weight: 8
+weight: 9
 menu_name: menu-admin-guide-v7-enterprise

@@ -2,5 +2,5 @@ title: Troubleshooting
 abstract: List of problems commonly encountered when installing and configuring Pydio Cells Server or Sync Client, together with strategies to diagnose and fix them.
 menu: Troubleshooting
 language: und
-weight: 9
+weight: 10
 menu_name: menu-admin-guide-v7-enterprise
