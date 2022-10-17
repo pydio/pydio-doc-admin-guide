@@ -33,40 +33,6 @@ Or as all our Flags can be configured by their corresponding CELLS_[FLAG_NAME_UP
 % ./cells start
 ```
 
-## TLS Connection with client certificates
-
-TLS connections can be configured to secure the communication between Cells and external services.
-
-You first need to import the certificate via the command line to make it available to the application :
-
-```
-$ cells admin cert import --uuid my-client-cert myclientcert.pem
-$ cells admin cert import --uuid my-client-cert-key myclientcertkey.pem
-$ cells admin cert import --uuid my-client-rootca myclientrootca.pem 
-```
-
-The following external systems can be configured with TLS : 
-
-| Scheme      | Parameter used                                                                                   | Example                                                                                                                                                          |
-|-------------|--------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `mysql+tls` | mysql dsn (cells configure / pydio.json)                                                         | `mysql+tls://root@tcp(localhost:3306)/cells?parseTime=true&ssl=true&tlsCertCAUUID=my-client-rootca&tlsCertKeyUUID=my-client-cert-key&tlsCertUUID=my-client-cert` |
-| `mongodb`   | mongodb dsn (cells configure / pydio.json)                                                       |                                                                                                                                                                  |
-| `etcd+tls`  | --registry / --config (cells start flag)<br/>CELLS_REGISTRY / CELLS_BROKER (environment variable | `etcd+tls://:2379?ssl=true&tlsCertCAUUID=my-client-rootca&tlsCertKeyUUID=my-client-cert-key&tlsCertUUID=my-client-cert`                                          |
-| `nats`      | --broker (cells start flag)<br/>CELLS_BROKER (environment variable)                              | `nats://:4222?ssl=true&tlsCertCAUUID=my-client-rootca&tlsCertKeyUUID=my-client-cert-key&tlsCertUUID=my-client-cert`                                              |
-| `redis+tls` | --cache (cells start flag)<br/>CELLS_CACHE (environment variable)                                | `redis+tls://:6379?ssl=true&tlsCertCAUUID=my-client-rootca&tlsCertKeyUUID=my-client-cert-key&tlsCertUUID=my-client-cert`                                         |
-| `vaults`    | --keyring (cells start flag)<br/>CELLS_KEYRING (environment variable)                            | `vaults://:8200?ssl=true&tlsCertCAUUID=my-client-rootca&tlsCertKeyUUID=my-client-cert-key&tlsCertUUID=my-client-cert`                                            |
-
-by using the following standard parameters :
-
-| Parameter             | Type          | Description                                        |
-|-----------------------|---------------|----------------------------------------------------|
-| `tlsCertStoreName`    | bool          | Store Name used in the server certificate to match |
-| `tlsCertInsecureHost` | string        | Skip the store name verification                   |
-| `tlsCertUUID`         | string (cert) | UUID of the imported certificate                   |
-| `tlsCertKeyUUID`      | string (cert) | UUID of the imported certificate key               |
-| `tlsCertCAUUID`       | string (cert) | UUID of the imported certificate root ca           |
-
-
 ## Supported Schemes
 
 We will explain below the supported schemes for each flag
@@ -139,3 +105,36 @@ Flag `--keyring` or environment `CELLS_KEYRING`
 |--------|----------------------------------|----------------------------------------------|
 | file   | file://{path-to-cells_vault_key} | Stores generated key on-file                 |
 | vault  | vault://localhost:8200/kv        | Stores keyring data inside HashiCorp vault   |
+
+## TLS Connection with client certificates
+
+TLS connections can be configured to secure the communication between Cells and external services.
+
+You first need to import the certificate via the command line to make it available to the application :
+
+```
+$ cells admin cert import --uuid my-client-cert myclientcert.pem
+$ cells admin cert import --uuid my-client-cert-key myclientcertkey.pem
+$ cells admin cert import --uuid my-client-rootca myclientrootca.pem 
+```
+
+The following external systems can be configured with TLS :
+
+| Scheme      | Parameter used                                                                                         | Example                                                                                                                                                |
+|-------------|--------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `mysql+tls` | mysql dsn (cells configure / pydio.json)                                                               | `mysql+tls://root@tcp(localhost:3306)/cells`<br>`?parseTime=true&ssl=true&tlsCertCAUUID=my-client-rootca&tlsCertKeyUUID=my-client-cert-key&tlsCertUUID=my-client-cert` |
+| `mongodb`   | mongodb dsn (cells configure / pydio.json)                                                             | `mongodb://cells-mongodb.cells.svc.cluster.local:27017/cells`<br>`?ssl=true&tlsCertCAUUID=my-client-rootca&tlsCertKeyUUID=my-client-cert-key&tlsCertUUID=my-client-cert` |
+| `etcd+tls`  | --registry / --config (cells start flag)<br/>CELLS_REGISTRY / CELLS_BROKER (environment variable)      | `etcd+tls://:2379?ssl=true&tlsCertCAUUID=my-client-rootca&tlsCertKeyUUID=my-client-cert-key&tlsCertUUID=my-client-cert`                                |
+| `nats`      | --broker (cells start flag)<br/>CELLS_BROKER (environment variable)                                    | `nats://:4222?ssl=true&tlsCertCAUUID=my-client-rootca&tlsCertKeyUUID=my-client-cert-key&tlsCertUUID=my-client-cert`                                    |
+| `redis+tls` | --cache (cells start flag)<br/>CELLS_CACHE (environment variable)                                      | `redis+tls://:6379?ssl=true&tlsCertCAUUID=my-client-rootca&tlsCertKeyUUID=my-client-cert-key&tlsCertUUID=my-client-cert`                               |
+| `vaults`    | --keyring (cells start flag)<br/>CELLS_KEYRING (environment variable)                                  | `vaults://:8200?ssl=true&tlsCertCAUUID=my-client-rootca&tlsCertKeyUUID=my-client-cert-key&tlsCertUUID=my-client-cert`                                  |
+
+by using the following standard parameters :
+
+| Parameter             | Type          | Description                                        |
+|-----------------------|---------------|----------------------------------------------------|
+| `tlsCertStoreName`    | bool          | Store Name used in the server certificate to match |
+| `tlsCertInsecureHost` | string        | Skip the store name verification                   |
+| `tlsCertUUID`         | string (cert) | UUID of the imported certificate                   |
+| `tlsCertKeyUUID`      | string (cert) | UUID of the imported certificate key               |
+| `tlsCertCAUUID`       | string (cert) | UUID of the imported certificate root ca           |
