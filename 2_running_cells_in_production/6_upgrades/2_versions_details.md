@@ -29,7 +29,6 @@ WARN	pydio.grpc.policy	[SQL]   It could potentially lead to issues during upgrad
 WARN	pydio.grpc.policy	[SQL]   You can find more information here : https://pydio.com/kb/...
 WARN	pydio.grpc.policy	[SQL] 
 WARN	pydio.grpc.policy	[SQL] *******************************************************************************
-2022-10-26T11:06:08.982+0200	INFO	pydio.g
 ```
 
 and/or this error:
@@ -43,10 +42,10 @@ Rather than risking to end up with a broken instance, we chose to prevent migrat
 
 To solve this issue, you should:
 
-- Stop Cells,
-- Insure that no process is left (e.g. by running: `ps -afe | grep cells`),
-- Perform a backup of your DB,
-- Run following SQL commands:
+  - Stop Cells,
+  - Insure that no process is left (e.g. by running: `ps -afe | grep cells`),
+  - Perform a backup of your DB,
+  - Run following SQL commands:
 
 ```sh
 # Create a custom script in /tmp folder
