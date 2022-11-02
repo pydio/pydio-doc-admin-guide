@@ -1,5 +1,3 @@
-### S3 Datasources
-
 This connector allows using a remote S3-compliant storage as datasource for Pydio Cells, for instance you can connect your cells to a minio storage.
 
 Under the hood, an object service is started in Gateway mode using the Api KEY/SECRET that you will provide.
