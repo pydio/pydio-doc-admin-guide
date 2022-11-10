@@ -6,7 +6,7 @@ Cells ships as a set of precompiled static binaries, one for each operating syst
 - **RAM**: 4GB RAM
 - **Disk**: SSD is highly recommended for storage.
 - **Supported OS**:
-  - _Debian Like_: Debian 11 (Bullseye), 10 (Buster), 9 (Stretch); Raspbian 10 or 11; Ubuntu 22.04 (Jammy Jellyfish), 20.04 (Focal Fossa), 18.04 (Bionic Beaver
+  - _Debian Like_: Debian 11 (Bullseye), 10 (Buster), 9 (Stretch); Raspbian 10 or 11; Ubuntu 22.04 (Jammy Jellyfish), 20.04 (Focal Fossa), 18.04 (Bionic Beaver)
   - _RHEL_: RHEL 7, 8 or 9, RockyLinux 8 or 9, CentOS 7
   - _MacOSX_: from 10.13
   - _Windows_: 10 or 11 (Cells Home only)
@@ -83,6 +83,6 @@ Cells uses TCP/IP connections to communicate between services. The following are
 
 ## Other requirements
 
-The time on the server **must** be correct, otherwise you will have authentication problems, e.g: `403` access forbidden errors when trying to upload.
+The date & time on the server **must** be correct, otherwise you will have authentication problems; e.g: `403` access forbidden errors when trying to upload.
 
-If you plan to use one of the clients (e.g.: Cells Sync, the mobile apps, Cells clients), you must at least define the public external URL, otherwise Cells cannot complete the OAuth credential flow.
+If you plan to use one of the clients (e.g.: Cells Sync, the mobile apps, Cells clients), you must also at least define the public external URL. Otherwise, Cells cannot complete the OAuth credential flow.
