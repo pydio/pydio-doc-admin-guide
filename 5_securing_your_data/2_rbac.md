@@ -77,7 +77,7 @@ When using Security Policies to dynamically provide or deny access to a Workspac
 
 For Cells created "from scratch" (not referring to an existing folder), an empty folder is automatically created, and by default it does not inherit from any parent workspace. If you want to apply a default policy for that case, you can use the "Cells Policy" field and preset a specific policy.
 
-[:image:5_securing_your_data/rbac/rbac-cells-default-policy.png]
+[:image:5_securing_your_data/rbac/rbac-workspaces-cells-default-policy.png]
 
 ## Putting Things Together
 
