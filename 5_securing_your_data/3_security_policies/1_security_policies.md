@@ -18,6 +18,10 @@ When evaluated, each rule of a security policy answers the following question: `
 |Something| An arbitrary unique resource name, for example "something", "resources.articles.1234" or some uniform resource name like "urn:isbn:3827370191"|
 |Context| The current context containing information about the environment such as the IP Address, request date, the resource owner name, the department ken is working in or any other information you want to pass along. (optional)|
 
+A policy is composed of one or many rules: 
+
+[:image:5_securing_your_data/rbac/security-policies-rules-list.png]
+
 ### Deny by default vs. explicit deny
 
 Composed of many rules, a security policy is always "Deny by Default". Given the Context, each rule will compute its "ABLE" value to "allow" or "deny". 
@@ -33,13 +37,19 @@ In Pydio Cells, _Resources_ can be of three types : a REST API endpoint, an Open
 
 These policies are protecting the REST APIs on a per-uri/per-method basis. They grant basic access to some specific APIs for public discovery or logged users. You should generally not touch these unless you know exactly what you do.	
 
+[:image:5_securing_your_data/rbac/security-policies-rest.png]
+
 ### OpenId Connect Resources	
 
 OpenId Connect Service is used for authentication of the user, before any access to the APIs. As such, you can totally disable the login operation for a set of users based on the requests context, e.g. disable logging from a given set of IP or at a given time.	
 
+[:image:5_securing_your_data/rbac/security-policies-oidc.png]
+
 ### Context-Based ACLs
 
 These policies are used to dynamically provide read/write access to workspaces or files and folders. They are meant to be used in the Roles/Users workspace access panel in replacement to manual "Read/Write" assignements. 
+
+[:image:5_securing_your_data/rbac/security-policies-acls.png]
 
 The rest of this documentation is focused on Context-Based ACLs, as they are a powerful way to provide dynamic access to workspaces or to filter any files that users are allowed to see or modify inside a workspace.
 
@@ -51,16 +61,35 @@ Pydio Cells comes out-of-box with a carefully chosen set of pre-defined policies
 
 If we refer to the `WHO is ABLE to perform WHAT on SOMETHING in a given CONTEXT` that each rule evaluates, in the context of ACLs, it usually refers to the following :
 
- - _WHO:_ a list of identities defined by their username, profile or role
- - _SOMETHING:_ a path to a specific workspace or node that user tries to access
- - _CONTEXT:_ request or file/folder metadata.
- - _WHAT:_ Read or Write access. Specific actions "Delete, Download, Upload, Sync" can also be used but only in with a "Deny" effect.
+ - **_WHO_**: a list of identities defined by their username, profile or role
+ - **_SOMETHING_**: a path to a specific workspace or node that user tries to access
+ - **_CONTEXT_**: request or file/folder metadata.
+ - **_WHAT_**: Read, Write or any other Action (see below)
 
 Once defined, these policies are available in the "Workspaces Accesses" panel (for each role, user or group) to replace the manual "Read/Write" assignments. Assigning a policy to a given workspace means that it will be evaluated for all requests (_CONTEXT_) performed by a user with this role (_WHO_) on all nodes that are inside this workspace (_SOMETHING_). 
 
-As such a basic policy that has one rule with "Allow" effect on "Read", "Write" actions is purely equivalent to a Read/Write manual permission assignment. 
+[:image:5_securing_your_data/rbac/security-policies-acl-rule-details.png]
 
-Specific "**Delete**, **Download**, **Upload**" actions expand basic "Read/Write" permissions by allowing for example a user to "Read" files (= see the file in the list) without being able to "Download" (read their contents) them, or on the other side to "Write" (move them around) without being able to "Upload" (modify their contents) or permanently "Delete" them. 
+### ACLs Policies Actions
+
+**Read / Write Actions**
+
+The most common applicable actions for defining an ACL Policy Rule are "Read" and "Write". A basic policy that has one rule that sets "Allow" effect on "Read" and "Write" actions and no conditions is purely equivalent to a Read/Write manual permission assignment.
+
+You can also combine Read and Write with "Allow" or "Deny" effects to specifically invert their application.
+
+**Special "Deny-only" Actions**
+
+The "Delete", "Download", "Upload" and "Sync" actions behave in a special way: they cannot be applied with "Allow" effect, because they always require an existing Read or Write permission to be set. These actions can only have a Deny effect and can be very useful to refine a generic permissions with more advanced ones. 
+
+ - Deny Delete: forbid the definitive deletion of resources
+ - Deny Download: forbid the actual content download of file data
+ - Deny Upload: forbid the actual upload of file data
+ - Deny Sync: forbid a sync client to connect to a resource
+
+[:image:5_securing_your_data/rbac/security-policies-acl-advanced-actions.png]
+
+For example, one can expand the basic "Read/Write" permissions by allowing for example a user to "Read" files (= see the file in the list) without being able to "Download" (read their contents) them, or on the other side to "Write" (move them around) without being able to "Upload" (modify their contents) or permanently "Delete" them. 
 
 ### Using Conditions
 
