@@ -56,6 +56,8 @@ echo "SET FOREIGN_KEY_CHECKS=1;" >> /tmp/upgrade.sql
 mysql -upydio -p cells < /tmp/upgrade.sql
 ```
 
+**WARNING**: Do **not** run this script until you see the warning or error described above: it might corrupt an otherwise perfectly fine instance. 
+
 You can then restart Cells, the errors and warnings should be gone and your migration should run without further issue. 
 
 ## Cells v3
