@@ -9,7 +9,7 @@ and/or secure that access with Sites.
 ./cells configure sites
 ```
 
-1. **Bind Address(s)**: one or more `<ip/hostname:port>` to bind Cells to local host's network interfaces addresses. 
+1. **Bind Address(s)**: one or more `<ip/hostname:port>` to bind Cells to local host's network interfaces addresses. URL can be used in case of a TLS setup with Let's Encrypt.
 
 2. **TLS Settings**: [TLS configuration](./configure-tls) for HTTPS support (TLS, Let's Encrypt, External URL)
 
