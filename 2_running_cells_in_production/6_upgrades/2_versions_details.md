@@ -50,7 +50,7 @@ To solve this issue, you should:
 ```sh
 # Create a custom script in /tmp folder
 echo "SET FOREIGN_KEY_CHECKS=0;" > /tmp/upgrade.sql
-mysql -N -upydio -p -e "SELECT CONCAT('ALTER TABLE ', tbl.TABLE_SCHEMA, '.', tbl.TABLE_NAME, ' CONVERT TO CHARACTER SET utf8mb4;') FROM INFORMATION_SCHEMA.TABLES tbl WHERE TABLE_SCHEMA='cells' AND TABLE_TYPE='BASE TABLE' AND TABLE_COLLATION NOT LIKE 'ascii%';" >> /tmp/upgrade.sql
+mysql -N -upydio -p -e "SELECT CONCAT('ALTER TABLE ', tbl.TABLE_SCHEMA, '.', tbl.TABLE_NAME, ' CONVERT TO CHARACTER SET utf8mb4;') FROM INFORMATION_SCHEMA.TABLES tbl WHERE TABLE_SCHEMA='cells' AND TABLE_TYPE='BASE TABLE' AND TABLE_COLLATION NOT LIKE 'ascii%' AND TABLE_NAME NOT LIKE 'hydra_%';" >> /tmp/upgrade.sql
 echo "SET FOREIGN_KEY_CHECKS=1;" >> /tmp/upgrade.sql
 # Run it against you DB
 mysql -upydio -p cells < /tmp/upgrade.sql
