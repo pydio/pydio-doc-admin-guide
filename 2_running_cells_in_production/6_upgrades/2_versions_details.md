@@ -25,7 +25,7 @@ An important change introduced in v4 creates a compatibility issue between speci
 _**TL;DR:**_ 
 
  - If you do not plan to upgrade, do not upgrade Cells Sync either. 
- - If you do upgrade to v4, do upgrade Cells Sync, and you will also have to launch [a specific processing](../developer-guide/cells-admin-datasource-rehash) on your server datasources.
+ - If you do upgrade to v4, do upgrade Cells Sync, and you will also have to launch [a specific processing](../../developer-guide/cells-admin-datasource-rehash) on your server datasources.
 
 ### 5 - Collation issues at upgrade
 

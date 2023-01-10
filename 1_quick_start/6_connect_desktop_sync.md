@@ -52,7 +52,7 @@ Cells v3 and before were previously relying on the storage eTag feature, and the
 
 If you are upgrading from Cells v3 to v4, file hashes in all datasources **will not be automatically recomputed**, as it is a I/O and CPU intensive operation: you may want to schedule it when it suits you best. 
 
-To trigger this operation, please use the following command ([more info here](../developer-guide/cells-admin-datasource-rehash)) 
+To trigger this operation, please use the following command ([more info here](../../developer-guide/cells-admin-datasource-rehash)) 
 
 ```
 $ cells admin datasource rehash -u admin --datasource {YOUR_DATASOURCE_NAME}
