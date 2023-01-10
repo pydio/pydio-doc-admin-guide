@@ -2,17 +2,32 @@ This page collects information about noticeable changes to take care when upgrad
 
 ## Cells v4
 
-Major codebase changes for embracing Go Modules, upgrading dependencies, and simplifying microservices framework to ease cluster deployments.
+Major codebase changes for embracing Go Modules, upgrading dependencies, and simplifying microservices framework to ease cluster deployments.  Upgrade is done by In-App Tool, but there are a couple of important notes:
 
-Upgrade is done by In-App Tool, but there are a couple of important notes:
+### 1 - Backup
+As any major version, make sure to have a good backup of your MySQL database as well as your CELLS_WORKING_DIR content, except for the actual data but including the `.minio.sys` folder if possible. 
 
- - As any major version, make sure to have a good backup of your MySQL database as well as your CELLS_WORKING_DIR content, except for the actual data but including the `.minio.sys` folder if possible. 
-
- - Hydra JWKs will be regenerated in the DB, with the effect of invalidating all existing authentication tokens. As a result, **you will be logged out after upgrade**, and if you are using Personal Access Tokens, you will have to regenerate new ones.  
+### 2 - Authentification Tokens refreshed
+Hydra JWKs will be regenerated in the DB, with the effect of invalidating all existing authentication tokens. As a result, **you will be logged out after upgrade**, and if you are using Personal Access Tokens, you will have to regenerate new ones. Other applications like CellsSync will require re-authentication as well (see below).  
  
- - **Cells Sites Bind Address should not use a domain name anymore, except for a TLS setup with Let's Encrypt**. A bind address requires a binding PORT which will be the port your application will listen to (use standard port for Let's Encrypt), and a binding HOST that will either be a _Network Interface IP_, hostname, or domain name in the case of Let's Encrypt. If you have connection issue after upgrade, make sure to edit sites to bind to e.g. `0.0.0.0:8080` instead of `domain.name:8080` (using `cells configure sites` or by simply editing the `pydio.json` file). For a TLS setup with Let's Encrypt, the domain name *must* be used with the standard port 443 (other addresses *can* be used for alternate access only). The ACME challenge requires this.
+### 3 - Cells Sites configuration
 
-### Collation issues
+Except for a TLS Let's Encrypt setup, Cells Sites **"Bind Addresses" should now not use a domain name anymore**. 
+
+A bind address requires a binding PORT which will be the port your application will listen to (use standard port for Let's Encrypt), and a binding HOST that will either be a _Network Interface IP_, hostname (or domain name in the case of Let's Encrypt). If you have connection issue after upgrade, make sure to edit sites to bind to e.g. `0.0.0.0:8080` instead of `domain.name:8080` (using `cells configure sites` or by simply editing the `pydio.json` file). 
+
+For a TLS setup with Let's Encrypt, the domain name *must* be used with the standard port 443 (other addresses *can* be used for alternate access only), as required by the ACME challenge.
+
+### 4 - CellsSync client compatibility
+
+An important change introduced in v4 creates a compatibility issue between specific server versions and CellsSync versions. Please refer to the [Connect Desktop Sync](./connect-desktop-sync) section to learn more. 
+
+_**TL;DR:**_ 
+
+ - If you do not plan to upgrade, do not upgrade Cells Sync either. 
+ - If you do upgrade to v4, do upgrade Cells Sync, and you will also have to launch [a specific processing](../developer-guide/cells-admin-datasource-rehash) on your server datasources.
+
+### 5 - Collation issues at upgrade
 
 While upgrading to Cells v4 from an older version, you might get this warning:
 

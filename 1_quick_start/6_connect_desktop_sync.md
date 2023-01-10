@@ -42,6 +42,42 @@ In order to be able to synchronize data, you must configure the connection from 
 
 [:image:1_quick_start/cells_sync_basic.gif]
 
+## Server compatibility : Cells v4 vs. older versions
+
+Starting with v4, a new hashing mechanism has been introduced to compute files signature in a storage-independant way. This signature or "hash" is used for fast comparison between two files version: if they are the same, the file did not change. 
+
+### Datasource Hashing Version
+
+Cells v3 and before were previously relying on the storage eTag feature, and the Sync client would on its side compute a hash in the same format (md5). We now use an internal hashing mechanism, which brings consistency accross all storages, all upload methods (direct PUT or multipart), and datasource encryption status. 
+
+If you are upgrading from Cells v3 to v4, file hashes in all datasources **will not be automatically recomputed**, as it is a I/O and CPU intensive operation: you may want to schedule it when it suits you best. 
+
+To trigger this operation, please use the following command ([more info here](../developer-guide/cells-admin-datasource-rehash)) 
+
+```
+$ cells admin datasource rehash -u admin --datasource {YOUR_DATASOURCE_NAME}
+```
+
+This will:
+ 
+ - List all files in datasource and recompute their hash
+ - Update datasource configuration with a specific "hashing_version=v4" attribute
+ - If datasource is structured, update the "resync" job to always rehash new files after synchronization. 
+
+Once the job is finished (see in the Scheduler or Cells Flows), you can restart the server.
+
+### Compatibility Matrix
+
+On your desktop, if you update from 0.9.2 or below, CellsSync will automatically recompute all hashes on the local filesystem and trigger a full resynchronization. From there, the matrix below shows how a given datasource will be compatible with a given version of CellsSync.
+
+| Cells Server + Datasource Status | Cells Sync <= 0.9.2 | Cells Sync >= 0.9.3 | 
+|----------------------------------|---------------------|---------------------|
+| Cells v3 or older                | OK                  | FAIL                |
+| v3 upgraded to v4 w/o rehash     | OK (needs re-auth)  | FAIL                |
+| v3 upgraded to v4 w/ rehash      | FAIL                | OK                  |
+| Cells v4 new installation        | FAIL                | OK                  |
+
+**So if you do not plan to update your server to v4, do not upgrade Cells Sync after 0.9.2** (you can reinstall older version if you updated by mistake)!
 
 ## Troubleshooting
 
