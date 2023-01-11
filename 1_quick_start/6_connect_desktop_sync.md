@@ -64,7 +64,7 @@ This will:
  - Update datasource configuration with a specific "hashing_version=v4" attribute
  - If datasource is structured, update the "resync" job to always rehash new files after synchronization. 
 
-Once the job is finished (see in the Scheduler or Cells Flows), you can restart the server.
+Once the job is finished (see in the Scheduler or Cells Flows), restart the server.
 
 ### Compatibility Matrix
 
