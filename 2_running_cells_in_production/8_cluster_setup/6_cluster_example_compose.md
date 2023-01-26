@@ -14,7 +14,7 @@ It defines the following services:
 
 ## Setup and Deployment
 
-Simple docker-compose deployment to experiment with Cells v4 Clustering model.
+Simple docker compose deployment to experiment with Cells v4 Clustering model.
 It uses `pydio/cells:unstable` docker image, use whatever image by editing the docker-compose.yml file.
 
 ### Preparing and starting dependencies
@@ -27,13 +27,13 @@ Some preparatory steps are required : create Minio buckets for shared storage, a
 ```sh
 cd <this folder>
 # start all third-party services
-docker-compose up -d mysql mongo nats etcd vault redis minio caddy
+docker compose up -d mysql mongo nats etcd vault redis minio caddy
 
 # create buckets in minio 
-docker-compose up createbuckets
+docker compose up createbuckets
 
 # Create a dedicated kvstore for certificates in Vault (configured in DEV mode with a preset VAULT_TOKEN, this should not be the case in production)
-docker-compose exec -e VAULT_ADDR=http://localhost:8200 -e VAULT_TOKEN=secret_vault_token vault vault secrets enable -version=2 -path=caddycerts kv
+docker compose exec -e VAULT_ADDR=http://localhost:8200 -e VAULT_TOKEN=secret_vault_token vault vault secrets enable -version=2 -path=caddycerts kv
 ```
 
 ### Caddy LoadBalancer
@@ -50,13 +50,13 @@ At first run, start a unique node to let it perform the automatic installation. 
 Monitor the logs to check that installation is complete or simply open https://caddy:8585/ to check that you can log in with admin credentials.
 
 ```sh
-docker-compose up -d cells1; docker-compose logs -f cells1
+docker compose up -d cells1; docker compose logs -f cells1
 ```
 
 Now you can spin more cells nodes:
 ```sh
 # Once install is finished, start other nodes 
-docker-compose up -d cells2 cells3; docker-compose logs -f cells2 cells3
+docker compose up -d cells2 cells3; docker compose logs -f cells2 cells3
 ```
 
 At next run, you can start all three nodes at once.
@@ -67,5 +67,5 @@ Access https://caddy:8585/ to access Cells. Enjoy!
 
 ```sh
 # To clean everything
-docker-compose down -v --remove-orphans
+docker compose down -v --remove-orphans
 ```
