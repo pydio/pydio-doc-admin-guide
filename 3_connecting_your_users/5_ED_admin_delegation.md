@@ -24,18 +24,18 @@ Using the Application Pages > Admin Console READ access, you are presented with 
 
 [:image:3_connecting_your_users/admin-delegation/03-delegation-rights.png]
 
-### Notes : Admin-only Pages
+## Additional Notes
+
+### A - Workspaces Management: use Cells instead!
 
 Some specific pages are excluded from this delegation list, as they always require a super-admin permission.
 
-#### A - Workspaces Management: use Cells instead!
-
 The "Workspaces" page allows users to create Workspaces by defining their roots in the data tree, which includes all data sources. As such, giving access to this page always grants access to all the data. If you want to give limited access to workspaces, you should typically use the Cells feature, which allows non-admin users to create Cells within Workspaces that restrict the data they can view.
 
-#### B - Cells Flows: too much responsibility
+### B - Cells Flows: too much responsibility
 
 With power comes responsibility... Using Cells Flows should always be restricted to super-admins, as it allows accessing all the data of the application. You can use Forms, Webhooks and Buttons to provide end-users interactions with Flows that you first define.
 
-### Notes : Pages Accesses vs. API 
+### C - Pages Accesses vs. API 
 
 When you toggle the read/write operations for each page, these rights actually **update the underlying Rest API** that are used by the page. That way, you can be sure that you are opening this restricted permission only on a given API (e.g. the /a/user API when assigning accesses to People page), and on the other hand, that does mean that if you assign this permission, the corresponding API will be accessible for this user from an API client as well.
