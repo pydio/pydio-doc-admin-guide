@@ -1,5 +1,5 @@
 title: '[Ent] Admin Delegation'
-abstract: Delegating a subset of administrative grants to some specific users.
+abstract: This Enterprise feature provides the ability to grant a subset of administrative permissions to non-admin users.
 menu: '[Ent] Admin Delegation'
 language: und
 weight: 5
