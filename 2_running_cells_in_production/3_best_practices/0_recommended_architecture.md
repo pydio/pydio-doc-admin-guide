@@ -59,3 +59,34 @@ For further information of HA setup, please visit: https://pydio.com/en/docs/cel
 | Single server + dedicated Sql DB  | █ █ ░ ░ ░  | █ █ █ ░ ░  | █ █ █ █ █  | █ █ █ █ ░ |
 | Switchover   | █ █ █ █ ░ | █ █ █ ░ ░ | █ █ █ █ ░  | █ █ █ ░ ░ |
 | High Availability   | █ █ █ █ █  | █ █ █ █ █  | █ █ █ ░ ░  | █ █ ░ ░ ░ |
+
+## Network Traffic
+
+**Ingress**
+
+|Source|Source Port|Protocol|Destination|Destination Port | Required | Comment
+|---|---|---|---|---|---|---| 
+|client IPs|Ephemeral port range|TCP|Cells IP|443|yes|https & http/2|
+|client IPs|Ephemeral port range|TCP|Cells IP|80||http redirection|
+|client IPs|Ephemeral port range|TCP|Cells IP|22||ssh|
+|client IPs|Ephemeral port range|TCP|Cells IP|2022 (optional)||sftp service|
+
+**Egress**
+
+|Source|Source Port|Protocol|Destination|Destination Port | Required | Comment
+|---|---|---|---|---|---|---| 
+|Cells IP|Ephemeral port range|UDP|y.y.y.y|123|yes|ntp/chrony for time synchronization|
+|Cells IP|Ephemeral port range|TCP|updatecells.pydio.com|443||Update cells service|
+|Cells IP|Ephemeral port range|TCP/UDP|DNS IPs|53||Dns service|
+|Cells IP|Ephemeral port range|TCP|MySQL DB|3306||MySQL DB |
+|Optional Services|
+|Cells IP|Ephemeral port range|TCP|database.clamav.net|80|| freshclam for antivirus service
+|Cells IP|Ephemeral port range|TCP|sso.server.com|443||sso server such as saml, openid connect, adfs| 
+|Cells IP|Ephemeral port range|TCP|smtp server|25/587/465||SMTP server
+|Cells IP|Ephemeral port range|TCP|Ldap server IP|389/636/3268|| Ldap server
+|Cells IP|Ephemeral port range|TCP|S3 server IP|443|| S3 service object
+
+
+OS specific ephemeral port range: https://en.wikipedia.org/wiki/Ephemeral_port
+
+For further information, please visit: https://share.pydio.com/public/5bbf4953a262
