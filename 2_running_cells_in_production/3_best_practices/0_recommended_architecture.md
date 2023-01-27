@@ -53,10 +53,10 @@ For further information of HA setup, please visit: https://pydio.com/en/docs/cel
 
 **Comparision between different setups**
 
-| Setup    | availability  | scalability  | maintainability | cost efficiency |
+|     | availability  | scalability  | maintainability | cost efficiency |
 |---|---|---|---|---|
 | Single server  | █ █ ░ ░ ░  | ░ ░ ░ ░ ░  | █ █ █ █ ░  | █ █ █ █ █  |
-| Single server + dedicated Sql DB  | █ █ ░ ░ ░  | █ █ █ ░ ░  | █ █ █ █ █  | █ █ █ █ ░ |
+| Single server + Sql & Mongo DB  | █ █ ░ ░ ░  | █ █ █ ░ ░  | █ █ █ █ █  | █ █ █ █ ░ |
 | Switchover   | █ █ █ █ ░ | █ █ █ ░ ░ | █ █ █ █ ░  | █ █ █ ░ ░ |
 | High Availability   | █ █ █ █ █  | █ █ █ █ █  | █ █ █ ░ ░  | █ █ ░ ░ ░ |
 
