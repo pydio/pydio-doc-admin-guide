@@ -1,9 +1,11 @@
 One of the first question of system admin before installing Cells is how to select a suitable setup. How to organize the services of Cells in an existed infrastructure that satisfies general requirements:
+
 - Assure the availability of service
 - Optimized resource usage
 - Low cost of maintenance
 
 This article tries to figure out some typical use cases at different scales. It gives you some hardware configurations to start with. However, in the real life, 10 users with 10k uploaded files per days require more resources than a setup where 1000 users with only 100 upload files. To decide whether setup is a good fit for your case, you should prepare the answer for following questions:
+
 - How many user you have?
 - Estimated of number of existed files and the growth rate of data over the time?
 
@@ -55,10 +57,10 @@ For further information of HA setup, please visit: https://pydio.com/en/docs/cel
 
 |     | availability  | scalability  | maintainability | cost efficiency |
 |---|---|---|---|---|
-| Single server  | █ █ ░ ░ ░  | ░ ░ ░ ░ ░  | █ █ █ █ ░  | █ █ █ █ █  |
-| Single server + Sql & Mongo DB  | █ █ ░ ░ ░  | █ █ █ ░ ░  | █ █ █ █ █  | █ █ █ █ ░ |
-| Switchover   | █ █ █ █ ░ | █ █ █ ░ ░ | █ █ █ █ ░  | █ █ █ ░ ░ |
-| High Availability   | █ █ █ █ █  | █ █ █ █ █  | █ █ █ ░ ░  | █ █ ░ ░ ░ |
+| Single server  | &#128505; &#128505; &#9744; &#9744; &#9744;  |  &#9744; &#9744; &#9744; &#9744; &#9744;  | &#128505; &#128505; &#128505; &#128505; &#9744;  | &#128505; &#128505; &#128505; &#128505; &#128505;  |
+| Single server + Sql & Mongo DB  | &#128505; &#128505; &#9744; &#9744; &#9744;  | &#128505; &#128505; &#128505; &#9744; &#9744;  | &#128505; &#128505; &#128505; &#128505; &#128505; | &#128505; &#128505; &#128505; &#128505;  &#9744; |
+| Switchover   | &#128505; &#128505; &#128505; &#128505;  &#9744; | &#128505; &#128505; &#128505; &#9744;  &#9744; | &#128505; &#128505; &#128505; &#128505;  &#9744;  | &#128505; &#128505; &#128505; &#9744;  &#9744;  |
+| High Availability   | &#128505; &#128505; &#128505; &#128505; &#128505; | &#128505; &#128505; &#128505; &#128505; &#128505; | &#128505; &#128505; &#128505; &#9744;  &#9744; | &#128505; &#128505; &#9744; &#9744;  &#9744; |
 
 ## Network Traffic
 
