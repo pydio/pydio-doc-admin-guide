@@ -56,8 +56,8 @@ ol span.geshifilter {
 _These commands deploy a fully runnable instance of Cells on Kubernetes. Use it to quickly spin off a production-ready environment having high-availability and horizontal scalability at the ready from the get-go_
 
 <ol class="install-steps numbering">
-<li><p>Add the Pydio Cells Helm Chart repository<br> <code>$ <span>helm repo add cells https://download.pydio.com/pub/charts/helm</span></code></p></li>
-<li><p>Run the install command<br> <code>$ <span>helm install cells cells/cells --namespace cells --create-namespace</span></code></li>
+<li><p>Add the Pydio Cells Helm Chart repository<br> <code>$ helm repo add cells https://download.pydio.com/pub/charts/helm</code></p></li>
+<li><p>Run the install command<br> <code>$ helm install cells cells/cells --namespace cells --create-namespace</code></li>
 </ol>
 
 ## Go further
