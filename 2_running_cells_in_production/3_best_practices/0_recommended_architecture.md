@@ -69,7 +69,7 @@ Reaching full HA and zero-downtime can be done by deploying Cells in an auto-sca
 
 Also called "Network Flow" or "Network Diagram", the tables below summarize the necessary open ports for running Cells inside any infrastructure. You may communicate this page to your System Administrator if they ask you "what ports shall I open?"...
 
-You can download a [PDF version here TODO](TODO).
+You can download [PDF versions here](https://download.pydio.com/pub/share/docs/network_diagrams/).
 
 **Ingress**
 
