@@ -71,8 +71,13 @@ The main parameters required to achieve a production-ready deployment are descri
 
 <pre>
 <code>
+
+# NOTE : Cells Enterprise users can comment out the lines following the # [ED] comment
+
 # Define what image version of Cells you want to use to have more control over your update
 image:
+  # [ED]
+  # repository: pydio/cells-enterprise
   tag: latest
 
 # Achieve high availability by starting a minimum number of replicas of the Cells stateless Pod
@@ -108,6 +113,9 @@ ingress:
 
 service:
   type: ClusterIP
+  # [ED]
+  # customconfigs: {
+  #  "defaults/license/data": "MYLICENSE",
 </code>
 </pre>
 
