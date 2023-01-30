@@ -1,28 +1,32 @@
-One of the first question of system admin before installing Cells is how to select a suitable setup. How to organize the services of Cells in an existed infrastructure that satisfies general requirements:
+One of the first question of a system administrator before installing Cells is how to select a suitable setup. How to organize the services of Cells in an existing infrastructure while satisfying general requirements:
 
-- Assure the availability of service
-- Optimized resource usage
-- Low cost of maintenance
+- Ensure the service availability
+- Optimize resource usage
+- Maintain at low cost
 
-This article tries to figure out some typical use cases at different scales. It gives you some hardware configurations to start with. However, in the real life, 10 users with 10k uploaded files per days require more resources than a setup where 1000 users with only 100 upload files. To decide whether setup is a good fit for your case, you should prepare the answer for following questions:
+This article tries to figure out some typical use cases at different scales. It gives you some hardware configurations to start with. However, in the real life, 10 users with 10k uploaded files per days require more resources than a setup where 1000 users upload only 100 per day. To decide whether setup is a good fit for your case, you should prepare the answer for following questions:
 
-- How many user you have?
-- Estimated of number of existed files and the growth rate of data over the time?
-
-
-Cells was designed and developed based on microservice architecture. This architectural style allows Cells be installed as a collection of services. Each service is independently deployable. They can run in either the same server or in different servers in the network.
+- How many users do you have?
+- Do you have a rough estimation of the number of existing files and **the growth rate of data over the time**?
 
 
-## All-In-One Server
-This setup is suitable for a small organization with limited IT resource. All services and DB are installed in a single server. You can go quickly with this setup but over the time, the maintenance become complicate.
+Beside the usual "N-tier" architecture that recommends splitting storage from compute, Cells micro-service architecture allows each service to be independently deployable. They can run in either the same server or in different servers in the network.
+
+## Architecture Samples
+
+### A - All-In-One Server
+
+This setup is suitable for a small organization with limited IT resource. All services and DB are installed in a single server. You can start quickly with this setup but over the time, system may reach limitations and the maintenance may become complex.
 
 **Hardware configuration example**
+
 - 4 cores CPU
 - 8 G RAM
 - Local disk storage
 
-## Minimal Production Setup
-Keeping the database out of application server is always a good approach and Cells is not an exceptional case. Some organizations maintain a central DB server for all application to optimize the cost of maintenance. With this setup, you can profit the existed DB server or install a personalized DB server for Cells.
+### B - Minimal Production Setup
+
+Serving the database on a different server is always a good approach and Cells does not make exception on this. Some organizations maintain a central DB server for all application to optimize the cost of maintenance. With this setup, you can connect to an existing DB server, or install a personalized DB server for Cells.
 
 **Hardware configuration example**
 
@@ -35,34 +39,35 @@ Keeping the database out of application server is always a good approach and Cel
   - 4/8 G RAM
   
 
-## Failover/Switchover Setup
+### C - Failover / Switchover Setup
 
-This setup takes the advantage of standard backup of well-known productions that you're already familial with. In case of failure of one node, you can quickly restore the service from the real-time backups. 
+This setup takes the advantage of standard backups of well-known services that you're already familial with (MySQL, etc.). In case of one node failure, you can quickly restore the service from the real-time backups. Depending on the acceptable downtime, this may be done manually (switchover) or automatically (failover). 
 
-Additionally, running Cells in a dedicated server, you can isolate the server Cells in a DMZ network 
+Additionally, running Cells in a dedicated server may allow you to isolate the server Cells in a DMZ network.
 
 **Hardware configuration example**
+
 - 01 server Cells
 - 02 servers SQL in Master-Slave mode. For further information: https://mariadb.com/kb/en/replication-as-a-backup-solution/
 - 02 servers MongoDB in Master-Slave mode
 - 01 server S3 (minio). You can backup the data in S3 server by a standard file backup solution such as "rsync".
-  
 
-## Full Cluster HA Setup
+### D - Cluster High Availability (HA) Setup
 
-For further information of HA setup, please visit: https://pydio.com/en/docs/cells/v4/going-stateless
+Reaching full HA and zero-downtime can be done by deploying Cells in an auto-scalable, auto-healing cluster. This approach is detailed in the [Deploying Cells in a Distributed Environment](./deploying-cells-distributed-environment) section.
 
+### Comparision between setups
 
-**Comparision between different setups**
-
-|     | availability  | scalability  | maintainability | cost efficiency |
-|---|---|---|---|---|
-| Single server  | &#9733; &#9733; &#9734; &#9734; &#9734;  |  &#9734; &#9734; &#9734; &#9734; &#9734;  | &#9733; &#9733; &#9733; &#9733; &#9734;  | &#9733; &#9733; &#9733; &#9733; &#9733;  |
-| Single server + Sql & Mongo DB  | &#9733; &#9733; &#9734; &#9734; &#9734;  | &#9733; &#9733; &#9733; &#9734; &#9734;  | &#9733; &#9733; &#9733; &#9733; &#9733; | &#9733; &#9733; &#9733; &#9733;  &#9734; |
-| Switchover   | &#9733; &#9733; &#9733; &#9733;  &#9734; | &#9733; &#9733; &#9733; &#9734;  &#9734; | &#9733; &#9733; &#9733; &#9733;  &#9734;  | &#9733; &#9733; &#9733; &#9734;  &#9734;  |
-| High Availability   | &#9733; &#9733; &#9733; &#9733; &#9733; | &#9733; &#9733; &#9733; &#9733; &#9733; | &#9733; &#9733; &#9733; &#9734;  &#9734; | &#9733; &#9733; &#9734; &#9734;  &#9734; |
+|                                    | Availability                             | Scalability                              | Maintainability                          | Cost Efficiency                          |
+|------------------------------------|------------------------------------------|------------------------------------------|------------------------------------------|------------------------------------------|
+| A - Single server                  | &#9733; &#9733; &#9734; &#9734; &#9734;  | &#9734; &#9734; &#9734; &#9734; &#9734;  | &#9733; &#9733; &#9733; &#9733; &#9734;  | &#9733; &#9733; &#9733; &#9733; &#9733;  |
+| B - Single server + Sql & Mongo DB | &#9733; &#9733; &#9734; &#9734; &#9734;  | &#9733; &#9733; &#9733; &#9734; &#9734;  | &#9733; &#9733; &#9733; &#9733; &#9733;  | &#9733; &#9733; &#9733; &#9733;  &#9734; |
+| C - Switchover                     | &#9733; &#9733; &#9733; &#9733;  &#9734; | &#9733; &#9733; &#9733; &#9734;  &#9734; | &#9733; &#9733; &#9733; &#9733;  &#9734; | &#9733; &#9733; &#9733; &#9734;  &#9734; |
+| D - High Availability              | &#9733; &#9733; &#9733; &#9733; &#9733;  | &#9733; &#9733; &#9733; &#9733; &#9733;  | &#9733; &#9733; &#9733; &#9734;  &#9734; | &#9733; &#9733; &#9734; &#9734;  &#9734; |
 
 ## Network Traffic
+
+Also called "Network Flow" or "Network Diagram", the tables below summarize the necessary open ports for running Cells inside any infrastructure. You may communicate this page to your System Administrator if they ask you "what ports shall I open?"...
 
 **Ingress**
 
