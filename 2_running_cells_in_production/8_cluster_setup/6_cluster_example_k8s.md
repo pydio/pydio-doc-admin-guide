@@ -1,4 +1,4 @@
-This section shows how to run Cells in a multi-node setup using inside Kubernetes.
+This page gives detailed information on how to run Cells in a multi-node setup using inside Kubernetes.
 
 ## What is Kubernetes ?
 
@@ -41,20 +41,6 @@ helm install --namespace <namespace> --create-namespace my-cells cells/cells
 
 ## Dependencies
 
-Cells Chart declares the following dependencies: 
-
-Repo bitnami (https://charts.bitnami.com/bitnami) :
-
-- [mariadb](https://github.com/bitnami/charts/tree/master/bitnami/mariadb)
-- [redis](https://github.com/bitnami/charts/tree/master/bitnami/mariadb)
-- [nats](https://github.com/bitnami/charts/tree/master/bitnami/mariadb)
-- [mongodb](https://github.com/bitnami/charts/tree/master/bitnami/mariadb)
-- [minio](https://github.com/bitnami/charts/tree/master/bitnami/mariadb)
-
-Repo Hashicorp (https://helm.releases.hashicorp.com)
-
-- [vault](https://www.vaultproject.io/docs/platform/k8s/helm/configuration)
-
 Each dependency parameter can be configured directly from the command line by adding the name of the dependency as prefix :
 
 ```
@@ -67,6 +53,22 @@ Dependencies can also be ***disabled*** if you want to use your own deployment f
 helm install my-cells cells/cells --set mariadb.enabled=false
 ```
 
+Cells Chart declares the following **mandatory** dependencies below. They are **all** necessary for a fully functional Cells cluster. You can install equivalent versions if you require by disabling the initial dependency
+
+| Name                                                                     | Repo                                          | Enable            | Parameters list                                                 |
+|--------------------------------------------------------------------------|-----------------------------------------------|-------------------|-----------------------------------------------------------------|
+| [mariadb](https://github.com/bitnami/charts/tree/master/bitnami/mariadb) | [bitnami](https://charts.bitnami.com/bitnami) | `mariadb.enabled` | https://artifacthub.io/packages/helm/bitnami/mariadb#parameters |
+| [redis](https://github.com/bitnami/charts/tree/master/bitnami/redis)     | [bitnami](https://charts.bitnami.com/bitnami) | `redis.enabled`   | https://artifacthub.io/packages/helm/bitnami/redis#parameters   | 
+| [nats](https://github.com/bitnami/charts/tree/master/bitnami/nats)       | [bitnami](https://charts.bitnami.com/bitnami) | `nats.enabled`    | https://artifacthub.io/packages/helm/bitnami/nats#parameters    |
+| [mongodb](https://github.com/bitnami/charts/tree/master/bitnami/mongodb) | [bitnami](https://charts.bitnami.com/bitnami) | `mongodb.enabled` | https://artifacthub.io/packages/helm/bitnami/mongodb#parameters | 
+| [minio](https://github.com/bitnami/charts/tree/master/bitnami/minio)     | [bitnami](https://charts.bitnami.com/bitnami)   | `minio.enabled`   | https://artifacthub.io/packages/helm/bitnami/minio#parameters   |
+| [vault](https://www.vaultproject.io/docs/platform/k8s/helm/configuration) | [Hashicorp](https://helm.releases.hashicorp.com) | `vault.enabled`    | https://developer.hashicorp.com/vault/docs/platform/k8s/helm/configuration |
+
+Cells Chart declares the following **optional** dependencies below
+
+| Name              | Repo         | Enable           | Parameters list |
+|-------------------|--------------|------------------|-----------------|
+| [ingress-nginx](https://github.com/kubernetes/ingress-nginx/tree/main/charts/ingress-nginx) | [kubernetes] | `ingress.enabled` | https://artifacthub.io/packages/helm/ingress-nginx/ingress-nginx#values |
 ------------------------
 
 ## Configuration
@@ -87,61 +89,49 @@ helm install my-cells cells/cells --set mariadb.enabled=false
 
 ### Service
 
-| Parameter        | Description  | Default      |
-| --- | --- | --- |
-| `service.type`     |              | NodePort     |
-| `service.port`     |              | 8080         |
-| `service.discoveryPort` |         | 8002         |
+| Parameter                | Description                                           | Default                                                                                                                                                                                                                                                                                                |
+|--------------------------|-------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `service.type`           |                                                       | NodePort                                                                                                                                                                                                                                                                                               |
+| `service.port`           |                                                       | 8080                                                                                                                                                                                                                                                                                                   |
+| `service.discoveryPort`  |                                                       | 8002                                                                                                                                                                                                                                                                                                   |
+| `service.binds`          | Configures new bind addresses for the pod             | *not set*                                                                                                                                                                                                                                                                                              |
+| `service.reverseproxyurl` | Configure the reverse proxy url for the pod           | *not set*                                                                                                                                                                                                                                                                                              |
+| `service.tlsconfig` | Configure the tlsconfig of the pod load balancer      | *not set*                                                                                                                                                                                                                                                                                              |
+| `service.customconfigs` | Configure custom configuration for the Cells instance | {<br>&nbsp;# Initial license<br>&nbsp;"defaults/license/data": "FAKE",<br><br>&nbsp;# sticky session for grpc<br>&nbsp;"cluster/clients/grpc/loadBalancingStrategies[0]/name": "priority-local",<br><br>&nbsp;#<br>&nbsp;"frontend/plugin/core.pydio/APPLICATION_TITLE": "My Pydio Cells Cluster"<br>} |
 
 ## Resources
 
-Resources are not set by default so that they can run on any environment (typically minikube). Feel free to set any limit you want 
+Resources are not set by default in order to run everywhere.
 
-```
-resources: {}
-  # We usually recommend not to specify default resources and to leave this as a conscious
-  # choice for the user. This also increases chances charts run on environments with little
-  # resources, such as Minikube. If you do want to specify resources, uncomment the following
-  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
-  # limits:
-  #   cpu: 100m
-  #   memory: 128Mi
-  # requests:
-  #   cpu: 100m
-  #   memory: 128Mi
-```
+But it becomes mandatory if you want to set up an autoscaling strategy (below)
+
+| Parameter                    | Description  | Default   |
+|------------------------------| --- |-----------|
+ | `resources.limits.cpu`       | | *not set* |
+ | `resources.limits.memory`    | | *not set* |
+ | `resources.requests.cpu`     | | *not set* |
+| `resources.requests.memory`  | | *not set* |
 
 ## Autoscaling
 
 Autoscaling is disabled by default. But you can enable it to have the replica set horizontally scaling to use the full (or as defined) capacity of your cluster.
 
-```
-autoscaling:
-  enabled: false
-  minReplicas: 1
-  maxReplicas: 100
-  targetCPUUtilizationPercentage: 80
-  # targetMemoryUtilizationPercentage: 80
-```
-
-## Extra environment variables.
-
-You can set extra environment variable in each cells pod :
-
-```
-extraEnvVars:
-  - name: CELLS_WORKING_DIR
-    value: /tmp/cells
-```
+| Parameter           | Description                                                                                               | Default |
+|---------------------|-----------------------------------------------------------------------------------------------------------|---------|
+| `autoscaling.enabled` | Enables autoscaling                                                                                       | false   |
+| `autoscaling.minReplicas` | Minimum number of replicas started for a Cells deployment                                                 | 3       |
+| `autoscaling.maxReplicas` | Maximum number of replicas started for a Cells deployment                                                 | 5       |
+| `autoscaling.targetCPUUtilizationPercentage` | Target cpu percentage usage of the maximum resource allocated to reach to trigger a new pod deployment    | 80      |
+| `autoscaling.targetMemoryUtilizationPercentage` | Target memory percentage usage of the maximum resource allocated to reach to trigger a new pod deployment | 80      |
 
 ## Ingress
 
 In order to access your application remotely, you can set an ingress API object that will provide load balancing, SSL termination and name-based virtual hosting :
 
-| Parameter           | Description                | Default      |
-| --- | --- | --- |
+| Parameter            | Description                | Default      |
+|----------------------| --- | --- |
 | `ingress.enabled`    |	Enables Ingress	           | false |
-| `ingress.labels`	  | Ingress labels	           | {} |
+| `ingress.labels`	    | Ingress labels	           | {} |
 | `ingress.annotations` | Ingress annotations	       | {} | 
-| `ingress.hosts`	      | Ingress accepted hostnames | [] |
-| `ingress.tls`	      | Ingress TLS configuration  | [] |
+| `ingress.hosts`	     | Ingress accepted hostnames | [] |
+| `ingress.tls`	       | Ingress TLS configuration  | [] |

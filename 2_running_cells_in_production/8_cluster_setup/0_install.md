@@ -58,29 +58,45 @@ _These commands deploy a fully runnable instance of Cells on Kubernetes. Use it 
 <ol class="install-steps numbering">
 <li><p>Add the Pydio Cells Helm Chart repository<br> <code>$ helm repo add cells https://download.pydio.com/pub/charts/helm</code></p></li>
 <li><p>Run the install command<br> <code>$ helm install cells cells/cells --namespace cells --create-namespace</code></li>
+<li><p>The output will tell you how to access your app once the deployment is ready. It can take a few minutes.</p></li>
 </ol>
 
 ## Go further
 
-The default helm chart will deploy a Cells instance w/ dependencies but still being capable of running on the smallest of environment such as *minikube*. All the parameters needed to achieve a production-ready deployment are described below. You can go even further than that in your understanding of how things are working under the bonnet.
+The default helm chart will deploy a Cells instance w/ dependencies but still being capable of running on the smallest of environment such as *minikube*.
+
+The main parameters required to achieve a production-ready deployment are described below.
 
 ### values.yaml
 
 <pre>
 <code>
-# Define what image version of Cells you want to use to have more control over your updates
+# Define what image version of Cells you want to use to have more control over your update
 image:
-  pullPolicy: Always
   tag: latest
 
-# Achieve high availability by starting multiple replicas of the Cells stateless Pod
-# NOTE: each dependency of Cells has their own high availabilty strategy 
-replicaCount: 3
+# Achieve high availability by starting a minimum number of replicas of the Cells stateless Pod
+# NOTE: each dependency of Cells has their own high availability strategy
+# Achieve horizontal scalability by setting up an autoscaling strategy 
+autoscaling:
+  enabled: true
+  minReplicas: 3
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 80
+  targetMemoryUtilizationPercentage: 80
+
+resources:
+  limits:
+    cpu: "500m"
+    memory: "2G"
 
 # Achieve public-facing deployment by adding Ingress w/ Nginx as a load balancer
 # Uses lets-encrypt as a certficate authority
 ingress:
   enabled: true
+  clusterissuer:
+    server: https://acme-v02.api.letsencrypt.org/directory
+    email: myexampleaddress@gmail.com
   annotations: {
     "kubernetes.io/ingress.class": "nginx",
     "cert-manager.io/cluster-issuer":"letsencrypt"
@@ -88,17 +104,10 @@ ingress:
   pathType: Prefix
   hostname: cluster.pydiocells.com
   tls: true
+  selfSigned: true
 
 service:
   type: ClusterIP
-
-# Achieve horizontal scalability by setting up an autoscaling strategy 
-autoscaling:
-  enabled: true
-  minReplicas: 1
-  maxReplicas: 100
-  targetCPUUtilizationPercentage: 80
-  targetMemoryUtilizationPercentage: 80
 </code>
 </pre>
 
@@ -107,12 +116,9 @@ Just run the following command in order to install and activate all the paramete
 <ol class="install-steps">
 <li><code>$ helm update cells cells/cells --namespace cells -f values.yaml</code></li>
 </ol>
-### Ingress
 
-### High availability
+With sufficient resource, this will transform your basic non-secured system to a letencrypt-secured load balancer in front of a highly available and horizontally scalable Cells deployment. 
 
-### Horizontal scalability
+## Not sufficient yet ?
 
-### TLS transport
-
-### 
+Read on the rest of the pages in this section to get a deeper understanding of how things work in a Pydio Cells cluster and find the configurations you need.
