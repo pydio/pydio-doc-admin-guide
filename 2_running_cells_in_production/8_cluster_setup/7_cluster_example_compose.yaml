@@ -1,6 +1,6 @@
 title: Providing HA with Docker Compose
 abstract: Cluster deployment example using Docker Compose
-menu: Example w/ Docker Compose
+menu: Docker Compose Example
 language: und
-weight: 6
+weight: 7
 menu_name: menu-admin-guide-v7-enterprise

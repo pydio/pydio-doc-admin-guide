@@ -58,16 +58,18 @@ Reaching full HA and zero-downtime can be done by deploying Cells in an auto-sca
 
 ### Comparision between setups
 
-|                                    | Availability                             | Scalability                              | Maintainability                          | Cost Efficiency                          |
+|                                    | Availability                             | Scalability                              | Maintainability                          | Minimum # of Nodes                       |
 |------------------------------------|------------------------------------------|------------------------------------------|------------------------------------------|------------------------------------------|
-| A - Single server                  | &#9733; &#9733; &#9734; &#9734; &#9734;  | &#9734; &#9734; &#9734; &#9734; &#9734;  | &#9733; &#9733; &#9733; &#9733; &#9734;  | &#9733; &#9733; &#9733; &#9733; &#9733;  |
-| B - Single server + Sql & Mongo DB | &#9733; &#9733; &#9734; &#9734; &#9734;  | &#9733; &#9733; &#9733; &#9734; &#9734;  | &#9733; &#9733; &#9733; &#9733; &#9733;  | &#9733; &#9733; &#9733; &#9733;  &#9734; |
-| C - Switchover                     | &#9733; &#9733; &#9733; &#9733;  &#9734; | &#9733; &#9733; &#9733; &#9734;  &#9734; | &#9733; &#9733; &#9733; &#9733;  &#9734; | &#9733; &#9733; &#9733; &#9734;  &#9734; |
-| D - High Availability              | &#9733; &#9733; &#9733; &#9733; &#9733;  | &#9733; &#9733; &#9733; &#9733; &#9733;  | &#9733; &#9733; &#9733; &#9734;  &#9734; | &#9733; &#9733; &#9734; &#9734;  &#9734; |
+| A - Single server                  | &#9733; &#9733; &#9734; &#9734; &#9734;  | &#9734; &#9734; &#9734; &#9734; &#9734;  | &#9733; &#9733; &#9733; &#9733; &#9734;  | &#9733; &#9734; &#9734; &#9734; &#9734;  |
+| B - Single server + Sql & Mongo DB | &#9733; &#9733; &#9734; &#9734; &#9734;  | &#9733; &#9733; &#9733; &#9734; &#9734;  | &#9733; &#9733; &#9733; &#9733; &#9734;  | &#9733; &#9733; &#9734; &#9734;  &#9734; |
+| C - Switchover                     | &#9733; &#9733; &#9733; &#9733;  &#9734; | &#9733; &#9733; &#9733; &#9734;  &#9734; | &#9733; &#9733; &#9733; &#9734;  &#9734; | &#9733; &#9733; &#9733; &#9734;  &#9734; |
+| D - High Availability              | &#9733; &#9733; &#9733; &#9733; &#9733;  | &#9733; &#9733; &#9733; &#9733; &#9733;  | &#9733; &#9733; &#9733; &#9733;  &#9733; | &#9733; &#9733; &#9733; &#9733;  &#9733; |
 
 ## Network Traffic
 
 Also called "Network Flow" or "Network Diagram", the tables below summarize the necessary open ports for running Cells inside any infrastructure. You may communicate this page to your System Administrator if they ask you "what ports shall I open?"...
+
+You can download a [PDF version here TODO](TODO).
 
 **Ingress**
 
@@ -95,5 +97,3 @@ Also called "Network Flow" or "Network Diagram", the tables below summarize the 
 
 
 OS specific ephemeral port range: https://en.wikipedia.org/wiki/Ephemeral_port
-
-For further information, please visit: https://share.pydio.com/public/5bbf4953a262

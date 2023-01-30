@@ -1,6 +1,6 @@
-title: Providing HA in Kubernetes
+title: K8s Advanced Parameters
 abstract: Deployment example inside a Kubernetes cluster
-menu: Example w/ Kubernetes
+menu: K8s Advanced Parameters
 language: und
-weight: 7
+weight: 6
 menu_name: menu-admin-guide-v7-enterprise

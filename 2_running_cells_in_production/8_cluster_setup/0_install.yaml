@@ -1,6 +1,6 @@
-title: Quick install
+title: Kubernetes Quick install
 abstract: Perform a one-minute installation on Kubernetes and adapt it to a production-ready environment
-menu: Quick install
+menu: Kubernetes Quick install
 language: und
 weight: 0
 menu_name: menu-admin-guide-v7-enterprise
