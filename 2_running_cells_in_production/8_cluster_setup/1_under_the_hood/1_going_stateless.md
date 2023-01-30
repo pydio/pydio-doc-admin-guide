@@ -9,7 +9,6 @@ A key to deploying software in a distributed environment is the ability to easil
 
 To achieve such flexibility, DevOps generally use pre-packaged software "images" (generally a _virtual machine_, or a _container_) that are isolated one from another in terms of CPU and memory, but working inside a private network to communicate with each other. It is crucial that these running images do not self-contain any business data that would be inacessible to any other instances.
 
-
 ## Cells default setup limitation 
 
 A standard standalone Cells setup uses multiple ways of storing data :
