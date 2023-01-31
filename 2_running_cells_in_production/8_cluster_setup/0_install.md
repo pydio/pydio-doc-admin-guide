@@ -102,11 +102,6 @@ ingress:
   clusterissuer:
     server: https://acme-v02.api.letsencrypt.org/directory
     email: myexampleaddress@gmail.com
-  annotations: {
-    "kubernetes.io/ingress.class": "nginx",
-    "cert-manager.io/cluster-issuer":"letsencrypt"
-  }
-  pathType: Prefix
   hostname: cluster.pydiocells.com
   tls: true
   selfSigned: true
