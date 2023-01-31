@@ -116,16 +116,17 @@ service:
   # [ED]
   # customconfigs: {
   #  "defaults/license/data": "MYLICENSE",
+  # }
 </code>
 </pre>
 
 Just run the following command in order to install and activate all the parameters defined above :
 
 <ol class="install-steps">
-<li><code>$ helm update cells cells/cells --namespace cells -f values.yaml</code></li>
+<li><code>$ helm update --install cells cells/cells --namespace cells -f values.yaml</code></li>
 </ol>
 
-With sufficient resource, this will transform your basic non-secured system to a letencrypt-secured load balancer in front of a highly available and horizontally scalable Cells deployment. 
+With sufficient resource, this will transform your basic non-secured system to a letsencrypt-secured load balancer in front of a highly available and horizontally scalable Cells deployment. 
 
 ## Not sufficient yet ?
 

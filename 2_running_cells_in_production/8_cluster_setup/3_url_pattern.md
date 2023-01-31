@@ -1,4 +1,4 @@
-Cells configuration for all storages is done using an "scheme-based" pattern, that fully describes a given driver used by Cells.
+Cells configuration for all storages is done using a "scheme-based" pattern, that fully describes a given driver used by Cells.
 
 ## Flags and URLs
 

@@ -1,3 +1,4 @@
+Instead of managing manually your own cluster as in the precedent page, you might want to choose a container orchestration tool such as Kubernetes to have a maximum of flexibility on your deployment.
 This page gives detailed information on how to run Cells in a multi-node setup using inside Kubernetes.
 
 ## What is Kubernetes ?
@@ -29,6 +30,8 @@ You can use kubectl locally to easily access your remote cluster. Change your [k
 Helm commands will automatically use the kubeconfig configuration.
 
 ## Install using Helm
+
+Refer to the [quick install page](./kubernetes-quick-install) for more information.
 
 The cells helm charts can be used to deploy a ReplicaSet of Cells stateless servers. Using helm3 you can add the Cells Helm repo as follows :
 
@@ -128,10 +131,12 @@ Autoscaling is disabled by default. But you can enable it to have the replica se
 
 In order to access your application remotely, you can set an ingress API object that will provide load balancing, SSL termination and name-based virtual hosting :
 
-| Parameter            | Description                | Default      |
-|----------------------| --- | --- |
-| `ingress.enabled`    |	Enables Ingress	           | false |
-| `ingress.labels`	    | Ingress labels	           | {} |
-| `ingress.annotations` | Ingress annotations	       | {} | 
-| `ingress.hosts`	     | Ingress accepted hostnames | [] |
-| `ingress.tls`	       | Ingress TLS configuration  | [] |
+| Parameter                      | Description                              | Default     |
+|--------------------------------|------------------------------------------|-------------|
+| `ingress.enabled`              | 	Enables Ingress	                        | false       |
+| `ingress.annotations`          | Ingress annotations	                     | {<br>"kubernetes.io/ingress.class": "nginx",<br>&nbsp;"cert-manager.io/cluster-issuer": "letsencrypt",<br>&nbsp;"nginx.ingress.kubernetes.io/proxy-body-size": "0"<br>}         | 
+| `ingress.hostname`	            | Ingress main hostname                    | cells.local |
+| `ingress.tls`	                 | Ingress TLS enabled                      | false       |
+| `ingress.clusterissuer.server` | URL to the LetsEncrypt certification API | https://acme-v02.api.letsencrypt.org/directory |
+| `ingress.clusterissuer.email` | Email used for verification during the certification | *not set* |
+| `ingress.extraHosts` | Potential extra hostnames allowed | [] |
