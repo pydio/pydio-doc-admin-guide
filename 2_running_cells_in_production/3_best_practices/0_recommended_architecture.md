@@ -4,7 +4,7 @@ One of the first question of a system administrator before installing Cells is h
 - Optimize resource usage
 - Maintain at low cost
 
-This article tries to figure out some typical use cases at different scales. It gives you some hardware configurations to start with. However, in the real life, 10 users with 10k uploaded files per days require more resources than a setup where 1000 users upload only 100 per day. To decide whether setup is a good fit for your case, you should prepare the answer for following questions:
+This article tries to figure out some typical use cases at different scales. It gives you some hardware configurations to start with. However, in the real life, 10 users with 10k uploaded files per day require more resources than a setup where 1000 users upload only 100 per day. To decide whether setup is a good fit for your case, you should prepare the answer for following questions:
 
 - How many users do you have?
 - Do you have a rough estimation of the number of existing files and **the growth rate of data over the time**?
@@ -26,7 +26,7 @@ This setup is suitable for a small organization with limited IT resource. All se
 
 ### B - Minimal Production Setup
 
-Serving the database on a different server is always a good approach and Cells does not make exception on this. Some organizations maintain a central DB server for all application to optimize the cost of maintenance. With this setup, you can connect to an existing DB server, or install a personalized DB server for Cells.
+Serving the database on a different server is always a good approach and Cells does not make exception on this. Some organizations maintain a central DB server for all applications to optimize the cost of maintenance. With this setup, you can connect to an existing DB server, or install a personalized DB server for Cells.
 
 **Hardware configuration example**
 
