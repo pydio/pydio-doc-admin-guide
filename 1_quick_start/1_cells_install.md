@@ -23,6 +23,10 @@ Get started quickly with Cells static binaries, or pick an image for your cloud 
     <div class="logo-img"><img src="https://github.com/pydio/pydio-doc-admin-guide/blob/cells-v4/images/logos-os/amazon.png?raw=true"/></div>
     <div class="logo-title">Amazon AMI</div>
 </a>
+<a class="logo" href="./kubernetes-quick-install">
+    <div class="logo-img"><img style="height: 70px" src="https://github.com/pydio/pydio-doc-admin-guide/blob/cells-v4/images/logos-os/logo-kubernetes.png?raw=true"/></div>
+    <div class="logo-title">Kubernetes</div>
+</a>
 </div>
 
 ### Advanced step-by-step guides
@@ -49,10 +53,6 @@ These tutorials provide advanced step-by-step guides for bare installation on yo
 <a class="logo" href="/en/docs/kb/deployment/install-cells-windows">
     <div class="logo-img"><img src="https://github.com/pydio/pydio-doc-admin-guide/blob/cells-v4/images/logos-os/windows.png?raw=true"/></div>
     <div class="logo-title">Windows</div>
-</a>
-<a class="logo" href="./providing-ha-kubernetes">
-    <div class="logo-img"><img style="height: 70px" src="https://github.com/pydio/pydio-doc-admin-guide/blob/cells-v4/images/logos-os/logo-kubernetes.png?raw=true"/></div>
-    <div class="logo-title">Kubernetes</div>
 </a>
 </div>
 

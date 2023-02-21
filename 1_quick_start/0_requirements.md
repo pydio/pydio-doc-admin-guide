@@ -38,6 +38,16 @@ Always ensure that the database is created with character set and collation set 
 
 Make sure not to leave the `max_connections` to its default value (151) for production we advise at least `500`, for a better understanding [see MySQL manual](https://dev.mysql.com/doc/refman/8.0/en/too-many-connections.html).
 
+This can generally be done with a similar instruction : 
+```SQL
+mysql -u root
+SET GLOBAL max_connections = 1000;
+SHOW VARIABLES LIKE "max_connections";
+
+SET GLOBAL max_prepared_stmt_count = 131056;
+SHOW VARIABLES LIKE "max_prepared_stmt_count";
+```
+
 ## [Optional] Mongo DB
 
 Depending on your target deployment size, you may switch directly from the default on-file storage used by specific services (search engine, activity feeds, logs, amongst others) to a Mongo DB document store. 
