@@ -1,0 +1,6 @@
+title: Flat Storage - Best for performances
+abstract: 'Introduced in Cells v3, flat storage format leverages the object storage approach for high performances and scalability.'
+menu: Flat Storage
+language: und
+weight: 2
+menu_name: menu-admin-guide-v7-enterprise

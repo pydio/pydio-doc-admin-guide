@@ -1,0 +1,6 @@
+title: Switching Datasource Storage Formats
+abstract: 'Using the CLI migration tool to transform a datasource format between structured and flat.'
+menu: Switching Formats
+language: und
+weight: 3
+menu_name: menu-admin-guide-v7-enterprise
