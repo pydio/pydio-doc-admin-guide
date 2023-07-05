@@ -1,4 +1,4 @@
-The flat format storage is highly recommended for its performance gain. Embracing the "object storage" world provides an unprecedented level of flexibility and scalability, but it can be scary to see your files named with cryptic UUIDs inside your storage.
+[The flat format storage is highly recommended for its performance gain](./flat-storage-best-performances). Embracing the "object storage" world provides an unprecedented level of flexibility and scalability, but it can be scary to see your files named with cryptic UUIDs inside your storage.
 
 As explained here, along with a proper database back-up strategy, the "snaphsot" feature allows to store an index along with the data, for better long-term archiving. Given a bunch of UUID files and their associated snapshot, Cells can easily recreate a datasource with the proper files/folders tree.
 

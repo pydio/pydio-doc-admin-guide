@@ -29,4 +29,4 @@ As an addition to the command-line, the "dump" operation can be manually trigger
 
 ### Loading snapshot with Cells Fuse
 
-As explained in the dedicated page, the flat datasources snapshot can also be mounted and explored offline (without any running Pydio Cells) to recover one or more files.
+The flat datasources snapshot can also be mounted and explored offline (without any running Pydio Cells) to recover one or more files. [Read more about Cells Fuse](./recovering-flat-storage-datasource-cells-fuse).
