@@ -12,11 +12,12 @@ To achieve such flexibility, DevOps generally use pre-packaged software "images"
 ## Cells default setup limitation 
 
 A standard standalone Cells setup uses multiple ways of storing data :
-- Configuration, Vault configuration (JSON files)
-- Logs, search indexes, activities, ... (BoltDB/BleveSearch files)
-- Data tree, Permissions, Identity, ... (SQL)
-- Cache, Service Registry, Pub / Sub events (in-memory)
-- Data (files, S3)
+
+ - Configuration, Vault configuration (JSON files)
+ - Logs, search indexes, activities, ... (BoltDB/BleveSearch files)
+ - Data tree, Permissions, Identity, ... (SQL)
+ - Cache, Service Registry, Pub / Sub events (in-memory)
+ - Data (files, S3)
 
 To have multiple Cells cooperate in multiple VMs in a network, we need to ensure that the same data is available simultaneously by each node without the possibility of it being corrupted.
 We can directly rule out a shared filesystem as it would not be reliable enough and would quickly lead to locking issues.
