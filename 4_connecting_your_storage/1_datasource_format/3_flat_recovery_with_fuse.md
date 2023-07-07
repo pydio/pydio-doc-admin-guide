@@ -1,12 +1,12 @@
-[The flat format storage is highly recommended for its performance gain](./flat-storage-best-performances). Embracing the "object storage" world provides an unprecedented level of flexibility and scalability, but it can be scary to see your files named with cryptic UUIDs inside your storage.
+The flat format storage is highly recommended to get the best performance. Switching to an "object storage" provides an unprecedented level of flexibility and scalability, but it can be daunting to see UUIDs instead of the original filenames.
 
-As explained here, along with a proper database back-up strategy, the "snaphsot" feature allows to store an index along with the data, for better long-term archiving. Given a bunch of UUID files and their associated snapshot, Cells can easily recreate a datasource with the proper files/folders tree.
+The ["snaphsot" feature](./flat-storage-best-performances) creates an index of the data for better long-term archiving. With that snapshot and the corresponding UUID files, Cells can easily recreate a datasource with the original files/folders tree.
 
-But what if you want to simply explore the storage "offline", without a Cell running, or without wanting to recreate a brand new datasource just to find a file inside a backup? Meet Cells Fuse.
+But what if you simply want to explore the storage "offline", without a Cells instance running, or without wanting to recreate a brand new datasource just to find a file inside a backup? Meet Cells Fuse.
 
 ## Cells Fuse command line
 
-Cells Fuse is a dedicated tool that allows you to directly interact with a snapshot database to search for a given file, retrieve its content, or event mount the whole tree as a FUSE volume on the machine. This feature is only supported on Linux (and MacOSX using MacFUSE, requires manual building).
+Cells Fuse is a dedicated tool used to directly interact with a snapshot database to search for a given file, retrieve its content, or event mount the whole tree as a FUSE volume on the machine. This feature is only supported on Linux (MacOSX can use MacFUSE, but requires a manual build of the binary).
 
 Let's read the manual for this command:
 
