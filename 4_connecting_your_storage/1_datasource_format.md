@@ -8,7 +8,7 @@ Starting with Cells v3, a new datasource format was introduced, that keeps the t
 
 This "format" is decoupled from the storage technology : any datasource (Local FS, S3 or S3 compatible, etc...) supports both formats.
 
-## Structured Storage : best for accessing the files directly
+## Structured Storage: best for accessing the files directly
 
 ### Objects-to-Index Synchronization
 
@@ -28,7 +28,7 @@ Another drawback is the presence of ".pydio" hidden files inserted in each folde
 
 For structured storage, backup/restore is just a matter of copying the data to/from an other location and launching a resync manually.
 
-## Flat Storage : best for performances
+## Flat Storage: best for performances
 
 ### Embracing the "objects storage" world
 
@@ -76,6 +76,6 @@ After a successfull operation, the tool will upgrade the configuration file to p
 
 Please note that this tool can be handy in the case of full uninstallation of Pydio Cells. Use it to transform a flat storage to a structured one **before** uninstalling Cells!
 
-## Special Case : "Internal" Storage
+## Special Case: "Internal" Storage
 
 A third format, derived from Flat, is available to create specific datasources used for internal data, namely thumbnails and files versions. These datasources are using the same format as Flat, but have the specificity of not sending events to various parts of the application. 
