@@ -69,10 +69,10 @@ Cells Chart declares the following **mandatory** dependencies below. They are **
 
 Cells Chart declares the following **optional** dependencies below
 
-| Name              | Repo         | Enable           | Parameters list |
-|-------------------|--------------|------------------|-----------------|
-| [ingress-nginx](https://github.com/kubernetes/ingress-nginx/tree/main/charts/ingress-nginx) | [kubernetes] | `ingress.enabled` | https://artifacthub.io/packages/helm/ingress-nginx/ingress-nginx#values |
-------------------------
+| Name                                                                                        | Repo       | Enable            | Parameters list                                                         |
+|---------------------------------------------------------------------------------------------|------------|-------------------|-------------------------------------------------------------------------|
+| [ingress-nginx](https://github.com/kubernetes/ingress-nginx/tree/main/charts/ingress-nginx) | kubernetes | `ingress.enabled` | https://artifacthub.io/packages/helm/ingress-nginx/ingress-nginx#values |
+
 
 ## Configuration
 

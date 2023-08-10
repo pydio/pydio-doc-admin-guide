@@ -1,0 +1,6 @@
+title: Recovering a Flat Storage Datasource with Cells Fuse
+abstract: 'This page describes the usage of the dedicated Cells Fuse tool to read a Flat storage snapshot offline.'
+menu: Recovery using Cells Fuse
+language: und
+weight: 3
+menu_name: menu-admin-guide-v7-enterprise

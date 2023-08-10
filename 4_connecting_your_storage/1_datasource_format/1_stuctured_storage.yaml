@@ -1,0 +1,6 @@
+title: Structured Storage - Best for accessing the files directly
+abstract: 'Structured storage is the historical storage format, creating files and folders on the filesystem exactly as you see them in the interface.'
+menu: Structured Storage
+language: und
+weight: 1
+menu_name: menu-admin-guide-v7-enterprise
