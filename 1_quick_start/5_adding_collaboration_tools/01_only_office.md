@@ -9,28 +9,28 @@ It supports all type of formats such as DOC, DOCX, PPT, PPTX, XLS, XLS, ODF, ODS
 You can retrieve OnlyOffice on their offical website **[right here](https://www.onlyoffice.com/compare-editions.aspx)**.
 You will find all the details and different features between all the editions, for small enterprises (up to 50 users simultaneous connection) we recommand the [*integration edition start*](https://www.onlyoffice.com/connectors.aspx).
 
-### Enable the plugin
-
-To enable the plugin, go to `Application parameters > Available Plugins > Only Office`, then:
- 
-- Only office tls: `true` if you want to secure communication between OnlyOffice and pydio or `false`
-- Only office Host: _`<host where OnlyOffice is running>`_
-- Only office Port: _`<OnlyOffice instance port>`_ usually it is running on `9980`
-
-[:image:1_quick_start/office_online/ent_only_office_plugin.png]
-
 #### OnlyOffice docker image
 
-There is an [OnlyOffice docker image](https://hub.docker.com/r/onlyoffice/documentserver/),
-the image only offers the features of the *[community edition](https://www.onlyoffice.com/compare-editions.aspx)*.
+For a quick start, you can use the official [OnlyOffice docker image](https://hub.docker.com/r/onlyoffice/documentserver/): yet this image only offers the features of the *[community edition](https://www.onlyoffice.com/compare-editions.aspx)*.
 
-The container's default port is 80 so redirect it to another port - by default we use 9980 in the Pydio Cells config.
+Simply run:
 
 ```shell
 docker run -i -t -d -p 9980:80 --restart=always onlyoffice/documentserver
 ```
 
-Note: refer to docker.io web site to install correct version of docker. Typically, on Ubuntu, you should install docker using `apt install docker.io`, the simple `docker` package installs something else that is irrelevant here.
+Note that to avoid collision with the main entry point of your Cells Server, we bind the container default port (80) to another free port.
+In this document, we use port 9980 as an example.
+
+### Enable the plugin
+
+To enable the plugin in the Cells Admin Console, go to `Application parameters > Available Plugins > Only Office`, then configure following parameters:
+ 
+- Only office TLS: `true` if you want to secure communication between OnlyOffice and Pydio or `false` otherwise
+- Only office Host: _`<host where OnlyOffice is running>`_
+- Only office Port: _`<OnlyOffice instance port>`_, we commonly use `9980`
+
+[:image:1_quick_start/office_online/ent_only_office_plugin.png]
 
 ### Start editing documents
 
@@ -38,7 +38,42 @@ Now you can edit all of your docs, presentations, and more easily, double click 
 
 [:image-popup:1_quick_start/office_online/ent_onlyoffice_interface.png]
 
-### Specific configs of onlyoffice service
+## Troubleshooting
+
+### JWT Token Error
+
+After upgrading OnlyOffice to version >= 7.2, you may encounter a problem with the security token:  
+when trying to open a document, you see an error popup with a _Json WebToken Error_ or similar.
+
+A quick-and-dirty solution for this is to disable JWT securisation of the connection. To do so:
+
+- edit the OnlyOffice configuration file that can be found at:
+
+`/etc/onlyoffice/documentserver/local.json`
+
+- set all **3** values of token parameters to "false"
+
+```json
+{
+  "services": {
+    "CoAuthoring": {      
+      "token": {
+        "enable": {
+          "request": {
+            "inbox": false,
+            "outbox": false
+          },
+          "browser": false
+        },
+```
+
+- Restart the service. If you are using the OnlyOffice docker image, the easiest way is to restart the services while still inside the image:
+
+`supervisorctl restart all`
+
+You can find more info on this in the [Only Office knowledge base](https://helpcenter.onlyoffice.com/installation/docs-configure-jwt.aspx).
+
+### Changes seems to be missed after save
 
 We have noticed that documents are only pushed back to Pydio Cells, when _everybody_ closes the opened document.
 This can lead to nasty behaviour and data loss.
@@ -57,7 +92,7 @@ c263411ad1d0       onlyoffice/documentserver
 - Log into the container
 
 ```sh
-docker exec -it c2 /bin/sh
+docker exec -it c2 /bin/bash
 
 # edit local.json file
 nano /etc/onlyoffice/documentserver/local.json
@@ -68,10 +103,12 @@ nano /etc/onlyoffice/documentserver/local.json
      },
 
 # save, exit
-# restart the container and you should be good to go
 ```
 
-For the record, the begining of the file should look like this:
+- Restart the container (or the OO services while you are still inside the container see above) and you should be good to go.
+
+
+For the record, the begining of the configuration file should then look like this:
 
 ```json
 {

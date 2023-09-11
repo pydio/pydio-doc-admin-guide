@@ -13,7 +13,9 @@ These files are automatically rotated based on their size (10MB max per file) an
 
 ### Internal DB
 
-In order to be able to easily display them and search them in the user interface, logs are **also** collected by an internal service and stored inside an internal DB (Bleve).
+In order to be able to easily display them and search them in the user interface, logs are **also** collected by an internal service and stored inside an internal DB (Bleve or Mongo DB, depending on your setup).
+
+#### When using Bleve
 
 This on-file database can be found under `$CELLS_SERVICE_DIR/pydio.grpc.log/syslog.bleve`. This one is automatically rotated based on its size (200MB per DB), but it is not truncated automatically.
 
