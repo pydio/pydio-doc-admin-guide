@@ -10,7 +10,9 @@ For this reason when creating this datasource, we must make sure that its parent
 
 ### Mounting a NAS / Remote storage
 
-As explained above, when using a mounted FS as datasource storage, you must make sure that your target storage folder **and its parent folder** are located in the same physical volume. To achieve this, the simplest way is to mount the parent instead of mounting the target folder directly. 
+Any POSIX-compliant volume should be supported as a local FS by Cells. Typically, mounting a remote storage using the `cifs` or `nfs` protocols is very frequent. 
+
+As explained above, in such case you must just make sure that **your target storage folder and its parent folder** are located in the same physical volume. To achieve this, the simplest way is to mount the parent instead of mounting the target folder directly. 
 
 ```
 EXAMPLE : Remote storage exposes the following folder: /shares/data/datasource
@@ -19,7 +21,7 @@ WRONG
  - Mount /shares/data/datasource => Local /volumes/datasource
  - Creating a datasource on /volumes/datasource will fail as /volumes and /volumes/datasource are on differing volumes
 
-RIGHT
+CORRECT
  - Mount /shares/data => Local /volumes/data
  - Creating a datasource on /volumes/data/datasource will work
 ```
