@@ -38,9 +38,32 @@ Below is a preview of how these various types appear in the metadata edition for
 
 [:image:4_connecting_your_storage/metadata-samples.png]
 
+### Display Options: grouping and ordering
+
+When handling a large number of metadata fields, it may be more user-friendly to group namespaces under categories. That way, fields are more easily findable, and displaying fields inside expandable blocs (closed by default) avoids clutering the UX.
+
+Starting with version 4.2.6, you can create Groups by using the "Group Name" field of a metadata namespace. Once created, it will be available as an auto-complete suggestion in other namespaces. 
+
+[:image:4_connecting_your_storage/meta-grouping-dashboard.png]
+
+Groups can be nested, by using a "slash" (`/`) separator in their name (think of them as folders).
+
+[:image:4_connecting_your_storage/meta-grouping-group.png]
+
+As a result, the "Metadata Info" panel shown to users will look as below: 
+
+<table width="100%" align="center">
+<tr>
+<td>[:image:4_connecting_your_storage/meta-grouping-closed.png]</td>
+<td>[:image:4_connecting_your_storage/meta-grouping-open.png]</td>
+</tr>
+</table>
+
+Additionally, the **Order** field allows you to fix the order of the fields.
+
 ### Visibility Restrictions
 
-In addition of enriching file info, metadata are use in may others part of Cells like the search engine, the security policies, the tasks scheduling and many other features. When defining a metadata the admin can choose  whether or not it is visible or editable by other everyone. The options help adjusting metadata restrictions:
+In addition of enriching file info, metadata are use in may others part of Cells like the search engine, the security policies, the tasks scheduling and many other features. When defining a metadata the admin can choose  whether it is visible or editable by other everyone. The options help adjusting metadata restrictions:
 
 | Fields                            | Description                                                                       |
 | --------------------------------- | --------------------------------------------------------------------------------- |
