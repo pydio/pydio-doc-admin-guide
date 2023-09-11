@@ -55,6 +55,14 @@ The Cells concept will be familiar to modern workers used to collaborating on _"
 
 End-users can create their own, flexible Cells: combining files and folders from any location, or picking users from their address book.
 
+### Cells Restrictions: auto-expiration
+
+Starting with version 4.2, it is possible to set an expiration date to a Cell. At that time, Cells permissions will be automatically disabled, except for the Cell owner that can still manage it. This expiration can be set directly when creating Cell from scratch (see below), or simply edited under the Label tab if Cell is created from an existing folder or from within the Address Book.
+
+[:image:1_quick_start/sharing_features/expirable-cell.png]
+
+Note that currently, the permissions being fully disabled means that if one wants to re-activate the Cells, she has to manually re-assign all rights to each participant.
+
 ### Creating Cells from folders/files
 
 When using the **Share** action (either in right-click menu or in the information column), one can directly add a folder or a file to an existing cell, or create a new cell with the current folder.
@@ -69,6 +77,7 @@ When using the "Create Cell" button from the left-hand panel, the following menu
 
 - **Title**: the name for the cell.
 - **Description**: add a short description of your cell to inform users about the topic.
+- **Expiration Date**: optionaly set a date in the future where Cells permissions will be de-activated.
 
 [:image:1_quick_start/sharing_features/create_cell_2.png]
 
