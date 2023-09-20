@@ -1,17 +1,16 @@
 ONLYOFFICE is a multifunctional portal for business collaboration, document and project management. It allows you to organize business tasks and milestones, store and share your corporate or personal documents, use social networking tools such as blogs and forums, as well as communicate with your team members via corporate IM.
 
-It supports all type of formats such as DOC, DOCX, PPT, PPTX, XLS, XLS, ODF, ODS, ODP and also has the best best support of microsoft editors features like WORD, POWERPOINT, EXCEL and so on.
+It supports all type of formats such as DOC, DOCX, PPT, PPTX, XLS, XLS, ODF, ODS, ODP and also has the best best support of Microsoft editors features like Word, Powerpoint, Excel and so on.
 
 ## Install and enable Only Office Plugin in a running Cells Enterprise Distribution instance
 
-### Get your OnlyOffice instance
+### Get your ONLYOFFICE instance
 
-You can retrieve OnlyOffice on their offical website **[right here](https://www.onlyoffice.com/compare-editions.aspx)**.
-You will find all the details and different features between all the editions, for small enterprises (up to 50 users simultaneous connection) we recommand the [*integration edition start*](https://www.onlyoffice.com/connectors.aspx).
+You can download ONLYOFFICE directly from [their offical website](https://www.onlyoffice.com). To understand the differences between various editions and their respective features, please consult the [comparison page](https://www.onlyoffice.com/compare-editions.aspx).
 
-#### OnlyOffice docker image
+#### ONLYOFFICE docker image
 
-For a quick start, you can use the official [OnlyOffice docker image](https://hub.docker.com/r/onlyoffice/documentserver/): yet this image only offers the features of the *[community edition](https://www.onlyoffice.com/compare-editions.aspx)*.
+For a quick start, you can use the official [ONLYOFFICE docker image](https://hub.docker.com/r/onlyoffice/documentserver/): yet this image only offers the features of the *[community edition](https://www.onlyoffice.com/compare-editions.aspx)*.
 
 Simply run:
 
@@ -26,15 +25,15 @@ In this document, we use port 9980 as an example.
 
 To enable the plugin in the Cells Admin Console, go to `Application parameters > Available Plugins > Only Office`, then configure following parameters:
  
-- Only office TLS: `true` if you want to secure communication between OnlyOffice and Pydio or `false` otherwise
-- Only office Host: _`<host where OnlyOffice is running>`_
-- Only office Port: _`<OnlyOffice instance port>`_, we commonly use `9980`
+- Only office TLS: `true` if you want to secure communication between ONLYOFFICE and Pydio or `false` otherwise
+- Only office Host: _`<host where ONLYOFFICE is running>`_
+- Only office Port: _`<ONLYOFFICE instance port>`_, we commonly use `9980`
 
 [:image:1_quick_start/office_online/ent_only_office_plugin.png]
 
 ### Start editing documents
 
-Now you can edit all of your docs, presentations, and more easily, double click on the file and a window will appear with the only office interface and then you can edit it right off the bat.
+Now you can edit all of your docs, presentations and more easily: double click on a supported file to open the ONLYOFFICE editor without leaving the Pydio Cells website.
 
 [:image-popup:1_quick_start/office_online/ent_onlyoffice_interface.png]
 
@@ -42,12 +41,12 @@ Now you can edit all of your docs, presentations, and more easily, double click 
 
 ### JWT Token Error
 
-After upgrading OnlyOffice to version >= 7.2, you may encounter a problem with the security token:  
+After upgrading ONLYOFFICE to version >= 7.2, you may encounter a problem with the security token:  
 when trying to open a document, you see an error popup with a _Json WebToken Error_ or similar.
 
 A quick-and-dirty solution for this is to disable JWT securisation of the connection. To do so:
 
-- edit the OnlyOffice configuration file that can be found at:
+- edit the ONLYOFFICE configuration file that can be found at:
 
 `/etc/onlyoffice/documentserver/local.json`
 
@@ -71,14 +70,14 @@ A quick-and-dirty solution for this is to disable JWT securisation of the connec
 
 `supervisorctl restart all`
 
-You can find more info on this in the [Only Office knowledge base](https://helpcenter.onlyoffice.com/installation/docs-configure-jwt.aspx).
+You can find more info on this in the [ONLYOFFICE knowledge base](https://helpcenter.onlyoffice.com/installation/docs-configure-jwt.aspx).
 
 ### Changes seems to be missed after save
 
 We have noticed that documents are only pushed back to Pydio Cells, when _everybody_ closes the opened document.
 This can lead to nasty behaviour and data loss.
 
-You should configure your docker image manually to workaround this (for further details, please refer to the [OnlyOffice online documentation](https://api.onlyoffice.com/editors/save)) by performing the following:
+You should configure your docker image manually to workaround this (for further details, please refer to the [ONLYOFFICE online documentation](https://api.onlyoffice.com/editors/save)) by performing the following:
 
 - Ssh to the target server
 
@@ -105,8 +104,7 @@ nano /etc/onlyoffice/documentserver/local.json
 # save, exit
 ```
 
-- Restart the container (or the OO services while you are still inside the container see above) and you should be good to go.
-
+- Restart the container (or the ONLYOFFICE services while you are still inside the container see above) and you should be good to go.
 
 For the record, the begining of the configuration file should then look like this:
 
@@ -122,4 +120,4 @@ For the record, the begining of the configuration file should then look like thi
      ...
 ```
 
-You can validate that your change has been successful by leaving a modified OO document opened in a tab and check (even better with another user) that the modification date of the corresponding file changes.
+You can validate that your change has been successful by leaving a modified ONLYOFFICE document opened in a tab and check (even better with another user) that the modification date of the corresponding file changes.
