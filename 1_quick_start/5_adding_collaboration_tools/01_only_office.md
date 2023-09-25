@@ -16,7 +16,7 @@ For a quick start, you can use the official [OnlyOffice docker image](https://hu
 Simply run:
 
 ```shell
-docker run -i -t -d -p 9980:80 --restart=always onlyoffice/documentserver
+docker run -i -t -d -p 9980:80 -e JWT_ENABLED=false --restart=always onlyoffice/documentserver
 ```
 
 Note that to avoid collision with the main entry point of your Cells Server, we bind the container default port (80) to another free port.
@@ -43,15 +43,13 @@ Now you can edit all of your docs, presentations, and more easily, double click 
 ### JWT Token Error
 
 After upgrading OnlyOffice to version >= 7.2, you may encounter a problem with the security token:  
-when trying to open a document, you see an error popup with a _Json WebToken Error_ or similar.
+when trying to open a document, you see an error popup with a _Json WebToken Error_ or similar. If you do not already pass the JWT_ENABLED=false environment variable at startup, you can disable this via the configuration file.
 
-A quick-and-dirty solution for this is to disable JWT securisation of the connection. To do so:
-
-- edit the OnlyOffice configuration file that can be found at:
+- Edit the OnlyOffice configuration file that can be found at:
 
 `/etc/onlyoffice/documentserver/local.json`
 
-- set all **3** values of token parameters to "false"
+- Set all **3** values of token parameters to "false"
 
 ```json
 {
