@@ -1,6 +1,6 @@
 ONLYOFFICE is a multifunctional portal for business collaboration, document and project management. It allows you to organize business tasks and milestones, store and share your corporate or personal documents, use social networking tools such as blogs and forums, as well as communicate with your team members via corporate IM.
 
-It supports all type of formats such as DOC, DOCX, PPT, PPTX, XLS, XLS, ODF, ODS, ODP and also has the best best support of Microsoft editors features like Word, Powerpoint, Excel and so on.
+It supports all type of formats such as DOC, DOCX, PPT, PPTX, XLS, XLS, ODF, ODS, ODP and also has the best support of Microsoft editors features like Word, Powerpoint, Excel and so on.
 
 ## Install and enable Only Office Plugin in a running Cells Enterprise Distribution instance
 
@@ -33,7 +33,7 @@ To enable the plugin in the Cells Admin Console, go to `Application parameters >
 
 ### Start editing documents
 
-Now you can edit all of your docs, presentations and more easily: double click on a supported file to open the ONLYOFFICE editor without leaving the Pydio Cells website.
+Now you can edit all of your docs, presentations and more easily: double-click on a supported file to open the ONLYOFFICE editor without leaving the Pydio Cells website.
 
 [:image-popup:1_quick_start/office_online/ent_onlyoffice_interface.png]
 
@@ -41,10 +41,10 @@ Now you can edit all of your docs, presentations and more easily: double click o
 
 ### JWT Token Error
 
-After upgrading OnlyOffice to version >= 7.2, you may encounter a problem with the security token:  
+After upgrading ONLYOFFICE to version >= 7.2, you may encounter a problem with the security token:  
 when trying to open a document, you see an error popup with a _Json WebToken Error_ or similar. If you do not already pass the JWT_ENABLED=false environment variable at startup, you can disable this via the configuration file.
 
-- Edit the OnlyOffice configuration file that can be found at:
+- Edit the ONLYOFFICE configuration file that can be found at:
 
 `/etc/onlyoffice/documentserver/local.json`
 
@@ -64,7 +64,7 @@ when trying to open a document, you see an error popup with a _Json WebToken Err
         },
 ```
 
-- Restart the service. If you are using the OnlyOffice docker image, the easiest way is to restart the services while still inside the image:
+- Restart the service. If you are using the ONLYOFFICE docker image, the easiest way is to restart the services while still inside the image:
 
 `supervisorctl restart all`
 
