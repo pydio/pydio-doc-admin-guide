@@ -25,7 +25,7 @@ In this document, we use port 9980 as an example.
 
 To enable the plugin in the Cells Admin Console, go to `Application parameters > Available Plugins > Only Office`, then configure following parameters:
  
-- Only office TLS: `true` if you want to secure communication between ONLYOFFICE and Pydio or `false` otherwise
+- Only office TLS: `false` in our simple example. Enable this and configure the service accordingly if you want to secure communication between ONLYOFFICE and Pydio.
 - Only office Host: _`<host where ONLYOFFICE is running>`_
 - Only office Port: _`<ONLYOFFICE instance port>`_, we commonly use `9980`
 
@@ -38,6 +38,14 @@ Now you can edit all of your docs, presentations and more easily: double-click o
 [:image-popup:1_quick_start/office_online/ent_onlyoffice_interface.png]
 
 ## Troubleshooting
+
+### Logs 
+
+ONLYOFFICE’s container logs can be accessed with:
+
+```sh
+docker logs -f <ONLYOFFICE container ID>
+```
 
 ### JWT Token Error
 
@@ -67,6 +75,24 @@ when trying to open a document, you see an error popup with a _Json WebToken Err
 - Restart the service. If you are using the ONLYOFFICE docker image, the easiest way is to restart the services while still inside the image:
 
 `supervisorctl restart all`
+
+Note: if you are in a private LAN with a host that has private IP you might fail to open documents in Cells and get this error:
+
+```
+Error: DNS lookup 10.X.X.X(family:4, host:files.example.com) is not allowed. Because, It is private IP address.
+```
+
+In such case, the workaround is to enable private IPs, add this to the service configuration:
+
+```json
+  "CoAuthoring": {
+    "request-filtering-agent": {
+      "allowPrivateIPAddress": true,
+      "allowMetaIPAddress": true
+    },
+    ...
+  }
+```
 
 You can find more info on this in the [ONLYOFFICE knowledge base](https://helpcenter.onlyoffice.com/installation/docs-configure-jwt.aspx).
 
