@@ -68,7 +68,7 @@ If we refer to the `WHO is ABLE to perform WHAT on SOMETHING in a given CONTEXT`
 
 Once defined, these policies are available in the "Workspaces Accesses" panel (for each role, user or group) to replace the manual "Read/Write" assignments. Assigning a policy to a given workspace means that it will be evaluated for all requests (_CONTEXT_) performed by a user with this role (_WHO_) on all nodes that are inside this workspace (_SOMETHING_). 
 
-[:image:5_securing_your_data/rbac/security-policies-acl-rule-details.png]
+[:image:5_securing_your_data/rbac/security-policies-rule-details.png]
 
 ### ACLs Policies Actions
 

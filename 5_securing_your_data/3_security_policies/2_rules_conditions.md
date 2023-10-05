@@ -29,10 +29,30 @@ The expected pattern supports some specific flags and wildchars using the follow
    - `*` : applies to all children first-level
    - `**` : applies to all children recursively
 
-Using these flags, you can for example provide a Read access to a specific folder and write access to everything below, by combining two rules: 
+Using these flags, you can for example provide a Read/Write access only to a specific folder and everything below, by combining two rules: 
 
- - `(ip)datasource/path/to/folder => [RW]` : open access to the folder and all its parents
- - `(i)datasource/path/to/folder/** => [RW]` : allow creating any resource below this folder
+ - `(ip)datasource/path/to/folder => [R]` : open traversing (R) access to the folder's parents
+ - `(i)datasource/path/to/folder{,/**} => [RW]` : allow creating any resource inside this folder and inside this folder chilren: braces are equivalent to `/folder` OR `/folder/**`
+
+While the examples above match a fixed folder, Glob provides the ability to match a recurring pattern. A common use case can be to have "one folder per partner/client/collaborator" with a fixed structure of folders inside each, and to create rules to access only specific folders. Let's say you have
+
+Master folder under `datasource/path` : 
+ - ClientA
+   - Commercial
+   - Support
+ - ClientB
+   - Commercial
+   - Support
+ - ClientC
+   - Commercial
+   - Support
+ - And so on... 
+
+Create a profile that will only interact with the inner `Support` folders, the rules above can be changed to :
+
+- `(ip)datasource/path/*/Support => [R]` : open traversing (R) access to this pattern (any clients)
+- `(i)datasource/path/*/Support{,/**} => [RW]` : allow creating any resource inside `Support` and below
+
 
 ## Request Metadata
 
