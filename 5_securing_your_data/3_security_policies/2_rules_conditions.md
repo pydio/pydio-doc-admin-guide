@@ -37,6 +37,7 @@ Using these flags, you can for example provide a Read/Write access only to a spe
 While the examples above match a fixed folder, Glob provides the ability to match a recurring pattern. A common use case can be to have "one folder per partner/client/collaborator" with a fixed structure of folders inside each, and to create rules to access only specific folders. Let's say you have
 
 Master folder under `datasource/path` : 
+
  - ClientA
    - Commercial
    - Support
