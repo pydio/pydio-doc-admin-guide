@@ -74,3 +74,17 @@ In addition of enriching file info, metadata are use in may others part of Cells
 | **[Ent] Custom Policies**         | Manually edit the restriction rules based on profiles, roles or users identifiers |
 
 Typically, an admin could define a "Confidential" metadata and let only people with "Admin" status have the right to edit this data. Then the value of this metadata could be used in a security policy to decide whether a document is accessible to the outside network, or outside of office hours, etc.
+
+### [Enterprise] Import/Export Namespaces Definitions
+
+Defining a large number of metadata namespaces can take some time and finetuning. It can be handy to export your namespaces to easily re-insert them in another Pydio Cells instance, or simply for backuping purposes.
+
+Cells Enterprise v4.3.0 introduces the Import/Export feature to save these definitions in JSON format. 
+
+[:image:4_connecting_your_storage/metadata-import-export.png]
+
+When exporting to JSON or importing a JSON file, you can select which Namespaces you want to process. Typically, during the import operation, if namespaces already exist, you can choose wether to override, rename or ignore the corresponding import. 
+
+Below is an example of the Export operation dialog.
+
+[:image:4_connecting_your_storage/metadata-export-picker.png]
