@@ -30,9 +30,9 @@ Where:
 - `-e CELLS_SITE_EXTERNAL=https://$FQDN`: (optional) explicitely declare your domain
 - `--network=host`: directly use the host network, to easily connect to the DB
 
-## Run with docker-compose
+## Run with Docker Compose
 
-Below is a vanilla configuration to run Pydio Cells with `docker-compose`:
+Below is a vanilla configuration to run Pydio Cells with `docker compose`:
 
 ```yaml
 version: '3.7'
@@ -63,6 +63,14 @@ volumes:
     cellsdir: {}
     mysqldir: {}
 ```
+
+**Note**: with this configuration file, in the web installer, use:
+
+- Host Name: mysql
+- DB User: pydio
+- DB Password: P@ssw0rd
+
+and let the other parameters unchanged to configure the DB connection. 
 
 ## Go further
 
