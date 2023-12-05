@@ -44,6 +44,19 @@ Mongo connection requires information as described below
 | Database Name                | Name of the mongo database                                                           | cells                     |
 | Connection String Parameters | Additional connection parameters passed via Mongo connection string query parameters | maxPoolSize=20&w=majority |
 
+## Pre-Requisite
+
+Depending on your server OS, refer to the [corresponding page in the official documentation](https://www.mongodb.com/docs/v7.0/installation/) to install the application.
+
+**WARNING**: Starting from version 5, MongoDB has introduced specific processor requirements. These requirements may prevent the service from starting if the CPU is not supported. Typically, the systemctl service will refuse to start, displaying errors like:
+
+```log
+mongod.service: Main process exited, code=killed, status=4/ILL
+mongod.service: Failed with result 'signal'.
+```
+
+Be sure to consult the official MongoDB documentation to ensure that your platform is fully supported. Additionally, if you are operating in a virtualized environment, make sure to select a virtual CPU that is compatible with MongoDB's requirements.
+
 
 ## Configuring Mongo at startup
 
@@ -53,14 +66,16 @@ The best option is to directly setup Mongo DB connection when running `./cells c
 
 If you are upgrading a pre-v4 instance or deliberately started with on-file databases, you may wish to switch to MongoDB afterward. Cells provides a command-line to achieve that. 
 
-Make sure to shutdown Cells, then use the following command: 
+Make sure to shutdown Cells, then use the following command, _with the user that runs the app_ : 
 ```
-./cells admin config db add
+cells admin config db add
 ```
 
 - Pick the "NoSQL" db type and fill the form with the Mongo DB connection information.
 - Accept prompt for using this connection as default document DSN
-- Accept prompt to perform data migration from existing bolt/bleve files to mongo. This can take some time.
+- Accept prompt to perform data migration from existing bolt/bleve files to mongo.
+
+**WARNING**: Migrating data from Bleve to MongoDB is a time-consuming process. We strongly recommend conducting a trial run in a staging environment to gauge the duration of this migration. This will allow you to schedule an appropriate downtime period and inform your users accordingly. Please note that during the migration, the server will need to be offline if opting for the straightforward migration method. If you are a customer requiring assistance, please do not hesitate to contact our support team for guidance and support throughout the process.
 
 Now restart Cells. You should see "Successfully pinged and connected to MongoDB" in the logs. As search engine data are not migrated, you have to relaunch indexation on the pydio.grpc.search service using: 
 
