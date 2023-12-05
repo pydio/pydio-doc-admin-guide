@@ -54,7 +54,6 @@ Create a profile that will only interact with the inner `Support` folders, the r
 - `(ip)datasource/path/*/Support => [R]` : open traversing (R) access to this pattern (any clients)
 - `(i)datasource/path/*/Support{,/**} => [RW]` : allow creating any resource inside `Support` and below
 
-
 ## Request Metadata
 
 Every request sent to the server via Cells APIs carries a set of metadata that can be used in Conditions to restrict or authorize particular accesses. 
@@ -88,6 +87,35 @@ Typically, an upload request will "PUT" an object to "/workspace/path/to/file.ex
 
 Using `Custom Metadata` can be typically used to evaluate a condition against user-defined tags. For example, you can define a policy that hides any file tagged with a specific value (like "confidential"), or on the opposite _only show_ files that are tagged with a specific value (like "scanned-for-viruses")
 
+## Examples
+
 Below are some condition examples: 
 
 [:image:5_securing_your_data/rbac/security-policies-conditions-examples.png]
+
+## Using Go Templates
+
+As a bonus, to provide even more flexibility and make security policies totally dynamic, you can also use Go Templates inside the various conditions fields, which can be handy if you want to compare to a context-related value. Typically, one could compare a custom metadata content to the currently-logged user login, enabling/disabling specific permissions for the owner of a file. 
+
+The available template variables are as follows: 
+
+| Name                 | Notes                               |
+|----------------------|-------------------------------------| 
+| {{.ClaimsName}}      | Current user Login                  |
+| {{.ClaimsSubject}}   | Current user UUID                   |
+| {{.ClaimsRoles}}     | Comma-separated list of roles       |
+| {{.ClaimsProfile}}   | User profile (admin, standard, etc) |
+| {{.ClaimsGroupPath}} | User Group Path                     |
+| {{.RemoteAddress}}   | See Request Metadata above          |
+| {{.RequestMethod}}   |                                     |
+| {{.RequestURI}}      |                                     |
+| {{.RequestHost}}     |                                     |
+| {{.RequestHostname}} |                                     |
+| {{.RequestPort}}     |                                     |
+| {{.HttpProtocol}}    |                                     |
+| {{.UserAgent}}       |                                     |
+| {{.ContentType}}     |                                     |
+| {{.CookiesString}}   |                                     |
+| {{.ServerTime}}      |                                     |
+| {{.ClaimsIssuer}}    |                                     |
+| {{.ClaimsClientApp}} |                                     |
