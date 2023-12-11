@@ -39,7 +39,7 @@ Mongo connection requires information as described below
 
 | Parameter                    | Description                                                                          | Defaults                  |
 |------------------------------|--------------------------------------------------------------------------------------|---------------------------|
-| Host/Port                    | Address of the server hosting the Mongo DB                                           | localhost:27317           |
+| Host/Port                    | Address of the server hosting the Mongo DB                                           | localhost:27017           |
 | Credentials                  | Optional credentials to connect, along with an authentication DB name                | [none]                    |
 | Database Name                | Name of the mongo database                                                           | cells                     |
 | Connection String Parameters | Additional connection parameters passed via Mongo connection string query parameters | maxPoolSize=20&w=majority |

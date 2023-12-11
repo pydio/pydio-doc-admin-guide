@@ -6,7 +6,7 @@ Cells ships as a set of precompiled static binaries, one for each operating syst
 - **RAM**: 4GB RAM
 - **Disk**: SSD is highly recommended for storage.
 - **Supported OS**:
-  - _Debian Like_: Debian 11 (Bullseye), 10 (Buster), 9 (Stretch); Raspbian 10 or 11; Ubuntu 22.04 (Jammy Jellyfish), 20.04 (Focal Fossa), 18.04 (Bionic Beaver)
+  - _Debian Like_: Debian 12 (Bookworm), Debian 11 (Bullseye), 10 (Buster); Raspbian 10, 11 or 12; Ubuntu 22.04 (Jammy Jellyfish), 20.04 (Focal Fossa), 18.04 (Bionic Beaver)
   - _RHEL_: RHEL 7, 8 or 9, RockyLinux 8 or 9, CentOS 7
   - _MacOSX_: from 10.13
   - _Windows_: 10 or 11 (Cells Home only)
@@ -54,25 +54,26 @@ Depending on your target deployment size, you may switch directly from the defau
 
 This is a good idea if  
 
-- You foresee a high load on the platform:  number of users and/or a high number of files managed every day.   
+- You foresee a high load on the platform: number of users and/or a high number of files managed every day.   
 - You plan to deploy Cells in a distributed environment (cluster) to provide high availability or horizontal scaling.  
 
 If you do not have a Mongo DB available yet, **you can add it later** as Cells provides the tools to migrate from on-file storage to Mongo. Otherwise, prepare Mongo connection information such as : 
 
 | Parameter                    | Description                                                                          | Defaults                  |
 |------------------------------|--------------------------------------------------------------------------------------|---------------------------|
-| Host/Port                    | Address of the server hosting the Mongo DB                                           | localhost:27317           |
+| Host/Port                    | Address of the server hosting the Mongo DB                                           | localhost:27017           |
 | Credentials                  | Optional credentials to connect, along with an authentication DB name                | [none]                    |
 | Database Name                | Name of the mongo database                                                           | cells                     |
 | Connection String Parameters | Additional connection parameters passed via Mongo connection string query parameters | maxPoolSize=20&w=majority |
 
-Learn more about the [reasons to provide a MongoDB here](./configuring-mongo-storage).
+**Supported Mongo Versions:** MongoDB has currently been tested with v5, v6 and v7.
 
-**Supported Mongo Versions:** MongoDB has currently been tested with v5+
+Learn more about the [reasons to provide a MongoDB here](./configuring-mongo-storage).
 
 ## Network requirements
 
 ### Gateway
+
 Cells provides its own webserver as a unified Gateway to public-facing services. As such, unlike old versions of Pydio, you **do not** need Apache or equivalent.
 
 The Gateway will "bind" to a TCP Port like a standard web server. The port number used is defined in the ./cells configure sites command, or directly as a parameter of the start command in the command line interface.
@@ -84,6 +85,7 @@ _This is the port that needs to be opened in your firewall to make Cells accessi
 | Gateway | 8080    | --bind   |
 
 ### Services
+
 Cells uses TCP/IP connections to communicate between services. The following are using pre-defined ports, that can be overridden in all commands that refer to services in the command line interface (eg start, admin, ...).
 
 | Port               | Default | CLI Flag              |
