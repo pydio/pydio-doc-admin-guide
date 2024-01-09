@@ -2,20 +2,21 @@ We expose below the specificities of the AMI custom setup. For further details, 
 
 ## Cells Ent AMI on AWS Marketplace
 
-You can find a ready-to-use Amazon Machine Image (AMI) on the Amazon Web Services Marketplace following this link:
+You can find a ready-to-use Amazon Machine Image (AMI) for Cells Enterprise Distribution [on the Amazon Web Services Marketplace](https://aws.amazon.com/marketplace/pp/B08CNGR8ZP).
 
-[https://aws.amazon.com/marketplace/pp/B08CNGR8ZP](https://aws.amazon.com/marketplace/pp/B08CNGR8ZP)
-
-This Cells Enterprise appliance is based on (AL2023 OS)[https://aws.amazon.com/linux/amazon-linux-2023] and has been enriched with necessary third parties and configuration to provide an easy to run instance of the Cells server out of the box.
+This appliance is based on [Amazon Linux 2023 (AL2023) OS](https://aws.amazon.com/linux/amazon-linux-2023) and has been enriched with necessary third parties and configuration to provide an easy to run instance of the Cells server out of the box.
 
 ## Quick Start
 
-If you want to give a first quick glance at Cells with no hassle, just launch the AMI on a `t2-medium` EC2 instance, with no user data, no extra mounted volume and setting security groups so that, the instance:
+If you want to give a first quick glance at Cells with no hassle, just launch the AMI on a `t2-medium` EC2 instance, with no user data and no extra mounted volume.
+
+Define some security groups so that the instance:
 
 - Can reach the internet (to download updates)
 - Can be reached on port 443
 - Can be reached via SSH
-- **Is on a private network with a private IP address**
+
+_Note: your instance must at least have **one network interface that is on a private network**, with an IP address that is in a well-known private range (e.g 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16 for IPv4). It is the case by default on most regions_.
 
 You will have a ready to install instance at `https://<ec2-public-IP>` after a couple of minutes.
 
