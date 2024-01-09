@@ -6,7 +6,7 @@ You can find a ready-to-use Amazon Machine Image (AMI) on the Amazon Web Service
 
 [https://aws.amazon.com/marketplace/pp/B08CNGR8ZP](https://aws.amazon.com/marketplace/pp/B08CNGR8ZP)
 
-This Cells Enterprise package is based on (Amazon Linux 2)[https://aws.amazon.com/amazon-linux-2] AMI and has been enriched with necessary third parties and configuration to provide an easy to run instance of the Cells server out of the box.
+This Cells Enterprise appliance is based on (AL2023 OS)[https://aws.amazon.com/linux/amazon-linux-2023] and has been enriched with necessary third parties and configuration to provide an easy to run instance of the Cells server out of the box.
 
 ## Quick Start
 
@@ -17,7 +17,7 @@ If you want to give a first quick glance at Cells with no hassle, just launch th
 - Can be reached via SSH
 - **Is on a private network with a private IP address**
 
-You will have a ready to install instance at `https://<ec2-public-ip>` after a couple of minutes.
+You will have a ready to install instance at `https://<ec2-public-IP>` after a couple of minutes.
 
 You can quickly finalise the installation by:
 
@@ -36,7 +36,7 @@ The Pydio Cells AMI comes with 3 default users:
 
 ## Services
 
-- **install-cells.service**: launched at boot, when your instantiate a new Cells Ent AMI, it launches the installation process. After successful installation, it starts and enables the cells service, and disables itself before exiting.
+- **install-cells.service**: enabled when you instantiate a new Cells Enterprise AMI, this service launches the installation process. After successful configuration of your instance, it starts and enables the Cells service. It then disables itself before exiting.
 - **cells.service**: runs the cells server as a systemd daemon. The `install-cells.service` enables and starts this service when finalising the install.
 
 ## Tree structure
@@ -53,7 +53,7 @@ If you provide an additional EBS volume when you launch the AMI (see installatio
 ## Database
 
 A MySQL DB is the only hard requirement to run a Pydio Cells instance.  
-As a convenience, the Pydio Cells AMI embbed an installed and configured MariaDB 10.5 server that is provided by the Amazon Linux 2 `mariadb10.5` _extra_ topic.
+As a convenience, the Pydio Cells AMI embbed an installed and configured MariaDB 10.5 server that is provided by the Amazon Linux repositories.
 
 There are 2 users `root` and `pydio`, all other configurations follow the `mysql_secure_installation` best practices.  
 There is one default `cells` DB, on which the `pydio` user has all privileges.
