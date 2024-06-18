@@ -6,7 +6,7 @@ But what if you simply want to explore the storage "offline", without a Cells in
 
 ## Cells Fuse command line
 
-Cells Fuse is a dedicated tool used to directly interact with a snapshot database to search for a given file, retrieve its content, or event mount the whole tree as a FUSE volume on the machine. This feature is only supported on Linux (MacOSX can use MacFUSE, but requires a manual build of the binary).
+Cells Fuse is a dedicated tool used to directly interact with a snapshot database to search for a given file, retrieve its content, or event mount the whole tree as a FUSE volume on the machine. *This feature is only supported on Linux* (MacOSX can use MacFUSE, but requires a manual build of the binary).
 
 Let's read the manual for this command:
 
@@ -62,9 +62,9 @@ As you can see, the tool provides 3 main commands :
 
 ### Download cells-fuse binary
 
-Cells Fuse is compiled at the same time as Cells and follows the same versioning policy. It is downloadable directly in the release folder : 
+Cells Fuse is compiled at the same time as Cells and follows the same versioning policy. It is downloadable directly in the release folder (Linux AMD64): 
 
-[https://download.pydio.com/pub/cells/release/{CELLS LAST VERSION}/cells-fuse](https://download.pydio.com/pub/cells/release/)
+[https://download.pydio.com/pub/cells/release/{CELLS LAST VERSION}/linux-amd64/cells-fuse](https://download.pydio.com/pub/cells/release/)
 
 ### Storage support
 
