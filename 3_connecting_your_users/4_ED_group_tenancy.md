@@ -8,7 +8,7 @@ In the context of Pydio Cells, group tenancy means that users of a group (A) can
 
 [:image:3_connecting_your_users/group_tenancy/group_tenancy_root_group_level.png]
 
-- To enable this option go to the admin console, **Cells Console > Advanced Settings > Users Visibility**.  
+- To enable this option go to the admin console, **Cells Console > Application Parameters > Main Settings > Users Visibility**.  
 
 _Note: Users Visibility is an advanced feature. So if you cannot find it where it should be, make sure that you have enabled advanced parameters to be shown in the menu list. This is done by toggling on the `Show advanced parameters button` in the top right corner of the Admin console._
 
