@@ -30,6 +30,9 @@ Where:
 - `-e CELLS_SITE_EXTERNAL=https://$FQDN`: (optional) explicitely declare your domain
 - `--network=host`: directly use the host network, to easily connect to the DB
 
+> WARNING: CELLS_SITE_BIND, CELLS_SITE_EXTERNAL may override the site configuration in pydio.json. If you have custom site configurations, don't forget to remove these Env from docker file.
+
+
 ## Run with Docker Compose
 
 Below is a vanilla configuration to run Pydio Cells with `docker compose`:
@@ -73,6 +76,12 @@ volumes:
 and let the other parameters unchanged to configure the DB connection. 
 
 ## Go further
+
+### Upgrade Cells
+
+Use `docker pull` command to get latest version of Cells then start a new container from updated image.
+
+> WARNING: You may upgrade cells from admin console. However the updater replaces the binary in the container. There is a risk of falling back to earlier version if the container is dropped.
 
 ### Commands
 
