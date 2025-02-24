@@ -34,14 +34,15 @@ There are some plugins/functionalities in Pydio 8 Community that are not availab
 | OTP auth-frontend          | yes             | no         |                                             |
 | CAS auth-frontend          | yes             | no         | use SAML instead                            |
 | Dual-form auth-frontend    | yes             | no         |                                             |
-| Access driver samba        | yes             | no         | it is possible to use static mount in Cells |
-| Access driver mailbox      | yes             | no         |                                             |
-| Access driver FTP over SSH | yes             | no         | it is possible to use static mount in Cells |
-| Access driver FTP Server   | yes             | no         | it is possible to use static mount in Cells |
-| Access driver WebDav       | yes             | no         | it is possible to use static mount in Cells |
-| Access driver Dropbox      | yes             | no         | it is possible to use static mount in Cells |
-| Access driver Open Stack   | yes             | no         | it is possible to use static mount in Cells |
-| Personal workspaces        | yes             | yes        | map to default My Files workspace only      |
+| Access driver samba        | yes             | no         |  |
+| Access driver mailbox      | yes             | no         |  |
+| Access driver FTP over SSH | yes             | no         |  |
+| Access driver FTP Server   | yes             | no         |  |
+| Access driver WebDav       | yes             | no         |  |
+| Access driver Dropbox      | yes             | no         |  |
+| Access driver Open Stack   | yes             | no         |  |
+| Personal workspaces        | yes             | yes        |  |
+| SubFolder permissions        | no             | no        |  |
 
 **Optional**:
 
