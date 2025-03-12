@@ -87,3 +87,5 @@ $> export CELLS_BROKER=nats://:4222/cells
 # And finally:
 $> ./cells start
 ```
+
+[TODO] add migration for Jetstream 

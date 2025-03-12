@@ -15,6 +15,8 @@ Below is a list of ENVIRONMENT variables that will redefine internal defaults to
     - CELLS_CERTS_STORE=vault://{VAULT_HOST}:{VAULT_PORT}/caddycerts
     - CELLS_CACHE=redis://{REDIS_HOST}:{REDIS_PORT}
     - VAULT_TOKEN={VAULT_ROOT_TOKEN}
+    - CELLS_PERSISTQUEUE=nats://{NATS_HOST}:{NATS_PORT}
+
 
 Assuming that you have an internal DNS resolving services by their names and that you are using default ports for all, this could look like : 
 
@@ -26,11 +28,13 @@ Assuming that you have an internal DNS resolving services by their names and tha
     - CELLS_CERTS_STORE=vault://vault:8200/caddycerts
     - CELLS_CACHE=redis://redis:6379
     - VAULT_TOKEN=${VAULT_ROOT_TOKEN}
+    - CELLS_PERSISTQUEUE=nats://nats:4222
+
 
 Or, using command-line flags instead of Env, these could have been : 
 
     > export VAULT_TOKEN=${VAULT_ROOT_TOKEN} # that one still requires ENV 
-    > cells start --config=etcd://etcd:2379 --registry=etcd://etcd:2379 --broker=nats://nats:4222 --keyring=vault://vault:8200/secret?key=master --certs_store=vault://vault:8200/caddycerts --cache=redis://redis:6379 
+    > cells start --config=etcd://etcd:2379 --registry=etcd://etcd:2379 --broker=nats://nats:4222 --keyring=vault://vault:8200/secret?key=master --certs_store=vault://vault:8200/caddycerts --cache=redis://redis:6379  --persistqueue=nats://nats:4222
 
 In the example above, we just specify the `config` URL: if no path is provided it is automatically switched to "URL/config", and if not CELLS_VAULT is provided, it is inferred from config URL to "URL/vault". 
 

@@ -140,3 +140,6 @@ In order to access your application remotely, you can set an ingress API object 
 | `ingress.clusterissuer.server` | URL to the LetsEncrypt certification API | https://acme-v02.api.letsencrypt.org/directory |
 | `ingress.clusterissuer.email` | Email used for verification during the certification | *not set* |
 | `ingress.extraHosts` | Potential extra hostnames allowed | [] |
+
+
+[TODO TRAN] updtae for Jetstream
