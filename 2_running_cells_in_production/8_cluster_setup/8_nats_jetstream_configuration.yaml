@@ -1,6 +1,0 @@
-title: NATs JetStream configuration
-abstract: Activation of NATS JetStream queue in Cells cluster
-menu: NATs JetStream configuration
-language: und
-weight: 7
-menu_name: menu-admin-guide-v7-enterprise
