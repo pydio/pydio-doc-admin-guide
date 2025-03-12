@@ -13,6 +13,7 @@ Flags:
       --discovery string             Combine registry, config and pub/sub discovery service (default "mem://")
       --registry string              Registry URL used to manage services. Supported schemes: etcd|file|grpc|mem (default "mem://?cache=shared")
       --shortcache string            Short cache (default "pm://")
+      --persistqueue string          Persisting Queue (default "file://")
 
 Global Flags:
       --certs_store string   Certificates Store URL. Can be switched to vault://host:port/secretPath (default "file://${CELLS_WORKING_DIR}/certs")
@@ -62,13 +63,13 @@ Flag `--broker` or environment `CELLS_BROKER`
 | nats   | nats://:4222/[prefix] | Connect to a Nats.io cluster for messaging. This should be the default in Cluster mode.                                                                                |
 | grpc   | grpc://:8002          | This is the default for fork processes (whether the main process is using mem:// or nats://). Connects to a running pydio.grpc.broker service locally on the 8002 port |
 
-### Persist Queue
+### PersistQueue
 
-Persist queue stores events of a heavy job to improve the performance and constistency
+The persisting queues mainly stores events for tasks when triggering large jobs (e.g generation of tumbnails when a user upload a folder with 1000s images) to improve performance and constistency.
 
 | Scheme | Example               | Comment                                                                                                                                                                |
 |--------|-----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| mem    | file://                | This is the default. It use local file system to store events                          |
+| file   | file://                | This is the default. Cells server uses the local file system to store events                          |
 | nats   | nats://:4222/[prefix] | Connect to a Nats.io cluster for messaging. This should be the default in Cluster mode.                                                                                |
 
 

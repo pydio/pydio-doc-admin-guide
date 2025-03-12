@@ -26,11 +26,15 @@ Cells can connect to a Nats server for messages broadcasting inside the applicat
 
 Learn more at [https://docs.nats.io/](https://docs.nats.io/)
 
-### Nats.io Jetstream:
+### Nats.io Jetstream: distributed queues
 
-In a standalone deployment, Cells uses a built-in queue, storing messages locally on disk.
+Jetstream is the built-in persistence engine of NATS. It enables messages to be stored and replayed at a later time. Unlike NATS Core which requires you to have an active subscription to process messages as they happen, JetStream allows the NATS server to capture messages and replay them to consumers as needed. This functionality enables a different quality of service for your NATS messages, and enables fault-tolerant and high-availability configurations.
 
-In a clustered environment where Cells runs in stateless mode, it relies on NATS JetStream. However, by default, the NATS requires additional configuration to activate JetStream in cluster environment
+In a standalone deployment, Cells uses a built-in queue, storing messages locally on disk. In a clustered environment where Cells runs in stateless mode, we use NATS JetStream to have distributed, fault-tolerant and scalable FIFO queues.
+
+Learn more at [https://docs.nats.io/nats-concepts/jetstream](https://docs.nats.io/nats-concepts/jetstream)
+
+**Warning**: NATS requires additional configuration to activate JetStream in cluster environment.
 
 ## Redis: shared cache
 

@@ -210,5 +210,3 @@ nats:
 ```      
 
 > Note: The `podSecurityContext: { enabled: true }` setting is required for proper functionality.
-
-

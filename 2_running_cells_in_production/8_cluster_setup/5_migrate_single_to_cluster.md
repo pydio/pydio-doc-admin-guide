@@ -73,17 +73,22 @@ $> ./cells admin config copy --from /home/pydio/.config/pydio/cells/cells-vault-
 
 Warning, do not confuse cells vault (which is simply an encrypted config) with Hashicorp Vault (which is a secrets storage that we use to store the keyring).
 
-## Starting Nats with Jetstream
+## Queues: no need to migrate
 
-You can also use the -js, --jetstream and -sd, --store_dir <dir> flags from the command line
+As explained in the previous pages, in cluster mode, you must rather rely on NATs Jetstream for the persisting queues.
+Yet, we assume that you are not doing the migration from the single node to cluster while large jobs are still running in the server.
+Thus, you should not have to bother to migrate existing queues from the local file system to NATS Jetstream.
 
-```
+To start nats with jetstream enabled, you can also use the `-js,--jetstream` and `-sd,--store_dir <dir>` flags from the command line:
+
+```sh
 nats-server --jetstream --store_dir=/var/lib/nats
 ```
 
 ## Starting Cells with the new parameters
 
-Once all configurations are live in ETCD and Vault, you can now set up Cells runtime using flags or environment variables: 
+Once all configurations are live in ETCD and Vault, you can now set up Cells runtime using flags or environment variables:
+
 ```
 $> export CELLS_CONFIG=etcd://:2379/config
 $> export CELLS_VAULT=etcd://:2379/vault
@@ -96,5 +101,3 @@ $> export CELLS_PERSISTQUEUE=nats://:4222
 # And finally:
 $> ./cells start
 ```
-
-
