@@ -73,6 +73,14 @@ $> ./cells admin config copy --from /home/pydio/.config/pydio/cells/cells-vault-
 
 Warning, do not confuse cells vault (which is simply an encrypted config) with Hashicorp Vault (which is a secrets storage that we use to store the keyring).
 
+## Starting Nats with Jetstream
+
+You can also use the -js, --jetstream and -sd, --store_dir <dir> flags from the command line
+
+```
+nats-server --jetstream --store_dir=/var/lib/nats
+```
+
 ## Starting Cells with the new parameters
 
 Once all configurations are live in ETCD and Vault, you can now set up Cells runtime using flags or environment variables: 
@@ -83,9 +91,10 @@ $> export CELLS_KEYRING=vault://:8200/kv
 $> export CELLS_CERTS_STORE=vault://:8200/caddycerts
 $> export CELLS_CACHE=redis://:6379/cells
 $> export CELLS_BROKER=nats://:4222/cells
+$> export CELLS_PERSISTQUEUE=nats://:4222
 
 # And finally:
 $> ./cells start
 ```
 
-[TODO] add migration for Jetstream 
+

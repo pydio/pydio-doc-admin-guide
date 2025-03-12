@@ -26,6 +26,12 @@ Cells can connect to a Nats server for messages broadcasting inside the applicat
 
 Learn more at [https://docs.nats.io/](https://docs.nats.io/)
 
+### Nats.io Jetstream:
+
+In a standalone deployment, Cells uses a built-in queue, storing messages locally on disk.
+
+In a clustered environment where Cells runs in stateless mode, it relies on NATS JetStream. However, by default, the NATS requires additional configuration to activate JetStream in cluster environment
+
 ## Redis: shared cache
 
 Redis is the open source, in-memory data store used by millions of developers as a database, cache, streaming engine, and message broker.
@@ -42,4 +48,3 @@ It is used by many Cells services that are best-fitted for storing data in a NoS
 
 Learn more at [https://www.mongodb.com/try/download/community](https://www.mongodb.com/try/download/community)
 
-## NATS Jetstream: [TODO]

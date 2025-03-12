@@ -62,6 +62,16 @@ Flag `--broker` or environment `CELLS_BROKER`
 | nats   | nats://:4222/[prefix] | Connect to a Nats.io cluster for messaging. This should be the default in Cluster mode.                                                                                |
 | grpc   | grpc://:8002          | This is the default for fork processes (whether the main process is using mem:// or nats://). Connects to a running pydio.grpc.broker service locally on the 8002 port |
 
+### Persist Queue
+
+Persist queue stores events of a heavy job to improve the performance and constistency
+
+| Scheme | Example               | Comment                                                                                                                                                                |
+|--------|-----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| mem    | file://                | This is the default. It use local file system to store events                          |
+| nats   | nats://:4222/[prefix] | Connect to a Nats.io cluster for messaging. This should be the default in Cluster mode.                                                                                |
+
+
 ### Config, Vault, Certificates
 
 A watchable key/value API that is common to config and vault flags.

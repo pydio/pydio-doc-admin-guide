@@ -142,4 +142,73 @@ In order to access your application remotely, you can set an ingress API object 
 | `ingress.extraHosts` | Potential extra hostnames allowed | [] |
 
 
-[TODO TRAN] updtae for Jetstream
+## Nats Jetstream queue
+
+In cells helm chart `version <= 0.1.2`, you should manually modify `deployment.yaml` to add an env for persist queue as well as activate nats jetstream in `values.yaml`
+
+### Update deployment.yaml
+
+Add an extra environment variable (CELLS_PERSISTQUEUE) to instruct Cells to use the NATS service as a queue.
+Modify the containers section as follows:
+
+```
+containers:
+  - name: {{ .Chart.Name }}
+    args:
+      ['-c', 'source /var/cells-install/source && cells start ']
+    env:
+      - name: POD_NAME
+        valueFrom:
+          fieldRef:
+            fieldPath: metadata.name
+      - name: CELLS_PERSISTQUEUE
+        value: {{ include "cells.natsURL" . }}
+
+```
+
+### Update values.yaml
+
+When NATS starts with JetStream, it transitions from a Deployment to a StatefulSet. This change requires adding a PersistentVolume to the cluster.
+An example configuration for NATS in values.yaml:
+
+```
+nats:
+  enabled: true
+  jetstream:
+    enabled: true
+    maxMemory: 5G
+  auth:
+    enabled: false
+  volumePermissions:
+    enabled: true
+
+  # Allow pod to write to the mounted repository
+  podSecurityContext: { enabled: true }
+
+  persistence:
+    enabled: true 
+    storageClass: gp2
+    annotations: {}
+    accessModes:
+      - ReadWriteOnce
+    size: 8Gi
+    selector: {}
+  debug:
+    enabled: true
+  resourceType: statefulset
+
+  ## Number of NATS nodes
+  replicaCount: 3
+  cluster:
+    name: nats
+    connectRetries: ""
+    auth:
+      enabled: false
+      user: nats_cluster
+      password: "secret-changeme"
+
+```      
+
+> Note: The `podSecurityContext: { enabled: true }` setting is required for proper functionality.
+
+
